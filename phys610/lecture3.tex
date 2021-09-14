@@ -1,0 +1,254 @@
+\section{Line Integrals}
+Under what circumstances is the line integral
+$\int_{A}^{B} f(z) \, dz$
+independent of the path from $A$ to $B$?
+
+\begin{theorem}[Cauchy]
+    If $f(z)$ is analytic in a simply connected,
+    bounded domain $D$,
+    for every simple closed path $C$ in $D$,
+    \begin{align}
+        \oint_C f(z) \, dz = 0
+        \label{eqn:1}
+    \end{align}
+\end{theorem}
+To prove this, consider
+\begin{align}
+    \oint f(z)\, dz
+    &= \oint_C (u + iv) (dx + i\, dy)\\
+    &= \oint_C (u\,dx - v\,dy) +
+    i \oint_C (v\,dx + u\,dy)
+\end{align}
+Then use Stokes theorm
+\begin{align}
+    \oint\vec{A}\cdot d\vec{r}
+    = \int(\vec{\nabla}\times\vec{A})\cdot d\vec{s}.
+\end{align}
+Let the line integral Lie in hte $xy$ plane.
+\begin{align}
+    d\vec{r}
+    &= dx \hat{e}_x + dy\hat{e}_y\\
+    \vec{A} &= A_x \hat{e}_x + A_y \hat{e}_y.
+\end{align}
+Then
+\begin{align}
+    \oint_C \left(
+        A_x\,dx + A_y\,dy
+    \right)
+    = \int\left(
+    \frac{\partial A_y}{\partial x}
+    - \frac{\partial A_x}{\partial y}
+    \right)\,dx\,dy
+\end{align}
+if we go around the path counterclockwise.
+Notice this is the same form as before.
+
+Let us apply this to the two line integrals in Equation~\ref{eqn:1}.
+For the first integral,
+set $A_x = v$ and $A_y = -v$.
+Notice that by the Cauchy-Riemann condition,
+\begin{align}
+    \oint\left(
+        u\,dx - v\,dy
+    \right)
+    =
+    \int\left(
+    -\frac{\partial v}{\partial x}
+    - \frac{\partial u}{\partial y}
+    \right)\,dx\,dy
+    =0.
+\end{align}
+For the second integral, set
+$A_x = v$ and $A_y = u$.
+Then by the other Cauchy-Riemann condition,
+\begin{align}
+    \oint\left(
+        v\,dx + u\,dy
+    \right)
+    =
+    \int\left(
+    \frac{\partial u}{\partial x}
+    - \frac{\partial v}{\partial y}
+    \right)\,dx\,dy
+    =0.
+\end{align}
+Hence
+\begin{align}
+    \oint_C f(z)\,dz = 0
+\end{align}
+Suppose $C$ is made up of two paths $C_1$ and $C_2$.
+\begin{align}
+    \int_{C_1} f(z)\,dz
+    - \int_{C_2} f(z)\,dz
+    = \oint_C f(z)\,dz
+    = 0.
+\end{align}
+Hence
+\begin{align}
+    \int_{C_1}f(z)\,dz
+    = \int_{C_2}f(z)\,dz
+\end{align}
+What Cauchy is saying is that this integral is actually a function of the final
+point for fixed $A$
+\begin{align}
+    \int_{A}^{P}f(z)\,dz = F(P).
+\end{align}
+
+
+\section{Cauchy's Integral Formula}
+Cauchy is saying if I know the values of an analytic function on the boundary of
+a simply connected region in $\mathbf{C}$,
+then I can tell you the value of the function anywhere inside the region.
+
+I was shocked when I first saw this theorem.
+There's no analogue of this for real functions.
+
+If you consider a complex function
+\begin{align}
+    f(z) = u(x, y) + i v(x, y).
+\end{align}
+Then you can solve Laplace's equation in 2D if you know the boundary.
+\begin{align}
+    \frac{\partial^2 u}{\partial x^2}
+     + \frac{\partial^2 v}{\partial y^2}
+     = 0.
+\end{align}
+That's the application we're interested in.
+
+Cauchy's integral formula states that if $f(z)$ is analytic in a simply
+connected domain $D$,
+then for any point $z=a$ in $D$ and any closed path $C$ in $D$ which encloses
+the point $a$,
+we have
+\begin{align}
+    \oint_C \frac{f(z)}{z - a} \, dz = 2\pi i f(a)
+\end{align}
+where the integration is being taken in the counterclockwise sense.
+If you know the values on the boundary then you know the value of any point
+inside the region.
+The reason it's possible is because $f$ is composed of harmonic functions.
+In principle,
+if you have the values on the boundary for Laplace's equation,
+then in principle you have enough information to solve Laplace's equation in the
+bulk.
+
+Define
+\begin{align}
+    \phi(z) := \frac{f(z)}{z - a}.
+\end{align}
+This is analytic everywhere in $D$ except at $z=a$.
+We need to evaluate
+\begin{align}
+    \oint_C \phi(z)\, dz.
+\end{align}
+Let us go counterclockwise.
+Then around $a$ draw a small circle,
+and I call that circle $C'$.
+Then I make a cut between $C$ and $C'$.
+Let there be a point $A$ on $C$ and $B$ on $C'$.
+Make a cut along $AB$.
+Integrate $\phi(z)$ along the closed path from $A$ to $C$ to $B$
+around $C'$ and then back to $A$.
+The contribution from the cut vanishes since we integrate first in one
+direction and then again in the opposite direction.
+\begin{align}
+    \oint_C \phi(z)\, dz + \oint_{C'}\phi(z)\, dz = 0
+\end{align}
+where we are going counterclockwise in $C$ and clockwise in $C'$.
+Then
+\begin{align}
+    \oint_{C}\phi(z)\,dz = \oint_{C'}\phi(z)\,dz
+\end{align}
+when both integrals are performed counterclockwise.
+Along the circle $C'$,
+we have
+$z=a + \rho e^{i\theta}$.
+Remember this is a circle and the differential is
+\begin{align}
+    dz = i\rho e^{i\theta} \,d\theta
+\end{align}
+So the integral is
+\begin{align}
+    \oint_{C}\phi(z)\,dz &= \oint_{C'}\phi(z)\,dz\\
+    &=
+    \oint_{C'}\frac{f(z)}{z - a} \,dz\\
+    &= \int_{0}^{2\pi}\frac{f(z)}{\rho e^{i\theta}}\left( 
+        i\rho e^{i\theta}
+    \right) \,d\theta\\
+    &= i\int_{0}^{2\pi} f(z)\, d\theta
+\end{align}
+but because the circle is so small $f(z)\to f(a)$ and so
+\begin{align}
+    \oint_C \phi(z)\, dz
+    = \oint \frac{f(z)}{z - a}\,dz
+    = 2\pi i f(a).
+\end{align}
+
+The following is useful for integer $n$.
+\begin{align}
+    \oint \frac{dz}{{(z - z_0)}^n}
+    =
+    \begin{cases}
+        2\pi i & \text{if } n = 1\\
+        0 & \text{otherwise}
+    \end{cases}
+\end{align}
+You can do this by using $z = z_0 + \rho e^{i\theta}$
+and doing the integral explicitly on a circle.
+If it's not a circle,
+use the same trick with the cut like how we proved the Cauchy integral formula.
+
+\section{Liouville's theorem}
+Every analytic function is either constant or blows up somewhere in the complex
+plane.
+\begin{theorem}
+    If $f(z)$ is analytic and bounded in absolute value in the entire complex
+    plane,
+    then it must be a constant.
+\end{theorem}
+\begin{proof}
+    Assume $|f(z)|$ is bounded,
+    so that $|f(z)| < M$
+    for all $z\in\mathbb{C}$.
+    Since $f(z)$ is analytic,
+    it can be expanded like
+    \begin{align}
+        f(z) &= \sum_{n=0}^{\infty} a_n z^{n}.
+    \end{align}
+    By the Cauchy integral formula,
+    \begin{align}
+        |a_n|
+        &= \left|\frac{1}{2\pi i} \oint \frac{f(z)}{z^{n + 1}}\, dz\right|\\
+        &=
+        \left|
+            \sum_\gamma \frac{1}{2\pi i}
+            \frac{f(z)}{z_{\gamma}^{n + 1}}
+            \Dlta z_\gamma
+        \right|\\
+        &\le
+        \sum_{\gamma}
+        \left|\frac{1}{2\pi i}\right|
+        \left|\frac{f(z_\gamma)}{z_\gamma^{n + 1}}\right|
+        \left|\Delta z_\gamma \right|\\
+        &\le
+        \sum_{\gamma}
+        \frac{1}{2\pi}
+        \frac{f(z)|_{\max}}{R^{n + 1}} |\Delta z_\gamma|\\
+        &\le \frac{1}{2\pi} \frac{f(z)|_{\max}}{R^{n + 1}} 2\pi R
+    \end{align}
+    where the contour is a circle centred at the origin and
+    we have used the identities
+    \begin{align}
+        |ab| &= |a||b|\\
+        |a + b| &\le |a| + |b|
+    \end{align}
+    Hence
+    \begin{align}
+        |a_n| \le \frac{M}{R^n}
+    \end{align}
+    for some constant $M$.
+    We can take $R$ to be arbitrarily large.
+    As $R\to\infty$, $a_n\to 0$ for $n\ge 1$.
+    Hence $f(z)=a_0$,
+    which is a constant.
+\end{proof}

@@ -1,0 +1,611 @@
+\section{Residue Theorem}
+Today I want to talk about how to evaluate integrals using the residue theorem.
+
+Let $z_0$ be an isolated singular point of $f(z)$.
+Consider the value of the closed line integral $\oint_C f(z) dz$
+around a simple closed curve $C$ surrounding $z_0$
+but enclosing no other singularities.
+The little circle means it's a closed line as opposed to an open line.
+It means it comes back to where you started.
+Let $f(z)$ be expanded in a Laurent series about $z=z_0$ that converges near
+$z=z_0$.
+
+Then,
+\begin{align}
+    f(z) = a_0 + a_1(z - z_0) + \cdots
+    + \frac{b_1}{z - z_0} + \frac{b_2}{(z - z_0)^2} + \cdots.
+\end{align}
+
+\begin{question}
+    What is converging near $z_0$?
+\end{question}
+It means converging in the neighbourhood around that point.
+This is important because you could have several Laurent series about a point
+that converge in different regions.
+We want the series that converges near the point we're expanding about.
+
+The point of the residue theorem is that there are an infinite number of $b$'s,
+but $b_1$ is special.
+Out of all the infinite terms, this $b_1$ is special.
+This $b_1$ is called the \emph{residue}.
+That one is special.
+
+The terms in the $a$ series do not contribute to the integral,
+because they are analytic.
+The thing is, of the terms in the $b$ series,
+only $b_1$ contributes.
+This is because of this identity we see again and again.
+\begin{align}
+    \oint \frac{dz}{\left( z - z_0 \right)^n} =
+    \begin{cases}
+        2\pi i & \text{if } n =1\\
+        0 & \text{otherwise}
+    \end{cases}
+\end{align}
+It's easy to prove with a circle.
+Just substitute $z=\rho e^{i\theta}$.
+If the curve is not a circle,
+first prove arbitrary curves give the same result
+using Cauchy's theorem using a cut as we showed before.
+Then if you know the results of the circle,
+you know the result for arbitrary curves.
+Anyway,
+it's a homework problem and the solution will be provided at some point.
+
+The point is,
+that if you use this integral,
+the $b_1$ is the only term that satisfies $n=1$.
+All the other $b$s have an $n$ that is bigger than one and doesn't contribute.
+The $a$'s don't contribute because they are analytic and Cauchy's theorem tells
+you they don't contribute,
+and of all the $b$'s only the $b_1$ contributes because of that formula.
+
+So then, therefore
+\begin{align}
+    \oint_C f(z)\, dz = 2\pi b_1
+\end{align}
+and this $b_1$ is called the \emph{residue} of $f(z)$ at $z=z_0$.
+It's the only term that survives this integration.
+Any questions about all this?
+
+So this particular result corresponds to when you have just one singular point
+inside the contour $C$.
+What if there are half a dozen,
+what if there is more than one singularity inside that point?
+Then what?
+
+So we have to generalize this result.
+We generalize to when there are multiple isolated singularities.
+And we will see there is a very simple generalization of this thing.
+
+Now let's say this is the region [picture]
+and there are two isolated singular points enclosed by the contour $C$.
+Let's call this point $z_1$ and this point $z_2$.
+Now what you do is draw a circle around $z_1$
+and another circle around $z_2$.
+This contour $C$ goes counter clockwise.
+Then we do what we did before.
+We create a cut like this from $C$ to $C_1$ and a cut from $C$ to $C_2$.
+Now the contour is deformed.
+Follow the arrows and see you have a simply connected closed loop.
+
+A couple of things I want you to realise.
+This region in between $C$ and the circles,
+that is simply connected.
+If I put a rubber band anywhere,
+I can shrink it to a point,
+and I can apply Cauchy's theorem.
+
+So around the deformed contour,
+we have
+\begin{align}
+    \oint f(z)\, dz = 0
+\end{align}
+by Cauchy's theorem,
+because we have cut out the singularities and it's analytic.
+The contribution to the integral from the cut vanishes.
+So then you can convince yourself using the logic very similar to our proof of
+the Cauchy integral formula that
+\begin{align}
+    \oint_C f(z) \, &=
+    \oint_{C_1} f(z)\,dz
+    + \oint_{C_2} f(z)\, dz
+\end{align}
+In other words,
+the contribution from the cuts vanishes,
+but you can see that $C_1$ and $C_2$ are going clockwise,
+but if you make everything counterclockwise,
+the signs work out.
+We are going around $C$, $C_1$ and $C_2$ counterclockwise
+in the equation above.
+
+And this generalizes no matter how many singularities you have.
+It is the sum of the contour integral around each point.
+But we just proved the integral around one singularity is just the residue times
+$2\pi i$.
+Each circle contains only one singular point
+and we can immediately apply the result we just derived.
+So it should be $2\pi i$ times the residue of each singular point.
+And this is the residue theorem we're going to apply again and again.
+
+So this is my claim.
+This leads to the residue theorem
+\begin{align}
+    \oint_C f(z)\, dz &= 2\pi i\times
+    \text{sum of residues of $f(z)$ from singular points inside $C$}
+\end{align}
+This is the thing that you guys have to remember.
+
+\begin{question}
+    That's the closed contour $C$?
+\end{question}
+Yes it's the closed contour $C$ that contains the isolated points.
+Any questions?
+
+The rest of this class and most of the rest of the next class will be giving
+examples where we use the residue theorem to evaluate integrals.
+This is a place where you use complex analysis a lot.
+There are many integrals where the simplest way to do them is to use a contour
+integral,
+sometimes you know for example,
+the most convenient way to express something is as a contour integral.
+This result gets used a lot,
+especially if you do theoretical physics,
+you will see this over and over again.
+Let's do some examples.
+
+You should look at all the literature on ELMS
+and try to work through the examples there.
+Do several of them.
+Unfortunately I can't cover the full range of possibilities.
+As you'll see,
+you have to be clever in most cases,
+choose your contour cunningly,
+hence it's helpful to do some examples so you can learn how to choose.
+But time constraints.
+
+Let's start with some very simple ones.
+\begin{example}
+    Integrate $f(z) = \sin(z)/z^4$ around the unit circle counterclockwise.
+\end{example}
+\begin{proof}[solution]
+    This potentially has a pole at $z=0$.
+    There's nowhere else where it might have a pole.
+    The first thing to do is expand this in Taylor series.
+    \begin{align}
+        \frac{\sin(z)}{z^4} &=
+        \frac{1}{z^4}\left\{
+            z
+            - \frac{z^3}{3!}
+            + \frac{z^5}{5!}
+            - \cdots
+        \right\}
+    \end{align}
+    What is the order of the pole?
+    It's order 3.
+    What is the residue?
+    It's $-1/6$.
+    You can see this
+    \begin{align}
+        f(z) &=
+        \frac{1}{z^3}
+        - \frac{1}{6} \frac{1}{z}
+        + \frac{z}{5!} - \cdots
+    \end{align}
+    Don't forget that negative sign,
+    the residue is $-\frac{1}{6}$,
+    not $\frac{1}{6}$.
+    So by the residue theorem,
+    \begin{align}
+        \oint \frac{\sin z}{z^4}\,dz &=
+        2\pi i \left( -\frac{1}{6} \right)\\
+        &= -\frac{\pi i}{3}
+    \end{align}
+\end{proof}
+Any questions?
+OK let's do another example.
+
+\begin{example}
+    Integrate $\frac{4 - 3z}{z^2 - z}$
+    around the circle $|z|=2$ counterclockwise.
+\end{example}
+\begin{proof}[solution]
+    This is the circle of radius 2 centred at the origin.
+    Look at this and tell me where it has poles.
+    $z=0$ and $z=1$ where the denominator vanishes.
+    The poles are where the denominator vanishes.
+    And $0$ and $1$ are both inside the circle.
+    And so we really have to use the residue theorem
+    but first we need to find the residue at both $0$ and $1$.
+    That's the procedure.
+
+    The function has poles at $z=0$ and $z=1$.
+    Near $z=0$,
+    \begin{align}
+        f(z) &=
+        \frac{4 - 3z}{z(z - 1)}\\
+        &= \frac{1}{z}\left\{
+            \frac{4 - 3z}{z - 1}
+        \right\}\\
+        &= -\frac{4}{z} + \text{analytic terms near $z=0$}
+    \end{align}
+    The fraction in the bracket is analytic at $z=0$,
+    and it's equal to $-4$.
+    What's where it comes from.
+
+    Near $z=1$,
+    \begin{align}
+        f(z) &=
+        \frac{4 - 3z}{z(z - 1)}
+        = \frac{1}{z - 1}\left\{
+            \frac{4 - 3z}{z}
+        \right\}
+    \end{align}
+    Near $z=1$, the things in the braces are analytic,
+    so then the whole thing behaves like
+    \begin{align}
+        f(z) = \frac{1}{z - 1}
+    \end{align}
+    and hence $1$ is the residue.
+    
+    By the residue theorem,
+    \begin{align}
+        \oint f(z)\, dz &= 2\pi i\sum \text{residues}\\
+        &= 2\pi i \left\{ -4 + 1 \right\}\\
+        &= -6\pi i.
+    \end{align}
+    These are just some really simple examples to illustrate.
+\end{proof}
+Let's suppose this is $|z|=1/2$.
+How would this change the answer?
+
+If you draw it,
+the circle would then have radius $1/2$,
+and $z=1$ is outside the circle,
+so then this $z=1$ residue wouldn't have contributed
+and the result would be $-8\pi i$.
+The boundary is not well defined for $|z|=1$.
+You may have to take some limiting procedure,
+and the answer may depend on how you take that limiting procedure.
+
+Let's go on to the next problem.
+\begin{example}
+    Evaluate the definite integral
+    \begin{align}
+        I = \int_{0}^{2\pi} \frac{d\theta}{5 + 4\cos\theta}.
+    \end{align}
+\end{example}
+\begin{proof}[Solution]
+    Strictly speaking,
+    you don't need complex analysis to do this integral,
+    but it's a tough one.
+    You'd have to use
+    \begin{align}
+        t = \tan\frac{\theta}{2}
+    \end{align}
+    but you would have had to know it.
+    I'll show you it's easy with complex analysis.
+    Here's what you do.
+    There's all classes of problems where you integrate trig functions.
+    The steps are going to be the same.
+
+    Change variables to $z=e^{i\theta}$.
+    Then $\theta$ goes from $0$ to $2\pi$
+    around the unit circle in the complex plane.
+    As $\theta$ goes from $0$ to $2\pi$,
+    we go around the unit circle in the complex plane,
+    which of course is $|z|=1$.
+
+    So then, you have to change variables from $\theta$ to $z$.
+    \begin{align}
+        dz = i e^{i\theta} d\theta\qquad
+        \implies\qquad
+        \frac{1}{i} \frac{dz}{z} = d\theta.
+    \end{align}
+    And then
+    \begin{align}
+        \cos\theta = \frac{1}{2}\left(
+            z + \frac{1}{z}
+        \right).
+    \end{align}
+    To see this
+    just use the Euler formula
+    \begin{align}
+        e^{i\theta} = \cos\theta + i\sin\theta.
+    \end{align}
+    So then the problem has reduced to evaluating
+    \begin{align}
+        I &=
+        \oint \frac{1}{iz}
+        \frac{1}{5 + 2\left( z + \frac{1}{z} \right)}\,dz\\
+        &= \frac{1}{i}\oint \frac{dz}{2z^2 + 5z + 2}.
+    \end{align}
+    That's what you get when the dust settles.
+    Now we have to figure out what the poles of this thing are.
+    You have to find the roots first.
+    I'm going to skip the step and claim it can be written like this.
+    \begin{align}
+        I &=
+        \frac{1}{i}
+        \oint
+        \frac{dz}{(2z + 1)(z + 2)}.
+    \end{align}
+    If I draw this in the complex plane,
+    it has a pole here at $z=-1/2$ and then it has a pole here at $z=-2$.
+    And we want the contour integral of the unit circle
+    centred at $z=0$.
+    You can see that only one of the two poles is inside the circle.
+    We're going counterclockwise because $\theta$ is increasing this way.
+    $\theta$ is increasing from $0$ to $2\pi$ so we're going counterclockwise,
+    which is good,
+    so we don't have to put an extra sign in
+    and just blindly apply the the theorems.
+
+    Only the pole at $z=-1/2$ contributes.
+    Now let's calculate the residue.
+    Let's look at this
+    \begin{align}
+        \frac{1}{(2z + 1)(z + 2)} &=
+        \frac{1}{z + \frac{1}{2}}\left[ 
+            \frac{1}{2(z + 2)}
+        \right]\\
+        &= \frac{1}{z + \frac{1}{2}}\left[
+            \frac{1}{3}
+        \right]
+    \end{align}
+    near $z=-1/2$,
+    where we have evaluated the analytic part at $z=-1/2$.
+    So $1/3$ is the residue,
+    so
+    \begin{align}
+        I &= \frac{1}{i}2\pi i \frac{1}{3}\\
+        &= \frac{2\pi}{3}
+    \end{align}
+\end{proof}
+
+Any questions?
+\begin{question}
+    When evaluating the analytic part,
+    can we ever just say this region is analytic and just plug in the value of
+    $z$.
+    Do we have to do the Taylor series?
+\end{question}
+You don't have to do the Taylor series,
+only the first term matters.
+This thing is non-zero,
+but if it is zero,
+the residue is zero.
+
+We have to be a little bit careful.
+Suppose if our function had a square in it
+\begin{align}
+    \frac{1}{(2z + 1)^2(z + 2)}
+    = \frac{1}{\left( z + \frac{1}{2} \right)^2}\left[
+    \frac{(z + \frac{1}{2})}{2(z + 2)}
+    \right]
+\end{align}
+there is a higher order pole and you have to expand.
+In physics problems you typically only have simple poles
+and you don't have to expand.
+
+You always want to make it a closed curve.
+
+\begin{question}
+    What happens if the integral is not from $0$ to $2\pi$?
+\end{question}
+Can we try $z=e^{i2\theta}$ for example if it's from $0$ to $\pi$.
+
+\begin{question}
+    Can you explain how you'd do it if it were a complex pole?
+\end{question}
+Let's say instead we had
+\begin{align}
+    \frac{1}{(2z + 1)^2 (z + 2)}
+    = \frac{1}{\left(1 + \frac{1}{2} \right)^2}
+    \frac{1}{4\left(z + 2 \right)}
+\end{align}
+Then you have to expand in a Taylor series,
+so the coefficient of the next term in the Taylor series is what gives you the
+residue.
+In this situation with a higher order pole,
+you need more terms in the Taylor series to work it out.
+
+\begin{example}
+    Evaluate
+    \begin{align}
+        I = \int_{-\infty}^{\infty}
+        \frac{dx}{1 + x^2}
+    \end{align}
+\end{example}
+\begin{proof}[Solution]
+    If you were to use elementary methods,
+    you would get
+    \begin{align}
+        \tan^{-1}(x)|_{-\infty}^{\inftyy}
+        = \frac{\pi}{2}
+        - \left( -\frac{\pi}{2} \right)
+        = \pi.
+    \end{align}
+    Let's do it using complex analysis,
+    just to show you the kind of contours you can integrate with.
+    Consider the complex line integral
+    \begin{align}
+        \lim_{\rho\to\infty}
+        \int_{-\rho}^{\rho}
+        \frac{dz}{1 + z^2}
+    \end{align}
+    where the path is along the real line.
+    This line integral is equal to $I$.
+    Now let's draw this thing in the complex plane.
+    Let's look at this integrand.
+    It has poles where this $1+z^2$ vanishes.
+    The denominator vanishes at $z=+i$ and $z=-i$.
+    Right now the fact it has two poles is irrelevant for now.
+    Consider this thing integrated not just along the real line,
+    but back along a big semicircle in the upper half plane.
+
+    Consider
+    \begin{align}
+        \oint \frac{dz}{1 + z^2}
+    \end{align}
+    integrated over the closed contour shown in the figure,
+    which consists of a semicircle over the upper half plane,
+    in addition to the integral over real line.
+
+    This closed line integral we can evaluate using the residue theorem.
+    Even though it has two poles,
+    only $z=+i$ is inside the contour.
+    Let's evalaute it.
+    Close to $z=i$,
+    \begin{align}
+        \frac{1}{1 + z^2} = \frac{1}{(z + i)(z - i)}
+        = \frac{1}{z - 1} \underbrace{\frac{1}{2i}}_{\text{residue}}
+        + \text{analytic function}
+    \end{align}
+    Hence by the residue theorem, the contour integral is
+    \begin{align}
+        \oint \frac{dz}{1 + z^2} &=
+        2\pi i \frac{1}{2i} = \pi.
+    \end{align}
+    We have evaluated this integral not over the real line,
+    but over this closed contour which includes the real line,
+    but also includes the contribution from this big semicircle.
+    I'm going to show you the contribution from the big semicircle vanishes as
+    you take $\rho\to\infty$.
+    And so this closed integral is actually equal to the integral we want.
+    That's going to be the logic here.
+
+    We need to prove the line integral over the semicircle vanishes and then
+    we're done.
+    Let's prove that.
+    \begin{align}
+        \underbrace{\oint \frac{dz}{1 + z^2}}_{\pi} &=
+        \underbrace{\int_{\text{real line}} \frac{dz}{1 + z^2}}_{I}
+        + \underbrace{\int_{\text{semicircle}} \frac{dz}{1 + z^2}}_{?}
+    \end{align}
+    Set $z=\rho e^{i\theta}$.
+    Then consider
+    \begin{align}
+        \int_{\text{semicircle}} \frac{dz}{1 + z^2} &=
+        \int_{0}^{\pi} \frac{i\rho e^{i\theta}}{1 + \rho^2 e^{2i\theta}}\,
+        d\theta
+    \end{align}
+    This has $\rho$ in the numerator and $\rho^2$ in the denominator,
+    this should go to zero as $\rho\to\infty$.
+    But you still have to be careful because it's complex,
+    but you'll see this intuition is correct.
+    It's just going to vanish.
+    \begin{align}
+        \left|
+            \int_{\text{semicircle}} \frac{dz}{1 + z^2}
+        \right|
+        &=
+        \left|
+            \int_{0}^{\pi} \frac{i\rho e^{i\theta}}{1 + \rho^2 e^{2i\theta}}\,
+            d\theta\\
+        \right|
+        &\le
+        \int_{0}^{\pi}
+        \left|
+            \frac{i\rho e^{i\theta}}{1 + \rho^2 e^{2i\theta}}
+        \right|
+        \left|
+            d\theta
+        \right|\\
+        &\le
+        \int_{0}^{\pi}
+        \frac{\rho}{\rho^2} |d\theta|\\
+        &=
+        \frac{\pi}{\rho}\\
+        &\to 0
+    \end{align}
+    as $\rho\to\infty$.
+    So in the end the contribution of this semicircle vanishes.
+\end{proof}
+
+This shows you can do an integral over the real line by doing an integral like
+this with a contour like this.
+This is one of the very standard contours where you have an integral over the
+real line and make it a contour by closing the upper half plane,
+or lower half plane.
+
+\begin{question}
+    What if you took the semicircle in the lower half plane?
+\end{question}
+Everything would work, but you're not going counterclockwise and you have to
+deal with signs.
+It still works though.
+There's more than one way to do these problem.
+Choose the most convenient one.
+As you do more provlems, you'll see.
+I want you guys to convince yourselves that it can be closed in the negative
+half plane and get the same result.
+
+This contour works for this function works for a lot of functions,
+but it also doesn't work for a lot of functions.
+You could have used either up or down in this problem,
+but we're going to look at at problem where you have to use one of them.
+It's actually more common.
+
+\begin{example}
+    Evalaute
+    \begin{align}
+        I = \int_{0}^{\infty} \frac{\cos(z)}{1 + x^2}\,dx
+    \end{align}
+\end{example}
+\begin{proof}[Solution]
+    Notice that it's similar to before.
+    Notice that the integrand is even, so this is equal to
+    \begin{align}
+        I &=
+        \frac{1}{2}\int_{-\infty}^{\infty}
+        \frac{\cos(x)}{1 + x^2}\,dx.
+    \end{align}
+    It's an even function so we can be a bit clever.
+    We want to make this an integral over some line in the complex plane.
+    There's more than one way to do this,
+    but here's the trick.
+    Write $z = \Re e^{iz}$.
+    Then write
+    \begin{align}
+        I &= \re\left\{
+        \frac{1}{2}
+        \int_{-\infty}^{\infty}
+        \frac{e^{iz}}{1 + z^2}\,
+        dz
+        \right\}
+    \end{align}
+    where the integral is over the real line in the complex plane.
+    Now it's beginning to look a lot like the problem we just saw.
+    You have a function integrating over the whole real line.
+    It has singularities at exactly the same points $z=\pm i$.
+    But can we use the same contour?
+
+    The integrand is a bit different.
+    Can we convince ourseves that the contribution from this semicircle
+    vanishes?
+    If it does, then we can use the same contour.
+    It turns out it does vanish.
+
+    Along that big semicircle, $z$ has a real and imaginary part
+    \begin{align}
+        z = \rho_R + i\rho_I
+    \end{align}
+    Unless you're at $+\rho$ or $-\rho$,
+    the imaginary part is infinite.
+    If the imaginary part is positive and infinite,
+    $e^{iz}$ because $e$ raised to minus infinity,
+    so it goes to zero exponentially quickly
+    if you're in the upper half plane.
+    That means this integrand vanishes incredibly quickly in the upper half
+    plane.
+    So we can use exactly the same contour as we used before
+    and use the residue theorem.
+    At the same time,
+    we can't use a contour with a semicricle in the lower half plane,
+    because it blows up incredibly quickly.
+    Last time we had a choice of contours up or down,
+    but here we don't have a choice,
+    at least we don't have that choice,
+    you have to choose to go in the upper half.
+\end{proof}

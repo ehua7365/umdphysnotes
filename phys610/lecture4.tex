@@ -1,0 +1,381 @@
+\section{Laurent Series}
+Let $c_1$ and $c_2$ be two circles centred at $Z_0$.
+Let $f(z)$ be analytic in the region $R$ between the circles.
+Then $f(z)$ can be expressed in a series of the form.
+\begin{align}
+    f(z) =
+    \left[
+        a_0 + a_1(z - z_0) + a_2(z - z_0)^2 + \cdots
+    \right]
+    + \left[
+        \frac{b_1}{z - z_0}
+        + \frac{b_2}{(z - z_0)^2}
+        + \cdots
+    \right]
+\end{align}
+The series converges and represents $f(z)$ in the open annulus obtained from the
+given annulus by continuously increasing the circle $C_1$ and decreasing $C_2$
+until each of the two circles reaches a point where $f(z)$ is singular.
+
+[picture of two annulii]
+
+Note that $f(z)$ just has to be analytic inside the region between the two
+circles,
+but not necessarily outside.
+This series has two parts.
+The first part looks like a Taylor series.
+The second part is different because it has negative powers.
+Both these series have in principle infinitely many terms,
+but they could terminate,
+not that they have to.
+These are the Laurent series.
+I'm not going to prove this,
+but the proof is in the book.
+It's not that difficult.
+If I had time I would prove it, but we don't.
+
+\begin{question}
+    The converse is not true?
+    If you have a function that is represented by this formula is it analytic?
+\end{question}
+Good question I don't know the answer.
+
+\begin{question}
+    Is it just for that region?
+\end{question}
+Yes, it's not guaranteed to work.
+
+$f(z)$ is assumed to be analytic in this region.
+You could keep increasing the size of the outer circle radius
+and at some point you may hit a singularity.
+Putting it in this form is fine,
+and you can similarly keep reducing the size of the inner circle until you
+hit a singularity.
+And that's as far as you can get this formula to work.
+
+This series has a name, \emph{Laurent series}.
+This part is called the \emph{principal part} of the Laurent series.
+\begin{align}
+    \left[
+        \frac{b_1}{z - z_0}
+        + \frac{b_2}{{(z - z_0)}^2}
+        + \cdots
+    \right]
+\end{align}
+It's a standard problem in complex analysis to find the Laurent series of a
+function.
+It's a very standard problem.
+We have to do a few examples of Laurent series.
+
+Formally,
+we can find the coefficients $a_n$ and $b_n$ with
+\begin{align}
+    a_n &=
+    \frac{1}{2\pi i}
+    \oint \frac{f(z)}{ {(z - z_0)}^{n + 1}}\, dz\\
+    b_n &=
+    \frac{1}{2\pi i}
+    \oint \frac{f(z)}{ {(z - z_0)}^{-n + 1}}\, dz
+\end{align}
+This does not quite come from Cauchy theorem,
+but actually this uses this result from the last class
+\begin{align}
+    \oint \frac{dz}{{(z - z_0)}^n}
+    =
+    \begin{cases}
+        2\pi i & \text{if } n = 1\\
+        0 & \text{otherwise}
+    \end{cases}
+\end{align}
+and you can see only one term survives when you multiply by the appropriate
+power of ${(z - z_0)}^n$ and integrate.
+Formally this is the way to find the coefficients,
+but in practice there are easier ways to find the coefficients.
+
+\begin{example}
+    Find the Laurent series of $f(z) = z^2 e^{1/z}$ centred at $z = 0$.
+\end{example}
+\begin{proof}[Solution]
+    Using the expansion
+    \begin{align}
+        e^{z} &=
+        1
+        + z
+        + \frac{z^2}{2!}
+        + \frac{z^3}{3!}
+        + \cdots
+    \end{align}
+    which has an infinite radius of convergence,
+    we can write
+    \begin{align}
+        z^2 e^{1/z}
+        &= z^2\left\{
+            1
+            + \frac{1}{z}
+            + \frac{1}{2!}\left(\frac{1}{z} \right)^2
+            + \frac{1}{3!}\left(\frac{1}{z} \right)^3
+            + \cdots
+        \right\}\\
+        &= z^2 + z + \frac{1}{z} + \frac{1}{3!}\frac{1}{z} + \cdots
+    \end{align}
+    This converges for $|z|>0$.
+\end{proof}
+Let's do another example.
+\begin{example}
+    Find the Laurent series of
+    \begin{align}
+        f(z) = \frac{1}{1 - z^2}
+    \end{align}
+    centred at $z=1$.
+\end{example}
+\begin{proof}[Solution]
+    Before you do any work you should find out where the singularities are.
+    The singular points are $+1$ and $-1$.
+    Notice that we're asked to find the Laurent series at the singular point
+    $z=1$.
+    There will be a Laurent series that is valid inside a circle of radius 2
+    about $z=1$.
+    And then there will be a second Laurent series outside radius 2.
+    So there are two separate Laurent series.
+    If someone tells you to find the Laurent series,
+    you need to find all the Laurent series there are.
+    That's why the first thing to do is stare at it and figure out where the
+    singularities are and thus how many to find.
+
+    You guys suggested breaking into partial fractions like this
+    \begin{align}
+        \frac{1}{1 - z^2}
+        &=
+        \frac{1}{2}\left[
+            \frac{1}{1 + z}
+            + \frac{1}{1 - z}
+        \right]
+    \end{align}
+    Let me tell you why this is not a good idea.
+    This is easier to do
+    \begin{align}
+        \frac{1}{1 - z^2}
+        &= \frac{1}{(1 - z)(1 + z)}
+        = \frac{1}{1 - z}
+        \underbrace{\left\{ \frac{1}{1 + z} \right\}}_{
+            \text{expand about }z=1
+        }.
+    \end{align}
+    So let's write it like this.
+    \begin{align}
+        \frac{1}{1 + z}
+        &= \frac{1}{2 + (z - 1)}\\
+        &= \frac{1}{2}\left\{
+            \frac{1}{1 + \frac{z - 1}{2}}
+        \right\}
+    \end{align}
+    Then we expand using the binomial theorem to get
+    \begin{align}
+        \frac{1}{1 + z}
+        &= \frac{1}{2}\sum_n (-1)^n
+        \left(\frac{z - 1}{2} \right)^n\\
+        &= \sum_n (-1)^n \frac{(z - 1)^n}{2^{n + 1}}
+    \end{align}
+    This series converges if $\left|\frac{z - 1}{2}\right| < 1$,
+    which is $|z - 1|<2$.
+    Hence we have
+    \begin{align}
+        \frac{1}{1 - z^2}
+        &= \left(\frac{-1}{z - 1}\right)
+        \sum_n
+        \frac{(-1)^n}{2^{n + 1}}
+        (z - 1)^n\\
+        &= \sum_{n=0}^{\infty} \frac{(-1)^{n + 1}}{2^{n + 1}}
+        (z - 1)^{n - 1}
+    \end{align}
+    which is the Laurent series for $|z - 1|<2$.
+    Now we need to find the other one for $|z - 1| > 2$.
+    We just need a slightly different binomial expansion.
+    What we do is full out an additional factor of $(z-1)/2$ like this
+    \begin{align}
+        \frac{1}{1 + z} &=
+        \frac{1}{2}\left\{
+            \frac{1}{1 + \left(\frac{z - 1}{2} \right)}
+        \right\}\\
+        &= \frac{1}{2} \frac{1}{\left(\frac{z - 1}{2} \right)}\left\{
+            \frac{1}{\left(\frac{2}{z - 1} + 1 \right)}
+        \right\}\\
+        &= \frac{1}{z - 1} \frac{1}{1 + \left( \frac{2}{z - 1} \right)}\\
+        &= \frac{1}{z - 1}\sum_{n = 0}^{\infty} (-1)^{n}\left(
+        \frac{2}{z - 1}
+        \right)^n \qquad\text{converges if }|z - 1| > 2\\
+        &= \sum_{n=0}^{\infty} (-1)^n \frac{2^n}{(z - 1)^{n+1}}
+    \end{align}
+    Hence the Laurent series for $|z - 1|>2$ is
+    \begin{align}
+        \frac{1}{1 - z^2}
+        &= \sum_{n=0}^{\infty} (-1)^n \frac{2^n}{(z - 1)^{n+2}}
+    \end{align}
+\end{proof}
+You can usually use this binomial trick for rational functions.
+
+Let's do another example.
+\begin{example}
+    Find the Laurent series of
+    \begin{align}
+        f(z) &= \frac{12}{z(2 - z)(1 + z)}
+    \end{align}
+\end{example}
+\begin{proof}[Solution]
+    First thing to do is find the singular points.
+    They are $z=-1$, $z=0$, $z=2$.
+    So we have 2 circles we can draw about $z=0$
+    and 3 regions to evaluate Laurent series on.
+    So we need to get 3 Laurent series.
+
+    If you have a problem like this in the exam,
+    you should draw this picture and say how many Laurent series there are and
+    you will get some easy points.
+    You might make a mistake in the binomial expansion,
+    but at least you'll get some points here.
+
+    For this we actually have to do some work to find the Laurent series.
+    We want expansion in powers of $z$.
+    The $1/z$ is already in the right form, so factorise that out.
+    Then we break it out into partial fractions.
+    \begin{align}
+        f(z) &=
+        \frac{1}{z}\left\{
+            \frac{12}{(2 - z)(1 + z)}
+        \right\}\\
+        &= \frac{4}{z}\left\{
+            \frac{1}{2 - z}
+            + \frac{1}{1 + z}
+        \right\}
+    \end{align}
+    so now we have broken it up into partial fractions.
+    Notice each term looks like what we had before,
+    so we can keep them separate and then add.
+    Let's first find the Laurent series for the region $|z|<1$,
+    where we expand binomially.
+    Note the geometric series
+    \begin{align}
+        \frac{1}{1 - z} = 1 + z + z^2 + \cdots \qquad
+        \text{for }|z| < 1
+    \end{align}
+    is a special case of the binomial expansion.
+    It's useful to know the more general form.
+    Anyway,
+    \begin{align}
+        \frac{1}{1 + z} =
+        \sum_{n=0}^{\infty}(-1)^n z^n
+    \end{align}
+    and
+    \begin{align}
+        \frac{1}{2 - z} &=
+        \frac{1}{2} \frac{1}{1 - \frac{z}{2}}\\
+        &= \frac{1}{2}\sum_{n=0}^{\infty}\left( \frac{z}{2} \right)^n\\
+        &= \sum_{n=0}^{\infty}\frac{z^n}{2^{n + 1}}.
+    \end{align}
+    Then for $|z|<1$, the Laurent series is
+    \begin{align}
+        f(z) &= \frac{4}{z}\left\{
+            \sum_{n=0}^{\infty}(-1)^n
+            + \sum_{n=0}^{\infty} \frac{z^n}{2^{n + 1}}
+        \right\}\\
+        &= \frac{6}{z} - 3 + \frac{9}{2}z - \frac{15}{4} z^2 + \cdots.
+    \end{align}
+    We could find the Laurent series in the intermediate region,
+    but I like to find the center region first,
+    then the outer-most region second,
+    and then the intermediate regions last.
+    You'll see why in a minute.
+
+    For $|z|>2$,
+    use the binomial expansion once again.
+    \begin{align}
+        \frac{1}{1 + z} &=
+        \frac{1}{z} \frac{1}{1 + \frac{1}{z}}\\
+        &= \frac{1}{z} \sum_{n=0}^{\infty} (-1)^n \left(
+        \frac{1}{z}
+        \right)^n\\
+        &= \sum_{n=0}^{\infty}(-1)^{n} \frac{1}{z^{n+1}}.
+    \end{align}
+    which is valid for $|z| > 1$.
+    Then for the other term
+    \begin{align}
+        \frac{1}{2 - z} &=
+        \frac{1}{z} \frac{-1}{1 - \frac{2}{z}}\\
+        &= -\frac{1}{z}\left\{
+        \sum_{n=0}^{\infty}\left(\frac{2}{z} \right)^n
+        \right\}\\
+        &= -\sum_{n=0}^{\infty}\frac{2^n}{z^{n+1}}
+    \end{align}
+    which is valid for $|z|>2$.
+    Putting the pieces together,
+    \begin{align}
+        f(z) &=
+        \frac{4}{z}j\left\{ 
+        \sum_{n=0}^{\infty} \frac{-2^{n}}{z^{n+1}}
+        + \frac{(-1)^n}{z^{n+1}}
+        \right\}\\
+        &= -\frac{12}{z} - \frac{12}{z^4} - \frac{36}{z^5} -
+        \frac{60}{z^6} + \cdots
+    \end{align}
+    which is the Laurent series for $|z|>2$.
+
+    There's one Laurent series left in the middle.
+    The reason I left is the following.
+    The binomial expansion is what is different.
+    We can no longer use the expansion $1/(1 - 2/z)=\sum_{n=0}^n(2/z)^n$,
+    but we did have a similar expansion for $1/(1 - z/2)$ that is valid for
+    $|z|<2$, which we have previously computed.
+    That is why I left it till last, 
+    so we can just reuse the binomial expansion for the $1/(2 - z)$ term
+    \begin{align}
+        \frac{1}{2 - z} &= \sum_{n=0}^{\infty}\frac{z^n}{2^{n+1}}.
+    \end{align}
+    for $|z|<2$.
+    So then
+    \begin{align}
+        f(z) &= \frac{4}{z}\sum_{n=0}^{\infty}\left\{
+            (-1)^n \frac{1}{z^{n+1}}
+            + \frac{z^n}{2^{n+1}}
+        \right\}\\
+        &= \left(
+            1 + \frac{z}{2} + \frac{z^2}{4} + \frac{z^3}{8}
+        \right)
+        + \frac{2}{z}
+        + \left(
+        \frac{4}{z^2} - \frac{4}{z^3} + \frac{4}{z^4} - \cdots
+        \right)
+    \end{align}
+    which is the Laurent series for $1 < |z| < 2$.
+\end{proof}
+
+Now time for some definitions.
+\begin{definition}[analytic, regular point]
+    If all the $b_n$ are zero in the Laurent expansion that is valid close to
+    the center $z_0$,
+    then $f(z)$ is \emph{analytic} at $z_0$
+    and $z_0$ is a \emph{regular point}
+\end{definition}
+If it's analytic at $z_0$,
+thep principal part of the Laurent series will vanish
+and it will just be a Taylor series.
+\begin{definition}[pole]
+    If $b_n\ne 0$,
+    but all the $b$'s after $b_n$ are zero,
+    then $f(z)$ is said to have a \emph{pole of order} $n$.
+    If $n=1$,
+    we say $f(z)$ has a \emph{simple pole} at $z=z_0$.
+\end{definition}
+These are just definitions.
+
+\begin{definition}[essential singularity]
+    If an infinite number of $b$'s are non-zero,
+    we say that $f(z)$ has an \emph{essential singularity}
+    at $z=z_0$.
+\end{definition}
+
+\begin{definition}[residue]
+    The coefficient $b_1$ of $\frac{1}{z - z_0}$ is called the
+    \emph{residue} of $f(z)$ at $z=z_0$.
+\end{definition}
+
+You should look at the examples to see if it was an essential or not.
