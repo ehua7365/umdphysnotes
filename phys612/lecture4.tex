@@ -1,0 +1,254 @@
+\section{Change of Basis}
+If you get lost just \emph{insert the identity}.
+Matrix multiplication works like this.
+\begin{align}
+    \bra{n}AB\ket{m} &=
+    \bra{n} A \mathbf{1} B \ket{m}\\
+    &= \sum_i \bra{n}A\ket{i} \bra{i} B\ket{m}\\
+    &= \sum_i A_{ni} B_{im}
+\end{align}
+To change basis from $\{\ket{n}\}$ to $\{\ket{\tilde{n}}\}$
+just insert the identity.
+\begin{align}
+    \ket{\psi} &=
+    \sum_n \underbrace{\braket{n}{\psi}}_{\psi_n}\ket{n}\\
+    &= \sum_n \underbrace{\braket{\tilde{n}}{\psi}}_{\tilde{\psi}_n}
+    \ket{\tilde{n}}\\
+    &= \sum_n
+    \underbrace{\braket{\tilde{n}}{\psi}}_{\tilde{\psi}_n}
+    \underbrace{\braket{m}{\tilde{n}}}_{U_{mn}}\\
+    &= \sum_n \sum_m U_{mn} \tilde{\psi}_n \ket{m}
+\end{align}
+The result I get is the following.
+\begin{align}
+    \psi_n &= 
+    \underbrace{U_{mn}}_{\braket{m}{\tilde{n}}}
+    \tilde{\psi}_m
+\end{align}
+Also
+\begin{align}
+    \underbrace{\braket{\phi}{n}}_{\varphi_n^*}
+    = \sum_n
+    \underbrace{\braket{\phi}{\tilde{n}'}}_{
+    U_{nn'}^* = (U^\dagger)_{n'n}
+    }
+    = \sum_{n'} \tilde{\phi}_{n'}^* U^\dagger_{n'n}
+\end{align}
+Let's do an example.
+\begin{example}
+    Consider functions f(x) on the real line.
+    The basis of delta functions is
+    $\{\delta(x - x_0)\text{ for all }x_0 \}$.
+    The basis of plane waves is
+    $\left\{\frac{e^{ikx}}{\sqrt{2\pi}}\text{ for all } k \right\}$.
+    Do a change of basis.
+\end{example}
+\begin{proof}[Solution]
+    Insert the identity
+    \begin{align}
+        \underbrace{\braket{k}{\psi}}_{\mathcal{F}[\psi](k)} =
+        \int_{-\infty}^{\infty}dx\,
+        \braket{k}{x}
+        \braket{x}{\psi}
+    \end{align}
+    where
+    \begin{align}
+        \braket{k}{x} &=
+        \int_{-\infty}^{\infty} dy \frac{e^{-iky}}{\sqrt{2\pi}}\delta(y - x)\\
+        &=
+    \end{align}
+\end{proof}
+
+\subsection{Eigenthings and Diagonalisation}
+Sometimes, if I have the right $\ket{\psi}$ for an operator $A$,
+I can get
+\begin{align}
+    A\ket{\psi} = \lambda\ket{\psi}.
+\end{align}
+This has a special name.
+$\ket{\psi}$ is called the eivenvector with eigenvalue $\lambda$.
+
+Let's do an example.
+Suppose I rotate my phone.
+Then I rotate it.
+What's the eigenvector?
+It's the axis of rotation.
+What about the eigenvalue?
+It's 1 because it doesn't change.
+
+Suppose I stretch my phone along an axis.
+What are the eigenvectors?
+There are three of them.
+Along the axis is an eigenvector, with eigenvalue the scale factor.
+The other two are perpendicular, with eigenvalues 1, they are degenerate.
+
+In 2D rotation there are no eigenvectors.
+
+One way of thinking about the plane is a two-dimensional real space.
+Then no eigenvalues.
+
+But I can think of it as a one-dimensional complex space,
+then multiplying by $i$ is a rotation.
+And then I have eigenvalues.
+
+I want to build intuition.
+
+\begin{example}
+    Consider the operator $\ket{\phi}\bra{\phi}$.
+\end{example}
+\begin{proof}[Solution]
+    $\ket{\phi}$ is obviously an eigenvector with eigenvalue 1.
+    Any other orthogonal vector is also an eigenvector,
+    but with eigenvalue 0.
+\end{proof}
+
+\begin{example}
+    Off diagonal $A=\sum_{n=1}^{N}\ket{n + 1}\bra{n} + \ket{1}\bra{N}$.
+\end{example}
+\begin{proof}[Solution]
+    This is an eigenvector
+    \begin{align}
+        \ket{1} + \ket{2} + \cdots + \ket{N}
+    \end{align}
+\end{proof}
+It has no importance, just practise.
+
+\subsection{Spectral theorem}
+You see spectral lines from the energy levels of atoms.
+That's why it's called the spectral theorem.
+\begin{theorem}
+    Suppose $A$ is hermitian.
+    If $A\ket{a} = a\ket{a}$,
+    then
+    \begin{enumerate}
+        \item The $a$'s are all real,
+        \item (orthonormality) The eigenvectors $\ket{a}$ can be chosen to be
+            orthonormal
+            $\braket{a}{b} = \delta_{ab}$,
+        \item (completeness) The $a$'s form a complete basis and make a
+            resolution of the identity
+            $\sum_a \ket{a}\bra{a} = 1$.
+    \end{enumerate}
+\end{theorem}
+\begin{proof}
+    Let's see how I can prove it's real.
+    It's very simple.
+    Start from the definition
+    $A\ket{a} = a\ket{a}$.
+    Then take
+    $\bra{a}A\ket{a} = \bra{a}a\ket{a} = a\braket{a}{a}$
+    and since it's a linear operation and $\braket{a}{a}$ is real,
+    But since it's hermitian,
+    $\bra{a}A\ket{a} = \bra{a}A\ket{a}^*$,
+    which means it's real,
+    so $a$ is real.
+
+    To prove orthonormality is slightly more complicated.
+    Suppose we have
+    $A\ket{a} = a\ket{a}$
+    and
+    $A\ket{b} = b\ket{b}$
+    then take
+    $\bra{b}A\ket{a} = \bra{b}a\ket{a} = a\braket{b}{a}$
+    and
+    $\bra{a}A\ket{b} = \bra{a}b\ket{b} = b \braket{a}{b}$.
+    Note that $\braket{a}{b} = \braket{b}{a}^*$.
+    From this,
+    if $a\ne b$,
+    then of course
+    $\braket{a}{b}=0$.
+    But if $a=b$,
+    they are not necessarily orthogonal.
+    The theorem says that we can then choose them to be orthogonal,
+    which is obvious.
+
+    The final one is a bit more difficult to prove.
+    For finite $N$,
+    we want to show
+    \begin{align}
+        \sum_{a=1}^{N}\ket{a}\bra{a} = \mathbf{1}.
+    \end{align}
+    Then
+    \begin{align}
+        (A - a\mathbf{1})\ket{a}
+    \end{align}
+    which implies that
+    \begin{align}
+        \det(A - a\mathbf{1}) = 0.
+    \end{align}
+    The determinant is a polynomial in $a$ of degree $N$.
+    The values of $a$ for which the polynomial is zero is $a$.
+    A degree-$N$ polynomial is going to have $N$ zeros,
+    and so we should have $N$ eigenvalues.
+    I know they are linearly independent from one another.
+
+    But what if $N$ is not finite?
+    Or worst continuous?
+    That's not something I cannot prove to you.
+    We haven't defined things well enough,
+    whether the functions are square integrable,
+    or whatever.
+    I'll have to make every statement precise,
+    and we're not doing physics anymore.
+\end{proof}
+
+If I see a hunk of metal,
+it's a hunk of metal,
+so we don't care if it's an infinitely differentiable function or a discrete
+system.
+It doesn't help me in the lab.
+The notes have more examples you may find useful.
+
+\begin{example}
+    Consider the Hilbert space that is the set of real functions of one variable
+    $f(x)$.
+    We have this basis
+    \begin{align}
+        \left\{\frac{e^{ikx}}{\sqrt{2\pi}}\text{ for all }k\right\}
+    \end{align}.
+    The operator $-i\frac{d}{dx}$ is a Hermitian operator and these basis
+    functions are its eigenvectors.
+    You may recognise this as the momentum operator.
+    The eigenvalue equation is
+    \begin{align}
+        -i \frac{d}{dx} f(x) = \lambda f(x)
+    \end{align}
+    where if you use
+    $f_k(x) = e^{ikx}$
+    it is satisfied.
+    You can instantly recognise that $\lambda = k$.
+    But this is not normalized,
+    so you have to use
+    $f_k(x) = e^{ikx}/\sqrt{2\pi}$.
+\end{example}
+By the way, the real momentum operator has a $\hbar$ in it like
+$\hat{p} = -i\hbar d/dx$
+and the functions should be like
+\begin{align}
+    f_k(x) =
+    \frac{e^{ikx/\hbar}}{\sqrt{2\pi}}
+\end{align}
+and $\lambda = \hbar k$.
+
+Let's do another example.
+\begin{example}
+    Consider the space of functions $f(x)$ again.
+    Then consider the operator
+    \begin{align}
+        H &=
+        - \frac{\hbar^2}{2m} \frac{\partial}{\partial x}
+        + \frac{m\omega^2}{2}x^2
+    \end{align}
+\end{example}
+\begin{proof}[Solution]
+    The eigenvalues are
+    \begin{align}
+        \lambda_n &=
+        \hbar\omega\left( n + \frac{1}{2} \right)
+    \end{align}
+    for $n=0,1,\ldots$ and the eigen functions are
+    \begin{align}
+        \psi_n(x) = \cdots H_n(\cdots x) e^{\cdots -x^2}
+    \end{align}
+    which you can look up on Wikipedia.
+\end{proof}
