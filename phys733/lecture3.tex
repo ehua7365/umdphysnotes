@@ -1,0 +1,490 @@
+\section{Quantum Phases of Gapped Hamiltonians}
+Revision.
+There are two definitions of phase.
+
+The first one is this:
+$H_1$, $H_2$ are in the same quantum ($T=0$) phase of matter
+if and only if
+we have a continuous parameter $\lambda$ and a path connecting them such that
+$H(\lambda)$ stays open.
+
+The second definition is the traditional thermodynamics definition.
+$H_1$ and $H_2$ are in the same phase if and only if
+there is a path $H(\lambda)$ such that
+\begin{align}
+    \lim_{N\to\infty} \frac{E(\lambda)}{N}
+\end{align}
+is smooth.
+
+The third definition is this:
+$H_1$ and $H_2$ are the same phase if and only if
+there is a path $H(\lambda)$
+with ground states $\ket{\psi_i(\lambda)}$
+such that the ground state expectation value
+${\langle\mathcal{O}\rangle}_{\lambda}$
+is a smooth function of $\lambda$ for every local operator $\mathcal{O}$.
+
+Some remarks:
+\begin{itemize}
+    \item We will use (1)
+    \item (2) is the usual thermodynamic definition in terms of free energy
+        density.
+    \item (2) and (3) apply for gapless systems.
+\end{itemize}
+
+There is a conjecture.
+\begin{conjecture}
+    If $H(\lambda)$ remains gapped,
+    then ${\langle\mathcal{O}\rangle}_{\lambda}$
+    is a smooth function of $\lambda$.
+\end{conjecture}
+This implies that if two phases are the same according to (1)
+then they are also different according to (3).
+
+\section{Constant Depth Circuits}
+You can have two states in the same phase
+but they might not be related by a constant depth local circuit.
+
+We have a bunch of local gates that act on our qubits.
+Local quantum circuit is a circuit where each layer has gates with finite
+support locally.
+It is a composition of these layers.
+Constant depth means that the number of layers is less than a constant as the
+size goes to infinity.
+
+Let $U$ be a constant depth local unitary circuit.
+If $\ket{\psi}$ is the ground state of some Hamiltonian $H$,
+then $U\ket{\psi}$ is in the same phase.
+
+However, it is not true that if I have two states $\ket{\psi_1}$ and
+$\ket{\psi_2}$ 
+then $\ket{\psi_1} = U\ket{\psi_2}$.
+
+An example of this is the following.
+Suppose $\ket{\psi_1}$ is a product state.
+The correlations must be exactly zero beyond a certain range,
+because it cannot create correlations beyond a certain distance $\xi$ in space
+that has to do with the gates and range.
+
+If you have one state which is a trivial phase of matter
+but correlations have exponentially decaying tails,
+you cannot go to one with $U$.
+
+You can fix this by allowing the notaries have tails,
+but then it's tricky
+and I've never seen anyone made this work.
+It's not that useful.
+If only useful to show two states are in the same state.
+
+If you allow logarithmic depth,
+you can connect states that are in different phases
+and that's too much.
+
+One hope would be to give up the fact you want it to be exactly
+$\ket{\psi_1} = U\ket{\psi_2}$
+and make it constant error instead.
+
+In particular,
+if you have a gapped ground state $\ket{\psi_1}$
+and this unitary circuit $U$,
+then there should be an adiabatic path between the Hamiltonians,
+and you should be able to construct that unitary path
+given this circuit.
+
+One more point is that you can add symmetry to the problem.
+If you assume the problem has symmetry,
+then you must make sure that whole path respects the symmetry.
+For example,
+quantum hall phases have paths that are sometimes incompatible with
+time-reversal symmetry.
+
+When you add symmetry,
+you end up splitting into many phases that cannot be connected by
+symmetry-respecting paths.
+
+\section{Topology in Gapped Ground States}
+Now let's connect this to the mathematical structure of TQFT.
+
+Here is some gapped phase of matter,
+but where is the topology?
+
+The properties robust to arbitrary perturbations.
+
+Universal properties that distinguish different phases are usually characterised
+by TQFTs.
+On the one hand,
+I can think of gapped quantum phases of matter.
+The idea is that as far as we know, although there's no proof,
+these are in one-to-one correspondence with deformation classes of TQFTs.
+
+This statement as I said it is not quite right,
+depending on how you define TQFT.
+We believe this is true in $1+1$ and $2+1$ spacetime dimensions,
+but in higher dimensions,
+you could have more complicated things happening.
+
+Topological liquids are interesting.
+There is the space of all gapped phases of matter.
+Then inside this space,
+there are topological liquids
+which have one-to-one correspondence with deformation classes of TQFTs.
+Whereas gapped phases for $D\ge 3 + 1$,
+we're not really sure,
+but we thin they are in one-to-one correspondence with
+deformation classes of TQFTs with \emph{defect networks}.
+
+The mathematical structure TQFT has a log of topology.
+They essentially classify gapped phases of matter with some caveats.
+TQFTs may come with continuous parameters.
+You have to be really careful what these objects are.
+
+\begin{question}
+    What are deformation classes?
+\end{question}
+A TQFT $\mathcal{T}_\lambda$ can be split up into spaces and points.
+You could have some theory $\mathcal{T}^1_\lambda$ for some continuous parameter
+$\lambda$,
+you could have another one $\mathcal{T}^2_\lambda$
+and then you have some which are just points $\mathcal{T}^3_\lambda$, etc.
+
+That there are TQFTs without lattice descriptions,
+some TQFTs do not have an exact lattice description.
+Every TQFT useful for gapped phases of matter
+can arise from some microscopic description on a lattice.
+It might not be exactly solvable.
+
+The rough intuition is that if you want to define TQFTs,
+you want to make sure all quantities that come up are
+topological invariants.
+If you use triangulation of the space you're describing,
+it should be independent of the triangulation.
+Some gapped phases of matter require you to specify some microscopic geometry,
+and you can't avoid it.
+
+There's nothing outside of topological liquids outside of 1 and 2 spatial
+dimensions,
+but in 3 dimensions it's weird and clever.
+
+\section{Topological Quantum Field Theory Basics}
+I want to give you the plain vanilla version.
+The discussion is abstract and mathematical,
+but it's worth doing before moving into examples.
+
+I want to tell you some basics of TQFTs.
+I want to talk about ``plain'' TQFT,
+but there are additives like oriented and unitary.
+I will tell you the plain TQFT and then soup it up.
+
+TQFT is this really amazing and intricate math structure that \emph{emerges} out
+of some messy quantum many-body system with an energy gap.
+It's not obvious why it should emerge from a gapped quantum many-body system.
+
+To me, it's an absolutely amazing and profound thing.
+You can have something so mathematically rich just emerge from some quantum
+many-body system.
+What I'm going to discuss are the \emph{Atiyah's axioms}.
+Atiyah is one of the foremost mathematicians of the century
+who died recently.
+When discussing with Witten,
+Atiyah saw what Witten was doing and axiomised it.
+So it listed some axioms TQFTs should satisfy.
+So it is an axiomatic framework that describes TQFTs.
+One interesting aspect is that it is a way of defining a restricted class of
+QFTs in a rigorous fashion.
+In QFT, you have problems with lattice discretisation and perturbation theory.
+But TQFT can be mathematically rigorously defined and used in physics,
+so it's beautiful common ground.
+
+These Atiyah axioms are related to some other axioms proposed at around the same
+time, including those by Segal,
+who was trying to define 2D \emph{conformal field theory} axioms,
+which has a lot more structure that TQFTs.
+
+These are useful for eventually giving a rigorous definition of quantum field
+theory.
+A few months ago there was an article in Quanta magazine about the mathematical
+problem of defining QFT.\@
+How do you define a QFT,
+no one really knows.
+TQFT might be useful.
+
+\begin{question}
+    What's the problem with QFT?\@
+\end{question}
+We know how to rigorously define free field theory.
+We know how to rigorously define perturbation theory of free field theory.
+There was this whole program of axiomatic quantum field theory in the late 20th
+century that never became useful and cannot capture what we know.
+We can't understand 2D CFT from the ideas that we had.
+You need a whole new set of tools,
+like operators algebras, a complicated story.
+You can rigorously define some aspects of simple QFTs
+but people are after something more broad
+that can explain all the things we know about all the QFTs we know.
+
+I'm not going to say anything mathematically complicated.
+Feel free to say if you don't understand some mathematical terminology,
+don't be shy.
+
+There's an abstract definition of plain vanilla TQFT.
+\begin{definition}
+    A $(d+1)$-dimensional TQFT is is a symmetric monoidal functor
+    between two categories $\mathcal{F}: \mathrm{Cob}_{d + 1}\to \mathrm{Vec}$.
+\end{definition}
+
+$\Cob_{d + 1}$ is a tensor category of $(d + 1)$-dimensional cobordisms.
+
+A \emph{category} is a mathematical structure that consists of objects
+and \emph{morphisms} between objects.
+At a naive level,
+it's a set of objects and arrows between objects called morphisms.
+And this is a 1-category.
+In our case,
+objects of $\Cob_{d + 1}$ are $d$-dimensional closed manifolds
+and a morphism between two objects,
+which are $d$-dimensional manifolds,
+say from $\Sigma_1^d\to\Sigma_2^d$,
+is a $(d+1)$-dimensional manifold $M^{d+1}$
+such that its boundaries are $\Sigma_1^d$ and $\Sigma_2^d$,
+i.e.
+$\partial M^{d + 1} = \Sigma_1^d\sqcup \bar{\Sigma}_2^d$.
+
+Let's do an example $\Sigma_2 = S^1$, which is a circle
+and we have a cobordism to $\Sigma_1 = S^1\sqcup S^1$.
+A morphism looks like this
+[picture of pair of pants]
+The manifold $M^{d+1}$ is called a (co)-bordism
+from $\Sigma_1^d$ to $\Sigma_2^d$.
+Bord means boundary in French.
+The point is that if you hae two manifolds,
+and if you can go from one another in a highr-dimensional manifold,
+then that's a bordism, sometimes called a co-bordism.
+
+\begin{question}
+    So there's nothing differnt betwen cobordism and bodirsm?
+\end{question}
+Two words for the same hting,
+but in some cnotexts,
+they'll call maps from this into $U(1)$ as a cobordism.
+Mahtematicians do yuse oth interchangably.
+
+\begin{question}
+    Can you go other that such that clause?
+    What is $\sqcup$?
+\end{question}
+Objects of this category are $d$-dimensiona closed manifiolds.
+A morphism is a way to gor from one objcet toa nother.
+A cobordism is a $d+1$-dimeisional manifold with boundaries that are the
+objects.
+It's disjoint union.
+
+\begin{question}
+    Category of sets, category of topological sets.
+    Weird notation?
+\end{question}
+Objects of Vec are vector spaces and the morphisms are maps betwene vector
+spaces, so it is a bit weird.
+
+\begin{question}
+    Are there some topological properties?
+\end{question}
+If two manifolds are bordred with each other,
+it just means they're boundaries of some higher-dimesional manifold,
+but that's about it.
+
+\begin{question}
+    Are two manifolds always connected by a $(d+1)$-dimensional manifolds?
+\end{question}
+No, there's a cobordism group notion,
+group by equivalence classes based on whether there is a cobordism betwen them.
+
+Every 2D manifold is related to every 2D manifold,
+so that's trivial,
+but it's not true in higher-dimensional space.
+
+\begin{question}
+    What are the points in between?
+\end{question}
+A morphism here is this higher dimensional manifold.
+
+For every object, there may or may not be a morphism between them.
+
+It's more than a map.
+The TQFT gives a map, but $\mathrm{Cob}_{d+1}$ is the whole manifold.
+
+
+\begin{question}
+    What is a tensor category?
+\end{question}
+I'll come back to that.
+
+\begin{question}
+    What is they're not circles but spheres?
+    What does that look like?
+\end{question}
+You want me to draw in 4D?\@
+
+You have $\Sigma_1^2 = S^2 \sqcup S^2$ and
+$\Sigma_2^2=S^2$.
+Then the bordism is
+$M^3 = B^3\sqcup (S^2\times I)$
+and the boundary is
+$\partial M^3 = S^2 \sqcup (S^2 \times S^2)$
+
+\begin{question}
+    Does the cobordism have to be connected?
+\end{question}
+No, it doesn't have to connected.
+There are many possible morphisms between objects.
+
+\begin{question}
+    Can you give an example of what these objects are physically?
+\end{question}
+To some extent I can,
+but it's related to why a miracle TQFT emerges out of a system.
+II haven't gotten there yet.
+I can define stuff on all kinds of spacetime manifolds.
+I'm going to define stuff for eveyr $(d+1)$-dimensional spacetime manifodls.
+But Condensed matter systmes don't have spacetime,
+only time and space the system lives on.
+It's hard to give examples which use all this technology irght now.
+But a simple example is this.
+Actually, hold that question until I get further.
+Let me define a few things about it and then I'll try to address your question.
+
+
+The next thing is the tensor category.
+Tensor means there's a notion of a tensor product here.
+There is a tensor product betwene objects
+$\Sigma_1\otimes\Sigma_2$.
+I need to give a meaning for tensor product,
+which I say is just the disjoint union.
+$\Sigma_1 \otimes \Sigma_2 := \Sigma_1 \sqcup \Sigma_2$.
+Now I need to define $\mathrm{Vec}$, which is a tensor category.
+Objects are finite-dimensional vector spaces of $\mathbb{C}$.
+Morphisms are linear maps between vector spaces.
+
+In our case,
+because we're doing \emph{unitary} TQFT,
+we want these linear maps to be unitary maps.
+Actually, no unitary for now, we'll add it later.
+The tensor aspect should be obvious.
+The tensor product is just the tensor product of vector spaces.
+
+A functor is just a map between categories.
+For every object on the left side,
+I have an object on the right side.
+And for every morphism on the left I have on on the right.
+Monoidal means it respects the tensor product on the left and right side.
+Symmetric means it applies the same on each side.
+
+What the TQFT is telling is is that
+for every closed $d$-manifold $\Sigma_d$,
+we have a finite-dimensional vector space $V(\Sigma^d)$.
+For every $M^{d+1}$ cobordism between
+$\Sigma_1^d$ and $\Sigma_2^d$,
+we have an unitary linear map
+$Z(M^{d+1}):V(\Sigma_1^d)\to V(\Sigma_2^d)$.
+
+This is the outline of the more abstract definitoin.
+Now I'm going to be more specific about exactly what data the axioms satisfy.
+It's all hidden in this very abstract construction of a symmetric monoidal
+uniatry functor between two categories.
+
+
+
+\begin{question}
+    You can only have unitary vector spaces of the same size?
+\end{question}
+Actually, it should be a linear map,
+only unitary if they are the same dimension.
+That's why you want the manifold to be closed.
+
+\begin{question}
+    Is this always defined for two objects?
+\end{question}
+The tensor product $\Sigma_1\otimes\Sigma_2$ defines for me a single object.
+Then if I have another one
+$\Sigma_1\sqcup\Sigma_2$.
+[pair of pants picture]
+
+Again, let me emphasize,
+it's totally not obvious why something like this should come out of a quantum
+many-body system.
+I have linear maps associated with every $(d+1)$-dimensional bordisms.
+Why should this structure arise?
+It's not obvious.
+
+\begin{question}
+    $V(\Sigma^d)$
+\end{question}
+Every manifold is associated with a vector space.
+You can think of $\Sigma^d$ as an argument.
+For every $\Sigma^d$ you have a different vector space.
+
+\begin{question}
+    Does the dimension of the vector space have something to do with the
+    dimension of the manifold?
+\end{question}
+No.
+
+\begin{question}
+    What is monoidal and symmetric?
+\end{question}
+I can write it down.
+
+Monoidal means that
+$\mathcal{F}(\Sigma_1^d\otimes \Sigma_2^d)
+\simeq
+V(\Sigma_1^d)\otimes V(\Sigma_2^d)$.
+Here $\simeq$ means isomorphic.
+
+Symmetric means that
+$\mathcal{F}(\Sigma_1^d\otimes\Sigma_2^d)\simeq
+\matcal{F}(\Sigma_2^d\otimes\Sigma_1^2)$.
+
+
+\subsection{Defining data}
+Let's define what's the data.
+$V(\Sigma^d)$ is a finite-dimensional vector space.
+There is a path integral or partition function $Z(M^{d+1})$.
+When $M^{d+1}$ is closed,
+then $Z(M^{d+1})\in\mathbb{C}$.
+When $M^{d+1}$ has boundary, then
+$Z(M^{d+1})\in V(\partial M^{d=1})$.
+
+This is an alternative way of thinking about it.
+When $M^{d+1}$ is closed, you have a point,
+but when it has a boundary, you have a state.
+
+\begin{question}
+    If I have a 5D TQFT,
+    can we define a state on $\mathbb{CP}^2$.
+\end{question}
+No path integral will define this.
+But you still have a vector space.
+
+\section{Atiyah's Axioms}
+You could think of this as the data of a TQFT
+and these are the axioms.
+
+\begin{axiom}
+    All manifolds have orientation.
+\end{axiom}
+
+\begin{axiom}
+    $Z$ and $V$ are \emph{functorial} with respect to orientation-preserving
+    diffeomorphisms of $M^{d+1}$ and $\Sigma^d$.
+\end{axiom}
+Let me try to explain what this means.
+
+$M^{d+1}$ had two boundaries,
+and $Z(M^{d+1})$ was thought of as a map.
+
+Actually, we're out of time,
+I'll tell you what this axiom means next time.
+
+\begin{question}
+    What does $V$ mean physically?
+\end{question}
+$V$ is the ground state degeneracy on that manifold.

@@ -1,0 +1,420 @@
+\section{Defining data for Oriented TQFT}
+This is the defining data for $(d + 1)$-dimensional oriented TQFT.
+It Closed $d$-dimensional $\Sigma^d$
+has vector space $V(\Sigma^d)$.
+When $M^{d+1}$ is closed, meaning it has no boundary,
+$Z(M^{d+1})\in\mathbb{C}$ is just a number.
+If $M^{d+1}$ has a boundary,
+then $Z(M^{d+1})\in V(\partial M^{d+1})$.
+This is a state.
+$Z$ is the path integral on the spacetime manifold.
+You can think of it as a wave function over boundary conditions.
+
+These are the axioms.
+All manifolds have orientation.
+
+\begin{enumerate}
+    \item $Z$ and $V$ are functorial with respect to orientation-preserving
+    diffeomorphisms of $M^{d+1}$ and $\Sigma^d$.
+    \item $V$ should be ``involutory'' in the sense that
+    $V(\bar{\Sigma^d}) = V(\Sigma^d)^*$.
+    Here the $*$ means dual vector space.
+    Over bar means hermitian conjugate.
+    \item $Z$ and $V$ should be multiplicative.
+    \item Non-triviality.
+    \item $Z$ is hermitian.
+\end{enumerate}
+
+Let's explain the axioms.
+\begin{axiom}[Axiom 1]
+    Let $f:\Sigma_1^d \to \Sigma_2^d$ be a diffeomorphism.
+    This defines an isomorphism
+    $\mathcal{U}_f: V(\Sigma_1^d)\to V(\Sigma_2^d)$.
+    If we also have $g: \Sigma_2^d \to \Sigma_3^d$,
+    then
+    $\mathcal{U}_g \mathcal{U}_f = \mathcal{U}_{gf}$.
+
+    If $f$ extends to
+    $\tilde{f}: M_1^{d+1}\to M_2^{d+1}$
+    where $\partial M_1 = \Sigma_1$
+    and $\partial M_2 = \Sigma_2$,
+    then
+    $\mathcal{U}_f\left( Z\left( M_1^{d+1} \right) \right)
+    = Z\left( M_2^{d=1} \right)$.
+\end{axiom}
+Suppose we have a diffeomorphism from one circle $\Sigma_1 = S^1$ to another
+circle.
+Then there will be an induced map $\mathcal{U}_f$ from vector spaces between
+then too.
+
+\begin{question}
+    Isn't $Z$ a path integral that is a number?
+    Why is it a vector space?
+\end{question}
+You can think of $Z\left( M_1^{d+1} \right)$
+as a state,
+because like in path integrals you have boundary conditions,
+which are variable.
+
+
+\begin{question}
+    What is a diffeomorphism?
+\end{question}
+A diffeomorphism $f:X_1 \to X_2$ is a smooth and continuous map.
+
+\begin{question}
+    What is a manifold?
+\end{question}
+Manifolds can be broken up into charts $\mathcal{U}_\alpha$
+with coordinate charts $\phi: \mathcal{U}_\alpha\to \mathbb{R}^d$.
+
+\begin{question}
+What is the relation between $\mathcal{U}_{f}$ and
+$\mathcal{U}_{\tilde{f}}$?
+\end{question}
+They are actually the same.
+
+\begin{question}
+    The extension from $f$ to $\tilde{f}$ is not unique?
+\end{question}
+It's not unique.
+
+\begin{question}
+    $\mathcal{U}_f$ acting on the partition function
+    gives the other partition function.
+    This is the sum of all paths.
+\end{question}
+Don't think of it like that.
+This thing is only acting on the partition function.
+Now you're saying $Z$ is the sum of something
+and how does $U_{f}$ act on terms in the sum.
+I'm hesitant to say anything general about that.
+There's no general clean answer.
+Just think of it as an abstract object $Z$
+which gives a state if there is a boundary
+and a number otherwise.
+
+Let's talk about axiom 3.
+Imagine if I build a manifold by gluing simpler manifolds.
+Then I can build my vector spaces by some tensor products and multiplications.
+Recall that $\sqcup$ is the disjoint union.
+Then we can state the axiom.
+\begin{axiom}[Axiom 3]
+    Let
+    \begin{align}
+        V\left( \Sigma_1^d \sqcup \Sigma_2^d  \right)
+        =
+        V\left( \Sigma_1^d \right) \otimes
+        V\left( \Sigma_2^d \right)
+    \end{align}
+    Suppose the boundary is
+    \begin{align}
+        \partial M^{d+1} =
+        \Sigma_1 \sqcup \bar{\Sigma}_2
+    \end{align}.
+    Then
+    \begin{align}
+        Z\left( M_1^{d=1} \right) &\in
+        V\left( \Sigma_1 \right) \otimes V\left( \bar{\Sigma}_2 \right)\\
+        &\simeq V\left( \Sigma_1 \right) \otimes \overbar{V(\Sigma_2)}
+    \end{align}
+    so we can think of $Z\left( M^{d+1}_1 \right)$
+    as a state in
+    $V\left( \Sigma_1 \right)\otimes V\left( \overbar{\Sigma_2} \right)$
+    or as a linear map from
+    $V\left( \Sigma_2 \right)\to V\left( \Sigma_1 \right)$.
+\end{axiom}
+I can think of this as a state in a tensor product of two spaces.
+\begin{align}
+    Z\left( M_1^{d+1} \right)
+    = \sum_{n,m} c_{n,m}
+    \ket{n}_{V(\Sigma_1)}
+    \otimes \ket{m}_{V(\overbar{\Sigma_2})}
+\end{align}
+or you can think of it as
+\begin{align}
+    Z\left( M_1^{d+1} \right)
+    = \sum_{n,m} c_{n,m}
+    \ket{n}_{V(\Sigma_1)}
+    \bra{m}_{V(\overbar{\Sigma_2})}
+\end{align}
+
+\begin{question}
+This only applies when the boundary is a disjoint unioin of two manifolds?
+\end{question}
+You cna always think of the boundary as $\partial M^{d+1}=\Sigma_1 \sqcup
+\emptyset$
+
+\begin{question}
+    Why do we need the complex conjugate?
+\end{question}
+It's a state on $V(\Sigma_1)\otimes V(\ovebar{\Sigma_2})$.
+Actually maybe it shouldn't be there,
+put a question mark there.
+Actually, there should be no complex conjugate.
+
+We can think of the path integral as a state on the vector space
+$V(\Sigma_1)\otimes\overbar{V(\Sigma_2)}$
+or as a map from
+$V(\Sigma_2)\to V(\Sigma_1)$.
+
+I can think of a state as a map from the vector space to the empty manifold.
+I'm just moving pieces around no each side.
+
+It's really nothing more than thinking of it as bras and kets.
+Just think of this as a definition.
+I have a state that lives on a tensor product of two vector spaces.
+I can think of it as an operator from one vector space to another.
+It's really just that simple.
+There's nothing more to that.
+Forget that we called it the path integral.
+You can think of any tensor product state as an operator from one space to
+another.
+
+\begin{question}
+    When you have 3 disjoint components of $\Sigma$,
+    then how do you define orientation?
+    How do you decided which orientation to use?
+\end{question}
+I don't think you need extra information about what the boundary orientation
+looks like.
+If this has + orientation, then are you saying that?
+
+Actually I think there should be a star.
+\begin{align}
+    Z\left( M_1^{d+1} \right)
+    = \sum_{n,m} c_{n,m}^*
+    \ket{n}_{V(\Sigma_1)}
+    \bra{m}_{V(\overbar{\Sigma_2})}
+\end{align}
+We'll come back to this.
+
+The path integral is a state on the boundary.
+
+We've done the multiplicative axiom for $V$.
+We haven't gotten to the muliplicatibe axiom for $Z$ yet.
+We want to glue together $M$s with common boundaries.
+
+Suppose that we have some manifold $M_1$
+and another manifold $M_2$.
+The boundary $\partial M_1 = \Sigma_1 \sqcup \overbar{\Sigma_2}$
+and the boundary
+$\partial M_2 = \Sigma_2 \sqcup \overbar{\Sigma_3}$.
+Then $M=M_1 \cup_{\Sigma_2} M_2$.
+If you think of these $Z$ as linear maps,
+then we just compose the maps.
+\begin{align}
+    Z(M) = Z(M_2)\circ Z(M_1): V(\Sigma_1) \to V(\Sigma_3)
+\end{align}
+or equivalently,
+we can think of $Z(M)$ as the inner product of these two states,
+where the inner product
+\begin{align}
+    Z(M) =
+    {\langle Z(M_1), Z(M_1) \rangle}_{V(\Sigma_2)}
+    \in V(\Sigma_1) \otimes V(\overbar{\Sigma_3})
+\end{align}
+
+\begin{question}
+    The bar just means going counterclockwise right?
+\end{question}
+Yes.
+
+
+Actually there are many ways of glueing manifolds.
+When I identify points together,
+I can actually identify with any points I want.
+So in general we need a gluing map
+$\phi: \Sigma_2 \to \Sigma_2$
+with
+$M = M_1 \cup_\phi M_2$.
+
+I'm going to use Axiom 1
+and this $\phi$ map is going to define a corresponding map
+$\mathcal{U}_\phi: V(\Sigma_2)\to V(\Sigma_2)$
+so
+\begin{align}
+    Z\left( M_1 \cup_\phi M_2 \right)
+    =
+    Z(M_2) \circ \mathcal{U}_\phi \circ Z(M_1).
+\end{align}
+Or equivalently
+$\langle Z(M_2), \mathcal{U}_\phi Z(M_1)\rangle_{V(\Sigma_2)}$.
+$\mathcal{U}_\phi$ is an isomorphism between these two vector spaces.
+
+Closed $M^{d=1}$
+can be obtained by gluing together
+$M_1$, $M_2$ along the their common boundary.
+For example,
+if you wanted to calculate the path integral on a sphere,
+you blue toegether the two on a common boundary.
+
+If you want a torus,
+ou glue
+\begin{align}
+    T^2 = (S_1\otimes I) \union (S^1\times I).
+\end{align}
+
+That was the only non-trivial axiom,
+the rest are pretty simple.
+
+Funnily enough,.
+This is about what happens when we have a non-empty manifold.
+the next axiom is called non-triviality
+
+\begin{axiom}[Axiom 4: non-triviality]
+    Consider a boundary $\Sigma^d = \emptyset$.
+    Then
+    V(\emptyset) = V(\emptyset) \otimes V(\emptyset)
+    and
+    \begin{align}
+        V(\emptyset) =
+        \begin{cases}
+            0 & \text{ordinal}\\
+            \mathbb{C} & 1-dimensional
+        \end{cases}
+        hence we have
+        \begin{align}
+            V(\phi) = \mathbb{C}
+        \end{align}
+    \end{align}
+    If $M^{d+1}$ is closed,
+    $\partial M^{d+1} = \emptyset$,
+    then
+    $Z(M^{d+1}) \in V(\emptyset) \simeq \mathbb{C}$.
+    Consider the case
+    \begin{align}
+        M^{d+1} = \emptyset.
+    \end{align}
+    Then
+    \begin{align}
+        Z(\emptyset) = Z\emptyset) Z(\emptyset)
+    \end{align}
+    which implies
+    \begin{align}
+        Z(\emptyset) =
+        \begin{cases}
+            0 &\\
+            1
+        \end{cases}.
+    \end{align}
+    Take $Z(\emptyset)=1$.
+\end{axiom}
+
+consider $M^{d+1}= \sigma^d \times I$.
+Then
+\begin{align}
+    Z\left( \Sigma^d \times I \right)
+    =
+    \begin{cases}
+        0\\
+        II_{V(\Sigma^d)}
+    \end{cases}
+\end{align}
+Take
+$Z(\Sigma^d\times I) = II_{V(\Sigma^d)}
+= \sum_{n=1}^{\dim(V(\Sigma^d))}
+\ket{n}\bra{n}$
+where $\{\ket{n}\}$ is orthonormal basis in $V(\Sigma^d)$.
+Or,
+\begin{align}
+    Z(\Sigma^d\times I) =
+    \sum_n
+    \ket{n}_{V(\Sigma^d)}
+    \otimes
+    \ket{n}_{V(\Sigma)}^^d.
+\end{align}
+
+The last aximon is simple.
+\begin{axiom}[Hermitian]
+    $Z(\overbar{M^{d+1}}) = Z(M^{d+1})^\dagger$.
+\end{axiom}
+
+\section{Non-trivial consequences}
+\subsection{Homotopy invariance of maps}
+This has some non-trivial consequences.
+Consider $M_1^{d+1}=\Sigma^d\times I$
+and consider $M_2^{d+1}=\Sigma^2\times I$
+with homotopy
+$F: M_1\to M_2$.
+Then
+$\mathcal{F}(\Sigma^d, t)
+= f_t(\Sigma^d)$
+for $f_t: \Sigma_d\to \Sigma^d$.
+This defines a continuous family
+$\mathcal{U}_{f_t}: \Sigma^d\to \Sigma^d$ satisfying
+$\mathcal{U}_{f_t} = \mathcal{U}_{f_{t'}}$.
+
+[diagram here]
+
+If I have a homotopy group with a homotopy of maps.
+
+\subsection{Mapping Class Group}
+That leads us to the important group for a manifold.
+For every manifold, there is a mapping class group $\Sigma^d$.
+Colloquially, it's the group of ``large'' diffeomorphisms.
+You would take all diffeomorphisms and mod out all those that are continuously
+\begin{align}
+    \mathrm{MCG}(\Sigma^d) = \frac{\mathrm{Diff}(\Sigma^d)}{\mathrm{diff}_0(\Sigma^d)}
+\end{align}
+Two diffeomorphisms are equivalent if they can be connected to each other.
+
+This is the group taking all possible diffeomorphisms
+and modding out all the ones equivalent to the identity.
+
+The mapping class group is related to the homotopy group,
+but not the same thing.
+You may not understand this,
+but
+\begin{align}
+    \mathrm{MCG}(\Sigma^d)
+    = \mathrm{out}(\pi_1(\Sigma^d))
+\end{align}
+It's isomorphic to the group of all outer maps between loops.
+An example of such a map that maps a non-trivial loop on an torus
+to the other type of non-trivial loop around the torus.
+
+In TQFT,
+all my maps are smooth.
+If my maps aren't smooth,
+I don't have someting that akes me everywhere from the left to everywhere on the
+righ.
+If I have a smooth map,
+that's what allows me to take vector spaces on the left to vetor space o on the
+right.
+THe only reason I can go from left ot right isbecause $\mathcal{F}$ is a
+difeomrophism.
+
+The punchline is this.
+For each $g\in \mathrm{MCG}(\Sigma^d)$,
+we get some $\mathcal{U}_g: V(\Sigma^d) \to V(\Sigma^d)$.
+If you figure out the $\mathcal{U}_g$,
+you can completely figure out the TQFT.
+These $\mathcal{U}_g$ are very important,
+and can basically characterise the TQFT.
+
+Is this the $S$ and $T$ matrices?
+yes.
+For every element in the MCG  of a torus,
+there is a linear map that acts on the ground state subspace on the system,
+hence the $S$ and $T$ matrices on the subspace.
+Don't worry if you've never heard of it.
+
+Do you have a concise reference to recommend for the last two lectures?
+THere's an article from Atiyah 1988.
+Iyt's basically called TQFT.
+My whole representation is based on this article.
+
+\begin{question}
+    Is it readable?
+\end{question}
+It's as readable as my lectures are understandable.
+If you don't understand my lecture,
+then I'm not sure.
+It's not too bad,
+it doesn't assume you know that much.
+
+We're basically done,
+but there's one more consequence to talk about.
+These TQFTs are very baby versions of TQFTs,
+and in real applications, we need some extra structure.

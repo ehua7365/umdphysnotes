@@ -1,0 +1,502 @@
+\section{Lecture 1}
+The most famous place topology enters physics is in the discussion of
+topological defects in ordered media.
+For example you can have a vortex in a superfluid where a superconductor with an
+order parameter winds in space.
+The winding of some smooth order parameter.
+Just to mention some examples, this would be vortices in superconductors.
+Normal fluids are unordered media.
+There are things called skyrmions in magnets, which if you think of things as
+non-trivial windings along a sphere.
+
+1. You have dislocations and disclinations in crystals and so on.
+
+
+The mathematics that goes into describing this is homotopy theory.
+You have some order, some symmetry that gets broken into some subgroup, then
+it winds in a non-trivial way.
+Mermin, RMP is a good reading.
+
+These defects so far can be treated classically and is a well-trodden topic but
+we're not going to focus on this.
+
+
+Another example is the topological configurations of gauge fields
+(magnetic monopoles) here the maths gets more sophisticated.
+Gauge fields are connections on fibre bundles and fibre bundle has non-trivial
+topology.
+To really understand you need to study the topology of fibre bundles,
+which is is mathematics.
+
+You may have heard monopoles don't exist, like people have been looking for
+magnetic monopoles for a long time, but they do exist in emergent gauge field
+descriptions and you have monopoles of emergent gauge fields and those are
+important.
+They have even been experimentally observed in spin ice.
+You can google to learn more about spin ice.
+
+3.
+Another place is that once you have non-trivial defect configurations like
+solitons, if you have fermions living in your system, like electrons, then the
+spectrumo f hte Hamiton might have zero-eenrgy states bound to the position of
+these defects.
+This subject is called zero modes of solitons and monopoles.
+Here to understand this,
+For example ou could have am assive field whre the mass changes sign.
+
+So you have $x$ space, and $m$ mass of the field. It could go from negative to
+positive, but as you cross zero there is some mode localized that is pinned to
+exactly zero energy.
+Understanding this brings us into the mathematics of index theory.
+
+
+4. Topological band theory.
+This is something the class is going to touch on a lot.
+Here hte idea is that ify ou have a wave or a single particle in aperiodic
+medium, hten thant wave or particle is going to acquire a dispersion relation.
+As a function of momentum $k$ you're going to have enrgy bands $E(k)$.
+Each band can have smoe topological character associated iwth them.
+At each point in momentum space, you have states called Bloch states
+$u_{f,k}(r)$ where $f$ is the band index and $k$ is the momentum.
+As you track how it varies in momentum, that phase winds around in non-trivial
+ways and that gives rise to topolgoical band theory.
+This $u$ defines a vector bundle that can have non-trivial topology.
+I don't expect you to understand what I'm talking about,
+just want ot to give a broad interview.
+
+THe most famous is the TKNN number, also called the \emph{Chern number}
+which is an integer you can assign to every band once you know how to understand
+how it behaves in momentum space.
+This is a striking phenomenon and leads to the integer quanutm Hall efect.
+When you fully fill a band a get a band instlualtion,
+you get an electircal induslator, buti t has a Hall conductance, which si
+atransverse response.
+Iti s exactly quantized $\sigma_H= C e^2/h$.
+$C$ is the Chenr number.
+
+It's just about bands, so it's really something that describes single-particle physics.
+These depict the one-elctonc states, where every electron can fill every
+electron states.
+You fill partilly or fuully any one of these bands.
+
+The maths that describes this is the maths that came up early.
+It's just the topology of figure bundles.
+If you want a full understanding of this subject, you need to understand
+$K$-theory.
+
+Single-particle means the physics of interactions are not included in this
+problem.
+Also index theory shows up in this problem.
+
+Q: What happens if you add interactions?
+
+Sometimes the topological numbers are no longer meaningful if you add
+interactions.
+Then there are some cases where the topological invariant still has meaning with
+interactions, but then we need new ways to describe it.
+It could have different topological quantum numbers identified under
+interactions, there's a possibility there are topological properties with no
+analogues in theband theory too.
+Both can happen.
+
+5. What are all the possible phases of matter?
+Two phases of matter are different if I tune the paramers o the sytem, I cannot
+continuous go from one phase to another wihtout a phase transiton.
+A phase transition is a singularity in the free energy density.
+
+Let's try to classify all phases of matter.
+Immediately when you pose htis question, topolgoy enters.
+Imagine the space of all possible equilibrium systems let's just call it $X$
+which is at all temperatures..
+THey have some spatial dimension $d$ and some symmetyr $G$.
+Imagine tunning the parameters of the system keeping these $d,G$ fixed.
+As you parameters, you might encounter phase transition when the free energy
+necessarily goes through a singularity.
+In this vast space we're trying to imagine, you can remove all subspaces where
+there's a phase transition and that gives us a new space $\tilde{X}$.
+The problem of classifying spaces of matter is the problem of classifying all
+the \emph{connected components} of $\tilde{X}$.
+So the connected components of a space $\pi_0(\tilde{X})$ is called the zeroth
+homotopy space.
+Even the basic question of asking what the phases of matter are is immediate a
+topology question asking for the connected components of a vast space we're
+tyring to imagine.
+
+6. Characterising topological phases of matter.
+Most of this class is about this.
+This class is mainnig about number 4 and 6.
+When you htink about what are difrerntk inds of ordered phases.
+For a lot of the 20th centruy, pepole thought you have symmetries spontaneously
+broken, ask what local order parameters are from $G$ to some subgroup.
+Then ask the effective free energy by expanding in gradients of the order
+parmtere, then describet he long-wavelength properties by looking at smooth
+breaking symmetries.
+So we have the Ginzburg-Landau theory of symmetry breaking.
+This is a powerful theory.
+The heat capacity of a crystal.
+Fluctations of atoms are phonons, then take expansions in the strain field and
+you get it.
+Fluids, magnets, just identify the local order parameter and write a GZ thoery.
+
+In hte 1970s, Wegner studied $\mathbb{Z}_2$ lattice gauage theory.
+
+He showed you can have phases with no local order parameter.
+You need something more subtle.
+This leads us to topological phases of matter.
+In one sentence, a topolgoical phase of matter is the properties of the phase
+canot be signalled by a local order parameter.
+To understand it you need to look at non-local orperats and how they behave in
+the ground state.
+
+Q: Why ground state?
+Good question.
+Implicitly, when I talk about topological phases of matter, I'm talking about
+zero-temperature, whichi shte ground state,
+And also low-energy exciatitons fo the gorudn astate.
+Some phases are distinct at zero-temperature, but at finite temperature the
+distinction may melt away.
+
+In topological phases of matter, the description you need is very intricate, has
+a lot of fascinating mathematical structure, structure that is a more modern
+topic in mathematics, not some 1940s maths we came up with before.
+
+So instead, what you need are topological quantum numbers.
+You insert defects which extend in various directions and dimensions and they
+can have interesting topological properties.
+Ultimately there is a topological quantum field theory that magically emerges
+(TQFT) to describe the universal robust properties of the system.
+The maths that goes into this is a very different kind of math.
+It goes under the name of quantum topology, TQFT and Category Theory.
+These topics are frontiers in pure mathematics as awell.
+
+For me aI ifind it fascinating.
+We have intricate math struytures called TQFTs, and somehow there are phases of
+matter where TQFTs magically arise for describing phases of that system.
+
+Q: IS TQFT is the same sense of GZ theory for long wavelength or is it a
+differnet sense?
+y
+It's a similar sense, but it depends what you eman by similar.
+GZ is useful for dynmiacal porperties and critical exponents.
+TQFT is not useful for understanding dynamics, but it's useful for undestanding
+braiding paritcles, so more like kinematics than dynamics.
+
+
+I'm going to briefly mention a few others.
+
+When you hear peopel talking about topological phases of matter, they're talking
+about topological band thoery or TQFT.
+
+7.Toplogical pumps.
+You have some Hamltoinian that depends on some parmater.
+This hamiltonian could be periodic $H(\tau + T) = H(\tau)$.
+Imagine slowly changing $H$ so that by the around it comes back you're back to
+where it started, but something about the systme has changed.
+As you go through this system, you can pump charge across the system for
+example.
+The most famous is the integer quantum Hall state on the cylinder.
+As you insert flux $\Phi$, flux of $0$ is the same as flux $2\pi$.
+Your wave function will slowly move to the right.
+Byt he time the flux goes to $2\pi$, but htere is a net winding that pumps
+charge from left to right.
+This is called the \emph{Thouless pump}.
+It arises in the study of the integer quantum Hall effect on a cylinder.
+
+Recently, there has been some work where the idea of a toological pump is vastly
+generalised for QFT.
+There's a paper called Anomalies in the couplling constants that abstracts this
+notion.
+
+8. Effective action.
+Your effective action depends on some set of fields, which has topological terms
+in the effective action.
+.
+9. 't Hooft anomaly.
+Every QFT has one.
+This is invertible TQFT, cobordisms and cohomology.
+
+10. 
+Metals have a Fermi surface that separates occupied and unoccupied states.
+That surface can have a topology.
+In a 3D metal, the surface is a closed 2D surface,
+so it could be a sphere, a torus and so on.
+In apritcular, there' s an invariant called the Euler characteristic that
+distinguishes these possibilities.
+THere's a cool paper that says the Euler charctrsic shows up in ballistic
+conductance.
+No disorder, just pure sytem, add contacts, measure conductance, and it turns
+our the euler characteristic turns up in that measurement.
+It's well-knonw in 1D but this paper generalizes that.
+
+11. Early attempt to 
+This is a failed attempt.
+Lord Kelvin and Pepter Tate attempted to think of atoms as knots in the aether.
+Cool idea, because as knot is stable and has a well-defined character.
+But it went down the drain when the discovered there is no aether.
+
+Another places is when we think of world-lines of particles in 3D spacetimes.
+Depending on the topology of knots and links.
+It could depend only on the topological invariance of knots and links.
+It comes in up in 2+1D topological quantum field thoereis.
+
+In higher dimensions, we need membranes, world-volumes and more non-trivial
+kinds of knotting.
+
+That's it for my overview.
+
+Any other ideas?
+
+Studnet: Feynman diagrams planar and non-planer.
+
+I hope the lesson is that topology shows up everywhere.
+The mathematics can be veyr differnet, the actual thing you're tlaking about
+cane very differnt, so you have to clear.
+It's maiing about characterirising toplogical phases of matter using TQFT.
+Many topological phases of matter can be understood simply in terms of
+topological band theory.
+
+
+\subsection{Local quantum systems}
+When startin fof a sstudent learning QM and may=body QM, at some point it may
+occur to you a Hamlitoinin is just a big matrix and why is it differnt ot Linaer
+algebra.
+The fundamental didferencis the concept of locality.
+We're intersted in systems with some notion of locality, often geometry.
+W'ere interested in sum of linear terms.
+Wihtout locality we hayve nothing to say.
+It's locality in a many-body system.
+What are some basic properties local quantum systems have we can demonstrate on
+general grounds.
+
+The first thing is the Hilbert space and hte locla tensor product decomposition.
+We have some quantum ssytme with some hilbert space.
+We're interested in Hilbert spaces that factorize
+\begin{align}
+    \mathcal{H} = \bigotimes_{i=1}^{N}\mahtcal{H}_i
+\end{align}
+where $i$ labels sites on a graph $\Lambda$, for example a lattice.
+A general graph is useful.
+$\mathcal{H}_i$ is the local Hilbert space, which might be finite-dimensional,
+in which case it's isomorphic to $\matbb{C}^k$.
+This could be useful for a spin system for example,
+so spins that can be up or down, 
+or hardcore bosons, I can have bosons with hardcore repulsion.
+Or it could be an infinite-dimensional space like a harmonic oscillator at that
+particular site.
+
+If we have fermions, then this $\mathcal{H}_i$ will be a \emph{graded vector
+space}
+which means we have to specifiy which staes have odd or even fermion numbers.
+And $\mathcal{H}$ is a fermionic Fock space.
+Fermions don't commute, so you have to be careful to take care of the
+non-locality and anti-commutation.
+
+I immediately have a system essentially discrete.
+This is not a continuum system.
+To the extent we're interested in continuum systems,
+we're only interested in long-wavelength approximation.
+It's hard to directly define this tensor product in the continuum,
+not sure what the best way is.
+If you want to do it you wind up in the world of operator algebras.
+
+We'll be interested in continuum systems that have UV completion on $\Lambda$
+iwth $\mathcal{H}$.
+This menas if I go to really small scales, this is what my system actually looks
+like, but if I look at low-wavelneght regimes, this continuum systme is
+sufficient to describe.
+Often we write down fermions in the conituum like quadaratic dispersion or
+llinear band structure.
+These all arise from long-wavelenth approximations of fermions hopping on a
+lattice.y
+That's kind of what we have in mind.
+
+Imporatntly, not all quanutm systmes have UV completion, not all QM systems
+have a tensor product factorsiation.
+
+Q: Any examples?
+
+Yes, not all quanutum systems factorize.c
+An example is pure gauge thoery, like Maxwell theory with no electric charges,
+just electric and magnetic fields.
+There's Gauss law constraint where div is 0.
+Such a pure gauge theory does not have all local tensor product decomposition,
+because there is a constraint that has to be satisfied at every point.
+You could put gauge theory on a lattice to get lattice gauge theory.
+In general you can have constrained quantum systems where the Hilbert space does
+not factorize into such a nice form.
+
+This leads to the question of \emph{emergeability}:
+Which QFTs can arise as long-wavelength approximations to a system that has this
+local tensor-product factorisation.
+For exmaple, there's a lw that all guage thoeries can emerge from such systems
+iwth local tensor factorisations. 
+However, the guage thoery needs to have charges in every representation of the
+guage group.
+There's a notion of completeness for that guage theory to be emergable.
+You can think of this as emergeable from qubits if you like.
+What's a qubit?
+Just a local 2-state system.
+This is just saying my Hilbert space is just a bunch of qubits.
+The questions is whatk ind of QFTs can emerge from qubit models.
+We know some QG models can arise frmo qubit models.
+QG models can arise from super-Yang Mills theory and that can arise from some
+interacting qubit thoeyr.
+
+We don't know how to write the standard mdoel starting from this construction,
+because it has chiral fermions, neutrinos and we don't know how to put that on a
+discrieitsed structure.
+Some people believei t can be done, but no one has figured it out.
+
+So the questions is: How to get standard model of particle physics.
+
+This questions has received attention later with TQFTs and anomalies and it has
+been useful thinking about hits question.
+
+Q: Is there a verison of the tandard model thatl ooksl ike the standard model
+without neutrinos?
+
+Yes you can put QCD on a lattice.
+You can just put EM on a lattice.
+But if you want everything including neutrinos,
+then you have to deal with chirality.
+It's sometimes inpossible to get on a lattice, but sometimes possible but very
+hard.
+
+Q: Cna you do QCD wiht weka force?
+
+The weak force is the issue because it has neutrinos.
+
+THer'es 2 statements: Can you usefully approximate the standard mdoel by
+numerical methods? Yes but it's not honestly done.
+You could do domain-wall construction, with a guage field that leaks ot hihger
+dimensions.
+There are tricks you cna play to get numerics.
+But if want non-perturbative approximations, then no.
+
+The systems that have some chiral fermions are on the bounadries of some
+systems.
+You don't want the guage field to leak out ot higher dimensiosn.
+
+Q: Is there a relation between renormalzabilit and emergeability.
+
+No. Don't know.
+
+Emerge ability is a new word.
+It's natural from a condensed matter perspective.
+If you're big into everything comes from qubits,
+then this is exactly what you're interested in.
+
+Let me define now local Hamiltonian.
+
+Before I do that, we have a graph $\Lambda$.
+We need geometry so we need to define a distnace function dist$(i,j)$
+that is symmetric and satisfies the triangle inequlaity.
+The most useful thing to do do is say the distance between two points is hte
+lenght of hte minimum path.
+
+If you have a set $Z\subset \Lambda$,
+then the diameter of $Z$ is $\mathrm{diam}(Z)=\max_{i,j}\mathrm{dist}(i, j)$.
+Then
+\begin{align}
+    H = \sum_{Z\subset\Lambda} h_Z
+\end{align}
+where each $h_Z$ only has support on $Z$.
+
+We're interested in geometric locality.
+
+Q: Do we need $Z$ to be finite diameter?
+
+Well we're interested in $N\to\infty$.
+I'm not done yet.
+y
+Geometric locality means $|h_Z|$ decays fast enough.
+
+\begin{align}
+    |h_Z| =
+    \begin{case}
+        0 & \text{if }\mathrm{diam}(Z) > k\\
+        C e^{-\mu \mathrm{diam}(Z)}\\
+        (C/\mathrm{diam}(Z))^\alpha
+    \end{case}
+\end{align}
+
+Power laws do occur, but often you have screening which essentially makes it
+exponential.
+
+Q: What is hte norm of an operator?
+\begin{align}
+    |\mathcal{O}| = \max_{\ket{\psi}} |\mathcal{O}\ket{\psi}|
+\end{align}
+If $\mathcal{O}$ is just a matrix acting on some finite-dimensional space, them
+this is the maximuum eigenvalue of $\mathcal{O}$.
+
+It turns out this isn't everything we want in the most general case.
+
+There's something useful to add.
+$\Lambda$ is some general graph,
+but we do not want something with a single site talking to an extensive number
+of sites,
+because that could be pathological.
+What we want is that every site is only involved in a few number of terms in the
+Hamiltonian.
+that's an additional thing.
+
+For each $i$,
+\begin{align}
+    \sum_{X|i\in X} ||h_X|| \le C
+\end{align}
+so a single site cannot be involved in too many terms.
+
+If you're interstedi nin  QEC, you're interested in this too.
+If it's just a regular lattice like a square lattice, this is going to be
+naturally bounded.
+
+It's useful to have in mind that we can relax geometric locality and instead
+just htink about \emph{sparsity}.
+Here we could say that we want each term in the Hamiltonian to have low weight.
+So we say that $||h_Z||\le Ce^{-|Z|\mu}$ where $|Z|$ is hte cardinality of hte
+set.
+We just want it to be a sum of low-weight terms,
+that $H$ only has support over a low number of sites,
+but we don't care where the sites are.
+And we also have
+\begin{align}
+    \sum_{X|i\in X} \le C.
+\end{align}
+
+Sparsity shows up in the Sachdev-Ye-Kitaev model.
+This mdoel is
+\begin{align}
+    H = \sum_{ikl} J_{j,k,l} \gamma_i\gamma_j\gamma_k\gamma_l
+\end{align}
+where the sum is random coupling.
+They're low weight, only 4, but there's no geometric locality.
+This actually faiils that constartin, but there's naother version that does.
+
+
+Anohter example is finite-rate quantum error correcting codes.
+Where you encounter Hamiltonains with no geometric locality,
+but they do have this sparsity term.
+
+Q: SYK have support on 4 sites, how is that not local?
+
+Each term could be a random set of 4 sites.
+I don't care about what's far and close.
+
+Some basic properties about local Hamiltoanins.
+Lee-Robinson bound.
+Even though this is not relativistic,
+there is an effective light cone, where $x=_{LR} t$,
+the correlations will only be appreciatble inside the light code,
+and will decay exponentially outside the light cone.
+So there's a light cone even if there's no relativity.
+This Lee-Robinson bound bounds the spread of information propagation in a local
+system.
+The minute you define local, you can prove htis bound.
+It's extrememly powerful and geenreal.
+
+Gapped Hamiltonian implies finite correlation length.
+
+Q: Where is the syllabus.
+
+Do you know elms.umd.edu.

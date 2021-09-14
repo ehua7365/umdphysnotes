@@ -1,0 +1,521 @@
+\section{2021-09-01 Lecture 2}
+\section{Lieb-Robinson Bounds}
+Lightcone picture.
+Last time
+\begin{align}
+    \| h_X \| &\le C e^{-\mu \mathrm{diam}(X)}\\
+    \sum_{X| i\in X}\| h_X \| &\le \alpha
+\end{align}
+\begin{theorem}[Hastings]
+    Suppose for all sites $i$
+    \begin{align}
+        \sum_{X | i\in X}
+        || h_X ||
+        |X|
+        e^{\mu\mathrm{diam}(X)}
+        \le s \le \infty
+    \end{align}
+    where $\mu$, $s$ are positive constants.
+    Let $\mathcal{O}_X$ and $\mathcal{O}_Y$ be operators
+    supported on sets $X,Y\subset\Lambda$.
+    If $\mathrm{dist}(X, Y) \ge 0$
+    then
+    \begin{align}
+        \|[\mathcal{O}_X(t), \mathcal{O}_Y]\|
+        \le 2 \| \mathcal{O}_X \| \| \mathcal{O}_Y \| |X|
+        e^{-\mu \mathrm{dist}(X, Y)}\left(
+        e^{2s|t|} - 1
+        \right).
+    \end{align}
+\end{theorem}
+Note that the exponential term becomes
+\begin{align}
+    e^{-\mu(\mathrm{dist}(X, Y) - V_{LR}|t|)}
+\end{align}
+becomes exponentially small if $\mathrm{dist}(X, Y) > V_{LR}|t|$
+where $V_{LR}=2s/\mu$.
+
+Consider how an operator $\mathcal{O}_A^l(t)$ over some
+region $A$ evolves over time.
+We're going to trace out everything in $S$, which is the region outside $A$
+offset by some $l$.
+\begin{align}
+    \mathcal{O}_A^l(t) := \frac{1}{\Tr \mathbf{1}}
+    \left[
+        \Tr_S \mathcal{O}_A(t)
+        \right]\itmes \mathbf{1}_S.
+\end{align}
+Then
+\begin{align}
+    \left\|
+        \mathcal{O}_A(t) - \mathcal{O}^l_A(t)
+    \right\|
+    \le
+    C \|\mathcal{O}_A\| |A|
+    e^{-\mu(l - V_{LR}|t|)}
+    \left(
+        1 - e^{-2s|t|}
+    \right).
+\end{align}
+
+The distance between two sets is defined as
+\begin{align}
+    \mathrm{dist}(X, Y) = \min_{i\in X, j\in Y}
+    \mathrm{dist}(i, j)
+\end{align}
+the minimum possible distance.
+It doesn't matter which distance you use so long as it satisfies the assumption.
+
+Note that the existence of some characteristic velocity is not that surprising
+because if you had some simple Hamiltonian
+\begin{align}
+    H = \sum_{\langle i, j \rangle}
+    J_{ij} \vec{S}_i\cdot \vec{S}_j
+\end{align}
+there is a characteristic time scale $\tau = \hbar/J$,
+and hence some velocity scale $v_0 = a/\mathcal{t} = aJ/\hbar$.
+The interesting thing about the LB bound is that it is emergent.
+
+I'm interested in how correlations can propagate in a certain temperature.
+In some states, correlations may propagate at different velocities.
+So this velocity can be temperature and state-dependent.
+
+Hence people define the \emph{butterfly velocity}
+which people define as a temperature-dependent and state-dependent velocity.
+This is a topic of active research.
+Brian Swingle studies this a lot.
+
+This is completely general to local Hamiltonians.
+
+\section{Gapped Hamiltonians}
+Let's specialize and talk about gapped Hamiltonians.
+A gapped Hamiltonian has a spectrum that looks like the following.
+
+I could have multiple degenerate ground states.
+And then I would have a finite gap to all the other excited states.
+We want $\Delta E$ to be finite in the thermodynamic limit.
+This is the limit where $N=|\Lambda|\to\infty$.
+
+It's also useful to think about a family of Hamiltonians that act on
+increasingly larger systems.
+Looking at the sequence of spectra, in the limit, I want there to be a finite
+energy gap and $q$ degenerate ground states.
+The $N\to\infty$ limit is important because every finite size system has finite
+energy gaps and so the notion of gapped versus gapless is only meaningful in the
+infinite limit.
+
+\begin{question}
+    Why is $N\to\infty$ the thermodynamic limit?
+\end{question}
+We're interested in infinitely large lattices.
+We call it thermodynamic limit because in that limit thermodynamics applies.
+
+Once we have a gapped Hamiltonian, we can talk about the important notion of
+\emph{correlation length}.
+If we have a finite energy gap $\Delta E$, by the uncertainty principle,
+this defines a timescale $\Delta t=\hbar/\Delta E$.
+So we have a characteristic time and using the Lieb-Robinson velocity we can
+get a characteristic length scale
+\begin{align}
+    \xi = V_{LR}\Delta\t = \hbar V_{LR}/\Delta E
+\end{align}
+that governs the exponential decay of correlations in a gapped state.
+Of course the interactions must decay exponentially too.
+If interactions decay as a power law correlations will also decay as a power
+law.
+I usually talk about correlations which decay exponentially in space.
+
+A prerequisite for this to be useful is that the interactions must decay
+exponentially.
+It's not only interactions that determine this length scale,
+it could by properties of the graph.
+
+\begin{question}
+    Is it useful to think of it as a thermal wavelength?
+\end{question}
+If I have a finite temperature system, correlations will decay in space and
+time, which may be set by the thermal wave length,
+but here we're at zero temperature.
+
+I'm talking about spatial correlations in the ground state at zero temperature.
+However at finite temperature, there is a length scale dependent on temperature
+that could also be important for decay of correlations.
+They're definitely not the same thing.
+
+If you look at spatial correlations at finite temperature $T$,
+then we have two time scales.
+We have $\hbar\Delta E$ and $\hbar/k_B T$,
+which gives us two length scales
+$V_{LR}\hbar\Delta E$ and $V\hbar/k_B T$,
+Which ever one is smaller is the important one.
+
+
+\begin{question}
+    How to get from the theorem to the correlation length?
+\end{question}
+It's a really non-trivial proof.
+
+Let me state this precisely and that will limit confusion.
+
+The theorem is the following.
+There's been so much activity in this subject in the 2000s,
+mainly from Hastings.
+You'd think it's all established in the 60s with no for improvement,
+but no.
+\begin{theorem}[Hastings-Koma 2006]
+    Let $\mathcal{O}_X,\mathcal{O}_Y$ be bosonic operators
+    on sets $X$, $Y$.
+    That means $[\mathcal{O}_X,\mathcal{O}_Y]=0$ if $\mathrm{dist}(X, Y) > 0$.
+    Assume the system has a unique ground state with a gap $\Delta E$.
+    For all sites $i$, we have
+    \begin{align}
+        \sum_{X| i\in X} \| h_X \| |X| e^{\mu\mathrm{diam}(X)} \le S
+    \end{align}
+    where $\mu,S$ are positive constants.
+    Then the result is that
+    \begin{align}
+        | \langle \mathcal{O}_X \mathcal{O}_Y\rangle
+        - \langle \mathcal{O}_X \rangle\langle \mathcal{O}_Y\rangle
+        | \le
+        C\| \mathcal{O}_X \| \|\mathcal{O}_Y\| e^{-l/\xi}
+    \end{align}
+    where $l=\mathrm{dist}(X, Y)$ and
+    $\xi=\frac{2V_{LR}}{\Delta E} + \frac{1}{\mu}$.
+\end{theorem}
+The $1/\mu$ governs the decay of the interactions themselves.
+Obviously if my interaction decays as $\frac{1}{\mu}$
+then obviously the decays should decay like this too if it's dominant.
+
+\begin{question}
+    Is this a tightening of the Lieb-Robinson bound?
+    There was already a length scale $1/\mu$, but now we have added another term
+    to that length scale in some sense.
+\end{question}
+I don't think it's a tightening because this LR is just really giving a velocity
+rather than length.
+Hastings theorem doesn't say anything about spatial correlations.
+How do these operators decay far from each other.
+It's quite different, because if I set $t=0$ in the Hasting theorem then I get
+zero for the commutator.
+
+Hastings is about time, but Hastings-Koma is about equal time correlations.
+
+\begin{question}
+    The VLR is state-independent,
+    but Hastings-Koma is for the ground state.
+    Is that somehow strange?
+\end{question}
+It's not strange because $V_{LR}$ is the absolute fastest the correlations could
+spread.
+You could ask if there are velocities smaller than this which would reduce $C$
+and cause this to fall of faster.
+You could ask if there is a better bound that asks state-dependent velocities.
+That's a good research question.
+
+We've assumed a few things: bosonic operaors and ground state.
+Both of these can be generalized.
+You could genralise to $q$-degenerate ground states.
+This term gets replaced by a projector onto the ground state subspace.
+And if it's feromionic, you use anti-commutators.
+
+I won't write the general case, but if you're intersted you could look it up.
+
+There's also a generalization for power law decaying interactions as well,
+but there's no well-defined correlation length.
+
+\begin{question}
+    When $L\to\infty$ what happens when $\Delta E\to 0$?
+    How can I understand the correlation increases once I close the gap?
+\end{question}
+usually when the gap goes to zero the correlation gets bigger and bigger and it
+diverges.
+In that limit, this bound becomes useless.
+Usually in a gapless system, the correlations decay albegraically as power law.
+It doesn't always diverge, but it usually does.
+
+In a gaplesss system, often the correaltion length $\xi\to\infty$.
+Take a band insulator which has a finite gap.
+At some point the gap will close and you have a Diract point where the
+bands will cross.
+You tune some parameters and you get some crossing.
+The system is not gapped anymore and it's gappless.
+As you decrease the energy gap, the correlation lenght gets bigger
+and diverges at the point.
+This theorem becomes uselss and there's no bound about how the correlations
+decay.
+But often what happens is that the correlations decay as a power law,
+so like
+\begin{align}
+    \langle \mathcal{O}_X\mathcal{O}_Y\rangle
+    \sim
+    {\left[
+        \frac{1}{\mathrm{dist}(X, Y)}
+    \right]}^\alpha
+\end{align}
+This doesn't always happen.
+The system could still be gapless, but there is still a localization lneght that
+essentially bounds the correlation lenght,
+but this thoerem is essentially useless.
+
+
+\begin{question}
+    It seems that you could get the distance of $X$ and $Y$ being zero without
+    $X$ and $Y$ being the same set.
+    I'm confused.
+    Single-particle bosonic operaotrs, $i$ has to equal $j$.
+\end{question}
+Are you conofused about the definiton of Bosinci operaotr or what happens if
+this is zero.
+By definition, if supports don't overlap each other, that's whne the distance is
+positive.
+As soon as they overlap, it's non-trivial.
+
+Often you have some microscopic energy scale for a problem,
+and a charactersitic lenght scape such sa the lenth saale.
+It's natural to think the correaltion enght is on the orer of the lattice
+spacing.
+Maybe it's 2 or 4 or whatever times.
+
+Somtiems, this is not an emergent length scale, it could be 100 times the
+spacing.
+If it's 100 times the size, usually something intereseting is going on,
+like being close to a critical point or transition.
+The point is to remember that there's a notion of naturality in physics that
+everything should be order 1.
+That's what's going on here.
+Often it's on the order of a lattice spacing, but it's really in general an
+emergent length scale associated with an emergeent energy scale the energy gap.
+Usually when the two scales are completely different, there's something special
+going on.
+
+\begin{question}
+    Does the ratio of correaltion lenght with system size have anything
+    significant.
+\end{question}
+Consider $\xi/L$.
+This is an important quantitiy with finite-size scaling size analysis for
+numerical simulations.
+You need to pay attention if it's smaller or larger than the length scale.
+That's the main thing really.
+
+There's a natural question to ask about this theorem.
+But no body has aske it so far.
+
+\begin{question}
+    Not the natural qeustion, but these are equal time correlations,
+    but there's dependence on propagation of information.
+    How does that connect.
+\end{question}
+I'm not sure.
+Let me think wisely.
+It's better to go through the proof to see how the velocity comes out.
+I don't have intuition more than dimnesional analysis.
+In the actual proof, there's some Fourier transform that takes $\Delta E$ to
+time, so the Leib-Robinson velocity comes in there.
+So maybe some intuition I kind of tend to think about but I'm not sure how
+accurate it is.
+That creates excitations, but they can only propgate in some charactersitic time
+$1/\Delta E$ and how far they go depends on hte velocity and that kind of
+depends away.
+That's some very hand waving picture so take it with a grain of salt.
+
+OK I htink this is the natural qeusiton.
+\begin{question}
+    Gapped Hamiltnoains have exponentailly decaying correlations.
+    But does an exponentially decaying spatial correlation imply a gapped
+    Hamiltonian?
+\end{question}
+No, the converse is not true.
+There are states iwth short-range correaltions (exponentially decayin)
+that are ground states of gapless Hamiltonians.
+One example is take a Hamiltonian that is the usm of random terms.
+You can prove rigorously such a Hamiltonian will typically gapless
+and that hte ground state of the Hamiltonian will have exponentially decaying
+correaltions.
+At each point, you'll have a particle localized to these lcoal potentions,
+but if you have a big enoguh system completely gapless.
+There'll be some potetential when the ground state has that energy,
+but wave functions decay exponnetially so so will be the correlation.
+
+
+There are also translationally invariant examples,
+but these examples tend to be contrived.
+I tend to think they are not generic, but there are some examples that violate
+the statement.
+If you want to learn more I can point you people to learn from.
+Any questions?
+
+
+\begin{question}
+    You mentioned sparse Hamiltonians as alternative to local Hamiltonians.
+    There's no velocity because there's no distance,
+    but is this statement true.
+\end{question}
+You an definitely ask it something like this.
+
+There's been very little work outside of the SYK and QEC with finite encoding
+rates, I don't know people wokring on sparse Hamiltonians.
+There's the Swingle version of SYK in htis course.
+
+\begin{question}
+    For a gapped hamiltonian, we could genrate a gorund state.
+    This theorem assumes a unique ground state, 
+    so it assumes it's non-degenerate.
+\end{question}
+I did mention that this theorem can be generalized to the case of degenerate
+ground states,
+the case of fermionic operators
+and the case of power law decay interactions.
+
+If you want to generalize to degeerate ground states, with the projection into
+the ground state.
+There is a generalization.
+
+
+\subsection{Localized Defects}
+One thing useful about the existence of a finite $\xi$
+is that you can define the notion of a localized defect.
+The first case is a 0-dimensional defect.
+Add a local potential that decays exponentially from some rate so
+\begin{align}
+    H = V(|r - r_0|).
+\end{align}
+That cases some kind of defect.
+Outside the region, the state looks pretty much the same as the ground state.
+
+We can define one-dimensional defects.
+We add a term that is the sum over a.
+A zero-dimensional defect is a point.
+We could have 1-dimensional line defects.
+\begin{align}
+    H + \sum_{r_0\in\gamma} V(|r - r_0|).
+\end{align}
+I could define $p$-dimensional defects, where $p< d$.
+We can talk about defects 
+
+Topology of defects is about understanding what happens how these defects
+interact with another when I glue and touch then,
+and the phase.
+
+The mathematical structure is not completely known,
+but to understand these defects, we use $d$-category theory,
+a hyper abstract definition people don't even know how to define yet.
+It's a higher category, but mathematicians don't even have a definition.
+But if you talk about 1-category or 2-category, then do you have definitions.
+The properties of these defects are characterised by this $d$-category.
+In this class we will use some simple examples.
+This is a story very much in progress, not very fully understood.
+
+\subsection{Quantum Phases}
+Quantum really means zero-temperature phases.
+I'm going to state what I actually mean by phases of gapped Hamiltonians.
+This is the most popular definition.
+
+\begin{itemize}
+    \item Two gapped Hamiltonians $H_1$, $H_2$ realize the same $T=0$ (quantum)
+        phase of matter if there exists an adiabatic path between them
+        such that $\Delta E(\lambda)$ stays non-zero.
+        That is, there is a path in Hamiltonian space $H(\lambda)$
+        that starts at $H_1$ and ends at $H_2$.
+\end{itemize}
+The point is that the energy gap stays open as I go from one Hamiltonian to
+another.
+If I can do such a thing, we say the ground state of the two ground states are
+the same phase of matter.
+A consequence of this definition is that the ground state of the first
+Hamiltonian can be adiabatically connected to the ground state of the other
+Hamiltonian.
+I can go down this path infinitely slowly that follows the adiabatic path.
+
+There's a different definition that uses the ground state energy density
+\begin{itemize}
+    \item The ground state energy density $E_0(\lambda)/N$
+        should be a smooth function of $\lambda$.
+\end{itemize}
+Along this path we never encounter a singularity in the ground state energy
+density.
+This is closer to the usual definition in phases of matter
+where I look at the free energy density and a phase transition occurs when the
+free energy has some singularity.
+Here, we're looking at the ground state energy density.
+Aside from the fact i's close to the standard definition,
+you could also apply this for a gapless Hamiltonian.
+So there's still a notion of whether two gapless Hamiltonians realize the same
+phase of matter.
+
+Definition 1 is only useful for gapped states of matter.
+
+\begin{question}
+    The second definition is only a distinction between phases of matter right?
+\end{question}
+This is the definition of when two phases are the same phase.
+If they're not the same phase they're different phases.
+If it's gapped and there's an energy phase.
+
+I haven't defined what a topological phase is yet.
+It's not clear exactly what definite we should use.
+People use different definitions,
+because there are different concepts.
+For now take topological phase as gapped phase of matter.
+
+\begin{question}
+    For gapped Hamiltonians, are the two definitions equivalent.
+\end{question}
+I don't have a proof.
+
+\begin{question}
+    For def 1, if w ehave gapped system, if we close the gap, the two ground
+    states don't connect adiabatically.
+\end{question}
+If the gap closes, there's a crossing, I cannot adiabatically make sure it's
+the same ground state.
+Adiabatic requires separation of scales.
+If you get to a level crossing, you can't use the adiabatic theorem anymore,
+you need to follow the right path and not get mixed up betwen the states.
+
+
+\begin{question}
+    You cannot ave a smooth function of $\lambda$.
+    By smooth do you mean infinitely differentiable.
+\end{question}
+I would say yes, but that's turning to rigorous mahtematics.
+
+
+\begin{question}
+    Do you require 1D defects to extend infinitely in one dimension?
+\end{question}
+No. Everything is macrsoopic.
+The 1D defect could be the shape of a ring.
+But I want ot make sure the length is much larger than the correlatoin lnegth.
+It could be a segment.
+
+\begin{question}
+    Why don't you consider $p=d$ where there is a cubic defect?
+\end{question}
+I want every sclae to be either macroscopic or I want it to be\ldots
+Let me give an example.
+Suppose I have a plane.
+I have a defect on half the plane.
+If I zoom out and keep this half finite, it becoems a 1D defect.
+If I require this is a finite fraction of the total system when I zoom out,
+I shouuld really thing about this as its own $d$-dimensional phase of matter,
+a bulk phase.
+
+We want to probe a phase by inserting defects.
+But if it's a macroscopic part of the system,
+it's just another phase, so it's not useful.
+
+
+\begin{question}
+    These defects are supposed to have zero measure?
+\end{question}
+Yes, in that sense, as you zoom out, the defect should have zero measure.
+
+
+You could ask about the operator that creates hte defect,
+and that could be one higher dimension.
+The loop defect is created by a membrane operator.
+
+Looking at a one-imdneiosnal defect in a two-dimensionl defect,
+I need to look at operators iwht suppors on the whole two-dimensional space,
+but the defect itself is a one-dimensional defect.
