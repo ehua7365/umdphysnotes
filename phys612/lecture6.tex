@@ -1,0 +1,498 @@
+\section{Quantum Mechanics}
+The state of a system is described by a ket in a Hilbert space $H$.
+Every observable corresponds to a hermitian operator $A$ with
+$A\ket{a}=a\ket{a}$,
+where $a$ are possible outcomes of a measurement.
+The probability of measuring $A=a$ is equal to
+$|\braket{\psi}{a}|^2$.
+
+The actual \emph{amplitude} is $\braket{\psi}{a}$ which is a projection onto
+$\ket{a}$,
+which is a complex number.
+The modulus squared is the probability.
+
+Every state has magnitude 1,
+so the projection is smaller than one.
+
+How do I calculate the probability if there is a degenerate state?
+Well you project both.
+If $\ket{\psi}$ is the state of the system at measurement,
+and suppose I have a two-dimensional eigenspace with eigenvalue $a$.
+Any vector in this space has eigenvalue $a$.
+How do I calculate the probability?
+I take $\ket{\psi}$ and project down onto this plane.
+This probability is
+\begin{align}
+    \sum_{a\in\text{subspace}} |\braket{a}{\psi}|^2
+\end{align}
+So in the general case there is a sum here if the eigenvalue is degenerate.
+Sometimes it's not so common,
+so if you read Griffiths you may not have noticed.
+Usual things apply,
+it's a probabilistic theory, etc.
+
+
+There is a misunderstood point.
+Say I have a system, like my keys.
+I measure the position of the car key.
+Use your imagination.
+It has a bunch of eigenvalues,
+the angles my key makes with the vertical.
+I look and I find my key here.
+Good that's great.
+What happens if immediately after that I make another measurement?
+If the state of the system was in a state I started out,
+there would be a probability.
+Immediately afterwards,
+there's no time for anything to happen.
+What's the point of looking?
+It's not like I can look and extend my 5 fingers to pick it up.
+But when I move,
+it's here and here.
+What's the point of making a measurement?
+This world would be chaos.
+There would be nothing.
+That's not how the universe works.
+
+The universe works like this.
+You measure something.
+You measure again,
+it's in the same darn place.
+The world is not completely chaotic.
+Of course if I take too long,
+maybe they key may be in a different place.
+
+How do I guarantee this in my formalism?
+
+What happens is that you need this as well:
+\begin{itemize}
+    \item After a measurement $A=a$,
+        then the state $\ket{\psi}$ magically instantaneously becomes
+        \begin{align}
+            \ket{\psi}\to \ket{a}
+        \end{align}
+\end{itemize}
+But what happens immediately after?
+I'll have probability $1$ of measuring $a$ again.
+This has a few names.
+It's called the \emph{reduction of the wave packet}.
+
+Those eigenvectors can be thought of waves,
+maybe a bump in space.
+You measure and you no longer have a bump in space,
+just a Fourier component for example.
+That's the old lingo for that.
+There's another name,
+the \emph{collapse} of the wave packet,
+or wave function, blah blah blah.
+
+By the way, what happens if the eigenvalue is degenerate?
+In principle I can go into any one of these.
+It goes into the projection,
+the closest one in the subspace.
+
+People are immensely bothered by this,
+so much that textbooks try to hide this.
+They try to make you pay attention to the Schrodinger equation.
+Because of this,
+if some people do this lecture,
+people leave this out in a lecture
+because it's so embarrassing.
+
+Have you learnt about a theory like EM where you didn't say why.
+Hold this comment.
+
+In Newtonian mechanics, you say $F=ma$,
+particles accelerate, you calculate forces,
+that gives me forces, etc.
+Here,
+the time evolution of the state of the system is given by a differential equation
+that is very simple
+\begin{align}
+    i\hbar \frac{d}{dt} \ket{\psi(t)} = H\ket{\psi(t)}
+\end{align}
+where $H$ is the Hamiltonian.
+I write this without the curly $H$ so it's not a Hilbert space.
+The time-evolution is given by this magic operator.
+The point is,
+there are two ways the state of the system can evolve.
+One,
+according to this \emph{Schrodinger equation},
+that's what it's called by the way.
+That's what you do 100\% of the time in Griffiths.
+
+Sometimes though,
+Schrodinger equation stops working,
+when you measure.
+And then after that Schrodinger again.
+For example,
+if there is a guy in a white lab coat with a beer
+and a lot of electronics,
+and he's good at messing around with systems,
+and a number pops up saying 42.
+That's a measurement.
+You measure the energy and got 42 Joules.
+When I measure immediately afterwards I get 40 Joules.
+So he with a lab coat he can stop Schrodinger equation,
+and then it comes back.
+What if he doesn't have a lab coat and doesn't have a beard?
+Some graduate student?
+So does that apply?
+Yes of course,
+grad students are people too.
+What if they are an undergraduate?
+You know in your heart they are people too.
+What is it's a monkey.
+You train the monkey,
+he says 42,
+he has no idea of what 42 means.
+Do you think will the wave function will evolve.
+Some people say no.
+What about Neanderthals?
+When did we evolve to have the ability to collapse wave functions?
+That's ridiculous.
+
+Of course the wave function collapses.
+What if there's no monkey it's automatic.
+
+People can find out it's 42.
+When does the wave function collapse?
+Does it collapse when the number pops up,
+or when the human being looks at it?
+
+Some say this stuff is this hippy dippy stuff.
+They say
+what causes this change is an interaction with the measurement apparatus.
+For a while,
+it's described not by the Hamiltonian of the system,
+but the object and the system.
+No.
+It's easy to prove this is not true.
+
+Because let's go back here.
+
+The wave function in the future is automatically normalized.
+If I write my state in the future,
+in terms of state in the initial time,
+there's going to be a linear operator relating those two things.
+As we see, this thing is a unitary operator
+\begin{align}
+    \ket{\psi(t)} = U(t) \ket{\psi(0)}
+\end{align}
+which preserves lengths and angles.
+
+Measurement operation is not unitary.
+For example,
+but part orthogonal to $\ket{a}$ got shrunk to zero,
+but unitary just rotates things,
+so it's not unitary.
+
+It's too facile to say my apparatus interacted with the system,
+because it's not unitary.
+It's not enough.
+
+
+Say my student says it was 42 measured.
+When did it collapse?
+When the student saw it or before that?
+
+I make a measurement and I see a particular result.
+I know there was some kind of collapse.
+We can say this measurement axiom is not true,
+because it poses this difficult question it is asking.
+
+By the way,
+no body has a better answer to this.
+
+I tried my whole life to make a particular experiment
+that depends whether the wave function
+when the number pops up or when the grad student sees the result.
+I also never seen a proof of either.
+It's a hole in the literature.
+
+There is no experiment that can explain that subtlety of when the collapse
+happens.
+The modern understanding is slightly better,
+but only slightly.
+You should do an analysis involving the system,
+the apparatus,
+and maybe the grad student.
+This is not only unitary evolution,
+but also deterministic.
+I started in a state,
+and there is no way to manipulate Schrodinger equation
+to come up with a solution which says I collapse into this
+and maybe this as well.
+Think really hard about deterministic evolution
+and somehow derive the measurement axiom.
+You just have to live with it.
+It could make you sleep bad at night,
+but that's just philosophy.
+I don't.
+Something big and weird is happening there.
+
+There's one more thing useful for quantum mechanics.
+If you have a composite system and each one has a Hilbert space $\mathcal{H}_1$
+and $\mathcal{H}_2$,
+the composite system is going to have a Hilbert space
+$\mathcal{H}_1\otimes\mathcal{H}_2$.
+There's a lot of juice hidden here.
+
+Say that $\mathcal{H}_1$ is 2-dimensional,
+and $\mathcal{H}_2$ is 2-dimensional.
+What is the composite system?
+4 dimensions.
+What if I had a third Hilbert space? 8.
+So exponential growth.
+With just 100, you have $2^{100}$.
+It can be represented as a matrix,
+like in kindergarten,
+but how big is the matrix?
+Can you write down the matrix?
+Can the computer calculate?
+If you transfer planet Earth,
+take the galaxy,
+universe,
+turn it into disk space,
+you still cannot write the Hamiltonian with 100 systems.
+This exponential growth is a bummer,
+well not really a bummer,
+because then you'd be able to diagonalize everything
+and I would lose my job.
+
+That's my summary of QM,
+it's really upstart,
+but we're going to take this and apply to many cases.
+It's very upstart,
+but we've done all the work already.
+
+We've done all the numbers already,
+you know how to transform things into concrete equations,
+because we spent two weeks.
+Strictly speaking, we're actually done.
+Go home class is over.
+
+\begin{question}
+    You call a hermitian operator measurable.
+    Is that measurable the same as probability?
+\end{question}
+No, measurement in the physics sense.
+Anything you can measure.
+Go to Radio Shack, get a ruler,
+that's a measurable device.
+
+Measure is physicist lingo.
+
+We have to distinguish things like momentum and energy for which there are
+devices,
+from things like kets.
+I cannot by a ket-meter that tells me what the ket is.
+There will never be such a thing.
+That is not an observable.
+That's the end of QM.
+But before examples,
+I want to make trivial generic comments.
+
+
+\begin{itemize}
+    \item An overall phase on $\ket{\psi}$ is unphysical.
+        Look at my system and say this is $\ket{\psi}$,
+        but my friends says no it's $e^{i\alpha}\ket{\psi}$,
+        it's the same thing.
+        More than that.
+        Suppose I start with a state and evolve,
+        but my friend has a space,
+        in the end the phase doesn't matter.
+        If you want to be nitty-picky,
+        you should say it's not that states are represented by kets.
+        It's not even represented by kets measured 1.
+        It's represented by rays.
+        You can take a vector,
+        you can multiply by any number,
+        including complex numbers.
+        The whole set represents this thing.
+        When I use the wave function to calculate a probability,
+        we're going to get the same result.
+    \item The Schrodinger equation is linear.
+        If I have two solutions of the Schrodinger equation,
+        I'm going to get another solution.
+        It's like the Maxwell equations.
+\end{itemize}
+Should I stop to tell Schrodinger stories?
+He was a great scientist,
+but he fun part is his personal life of course.
+He was Australian,
+and compared to other people who invented QM
+who were like 23,
+he was in his 30s,
+receding hairline already.
+He was a 
+He didn't get along with the Nazis in the 30s.
+He was not Jewish,
+just cut his pie.
+He became very uncomfortable,
+and then German invaded Austria.
+He could be killed.
+He wrote a letter reneging his position with the Nazis,
+He regretted,
+so he decided to leave.
+He needed visa, a job.
+He had a wife and kids.
+And the lover.
+And the lover's husband.
+He has a lot.
+It was complicated.
+A few years earlier he had written that equation.
+So he got invitations for jobs.
+So he went to Oxford.
+The people look at the situation,
+say don't think so.
+He wants to leave with his kids, wife, lover, lover's husband.
+Then at Princeton,
+there is the Institute of Advanced Studies,
+when they hire Einstein, Godel, von Neumann, etc.
+So he goes the New Jersey.
+People at the Institute are given houses,
+If you get hired there they give you Einstein's house.
+It's funny,
+you have to buy it from them and then you have to sell when you leave.
+Einstein's house is a dump.
+Nice museum, but it's not nice to live in because it doesn't have all the modern
+amenities.
+Can you get a job for the husband of the lover?
+He was a mathematician.
+People in New Jersey were not happy with that.
+
+There was another institute of advanced studies at the time in Dublin headed by
+a Catholic priest.
+You say there's no chance.
+Turns out he went there,
+don't know how many people.
+The reality is very different from the perception by majority of Americans.
+Everything was fine.
+He got job, visa, for his wife, kids, husband of the lover,
+husband had someone else too.
+Everyone came to Ireland and everyone was happy.
+The only unhappy thing was Schrodinger really disliked quantum mechanics.
+He didn't like collapse axiom.
+After trying to fix QM,
+he gave up and tried to do other things.
+Some people say,
+especially physicists,
+he was kind of one of the first ones to think about DNA,
+and how genetic information can be stored in molecules
+before DNA was discovered.
+I heard,
+his little book \textit{What's Life}
+was influential for the people who discovered DNA.
+By the time he wrote this book,
+everything was either known to be right or known to be wrong.
+Watson and Crick weren't even biologists,
+they where X-Ray physicists.
+
+\begin{question}
+    Do you know Schrodinger?
+    Or other famous people?
+\end{question}
+Schrodinger died before I was born.
+I'm not that old!
+He's not one of the elder kings of QM.
+I met famous people,
+but not physicists.
+Does that count?
+There are physicists famous among physicists.
+Does that count?
+At this stage,
+you don't know the very old people who invented QM.
+I know Heisenberg's son.
+I taught QM to Neils Bohr's great grandson,
+he was a student here at Maryland.
+How can you go into physics?
+His great grandfather won a Nobel prize,
+his grandfather won a Nobel prize.
+His father was a slacker.
+Why would you do this to yourself?
+
+I remember these people of that generation barely walking.
+Our lives did not overlap on this planet.
+I met Hans Bethe.
+I met some Los Alamos people,
+but they were very old.
+After the war,
+there were a bunch of them,
+very old.
+I met some Rock stars,
+does that count?
+
+After telling you those things
+you knew forever anyway,
+we can talk about the no cloning theorem from linearity.
+But, that's for Friday.
+
+Can I write a copy of something on a Xerox?
+Of course I can.
+What I'm going to argue is that I cannot do this with quantum sates.
+Say that I start with a system $\ket{\psi}$,
+which represents blank paper.
+Now I'm going to put together with another system,
+which is like blank paper.
+Actually, let's make this more interesting.
+Suppose $\ket{\psi}$ is money.
+I want to copy it.
+What's the Hilbert space of the whole system together?
+So my state is $\ket{\psi}\otimes\ket{\phi}$
+where $\ket{\phi}$ is like blank paper.
+I'm going to evolve this,
+and arrange my Hamiltonian such that my system is going to be money and money
+like $\ket{\psi}\otimes\ket{\psi}$.
+That's how you make money.
+If you do this,
+you've got it.
+Make a good xerox machine,
+you can do that.
+Not possible.
+Imagine you start with a linear superposition
+\begin{align}
+    \frac{\ket{\psi_1} + \ket{\psi_2}}{\sqrt{2}}
+    \otimes\ket{\phi}
+    \to
+    \frac{\ket{\psi_1}\otimes\ket{\psi_1} + \ket{\psi_2}\otimes
+    \ket{\psi_2}}{\sqrt{2}}
+\end{align}
+But that's not what I want,
+I want
+\begin{align}
+    \frac{\ket{\psi_1} + \ket{\psi_2}}{\sqrt{2}}
+    \otimes\ket{\phi}
+    \to
+    \frac{\ket{\psi_1} + \ket{\psi_2}}{\sqrt{2}}
+    \otimes
+    \frac{\ket{\psi_1} + \ket{\psi_2}}{\sqrt{2}}
+\end{align}
+and you can see this is not the same.
+You can see there a bunch of cross-terms like
+$\ket{\psi_1}\otimes\ket{\psi_2}$.
+Even if I can make copies of one-dollar bills,
+I can only print one-dollar bills,
+but it's not a copier.
+This little result here is called the no-cloning theorem.
+It's a completely trivial result.
+We don't give any importance to this until Zurek
+and people found it interesting.
+Even if this is interesting to prove,
+people forget sometimes.
+
+If I tried to send a secret to my friend,
+someone can spy on us by intercepting it make a copy.
+Suppose I encode that information in a quantum state.
+If someone spies on us,
+they can make a copy,
+but the most they can do is kill the system.
+No one can make a copy of a quantum system and run away with it.
+QM is a good way to transfer secrets.
+When you to build a quantum computer,
+a normal computer depends on copying,
+but a quantum computer can't do that
+and that's a bummer.
+People think it's really cool,
+so I want to mention this.
