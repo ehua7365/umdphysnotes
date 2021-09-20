@@ -1,0 +1,499 @@
+$Z$ only depends on topology of $M^{d+1}$,
+not on any geometry.
+\begin{align}
+    Z(\Sigma^d\times [0,1])
+    = Z(\Sigma^d\times[0,2])
+\end{align}
+by assumption.
+
+$Z(\Sigma^d\times I$ is the time evolution operator $e^{iHt}$.
+This means the ``Hamiltonian'' of this TQFT is zero.
+But often we can write a lattice mode,
+with $H<0$ ground of $H$ will be described by TQFT.
+\section{Some Consequences of Axioms}
+\begin{proposition}
+    If $f:\Sigma^d\to\Sigma^d$,
+    then $\mathcal{U}_f$ is a linear map,
+    where $\mathcal{U}_f$ is a homotopy invariant.
+    It is indpeendent of contiuous defomrations of $f$.
+\end{proposition}
+Everytime I do a diffeo if that is continuously conneted to anohter
+diffeomorphism,
+I get another map.
+
+The mapping class group
+\begin{align}
+    \mathrm{MCG}\left( \Sigma^d \right)
+    = \frac{\mathrm{diff}\left( \Sigma^d \right)}{\mathrm{diff}_0\left( \Sigma^d
+    \right)}
+\end{align}
+which implies $g\in \mathrm{MCG}\left( \Sigma^d \right)$
+for $\mathcal{U}_g:V(\Sigma^d) \to V(\Sigma^d)$.
+For unitary TQFT,
+$\mathcal{U}_g$ is unitary.
+
+A TQFT furnishes the MCG of a manifold.
+Often you can characterise a TQFT completely by the representations of the MCG.
+
+Another consequence is the following.
+Let's see what the path integral actually means.
+$Z(\Sigma^d\times S^1)$.
+You can glue a tube into a torus over a circle.
+
+This is the meaning of thep ath integral
+\begin{align}
+    Z\left( \Sigma^d\times S^1 \right)
+    = \Tr_{V\left( \Sigma^d \right)} II
+    = \dim V\left( \Sigma^d \right)
+\end{align}
+Consider gluing maps defined by
+$f: \Sigma^d \to \Sigma^d$.
+The other important thing is that
+\begin{align}
+    Z\left( \Sigma^d \times_f S^1 \right)
+    = \Tr_{V\left( \Sigma^d \right)}\mathcal{U}_f.
+\end{align}
+
+\section{Physical interpretation}
+$V(\Sigma^d)$ is the ground state subspace on $\Sigma^d$.
+We say topological ground state degeneracy
+because it depends on the topology of $\Sigma^d$.
+There are other reasons.
+The physical meaning is that $V$ is the ground state degeneracy.
+
+Then $Z\left(\Sigma^d\times S^1 \right) = \dim\left(\Sigma^d \right)$
+is the dimension of the ground state degeneracy.
+
+Our system has some non-trivial operators
+we can associate with diffeomorphisms,
+and this guy is just the trace of that.
+\begin{align}
+    Z\left(\Sigma^d\times_f S^1 \right)
+    = \Tr_{V\left(\Sigma^d \right)} \mathcal{U}_f
+\end{align}
+for a gluing map $f$.
+
+In general
+\begin{align}
+    Z\left(M^{d+1} \right) &=
+    Z\left( M_1^{d+1} \cup M_2^{d+1} \right)\\
+    &=
+    \langle
+        Z(M_{1}^{d+1}), Z(M_{2}^{d+1})
+    \rangle
+\end{align}
+
+We can build more and more complicated manifolds by gluing.
+
+\begin{question}
+    Are you saying where the mapping is the trace of the operator,
+    how does that change how the operator acts on the system?
+\end{question}
+What we're saying is that we have some gapped local Hamiltonian,
+that there are some unitary transformations we can do on our system
+that map the ground state subspace back onto itself,
+which correspond to various kinds of map $f$.
+
+Let me give you one example.
+Imagine a system defined on a square lattice,
+where I identify opposite sides,
+so a torus.
+I can identify opposite edges with a shift, like a twist.
+There's going to be some mapping between stsates of different identifications,
+and if I go in a circle,
+I go where I started,
+and it corespodns to a unitary acting on the ground state subspace,
+and this is an example of a non-trivial $\mathcal{U}_f$.
+It maybe hard to find,
+but it does exist.
+The trace of the unitary defines for me this map.
+
+That was not super concrete.
+
+\begin{question}
+    Is this space or space-time?
+\end{question}
+If our space was $\Sigma^d$ and suppose it was a torus.
+If I cut my torus and cut,
+and rotate by $2\pi$,
+that's a large diffeomorphism,
+and gives rise to a large non-trivla map $\mathcal{U}_f$.
+
+If $\Sigma^d = T^2$ is my spacetime,
+it's topologically the same.
+
+\begin{question}
+    There should be a theorem saying the ground state energies are\ldots
+\end{question}
+If you have a gapped phase of matter which is stable,
+then you're going to have that.
+You're right we do need an assumption on the ground state subspace.
+Your Hamiltnoian might have a symmetry that is spontaneously broken by the
+gorund state.
+That wouldn't be a topological ground state,
+but a symmetry-protected ground state.
+I'm talking about properties that are stable whether or not symmetries are
+broken.
+
+\begin{question}
+    If I take $T^2\times I$  and glue it up into $T^2\times S^1$,
+    do I get the same manifold?
+\end{question}
+This is going to be a different manifold.
+This is detailed topology question,
+let's address that later.
+
+That's for my review of plain vanilla TQFT if you like.
+But the TQFTs that actually arise when we study topological phases of matter
+have more structure than what I've given you right now.
+I want to give you a brief review of what this extra structure is
+when we use TQFT in nature,
+or at least what we consider to be realistic Hamiltonians.
+
+\section{Additional structure}
+So far we have $V(\Sigma^d)$ and $Z(M^{d+1})$.
+They are subject to axioms and consistency conditions.
+But hte actual TQFTs that come up in matter,
+there are 4 or 5 of them.
+Let me write down their names and explain what they mean later.
+\begin{enumerate}
+    \item Defect TQFT
+    \item TQFT with background gauge fields
+    \item TQFT with spin structures (Spin TQFT)
+    \item Framed TQFT, relevant for $(2+1)$-d chiral topological phases.
+    \item Extended TQFT
+\end{enumerate}
+The rest of this lecture,
+I'm going to do a brief review simple introduction to what each of these
+actually mean.
+
+The first most impoant thing is defect TQFT.
+The idea is that instead of just conidsering $\Sigma^d$,
+we're going to remove submanifodlds of space and spacetime,
+and label those removed sjbmanifodls.
+And then all objects depend on the labelling of these remove submanifkds.
+Rename submanifolds at various co-dimension from
+$\Sigma^d$ and $M^{d+1}$ and give labels to them.
+
+\begin{example}
+    Rename points from $\Sigma^d$,
+    made with labels from finite label set.
+\end{example}
+Physically,
+we have quasiparticles
+which come in topological super selection sectors.
+They might be something to the action of local operators.
+I.e. topological equivalence classes of quasi-particles,
+or zero-dimensional defects.
+Suppose we have points $a,b,c,d$.
+Then we get $\sum_{a,b,c,\ldots}^{d}$ and
+$V\left(\sum_{a,b,c,\ldots}^d \right)$.
+$M^{d=1}$ will have 1d variables of marked points.
+These marked points are described by some sort of link.
+$\left( \Sigma^d\times I, \mathrm{Link}\right)$.
+
+Or I can think of $S^3$,
+and we cna have links
+$Z(S^3, \mathrm{Link}_{a,b,c,\ldots})$.
+
+We can remove lines, points and surfaces.
+As we oncreaseigcal jjoWe'd thh n=rules.
+Physics is interested in the excitations,
+like string, membranes.
+
+Hamilotians of TQFT are jusoOr=fSome quantiies only appear in a mi=acrosjjjk&=&
+No every one coresponds toa stable quasiparticle oprati
+You might use the word defect instead.
+A couple of weeks again,
+ did that,
+ added a oitetakmm
+ Imaginiea sutatiln
+ thhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhWhats
+ theooint of jjjGj
+ 
+ \susection{TQCF with background gauage field}
+ TQFT phaseppoewe haveaoWhenever oCan always turn
+ backwrads gauage fields into speed.)
+ Everything should be familiar with this.
+ Suppose the system has $U(1)$ charge summetry.
+
+
+ Suppose we have a global symmetry $G$.
+ Can turn on background guage field $A$.
+ Mathematially, $A$ is a conection on principal $G$-bundle.
+ We want to equpi these manifolds iwth background guage fields.
+ So $\Sigma^d$ and $M&^{d+1}$ are equipped with background gauge fields
+ \begin{align}
+     V\left( \Sigma^d, A \right)\qquad
+     Z\left( M^{d+1}, A \right)
+ \end{align}
+ For example, consider a 1+1 dimensional TQFT.
+ \begin{align}
+     Z\left( M^2, A \right) =
+     Z(M^{d}, A=0) e^{i\theta \int_{M^2}F}
+ \end{align}
+ recalling that the field strength is given by
+ $F_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu$
+ for $G=U(1)$.
+ For 3+1 dimensions, we can do something similar with
+ \begin{align}
+     Z\left( M^4, A \right) =
+     Z\left( M^4, A=0 \right)
+     e^{i\theta \int F\wedge F}
+ \end{align}
+ where 
+ $F\wedge F =\epsilon_{\alpha\beta\gamma\sigma} F_{\alpha\beta}
+ F_{\gamma\sigma}$.
+ These are called $\theta$-terms.
+
+ This is where the notion of deformation classes becomes important.
+ Deformation class of TQFT.
+ The kinds of terms I want to add are topological terms.
+ Meaning we can write down these terms without picking any metric for spacetime.
+ If you did have a metric,
+ you could have even more terms,
+ but because we're working with TQFT,
+ we're working with terms independent of the metric.
+
+ \begin{question}
+     Is there a reason to use a background gauge field
+     with the symmetry?
+ \end{question}
+ Sometimes, you might want to describe a TQFT gauging another TQFT which does
+ have a symmetry.
+
+ \begin{question}
+     ???
+ \end{question}
+ You can certainly consider the ratio
+ $Z\left( M^d, A \right)/Z\left( M^d, 0 \right)$.
+
+ \begin{question}
+     $A$ is the connection of the principal $G$ bundle.
+     Is a TQFT with gauge field just a TQFT on that principal $G$ bundle.
+     Can I think of a TQFT with a background gauge field
+     as a plain TQFT on a principal $G$-bundle.
+ \end{question}
+ Actually, I think so.
+ I should maybe think more.
+
+ One final comment.
+ In recent years, it's becoming vogue to think about more symmetries than a
+ regular symmetry.
+ $A$ is a one-form,
+ it lives on the links if you discretize spacetime simplex.
+ $A$ could also be a higher $p$-form.
+ You could ave background gauge fields which are $p$-forms
+ which are associated with $p-1$-form symmetrized.
+ So you have zero-form symmetries and a 1-form gauge field,
+ it's something you can generalize.
+ I'm not going to expand on what that means.
+
+ \begin{question}
+     How can I form the form of the path integral after gauging the fields?
+ \end{question}
+ I can't give a general answer to that.
+ Often we classify different kinds of TQFTs to see what kinds of $\thata$-terms
+ we can put here.
+ There are ways to do that we'll get there.
+ It's quite non-trivial.
+
+ \section{Spin TQFTs and fermions}
+ If a microscopic system has fermions like electrons,
+ if you want to describe it,
+ you need to specify whether a fermion going on any loop has periodic or
+ anti-periodic boundary conditions.
+ You need some extra conditions to specify this,
+ and that's basically what a spin structure is.
+
+ \begin{question}
+     Why do we need this BC?
+     Why fermions only?
+ \end{question}
+ If don't specify it,
+ how do you know which one it is?
+ For bosons,
+ if my system has a $Z_2$ symmtery,
+ through non-trivial loops,
+ I can insert $Z_2$ flux,
+ and with bosons it can change from anti to periodic.
+ For bosons,
+ specifiying BCs is just like having a gauge field with a $Z_2$ symmetry,
+ could go around any loop and get any phase I want.
+ That's covered by background gauge fields.
+
+ Fermions,
+ there's alwasy choice of anti-periodic or periodic.
+ Fermions always have fermion parity symmetry.
+ I can put fermion parity flux through loops.
+ It's not quite the same as a $Z_2$ gauge field.
+ THere's more intricate structure.
+
+ Microsopic system with fermions implikes periodic or anti-periodic boundary
+ conditions along any loops.
+
+ A \emph{spin structure} $\eta$ is on a manifold is an assignment of
+ periodic or anti-periodic boundary conditions to each loop.
+
+ For example, on a ring $S^1$,
+ there are two choices $+$ or $-$.
+ On a torus,
+ we have four choices $++$, $+-$, $-+$, $--$
+ We can get a different spin structure
+ by inserting fermion parity flux through non-contractible loops.
+
+ this is an obvious statement in words.
+ Mathematically, this means that spin structures form what's called a
+ \emph{torsor} over the co-homology group $H_1(M,\mathbb{Z}_2)$ of the manifolds
+ with coeffciients in $\mathbb{Z}_2$.
+ Torsor means that once I'm given a structure,
+ I can alwways get another one if you give me $\pi$ flux.
+
+ So the number of choices is the number of elements of this group.
+
+ Torsor means that this different spin structures are related to each other by
+ elements of $H_1$.
+ Temperature is not a torsor because there's an aboluste zeor.
+ But energy is because there's no notion of zero energy.
+ There's no identity of the gourp fora torsor,
+ only actions on the group.
+
+ \begin{question}
+     Why does inserting fermion parity flux is not enough to determine the spin
+     structure?
+ \end{question}
+ I don't have an intuitive reason for it.
+
+ The point is just there's no natural notion of what zero fermion parity flux is
+ for a generic manifold.
+ You can only say that if you insert fermion parity flux you change the boundary
+ condition.
+
+ Not all manifolds admit spin structures,
+ because you have to consistently assign boundary conditions.
+ In fact there are restrictions on what kind manifolds even admit spin
+ structures.
+
+ Not all manifolds admit spin structures.
+ There are lots of cool theorems proven about this in the lsat 50 years.
+ The most famous is $\mathbb{CP}^2$ does not admit a spin structure.
+ The obstructure to defining a spin structure
+ is called the second Stiesel-Witney class $W_2$,
+ an element of the second cohomology group $H^2(M, \mathbb{Z}_2)$.
+
+ Every manifold always has a Stiefl-Whitney class.
+ If it is trivial,
+ then you can define a spin structure.
+
+ There is always a $H^1$ and $H^2$.
+ I you give me a spin structure,
+ I can always get another by action of $H^1$,
+ that's inserting fermioin parity flux thorugh nontrivla loops.
+ When $W_2$ vanishes,
+ there's a choice of spin structure,
+ but the choice is not unique,
+ so it forms a torsor.
+
+ $\eta$ is really a 1-cochain.
+ $d\eta = W_2$ then $\eta\to \eta + \alpha$,
+ where $\alpha\in H^1$.
+
+No spin structure means you can't define the ground state on the manifold,
+and you can't define the path integral on that spacetime manifold.
+
+The sphere has a $W_2 = 0\mod 2$.
+$W_2$ is the mod-2 reduction of the Euler class.
+The Euler class of a sphere is zero.
+Euler characteristic is always even.
+
+\begin{question}
+For CP2 we cannot define fermions in this spacetime?
+\end{question}
+
+A spin TQFT needs to have $V(\Sigma^d, \eta)$
+and $Z(M^{d+1},\eta)$.
+We will study this with a $(1+1)$-dimensional Majorana chain.
+This is a 1D phase of matter with fermions in it.
+And the fermion description needs a spin TQFT.
+
+\section{Framed TQFT}
+As far as I know,
+this is only relevant when we want to study $(2+1)$-dimensional chiral
+topological phases.
+If we want to study superconductors, integer quantum hall states,
+fraftional quantum hall states,
+we need Framed TQFT.
+
+To define $Z(M^3)$,
+we need not just an orientation,
+but also need a \emph{framing}.
+A framing of a $d$-manifold is a choice of $d$ vector fields in the tangent
+space that are always linearly independent.
+In chiral topological phases,
+we can always continuously deform a framing.
+In chiral topological phases,
+the path integral is going to depend on $M^3$
+together with the homotopy class of the frame,
+meaning framing up to continuous deformations.
+Mathematically,
+this is called a trivialization of the tangent bundle.
+
+If someone tells you the fractional quantum hall effect is described by TQFT,
+you have to tell them no,
+it's described by a framed TQFT.
+It doesn't depend on the metric,
+but depends on a frame.
+
+This only comes up in 2+1 dimensional chiral topological phases.
+
+There's an obstruction to finding a framing in general,
+just like the obstruction to finding spin structures.
+The obstruction is called the Euler characteristic.
+If the Euler characteristic of the manifold is 0,
+then a framing is possible,
+otherwise you can't.
+A sphere has Euler characteristic 2, which is not 0,
+and the famous theorem is the hair ball theorem.
+You cannot comb a hairy ball to not have singularities.
+It turns out that for closed 3-manifolds,
+the Euler characteristic is always 0.
+We never have to worry about this obstruction in $3+1$-dimensions.
+
+\begin{question}
+    Does it break Lorentz invariance?
+\end{question}
+You still have to choose some kind of information.
+We're already thinking of curved manifolds
+which are not Lorentz invariant.
+We're just asking if it's completely independent any metric.
+I don't think it's Lorentz invariant,
+just some extra structure.
+If you spacetime has a metric,
+you cna get a framing.
+
+CS theory has no dependence on a metric,
+but when you quantize it,
+you need to introduce a metric.
+It turns out the path integral has some weak dependence,
+and that is just the frame.
+That is Witten's 1989 paper.
+
+\begin{question}
+    What is trivialization of the tangent bundle?
+\end{question}
+It means pick some basis for the tangent space for every tangent space.
+If you're really inetereted, yo ushould read more.
+A local trivialisation is making a product,
+so a global trivialisation is a base space times a fibre.
+It's some choice of basis for the fibre,
+how you decompose into a product.
+
+\begin{question}
+    How does this relate to Chern number?
+\end{question}
+No, it's the chiral central charge that gives dependence on the frame.
+We're jumping ahead here!
+
+There are a few other things about TQFTs I want to mention.
+Then we'll finally get to the 1D Majorana chain,
+the simplest 1D topological phase.

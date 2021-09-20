@@ -1,0 +1,570 @@
+\section{Anomalies}
+Last time we mentioned the types of TQFTs.
+There's one more TQFT that you might encounter.
+There's something called an extended TQFT.
+When I define TQFT,
+I assign a path integral to a $(d+1)$-dimensional manifold
+and we have a path integral
+$Z\left( M^{d+1} \right)\in \mathbb{C}$.
+
+For a closed $d$-manifold $V(\Sigma^d)$.
+
+For a closed $(d-1)$-manifold,
+we can associate a $1$-category.
+This is called once-extended.
+The objects get more and more abstract as you go down.
+
+And then for $(d - 2)$-manifold,
+you can attach a 2-category.
+For a $(d-3)$-manifold,
+you attach a 3-category.
+
+I'm not going to define these.
+And then for a 0-manifold,
+you get a $d$-category.
+
+Useful to note that if you have a fully extended TQFT,
+all the way down to $d$-category,
+this is going to come up for us,
+we won't necessarily use it,
+but we will encounter them often.
+Fully extended TQFTs are situations where you can write down exactly solvable
+Hamiltonians for your topological phases as sums of commuting projectors.
+And then the path integral can be written as an exact combinatorial state sum.
+
+We'll encounter examples eventually.
+To define the path integral,
+triangular the manifold
+define simplexes 1 2 3,
+assign labellings,
+and them sum over all labellings.
+That's an exact combinatorial space.
+They're useful to work with and have a lot to say about them.
+Physicists don't have a good understanding of what these higher structures mean
+physically,
+so it's an interesting question.
+
+
+\section{Invertible vs non-invertible TQFT}
+The next distinction is between invertible and non-invertible TQFTs.
+
+\begin{definition}
+    A TQFT is \emph{invertible} if the magnitude of the path integral has unit
+    magnitude
+    \begin{align}
+        |Z(M^{d+1})| = 1
+    \end{align}
+    on any closed manifold.
+\end{definition}
+In particular, if you look at $Z(\Sigma^d\times S^1) = 1
+= |\dim V(\Sigma^d)|$.
+This is interpreted as the dimension of the Hilbert space on this space
+Physically,
+this means that there is always a unique state on any closed $\Sigma^d$.
+A topological state of matter described by an invertible TQFT always has a
+unique ground state on any closed manifold.
+Not always the case,
+depending on the topology of the space,
+and those will be described by non-invertible TQFTs.
+
+The reason it's called invertible,
+is that if the path integral is a phase,
+there's always a well-defined inverse of the phase,
+which is the complex-conjugate of the phase.
+
+Let's say if you have a TQFT,
+then the ``inverse'' TQFT has a path integral like
+\begin{align}
+    Z_{T^{-1}}\left( M^{d+1} \right)
+    =
+    Z_T^*\left( M^{d+1} \right)
+\end{align}
+Invertible TQFTs come up a lot.
+They describe integer quantum hall states.
+Topological insulators and superconductors.
+All $(1+1)$-dimensional topological phases of matter are describable by
+invertible TQFTs.
+Any TQFT that is not invertible is a \emph{non-invertible} TQFT.
+
+
+Actually, one more thing before I get to that.
+Invertible TQFTs form an Abelian group.
+Suppose that I have the path integral for two theories $T_1$ and $T_2$,
+and I want the path integral for $T_1\times T_2$,
+then I just multiply their path integrals.
+\begin{align}
+    Z_{T_1T_2}\left( M^{d+1} \right)
+    =
+    Z_{T_1}\left( M^{d+1} \right)
+    Z_{T_2}\left( M^{d+1} \right)
+\end{align}
+
+\begin{question}
+    Does the partition function define the TQFT uniquely?
+\end{question}
+Well $V(\Sigma^d)$ is always going to be a one-dimensional vector space.
+Even if it has some boundaries,
+it's just going to be a number,
+a multiple of that state,
+so just an amplitude.
+We can extend that definition to the full TQFT.
+I'm specifically talking about the invertible ones.
+
+Even in $M^{d+1}$ is open,
+the state on the boundary is one-dimensional,
+I can just take the inverse theory to give me the complex conjugate.
+
+If a theory is not invertible,
+it is a non-invertible TQFT,
+and it will have a non-trivial degeneracy on different manifolds.
+One thing that is true,
+but I'm not sure if there is a proof,
+I doubt there's a counterexample,
+but I think that this always goes the other way.
+There's also an arrow going the other way.
+If the path integral magnitude is 1,
+then every path integral on the manifold is 1.
+I've seen the proof for once-extended,
+but I'm not sure if it's general.
+
+So a non-invertible TQFT should have
+$Z|\left( \Sigma^d\times S^1 \right)\ne 1|$
+for some $\Sigma^d$.
+Using ``should'' loosely here.
+
+Let me give you a quick example of an invertible TQFT.
+This is actually going to be an interesting example,
+because it's going to show you a TQFT that is non-trivial,
+but it's going to describe a trivial phase of matter.
+Imagine we take our path integral on a two-manifold
+and have some $U(1)$ gauge field $A$ with field strength $F$.
+Then
+\begin{align}
+    Z\left( M^d, A \right)
+    =
+    e^{-\theta \int_{M^2} F}
+    e^{i\phi \chi\left( M^d \right)}
+\end{align}
+where
+\begin{align}
+    \chi\left( M^d \right) = \frac{1}{2\pi}\int_{M^2}R
+\end{align}
+is the Euler characteristic.
+
+Phases of matter are 1-1 correspondence with deformation classes of TQFTs.
+In the absence of pinned phases of $\phi$,
+this is an example of an invertible TQFT.
+
+The first most important question studying a new phase of matter is to ask if
+it's describable by an invertible TQFT or a non-invertible TQFT.
+
+\section{'t Hooft anomaly}
+One big concept about TQFTs I want to mention are called
+\emph{'t Hooft anomaly}.
+This is something that applies a general QFT,
+not just TQFT.
+We can consider a QFT which has a symmetry group $G$.
+This is the global symmetry group of the QFT.
+This may be completely well-defined in the absence of any background gauge field
+associated with $G$i.
+Then you try to turn on a background gauge field and see something is wrong
+with the theory.
+Consider your path integral $Z(M^{d+1})$ and turn on $A$,
+and you find that the path integral is not gauge-invariant.
+\begin{align}
+    Z\left( M^{d+1}, A + d\lambda \right)
+    \ne
+    Z\left( M^{d+1}, A \right)
+\end{align}
+when $A\ne 0$.
+It's not the end of the world.
+You might be able to redefine the path integral and make it gauge invariant.
+You may be able to define a new gauge-invariant path integral
+\begin{align}
+    \tilde{Z}\left( M^{d+1}, A \right)
+    = Z\left( M^{d+1}, A \right)
+    e^{i\int_{M^{d+1}} f(A)}
+\end{align}
+where the $e^{i\int_{M^{d+1}} f(A)}$
+is called a local counter-term that cures the gauge invariance.
+
+\begin{question}
+    You mean the action of $G$?
+\end{question}
+You look at all the correlation functions and you're applying $G$ to all the
+operators.
+The ground state of the QFT is invariant under $G$.
+
+\begin{question}
+    When you couple the background gauge field,
+    should we be doing minimal coupling?
+\end{question}
+It depends how you define this quantity.
+Suppose you have some action that is a single Dirac fermion with a mass.
+You integrate out the mass
+and find a Chern-Simons term with some action.
+You wouldn't have written this term down anyway if you were experineced.
+But you could actually just add another local functional to this,
+and now the coefficients add up to 1 and they are gauge invairant.
+If you're not following this discussion it's fine.
+I haven't introduced Chern-Simons theory yet.
+But you're right.
+Usually, you would have defined your path integral in the first place.
+
+\begin{question}
+    Is it an anomaly in global symmetry?
+\end{question}
+Yes. This is the only anomaly worth having a name.
+Gauge anomaly means you have a 't Hooft anomaly you try to gauge.
+You may not always be able to add counter terms.
+I haven't defined 't Hooft anomaly yet.
+
+My point is that a theory with a 't Hooft anomaly is a real theory.
+A theory with a gauge anomaly is a theory that doesn't make sense in the first
+place.
+
+There's something called a framing anomaly.
+There's gravitational anomalies.
+Anomaly is an overloaded term in physics,
+used everywhere for different things.
+
+There's no such thing as a gauge theory in QM.
+It's a classical redundancy in your description.
+A theory can have a global symmetry that is anomalies.
+That is a 't Hooft anomaly.
+
+You write down a Lagrangian with classical gauge symmetry.
+You quantize it and find the symmetry does not hold when quantized,
+and that's an anomaly.
+There's a whole story.
+
+There could be situations where you can't cancel this gauge apology by adding
+counter terms.
+You can cancel it not with a local counter term,
+but thinking your theory as the surface of a higher dimensional invertible
+TQFT.
+
+So,
+we can have a situation where the gauge non-invariance is cancelled by a
+$(d+2)$-dimensional invertible TQFT.
+An invertible TQFT that exists in a 1-higher dimension.
+You can think of your system as living on the $(d+1)$-dimension surface of a
+$(d+2)$-dimensional bulk and this bulk is an invertible TQFT.
+And then you can have some bulk theory
+$Z_{\text{bulk}}\left( W^{d+2}, A \right)|_{\text{boundary cond.}}
+= Z\left( \partial W^{d+2}, A|_{\partial W} \right)$
+perfectly well-defined,
+but if you evaluate with some boundary condition.
+And the gauge transformation would be governed by the higher-dimensional theory.
+So
+\begin{align}
+    Z\left( M^{d+1}, A + d\lambda \right)
+    Z\left( M^{d+1}, A \right)
+    = Z_{\text{bulk}}\left( M^{d+1}\times I, \tilde{A} \right)
+\end{align}
+So the amplitude of going from $A$ to $A + d\lambda$,
+there's an extra phase that comes from the invertible TQFT in the bulk,
+which cancels out the gauge non-invariance here,
+but cancelling in a way that cannot be done by just a local counterterm.
+
+So then 't Hooft anomalies can be classified by TQFTs.
+
+\begin{question}
+    Why only just one higher dimension?
+\end{question}
+If you have to go to 2 higher dimensions,
+you can always compactify one of te dimensions
+and then you're back to $+1$ extra dimensions.
+
+Let me just explicitly write it out
+
+A QFT has a 't Hooft anomaly if
+\begin{enumerate}
+    \item It has a global symmetry $G$
+    \item The path integral $Z$ is not gauge invariant under gauge
+        transformaiton $A\to A + d\lambda$
+    \item Gauge non-invariance cannot be cancelled by a local counter-term,
+        but it can be cancelled by a $(d+1)$-dimensional TQFT.
+\end{enumerate}
+In topologcial pahses of matter,
+some are described at low energy witha 't Hooft anolmaly
+and what that tells us is that it cannot be realised ni $(d+1)$ spacetime
+dimensions,
+but has to be the surface of a higher dimensional theory.
+In condensed matter,
+a theory witha 't Hooft anomaly can only be raelised microscopically
+and have the symmetry act on-site,
+it arises as the $(d+1)$-dimensional surface of a $(d+2)$-dimensional
+topological phase.
+
+On-site means the symmetry means a tensor product of on-site symmetry opreators
+separately.
+That is, 
+$g=\bigotimes_i g^{(i)}$.
+
+The symmetry group dictates that the gauge field is a connetion on a principle
+$G$-bundle,
+so it's a gague field of global symmetry group $G$,
+so it controls what gauge transfomatinos you have.
+What I'm saying is
+your therory may be defined for correlation functions without $A$,
+but when you turn on the $A$ and things go wrong.
+Let me just mention a few examples of 't Hooft anomalies in case you may have
+seen examples before.
+
+If you haven't seem examples before,
+these examples will come up in the course.
+
+Famous example.
+You can have a $(1+1)$-dimensional chiral fermion
+with $U(1)$ symmetry.
+It can only exist in the boundary of an integer quantum Hall state,
+which is a TQFT.
+
+Another example.
+You can have a single $(2+1)$-dimensional massless Dirac fermion
+with $U(1)$ and time-reversal symmetry.
+But this suffers from the famous parity anomaly.
+So htis can only exist at the surface of a $(3+1)$-dimensional topological
+insulator.
+
+In particular physics,
+there's a famous axial anomaly,
+which is an example of a 't Hooft anomaly.
+
+These are the most famous ones.
+
+\begin{question}
+    Are massless Dirac fermions topological?
+\end{question}
+No,
+I'm just saying the ntion of a 't Hooft anomaly applies to QFTs in general.
+These examples are not topological.
+
+\begin{question}
+    Gauge-gravity duality?
+\end{question}
+It's related in an either loose way or such a profound way that I don't have an
+aswer.
+Definitely related,
+but it's hard to yeah.
+It's related,
+but it's one of things things,
+as time goes on
+we're seeing more and more hints.
+At the surface it seems pretty good.
+
+\begin{question} 
+    Is there some version for CFTs of diffe.rent dimensions?
+\end{question}
+A CFT can certainly have a 't Hooft anomaly.
+They must live at the surface of a higher-dimensional TQFT.
+But a higher-dimensiona CFT doesn't really make sense,
+because the boundary theory only makes snese
+if there are no additional degrees of freedom in the bulk.
+If the bulk has degrees of freedom,
+there can be leaking of these.
+Here the boundary has degrees of freemdom that cannot leak into the bulk.
+
+\begin{question}
+    Why should the bulk by invertible?
+\end{question}
+There's two answers.
+People do talk abbout non-invertible anomalies.
+There are examples,
+but it suffers from the thing I was describing.
+If your bulk is non-inverible,
+it means there are non-trivial degrees of freedom that are also non-trivial i
+hte bulk,
+they can leak out and there is no clean separation between the bluk and the
+boundary.
+
+An integer quantum Hall state is well-defined,
+but the boundary mode cannot exist on its own.
+
+We can open up the bulk and have it open up the space and there is a boundary
+theory there.
+.
+\begin{question}
+    So you have abulk theorey
+    You restrict it to the boundary,
+    you evaluate it on hte boundary?
+\end{question}
+It's better to htink I have a bublk theory,
+and if the manifold has a boundary,
+then I will specify some boundary conditions.
+
+\begin{question}
+    When you specify the boundary condition,
+    what do you mean exactly?
+\end{question}
+It's only when I specify boundary conditions that I can get a number $Z$.
+
+What is the bulk?
+$Z_{\text{bulk}}\left( W^{d+2} \right)\in V(\partial W^{d+2})$
+is just a state,
+which I take an inner product with something to specify the boundary condition.
+
+It might be more useful that we go to examples later on.
+This discussion is a bit abstract.
+Different theories may correspond to different boundary conditions.
+In all cases, the boundary theory will have a 't Hooft anomaly.
+
+\begin{question}
+    TFQT exist on the boundary of a therory in the sense you want to put it on a
+    lattice?
+    If we don't put it on a lattice and don't couple it to a gauge field?
+\end{question}
+Call that a macroscopic realisation.
+
+A single fermion is not emergable from a one-dimensional system.
+
+\begin{question}
+    The Standard model is not emergable?
+\end{question}
+If a theory has a 't Hooft anomaly,
+if you're willing to give up the symmetry,
+you can realise it microscopically.
+If you dedmanded you wanted to preserve axial symmetry,
+you have to go to the surface of a one-higher dimensino.
+
+In the standard mdoel,
+there is actually 2 anomoalies.
+There's a gauge $U(1)$ anomaly for chiral fermions,
+and there's a gravitaitonal anomaly,
+that you cannot give up.
+It's tied to energy enregy conservation.
+I don't even know what that means,
+because then you have a time-dependent Hamiltonian.
+
+I think we're getting ahead of ourselves with this example.
+
+\begin{question}
+    In a 1D condensed matter system,
+    in a Luttinger liquid for example?
+\end{question}
+That anomaly you can think of as an axial anomaly in 1+1 dimensinos.
+The theory emerges out ofa sitautiaon where it doesn't exist microscopically.
+
+If there are no more questions about TQFTs,
+we're going to talk about actual topological quantum phases of matter.
+
+\section{1D topological superconductor}
+This is describable by an invertible spin TQFT.
+
+We're going to start off with a $(1+1)$-dimensional
+Majorana-Kitaev chain.
+Start with a simple toy model that is the 1d spineless $p$-wave superconductor.
+That's going to be described by the following.
+Imagine you have 1D array of $N$ sites.
+WRite the free fermion Hamiltnoia,
+which you can think of as a free field for the semiconductor.
+
+\begin{align}
+    H &=
+    \sum_{i=1}^{N}
+    \left[ 
+    -t\left( c_i^\dagger c_{i+1} + c_{i+1}^\dagger c_i\right)
+    - \mu\left( c_i^\dagger c_i - \frac{1}{2} \right)
+    + \Delta c_i c_{i+1}
+    + \Delta^* \chi_{i+1}^\dagger c_i
+    \right]
+\end{align}
+and consider periodic boundary conditions $c_{i+N}=c_i$.
+
+Consider momentum space.
+\begin{align}
+    \tilde{c}_k &=
+    \frac{1}{\sqrt{N}}
+    \sum_{j=1}^{N}
+    c_j e^{ik_j}
+\end{align}
+where $k = 2\pi n/N$,
+$n=0,\ldots,N$.
+The Broullin zone is $[0,2\pi] \simeq [-\pi, \pi].
+$\Delta is just any compelx number here.
+
+Define this spinner with some redundnacy.
+\begin{align}
+    \Phi_k =
+    \begin{pmatrix}
+        c_k\\
+        c_{-k}^\dagger
+    \end{pmatrix}
+\end{align}
+then the Hamiltonian is
+\begin{align}
+    H &=
+    \frac{1}{2}\sum_{k\in BZ}
+    \Psi_k^\dagger \mathcal{H}_k \Psi_k
+\end{align}
+So then the Bloch Hamiltonian is
+\begin{align}
+    \mathcal{H}_k =
+    \begin{pmatrix}
+        \mathcal{E}_k & \Delta_k^*\\
+        \Delta_k & -\mathcal{E}_k
+    \end{pmatrix}
+\end{align}
+where
+\begin{align}
+    \mathcal{E}_k &= -2t\cos k - \nu\\
+    \Delta_k &= -2i\Delta\sin k
+\end{align}
+The dispersion relation is
+\begin{align}
+    E_k &= \pm
+    \sqrt\left\{ \mathcal{E}_k^2 + |\Delta_k|^2 \right\}\\
+    &= \pm
+    \sqrt{
+        (\mu + 2t\cos k)^2
+        + 4|\Delta|^2\sin^2 k
+    }
+\end{align}2
+$E_k$ is always gapped away from $k=0,\pi$.
+
+If $\mu=-2t$,
+then it is gapless at $k=0$.
+If $\mu=2t$,
+then it is gapless $k=\pi$
+
+Let's draw some pictures.
+
+[pictures]
+It's called p-wave because $\Delta_k$ is linear in $k$ for small $k$.
+
+If the Hampton is
+\begin{align}
+    \mathcal{H}_k &=
+    h_k^0 \mathbf{1}
+    + \vec{h}_k \cdot \vec{\sigma}
+\end{align}
+Then the combo.
+\begin{align}
+    h_k^x = -h_{-k}^x
+    \qquad
+    h_y^y = -h_{-k}^y
+    \qquad
+    h_k^z = h_-zk
+\end{align}
+
+If we know $\vec{h}_k$ from $[0,\pi]$,
+then we know is everywhere.
+\begin{align}
+    \hat{h}_{k=0} &= S_0 \hat^{z}\\
+    \hat{h}_{k=\pi} &= \underbrace{S_{\pi}_{\pm 1}\hat{Z}
+\end{align}
+depedning on the sign of $\mathcal{E}_\pi$.
+Define $\nu = S_0 S_\pi$.
+
+The two spaces $S_0 = S_{\pi}=2$
+and $S_0 = -S_{T}$.
+They are distinct so long as the energy gap stays open so $h_k$ is well-defined.
+
+[picture]
+
+Everything is region is topological.
+Everything outside is topological.
+As we tune the chemical potentitoni through kinetic energy,
+if we have an odd number of Fermi points,
+they we're on a topological phase.

@@ -1,0 +1,242 @@
+\section{Uncertainty principle}
+The uncertainty principle for observables $A$ and $B$ are
+\begin{align}
+    \sigma_A \sigma_B \ge \frac{1}{2}
+    |\bra{\psi} [A,B] \ket{\psi}|
+\end{align}
+for example,
+\begin{align}
+    \sigma_x \sigma_p \ge \frac{\hbar}{2}.
+\end{align}
+
+Don't pretend you have to rush through the material and not get very basic
+things like the uncertainty principle.
+
+Here's something I know you understand for fact.
+
+\section{Time-energy uncertainty}
+Energy is an operator in quantum mechanics.
+Time is not an operator in QM.
+It is a parameter in the Schrodinger equation.
+Nothing tells me the time operator.
+It's special in QM.
+
+But we shouldn't.
+Time and energy satisfy an uncertainty just like position and momentum.
+The proof and interoperation is different,
+but it's true.
+
+Take any observable $A$.
+Compute expectation value $\bar{A}$.
+Let's see how the average changes over time.
+\begin{align}
+    \frac{d}{dt}\bar{A} &= \frac{d}{dt}\bra{\psi} A\ket{\psi}\\
+    &= \underbrace{\frac{d}{dt} \bra{\psi}}_{+\frac{i}{\hbar}\bra{\psi} H}
+    A \ket{\psi}
+    + \bra{\psi} A
+    \underbrace{\frac{d}{dt}\ket{\psi}}_{-\frac{i}{\hbar}H\ket{\psi}}
+\end{align}
+and then we get the beautiful result
+\begin{align}
+    \frac{d}{dt}\bar{A} &=
+    -\frac{i}{\hbar} \bra{\psi} [A,H] \ket{\psi}
+\end{align}
+which leads to
+\begin{align}
+    \left|\frac{d\bar{A}}{dt}\right| &=
+    \frac{1}{\hbar}
+    |\bra{\psi} [A,H] \ket{\psi} |\\
+    &\le \frac{2}{\hbar}\sigma_A \sigma_H
+\end{align}
+by the uncertainty principle,
+just half the commutator.
+
+What we do is this
+There is an interpretation for the formula.
+I'm going to write it like this.
+\begin{align}
+    \boxed{
+        \sigma_H \frac{\sigma_A}{\left|\frac{d\bar{A}}{dt}\right|}
+        \ge \frac{\hbar}{2}.
+    }
+\end{align}
+This $\sigma_H$ of course is the uncertainty of the energy.
+In a particular state,
+there is some spread in the energy I get.
+
+What about this $\frac{\sigma_A}{\left|\frac{d\bar{A}}{dt}\right|}$?
+It's the uncertainty of $A$ divided by how fast the average of $A$ changes.
+This thing has units of time.
+The interpretation is that it is the time it takes for $\bar{A}$
+to move enough to go outside the uncertainty.
+This is how long it takes for the average value of $A$ to change appreciably.
+It is the time it takes for $\bar{A}$ to change by $\sigam_A$.
+
+Let me draw a picture.
+I can measure $A$,
+there is an average $\bar{A}$ and there is a spread $\sigma_A$.
+Over time,
+the central value would change,
+and it's going to take time for the central value to change more than
+$\sigma_A$.
+So this is the time it takes for $A$ to change such that it matters.
+
+If you're close to an eigenstate of energy,
+this is going to be small,
+and this is going to be large.
+The expectation is going to change not by much.
+If I'm in an eigenstate,
+in fact I don't change at all.
+On the other hand,
+if it's a superposition of many energy eigenstates,
+thne the wave function chages fast,
+and this thing is small,
+and hte expectation value moves wildly.
+There is an uncertainty relation between energy and time,
+but time is just the time it takes for stuff to change,
+where stuff is whatever $A$ you put here.
+
+
+\begin{question}
+    Eigenstates are stable?
+\end{question}
+They are completely stable.
+If you substitute it into the Schrodinger equation,
+the ket is just going to evolve by phase,
+but the phase doesn't matter anyway.
+The universe is not in an eigenstate of the Hamiltonian of the universe,
+because it it was,
+how can we be moving around?
+
+Example.
+Have you heard of quarks and gluons?
+It's a complicated theory.
+Not so much to state.
+But to solve.
+There is a state where 3 quarks live together,
+they have spin that point up called $\Delta^+$.
+This doesn't last a long time.
+Very quick,
+it splits up into a neutron $n$ and a pion $\pi^+$.
+Let's try to understand what this means in QM language.
+
+We started off with a certain state
+$\ket{\Delta^+}$.
+It's not an energy eigenstate of the QCD Hamiltonian,
+so it will hange,
+but change in many ways.
+When this evolves in time,
+this is going to go into a state
+\begin{align}
+    U(t)\ket{\Delta^+} &=
+    \alpha\ket{\Delta^+} + \beta \ket{n \pi^+} + \cdots
+\end{align}
+so it's not an eigenstate of QCD.
+You can detect the neutron,
+and you can measure the energy and momenta,
+and you can make a plot.
+Because of conservation of energy,
+this state should have the same energy as the original state.
+
+What I find is something like this of prob vs energy $E$.
+I get a certain distribution,
+a distribution with some mean at 1232 MeV
+and a spread of 300 MeV.
+What I say is this.
+
+It takes time for this state $\ket{\Delta^+}$
+to change appreciably.
+How long does it take to change appreciably?
+This number here 300 MeV.
+Knowing the uncertainty of the energy,
+and knowing the right hand side,
+I should know this $\sigma_A/|d\bar{A}/dt|$,
+the time it takes to appreciably change,
+otherwise known as the lifetime,
+sometimes written as $\tau$.
+
+When you see the newspaper saying the Higgs boson has a lifetime whatever,
+no one timed it,
+they just observed it decayed into $\Delta^+$ and $\Delta^-$.
+They say a plot like this.
+It didn't look pretty,
+there are error bars,
+and there's this bump here with two data points.
+No one believed it.
+
+Then people looked at other decay modes.
+They do some plots,
+and notice this other peak.
+It must be a coincidence,
+Calculated the probability.
+They say they discovered the Higgs and celebrated.
+
+The regular uncertainty that is not time,
+it's typically saturated,
+you get the equality for the ground state.
+There's a similar experience here.
+For ground state things,
+the lowest state that 3 quarks can have for example,
+is going to saturate the inequality.
+
+It becomes a definition almost.
+What they really mean when they say the Higgs has some lifetime,
+it's really saying the width is something.
+
+In some experiments,
+you can measure two things independently,
+lifetime and width.
+The relation is an inequality.
+In some situations,
+there is saturated.
+But I can construct situations where the lifetime is much bigger than this
+inequality suggests,
+but I have to think about it.
+In a harmonic oscillator,
+the uncertain is minimum and bigger for higher states.
+One can construct a state with much bigger uncertainty than the inequality
+bound.
+
+You learn in Griffiths to calculate the hydrogen atom levels.
+I can't believe we're out of time.
+You solve the hydrogen atom.
+What you did is htis.
+You ge the Hamiltonian with Coulomb interaciton.
+Nothing else.
+Then you find the eigenstates.
+They are there the rest of the time.
+But of course they don't.
+You start iwth excited states,
+get cofeee
+and measuredecays.
+To include not onlu the Coulomb interaction etween electorn and neuclus,
+but also the quantised electromagnetic field.
+If you do that,
+those states you found were not eigenstates of the whole thing anymore,
+but they're darn close to being eigenstates.
+All those eigenstates you calculated in Griffiths are really close,
+because the unceratinty is so small.
+Those lines in the spectra you see are not infinitely thin.
+There is a little spread.
+This width is related to the lifetime.
+When you excite the hydrogen atom,
+let it decay,
+send it through a prism,
+they're not going to be infinitely thin,
+some are going to be bright and some are not.
+
+can you guess a relation between the brightess and the width?
+If the line is very sharp,
+this time must be large,
+so you get very few photons iwth htat energy.
+So thin lines are going to be dim.
+
+On the other harnd, if $\sigma_H$ is going to be big fat line,
+it's going to decay slow.
+
+As an undergrad,
+you learn about eigenstates and they never change,
+but suddenly people say they jump.
+There's no reason for that.
+Well it's beccause they missed out the rest of the Hamiotnian,
+but it's good to teach as an introduction.

@@ -1,0 +1,423 @@
+\section{Lecture 7}
+37 min late, raining day.
+
+\begin{align}
+    \bra{k} U(t) \ket{k'} =  \ket{k} e^{-E_{k'}t/hbar}\ket{k'}\\
+    &= e^{-E_{k'}t/hbar}\delta\left(k - k' \right)
+\end{align}
+and the time-evolution operator is
+\begin{align}
+    U(t) = \int_{-\infty}^{\infty} e^{-iE_k t/\hbar}\ket{k}\bra{k}
+\end{align}
+where $\psi(x) = \braket{x}{\psi}$.
+Now to work it out in the position basis,
+\begin{align}
+    \bra{x'}U(t)\ket{\psi(0)}
+    &= \bra{x'}
+    \int dx\, U(t)
+    \ket{x}\braket{x}{\psi(0)}\\
+    &= \int_{-\infty}^{\infty}dx
+    \int_{-\infty}^{\infty}dk\,
+    e^{-iE_k t/\hbar}
+    \underbrace{\braket{x'}{k}}_{\frac{e^{ikx'}}{\sqrt{2\pi}}}
+    \underbrace{\braket{k}{x}}_{\frac{e^{ikx}}{\sqrt{2\pi}}}
+    \psi(x)
+\end{align}
+and $E_k = \hbar^2 k^2/2m$.
+So what we have is a Gaussian integral.
+\begin{align}
+    \bra{x'}U(t)\ket{\psi(0)}
+    = \int_{-\infty}^{\infty} dx\,
+    \frac{e^{\frac{i m(x - x')^2}{2\hbar t}}}{\sqrt{2\pi i t\hbar/m}}
+\end{align}
+You guys are physicists,
+you should know what this physically means.
+
+Suppose I start off with the wave function concentrated.
+But over time it should diffuse.
+
+Also, there are factors of $i$ here,
+but it's the magnitude that matters.
+There are real and imaginary parts that oscillate.
+
+Imagine,
+there is a certain probability moving to the right.
+What happens to the probably of the particle moving to the right later on?
+It's the same,
+because the energy is the same.
+
+The component overlap of the wave function never changes,
+only the phase changes.
+You don't know what the momentum is but it never changes.
+
+I promise,
+this class I do something trivial and boring,
+and I blow your mind the next minute.
+I promise I'll blow your mind after the break.
+I'm tired now.
+We'll start again at 11:00.
+
+
+\section{Quantum Zeno Effect}
+The hare and the tortoise.
+The hare is faster.
+Rabbit goes ahead, rabbit will win.
+But a Greek philosopher said no.
+By the time the rabbit reaches the position of the turtle,
+the turtle has moved a bit.
+By the time the rabbit reaches where the turtle is,
+the turtle has moved ahead.
+etc.
+So the rabbit will never take over the tutle.
+
+Greeks are not stupid.
+They understood what's wrong.
+
+The true argument is that with words you can prove anything you want.
+Philosophers.
+Silly stuff, they stopped doing this.
+You can manipualate works to do whatever.
+I teach classes on how to convince peopl to do stuff.
+These people are sohpists.
+They have quite afraction.
+Some say words, who cares, you prove anything you want.
+
+That was the old Zeno paradox.
+
+In QM hter's soemthign slighlty simlalr to that.
+This is correct as opposed to the Zeno argument,
+and we call it the Zeno efefect.
+
+Suppose some QM system stars in some initail state $\ket{i}$.
+It evolves in time like
+\begin{align}
+    e^{i Ht/\hbar}\ket{i}
+\end{align}
+and the vector may chnage.
+What's the probability of finding some finite state?
+\begin{align}
+    \bra{f}e^{i Ht/\hbar}\ket{i}
+\end{align}
+This is the amplitude of finding it in state $f$ later after some time.
+Probability si squred.
+If the evolution is very small, I can approximate
+\begin{align}
+    \bra{f}e^{i Ht/\hbar}\ket{i}
+    = \bra{f}
+    1 - \frac{i}{\hbar} Ht
+    \ket{i}
+\end{align}
+for small $t$.
+Calculate what the probability is to transition $i\to f$.
+For simplicity,
+assume the final state is very different,
+orthogonal to each other
+\begin{align}
+    \braket{f}{i} = 0
+\end{align}
+So then
+\begin{align}
+    \bra{f}e^{i Ht/\hbar}\ket{i}
+    = -\frac{i}{\hbar}t \bra{f}H\ket{i}
+\end{align}
+and it's linear in $t$, which is interesting.
+Then to get the probability I need to square this.
+\begin{align}
+    P(i\to t) = 
+    \frac{|\bra{f} H\ket{i}|^2}{\hbar^2}t^2
+\end{align}
+which is quadratic in $t$.
+The probability of something happening is quadratic ni time,
+not linaer.
+Let me do an expeirment.
+Start with state $\ket{i}$,
+evolve with time $\delta t$.
+I look at the system,
+that counts as a measuremnet.
+There's a probabiiyt of $i$ anda probability of $f$.
+Suppose I get $i$ again.
+The initail state gets reset,
+collapse.
+Then wait another $\delta t$.
+I measure again,
+say I get $i$ again.
+Collapse.
+I do this many times.
+I do this many times,
+every time there's a bit probabiliyt of $i$
+and a small probabliyt of getting $f$.
+
+Suppose instead the probability of being in time $i$ after time $\Delta t$ is
+\begin{align}
+    P(i \to_{\Delta t} i) = 1 - # \Delta t
+\end{align}
+That's thep robabiliyt of getting $i$ after a step.
+But then I do it again, and I want both things to happen,
+and the probability is the product
+\begin{align}
+    P(i \to_{2\Delta t} i) = (1 - # \Delta t)^2
+\end{align}
+And 3 times
+\begin{align}
+    P(i \to_{4\Delta t} i) = (1 - # \Delta t)^2
+\end{align}
+And after many many times, say $t/\Delta t$.
+$t$ is the whole expeirment,
+divided up into a lot of expeirments separated by $\Delta t$.
+This number is going to be
+\begin{align}
+    P(i \to_{t} i) = \left(1 = # t \right)^{t/\Delta t}
+\end{align}
+and then I take the limit $\Delta t\to 0$.
+Do you know what this limit is?
+It is an exponential.
+This is how you learn about the exponential function in high school.
+It's something to expect.
+If there is something unlikely to happen,
+it's exponential like this.
+The probabliity of staying alive is a decaying exponential.
+If you wait a billion years,
+I'm guaranteed to get a piano hit my head.
+That's how radioactive decay happens.
+There's a proabiliyt of having a decay and not decaying happens exponential over
+time.
+That's what happens when the probability of decaying is linear in $\Delta t$.
+
+But the probability is not linear,
+actually quadratic,
+and this limit is actually
+\begin{align}
+    P(i \to_{t} i) = \left(1 = # t^2 \right)^{t/\Delta t} \to 1
+\end{align}
+
+So ``a watched pot will never boil''.
+Quotation marks of course,
+because this is a joke.
+People got so excitied,
+they tried to have an atom decaying,
+expected exponentail decay,
+but if you look at it,
+it doesn't decay.
+But then are you really watching it every second?
+Does it count as a measurment?
+Do I have to be tere,
+does a grad student have to be there.
+Every time peole naylse this system,
+if you do a continuous measurement,
+yes it does't decay.
+Then you have to face the question of what is a measurement or not.
+
+In fact,
+I already argued that if you wait long enough,
+you're going to go back to where you started.
+In every experiment you do in normal life,
+the decay is proportional in time.
+You're going to go back to where you start in the beginning,
+but in 99.99\% of situations,
+you see the normal thing where the probability of something to happen is
+proportional to the time it's going to happen.
+How do I understand?
+It's sublte.
+The poor soul teaching you in spring is going to explain wiht perturbation
+theory.
+
+When they talk about Fermi's golden rule,
+say no,
+it should be quadratic in time,
+how come it's not quadratic?
+I want you to really think about this.
+It's really subtle.
+
+Suppose I do an experiment.
+I have to measure constantly.
+Someone says,
+oh wlel to observe constantly,
+you have to do this this and taht,
+and with that of course the state is not going to change.
+But if you're a little empty,
+think you acomplished something by me yee.
+Take a radioatcitve atome,
+I can stop it just by looking at it.
+By setting up sometihng that I can observe,
+it is a little surprised that it doesn't decay.
+You loook sceptical,
+I'll dig some papers.
+
+You'll see why it looks linear,
+that you'll learn next semester.
+Nag hte professor, don't mention my name by the way.
+
+\section{Uncertainty principle}
+Jumping from topic to topic.
+So far,
+it's generic things about quantum mechancis,
+not about relativistic QM or particles on a line,
+just completely generic things about QM.
+
+Let's talk about the uncertainty principle.
+You should know it.
+You should know how to prove it.
+You should know how to generalise it.
+And you should know how not to misuse it.
+
+Heisenberg stated the uncertainty principle,
+but 80\% of what he said about it is wrong.
+
+Let's just prove the rslut wiht standard linear algebra and talk about
+consequencs.
+By the way,
+did I define or prove the expectation value
+\begin{align}
+    \bar{A} = \bra{\psi} A\ket{\psi}
+\end{align}
+It's just normal probability,
+weighted.
+
+For example, if there's a 90\% probability of getting 1,
+and 10\% probabilty of getting 0,
+the expectation value is 0.9.
+
+By the way, with games,
+this is loterry.
+Tiny probability.
+This is working yup'rure sure to get a little negative.
+For example,
+study physics and you have a right probability of losing money.
+Gains and losses.
+
+I debated myself about what notation to use.
+$\langle A\rangle$ is used for expectation,
+and in fact it motivated the braket notation,
+but then when pepole see this,
+they ask where is hte bra?
+Where is the bra?
+So I just write $\bar{A}$.
+
+How do I prove this?
+Well insert the identity.
+\begin{align}
+    \bar{A} = \bra{\psi} A\ket{\psi}
+    = \sum_{m,n} \braket{\psi}{m}\underbrace{\bra{m} 
+    \underbrace{A \ket{n}}_{a_n\ket{n}}}_{a_n\delta_{mn}} \braket{n}{\psi}
+    = \sum_{n} a_n \underbrace{|\bra{n}{\psi}|^2}_{\text{prob of }a_n}
+\end{align}
+where $n,m$ are eigenstates f $A$.
+So that's why it's the expectation value.
+
+But what about the variance?
+Define the operator
+\begin{align}
+    \Delta A = A - \bar{A}\mathbf{1}
+\end{align}
+This is a psychological test of authors of books.
+Some people are, particular,
+and they like to put in that identity.
+You can also define another operator
+\begin{align}
+    \Delta B = B - \bar{B}\mathbf{1}
+\end{align}
+Then I claim that this expectation value
+\begin{align}
+    \sigma_A^2 &= \bra{\psi} (\Delta A)^2 \ket{\psi}\\
+    &= \bra{\psi}
+    A^2 - A\bar{A} \mathbf{1} - \bar{A} A + \bar{A}^2 \mathbf{1}
+    \ket{\psi}
+\end{align}
+where $\sigma_A$ quantifies the spread of $A$.
+This operator $\Delta A$ is obviously the deviation,
+could be negative or positive,
+and if I square it I get the dispersion around the average,
+clearly measuring the standard deeviation.
+You could do the sae for $B$ and get the same thing.
+
+Define the sattes
+\begin{align}
+    \ket{\alpha} = \Delta A\ket{\psi}\\
+    \ket{\beta} = \Delta B\ket{\psi}
+\end{align}
+and consider
+\begin{align}
+    \bra{\psi} (\Delta A)^2 \ket{\psi}
+    \bra{\psi} (\Delta B)^2 \ket{\psi}
+    &=
+    \braket{\alpha}{\alpha}
+    \braket{\beta}{\beta}
+\end{align}
+Have you seen an expression like this beforei nthe homework?
+This is the Schwarz inequality that you proved last week.
+Perectly timed,
+that's a quality class.
+This is going to be
+\begin{align}
+    \braket{\alpha}{\alpha}
+    \braket{\beta}{\beta}
+    \ge
+    |\bra{\psi} \underbrace{\Delta A \,\Delta B}_{\braket{\beta}{\beta}}\ket{\psi}|^2
+\end{align}
+straight from the homework.
+You know what the commutator and anticommutator means?
+\begin{align}
+    \bra{\alpha}(\Delta A)^2\ket{\alpha}
+    \bra{\beta}(\Delta B)^2\ket{\beta}
+    \ge
+    \left|
+        \bra{\psi}
+        \frac{1}{2} [\Delta A, \Delta B]
+        + \frac{1}{2}\left\{ \Delta A, \Delta B \right\}
+    \right|
+\end{align}
+Now I need some scratch paper to show that
+\begin{align}
+    \left( AB - BA \right)^\dagger
+    &= B^\dagger A^\dagger
+    - A^\dagger B^\dagger\\
+    &= BA - AB\\
+    &= - [A, B]
+\end{align}
+so the commutator is anti-hermitian.
+You can also show that the anti-commutator is hermitian.
+
+So we have an anti-hermitian commutator,
+and a hermitian anti-commutator.
+Think of the complex plane,
+and a complex number with real and imaginary parts.
+I claim that no matter what,
+the modulus is always going to be larger than the imaginary part.
+\begin{align}
+    \bra{\alpha}(\Delta A)^2\ket{\alpha}
+    \bra{\beta}(\Delta B)^2\ket{\beta}
+    &\ge
+    \left|
+        \bra{\psi}
+        \frac{1}{2} [\Delta A, \Delta B]
+        + \frac{1}{2}\left\{ \Delta A, \Delta B \right\}
+    \right|^2\\
+    &\ge 
+    \frac{1}{4}
+    \left|
+        \bra{\psi}
+        [\Delta A, \Delta B]
+        \ket{\psi}
+    \right|^2
+\end{align}
+Is this the usual uncertainty principle you learn in high school?
+Sure is.
+
+Let's take a spinless particle in one dimension.
+The Hilbert space is the space of functions in real variables
+$\psi(x)$.
+
+So the position operator $\hat{x}$ acts like
+$\hat{x}\psi(x) = x \psi(x)$.
+
+There's another operator you learn in kindergarten
+\begin{align}
+    \hat{p} \psi(x)
+    = -i\hbar \frac{d}{dx}\psi(x)
+\end{align}
+and you should also know $[\hat{x},\hat{p}] = i\hbar\mathbf{1}$.
+Then you get
+\begin{align}
+    \sigma_x \sigma_p \ge \frac{\hbar}{2}
+\end{align}
+which is the traditional formula you learn.
