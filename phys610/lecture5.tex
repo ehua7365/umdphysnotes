@@ -339,7 +339,7 @@ Let's go on to the next problem.
     $\theta$ is increasing from $0$ to $2\pi$ so we're going counterclockwise,
     which is good,
     so we don't have to put an extra sign in
-    and just blindly apply the the theorems.
+    and just blindly apply the theorems.
 
     Only the pole at $z=-1/2$ contributes.
     Now let's calculate the residue.
@@ -455,7 +455,7 @@ you need more terms in the Taylor series to work it out.
     This closed line integral we can evaluate using the residue theorem.
     Even though it has two poles,
     only $z=+i$ is inside the contour.
-    Let's evalaute it.
+    Let's evaluate it.
     Close to $z=i$,
     \begin{align}
         \frac{1}{1 + z^2} = \frac{1}{(z + i)(z - i)}
@@ -537,7 +537,7 @@ deal with signs.
 It still works though.
 There's more than one way to do these problem.
 Choose the most convenient one.
-As you do more provlems, you'll see.
+As you do more problems, you'll see.
 I want you guys to convince yourselves that it can be closed in the negative
 half plane and get the same result.
 
@@ -548,7 +548,7 @@ but we're going to look at at problem where you have to use one of them.
 It's actually more common.
 
 \begin{example}
-    Evalaute
+    Evaluate
     \begin{align}
         I = \int_{0}^{\infty} \frac{\cos(z)}{1 + x^2}\,dx
     \end{align}
@@ -565,10 +565,10 @@ It's actually more common.
     We want to make this an integral over some line in the complex plane.
     There's more than one way to do this,
     but here's the trick.
-    Write $z = \Re e^{iz}$.
+    Write $\cos z = \Re e^{iz}$.
     Then write
     \begin{align}
-        I &= \re\left\{
+        I &= \Re\left\{
         \frac{1}{2}
         \int_{-\infty}^{\infty}
         \frac{e^{iz}}{1 + z^2}\,
@@ -582,7 +582,7 @@ It's actually more common.
     But can we use the same contour?
 
     The integrand is a bit different.
-    Can we convince ourseves that the contribution from this semicircle
+    Can we convince ourselves that the contribution from this semicircle
     vanishes?
     If it does, then we can use the same contour.
     It turns out it does vanish.
@@ -602,7 +602,7 @@ It's actually more common.
     So we can use exactly the same contour as we used before
     and use the residue theorem.
     At the same time,
-    we can't use a contour with a semicricle in the lower half plane,
+    we can't use a contour with a semicircle in the lower half plane,
     because it blows up incredibly quickly.
     Last time we had a choice of contours up or down,
     but here we don't have a choice,
