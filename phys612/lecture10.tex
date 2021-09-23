@@ -1,0 +1,444 @@
+\section{2021-09-22 Lecture}
+
+This is a class that cannot fail,
+because if it crashes and burns,
+the qualifier fails.
+
+This is my favourite lecture.
+Sorry it's online.
+It's conceptual.
+This used to not be covered in standard classes,
+but it because so popular there's no way out.
+I'm going to start from something everyone knows.
+The double slit experiment.
+
+If you're not comfortable,
+it means two things:
+you don't know QM and you should laern straight away.
+
+The best way to learn is to open the old Feynman lectures on physics.
+Of course you can go to Youtube anddo the same thing,
+with beautiful computer graphics,
+but unfortanaltely many of them are wrong.
+Feynman knows physics.
+
+
+If there's only one hole nothing exciting happens.
+The particle hits the screen,
+mostly behind the hole.
+Here I plot the number of particles that hit the screen.
+If the hole is left,
+you get particles on the lfet.
+If the hole is right,
+you get particles on the right.
+
+Buty what happens when you shoot two holes?
+They interferer with each other.
+The result is surpricingly,
+in fact the most likely place to get a particle is in the middle,
+which is neither the single hole scneairos.
+It's more than just the sum of the two.
+You get an interference pattern.
+
+You seen t his before.
+It's pretty.
+There are regions where the waves interfere desctructively and you don't get a
+particle behin the screen.
+that's how all waves behave.
+If you make waves no thel ake,you get he same thing,
+so it's not surprising.
+What is surprising is tat the aprticles sometimes behave like particles,
+and sometimes waves.
+In fact,
+what you get on the screen is this.
+
+If you send particles one by one and you start counting,
+every time you send a particle,
+you get one spot on the screen,
+however the probability fo getting apricles obeys the interference pattern.
+That's this other way we see this particle-wave duality.
+
+I'm going to switch to my laptop.
+That's a drawing of the situation here.
+I want to remind you how to descrbie this quanutm mechancially.
+
+
+Let's say the left sitautions is $\ket{L}$
+and the situation for the right hole open is $\ket{R}$.
+When you have both holes open,
+the state is going to be a linear combination
+\begin{align}
+    \ket{\psi} = \alpha\ket{L} + \beta\ket{R}
+\end{align}
+How do you get intference?
+Let's measure $A_y$ that counts the number of particles,
+or the probablity of the particle arriving at coordinate $y$
+on hte screen.
+Of course,
+I want to take the expectation value.
+\begin{align}
+    \bra{\psi} A_y \ket{\psi} &=
+    \left( \alpha^* \bra{L} + \beta^*\bra{R} \right)
+    A_y
+    \left( \alpha\ket{L} + \beta\ket{R} \right)\\
+    &=
+    |\alpha|^2 \bra{L}A_y\ket{L}
+    + |\beta|^2 \bra{R}A_y\ket{R}
+    + \alpha\beta^* \bra{L}A_y\ket{R}
+    + \alpha^*\beta \bra{R}A_y\ket{L}
+\end{align}
+The first two terms are familiar.
+They are just the probabilities for if the left hole is open only
+and the rigt hole is open only respectively.
+THe novelty of course in QM is that you have inerference terms,
+the last two terms.
+While the $|\alpha|^2$ and $|\beta^2|$ terms are positive,
+those $\alpha\beta^*$ and $\beta\alpha^*$ terms are not necessarily positive,
+so it's possible you cna have cancelation.
+And that's why you get zeros in the distribution,
+it's because of intereference and cancellation.
+
+So this is well known.
+The fact you have uqanutm intereference out of linear combinations,
+you get this pretty well.
+
+Let's compare this with a different situation.
+Let's say I have a different siuaiton like this.
+Except the two slits are never open at the same time.
+
+I'm going to trow a dice.
+If the number is odd,
+I open the left hole.
+If the number is even,
+I open the right hole.
+What am I going to get?
+
+hal the time I'm going to get the L distributino,
+and half the time I'm going to ge the R distribution.
+And I get a double-bump distirbution.
+
+So then this quantity,
+The previous situation would be left AND right.
+But now I will call this dice roll situation left OR right.
+\begin{align}
+    \bar{A}_y &=
+    p_L \bra{L}A_y\ket{L}
+    + p_R \bra{R}A_y\ket{R}
+\end{align}
+where $p_L$ and $p_R$ are the probabilities of having the left or right holes
+open respectively.
+You notice that this matces the first two terms of the previous formula.
+What you do not find is the second two terms,
+so there is no interference.
+This is a different physical sitaution.
+
+Those two things are not the same.
+If you plot $A_y$ vs $y$,
+in the QM superposition,
+you get this
+[picture]
+
+But if you have the classical probability,
+you get two bumps.
+[picture]
+
+These two sitautions are very common,
+and you need to give these names.
+having L and R in superpsotiion quantum mechanically,
+we have a \emph{coherent} sum.
+But the classical probability situation,
+is the \emph{incoherent sum}.
+The incorhernet sitaution happens all the time
+in classical physics.
+
+But the coherent sum is something very special to QM,
+there is no classical analogue for that.
+
+This situation where you have a combination of this,
+where some of it is quanutm mehaonical,
+but I also don't know what the wave function is,
+appears commonly in physics too.
+
+So ther eare two kinds of uncertainty.
+There is the quantum uncertainty of the wave function,
+butther'es the classical uncertainty of not knowing what the wave function is in
+the first place.
+There is a formalism to deal with this.
+
+Suppose you have some observablve $A$.
+Then
+\begin{align}
+    \bar{A} &=
+    \underbrace{
+    \sum_n \underbrace{p_n}_{\text{prob. in $\ket{n}$}} \underbrace{\bra{n} A \ket{n}}_{\text{quantum average}}
+    }_{\text{classical average}}
+\end{align}
+So we have a quantum and a classical average
+
+There's a cute way to write this as a trace.
+\begin{align}
+    \bar{A} = \Tr\left[
+    \left( \sum_n p_n \ket{n}\bra{n} \right) A
+    \right]
+\end{align}
+Is this the same?
+It's easy to see,
+because to compute the trace,
+one way of computing the trace is to take a basis,
+for example the same basis $\ket{n}$,
+then compute the sandwich of whatever is in the trace and then sum over elements
+of the basis,
+but you see this is easy to compute.
+\begin{align}
+    \Tr\left[
+    \left( \sum_n p_n \ket{n}\bra{n} \right) A
+    \right]
+    &=
+    \sum_{m} \bra{m}
+    \sum_n p_n \ket{n}\bra{n} A\ket{m}\\
+    &= \sum_{m,n} \cdots
+\end{align}
+Then observe the following things.
+Then we call that part the density matrix.
+\begin{align}
+    \rho = \sum_n p_n \ket{n}\bra{n}   
+\end{align}
+This contains all the information about the system.
+It doesn't tell me what the wave function is,
+because there's uncertainty about what the wave function is.
+But the probabliies are al defined by this $\rho$.
+States whree therare different clasical probailitesi of different wave fucntions
+is called a \emph{mixed state}.
+In situations wher we know what hte wave function is,
+they are called \emph{pure dstates}.
+
+To be clear,
+\begin{align}
+    \bar{A} = \Tr(\rho A)
+\end{align}
+Remember $\rho$ contains informaiton about all possible wave functions the
+system may have.
+
+Are we good up to now?
+By the way,
+you can raise a question by raising a hand,
+but it's better to shout,
+just unmute yourself and shout.
+You can even go and ask questions in the chat.
+
+\begin{question}
+    Can you elaborate on mixed state?
+\end{question}
+If you know thw ave function of the sytem,
+you call it a pure state,
+that's what you learnt in QM so far.
+A pure state is just a real state.
+But then suppose you have a harmonic oscillator
+with 30\% chance in the ground state and 70\% chance in the first excited state,
+that is a mixed state.
+You should not be confused though.
+Take hte harmonic oscilator for exmaple.
+\begin{align}
+    \ket{\varphi} &=
+    \frac{3}{5}\ket{0}
+    + \frac{4}{5}\ket{1}
+    \ne
+    \rho
+    =
+    \left( \frac{3}{5} \right)^2 \ket{0}\bra{0}
+    \left( \frac{4}{5} \right)^2 \ket{1}\bra{1}
+\end{align}
+These states here have the same probabiliteis,
+but they are completely different states.
+I can even add a phase.
+\begin{align}
+    \ket{\varphi} &=
+    \frac{3}{5}\ket{0}
+    + i\frac{4}{5}\ket{1}
+    \ne
+    \rho
+    =
+    \left( \frac{3}{5} \right)^2 \ket{0}\bra{0}
+    \left( \frac{4}{5} \right)^2 \ket{1}\bra{1}
+\end{align}
+It's either one or the other.
+No matter how smart I am,
+I will know a way to measure.
+
+here's an example.
+
+How do we describe th sitaution where both holes are open.
+We already have that,
+a quantum superpsoition of left and right.
+When I compuet the probablity of getting a particle on the sreen,
+I get interference tersm.
+If I have a phsae,
+the probabilities $|\alpha|^2$ and $|\beta|^2$ don't change,
+but I get a different interefernece pattern.
+
+That's usual quantum mechanics,
+but I can describe the sitaution with desity matrices too
+which account for probabilities that arise because I am too dumb to know.
+
+So I can describe the double slit experiment with density matrices too.
+For example,
+the incoehreent sum is
+\begin{align}
+    \rho &= \frac{1}{2} \ket{L}\bra{L}
+    + \frac{1}{2}\ket{R}\bra{R}
+\end{align}
+and you can computet the probabilities
+\begin{align}
+    \bar{A} &=
+    \Tr(\rho A_y)\\
+    &=
+    \Tr\left( \frac{1}{2}\ket{L}\bra{L} + \frac{1}{2}\ket{R}\bra{R} \right) A\\
+    &=
+    \bra{L}\left( 
+    \frac{1}{2} \ket{L}\bra{L}
+    + \frac{1}{2} \ket{R}\bra{R}
+    \right)A_y
+    \ket{R}
+    + \bra{L}\left( 
+    \frac{1}{2} \ket{L}\bra{L}
+    + \frac{1}{2} \ket{R}\bra{R}
+    \right)A_y
+    \ket{R}\\
+    &= \frac{1}{2}\bra{L} A_y \ket{L}
+    + \frac{1}{2}\bra{R} A_{y} \ket{R}
+\end{align}
+Now look at what we thoguht it should be
+\begin{align}
+    \bar{A}_
+    &= p_L\bra{L} A_y \ket{L}
+    + p_R\bra{R} A_{y} \ket{R}
+\end{align}
+so the formalism works!
+Let me tell you a couple of probabilities it's to satisfy.
+
+Firstly, $\rho$ is a Hermitian operator.
+It's weird,
+because it's not an observable,
+but it's the state of the system.
+\begin{align}
+    \rho^{\dagger} = \rho
+\end{align}
+Can you see this is true?
+Sure
+\begin{align}
+    \left( \sum_n p_n \ket{n}\bra{n} \right)^{\dagger}
+    &= \sum_n p_n^* \ket{n}\bra{n}\\
+    &= \sum_n p_n \ket{n}\bra{n}
+\end{align}
+because $p_n$ are real probabilities,
+so very straighforward.
+
+Anotherp robability isthat it has unit trace.
+\begin{align}
+    \Tr \rho = 1
+\end{align}
+To see this,
+\begin{align}
+    \Tr \rho &=
+    \Tr \sum_n p_n\ket{n}\bra{n}\\
+    &= \sum_m \bra{m} \sum_n p_n\ket{n}\bra{n} \ket{m}\\
+    &= \sum_{n,m} p_n \braket{m}{n} \braket{n}{m}\\
+    &= \sum_n p_n\\
+    &= 1
+\end{align}
+because the total probability is equal to 1.
+
+
+Finally, $\rho$ is positive definite.
+It follows from the fact that $p_n$ has to be positive or zero.
+Positive definite means that
+\begin{align}
+    \bra{\phi}\rho\ket{\phi} &=
+    \bra{\phi} \sum_n p_n\ket{n}\braket{n}{\phi}\\
+    &=
+    \sum_n p_n \braket{\phi}{n} \braket{n}{\phi}\\
+    &= \sum_n p_n |\braket{n}{\phi}|^2\\
+    &\ge 0
+\end{align}
+
+There's one final property.
+For some special states, we have
+\begin{align}
+    \rho^2 = \rho
+\end{align}
+if and only if $\rho=\ket{\psi}\bra{\psi}$ is a pure state.
+You can see this clearly because if
+$\rho = \sum_n p_n \ket{n}\bra{n}$
+and if $p_n=0$ except $p_{\bar{n}}=1$,
+then obviously $\ket{\bar{n}}=\ket{n}$.
+There are two things to prove,
+because it's if and only if.
+It's a simple test.
+Suppose $\rho$ is pure,
+then
+\begin{align}
+    \rho^2 &=
+    \ket{\psi}\braket{\psi}{\psi}\bra{\psi} = \rho
+\end{align}
+It's a bit of extra work to go the other way around.
+
+Suppose $\rho^2 = \rho$.
+Then 
+\begin{align}
+    \sum_n p_n \ket{n}\bra{n}
+    \sum_m p_m \ket{m}\bra{m}
+    &= \sum_{n,m} p_n p_m \ket{n} 
+    \underbrace{\braket{n}{m}}_{\delta_{nm}} \bra{m}\\
+    &= \sum_n p_n^2 \ket{n}\bra{n}\\
+    &= \sum_n p_n \ket{n}\bra{n}
+\end{align}
+so we know that $p_n^2=p_n$ for all $n$.
+There are only two ways this can be true.
+Either $p_n=0$ or $p_n=1$.
+But probabilities sum to 1,
+so only one of these can be $p_{\bar{n}}=1$,
+and all the other $p_n=0$.
+What does that prove?
+In other words,
+\begin{align}
+    \rho = \sum_n p_n\ket{n}\bra{n} = \ket{\bar{n}}\bra{\bar{n}}
+\end{align}
+
+Oh there's a question.
+It's just one word: magical.
+
+You're just in awe of the power of density matrices and bras and kets?
+
+By the way,
+Landau invented density matrices.
+He was two years too young to invent QM,
+but he invented density matrices.
+Bras and kets,
+I'm tired of syaing it's a beautiful thing,
+but I hope you can appreciate how the algebra just works without thinking.
+It's importnat to understand why it works,
+but once you do,
+it's easy.
+
+The name of this class is quantum and statistical physics.
+Forgoet about the deep stuff.y
+You're goign to use distributions of positions and momentum classical,
+but the density analogue is density matrices,
+where you have distributions over wave functions.
+
+
+\begin{question}
+    So $\rho$ is diagonal?
+\end{question}
+Well $\bra{n}\rho\ket{n'}$ is a diagonal matrix in this basis,
+but in a different basis,
+it will not necessarily be a diagonal matrix,
+despite describing the same physics.
+If the operator was diagonal,
+I wouldn't talk about htis operator,
+it would be overkill.
+In this basiss to define $\rho$,
+but may be diagonal,
+but in another basis,
+it's not diagonal
+and it's not obvoius at all it's not a pure state.

@@ -1,0 +1,295 @@
+[30 min late, first zoom lecture]
+
+\section{The Point on Infinity}
+The transformation $w=1/z$ establishes a one-to-one correspondence between
+points in the $z$-plane and there is the $w$-plane,
+except for the singular point at $z=0$.
+The resolve this,
+we attach an ``improper point'' to the $w$-plane.
+This point is called ``the point of infinity''
+and is denoted by $\infty$.
+The entire complex plane together with the point of infinity is called the
+``extended complex plane''.
+
+You need to know what it is and move on.
+
+Certain functions are analytic in the entire complex plane,
+they are \emph{entire functions}.
+However, they need not be analytic at the point of infinity.
+To check whether something is analytic at infinity,
+you have to do this mapping $w=1/z$.
+Once you do that mapping,
+look at how the function behaves at $w=0$.
+
+To check whether a function $g(z)$ is analytic at $\iinfty$,
+substitute $w=1/z$ and check analyticity at $w=0$.
+
+\begin{question}
+    There is no number line,
+    it's a complex plane.
+    What does infinity mean in a complex plane?
+\end{question}
+It's not a simple thing.
+The claim is that in the complex plane,
+infinity can be represented by a single point,
+which is not true in the real line where $+\infty$
+is different to $-\infty$.
+But in the complex plane,
+there is only one $\infty$.
+The only reason I am discussing is that you will hear this occasionally so you
+just need to have some idea what people are talking about.
+It's not like we're actually going to use it for anything.
+If you want to know more,
+you're going to have to do the reading yourself.
+Infinity is a treacherous number,
+it's not a simple thing.
+
+Any other questions?
+OK let's move on.
+
+\section{Conformal mapping}
+Mappings by analytic functions possess and important geometric property known as
+\emph{conformal}.
+A mapping in the plane is said to be ``conformal''
+if it preserves the angle between any two curves,
+both in magnitude and orientation.
+
+Let me illustrate that with a picture.
+Let's say this is the $z=x+iy$ plane,
+with real part $x$ and imaginary part $y$.
+Let's say that is the curve $C_1$
+and that is the curve $C_2$.
+They intersect at a point and
+draw their tangents at this point.
+Let's say there's an angle $\beta$ between the tangents of the curves at that
+point.
+Let's look at the map of these curves $z\to w = u + iv$.
+Every point of the curve $C_1$ gets mapped to a curve in the $w$ plane $C_1'$.
+Every point of the curve $C_2$ gets mapped to a curve in the $w$ plane $C_2'$.
+Again, $C_1'$ and $C_2'$ still intersect at a point.
+The claim is that the angle between the tangents of the curves in the map is the
+same as before, $\beta$.
+So yeah.
+
+In other words,
+if the mapping is conformal,
+the angle between the curves is preserved.
+And the claim is that if you do a mapping via an analytic function,
+it's automatically conformal.
+Mappings with analytic functions are automatically conformal.
+It's guaranteed with one caveat I will explain in a moment.
+
+We want to show that the mapping $w=f(z)$
+is conformal at every point where $f(z)$ is analytic
+except where the derivative $f'(z)=0$.
+A point where $f'(z)=0$ is called a \emph{critical point}.
+
+Consider a small change $\Delta z$ at a point $z$.
+Then the derivative is
+\begin{align}
+    \frac{df}{dz} = \frac{dw}{dz}
+    = \lim_{\Delta z\to 0} \frac{\Delta w}{\Delta z}
+\end{align}
+taking the argument which is the angle
+\begin{align}
+    \arg \lim_{\Delta z\to 0} \frac{\Delta w}{\Delta z}
+    = \lim_{\Delta z\to 0} \arg \Delta w
+    - \lim_{\Delta z\to 0} \arg \Delta z
+    = \arg \frac{df}{dz} =: \alpha
+\end{align}
+which is a constant for a given point.
+
+Take the ratio of two complex numbers and take the argument to get the angle
+between them.
+
+Any line that passes through $z_0$
+has its image rotated by an angle $\alpha$.
+That means if you had two lines passing through $z_0$,
+they would both be rotated by the same angle $\alpha$.
+Hence for any pair of lines through $z_0$,
+their images in the $w$-plane are rotated through the same angle.
+Hence the angle between the lines is the same as in the $z$-plane.
+
+Remember,
+you have two curves $C_1$ and $C_2$,
+both of which get rotated by the same angle.
+
+You might remember there was a caveat.
+At points $z$ where $f'(z)=0$,
+the angle $\alpha$ is not well-defined,
+and the argument fails.
+
+That's the caveat.
+Any analytic function where there is a region where the derivative doesn't
+vanish,
+if you have this property of conformality,
+the image of any curves is rotated by a fixed angle at that point,
+so the angle between pairs of curves is preserved.
+
+\begin{question}
+    What do you mean by orientation?
+\end{question}
+What I mean is that you are rotated by this angle $\alpha$ in the same
+direction.
+
+This always ends up taking a bit longer than I expect.
+
+So we agree that the angle is preserved.
+But what about relative sizes?
+
+From the definition of a derivative,
+we have
+\begin{align}
+    \lim_{z\to z_0}
+    \underbrace{\left|
+        \frac{f(z) - f(z_0)}{z - z_0}
+    \right|}_{
+        = \frac{|f(z) - f(z_0)|}{|z - z_0|}
+    }
+    =
+    |f'(z_0)|
+\end{align}
+Let's think about what this means.
+$|z - z_0|$ is the length of $\Delta z$
+and $|f(z) - f(z_0)|$ is the length between the image points.
+So in the limit $\Delta z\to 0$,
+the denominator is the distance in the $z$ plane,
+but the numerator is the distance between the same two points in the $w$ plane.
+That means there's a rescaling between the points and the images.
+So if you have a distance between two points,
+that distance is rescaled by a factor
+which only depends on $z_0$.
+
+That means if you have a curve that passes through a point,
+in the neighbourhood of hat point,
+the image is rescaled by that factor.
+If you have multiple curves passing through that point,
+all the curves are rescaled by that factor.
+You also know they're rotated.
+So every cure is rotated by some amount
+and rescaled by some amount
+in that neighbourhood.
+
+I understand it's not easy to observe these things.
+If I write everything down,
+I can go on and on,
+so let me explain again from scratch.
+
+We want $z-z_0$ to go infinitesimal.
+The denominator is the distance between two points in the $z$-plane.
+
+Let me write this.
+The mapping $w=f(z)$ rescales the lengths of infinitesimal lines passing through
+$z_0$ by the factor $|f'(z_0)|$.
+Therefore the image of a small figure always has the same shape as the original
+figure,
+even though it has been rescaled and rotated.
+However, a large figure may have an image with a completely different shape.
+
+\section{Conformal Mapping and Harmonic Functions}
+OK so here is the claim,
+which I proved in my notes,
+but the proof is tedious and I wonder if I want to do it.
+I will state the claim and give and outline of the proof,
+and you can have the pleasure of filling in the proof.
+
+\begin{theorem}
+    A harmonic function of two variables $(x, y)$
+    remains harmonic under a change of variables from $(x, y)$
+    to $(u, v)$ if $z = x + iy$ and $w= u + iv$
+    are related by a conformal transformation.
+\end{theorem}
+I'll explain in a moment what that means.
+
+OK so here's the idea.
+Let $h$ be a harmonic function.
+What that means is
+\begin{align}
+    \frac{\partial^2 h}{\partial x^2}
+    + \frac{\partial^2 h}{\partial y^2} = 0.
+\end{align}
+The claim is that if $u=u(x, y)$ and $v=v(x, y)$
+such that $w = f(z)$,
+$w=u+iv$ and $z=x+iy$.
+Then
+\begin{align}
+    \frac{\partial^2 h}{\partial u^2}
+    + \frac{\partial^2 h}{\partial v^2} =0
+\end{align}
+provided $f'(z)\ne 0$.
+
+This is a very useful result,
+used to prove lots of results in fluid dynamics and electrostatics.
+You're going to apply this to electrostatics.
+Unfortunately,
+it's a trick that only works in 2D.
+Unfortunately it doesn't help you solve Laplace's equation in arbitrary
+dimensions,
+but it is a powerful method in 2D.
+
+I look at my notes and I actually did prove this.
+Let me just outline how it goes.
+The proof is kind of like brute force.
+There are more clever proofs in the books I suggested,
+but all of them rely on some additional assumptions or rely on some theorem I
+didn't prove.
+
+\begin{proof}
+    Write using the chain rule
+    \begin{align}
+        \frac{\partial h}{\partial x} &=
+        \frac{\partial h}{\partial u} \frac{\partial u}{\partial x}
+        + \frac{\partial h}{\partial v} \frac{\partial v}{\partial x}
+    \end{align}
+    then differentiate again
+    \begin{align}
+        \frac{\partial^2 h}{\partial x^2} &=
+        \left\{
+            \frac{\partial^2 h}{\partial u^2}
+            \left(\frac{\partial u}{\partial x} \right)^2
+            +
+            \frac{\partial^2 h}{\partial u \partial v}
+            \left( \frac{\partial u}{\partial x} \right)
+            \left( \frac{\partial v}{\partial x} \right)
+            + \frac{\partial h}{\partial u}
+            \frac{\partial^2 u}{\partial x^2}
+        \right\}\\\nonumber
+        &\qquad + 
+        \left\{
+            \frac{\partial^2 h}{\partial v^2}
+            \left(\frac{\partial v}{\partial x} \right)^2
+            +
+            \frac{\partial^2 h}{\partial u \partial v}
+            \left( \frac{\partial u}{\partial x} \right)
+            \left( \frac{\partial v}{\partial x} \right)
+            + \frac{\partial h}{\partial v}
+            \frac{\partial^2 v}{\partial x^2}
+        \right\}
+    \end{align}
+    Similarly,
+    \begin{align}
+        \frac{\partial^2 h}{\partial y} = \cdots
+    \end{align}
+    and it gets messy\ldots
+    Then you have to use the Cauchy-Riemann equations to cancel out some terms.
+    Then you use the fact that $u$ and $v$ are harmonic functions themselves.
+    After a lot of algebra,
+    you get
+    \begin{align}
+        \frac{\partial^2 h}{\partial x^2} +
+        \frac{\partial^2 h}{\partial y^2} &=
+        \left(
+            \frac{\partial^2 h}{\partial u^2}
+            + \frac{\partial^2 h}{\partial v^2}
+        \right)
+        |f'(z)|^2
+        = 0
+    \end{align}
+    where we need the assumption $f'(z)\ne 0$.
+    Then
+    \begin{align}
+        \frac{\partial^2 h}{\partial u^2}
+        + \frac{\partial^2 h}{\partial v^2}
+        = 0
+    \end{align}
+\end{proof}
