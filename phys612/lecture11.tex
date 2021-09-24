@@ -1,0 +1,389 @@
+\section{Mixed States}
+In many situations in physics we dno't know what the wave function is,
+but we do know that there is some proability of the wave function being
+something.
+So to compute things we need to take averages.
+There are two averages.
+One is quantum mechanical, but one is classical.
+Probabilities in quanutm mechanics don't add,
+they might subtract.
+Amplitudes add,
+but there are cross terms.
+The second average is a classical average,
+which is due to my ignorance.
+
+If one is to describe it with QM,
+instead of having kets,
+I'm going to have an operator called the density operator.
+It's a bit different,
+because even the state is an operator.
+If I don't know which state I'm in,
+say there's a probability $p_n$ of being $\ket{n}$ ,
+then the density operator is
+\begin{align}
+    \rho &= \sum_{n} p_n \ket{n}\bra{n}
+\end{align}
+Then the expectiona value of $A$ is
+\begin{align}
+    \bar{A} = \Tr(\rho A)
+\end{align}
+THere are special states though.
+If I know 100\% that my system is in state $\ket{\psi}$,
+then in that sum,
+the probabilty is zero in every state except for $\ket{\psi}$,
+in which case the density operator is
+\begin{align}
+    \rho = \ket{\psi}\bra{\psi}.
+\end{align}
+And so the expectation value is
+\begin{align}
+    \Tr(\rho A) &=
+    \Tr(\ket{\psi}\bra{\psi} A)\\
+    &= \sum_n \braket{n}{\psi} \bra{\psi}A\ket{n}\\
+    &= \sum_n \bra{A}A\ket{n}\braket{n}{\psi}\\
+    &= \bra{\psi}A\ket{\psi}\\
+    &= \bar{A}
+\end{align}
+where we made a sandwhich of whatever basis $\ket{n}$ we wanted
+and used the resolution of the identity.
+So this reduces to the usual rule for pure states.
+
+But what happens when we don't have a pure state,
+but a mixed state,
+in which case the $\Tr(\rho A)$ rule applies more generally.
+
+It's not obvious, but there is a way to test if a density operator is a pure
+state.
+In fact,
+$\rho$
+is a pure state if and only if
+$\rho^2 = \rho$.
+
+And we also required that it be positive definite
+\begin{align}
+    \bra{\phi}\rho \ket{\rho} \ge 0.
+\end{align}
+Also,
+$\Tr \rho = 1$.
+
+
+Example: Thermodynamic ensemble
+Suppose we have a system in thermal equlibrium.
+We don't know where the micrsocopic particles are,
+so there are certain proabilities of certain wave functions.
+Turns out if you take most systems and let them evolve,
+the wave function keeps changing,
+but everything behaves as if we were in a basis state.
+I'm going to point out the following here.
+If I wait some time,
+and make macroscopic measurmenets of energy, pressure, etc.
+Everything behaves as if it were a density operator of the following fomr.
+\begin{align}
+    \rho &= \frac{e^{-\beta H}}{\Tr e^{-\beta H}}
+\end{align}
+where $H$ is Hermitian so $e^{-\beta H} = 1 - \beta H + \cdots$
+is also Hermitian.
+You can check that $H^2$ is hermitian with
+$(H^2)^\dagger = (HH)^\dagger = H^\dagger H^\dagger = H^2$.
+Don't be confused if you have an $i$ factor instead,
+where $e^{itH}$ is unitary,
+but $e^{-\beta H}$ is hermitian.
+We have to devide by the real number $\Tr e^{-\beta H}$
+to make the trace 1,
+which is obvious,
+because the trace of the numerator cancels the denominator.
+
+But is it positive definite?
+It's not obvious,
+you can work it out yourself,
+but the eigenvalues of $H$ are real,
+and when you exponentiate a real number,
+you get a positive number,
+so the eigenvalues of $\rho$ must be positive.
+
+This is aperfectly good density matrix.
+It's sometimes written in a slightly different way.
+I could write $\rho$ in the eigenbasis of energy
+with matrix elements $\bra{n}\rho\ket{m}$.
+In other words $H\ket{n} = E_n \ket{n}$.
+\begin{align}
+    \bra{n}\rho\ket{m} &=
+    \frac{\bra{n} e^{-\beta H}\ket{m}}{\Tr e^{-\beta H}}\\
+    &= \frac{e^{-\beta E_m} \delta_{nm}}{
+        \sum_n \bra{n} e^{-\beta E_n}\ket{n}
+    }\\
+    &= \frac{e^{-\beta E_m} \delta_{nm}}{
+        \sum_n e^{-\beta E_n}
+    }.
+\end{align}
+I'm sure you're familiar with the top
+$e^{-\beta E_n}$
+which is just the Boltzmann factor.
+States with large energy are unlikely,
+the states that are more likely have smaller energy.
+Large and small compared to what?
+
+Remember that this $\beta E = \frac{E}{k_B T}$.
+So for the exponential to be small,
+we need $E$ to be large.
+So higher temperature have more likely higher energy states.
+We'll see this a lot later one.
+
+
+Example: Photo polarization
+I can have light linearly polarized in $x$ and $y$ directions,
+and various superpositions like circular, left, right, etc.
+But I can also have mixed states.
+\begin{itemize}
+    \item 50\% linearly polarized along $\hat{x}$ direction and
+        50\% linearly poarlized along $\ket{y}$ direction
+        can be written as the state
+        \begin{align}
+            \rho =
+            \frac{1}{2}\ket{\hat{x}}\bra{\hat{x}}
+            + \frac{1}{2}\ket{\hat{y}}\bra{\hat{y}}
+        \end{align}
+        and this is just a specific case of the more general formula
+        \begin{align}
+            \rho = \sum_n p_n \ket{n}\bra{n}
+        \end{align}
+    \item Now consider the state with
+        50\% probability of being left circularly polarized
+        and 50\% probability fo being right circularly polarized.
+        Let's write down the density matrix for that.
+        \begin{align}
+            \rho &=
+            \frac{1}{2} \ket{L}\bra{L}
+            + \frac{1}{2} \ket{R}\bra{R}\\
+            &=
+            \frac{1}{2}
+            \underbrace{
+                \frac{
+                    \ket{\hat{x}} + i\ket{\hat{y}}
+                }{\sqrt{2}}
+            }_{\ket{L}}
+            \underbrace{
+                \frac{
+                    \bra{\hat{x}} - i\bra{\hat{y}}
+                }{\sqrt{2}}
+            }_{\bra{L}}
+            + \frac{1}{2}
+            \underbrace{
+                \frac{
+                    \ket{\hat{x}} - i\ket{\hat{y}}
+                }{\sqrt{2}}
+            }_{\ket{R}}
+            \underbrace{
+                \frac{
+                    \bra{\hat{x}} + i\bra{\hat{y}}
+                }{\sqrt{2}}
+            }_{\bra{R}}\\
+            &= \frac{1}{2}\ket{\hat{x}}\bra{\hat{x}}
+            + \frac{1}{2}\ket{\hat{y}}\bra{\hat{y}}
+        \end{align}
+        so although the description in words they sound different,
+        they are in fact the same state,
+        and there is no experiment in the world that will allow you to
+        differentiate between the two.
+\end{itemize}
+So the description in words in different,
+but in reality they are different.
+
+\subsection{Entropy (max)minimiazation}
+Let me point something about entropy because people talk about it so I should
+point it out as soon as possible.
+
+You can talk about the entropy of a mixed state.
+There are two concepts of entropy closely related.
+We can define entropy the following way.
+Suppose your system is defined by a density matrix $\rho$
+that might be a mixed state.
+You can compute the following quantity
+\begin{align}
+    S &= - \Tr \left( \rho \ln \rho \right)
+\end{align}
+But first,
+do you know how to define the log of an operator?
+Taylor expansion is one way?
+Inverse of the exponential operator?
+However,
+if you can diagonalize the operator,
+you can take any function you want,
+because you can take the function of any diagonal matrix,
+you just take the function of each eigenvalue on the diagonal,
+no different from taking the exponential of an operator.
+Why should we call this entropy?
+Entropy is something you learn in high school.
+
+For that,
+let me write this in a slightly different way.
+I'm going to take a basis and I'm going to write
+\begin{align}
+    S &=
+    - \sum_n
+    \bra{n} \rho \ln\rho \ket{n}
+\end{align}
+where $\ket{n}$ is an eigenbasis of $\rho$.
+To make things a little better,
+I can insert a complete set of states here.
+\begin{align}
+    S &=
+    - \sum_{n,n'}
+    \bra{n} \rho \ket{n'}\bra{n'}\ln\rho \ket{n}
+\end{align}
+and so you notice that because $\rho$ is diagonal in this basis,
+\begin{align}
+    S &= \sum_{n,n'} p_{n'}\delta_{nn'} \delta_{nn'}\ln p_n\\
+    &= - \sum_n p_n \ln p_n
+\end{align}
+This expression you may have seen before in thermodynamics.
+Why is this important?
+Imagine if $\rhO$ is a pure state.
+It's a pure state when I write $\rho$ as a sum like
+\begin{align}
+    \rho &= \sum_n p_n \ket{n}\bra{n} = \ket{\psi}\bra{\psi}
+\end{align}
+so all the $p_n=0$ exceot for one $n=n_0$ where $p_{n_0}=1$.
+So what does that mean?
+There are two kinds of terms in the sum,
+terms where $p_n=0$,
+and only one term where $p_n=1$,
+so then
+\begin{align}
+    S &= - 0 \ln 0 - 1\ln 1 = 0
+\end{align}
+So if I have a pure state
+and I compute the entropy,
+the entropy is zero.
+
+\begin{question}
+    What about superpositions?
+    Do we get non-zero entropy?
+\end{question}
+No no no no!
+Let's take the harmonic oscillator
+and say we have an excited state like
+\begin{align}
+    \rho &=
+    \underbrace{\left( \frac{3}{5}\ket{0} + \frac{4}{5}\ket{1} \right)}_{%
+        \ket{\psi}
+    }
+    \underbrace{\left( \frac{3}{5}\bra{0} + \frac{4}{5}\ket{1} \right)}_{%
+        \bra{\psi}
+    }\\
+    &\ne \left( \frac{3}{5} \right)^2 \ket{0}\bra{0}
+    + \left( \frac{4}{5} \right)^2 \ket{1}\bra{1}
+\end{align}
+because of the cross terms.
+
+Anyway,
+let us consider the unifrom distribution
+$p_n=1/N$
+and the dimension $N$ of the Hilbert space is finite.
+Then the entropy is
+\begin{align}
+    S &= -\sum_n p_n\ln p_n
+    = -\frac{N}{N}\ln \frac{1}{N} = \ln N
+\end{align}
+and it turns out that this is the maximum value the entropy can be.
+It represents complete ignorance.
+
+\begin{question}
+    This is just the shannon entropy of each hermitian opeartor viewd as a
+    random variable?
+\end{question}
+Yes, I can't parse that precisely but sure.
+
+\begin{question}
+    Is $N$ the same thing as the number of basis states?
+\end{question}
+Yes, that's the definition of dimension.
+
+\subsection{Subsystems and mixed states}
+The idea is the following.
+Imagine I have a system made up of two subsystems.
+If the system is made up of two subsystems,
+then the total space is the tensor product.
+The generic state of a composite system can be written liike this
+\begin{align}
+    \ket{\psi} &=
+    \sum_{n,m} \psi_{n,m}
+    \ket{n}\otimes\ket{m}
+\end{align}
+where $\ket{n}\otimes\ket{m}$ forms the basis for the composite system
+$\mathcal{H}$,
+$\ket{n}$ forms a basis for $\mathcal{H}_1$ and
+$\ket{m}$ forms a basis for $\mathcal{H}_2$.
+
+Now imagine if you have an operator $A$,
+but I only want to measure one subsystem.
+The opeartor $A\otimes \mathbf{1}$ does this.
+\begin{align}
+    A\otimes \mathbf{1} \ket{\phi}\otimes\ket{\chi}
+    &=
+    A \ket{\phi} \otimes \ket{\chi}
+\end{align}
+It does nothing to subsystem 2.
+
+Suppose I want to find an expectation value like this.
+But Im going to assume the system is in what is called an entangled state,
+something like this
+\begin{align}
+    \ket{\psi} =
+    \frac{%
+        \ket{\phi_1}\otimes\ket{\chi_1}
+        + \ket{\phi_2}\otimes\ket{\chi_2}
+    }{\sqrt{2}}
+\end{align}
+There is a correlation between particles 1 and 2.
+This is called \emph{entanglement}.
+It's a perfectly good state,
+so let's see what happens.
+\begin{align}
+    \bra{\psi} A\otimes\mathbf{1} \ket{\psi} &=
+    \frac{%
+        \ket{\phi_1}\otimes\ket{\chi_1}
+        + \ket{\phi_2}\otimes\ket{\chi_2}
+    }{\sqrt{2}}
+    A\otimes\mathbf{1}
+    \frac{%
+        \bra{\phi_1}\otimes\bra{\chi_1}
+        + \bra{\phi_2}\otimes\bra{\chi_2}
+    }{\sqrt{2}}\\
+    &=
+    \frac{1}{2}
+    \bra{\phi_1}A\ket{\phi_1}
+    \bra{\chi_1}1\ket{\chi_1}
+    +
+    \frac{1}{2}
+    \bra{\phi_1}A\ket{\phi_2}
+    \bra{\chi_1}1\ket{\chi_2}\\\nonumber
+    &\qquad+
+    \frac{1}{2}
+    \bra{\phi_2}A\ket{\phi_1}
+    \bra{\chi_2}1\ket{\chi_1}
+    +
+    \frac{1}{2}
+    \bra{\phi_1}A\ket{\phi_1}
+    \bra{\chi_2}1\ket{\chi_2}\\
+    &=
+    \frac{1}{2}\bra{\phi_1}A\ket{\phi_1}
+    + \frac{1}{2}\bra{\phi_2}A\ket{\phi_2}
+\end{align}
+But notice that this is the same as a coherent sum
+\begin{align}
+    \frac{1}{2}\bra{\phi_1}A\ket{\phi_1}
+    + \frac{1}{2}\bra{\phi_2}A\ket{\phi_2}
+    =\Tr\left[
+        \underbrace{\left(
+            \frac{1}{2}\ket{\phi_1}\bra{\phi_1}
+            + \frac{1}{2}\ket{\phi_2}\bra{\phi_2}
+        \right)}_{\rho_1} A
+    \right]
+\end{align}
+The situation with a pure state over 2 systems is indistinguishable from having
+a classical mixed state in system 1.
+It's like you destroyed the interference!
+This density matrix you have here is only for subsystem 1
+If I had no access to subsystem 2,
+all I would see is a mixed state in subsystem 1.
