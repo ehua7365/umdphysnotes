@@ -1,11 +1,11 @@
 \section{Mixed States}
-In many situations in physics we dno't know what the wave function is,
-but we do know that there is some proability of the wave function being
+In many situations in physics we don't know what the wave function is,
+but we do know that there is some probability of the wave function being
 something.
 So to compute things we need to take averages.
 There are two averages.
 One is quantum mechanical, but one is classical.
-Probabilities in quanutm mechanics don't add,
+Probabilities in quantum mechanics don't add,
 they might subtract.
 Amplitudes add,
 but there are cross terms.
@@ -23,14 +23,14 @@ then the density operator is
 \begin{align}
     \rho &= \sum_{n} p_n \ket{n}\bra{n}
 \end{align}
-Then the expectiona value of $A$ is
+Then the expectation value of $A$ is
 \begin{align}
     \bar{A} = \Tr(\rho A)
 \end{align}
-THere are special states though.
+There are special states though.
 If I know 100\% that my system is in state $\ket{\psi}$,
 then in that sum,
-the probabilty is zero in every state except for $\ket{\psi}$,
+the probability is zero in every state except for $\ket{\psi}$,
 in which case the density operator is
 \begin{align}
     \rho = \ket{\psi}\bra{\psi}.
@@ -44,7 +44,7 @@ And so the expectation value is
     &= \bra{\psi}A\ket{\psi}\\
     &= \bar{A}
 \end{align}
-where we made a sandwhich of whatever basis $\ket{n}$ we wanted
+where we made a sandwich of whatever basis $\ket{n}$ we wanted
 and used the resolution of the identity.
 So this reduces to the usual rule for pure states.
 
@@ -68,16 +68,16 @@ $\Tr \rho = 1$.
 
 
 Example: Thermodynamic ensemble
-Suppose we have a system in thermal equlibrium.
-We don't know where the micrsocopic particles are,
-so there are certain proabilities of certain wave functions.
+Suppose we have a system in thermal equilibrium.
+We don't know where the microscopic particles are,
+so there are certain probabilities of certain wave functions.
 Turns out if you take most systems and let them evolve,
 the wave function keeps changing,
 but everything behaves as if we were in a basis state.
 I'm going to point out the following here.
 If I wait some time,
-and make macroscopic measurmenets of energy, pressure, etc.
-Everything behaves as if it were a density operator of the following fomr.
+and make macroscopic measurements of energy, pressure, etc.
+Everything behaves as if it were a density operator of the following form.
 \begin{align}
     \rho &= \frac{e^{-\beta H}}{\Tr e^{-\beta H}}
 \end{align}
@@ -88,7 +88,7 @@ $(H^2)^\dagger = (HH)^\dagger = H^\dagger H^\dagger = H^2$.
 Don't be confused if you have an $i$ factor instead,
 where $e^{itH}$ is unitary,
 but $e^{-\beta H}$ is hermitian.
-We have to devide by the real number $\Tr e^{-\beta H}$
+We have to divide by the real number $\Tr e^{-\beta H}$
 to make the trace 1,
 which is obvious,
 because the trace of the numerator cancels the denominator.
@@ -101,7 +101,7 @@ and when you exponentiate a real number,
 you get a positive number,
 so the eigenvalues of $\rho$ must be positive.
 
-This is aperfectly good density matrix.
+This is a perfectly good density matrix.
 It's sometimes written in a slightly different way.
 I could write $\rho$ in the eigenbasis of energy
 with matrix elements $\bra{n}\rho\ket{m}$.
@@ -126,8 +126,8 @@ Large and small compared to what?
 Remember that this $\beta E = \frac{E}{k_B T}$.
 So for the exponential to be small,
 we need $E$ to be large.
-So higher temperature have more likely higher energy states.
-We'll see this a lot later one.
+So higher temperatures are more likely to have more likely higher energy states.
+We'll see this a lot later on.
 
 
 Example: Photo polarization
@@ -136,7 +136,7 @@ and various superpositions like circular, left, right, etc.
 But I can also have mixed states.
 \begin{itemize}
     \item 50\% linearly polarized along $\hat{x}$ direction and
-        50\% linearly poarlized along $\ket{y}$ direction
+        50\% linearly polarized along $\ket{y}$ direction
         can be written as the state
         \begin{align}
             \rho =
@@ -149,7 +149,7 @@ But I can also have mixed states.
         \end{align}
     \item Now consider the state with
         50\% probability of being left circularly polarized
-        and 50\% probability fo being right circularly polarized.
+        and 50\% probability of being right circularly polarized.
         Let's write down the density matrix for that.
         \begin{align}
             \rho &=
@@ -189,7 +189,7 @@ But I can also have mixed states.
 So the description in words in different,
 but in reality they are different.
 
-\subsection{Entropy (max)minimiazation}
+\subsection{Entropy (max)minimization}
 Let me point something about entropy because people talk about it so I should
 point it out as soon as possible.
 
@@ -243,7 +243,7 @@ It's a pure state when I write $\rho$ as a sum like
 \begin{align}
     \rho &= \sum_n p_n \ket{n}\bra{n} = \ket{\psi}\bra{\psi}
 \end{align}
-so all the $p_n=0$ exceot for one $n=n_0$ where $p_{n_0}=1$.
+so all the $p_n=0$ except for one $n=n_0$ where $p_{n_0}=1$.
 So what does that mean?
 There are two kinds of terms in the sum,
 terms where $p_n=0$,
@@ -277,7 +277,7 @@ and say we have an excited state like
 because of the cross terms.
 
 Anyway,
-let us consider the unifrom distribution
+let us consider the uniform distribution
 $p_n=1/N$
 and the dimension $N$ of the Hilbert space is finite.
 Then the entropy is
@@ -289,7 +289,7 @@ and it turns out that this is the maximum value the entropy can be.
 It represents complete ignorance.
 
 \begin{question}
-    This is just the shannon entropy of each hermitian opeartor viewd as a
+    This is just the Shannon entropy of each hermitian operator viewed as a
     random variable?
 \end{question}
 Yes, I can't parse that precisely but sure.
@@ -304,7 +304,7 @@ The idea is the following.
 Imagine I have a system made up of two subsystems.
 If the system is made up of two subsystems,
 then the total space is the tensor product.
-The generic state of a composite system can be written liike this
+The generic state of a composite system can be written like this
 \begin{align}
     \ket{\psi} &=
     \sum_{n,m} \psi_{n,m}
@@ -317,7 +317,7 @@ $\ket{m}$ forms a basis for $\mathcal{H}_2$.
 
 Now imagine if you have an operator $A$,
 but I only want to measure one subsystem.
-The opeartor $A\otimes \mathbf{1}$ does this.
+The operator $A\otimes \mathbf{1}$ does this.
 \begin{align}
     A\otimes \mathbf{1} \ket{\phi}\otimes\ket{\chi}
     &=
@@ -326,7 +326,7 @@ The opeartor $A\otimes \mathbf{1}$ does this.
 It does nothing to subsystem 2.
 
 Suppose I want to find an expectation value like this.
-But Im going to assume the system is in what is called an entangled state,
+But I'm going to assume the system is in what is called an entangled state,
 something like this
 \begin{align}
     \ket{\psi} =
@@ -370,7 +370,7 @@ so let's see what happens.
     \frac{1}{2}\bra{\phi_1}A\ket{\phi_1}
     + \frac{1}{2}\bra{\phi_2}A\ket{\phi_2}
 \end{align}
-But notice that this is the same as a coherent sum
+But notice that we have seen this before and it is the same as an incoherent sum
 \begin{align}
     \frac{1}{2}\bra{\phi_1}A\ket{\phi_1}
     + \frac{1}{2}\bra{\phi_2}A\ket{\phi_2}
@@ -384,6 +384,413 @@ But notice that this is the same as a coherent sum
 The situation with a pure state over 2 systems is indistinguishable from having
 a classical mixed state in system 1.
 It's like you destroyed the interference!
-This density matrix you have here is only for subsystem 1
+This density matrix $\rho_1$ you have here is only for subsystem 1
 If I had no access to subsystem 2,
-all I would see is a mixed state in subsystem 1.
+like if I moved it to another galaxy,
+all I would see is a classical mixed state in subsystem 1.
+
+[break]
+
+Let me repeat this same calculation in a slightly more general setting so you
+understand the general rule.
+Suppose you want to calculate the expectation value of a pure state of a
+composite system.
+The most general composite state looks like this
+\begin{align}
+    \sum_{n'm'}\ket{n'}\otimes\ket{m'}
+\end{align}
+This is a little tricky,
+so I'm going to do it slowly.
+\begin{align}
+    \bra{\psi}A\otimes\mathbf{1}\ket{\psi}
+    &=
+    \sum_{n',m',n,m}
+    \bra{n}\otimes\bra{m}
+    \psi_{nm}^*
+    A\otimes\mathmbf{1}
+    \psi_{n'm'}\ket{n'}\otimes\ket{m'}\\
+    &=
+    \sum_{n',m',n,m}
+    \psi_{nm}^* \psi_{n'm'}
+    \bra{n}A\ket{n'}
+    \underbrace{\bra{m}\mathbf{1}\ket{m'}}_{\delta_{mm'}}\\
+    &=
+    \sum_{nn'}\bra{n}A\ket{n'}
+    \sum_m\psi_{nm}^* \psi_{n'm}\\
+    &= \Tr\left[
+        \underbrace{\sum_{n,m,n'} \psi_{nm}^* \psi_{n'm}\ket{n}\bra{n'}}_{%
+            \rho_1
+        }
+        A
+    \right]
+\end{align}
+Note that the proper way to compute a trace is to sandwich a complete basis on
+each side and sum over.
+Using the cyclic property of the trace is not a valid way of doing it,
+but it just happens to work in this case.
+
+Tensor products look like a mouthful on paper,
+but it's completely trivial to manipulate.
+
+Anyway,
+the point of this is that $\rho_1$ may be a mixed state of only subsystem 1.
+That's the price you pay for not knowing about subsystem 2.
+
+
+Let's doe something exciting.
+Shooting particles through holes and interference.
+People say that if you somehow have a way of looking which way the particle goes
+through,
+just by having the possibility of knowing,
+the interference pattern gets destroyed.
+It's a bit mysterious because of the following.
+If you know the particle is left or right,
+you make a measurement,
+and you collapse the system.
+
+If it was a superposition,
+because of measurement,
+you collapse it.
+\begin{align}
+    \frac{\ket{L} + \ket{R}}{\sqrt{2}}
+    \to
+    \ket{L}
+\end{align}
+But what does it even mean to make a measurement.
+Suppose you had a machine that automatically writes left or right,
+but nobody looks at that piece of paper,
+is that enough to destroy the interference or not.
+Let me not use the collapse of the wave function,
+but using the knowledge we just learnt.
+
+Suppose my state is a superposition
+\begin{align}
+    \ket{\psi_0} &=
+    \frac{\ket{L} + \ket{R}}{\sqrt{2}}
+\end{align}
+but suppose I have a piece of equipment that spies on the particle.
+But now I have both the particle and the spy
+as a composite system.
+My spy system $\ket{\text{spy}}$ lives in a Hilbert space
+$\mathcal{H}_{\text{spy}}$,
+which could be quite complicated
+because it's a complicated device.
+
+\begin{align}
+    \ket{\psi_0} &=
+    \frac{\ket{L} + \ket{R}}{\sqrt{2}}
+    \otimes
+    \ket{\text{spy}}
+\end{align}
+But then it evolves according to a Hamiltonian $H$ and we get
+\begin{align}
+    \ket{\psi} &=
+    \frac{\ket{L} + \ket{R}}{\sqrt{2}}
+    \otimes
+    \ket{\text{spy}'}
+\end{align}
+But now it's evolved in a way completely independent of the particle,
+but that's not useful because it's not spying!
+So what we really want is for the spy to distinguish between left and right,
+so we something like this.
+\begin{align}
+    \ket{\psi} &=
+    \frac{1}{\sqrt{2}}
+    \ket{L}
+    \otimes
+    \ket{\text{spy,left}}
+    +
+    \frac{1}{\sqrt{2}}
+    \ket{R}
+    \otimes
+    \ket{\text{spy,right}}
+\end{align}
+That is a 100\% precise measurement by the spy device.
+Now I'm going to ask the following question.
+The spy device going left or right is writen on the piece of paper,
+but no one is going to look at it.
+It's not really a measurement.
+Now suppose the paper is burnt,
+destroyed.
+
+The particles are still going to hit the screen,
+so what I'm going to be interested in doing is measure things,
+say $A$,
+that refer only to the particle,
+so the operator is $A\otimes\mathbf{1}$.
+If I only measure things like this,
+then I know everything that I can possibly measure about the system
+is contained in a density matrix obtained the same as before.
+
+Take the density matrix intially which is a pure state
+\begin{align}
+    \rho &= \ket{\psi}\bra{\psi}\\
+    &=
+    \sum_{n,m,n',m'} \psi_{n'm'}\ket{n'}\otimes\ket{m'}\\
+    \bra{n}\otimes\bra{m}\psi_{nm}^*\\
+    &\to
+    \sum_{n,m,n'} \psi_{nm}^* \psi_{n'm}\ket{n}\bra{n'}
+    = \rho_1
+\end{align}
+But how did I get there?
+I had to take a trace over system 2.
+\begin{align}
+    \sum_{m''}\bra{m''}\rho\ket{m''} &=
+    \sum_{m''}\bra{m''}\ket{\psi}\bra{\psi}\ket{m''}\\
+    &=
+    \sum_{m''}\bra{m''}\sum_{n,m,n',m'} \psi_{n'm'}\ket{n'}\otimes\ket{m'}
+    \bra{n}\otimes\bra{m}\psi_{nm}^*\ket{m''}\\
+    &\to
+    \sum_{n,m,n'} \psi_{nm}^* \psi_{n'm}\ket{n}\bra{n'}
+    = \rho_1
+\end{align}
+
+This procedure here,
+there's a name of it,
+it's called taking the trace of subsystem 2.
+\begin{align}
+    \Tr_2 \rho = \sum_{m''}\bra{m''} \rho \ket{m''}
+\end{align}
+where $\ket{m''}$ form a basis for subsystem 2.
+You will be left with a possibly mixed state $\rho_1$ for only subsystem 1.
+This is sometimes called the \emph{partial trace},
+an operation that is very common
+and you should know this.
+
+Let's go back to the problem.
+So we have the state for subsystem 1
+\begin{align}
+    \rho_1 &=
+    \Tr_2 \rho\\
+    &=
+    \Tr_2
+    \left(
+        \frac{1}{\sqrt{2}}\ket{L}\otimes\ket{\text{spy,l}}
+        + \frac{1}{\sqrt{2}}\ket{R}\otimes\ket{\text{spy,r}}
+    \right)
+    \left(
+        \frac{1}{\sqrt{2}}\bra{L}\otimes\bra{\text{spy,l}}
+        + \frac{1}{\sqrt{2}}\bra{R}\otimes\bra{\text{spy,r}}
+    \right)\\
+    &= 
+    \bra{\text{spy.l}}
+    \left(
+        \frac{1}{\sqrt{2}}\ket{L}\otimes\ket{\text{spy,l}}
+        + \frac{1}{\sqrt{2}}\ket{R}\otimes\ket{\text{spy,r}}
+    \right)
+    \left(
+        \frac{1}{\sqrt{2}}\bra{L}\otimes\bra{\text{spy,l}}
+        + \frac{1}{\sqrt{2}}\bra{R}\otimes\bra{\text{spy,r}}
+    \right)
+    \ket{\text{spy.l}}\\\nonumber
+    &\qquad+
+    \bra{\text{spy.r}}
+    \left(
+        \frac{1}{\sqrt{2}}\ket{L}\otimes\ket{\text{spy,l}}
+        + \frac{1}{\sqrt{2}}\ket{R}\otimes\ket{\text{spy,r}}
+    \right)
+    \left(
+        \frac{1}{\sqrt{2}}\bra{L}\otimes\bra{\text{spy,l}}
+        + \frac{1}{\sqrt{2}}\bra{R}\otimes\bra{\text{spy,r}}
+    \right)
+    \ket{\text{spy.r}}\\
+    &= \frac{1}{2}\ket{L}\bra{L} + \frac{1}{2}\ket{R}\bra{R}
+\end{align}
+This gives the density matrix of the particle
+and you've seen this before.
+It describes the situation where you don't know where the particle is,
+and it could left or right.
+In particular,
+If I try to compute expectation values of some of the particles,
+I just get the usual thing of incoherent sum, no intereference.
+\begin{align}
+    \bar{A} &=
+    \Tr \rho_A\\
+    &= \frac{1}{2}\bra{L}A\ket{L}
+    + \frac{1}{2}\bra{R}A\ket{R}
+\end{align}
+but I'm now going to look at this piece of paper and it doesn't matter.
+The interference pattern is gone.
+It works whether it's written by the piece of paper or not.
+It could be a single photon going through the particle,
+and that reveals the position of the particle,
+because the future state of the photon depends where the particle is.
+That entanglement means I end up with a situation indistinguishable from a
+coherent sum.
+A single photon going through the experiment
+correlating with the particle destroys the interference.
+
+What counts as a measurmenet?
+one thing you can tell from our calculation.
+It's enough to have anything entangling with the particle and you won't be able
+to see the intereference.
+it doesn't have to be a monkey, a grad student, or whatever,
+a single photon correlation is enough.
+
+\begin{question}
+    You call it incoherent because it has no inteference terms?
+\end{question}
+Yes that's right, some lingo I introduced before.
+
+\begin{question}
+    What if we're not aware of the entanglement?
+    Will it stil affect the system?
+\end{question}
+It doesn't matter what Paulo sees,
+any system entangling with the particle will destroy interference.
+Doesn't matter if I know about it or not.
+
+
+Let me make a comment.
+what this suggests is that to see intference effects is tricky in pratice.
+A single straight photon will destroy it.
+It's not hard with light.
+But if you tried doint it with electrons,
+it's hard.
+Photons don't interact with each other,
+but there's always light to interact with electrons.
+So to do experiments with electrons is difficult.
+
+There's great work recently with quantum devices of all kinds
+Quantum computers being the most famous ones.
+It's why quantum computers are so hard to make.
+Your quantum coputer needs a hilbert space of some dimension,
+but all the coherence will disappear if your qubits get entangled with the
+outside world,
+and that could be anything,
+even the metal frame that's holding it.
+You have to make sure the whole thing that is supporting your device doesn't get
+entangled with it.
+certainly you have to make sure it's dark,
+because a little photon can interact with it and it can entangle,
+and you get a mixed state.
+It's a tremendous technological challange.
+It's not hard to get this in the lab,
+it's how they discovered QM.
+But instead of an atom,
+but a bigger system,
+certainly a macroscopic thing,
+it's hard.
+There's awhole fued nowadays in physics,
+quantum registers or other systems,
+could they keep a superposition.
+I won't be surprised if half of you spend half your life trying to do this
+stuff.
+Any other comments?
+
+\begin{question}
+    Future of quantum computing?
+\end{question}
+I cannot predict the future,
+but I can tell you
+I have not invested in quantum computing companies.
+I can tell you I was on the ground on Amazon,
+and I did not buy Amazon stock either.
+I was like this is stupid,
+who wants to buy books,
+books are heavy.
+I did not buy Amazon stock,
+I'm not buying quantum computing stock.
+
+Someone's comment is that the effect of cosmic rays in classical computers is a
+thing.
+It may happen, it does happen.
+It happens a lot in satellites though.
+Cosmic rays are like a hammer,
+it cna destroy annything,
+including classical informaiton.
+What I'm saying is way worse than this.
+Classical computers don't even use error correcting codes.
+They're so precise they don't hvae to.
+Quantum computers are a non-starter without quanutm error correction.
+I'm not an experimentalist,
+I don't know,
+but I'm excitedly waiting for a quantum computer.
+The difficulty is that you don't need a measurement to collapse a wave funciton,
+all you need is a bit of entangelmetn.
+
+There are many other things that can entangle.
+
+We have 9 minutes left.
+I have more stuff to talk about,
+but about a little bit of a different topic.
+
+\begin{question}
+    Before yo urevisited the double slit expreiment,
+    we were looking at the expectation of $A$.
+    If we have the same $\psi$ on both sides,
+    why do we need separate indices on both sides $m'$ and $n'$.
+\end{question}
+Every time there's an issue with sums and indices,
+the best thing to do is do an example.
+Let's say $n,m,\ldots, = 1,2$.
+Say your state is
+\begin{align}
+    \ket{\psi} = \frac{\ket{1} + \ket{2}}{\sqrt{2}}
+\end{align}
+Then we have
+\begin{align}
+    \bra{\psi}A\ket{\psi} &=
+    \frac{\bra{1} + \bra{2}}{\sqrt{2}} A
+    \frac{\ket{1} + \ket{2}}{\sqrt{2}}\\
+    &=
+    \frac{1}{2} \bra{1} A\ket{1}
+    + \frac{1}{2} \bra{2} A\ket{2}
+    + \frac{1}{2} \bra{1} A\ket{2}
+    + \frac{1}{2} \bra{2} A\ket{1}
+\end{align}
+Great, let's write things in terms of indices now?
+Is this the same thing as
+\begin{align}
+    \sum_{n=1}2\bra{n}A\ket{m}?
+\end{align}
+Clearly not,
+but it is the same as
+\begin{align}
+   \sum_{n,m=1}2\bra{n}A\ket{m}?
+\end{align}
+You can settle these issues by doing an example that's trivial,
+and it's immediately completely obvious.
+
+\begin{question}
+    If I think of that line conceptually as no intference,
+    we have a particle and it got entangled with another system,
+    and we lost informaitno about the other system,
+    and is that why we don't have inteference.
+\end{question}
+I agree with everything we said,
+but it doesn't mean one expalins another.
+I find it completely mind-boggling
+that I start with a pure state,
+and if I look at just a subsystem,
+and I get a mixed state.
+If somehow saying those words makes you happy,
+then everything is alrgith.
+You're smarter than me.
+Yeah, I don't know what to say.
+I don't find anything at all.
+I just got used to it.
+
+A week ago,
+if I told you this,
+you'd say oh yeah correlaing wiht another particle,
+nitference should disapear.
+
+You've heard the double slit experiment a million times,
+and yo've been told if you look at it it will disappear.
+Did you know that entangling is a measurment devices and they destroy
+inteference.
+When I was a sutdent this wasn't explained.
+Everything you said was right,
+that's the only thing I can tell you.
+
+\begin{question}
+    Does the uniform distirbution have maximum entropy?
+    But what's the distribution that maximises entropy for the haronic
+    osciollator?
+\end{question}
+Yes.
+There is no upper bound for the entropy of an infinite dimensinoal system.
+Entropy increases with temperature,
+and there is no bound for temperature.
+The entropy does have a maximum for finite-state systems.
