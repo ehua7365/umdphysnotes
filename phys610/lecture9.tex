@@ -1,0 +1,314 @@
+[missed first half]
+\section{Cylinder-plane conformal mapping}
+Consider the mapping $w\to z$ defined by
+\begin{align}
+    w &= \ln\frac{z + a}{z - a}
+\end{align}
+
+Let $w=u + iv$ and $z = x + iy$.
+We want to answer these two questions:
+(a) What region of the $z$-plane corresponds to the region bewteen
+$u=0$ and $u=u_0$?
+
+(b) what region of the $z$-plane corresponds to the region of the $w$-plane
+between $v=0$ and $v=v_0$,
+where $v_0$ is a constant that lies between $0$ and $\pi$.
+
+(a)
+\begin{align}
+    w &= u + iv = \ln \frac{z + a}{z - a}
+\end{align}
+where $z = x + iy$.
+So
+\begin{align}
+    e^{w} &= \frac{z + a}{z - a}
+\end{align}
+and the modulus is
+\begin{align}
+    \left| e^{u} e^{iv} \right|
+    &=
+    \left|
+        \frac{(x + a) + iy}{(x - a) + iy}
+    \right|
+\end{align}
+and so
+\begin{align}
+    e^{2 u} &=
+    \frac{(x + a)^2 + y^2}{(x - a)^2 + y^2}
+\end{align}
+
+For $u=0$, $e^{2 u} = 1$.
+\begin{align}
+    (x + a)^2 + y^2 &=
+\end{align}
+
+
+[missed some lines]
+
+For $u=u_0$,
+$e^{2 u_0} =: C^2$,
+we have
+$C^2 > 1$ for $u_0 > 0$.
+Along $v=u_0$,
+\begin{align}
+    C^2\left[
+        (x - a)^2 + y^2
+    \right] &=
+    (x + a)^2 + y^2
+\end{align}
+and after some algebra you can find in the notes,
+you find that
+\begin{align}
+    x^2 + y^2 + a^2 *=
+    \underbrace{\left(\frac{c^2 + 1}{c^2 - 1}\right)}_{\lambda} 2ax
+\end{align}
+So call that thing $\lambda$ becuase it's the only place where $C^2$ appears.
+\begin{align}
+    \lambda &:= \frac{c^2 + 1}{c^2 - 1}\right)
+\end{align}
+It's possible to rewrite the quation
+\begin{align}
+    (x - a\lambda)^2 + y^2 = a^2 (\lambda^2 - 1)
+\end{align}
+and you can convince yourself that $\lambda > 1$.
+Because $C^2$ is a positive number bigger than 1,
+so $C^2 - 1$ is a positive number,
+and $C^2 + 1$ is a bigger positive number,
+so $\lambda > 1$.
+This equation here is an equation of a circle
+centred at $(a\lambda, 0)$.
+So the centre of the circle is at $x=a\lambda$.
+So it's on the $x$-axis.
+The radius of the circle is
+$R= a\sqrt{\lambda^2 - 1}$.
+
+Let me continue for a couple more minutes.
+Here's what we're finding.
+
+We started with 2 straight lines in the $u-v$ plane.
+$u=u_0$ and $u=u_0$.
+Those are 2 straight lines.
+The $u=0$ line maps to the $y$-axis
+and the $u=u_0$ line maps to a circle with centre sitting on the $x$ axis.
+The region between $u=0$ and $u=u_0$ is mapped into the region between the
+$y$-axis and the circle.
+
+So let's draw that.
+
+[picture here]
+
+This is a fairly standard map.
+We don't have enough time in the class to go thorugh all the standard maps.
+If you're familiar with all the standard maps you can go very ar.
+It's just like how in integration we hvae standar contours.
+That's why it's important I did almost all of the standard contours.
+
+Maybe 30 to 40 years ago,
+conformal mapping was improtant,
+but these days we can solve things using more powerful computers and this is
+becoming less important.
+30 years ago,
+a big chunk of the course would have been dedicated to conformal mapping
+just like how I did contour integrals in the course.
+
+\begin{question}
+    At the bottom of the $y$-axis is $u=0$?
+\end{question}
+The entire $y$-axis is mapped from the line $u=0$.
+Sorry about my handwriting.
+This whole line is $u=0$.
+
+Any other questions?
+
+(b)
+Let's do problem b now.
+So we start with what we had before
+\begin{align}
+    e^{u}e^{iv}
+    &=
+    \frac{(x + a) _+ iy}{(x - a) + iy}
+    &=
+    \frac{(x^2 + y^2 - a^2) - 2 i ay}{(x - a)^2 + y^2}
+\end{align}
+and then skipping a few steps you can find in the notes,
+you get
+\begin{align}
+    e^{iv} &=
+    e^{-u}\left\{
+        \frac{(x^2 + y^2 - a^2) - 2 iay}{(x - a)^2 + y^2}
+    \right\}
+\end{align}
+But from the previous problem, we know
+\begin{align}
+    e^{-u} &= \cdots
+\end{align}
+and with a little bit of algebra gain which I'm not going to show you,
+you get
+\begin{align}
+    e^{iv} &=
+    \frac{(x^2 + y^2 - a^2) - 2iay}{\sqrt{
+        [(x - a)^2 + y^2]
+        [(x + a)^2 + y^2]
+    }}
+\end{align}
+So now we have a direct relation between $v$ and $x,y$.
+But you can see this is a messy expression.
+Not straightforward to handle,
+but let's see how to make progress.
+
+So then let me notice that
+\begin{align}
+    \tan v &=
+    \frac{-2ay}{x^2 + y^2 - a^2}
+\end{align}
+and if $v$ is a constant, then $\tan v$ is also a constant.
+For reasons that will be clear in a moment,
+let me also write
+\begin{align}
+    \sin v &=
+    \frac{-2ay}{\sqrt{
+        [(x - a)^2 + y^2]
+        [(x + a)^2 + y^2]
+    }}
+\end{align}
+So why am I writing both tan and sin?
+It's because the tan is not unique,
+it's the same for both $v$ and $v+\pi$.
+If I tell you the tanget and the sign,
+then I specify $v$ uniquely.
+If I only specify $\tan v$,
+there is a degeneracy and it's not clear what $v$ is.
+
+Let's go back to the quesiton.
+For $v=0$, $\tan v =0 $ and $y=0$.
+So $v=0$ maps onto the $x$ axis.
+
+Let $\tan v_0 = k$ be a constant.
+Then
+\begin{align}
+    \frac{-2ay}{x^2 + y^2 - a^2} = k
+\end{align}
+With some algebra I'm skipping,
+if you do it,
+you can rewrite this as
+\begin{align}
+    x^2 = \left( y + \frac{a}{k} \right)^2
+    &=
+    a^2 \left( 1 + \frac{1}{k^2} \right)
+\end{align}
+and this is the circle centred at
+$\left( 0, \frac{-a}{k} \right)$
+with readius
+$a\sqrt{1 + \frac{1}{k^2}}$.
+
+Alright,
+so let's draw it.
+This is the $x$-axis and this is the $y$-axis.
+Let's draw a circle.
+This is the centre of the circle.
+I've drawn part of the circle dotted.
+Well you're wondering this is the equatino for the full circle,
+but why have I drawn part of it solid and part of it dotted.
+Well here's why.
+Remember what I did was set $\tan v = k$.
+That's how I got a circle.
+But remember $\tan v$ is the same for both $v$ and $v+\pi$.
+I'm going to argue that the dotted part corresponds to $v+\pi$,
+and the solid part is the circle that maps to what we want.
+It's actually quite tricky.
+
+[picture here]
+
+Recall the the denominator of the $\sin v$ expression is positive.
+But how we were asked to look at the problem for $0\le v_0< \pi$.
+So if $v < \pi$, then $\sin v$ > 0 and $y <0$,
+so only the portion of the circle below the $y=0$ $x$-axis is what we want.
+The part of the circle above the $x$-axis corresponds to when
+$\sin v < 0$.
+Let me write a couple of things and then I can ask questions.
+
+Since we restricted $0< v_0 < \pi$,
+$\sin v_0 > 0$.
+Then only the part of the circle with $y<0$
+corresponds to $v_0$.
+
+Now you can convince yourself that the circle crosses the $x$-axis at
+$x=-a$,
+which maps to $u-\infty$,
+and at $x=a$,
+which maps to $u=+\infty$.
+The lowest point of the circle,
+which is at $x=0$,
+corresponds to $u=0$.
+
+So as you change $u$ holding $v$ fixed,
+you trace out an arc.
+Convince yourself that this is true.
+
+Are there any questions about this?
+
+We have a grand total of 5 minutes to solve this part C.
+Alright.
+
+(c) Consider the geometry below in the $w$-plane.
+You have two infinite plates,
+one at $u=0$ and one at $u=u_0$.
+And this is the line $v=0$.
+This is the direction of increasing $v$.
+Now we're going to set this $u=0$ plane to potential
+$V=0$
+and this other plate to potential
+$V=V_0$.
+
+The solution for region between the two plates is
+\begin{align}
+    V &= V_0\left\{
+        \frac{u}{u_0}
+    \right\}
+\end{align}
+And remember this mapping maps from plane to cylinder.
+We already showed that.
+
+This maps into the geometry below,
+a plane at $x=0$
+and cylinder at $(\lambda a, 0)$
+with radius $a\sqrt{\lambda^2 - 1}$.
+But you remember in the formulation of the question,
+the cylinder is centred distance $d$ from the plane
+and has radius $R$.
+So we equate
+\begin{align}
+    d &= a \lambda\\
+    R &= a\sqrt{\lambda^2 - 1}
+\end{align}
+So then after some algebra I have in the notes,
+you find that
+\begin{align}
+    a &=
+    R \sqrt{\frac{d^2}{R^2} - 1}\\
+    \lambda &=
+    \frac{d/R}{\sqrt{\frac{d^2}{R^2} - 1}}
+\end{align}
+To solve the problem,
+all we have to do is rewrite $V=V_0 u/u_0$,
+rewriting $u$ in terms of $x$ and $y$.
+But we know what that is because we have this thing from (a),
+and here's what you end up with
+\begin{align}
+    V &= \frac{V_0}{u_0} \frac{1}{2}
+    \log\left\{
+        \frac{(x + a)^2 + y^2}{(x - a)^2 + y^2}
+    \right\}
+\end{align}
+and we have to rewrite $u_0$ and $a$ in terms of
+$d$ and $R$ using the expressions above.
+It's given in the notes.
+This is the solution
+and we just have to rewrite the constants in terms of $d$ and $R$.
+You can find the closed-form expression in the notes.
+You can check by direct substitution into Laplace's euqation,
+and you find that it satisfied Laplace's equation and also
+that it satisfies the boundary conditions.
+
+Let me stop here.
+I know that was rather quick.
