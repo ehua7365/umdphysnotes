@@ -1,0 +1,173 @@
+\section{Canonical Quantization}
+
+Classical $Q$ configuration space.
+$q_i$, for $i=1,\ldots,N$
+$p_i$, for $i=1,\ldots,N$
+Poisson brackets
+$\left\{ q_i, p_i \right\}=1$
+
+Quantum $\mathcal{H}$ on $Q$.
+$\hat{q}_i$ and $\hat{p}_i$.
+Commutator
+$\left[ \hat{q}_i, \hat{p}_i \right] = i\hbar \delta_{ij}$.
+
+Hamiltonian is
+\begin{align}
+    \hat{H} = \mathcal{H}\left( \hat{q}_i, \hat{p}_i \right)
+\end{align}
+
+\begin{example}[1D particle]
+    $\hat{x}\ket{x} = x\ket{x}$
+    and
+    \begin{align}
+        \ket{\psi} = \int_{-\infty}^{\infty} dx\,
+        \psi(x)\ket{x}
+    \end{align}
+    and hte momentum is
+    \begin{align}
+        \hat{p}\ket{x} := i\hbar \frac{d}{dx}\ket{x}
+    \end{align}
+    with
+    \begin{align}
+        \left[ \hat{x}, \hat{p} \right] = i\hbar
+    \end{align}
+\end{example}
+\begin{proof}
+    For a basis state,
+    \begin{align}
+        \left[ \hat{x}, \hat{p} \right]
+        &=
+        \hat{x} i\hbar \frac{d}{dx}\ket{x}
+        - \hat{p}\hat{x}\ket{x}\\
+        &=
+        i\hbar
+        \frac{(x + dx)\ket{x + dx} - x\ket{x}}{dx}
+        - x i\hbar \frac{d}{dx}\ket{x}\\
+        &=
+        i\hbar\left(
+            x \frac{d}{dx} + \frac{dx}{dx}\ket{x}
+        \right)
+        - i\hbar x \frac{d}{dx}\kket{x}\\
+        &= i\hbar \ket{x}
+    \end{align}
+    Then more generally
+    \begin{align}
+        \left[ \hat{x}, \hat{p} \right] &=
+        \int_{-\infty}^{\infty} dx \left[ \hat{x}, \hat{p} \right]
+        \ket{x} \braket{x}{\psi}\\
+        &= i\hbar\ket{\psi}
+    \end{align}
+\end{proof}
+
+\begin{example}[Particle on a sphere]
+    The Lagrangian is
+    \begin{align}
+        L &=
+        \frac{m}{2} R^2\left(
+            \theta^2 + \sin^2\theta \phi^2
+        \right)
+    \end{align}
+    and the conjugate momenta are
+    \begin{align}
+        p_\theta &=
+        \frac{dL}{d\theta}
+        = mR^2\theta\\
+        p_\phi &=
+        \frac{dL}{d\phi}
+        = mR^2 \sin^2\theta \phi
+    \end{align}
+    which gives the Hamiltonian
+    \begin{align}
+        H &=
+        \frac{m}{2} R^2\left(
+            \frac{p_\theta^2}{(mR^2)^2}
+            + \frac{p_\phi^2}{(mR^2)^2\sin^2\theta}
+        \right)
+    \end{align}
+    Classically the Poisson bracket is
+    \begin{align}
+        \left\{ \theta, p_\theta \right\} &=
+        \left\{ \phi, p_\phi \right\}
+        = 1
+    \end{align}
+    which upon quantisation leads becomes commutation relations
+    \begin{align}
+        \left[ \hat{\theta}, \hat{p}_\theta \right] =
+        \left[ \hat{\phi}, \hat{p}_\phi \right] =
+        i\hbar
+    \end{align}
+    We can then define the position operators acting on basis states with
+    \begin{align}
+        \hat{\theta}\ket{\theta,\phi} &= 
+        \theta\ket{\theta,\phi}\\
+        \hat{\phi}\ket{\theta,\phi} &= 
+        \phi\ket{\theta,\phi}
+    \end{align}
+    and the momentum operators
+    \begin{align}
+        \hat{p}_\theta\ket{\theta,\phi}
+        &=
+        i\hbar \frac{\partial}{\partial\theta}\ket{\theta,\phi}\\
+        \hat{p}_\phi\ket{\theta,\phi}
+        &=
+        i\hbar \frac{\partial}{\partial\phi}\ket{\theta,\phi}
+    \end{align}
+    A arbitrary state can be written as a superposition
+    \begin{align}
+        \ket{\psi} &=
+        \underbrace{
+            \int_{0}^{2\pi} d\theta\sin\theta
+            \int_0^{\pi d\phi}
+        }_{\displaystyle\int_{\textrm{sphere}} d\Omega}
+        \psi(\theta,\phi) \ket{\theta,\phi}
+    \end{align}
+    However, the momentum operator does not act like how you think it does.
+    \begin{align}
+        \hat{p}_\theta \psi(x) &\ne
+        -i\hbar \frac{\partial}{\partial\theta} \psi(\theta,\phi)
+    \end{align}
+    If you plug the above into the Hamiltonian,
+    you don't get the Laplacian back, so it must be wrong.
+    The correct expression is
+    \begin{align}
+        \hat{p}_\theta \psi(x) &=
+        \frac{-i\hbar}{\sqrt{\sin\theta}}
+        \frac{\partial}{\partial\theta}\sqrt{\sin\theta}
+    \end{align}
+    Then you find that
+    \begin{align}
+        \bra{\psi}\hat{p}\ket{\chi}
+        &=
+        \int_{0}^{2\pi} d\theta \sqrt{\sin\theta}
+        \int_{0}^{\pi}d\phi\,
+        \psi^*(\theta,\phi)\cdots
+    \end{align}
+    Then you find that
+    the solutions are spherical harmonics $Y_{l,m}(\theta,\phi)$
+    which you can use as basis.
+\end{example}
+
+\section{Operator Ording Ambiguities}
+Canonical quantization is not a good algorithm for quantisation,
+bcecause there is ambigiuity in the ordering of the Hamiltonian.
+Suppose you have
+\begin{align}
+    H &= \frac{p^2}{2m}
+\end{align}
+and you quantize it into
+\begin{align}
+    \hat{H} &= \frac{\hat{p}^2}{2m}
+\end{align}
+However, another Hamiltonian you could have that is classically the same is
+\begin{align}
+    H &=
+    \frac{1}{x^{100}}
+    \frac{p x^{100} p}{2m}
+\end{align}
+which quantizes into
+\begin{align}
+    \hat{H} &= \frac{1}{2m}
+    \frac{1}{\hat{x}^{100}}
+    \hat{p} \hat{x}^{100} \hat{p}
+\end{align}
+which is wildly different!
