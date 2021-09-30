@@ -1,0 +1,446 @@
+\section{Method of Steepest Descent}
+This is a method of approximating complex line integrals.
+Let us first consider the simpler case of a real integral.
+We look for an approximation to the Gamma function
+$\Gamma(x + 1)$
+when $x$ is large,
+starting from its definition as an integral
+\begin{align}
+    \Gamma(x + 1)
+    &=
+    \int_{0}^{\infty} t^x e^{-t}\, dt
+\end{align}
+We want to get an approximate integral in the limit that $x$ is very large.
+OK so how do we begin?
+
+The first thing is note that the integrand has a maximum when
+$t=x$.
+To see this, note the integrand is extreme when
+\begin{align}
+    \frac{d}{dt}\left(
+        t^x e^{-t}
+    \right) = 0
+\end{align}
+at $t=t_0$.
+Solving $t_0=x$,
+for large $x$,
+the integrand is very highly peaked around $t=t_0$.
+
+So to a good approximation,
+the value of the integral is dominated by they region around the peak.
+For large $x$,
+the contribution of the integral is dominated by the region around the peak.
+For a first pass,
+we can just consider the region around the peak and discard everything else.
+That's the approximation we make.
+It's similar to what we do when we look at the method of steepest descent.
+
+The first thing to do is to write the integrand in an exponential form,
+like $e^{f(t)}$
+and expand $f(t)$ in a Taylor series
+about the maximum.
+
+For example,
+\begin{align}
+    e^{f(t)} &=
+    t^{x} e^{-t}
+    = e^{x \log t - t}
+\end{align}
+Then
+\begin{align}
+    f(t) &= x\log t - t\\
+    f'(t) &= \frac{x}{t} - 1\\
+    f''(t) &= -\frac{x}{t^2}
+\end{align}
+Then,
+expanding about $t=x$,
+we have
+\begin{align}
+    f(t) &=
+    (x \log x - x)
+    - \frac{1}{2}
+    \frac{1}{x} {(t - x)}^2 + \cdots
+\end{align}
+Now we approximate the integral by contribution from the region around the
+maximum,
+\begin{align}
+    \Gamma(x + 1) &\approx
+    \int_{0}^{\infty} dt\,
+    \exp\left\{
+    x\log x - x \frac{1}{2x}{(t - x)}^2
+    \right\}\\
+    &\approx
+    e^{x\log x - x}\int_{-\infty}^{\infty}\exp\left\{
+    -\frac{1}{2x}{(t - x)}^2
+    \right\}
+\end{align}
+The error in changing the integral lower bound from 0 to $\infty$
+is negligible
+and it's a Gaussian integral so you get
+\begin{align}
+    \Gamma(x + 1) \approx
+    e^{x \log x - x}\sqrt{2\pi x} = \sqrt{2\pi x} x^x e^{-x}
+\end{align}
+This is the first term in Stirling's formula.
+
+The method of steepest descent is generally applied to integrals of the form
+\begin{align}
+    I(s) &=
+    \int_C g(z) e^{s f(z)} dz
+\end{align}
+where $s$ is real, large and positive
+and $f(z)$ and $g(z)$ are analytic functions.
+This restriction on $s$ being real is not important because if it were 
+complex,
+you can pull out the imaginary part and sign
+and absorb it into $g$ and $f$.
+Assume you've already done that.
+
+For $f(z)=u& + iv$
+we expect most of the contribution to the integral to come from the region
+where $u$ is large.
+But by Cauchy's theorem,
+we have to freedom to move the contour,
+so the idea is the move the contour to pass through where the value is
+peaked.
+
+The idea behind the method of steepest descent it to choose the contour $C$
+so that it runs over a region where $u$ is large and highly peaked
+so that $I(s)$ is dominated by the contribution from this region.
+
+Now we come to the complication.
+Remember, you had to prove that neither $u$ nor $v$
+can have a maximum or a minimum in that region.
+All you have are saddle points.
+But actually this turns out not to matter.
+The question is not what is the global maximum of this function.
+All we have to do is choose a path such that it has a maximum
+\emph{along} that path.
+When going along a path,
+you approach a point from only one direction.
+So choose your path such that the path has a maximum along the path,
+and the integral is dominated by the contribution from that peak.
+On the real line,
+there's only one path of integral,
+either you have a peak or you don't.
+In the complex plane,
+there is no maximum,
+but you have the flexibility to choose the path,
+so choose the path so that along that path you have a maximum,
+and the integral will be dominated by the region around that maximum
+on the path.
+
+So let's write that down.
+
+However, because $f(z)$ is an analytic function,
+neighbour $u$ nor $v$ can have a maximum or a minimum
+
+Any extrema of $u(x, y)$ where
+\begin{align}
+    \frac{\partial u}{\partial x}
+    &=
+    \frac{\partial u}{\partial y} = 0
+\end{align}
+must be a saddle point,
+where the surface looks like a saddle or a mountain pass.
+At any such point,
+we also have
+\begin{align}
+    \frac{\partial v}{\partial x}
+    =
+    \frac{\partial v}{\partial y} = 0
+\end{align}
+because of the Cauchy-Riemann conditions.
+
+At the saddle point, we have
+$f'(z) = 0$.
+Then we can approximate $f(z)$ near the saddle point,
+\begin{align}
+    f(z) &=
+    f(z_0)
+    + \frac{1}{2} f''(z_0){(z - z_0)}^2.
+\end{align}
+Here $z=z_0$ is the saddle point.
+
+\begin{align}
+    f''(z_0) &= |f''(z_0)| e^{i\theta}\\
+    z - z_0 &= |z - z_0| e^{i\alpha}
+\end{align}
+and so approximate
+\begin{align}
+    u(x, y) &\approx
+    u(x_0, y_0) + \frac{1}{2}|f''(z_0)|
+    |z - z_0|^2 \cos(\theta + 2\alpha)\\
+    v(x, y) &\approx
+    v(x_0, y_0) + \frac{1}{2}|f''(z_0)|
+    |z - z_0|^2 \sin(\theta + 2\alpha)\\
+\end{align}
+So this $\alpha$ controls the direction that you're approaching the saddle
+point.
+You can choose $\alpha$ such that as you leave the saddle point,
+$u$ is increasing,
+or you can choose $\alpha$ such that as you leave the saddle point
+$u$ is decreasing.
+I think that's clear.
+
+On the surface $u(x, y)$,
+the part of paths of steepest decent from the saddle point
+into the valleys are those for which $\cos(\theta + 2\alpha)=-1$,
+so that
+\begin{align}
+    \alpha &= - \frac{\theta}{2} \pm \frac{\pi}{2}
+\end{align}
+We can pick a path that rises very fast and falls very fast.
+Why do we approach along this direction?
+We want the path of steepest descent.
+
+Along these directions,
+$\sin(\theta + 2\alpha)=0$
+so $v(x, y)$ is constant.
+Then the oscillating factor $e^{isv}$
+in the integrand will not produce large cancellations
+along that line.
+This is pretty important.
+This $e^{isv}$ is a phase factor,
+and this phase can be positive or negative,
+so it doesn't help if $u$ is huge and this phase factor is
+oscillating like crazy.
+
+It's very important that  there are no large oscillations in this phase as we
+integrate along this saddle point.
+Everything is working out just the way we want.
+$e^{u}$ is large about that specific point,
+and there are no large cancellations coming from that phase.
+
+In contrast,
+the paths for which
+$\cos(\theta + 2\alpha)=1$
+are the paths of steepest ascent.
+Those are the directions along which $u$ is growing as opposed to falling
+most quickly as you leave the saddle point.
+Along those directions,
+it's like you are going along a mountain ridge.
+These paths are at right angles with respect to path of steepest descent.
+
+We now deform the contour of integration so as to pass over the saddle point
+along the path of steepest descent.
+Since the saddle point is a maximum of $u(x, y)$
+\emph{along this path},
+for large $s$ we expect that the contribution to the integral will be dominated
+by the region around the saddle point.
+
+Writing $z = z_0 + l e^{i\alpha}$,
+\begin{align}
+    I(s) &= \int_{C'}
+    g\left( z_0 + l e^{i\alpha} \right)
+    \exp\left[
+        s f(z_0 + l e^{i\alpha})
+    \right]
+    e^{i\alpha}\, dl
+\end{align}
+So now we approximate by Taylor expanding $f$ and $g$ around the point.
+\begin{align}
+    f\left( z_0 + l e^{i\alpha} \right) &\approx
+    f(z_0) + \frac{1}{2}f''\left( z_0 \right) l^2 e^{2i\alpha}
+    + \cdots\\
+    g\left( z_0 + l e^{i\alpha} \right) &\approx
+    g(z_0) + \frac{1}{2}g''\left( z_0 \right) l e^{i\alpha}
+    + \cdots\\
+\end{align}
+Assuming $g(z)$ is slowly varying,
+we can approximate
+\begin{align}
+    I(s) &\approx
+    g\left( z_0 \right)
+    e^{s f\left(z_0 \right)}
+    e^{i\alpha}
+    \int_{-\infty}^{\infty}
+    e^{-\frac{1}{2}\left|f''\left( z_0 \right)\right| sl^2}
+    \,dl
+\end{align}
+Now this is a Gaussian integral,
+and we changed the limits to $(-\infty, \infty)$,
+but it's not going to change the answer significantly.
+And when the dust settles
+\begin{align}
+    I(s) &\approx
+    \frac{%
+        \sqrt{2\pi} g(z_0) e^{sf(z_0)} e^{i\alpha}
+    }{%
+        \sqrt{s |f''(z_0)|}
+    }
+\end{align}
+This is the one big formula you're going to have to remember when you take the
+exam,
+because you're not going to be allowed to bring cheatsheets.
+
+You have to remember $\alpha$ is related to $\theta$ in that way
+and $\theta$ is the phase of $f''$.
+
+Now there is one complication,
+which applies in the real world,
+but probably not your homework problems.
+
+Recall that there are 2 possible values of the angle $\alpha$,
+which differ by $\pi$.
+Which value of $\alpha$ should we choose?
+\begin{align}
+    \alpha &= -\frac{\theta}{2} \pm \frac{\pi}{2}
+\end{align}
+That depends on the direction we cross the saddle point.
+If the direction is reversed,
+the value of the integral will flip sign.
+
+Let me explain what I mean.
+Let's say you have to integrate from $A$ to $B$.
+Let's say the saddle point is somewhere in the middle.
+You want to cross the saddle point along that direction from $A$ to $B$.
+And so this would be the angle $\alpha$.
+
+[picture]
+
+But suppose $B$ is here and $A$ is here.
+
+[picture]
+
+Now you have to go in the opposite direction.
+The angle $\alpha$ is this angle,
+which is different from the original $\alpha$ by $\pi$.
+Depending on where you're starting or ending,
+you're going through the saddle point in a different direction,
+in which case you get a different value of $\alpha$.
+So it's either you can go this way or that way,
+and it's just a minus sign difference.
+You just reverse the direction you're integration.
+
+So that ambiguity is hidden here:
+$\alpha = -\frac{\theta}{2} \pm
+\frac{\pi}{2}$.
+
+Sometimes you can have weird contours.
+In the real world,
+you need to create the full ridge.
+Make sure you only cross it once over the direction you chose.
+Remember if you're signing a paper,
+you're putting your reputation on the line,
+and these subtleties do show up.
+This is not going to be in the homework of course.
+
+I have 2 examples in the notes,
+but I don't have time to go other both of them.
+Let's do the shorter example because we don't have a whole bunch of time.
+Most of what I talk about is based on Matthews and Walker.
+
+\begin{example}
+    The Hankel function of the first kind,
+    which is a solution of the Bessel equation,
+    may be represented by the contour integral
+    \begin{align}
+        H_{\nu}^{(1)}(s) &=
+        \frac{1}{\pi i}
+        \int_{\epsilon}^{\infty e^{i\pi}}
+        e^{\frac{s}{2}\left( z - \frac{1}{z} \right)}
+        \frac{dz}{z^{\nu + 1}}
+    \end{align}
+    where the $(1)$ means first kind.
+    Here $\epsilon\to 0$, and the contour is shown in the figure.
+    There is a branch cut because of the $1/z^{\nu + 1}$,
+    and you choose the branch cut to go along the negative real axis.
+    The contour to integrate over looks like this:
+    Start from $\epsilon$ then spiral anticlockwise around to negative
+    $-\infty$ staying above the branch cut.
+\end{example}
+This is a solution to the Bessel equation,
+because if you substitute it in,
+the integrand doesn't satsify it,
+but inside the integral,
+you take a total derivative and these limits are cunningly chosen so that at the
+limits the derivative piece once you do the integration vanishes.
+We won't have to discuss that,
+since this course doesn't cover special functions at all.
+We won't have time to discuss,
+but I can just outline.
+The thing you're left with is a total derivative,
+and since it's sitting on a derivative,
+the endpoints you're left with are 0 at the end points.
+There is an extended discussion Arfken.
+
+Our problem is just to find an approximation to this integral in the region of
+large $s$.
+
+The integrand has a branch cut along the negative $x$-axis
+and the contour is to be taken from $\epsilon$ to $-\infty$
+above this branch cut.
+
+We want to approximate this integral,
+so we have a formula for the method of steepest descent.
+The integral we began from is this integral
+\begin{align}
+    I(s) &=
+    \int_C g(z) e^{s f(z)} dz
+    \approx
+    \frac{%
+        \sqrt{2\pi} g(z_0) e^{sf(z_0)} e^{i\alpha}
+    }{%
+        \sqrt{s |f''(z_0)|}
+    }
+\end{align}
+So we choose
+\begin{align}
+    g(z) &= \frac{1}{z^{\nu + 1}}\\
+    f(z) &= \frac{1}{2}\left( z - \frac{1}{z} \right)
+\end{align}
+Take derivatives
+\begin{align}
+    f'(z) &= \frac{1}{2}\left( 1 + \frac{1}{z^2} \right)\\
+    f''(z) &= -\frac{i}{z^3}
+\end{align}
+So there are saddle points at $z = \pm i$,
+but we want $z_0 = +i$
+because that's above the branch cut.
+
+\begin{align}
+    f(z_0) &= \frac{1}{2}\left( i - \frac{1}{i} \right) = 1\\
+    f''(z_0) &= -\frac{1}{i^3} = -i
+\end{align}
+Then
+\begin{align}
+    f''(z_0) &= |f''(z_0)| e^{i\pi/2}
+\end{align}
+so
+\begin{align}
+    \theta = - \frac{\pi}{2}
+\end{align}
+so we get
+\begin{align}
+    \alpha &= - \frac{\theta}{2} \pm \frac{\pi}{2}\\
+    &= \frac{3\pi}{4} \quad \text{or} -\frac{\pi}{4}
+\end{align}
+Because of the direction we're going,
+the correct angle is
+\begin{align}
+    \alpha=\frac{3\pi}{4}.
+\end{align}
+Then,
+\begin{align}
+    I(s) &\approx
+    \frac{%
+        \sqrt{2\pi} g(z_0) e^{sf(z_0)} e^{i\alpha}
+    }{%
+        \sqrt{s |f''(z_0)|}
+    }\\
+    &=
+    \sqrt{\frac{2}{\pi s}}
+    e^{i\left(
+        s - \nu \frac{\pi}{2} + \frac{\pi}{4}
+    \right)}
+\end{align}
+So, any questions?
+
+We're done for the mathematical methods part of the course.
+
+Next lecture,
+we're back to in person,
+and we will begin the classical mechanics part of the course.
+
+I'll see you next week.
