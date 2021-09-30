@@ -1,0 +1,445 @@
+\section{Background Gauge Fields}
+Let $P$ be the fermion parity operator.
+There is a fermion parity symmetry
+\begin{align}
+    P \gamma_i P = -\gamma_i
+\end{align}
+
+Consider a $\mathbb{Z}_2^f$ background gauge field with $s=\pm 1$.
+Let there be some centired Majoranas $\gamma_{i,\alpha}$
+where $i$ labels site location
+and $\alpha$ labels flavour.
+
+In one dmiensions the Hamiltonian is
+\begin{align}
+    H &= \frac{i}{4}\sum_{i,j}
+    M_{ij}^{\alpha\beta} \gamma_i^\alpha \gamma_j^\beta
+\end{align}
+
+You can introduce a $\mathbb{Z}_2$ gauge field so than whenever you hop from $i$
+to $j$,
+there is a $\mathbb{Z}_2$ string from $i$ to $j$.
+\begin{align}
+    H[s] &=
+    \frac{1}{4}\sum_{i,j}M_{i,j}^{\alpha\beta}
+    \gamma_i^d \gamma_i^\beta
+    \prod_{i=0}^{j - 1} S_{k,k + 1}
+\end{align}
+This is the $\mathbb{Z}_2$ analogue of say $U(1)$ electron symmetry
+where you would take an $e^{i\in_1^2 A\, dl}$.
+
+\begin{question}
+    Why do we have multiple fermion flavours?
+\end{question}
+For example we could have two fermions on each site,
+and furthermore if these had spin,
+these would also have spin.
+
+Back to the spinless particle superconductor,
+\begin{align}
+    H[s] &=
+    \underbrace{
+        \frac{1}{2}\sum_{i}(1? + t) \gamma_{2i}\gamma_{2i + 1} s_{i,i+1}
+    }_{\text{intersite}}
+    - \underbrace{\mu \gamma_{2i - 1}\gamma_{2i}}_{\text{intersite}}
+\end{align}
+You can write
+$s_{i,i+1}=e^{i\pi \sigma_{i,i+1}}$
+where $\sigma\in\left\{ 0, 1 \right\}$.
+There are $\mathbb{Z}_2^+$ gauge transforms for
+$\lambda_i\in\left\{ 0, 1 \right\}$
+and we get 
+\begin{align}
+    \sigma_{i, i + 1} &\to
+    \left(
+        \sigma_{i, i+1} + \lambda_{i + 1} - \lambda_i
+    \right)\mod 2\\
+    \gamma_{2i + 1} &\to
+    (-1)^{\lambda_i}
+    \gamma_{2i + 1}\\
+    \gamma_i &\to
+    (-1)^{\lambda_i} \gamma_{2i}
+\end{align}
+I want to emphasize the effect of changing boundary conditions from periodic to
+anti-periodic results is equivalent to inserting $\pi$ net flux through the
+ring.
+
+\begin{example}
+    For periodic boundary conditions $c_{i + N} = c_i$
+    where $c$ is complex fermion.
+    Singular gauge transform.
+    Define
+    \begin{align}
+        \tilde{c}_i &=
+        c_i \prod_{k=1}^{i} s_{k,k+1}
+    \end{align}
+    where
+    \begin{align}
+        \prod_{i=1}^{N} s_{i,i+1} = -1
+    \end{align}
+    then
+    \begin{align}
+        \tilde{c}_{i+N} &=
+        c_{i + N} \prod_{k=1}^{N} s_{k, k+1}\\
+        &=
+        \underbrace{c_i \prod_{k = 1}^{i} S_{k, k + 1}}_{\tilde{c}_i}
+        \underbrace{\prod_{k=i + 1} s_{k, k + 1}}_{-1}\\
+        &=
+        - \tilde{c}_i
+    \end{align}
+    But for periodic boundary conditions and $s=1$,
+    we have anti-periodic boundary conditions with $\pi$ flux through ring.
+\end{example}
+
+\section{Topological invariant}
+non-trivial phase.
+Suppose you have a ring and a gap in between through close together to allow the
+zero modes to interact.
+The hamiltonian is
+\begin{align}
+    H_{bdy} &= \tilde{t} i \gamma_{L}\gamma_{R}
+\end{align} 
+Depending on the sign of $\tilde{t}$,
+the ground state has either even or odd fermion parity.
+
+Changing the sign of $\tilde{t}$ is equivalent to
+inserting $\mathbb{Z}_2^f$ flux thorugh the ring,
+which is equivalent to chnaging boundary conditions.
+It is also equivalent to changing fermion parity of ground state.
+
+Trivial phase:
+No Majorana Zero Mods,
+so changing boundary conditions
+doesn't chnage ground state parity.
+
+Let us define the topological invariant
+\begin{align}
+    \mathcal{I} &=
+    P_P P_A
+\end{align}
+where $P_P$ is the fermion parity of the ground state with periodic boundary
+conditions and $P_A$ is the parity with anti-periodic boundary conditions.
+
+The claim is that
+\begin{align}
+    \mathcal{I} &=
+    \begin{cases}
+        -1 & \mathrm{topological phase}\\
+        1 & \mathrm{trivial phase}\\
+    \end{cases}
+\end{align}
+In spinless $p$-wave supercondutors,
+\begin{align}
+    P_A = + 1, \qquad P_P = -1
+\end{align}
+
+\subsection{Relation to free bond invariant}
+For free fermions,
+the topological invariant is
+\begin{align}
+    \mathcal{I} &=uuuuu
+    P\left( H_P \right) P\left( H_A \right)
+\end{align}
+where
+\begin{align}
+    P(H) = \frac{i}{4} \sum_{i} \gamma_i \gamma_j A_{i,j}
+\end{align}
+where $P(H)$ is given by the Pfaffian
+\begin{align}
+    P(H) &= \textrm{sgn}(\textrm{Pf}(A))
+\end{align}
+Go into $k$-space the Hamiltonian becomes
+\begin{align}
+    H &=
+    \frac{1}{2} \sum_{k}
+    \Psi_k^\dagger H_k \Psi_k
+\end{align}
+where
+\begin{align}
+    \Psi_k &=
+    \begin{pmatrix}
+        \Psi_k\\
+        \Psi_{-k}^\dagger
+    \end{pmatrix}
+\end{align}
+For $k=0$,
+$H$
+only 
+involves $\Psi_i\Psi^\dagger$.
+\begin{align}
+    H &=
+    \frac{1}{2} \sum_{k = 0, \pi}
+    \Psi_k^\dagger
+    H_k\Psi_{k}
+    + \frac{1}{2}\cdots
+\end{align}
+
+At the end of the day,
+the fermion parity for odd length ring
+$k=2\pi n/N$ periodic boundary conditions
+$k=0$, with $k=\pi$ so
+\begin{align}
+    k &= \frac{2\pi}{N}\left( n + \frac{1}{2} \right)
+\end{align}
+with antiperiodic boundary conditions.
+
+Three is no $k=0$,
+but there is $k=\pi$.
+\begin{align}
+    I = S_0 S_\pi = \nu.
+\end{align}
+
+For even length ring,
+$k=0,\pi$ allowed by periodic boundary conditions,
+but neigher is allowed for anti-periodic boundary conditions.
+Then we have
+\begin{align}
+    I = S S_{\pi} = \nu
+\end{align}
+
+\subsection{TQFT}
+When you have fermions and wnat TQFT,
+you want spin TQFt.
+For every $d$-dimensional manifold,
+we have a vector space.
+We have 2 possible spin structure, $+$ periodic and $-1$ anti-periodic.
+In both cases we know we have a unique ground state.
+\begin{align}
+    V(S^1, +)
+    \simeq
+    V(S^1,-)
+    \simeq\mathbb{C}
+\end{align}
+Let's try to figure out the path integral on $T^2$
+with our choice of spin structure $\eta$.
+I can think of the two directions of the torus as time and spcae.
+So I have $x,t$,
+and the spin structure $(x,t)$
+can have boundary conditions $(++)$, $(+-)$, $(-+)$ or $(--)$.
+
+When you have a system of verimions,
+you can write it like a propagator
+\begin{align}
+    Z &= \bra{j} e^{iHt} \ket{i}
+\end{align}
+which is the coherent sate path integral.
+In the coherent state path integral for fermions,
+when you do the derivation,
+the fermions have naturally have anti-periodic boundary conditions.
+It's counterintiutive,
+because you'd think periodic boundary conditions are what you should have,
+but it turns out anti-periodic is natural.
+The path integral for the TQFT is just the trace for the identity operator.
+We have anit-periodic boundary conditions for the boundary operator.
+This is equal to
+\begin{align}
+    Z(T^2, +-) &= \Tr_{V(S^1,+)}\mathbf{1} = 1\\
+    Z(T^2, -+) &= \Tr_{V(S^1,-)}\mathbf{1} = 1
+\end{align}
+Remember when discussing TQFt,
+if you're gluing the time boundary,
+and you're twisting the boundary condition,
+that is inserting flux,
+which is the fermion parity operator.
+\begin{align}
+    Z(T^2, ++) &= \Tr_{V(S^1,+)}P = -1\\
+    Z(T^2, --) &= \Tr_{V(S^1,-)}P = +1
+\end{align}
+You can choose the convention the $-1$ case if periodic and the $+1$ case is
+anti-periodic.
+
+Now you can ask what is the path integral in a closed genus $g$ surface
+$\Sigma_g$.
+
+We have a genus $g$ surface and a spin structure $\eta$.
+We should get a $\pm 1$ because there are only two phases.
+There are canonical invariants associated with spin surfaces
+and it's callled the Arf invariant of the spin structure.
+\begin{align}
+    Z\left( \Sigma_g, \eta \right) &= (-1)^{\mathrm{Arf}(\theta)}
+\end{align}
+Arf invariants are associated with quadratic forms.
+Definition of Arf.
+Suppose $V$ is a vector space over $\mathbb{Z}_2$.
+Let $\phi: V\times V\to \mathbb{Z}_2$ be a map
+that is a non-degenerate symmetric bilinear form.
+Then suppose you have a quadratic form $q: V\to \mathbb{Z}_2$
+that satisfies by definition
+\begin{align}
+    q(x + y) &= q(x) + q(y) + \phi(x, y)
+\end{align}
+and $q\in Q(V, \phi)$ is an element in the space of all quadratic forms.
+Then the Arf invariant is defined as $\mathrm{Arf}:Q\to\mathbb{Z}_2$
+by
+\begin{align}
+    (-1)^{\textrm{Arf}(q)} &=
+    \frac{1}{\sqrt{|V|}}
+    \sum_{\lambda\in V} (-1)^{q(x)}
+    = \pm 1
+\end{align}
+There is a theorem which I will not prove.
+\begin{theorem}
+    Spin structures on genus $g$ surfaces in 1-1 correspondence with elements of
+    \begin{align}
+        Q\left(
+        H_1\left( \Sigma_g, \mathbb{Z}_2 \right),
+        \underbrace{\phi}_{\text{intersection form}}
+        \right)
+    \end{align}
+\end{theorem}
+The intersection form takes 2 loops and tells you whether they intersect.
+Given a spin structure,
+you have a quadratic form like this,
+and then you can evaluate the Arf invariant.
+I can't give you an explanation of this,
+that would be far beyond what we want.
+
+\begin{question}
+    What is a genus $g$ surface?
+\end{question}
+You should have stopped me earlier!
+Surfaces are classified by their genus,
+which is basically the number of holes they have.
+Sphere has $g=0$,
+Torus has $g=1$,
+and if you have 2 holes then $t=2$.
+The Euler characteristic of a genus-$g$ surface is
+\begin{align}
+    \chi(\Sigma_g) = 2 - 2g
+\end{align}
+
+\begin{question}
+    What is $Q(V,\phi)$?
+\end{question}
+It is the space of all quadratic forms on $V$,
+functions which satisfy the definition with $\phi$ as the form.
+
+\begin{question}
+    What is $H_1$?
+\end{question}
+$H_1$ is the space of formal linear combinations of loops.
+OK too complicated.
+Let's just say it's the space of loops modulo the space of contractible loops.
+I'm not going to give you a rigorous definition.
+I'll just define by example.
+
+If I give you a surface, (genus 2)
+there are 4 independent loops you can draw,
+which are called $x_1,y_1,x_2,y_2$.
+Then you can take formal linear combinations of them like
+\begin{align}
+    C = \alpha x_1 + \beta x_2 + \gamma y_1 + \delta y_2
+\end{align}
+where $\alpha,\beta,\gamma,\delta\in \mathbb{Z}_2$
+and then this linear combination
+$C\in H_1(\Sigma_g, \mathbb{Z}_2$.
+
+Then you can have forms $a,b\in H^1(\Sigma_g, \mathbb{Z}_2)$
+which map from $H_1\to \mathbb{Z}_2$.
+
+So $H^1$ are linear combinations of loops (cohomology),
+but $H_1$ are the actual loops themselves (homology).
+
+Given a loop $X$,
+you can define
+\begin{align}
+    \int_X a = \pm 1
+\end{align}
+
+I should have just said $x$ intersects $y$.
+
+You can go to the torus,
+first enumerate all possible functions from the loops on the torus to
+$\mathbb{Z}_2$,
+there are 16 of them,
+then find all possible functions like this quadratic form,
+there are 4 of them,
+and then take the corespondence with periodioc and anti-periodic.
+
+\begin{question}
+    What is the Arf invariant invariant under?
+\end{question}
+I don't know.
+It's invariant under all mapping class diffeommorphisms on the surface and the
+Arf invariant will still be invariant.
+
+To fully specify the TQFT,
+I need to give you more information.
+I need to specify the path integral on manifold with boundary.
+for example,
+I can tell you what the path integral on a disk $D^2$ is
+(like a hemisphere with axis in the time direction).
+\begin{align}
+    Z(D^2) \in V(S^1, -)
+\end{align}
+On $S^1$,
+two spin structures, $\pm 1$.
+Only $-$ can be the boundayr of the disk.
+In path, $-1$ is called the bounding spin structure
+and $+$ is called the non-bounding spin structure.
+
+The way ot think about spin structure is this.
+You QFT,
+a fermion is described by a fermion,
+and you want a framing of the worldline of hte fmrion,
+which goes on a loop,
+and you want a frame for the world line.
+Thereare two frames.
+There's one that goes like this,
+pointing orthogonal to the line.
+Or you could consider one like this, all pointing in a direction.
+The first is no-bounding,
+the second one is bounding.
+
+As you go along this second line,
+and you unfold it,
+as you go along, it kind of twists $2\pi$.
+And a $2\pi$ rotation gives you a $-1$ for fermions.
+
+Whereas in the first case, there is no twisting.
+That's why the anti-periodic boundary condition gives something that can be a
+boundary.
+
+This comes up in a lot of sitautions with topological phases and fermions.
+If you are confused why anit-periodic is showing up when it is,
+this is why I think it's useful.
+I haven't given you a deep understanding of what framing is rigorously,
+but it's whether it twists or not relative to its worldline and whether the
+boundary should be periodic or not.
+
+In QFT fermions are defined in $SO(1,d)$.
+If space-time is 2D,
+you should have a 2D frame field,
+and the two components are the frame field and the tangent ot the curve.
+Relativisitc QFT somehow winds up giving the correct language for TQFT aspects
+of things.
+And somehow the condensed matter stuff
+ends up fitting well into TQFT.
+
+Relativistic fermions are spinors of $SO(3)$,
+but if they're relativistic Minkowski space,
+it's $SO(1,d)$.
+
+Microsopically,
+the fermions don't need this structure,
+but when doing TQFT with fermions,
+you have spin structures,
+and a way to think about spin structures is to think of relativistic
+fermions.
+
+Boundary needs
+\begin{align}
+    Z\left( M^{d+1}, \eta \right) &=
+    V\left( \partial M^{d + 1}, \eta_{\partial M^{d+1}} \right)
+\end{align}
+
+I will post the paper for reference.
+
+The reason I'm telling you this,
+is I want to show you wnat structure is giving you this TQFT,
+then I'm going ot guess what kind of structure classifies all kinds of
+topolgoical atter.
+One of the goals is how do we classify all phases of topological matter.
+One of thoese asnswers is in terms of TQFT.
+We're going to see how to think about phases fro mthe persepective of TQFT,
+and know what to expect how to classify phases.
