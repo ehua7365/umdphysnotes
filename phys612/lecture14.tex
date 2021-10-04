@@ -1,0 +1,300 @@
+\section{Recap}
+\begin{align}
+    \rho &= \frac{e^{-\beta H}}{Z}
+\end{align}
+where
+\begin{align}
+    Z &= \Tr e^{-\beta H}
+\end{align}
+and for any operator $\mathcal{O}$,
+\begin{align}
+    \bar{\mathcal{O}} &= \Tr(\rho\mathcal{O})
+\end{align}
+and if it's a continuous system,
+\begin{align}
+    \rho(q, p) &=
+    \frac{e^{-\beta H(q, p)}}{Z}
+\end{align}
+and the partition function is
+\begin{align}
+    Z &=
+    \frac{\int d^Nq d^Np e^{-\beta H(q, p)}}{h^N n!}
+\end{align}
+
+\begin{example}[Harmonic oscillator]
+    The partition function is
+    \begin{align}
+        Z &=
+        \sum_{n=0}^{\infty} \bra{n} e^{-\beta H} \ket{n}\\
+        &=
+        \sum_{n=0}^{\infty} e^{-\beta\hbar\omega\left( n + \frac{1}{2}
+        \right)}\\
+        &=
+        e^{-\beta \hbar\omega/2}
+        \sum_{n=0}^{\infty} \left( e^{-\beta \hbar \omega} \right)^n\\
+        &=
+        \frac{1}{e^{\beta \hbar\omega/2} + e^{-\beta\hbar\omega/2}}\\
+        &=
+        \frac{1}{2}
+        \frac{1}{\sinh\left(\beta\hbar\omega/2 \right)}
+    \end{align}
+    So then the average energy is
+    \begin{align}
+        \bar{E} &= \Tr(\rho H)\\
+        &= \frac{1}{Z} \sum_{n=0}^{\infty}
+        \bra{n} e^{-\beta H} H \ket{n}\\
+        &=
+        \frac{1}{Z} \sum_{n=0}^{\infty}
+        E_n e^{-\beta E_n}\\
+        &= \frac{1}{Z}\left( -\frac{\partial}{\partial\beta} \right) Z\\
+        &=
+        -\frac{\partial}{\partial\beta}\ln Z\\
+        &=
+        \frac{\partial}{\partial\beta}
+        \ln\left( 
+            Z \sinh(\beta\hbar\omega/2)
+        \right)\\
+        &=
+        \frac{\cosh(\beta\hbar\omega/2)}{\sinh(\beta\hbar\omega/2)}
+        \frac{\hbar\omega}{2}
+    \end{align}
+\end{example}
+
+In the high temperature limit $k_B T \ge \hbar\omega$,
+this expression approaches
+\begin{align}
+    \bar{E} \to k_B T
+\end{align}
+At high energy,
+it doesn't matter what the energy is,
+the energy is just going to be given by the thermal energy.
+You might know this result from somewhere right?
+It's closely related to the equipartition theorem.
+
+In the low-temperature limit,
+\begin{align}
+    \bar{E} &=
+    \hbar\omega
+    \frac{1 + e^{-\beta\hbar\omega}}{1 + e^{-\beta\hbar\omega}}\\
+    &\approx
+    \frac{\hbar\omega}{2}\left(
+        1 + 2e^{-\beta\hbar\omega} + \cdots
+    \right)
+\end{align}
+so no matter how low temperature you get,
+you can't get lower than $\hbar\omega/2$,
+which is the \emph{zero point energy}.
+The excitations are exponentially small.
+
+This is how quantum mechanics was invented by the way.
+If you have a cavity,
+each mode behaves like a harmonic oscillator.
+The only thing with different wave lengths is that the frequency changes.
+Every mode of the EM rays inside the black body is going to contribute some
+energy $k_B T$,
+but there's an infinite number of modes,
+because I can make them smaller,
+so this $\bar{E} = k_B T$ must be wrong.
+
+The correct QM calculation is that no matter how high $T$ is,
+when $\omega$ is large enough,
+it stays very close to the ground state,
+exponentially so.
+No matter what the temperature is,
+for the high energy modes,
+they stay in the ground state,
+and they shut off,
+and that's how QM saves it.
+
+There's so much physics to talk about.
+In a certain way,
+we're going to derive this result over and over again,
+and get all amazing results.
+
+For example,
+get a metal piece reasonably cold.
+By metal,
+I mean a non-conducting crystal,
+so a salt,
+a rock.
+The goal of this class is that you can run this calculation in your head
+immediately.
+We're going to derive this result,
+hand it to your previous self and tell me how are you going to derive it.
+Here we're still understanding the formalism.
+
+How let's go back to the classical harmonic oscillator
+and the classical calculator..
+
+\begin{example}[Classical harmonic oscillator]
+    Let's say we have a simple harmonic oscillator
+    \begin{align}
+        H(x, p) &=
+        \frac{p^2}{2m} + \frac{m\omega^2}{2}x^2
+    \end{align}
+    and the partition function should be an integral
+    \begin{align}
+        Z &=
+        \int_{-\infty}^{\infty}\frac{dx\,dp}{h}
+        e^{-\beta\left(
+            \frac{p^2}{2m} + \frac{m\omega^2}{2}x^2
+        \right)}
+    \end{align}
+    which is a Gaussian integral.
+\end{example}
+My intent for today was to give you homework was to show you how to do a
+Gaussian integral,
+but you have a midterm,
+so it's next week.
+My opinion is that every integral should be done by computer,
+but this one is worth known.
+
+Suppose you are stuck on an island.
+The only way out is to build a steam engine out of coconuts and bananas.
+To build a steam engine,
+you need to know thermodynamics,
+and so you need to calculate partition functions,
+so you need to know how to calculate Gaussian integrals.
+
+Remember this one
+\begin{align}
+    Z = \frac{1}{h}
+    \int_{-\infty}^{\infty} dx\,
+    e^{\frac{-\beta m\omega^2}{2} x^2}
+    \int_{-\infty}^{\infty} dp\,
+    e^{\frac{-\beta p^2}{2}}
+\end{align}
+Look at the first integral. By dimension analysis,
+there's only one thing it could depend on,
+because $x$ is of units lengths,
+and the argument of the exponential is dimensionless,
+so $1/\sqrt{\beta m \omega^2}$ has units of length.
+\begin{align}
+    \int_{-\infty}^{\infty} dx\,
+    e^{\frac{-\beta\hbar\omega^2}{2} x^2}
+    \propto
+    \frac{1}{\sqrt{\beta m \omega}}
+\end{align}
+up to some dimensionless constant, and it happens to be
+\begin{align}
+    \int_{-\infty}^{\infty} dx\,
+    e^{\frac{-\beta\hbar\omega^2}{2} x^2}
+    &=
+    \sqrt{\frac{2\pi k_B T}{\omega^2}}
+\end{align}
+and
+\begin{align}
+    \int_{-\infty}^{\infty} dp\,
+    e^{\frac{-\beta p^2}{2}}
+    &=
+    \sqrt{2\pi m k_B T}
+\end{align}
+so
+\begin{align}
+    Z &= \frac{k_B T}{\hbar \omega}.
+\end{align}
+Relax about the $\hbar$, it's just a constant that cancels out when
+you calculate expectations!
+
+So if you're stuck on an island and your life depends it,
+you'll know.
+
+One thing you'll learn in this course is how to take derivatives with logs.
+\begin{align}
+    \bar{E} &=
+    \frac{1}{Z} \int dx\,dp\,
+    e^{-\beta H} H\\
+    &=
+    \frac{1}{Z}\left( \frac{-\partial}{\partial\beta} \right)Z\\
+    &=
+    -\frac{\partial}{\partial \beta}Z\\
+    &= -\frac{\partial}{\partial\beta}\ln Z\\
+    &=
+    \frac{\partial}{\partial\beta} \ln(\beta\hbar\omega)\\
+    &=
+    \frac{1}{\beta}\\
+    &= k_B T
+\end{align}
+which is not surprising as you did the quantum calculation
+and showed this is the high energy limit.
+
+That's why there's a delivery of liquid nitrogen and once in a blue moon liquid
+helium,
+because people want to do experiments at low energy.
+
+
+In the old days, the notation $\langle E\rangle$ was common,
+and Dirac decided to break it up into $\bra{\psi}E\ket{\psi}$.
+
+Recall how to compute the variance.
+\begin{align}
+    \overline{(E - \overline{E})^2}
+    &=
+    \overline{E^2} - \overline{E}^2\\
+    &=
+    \frac{1}{Z} \int dx\,dp\,
+    e^{-\beta H} H^2
+    -\left( 
+        \int dx\, dp
+        \frac{e^{-\beta H}}{Z} H
+    \right)^2\\
+    &= \frac{\partial^2}{\partial\beta^2} \ln Z\\
+    &= \left( k_B T \right)^2
+\end{align}
+Now if you recall,
+\begin{align}
+    \frac{\partial}{\partial\beta} \ln Z
+    &=
+    \frac{1}{Z} \frac{\partial}{\partial\beta} Z\\
+    \frac{\partial^2}{\partial\beta^2} \ln Z &=
+    - \frac{1}{Z^2}\left( \frac{\partial^2 Z}{\partial \beta^2} \right)
+\end{align}
+Student: Stop!
+You want me to copy how to do second derivatives of a log?
+
+Anyway,
+so I'm going to consider the spread of energy,
+the noise to signal ratio,
+\begin{align}
+    \frac{\sqrt{\overline{(E - \overbar{E})^2}}}{\bar{E}} = 1
+\end{align}
+which is not good,
+because there's so much fluctuation.
+But it's no good doing statistical mechanics on just one single harmonic
+oscillator,
+we need many more.
+
+Let me do $N$ harmonic oscillators.
+Instead of having just 1 $x$ and one $p$,
+I'm going to have $N$ $x$s and $N$ $p$s.
+So Hamiltonian is
+\begin{align}
+    H(x, p) &=
+    \frac{p_1^2}{2m}
+    + \frac{m\omega^2}{2} x_1^2
+    \frac{p_2^2}{2m}
+    + \frac{m\omega^2}{2} x_2^2
+    + \cdots
+\end{align}
+and so we get a product
+\begin{align}
+    Z &=
+    \prod_{i=1}^{N}\int_{-\infty}^{\infty}\frac{dx_i\,dp_i}{h}
+    e^{-\beta\left(
+        \frac{p_i^2}{2m} + \frac{m\omega^2}{2}x_i^2
+    \right)}
+\end{align}
+And if you follow the steps,
+you get
+\begin{align}
+    \overline{(E - \overline{E})^2} = N(k_B T)^2
+\end{align}
+and the noise to signal ratio drops to
+\begin{align}
+    \frac{\sqrt{\overline{(E - \overbar{E})^2}}}{\bar{E}} = 
+    \frac{\sqrt{N} k_B T}{N k_B T}\\
+    = \frac{1}{\sqrt{N}}
+\end{align}
+so if you have $10^{23}$ particles,
+the fluctuation in total energy is very very small,
+and that's why statistical mechanics works.
