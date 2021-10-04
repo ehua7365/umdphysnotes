@@ -1,0 +1,710 @@
+\section{TQFT for Majorana Chain}
+I told you that
+\begin{align}
+    V(S^1, \pm) \simeq \mathbb{C}
+\end{align}
+I also told you the path integral
+\begin{align}
+    Z(\Sigma_g,eta) = (-1)^{\textrm{Art}(\eta)}
+\end{align}
+where $\Sigma_g$ is a closed genus-$g$ surface.
+I told you that genus $g$ surfaces are in 1-1 correspondence to a space of
+quadratic forms.
+\begin{align}
+    \text{spin structures on }\Sigma_g \leftrightarrow
+    \text{quadratic forms }\in Q\left( H_1\left( \Sigma_g, \mathbb{Z}_2 \right),
+    \phi\right)
+\end{align}
+where $\phI$ is a symmetric bilinear form which is the intersection form that
+tells you whether two ops are intersecting or not.
+And remember
+\begin{align}
+    q(x + y) = q(x) + q(y) + \phi(x, y)
+\end{align}
+I asserted the space of quadratic forms are in 1-1 correspondence with the space
+of spins structures.
+
+As for that Arf,
+I defined something called the Arf invariant of a quadratic form,
+so you take the Arf invariant associated with the spin structure.
+
+I just asserted a bunch of stuff because it was just math.
+
+One example was the Torus, and the partition function was 
+\begin{align}
+    Z(T^2, \eta) &= -1, 1, 1, 1
+\end{align}
+depending on whether the boundary conditions are
+PP, AP, PA or AA.
+
+If you look at the partition function of a disk,
+the disk has a unique spin structure I won't write.
+\begin{align}
+    Z\left( D^2 \right)
+    \in
+    V\left( S^1, - \right)
+\end{align}
+where the $-$ means anti-periodic boundary conditions.
+I will denote $+$ for periodic.
+
+Last time,
+I asserted the following
+\begin{proposition}
+    Anti-periodic boundary conditions on a circle $S^1$ give a spin structure
+    than can be extended to the disk $D^2$.
+    These are also called \emph{bounding} spin structures,
+    whereas periodic boundary conditions are \emph{non-bounding}.
+\end{proposition}
+If you draw a circle,
+you can think of the fermion as defining a spinor in your space.
+Consider 2 situations.
+1 is where you have part of the spinors tangent to the circle,
+and the other parts are looking like this.
+This is the one that gives you anti-periodic boundary conditions,
+because as you go around the circle,
+the arrows wind around the circle,
+and you get a $2\pi$ rotation,
+which is a minus sign for fermions.
+This can be extended to the disk.
+
+On the other hand,
+this spin structure (all pointing out) cannot be extended to the disk.
+I don't have the time to give you background on spin structures,
+so take this as a bunch of assertions.
+If you want to know what's going on behind this,
+we have to talk offline.
+But if you do have questions, ask.
+
+\begin{question}
+    Assume if you go across the line and rotate multiple lines instead of one
+    time.
+    These are periodic and anti-periodic?
+    We're not sure if those are also have the same.
+\end{question}
+You want me to convince you that some more complicated rotation on that circle
+and show the anti-periodic one will be bounding?
+Not sure I can do that right now?
+
+\begin{question}
+    What's a spin structure.
+\end{question}
+You start with a tangent bundle,
+say in $d$ dimensions.
+The tangent bundle is a $SO(d)$ bundle.
+At every point in your manifold there is a space of tangent vectors.
+If the space if curved then this will be curved.
+For fermions, you don't want $SO(d)$,
+you want a double cover of this.
+You want a $Spin(d)$ bundle.
+So $spin(d)$ is the double cover of $SO(d)$.
+Basically,
+on every patch originally we had a map to $SO(d)$,
+so we had some map $\phi:U_\alpha\to SO(d)$.
+
+The manifold is covered by open charts $\left\{ U_\alpha \right\}$
+
+But instead,
+you want to map to $Spin(d)$,
+and you have to specify which covering of $SO(d)$ you want to cover.
+So really you want to pick it with a sign
+\begin{align}
+    \tilde{\phi} = (\phi, \eta)
+\end{align}
+where $\eta$  tells which of $SO(d)\to Spin(d)$
+we choose.
+
+A spin structure is something that as you go along the manifold,
+you're possibly getting rotated by $SO(d)$,
+and something.
+You can think of that as one basic definition.
+
+\begin{question}
+    How can a manifold not have a spin structure?
+\end{question}
+It might not be possible to choose $\pm$ signs that's consistent everywhere.
+I don't have a 2-line explanation,
+but what you find is that you want to make sure this lift is consistent on
+triple overlaps.
+So make sure lift is 
+
+$SO(d)$ bundle,
+there are transition functions
+$f_{\alpha\beta}\in SO(d)$
+which tell you how to go from one coordinate patch to another.
+But when you lift it,
+you want
+$\tilde{f}_{\alpha\beta} = (f_{\alpha\beta},\eta)$,
+and you want this consistency identity
+\begin{align}
+    \tilde{f}_{\alpha\beta} \tilde{f}_{\beta\gamma} \tilde{f}_{\gamma\alpha}
+    = 1
+\end{align}
+and this is 
+\begin{align}
+    \delta\eta = W_2(TM)
+\end{align}
+You need manifolds with trivial second Stiefel-limits.
+
+The spin chain is just 1D,
+and all 1D manifolds are just circles if they're closed,
+and they always admit a spin structure.
+I only know an example in 4D of a manifold that doesn't admit a spin structure.
+The only example of a manifold
+All 1-, 2- and 3- manifolds admit spin structures.
+
+To finish off the TQFT,
+we would also want to understand the path integral on this kind of structure.
+If I don't put an markings,
+it's anti-periodic.
+But imagine changing the boundary conditions,
+like a branch cut here that makes this APP.
+In principle,
+these are all maps from $S^1\times S_1$ to $S^1$.
+I haven't specified what the maps are,
+but show that everything that is consistent you get $(-1)^{\textrm{Arf}}$.
+Because these are 1D Hilbert spaces,
+it's just going to be a choice of signs.
+With all these signs,
+you can build path integrals on closed surfaces using the multiplicative rule
+and you can always get the Arf invariant.
+
+That was an example of an invertible TQFT,
+with the vector space being 1D.
+
+The Majorana chain is an example of an invertible topological phase of matter.
+
+Furthermore,
+we have this $\mathbb{Z}_2$ invariant,
+which is a $I=P_P P_A$.
+If I took a double layer system,
+if I had a $-1$ here, I would get $-1$.
+That is,
+under ``stacking'',
+which means take the total Hamiltonian to be $H=H_1+ H_2$
+and the Hilbert spaces to be $H=H\otimes H_2$.
+If I two of them together,
+I get a trivial phase.
+This forms a $\mathbb{Z}_2$ group structure under stacking,
+and in this case,
+the state is its own inverse.
+
+\begin{question}
+    The state is its own inverse or the field?
+\end{question}
+All of the other.
+There is some adiabatic path from
+$\ket{\psi_A}\otimes \ket{\psi_B}$
+to a product state.
+
+\begin{question}
+    What is a product state?
+\end{question}
+This should just be a state where I start with a Fock vacuum
+$\ket{0}$,
+I go over all sites and a put a fermion on all sites
+$\prod_r c_r^\dagger \ket{0}$.
+It should be a state with a fermion or not on every site.
+
+\begin{question}
+    In the trivial phase of the Majorana phase,
+    it's a superconducting state?
+\end{question}
+The trivial phase,
+there are various versions of it,
+(1) was the completely empty phase $\ket{0}$.
+(2) another phase was the ``atomic'' superconductor,
+where on every fermion pair we had an odd number of fermions.
+
+If we break translational symmetry,
+we should be able to get an adiabatic path
+$\ket{\psi_A}\otimes\ket{\psi_B} \to \ket{0}$,
+when we're allowed to break symmetries.
+
+\begin{question}
+    Stacking is a way of combining 2 TQFTs?
+\end{question}
+Here I'm just talking about microscopic systems.
+I'm literally saying it's now 2 chains instead of 1 chain.
+That's all I mean by stacking here.
+
+As far as the TQFT is concerned,
+stacking means I multiply the path integrals.
+$Z_{AB} = Z_A Z_B$.
+
+\begin{question}
+    What happens to the vector spaces?
+\end{question}
+There's a subtlety,
+I have a fermion parity in the top system,
+and a fermion parity in the second system,
+but the parity you want to look at is both at the same time $P=P_1P_2$.
+The vector spaces are all 1D and labelled by 1D or 2D and all are related by
+the same.
+
+\begin{question}
+    How can you get a trivial phase just by grouping 2 together.
+\end{question}
+The starting Hamiltonian is decoupled but the path is definitely going to couple
+them.
+Maybe it's more precise to say that there's a path of Hamiltonian $H(s)$
+and $H(0) = H_1 + H_2$ are decoupled.
+
+
+\begin{question}
+    Does the TQFT make it easier to see this factor,
+    or can it be deduced from the microscopic?
+\end{question}
+No, this doesn't require TQFT, just that there is a $\mathbb{Z}_2$ invariant
+that is either $\pm 1$,
+and that together they give $+1$.
+That fact is mirrored in the TQFT by $Z=(-1)^{\textrm{Arf}(\eta)}$.
+
+Any other question?
+
+\section{Spin bordism group}
+One last point about this TQFT story is that I want to introduce the notion of a
+spin bordism group.
+A bordism is a high dimensional manifold between two manifolds as boundaries.
+
+I can define a bordism group.
+2 $d$-manifolds are equivalent to each other if there exists a bordism between
+them.
+$M_1^d \sim M_2^d$ if there exists a bordism from $M_1^d$ to $M_2^d$.
+So that allows me to define equivalence classes $[M^d]$
+of manifolds.
+Then 
+I can define multiplication by disjoint union
+\begin{align}
+    [M_1^d]\times [M_2^d]=
+    [M_1^d \sqcup M_2^d]
+\end{align}
+And the inverse is just
+\begin{align}
+    [M_1^d]^{-1} = [\bar{M}_1^d]
+\end{align}
+So this group is denoted $\Omega^{\text{or}}_d$
+to denote that they are oriented manifolds.
+Mathematicians have computed what these groups are for each dimension.
+
+For example, in $d=2$,
+the bordism group is trivial.
+In 3D it's also trivial.
+Then in 4D it's $\mathbb{Z}$.
+1D is also trivial.
+
+Now consider not just bordism,
+but also spin bordism,
+which means each manifolds also comes equipped with a spin structure,
+so we're going to have not just the manifolds.
+
+Spin bordism:
+We have $(M^d,\eta)$.
+The spin structure also must extend to the higher dimension manifold,
+and we define multiplication and inverse in exactly the same way.
+I won't write it out,
+because it's just adding spin structure,
+and we call this
+$\Omega_d^{\textrm{spin}}$,
+which mathematicians have also calculate.
+
+In 1D, it's $\mathbb{Z}_2$.
+In 2D, it's $\mathbb{Z}_2$.
+In 3D, it's trivial.
+In 4D it's $\mathbb{Z}$.
+
+What is the meaning of this?
+Let's focus on $d=2$.
+In $d=2$, the oriented bordism group is trivial,
+which means every closed oriented 2D manifold is the boundary of some 3D
+manifold.
+That means every surface is boundary of a 3D manifold.
+
+For example,
+the boundary of a solid torus
+is torus disjoint union nothing,
+which means the torus is bordant to empty,
+which means the torus is trivial as far as the bordism group is concerned.
+
+Every 2D surface can have its interior filled,
+and now I have a 3D manifold inside,
+and it's a trivial bordism group.
+
+So spin bordism is not trivial,
+and that's related to the point that not all spin structures are boundaries.
+
+On the torus,
+suppose I have anti-periodic boundary conditions on both loops.
+If one of them is anti-periodic that's enough.
+Because if that's anti-periodic,
+that's enough.
+And if the other one is anti-periodic that's enough.
+And so AA, AP and PA are all boundaries,
+all bound.
+But PP does not bound.
+If both of these are periodic,
+both of these spin structures cannot be extended to the interior bulk.
+That's why its bordism group is $\mathbb{Z}_2$.
+
+Already, you see a tight relation between the path integral,
+and the relation of these bordism groups.
+
+What happened is that my path integral is actually
+for every element in $\Omega_d^{\textrm{spin}}$,
+it gives me $\pm 1$ and that was my path integral for my TQFT.
+
+So my TQFT path integral gave me a $\pm 1$.
+Actually, I can take an element
+$x \in \Omega_2^{\textrm{spin}}$
+and $Z(x)=\pm 1$
+depending on which bordism group it's in.
+So really, the path integral is a map
+\begin{align}
+    Z: \Omega_2^{\textrm{spin}} \to \left\{ \pm 1 \right\}
+\end{align}
+That is our TQFT.
+A slightly different way so saying it's a homomorphism
+from $\Omega_2^{\textrm{spin}}$ to $U(1)$,
+denoted
+$\textrm{Hom}\left( \Omega_2^{\textrm{spin}}, U(1) \right)$.
+And this is deep,
+it's called the
+\emph{Pontryagin dual} of $\Omega_2^{\textrm{spin}}$.
+
+I'm telling you this because this is the property that generalises.
+Manifolds can have background $g$ gauge fields,
+where we define gauge field on our manifold.
+
+\begin{question}
+    Why $U(1)$?
+\end{question}
+$U(1)$ is the thing that generalizes.
+Sometimes it's not $\mathbb{Z}_2$ but $\mathbb{Z}_m$,
+in which case you get a complex phase.
+For an invertible TQFT,
+the path integral is just a phase,
+which is why it's $U(1)$.
+For non-invertible TQFT,
+there's no such a nice classification.
+
+\begin{question}
+    Why do we choose $\pm 1$ here?
+\end{question}
+In this example it's $\pm 1$ and this example is the
+Pontryagin dual.
+It's a much more complex structure called an Anderson dual,
+and I don't even know what the complex structure is.
+
+\begin{question}
+    Does it just have to be a complex phase or a root of unity?
+\end{question}
+If your bordism group is finite,
+then it must be a root of unity.
+But if it's a $\mathbb{Z}$ classification,
+it's not clear why.
+If it's finite order it's obvious.
+
+The fact you have 2 distinct phases trivial and non-trivial,
+has a mirror in the language of TQFTs,
+the spin bordism group having two elements as $\mathbb{Z}_2$.
+
+\section{Ising model and Jordan-Wigner duality}
+Let's write down the transverse field Ising model in 1D.
+\begin{align}
+    H &=
+    -J\sum_{i} \sigma_i^x \sigma_{i+1}^x
+    - h\sum_{i=1}^{N}\sigma_i^{z}
+\end{align}
+where the $\sigma$ are just Pauli matrices.
+Let's do an open chain of $N$ sites.
+Now there is a global $\mathbb{Z}_2$ symmetry,
+which I am going to write as
+\begin{align}
+    Z &=
+    \prod_{i=1}^{N}\sigma_i^z
+\end{align}
+and this is a global symmetry that commutes with the Hamiltonian and squares to
+1.
+$[H,Z]=0$.
+
+There are 2-spin systems per site.
+Instead of thinking up and down ad being fermion parity even or odd.
+So fermion and no fermion.
+So up and down can be reinterpreted as fermion and no fermion.
+For each site $i$,
+I'm going to define 2 Majorana fermions.
+\begin{align}
+    \gamma_{2i - 1} &=
+    \sigma_1^x \prod_{j=1}^{i-1}\sigma_j^{z}\\
+    \gamma_{2i} &=
+    \sigma_i^y \prod_{j=1}^{i-1}\sigma_i^{z}
+\end{align}
+which means
+\begin{align}
+    \sigma_i^z = -i \gamma_{2i - 1}\gamma_{2i} = P_i
+\end{align}
+which is the fermion parity operator.
+And it's a exercise to show that these satisfy the algebraic conditions for the
+Majorana operators.
+And the product term becomes
+\begin{align}
+    \sigma_i^x \sigma_{i+1}^x &=
+    -i \gamma_{2i}\gamma_{2i + 1}
+\end{align}
+and the $Z$ symmetry becomes
+\begin{align}
+    Z = P = \prod_{i=1}^{N}P_i
+\end{align}
+which is just the total fermion parity.
+
+And if you substitute this into the Hamiltonian,
+you find the system is just a Majorana chain.
+\begin{align}
+    H &=
+    - J \sum_{i=1}^{N-1} i \gamma_{2i} \gamma_{2i + 1}
+    + h\sum_{i=1}^{N} i \gamma_{2i - 1}\gamma_{2i}
+\end{align}
+So there is a mapping from Ising model and the Majorana chain.
+And you see how the 2 phases of the Ising model corresponds to the trivial and
+non-trivial phase of the Majorana chain.
+
+
+The ferromagnetic phase $J\gg h$ is when everything is aligned  in $x$ and
+that's the
+topological phase in Majorana language.
+Now you can see the origin of the degeneracy,
+with chain,
+that had Majorana zero modes,
+which led us to a double degeneracy in the ground state,
+with even vs odd parity.
+In the Ising model,
+we also have a degeneracy with all point in $+x$ or all pointing $-x$.
+
+
+And then the state would be
+\begin{align}
+    \ket{\rightarrow \cdots \rightarrow}
+    \pm
+    \ket{\leftarrow \cdots \leftarrow}
+\end{align}
+and $Z\ket{\pm} = \pm \ket{\pm}$,
+which in Majorana language means
+$P= \pm 1$,
+and $P \propto -i\gamma_L \gamma_R = \pm 1$.
+
+In the $J\ll h$ limit,
+we have the paramagnetic phase.
+
+Why bother to do all this just to describe the Ising model?
+Well no.
+There is a non-local relationship.
+That non-local relationship is why there is no local operator to distinguish the
+ground states.
+No local bosonic operator can distinguish the ground states and connect them.
+The degeneracy comes from symmetry breaking in the Ising model,
+but it's from topology in Majorana.
+Spontaneous symmetry breaking
+gets mapped by this non-local mapping to topological degeneracy.
+
+\begin{question}
+    Isn't there a duality between strong $J$ and weak $J$,
+    how can there be different Majorana parities,
+    one is topological phase and another one isn't.
+    How can they have different parities if they're dual.
+\end{question}
+Parity in Majorana language is just total $Z$ in Ising model.
+This is going to open a whole can of worms.
+
+The Ising model has 2 dualities.
+One of them is this Jordan-Wigner duality.
+There's another duality,
+which is not really correctly stated in the literature which is a
+Kramers-Wannier ``duality'' duality where you swap
+$J\leftrightarrow J$.
+But it's not a true duality
+because the ferromagnetic phase has 2 ground states,
+but the paramagnetic phase only has 1 ground state.
+So the degeneracy isn't mapped right.
+
+However,
+there is a duality,
+where the Ising model is coupled to an Ising $\mathbb{Z}_2$ gauge field.
+
+The usual ``Kramers-Wannier duality''
+already has a problem with the counting of the ground sate.
+That counting is corrected by coupling the Ising model with a
+$\mathbb{Z}_2$ gauge field.
+And that might solve all the paradoxes you might have.
+
+\begin{question}
+    If we such a system with Pauli matrices,
+    can we characterise every Hamiltonian?
+\end{question}
+If you stick to 1D,
+you can always do this transformation nd you find that the $\mathbb{Z}_2$
+symmetry-broken state will always map to the topological phase.
+The Jordan-Wigner in higher dimension,
+you'd have to convert to higher $d$.
+
+Yu-An has spent the last few years doing this.
+Xiao-gang Wen showed this can be transformed from higher $d$ to some duality.
+
+You have to be careful with non-local transformations to make dualities,
+you need to know what's local and what's not local.
+If you started with Majorana and went backwards,
+you would say everyone missed something,
+you could just do topological quantum computing with Ising models!
+But you have to be careful because the aping is non-local.
+
+\begin{question}
+    What are the possible applications?
+\end{question}
+There's an application in quantum computing to simulate fermions,
+and you want to simulate them without having them,
+then this duality could help.
+This is a baby version of duality.
+If you understand this,
+you can try to understand all sorts of ore complicated dualities.
+
+\begin{question}
+    I've seen this being related to being on the boundary of a toric code,
+    is this related to each other,
+    or is this a different kind of structure where the toric code is in 2D?
+\end{question}
+Um. Well we'll get to the toric code,
+but if you had a 2D phase of matter and looked at the boundary,
+indeed,
+you could map the boundary into a 1D transverse field Ising model,
+or a Majorana china.
+In fact, the toric code has 2 types of boundaries,
+rough and smooth,
+and those map to the 2 Majorana phases of matter.
+All the analysis will be useful.
+
+Any other questions?
+That's all I'm going to say for Majoranas in this lecture.
+There's a few more important topics.
+I gave you some model Hamiltonians for Majoranas.
+How do you realise real Majoranas in a real solid state system.
+In the homework I'm going to have such as system.
+
+One big direction is how to do you actually realise Majoranas and what are the
+physical systems.
+
+\section{Chern Number}
+Now we shift gears to go into higher dimensions.
+That was the simplest topological phase of matter in 1D.
+It didn't require anything fancy except for fermions.
+Now it's associated with an invariant called the Chern number.
+And now we're in $(2+1)$ dimensions.
+
+We're going to stat off by defining invariants of band structures,
+the Chern number,
+but it's also sometimes called the TKNN number,
+after Thouless, Kohomoto, Nightingale and den Nijys.
+This is some invariant of a band.
+
+Let's say we have a free particle
+and it exists as some 2D lattice model,
+so we have a tight binding model that looks like
+\begin{align}
+    H &=
+    - \sum_{ij} c_i^\dagger c_j t_{ij} + \text{h.c.}
+\end{align}
+So we have a Brillouin zone.
+The momenta are $(k_x, k_y)$ and we identify
+\begin{align}
+    \vec{k} \sim \ket{k} + \vec{G}
+\end{align}
+where $\vec{G}$ is the reciprocal lattice vector.
+And so you do the quotient
+\begin{align}
+    \frac{\mathbb{R}^2}{\mathbb{Z}^2} = T^2 = S^1\times S^1
+\end{align}
+So the Brillouin zone is actually a torus.
+
+The idea of a Chern number is that you have bands
+$E$ vs $k$.
+Every bad is going to be associated with some kind of invariant 
+$C_1,C_2,C_3,\ldots$ which is an integer.
+The way you define this integer for every single band is as follows.
+
+Remember that we have Bloch states
+\begin{align}
+    \psi_{\vec{k}}(\vec{x})
+    = e^{i\vec{k}\cdot\vec{x}}
+    u_{\vec{k}}(\vec{x})
+\end{align}
+where these $u$ plane wave Bloch waves are periodic
+\begin{align}
+    u_k (x) = u_k(x + e)
+\end{align}
+where $\hat{e}$ is the lattice vector.
+The phase of these wave functions can wind around in non-trivial ways and those
+are characterised by these Chern numbers.
+
+Mathematically we define a ``Berry connection'',
+which is a gauge field defined in momentum space.
+\begin{align}
+    A_j(\vec{k}) =
+    -i \bra{\vec{u}_k}
+    \frac{\partial}{\partial k_j} \ket{\vec{u}_k}
+\end{align}
+The reason it's a gauge field,
+is if I redefine the phase of these Bloch states $u_k$,
+then it doesn't change it.
+That is,
+under gauge transformation
+\begin{align}
+    \ket{u_{\vec{k}}}
+    \to
+    e^{i f_{\vec{k}}}\ket{u_{\vec{k}}}
+\end{align}
+the gauge field transforms like
+\begin{align}
+    A_j(\vec{k})
+    \to
+    A_j(\vec{k})
+    + \frac{\partial}{\partial k_j} f(\vec{k})
+\end{align}
+and that gauge field defines a gauge-invariant field strength,
+but when you integrate that gauge field through the Brillouin zone,
+you get an integer invariant.
+
+So let us define the field strength by
+\begin{align}
+    F_{xy}(\vec{k})i &=
+    \frac{\partial A_y}{\partial k_x}
+    - \frac{\partial}{\partial k_y}A_x
+\end{align}
+and then we can define the Chern number as
+\begin{align}
+    C &=
+    \frac{1}{2\pi} \int_{BZ} d^2 k F_{xy}(\vec{k})
+    \in \mathbb{Z}
+\end{align}
+There's an elementary theorem which says if you integrate a field over a closed
+surface, 
+you always get an integer.
+
+The flux through any closed surface must be an integer multiple of $2\pi$.
+Imagine your surface is a sphere,
+and your sphere has some flux through it.
+Imagine a particle that goes along some path on the sphere.
+And this particle has charge under this gauge field.
+The phase it's going to pick up is the look integral
+\begin{align}
+    e^{i\oint A\cdot dl} =
+    e^{i\int_R F}
+\end{align}
+However you could consider the integral of this loop to be the integral of the
+complement of that region.
+\begin{align}
+    e^{i\oint A\cdot dl} =
+    e^{i\int_R F}
+\end{align}
+It's minus because it has the opposite orientation.
+So for these to make sense,
+it must be that the flux through the entire closed surface must be 
+and integer multiple of $2\pi$.
+
+I'll end there.
