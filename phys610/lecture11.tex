@@ -1,0 +1,517 @@
+\section{Calculus of Variations}
+Example: shortest path between two points
+$(x_1, y_1)$ and $(x_2, y-2)$.
+Each segment is of length
+\begin{align}
+    ds &= \sqrt{dx^2 + dy^2}\\
+    &= dx \sqrt{1 + {\left( \frac{dy}{dx} \right)}^2}
+\end{align}
+so the total length is
+\begin{align}
+    L &=
+    \int ds\\
+    &=
+    \int_{x_1}^{x_2} dx\,
+    \sqrt{1 + {\left( \frac{dy}{dx} \right)}^2}.
+\end{align}
+The question is:
+How to find the $y(x)$ for which $L$ is smallest?
+
+
+For any function $y(x)$ the integral will have some value,
+so $L$ is a function of the function $y(x)$.
+We say that $L$ is a ``functional'' of $y(x)$.
+A functional is just a function of a function.
+
+Let $y=y_0(x)$ be the function that minimizes $L$.
+Let us consider infinitesimal deviations from the path
+\begin{align}
+    y(x) &= y_0(x) + \epsilon \eta(x)
+\end{align}
+for some arbitrary $y$ except that
+$\eta(x_1) = \eta(x_2) = 0$.
+
+By definition $y_0$ is the shortest path,
+so any other path much be longer.
+\begin{align}
+    L\left( y_0 + \epsilon\eta(x) \right) > L(y_0)
+\end{align}
+for any $\eta(x)$.
+
+Expanding out to first order in $\epsilon$,
+we have
+\begin{align}
+    L\left( y_0 + \epsilon\eta \right)
+    &=
+    \int dx\,
+    \sqrt{1 + {\left[ y_0'(x) + \epsilon\eta'(x) \right]}^2}\\
+    &=
+    \int dx\,
+    \sqrt{%
+        1 + y_0'^2 + 2\epsilon y_0' \eta'
+    }
+    + \mathcal{O}\left( \epsilon^2 \right)
+\end{align}
+Let's write this in a more convenient form
+\begin{align}
+    L\left( y_0 + \epsilon \eta \right) &=
+    \int dx\, \sqrt{%
+        1 + {\left( y_0' \right)}^2
+    }
+    {\left[
+        1 + \frac{2\epsilon y_0' \eta'}{1 + y_0'^2}
+    \right]}^{1/2}
+\end{align}
+Now we expand using the binomial theorem.
+\begin{align}
+    L\left( y_0 + \epsilon \eta \right) &=
+    \underbrace{%
+        \int dx\, \sqrt{%
+            1 + y_0'^2
+        }
+    }_{L(y_0(x))}
+    +
+    \int dx\,
+    \sqrt{1 + y_0'^2}\left[ 
+        \frac{\epsilon y_0' \eta'}{1 + y_0'^2}
+    \right]\\
+    &=
+    L[y_0(x)]
+    +
+    \int_{x_1}^{x_2} dx\,
+    \frac{\epsilon y_0' \eta'}{\sqrt{1 + y_0'^2}}
+\end{align}
+So we have this thing depending on the derivative of $\eta$,
+but it is arbitrary except at the end points.
+So the trick is to use integration by parts,
+and we know $\eta$ vanishes at the boundaries.
+So let's integrate this by parts.
+We're moving the derivative to the other terms,
+and that leaves us with a boundary term that goes to zero when
+$\eta(x_1)=\eta(x_2)=0$.
+Once we integrate by parts,
+the first term doesn't change
+\begin{align}
+    L\left( y_0 + \epsilon \eta \right) &=
+    L[y_0(x)]
+    -
+    \epsilon
+    \int_{x_1}^{x_2} dx\,
+    \frac{d}{dx}\left[ 
+    \frac{y_0'}{\sqrt{1 + y_0'^2}}
+    \right]\eta
+\end{align}
+Now we have just evaluated this term
+$L\left( y_0 + \epsilon \eta \right)$
+
+Now what we are requiring is that
+$L\left( y_0 + \epsilon\eta(x) \right) > L(y_0)$.
+On the other hand,
+we have that it is $L(y_0)$ plus some small quantity with an $\epsiilon$
+in it.
+And $\epsilon$ can be either positive or negative,
+and if that integral was positive,
+then I could choose $\epsilon$ to be negative,
+and that inequality would be violated.
+Conversely,
+if the integral was negative,
+then I could choose $\epsilon$ to be positive
+and that inequality would again be violated.
+So the only way for the inequality to hold is that this is stationary with
+respect to $\epsilon$.
+This means that the integral must be zero,
+and the $\mathcal{O}\left( \epsilon^2 \right)$
+terms are what gives you the extremising behaviour.
+
+Recall in ordinary calculus,
+if you have a function $y(x)$,
+you can expand
+\begin{align}
+    y(x + \Delta x) &=
+    y(x) + \Delta x \frac{dy}{dx}
+    + \frac{1}{2}\left( \Delta x \right)^2 \frac{d^2y}{dx^2}
+\end{align}
+and the only way this could be a maximum is if
+$\frac{dy}{dx}=0$.
+Otherwise, I could always choose $\Delta x$ to be the right sign
+to violate the fact that $x$ is the maximum.
+That's why you must take the second derivative to determine whether it is a
+maximum or a minimum.
+
+Something similar is true here in the functional case.
+The $\epsilon^2$ does not depend on the sign of $\epsilon$.
+The only thing you can really be sure is that you have found an extremum.
+The fact that it is a minimum comes from common sense.
+
+What we're going to do is require that the integral is equal to zero.
+\begin{align}
+    L\left( y_0 + \epsilon \eta \right) &=
+    L[y_0(x)]
+    -
+    \epsilon
+    \underbrace{
+        \int_{x_1}^{x_2} dx\,
+        \frac{d}{dx}\left[ 
+        \frac{y_0'}{\sqrt{1 + y_0'^2}}
+        \right]\eta
+    }_{=0}\\
+    \int_{x_1}^{x_2} dx\,
+    \frac{d}{dx}\left[ 
+    \frac{y_0'}{\sqrt{1 + y_0'^2}}
+    \right]\eta
+    &= 0
+\end{align}
+Let me stop there now.
+I'm not actually proving it's a minimum,
+I'm just proving it's a stationary point.
+To prove it's a minimum,
+you need to show one more term.
+You can do it,
+but it will be more work,
+which is not necessary to do.
+
+It's kind of similar to functions.
+The first derivative tells you if it's an extremum,
+and to tell you if it's a maximum or minimum,
+you need to evaluate one more derivative.
+
+\begin{question}
+    Technical question.
+    Wouldn't it make more sens if you wrote the original inequality
+    as a greater than or equal to sign?
+\end{question}
+The fact that I've dropped the $\epsilon^2$ terms.
+
+\begin{question}
+    Is it useful to say that you found an extremum but not necessarily a
+    minimum.
+\end{question}
+In this question,
+it's physical insight that tells us any extremum you find is a minimum.
+In other cases it's not so obvious.
+In this kind of problem,
+once you've found your stationary point,
+to prove it's a maximum or minimum,
+you need to evaluate the second term.
+It's a lot more work and we usually never do it.
+
+There's this famous story that may be appropriate.
+When they were designing the famous SR-71 blackbird,
+they wanted to maximize the range.
+They computed the stationary point for the configuration of the shape,
+but they never bothered to compute the second derivative,
+and it turned out to be the least efficient.
+These theoreticians.
+I'm not sure it's true though.
+It's classified so we will never know.
+Good thing about working in the defence industry.
+
+Since the sign of $\epsilon$ is arbitrary,
+the second term can be either positive or negative
+and so
+\begin{align}
+    \int_{x_1}^{x_2}dx\,
+    \frac{d}{dx}\left[ 
+    \frac{y_0'}{\sqrt{1 + \left( y_0' \right)^2}}
+    \eta(x)
+    \right]
+\end{align}
+has to be true for any arbitrary function $\eta(x)$.
+This is crucial.
+And the only way for this to be true for any arbitrary function
+$\eta(x)$
+is if
+\begin{align}
+    \frac{d}{dx}\left[
+    \frac{y_0'}{\sqrt{1 + \left( y_0' \right)^2}}
+    \right] = 0
+\end{align}
+for every point on the path.
+
+So here's the logic.
+Suppose this was non-zero at some point.
+Let's say at that point,
+this thing was non-zero.
+Then you could choose an $\eta(x)$
+which is zero everywhere except that near point.
+Then this would be non-zero.
+So any point where this thing is non-zero,
+just choose an $\eta(x)$ that is non-zero at that point,
+then you'll make it non-zero.
+You have so much freedom.
+That's why the only way this integral is zero
+is if this thing is zero at every single point.
+
+So we have reduced the problem we started with
+to solving a one-dimensional differential equation
+\begin{align}
+    \frac{d}{dx}\left[ 
+    \frac{y_0'}{\sqrt{1 + \left( y_0' \right)^2}}
+    \right] = 0
+\end{align}
+which we can integrate to get
+\begin{align}
+    \frac{y_0'}{\sqrt{1 + \left( y_0' \right)^2}}
+    = C
+\end{align}
+for some constant $C$.
+After some algebra, you get
+\begin{align}
+    y_0''^2 &=
+    C(1 + y_0'^2)
+\end{align}
+and since $C$ is arbitrary,
+we conclude
+\begin{align}
+    y_0'^2 &= \text{constant}\\
+    \implies \qquad y_0' &= \text{constant} = m
+\end{align}
+which means
+\begin{align}
+    \frac{dy_0}{dx} = m
+\end{align}
+and so
+\begin{align}
+    y_0 = mx + c
+\end{align}
+where $m$ and $c$ are constants.
+And that's just a straight line!
+So you have convinced yourself that the shortest path between two points is a
+straight line.
+
+\section{Euler-Lagrange Equations}
+Consider the integral
+\begin{align}
+    S &=
+    \int_{x_1}^{x_2}
+    f\left[
+        y(x), y'(x), x
+    \right]
+    \,dx
+\end{align}
+and you're integrating that over $x$,
+where $y(x)$ is a curve that connects
+$(x_1,y_1)$ and $(x_2,y_2)$.
+so that
+$y(x_1)=y_1$ and $y(x_2)=y_2$.
+In other words,
+the end points are fixed.
+The question is:
+What is the function $y(x)$ that extremizes the functional $S$.
+
+So $S$ is a functional and the question is,
+what is the function $y(x)$ on which this is extremized,
+subject the conditions of the values of $y(x)$ on the boundaries.
+Very similar to the problem we just saw.
+
+In the shortest path problem we just studied,
+this $f$ was 
+\begin{align}
+    f(x) &= \sqrt{1 + \left( y' \right)^2}
+\end{align}
+and it didn't depend on $y$ or $x$ explicitly.
+
+Now we are studying the general case.
+We did the special case with the shortest path problem,
+now we are doing it with a general function $f$.
+
+Now how do we extremize the problem?
+We will just how to do it.
+
+Let $y=y_0(x)$ correspond to the extremum.
+Consider infinitesimal deformations 
+\begin{align}
+    y(x) &= y_0(x) + \epsilon \eta(x)
+\end{align}
+where $\epsilon$ is an infinitesimal number
+and $\eta(x)$ is an arbitrary function.
+
+If $s$ is extremized for $y=y_0(x)$,
+then $\frac{ds}{dz}=0$
+at $\epsilon = 0$
+for arbitrary $\eta(x)$.
+
+So I'm going to call this thing
+\begin{align}
+    S(y_0 + \epsilon\eta) &=
+    \int dx\, f\left(y + \epsilon\eta, y' + \epsilon\eta', x\right)
+\end{align}
+This is a crucial step.
+This is $S$ for an arbitrary function $f$.
+If I choose $y$ to be $y_0 + \epsilon\eta$,
+then the above is true.
+
+Now,
+\begin{align}
+    f(y + \epsilon\eta, y' + \epsilon\eta', x) &=
+    f(y, y', \eta)
+    + \epsilon \eta {\left( \frac{\partial f}{\partial y} \right)}_{y',x'}
+    + \epsilon \eta' {\left( \frac{\partial f}{\partial y'} \right)}_{y, x}
+\end{align}
+Then
+\begin{align}
+    S[y_0 + \epsilon\eta] - S[y_0] &=
+    \epsilon\int dx\, \left.
+        \left[
+        \eta \left( \frac{\partial f}{\partial y} \right)
+        + \eta'\left( \frac{\partial f}{\partial y'} \right)
+        \right]
+    \right|_{y=y_0(x)}
+\end{align}
+Now just like what we did before,
+we integrate by parts
+and we end up with
+\begin{align}
+    S[y_0 + \epsilon\eta] - S[y_0] &=
+    \epsilon \int dx\,
+    \eta
+    \left[
+        \frac{\partial f}{\partial y}
+        -
+        \frac{d}{dx}\left(
+            \frac{\partial f}{\partial y'}
+        \right)
+    \right]
+    =0
+\end{align}
+Since $\eta$ is arbitrary,
+it must be that at every point
+\begin{align}
+    \frac{\partial f}{\partial y}
+    -
+    \frac{d}{dx}\left(
+        \frac{\partial f}{\partial y'}
+    \right)
+    = 0
+\end{align}
+and this equation has a name.
+It is the famous \emph{Euler-Lagrange equation}.
+This is one of the equations you are going to have to know.
+
+This is the equation that is satisfied by the function $f$
+that extremizes the functional $S[f]$ subject to the boundary conditions.
+
+The steps we went through are actually exactly the same as that for the shortest
+path straight line.
+We're just following the problem more generally.
+Previously we solved it when this $f(y,y',x) = \sqrt{1 + (y')62}$.
+But now we used an arbitrary function and applied the stationary point
+condition.
+
+Any questions?
+I want to stop here before I give examples.
+
+\begin{example}[Shortest path]
+    We want the minimize the length
+    \begin{align}
+        L &= \int_{x_1}^{x_2} dx\,
+        \sqrt{1 + (y')^2}.
+    \end{align}
+\end{example}
+\begin{proof}
+    The function is
+    \begin{align}
+        f\left( y, y', x \right) &=
+        \sqrt{1 + \left( y' \right)^2}.
+    \end{align}
+    Taking derivatives,
+    \begin{align}
+        \left( \frac{\partial f}{\partial y} \right)_{y', x} &= 0\\
+        \left( \frac{\partial f}{\partial y} \right)_{y', x} &=
+        \frac{y'}{\sqrt{1 + y'^2}}
+    \end{align}
+    Then using the Euler-Lagrange equation,
+    \begin{align}
+        \frac{d}{dx}\left\{
+            \frac{y'}{\sqrt{1 + y'^2}}
+        \right\}
+        = 0
+    \end{align}
+    which is what we got before.
+\end{proof}
+
+\subsection{Brachistochrone problem}
+I want to show the Brachistochrone problem,
+which is the most famous problem in the calculus of variations.
+It's famous because this is the problem that led to
+the entire theory of the calculus of variations.
+Bernoulli was trying the solve this problem and
+he invented the calculus of variations for this problem.
+
+Let's say I have a particle that slides down under gravity along some path
+without friction.
+Out of all possible paths,
+with end points fixed,
+what is the path that minimizes the time it takes to slide down?
+
+This was a well known-problem 18th Century scientists were trying to solve.
+Which is the time that it takes to get from A to B fastest.
+Scientist were struggling to solve this problem,
+and the way Bernoulli solved it was by inventing the calculus of variations.
+
+Let's first write out the problem.
+
+Given 2 points 1 and 2,
+with 1 higher above the ground,
+what shape should a track be built so that a particle released from
+point 1 reach point 2 in the shortest time?
+
+Let's make point 1 be the origin $(0, 0)$.
+The total time is
+\begin{align}
+    T &=
+    \int \frac{ds}{v}
+\end{align}
+where $v$ is the velocity.
+You can work it out from the conservation of energy with
+\begin{align}
+    \frac{1}{2}mv^2 &= mgy\\
+    v &= \sqrt{2 gy}
+\end{align}
+so the total time is
+\begin{align}
+    T &=
+    \int
+    \frac{dx\sqrt{1 + y'^2}}{\sqrt{2gy}},
+\end{align}
+which should be easy to put into the Euler-Lagrange equation.
+The function is
+\begin{align}
+    f &=
+    \sqrt{\frac{1 + y'^2}{2gy}}
+\end{align}
+which has derivatives
+\begin{align}
+    \frac{\partial f}{\partial y'} &=
+    \frac{y'}{\sqrt{2gy(1 + y'^2)}}\\
+    \frac{\partial f}{\partial y} &=
+    -\frac{1}{2}
+    \frac{\sqrt{1 + y'^2}}{\sqrt{2gy}}
+\end{align}
+so the Euler-Lagrange equation is
+\begin{align}
+    \frac{d}{dx}\left[ 
+        \frac{y'}{\sqrt{y(1 + y'^2)}}
+    \right]
+    +
+    \frac{\sqrt{1 + y'^2}}{2\sqrt{y^2}}
+    &= 0
+\end{align}
+which simplifies to
+\begin{align}
+    \frac{y'^2}{1 + y'^2} =
+    \underbrace{\text{constant}}_{-\frac{1}{2a}}\times y
+\end{align}
+and after some algebra,
+you get
+\begin{align}
+    \frac{dy}{dx} &=
+    \sqrt{\frac{2a - y}{y}}.
+\end{align}
+Then if you do a change of coordinates,
+the solution is
+\begin{align}
+    x &= a(\theta - \sin\theta)\\
+    y &= a ( 1 - \cos\theta)
+\end{align}
+which is called a \emph{cycloid}.
