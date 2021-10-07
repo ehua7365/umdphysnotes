@@ -1,0 +1,249 @@
+\section{Hamilton's Principle of Least Action}
+3 equivalent formulations
+\begin{itemize}
+    \item Newton's laws
+    \item Lagrange's equation
+    \item Hamiton's principle
+\end{itemize}
+Let us generalize to non-Cartesian coordinates
+\begin{align}
+    \left( x, y, z \right) \to \left( q_1, q_2, q_3 \right)
+\end{align}
+For example, $(q_1, q_2, q_3)$
+could be
+$(r, \theta, \phi)$
+or
+$(\rho, \phi, z)$.
+
+Necessary that each position $\vec{r}$
+uniquely specifies $(q_1, q_2, q_3)$
+\begin{align}
+    q_i &= q_i(x, y, z)\\
+    \vec{r} &= \vec{r}\left( q_1, q_2, q_3 \right).
+\end{align}
+We can rewrite $x,y,z$
+and also
+$\dot{x},\dot{y},\dot{z}$
+in terms of the
+$q_1,q_2,q_3$
+and
+$\dot{q}_1,\dot{q}_2,\dot{q}_3$.
+Then
+\begin{align}
+    L &=
+    \frac{1}{2}m\dot{\vec{r}}^2 - U(\vec{r})
+    = L(q_i, \dot{q}_i)
+\end{align}
+Let's write the action integral
+\begin{align}
+    S &=
+    \int_{t_1}^{t_2} dt\,
+    L\left( q_i, \dot{q}_i \right).
+\end{align}
+Let's draw the picture again.
+
+The value of the action integral for every single coordinate system,
+so the action is minimized for all paths.
+It's going to be the same path in the extremum value.
+And so that means $L$ will satisfy an Euler-Lagrange equation in these
+coordinates.
+
+The value of $L$ at any point and therefore the integral $S$ for any path is
+unaltered by the change of variables.
+Thus it must be true that $S$ is stationary at the correct path even in the new
+coordinates system.
+This implicitly implies that the Euler-Lagrange equations
+\begin{align}
+    \frac{d}{dt}\left( \frac{\partial L}{\partial \dot{q}_i} \right)
+    - \frac{\partial L}{\partial q_i} &= 0
+\end{align}
+holds for any set of generalized coordaintes.
+
+\section{Generalized Force and Momentum}
+force a particle in 1D,
+\begin{align}
+    L &= \frac{1}{2} m\doc{x}^2 - U(x)
+\end{align}
+and
+\begin{align}
+    \frac{d}{dt}\underbrace{%
+        \left(
+            \frac{\partial L}{\partial \dot{x}}
+        \right)
+    }_{m\dot{x} = p}
+    =
+    \underbrace{%
+        \frac{\partial L}{\partial x}
+    }_{%
+        -\frac{\partial U}{\partial x}
+    }
+\end{align}
+So that gives
+\begin{align}
+    \frac{dp}{dt} &= -\frac{\partial U}{\partial x}.
+\end{align}
+So in general.
+\begin{align}
+    \text{generalized momentum} &:= \frac{\partial L}{\partial \dot{q}_i}\\
+    \text{generalized force} &:= \frac{\partial L}{\partial q_i}.
+\end{align}
+The Euler-Lagrange equation says that
+the rate of change of generalized momentum equals the generalized force.
+
+\begin{example}[Single particle in polar coordinates]
+    The kinetic energy is
+    \begin{align}
+        T &= \frac{1}{2}mv^2 =
+        \frac{1}{2} m\left( \dot{r}^2 + r^2 \dot{\phi}^2 \right)
+    \end{align}
+    and the Lagrangian is
+    \begin{align}
+        L &= T - U\\
+        &=
+        \frac{1}{2}m\left( \dot{r}^2 + r^2\dot{\phi}^2 \right)
+        - U(r, \phi)
+    \end{align}
+\end{example}
+Then the Euler-Lagrange equation is
+\begin{align}
+    \frac{d}{dt}
+    \underbrace{%
+        \left(
+            \frac{\partial L}{\partial\dot{r}}
+        \right)
+    }_{%
+        m\dot{r}
+    }
+    =
+    \underbrace{%
+        \frac{\partial L}{\partial r}
+    }_{%
+        -\frac{\partial U}{\partial r} + mr\dot{\phi}^2
+    }
+\end{align}
+which leads to the radial equation of motion.
+\begin{align}
+    m\underbrace{\ddot{r}}_{\text{radial acceleration}}
+    - \underbrace{m r\dot{\phi}^2}_{\text{centripetal force}}
+    &=
+    \underbrace{- \frac{\partial U}{\partial r}}_{%
+        \text{radial component of force}
+    }
+\end{align}
+Then the angular equation of motion is
+\begin{align}
+    \frac{d}{dt}\underbrace{%
+        \left(
+            \frac{\partial L}{\partial\dot{\phi}}
+        \right)
+    }_{mr^2\dot{\phi}}
+    &=
+    \underbrace{\frac{\partial L}{\partial \phi}}_{
+        -\frac{\partial U}{\partial \phi}
+    }
+\end{align}
+so you get
+\begin{align}
+    \frac{d}{dt}\underbrace{\left( mr^2\dot{\phi} \right)}_{\text{angular
+    momentum}}
+    &=
+    \underbrace{- \frac{\partial U}{\partial \phi}}_{r F_{\phi}=\text{torque}}
+\end{align}
+Then the force is
+\begin{align}
+    \vec{F} = - \vec{\nabla} U
+    = -\frac{\partial U}{\partial r} \hat{e}_r
+    - \frac{1}{r} \frac{\partial U}{\partial \phi} \hat{e}_\phi
+\end{align}
+
+\section{Constrained system}
+Consider a pendulum of length $l$.
+The position is given by $(x,y)$
+but there is a constraint
+\begin{align}
+    \sqrt{x^2 + y^2} &= l.
+\end{align}
+So you only need one degree of freedom.
+
+The system only has one degree of freedom because location of bob is specified
+once we know the value of $x$.
+Alternatively,
+location is specified by the value of generalized coordinate $\theta$.
+
+The coordinate transform is
+\begin{align}
+    x &= l \sin\theta\\
+    y &= l \cos\theta.
+\end{align}
+
+The kinetic energy is
+\begin{align}
+    T &= \frac{1}{2}m \left( \dot{x}^2 + \dot{y}^2 \right)\\
+    &= \frac{1}{2}m l^2 \dot{\theta}^2
+\end{align}
+and the potential energy
+is
+\begin{align}
+    U &= mgl(1 - \cos\theta)
+\end{align}
+Then the Lagrangian is
+\begin{align}
+    L &= T - U\\
+    &= \frac{1}{2} ml^2 \dot{\theta}^2
+    - mgl(1 - \cos\theta)
+\end{align}
+The Euler-Lagrange equation is
+\begin{align}
+    \frac{d}{dt}\left(\frac{\partial L}{\partial \dot{\theta}} \right)
+    -
+    \frac{\partial L}{\partial \theta} = 0
+\end{align}
+which gives the equation of motion
+\begin{align}
+    ml^2\ddot{\theta} + mgl\sin\theta &= 0\\
+    \ddot{\theta} + \frac{g}{l}\sin\theta &= 0.
+\end{align}
+
+\section{Generalized Coordinates for a Constrained System}
+We say that the parameters
+$q_1,q_2,\ldots,q_n$ are generalized coodrinates for the system of
+$N$ particles
+$\alpha = 1,2,\ldots,N$
+with psoitions $\vec{r_}_{\alpha}$
+if
+\begin{enumerate}
+    \item Each position $\vec{r}_{\alpha}$ can be expanded as a function of
+        $\left( q_1,q_2,\ldots,q_n \right)$
+        and (possibly) $t$.
+        \begin{align}
+            \vec{r}_{\alpha} &=
+            \left( q_1, q_2, \ldots, q_n, t \right)
+        \end{align}
+        for $\alpha = 1,2,\ldots,N$.
+    \item Each $q_i$ can e expressed in terms of the $\vec{r}_{\alpha}$
+        and (possibly) $t$.
+        \begin{align}
+            q_i &= q_i\left( \vec{r}_1, \vec{r}_2,\ldots,\vec{r}_N, t \right)
+        \end{align}
+    \item The number of generazed coordinates is the smallest number that allows
+        the system to be parameterized in this way
+        \begin{align}
+            n &= 3N & \text{for unconstrained system}\\
+            n &< 3N & \text{for constrained system}
+        \end{align}
+\end{enumerate}
+\begin{example}[Double pendulum]
+    There is a pivot point to which a rigid bar of length $l_1$ is free to
+    swing,
+    at the end of which is a mass $m_1$.
+    It makes an anble $\phi_1$ with the veritical.
+    Another rigid bar is attached to where $m_2$ is,
+    but is also free to swing,
+    of length $l_2$ which makes an anble $\phi_2$ with the vertical,
+    at the end of which is a mass $m_2$.
+\end{example}
+The position of the first mass is
+\begin{align}
+    \vec{r}_1 &= \vec{r}_1(\phi_1)\\
+    \vec{r}_2 &= \vec{r}_2(\phi_1, \phi_2)
+\end{align}
