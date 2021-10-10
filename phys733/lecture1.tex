@@ -272,12 +272,12 @@ The first thing is the Hilbert space and hte locla tensor product decomposition.
 We have some quantum ssytme with some hilbert space.
 We're interested in Hilbert spaces that factorize
 \begin{align}
-    \mathcal{H} = \bigotimes_{i=1}^{N}\mahtcal{H}_i
+    \mathcal{H} = \bigotimes_{i=1}^{N}\mathcal{H}_i
 \end{align}
 where $i$ labels sites on a graph $\Lambda$, for example a lattice.
 A general graph is useful.
 $\mathcal{H}_i$ is the local Hilbert space, which might be finite-dimensional,
-in which case it's isomorphic to $\matbb{C}^k$.
+in which case it's isomorphic to $\mathbb{C}^k$.
 This could be useful for a spin system for example,
 so spins that can be up or down, 
 or hardcore bosons, I can have bosons with hardcore repulsion.
@@ -413,11 +413,11 @@ Geometric locality means $|h_Z|$ decays fast enough.
 
 \begin{align}
     |h_Z| =
-    \begin{case}
+    \begin{cases}
         0 & \text{if }\mathrm{diam}(Z) > k\\
         C e^{-\mu \mathrm{diam}(Z)}\\
-        (C/\mathrm{diam}(Z))^\alpha
-    \end{case}
+        {(C/\mathrm{diam}(Z))}^\alpha
+    \end{cases}
 \end{align}
 
 Power laws do occur, but often you have screening which essentially makes it

@@ -1,0 +1,536 @@
+\section{Majorana Fermions}
+Define $\nu=S_0 S\pi$ to be a topological band invariant.
+$\nu=+1$ is the non-topological phase.
+
+The band looks like $E_k = -2t\cos k$,
+which mas a minimum of $\mu = -2t$ and a maximum of $\mu= 2t$.
+
+$\nu = -1$ is the topological phase.
+
+Majorana fermions obey
+\begin{align}
+    \left\{ \gamma_i, \gamma_j \right\} &= 2\delta_{ij}
+\end{align}
+which implies
+\begin{align}
+    \gamma_{i}^2 = 1.
+\end{align}
+Here the operators
+$\gamma_i$ act on sites $i=1,\ldots,2N$.
+
+Let $\tilde{\gamma_i}:=\sum_{j} W_{ij}\gamma_j$
+where $w\in O(2N)$ is an orthogonal matrix.
+Then you still get
+\begin{align}
+    \left\{ \tilde{\gamma}_i, \tilde{\gamma}_j \right\} = 2\delta_{ij}
+\end{align}
+
+Thus the largest possible symmetry of $2N$ Majoranas is
+$O(2N)$.
+
+One may define creation and annihilation operators
+$c_i$ and $c_i^\dagger$ for ``complex fermions''
+which obey
+\begin{align}
+    \left\{ c_i^\dagger, c_j \right\} &= \delta_{ij}\\
+    \left\{ c_i, c_j \right\} &= 0.
+\end{align}
+The two can be related by
+\begin{align}
+    c_i &= \frac{1}{2}\left(
+        \gamma_{2i - 1} + 1\gamma_{2i}
+    \right) 
+\end{align}
+where $i=1,\ldots,N$.
+
+Thus $2N$ Majoranas is equivalent to $N$ complex fermions.
+
+$N$ complex fermions has $2^{N}$ states,
+since the number operator $c_i^\dagger c_i = 0$ or $1$.
+
+So we can say that 1 complex fermion has a
+``quantum dimension'' of 2,
+but 1 Majorana fermion has a quantum dimension of $\sqrt{2}$.
+
+Let us introduce the fermion parity operator
+\begin{align}
+    P_i = {\left( -1 \right)}^{c_i^\dagger c_i}
+    = -i \gamma_{2i - 1}\gamma_{2i}=
+    \begin{cases}
+        +1\\
+        -1
+    \end{cases}
+\end{align}
+From this we can also define the total fermion parity
+\begin{align}
+    P &= \prod_{i=1}^{N} P_i.
+\end{align}
+Under $O(2N)$ rotation this transforms as
+\begin{align}
+    P \to P\det W
+\end{align}
+so $SO(2N)$ fixes $P$.
+
+Consider just 1 pair with
+\begin{align}
+    \gamma_{1} &= c + c^\dagger\\
+    \gamma_2 &= \frac{1}{2}\left( c - c^{\dagger} \right)
+\end{align}
+and such as system only has two states
+$\ket{0}$ for empty and $\ket{1}$ for filled.
+Then the Majorana operators act like
+\begin{align}
+    \gamma_1\ket{0} &= \ket{1}\\
+    \gamma_2\ket{0} &= i\ket{1}
+\end{align}
+so in fact
+\begin{align}
+    \gamma_1 &=
+    \begin{pmatrix}
+        0 & 1\\
+        1 & 0
+    \end{pmatrix}
+    = \sigma^{x}\\
+    \gamma_1 &=
+    \begin{pmatrix}
+        0 & -i\\
+        i & 0
+    \end{pmatrix}
+    = \sigma^{y}
+\end{align}
+and their product satsifies
+\begin{align}
+    -i \gamma_1 \gamma_2 = -i^2 \sigma^z = \sigma^z.
+\end{align}
+The most general free ferion Hamiltonian assuming there being
+$2N$ Majoranas is
+\begin{align}
+    H &= \frac{i}{4} \sum_{ij} A_{ij} \gamma_i \gamma_j
+\end{align}
+where $A_{ij} = - A_{ji} = A_{ij}^*$
+so $A$ is a $2N\times 2N$ real skew symmetric matrix.
+
+We can always bring $A$ into canonical form
+\begin{align}
+    D &= WAW^\dagger =
+    \begin{pmatrix}
+        0 & \varepsilon_1 & & & & & \\
+        -\varepsilon_1 & 0 & & & & & \\
+        & & 0 & \varepsilon_2 & & & \\
+        & & -\varepsilon_2 & 0 & & &\\
+        & & & & \ddots & &\\
+        & & & & & 0 & \varepsilon_N\\
+        & & & & & -\varepsilon_N & 0\\
+    \end{pmatrix}
+\end{align}
+so we can set $\tilde{\gamma} = W\gamma$
+and
+\begin{align}
+    \tilde{c}_j &= \frac{1}{2}\left( \tilde{\gamma}_{2j} - 1
+    + \tilde{\gamma}_{2i}\right)
+\end{align}
+The Hamiltonian in this form is
+\begin{align}
+    H &=
+    \frac{i}{2}\sum_{j=1}^{N}
+    \varepsilon_j \tilde{\gamma}_{2j - 1} \tilde{\gamma}_{2j}\\
+    &=
+    \sum_{j=1}^{N} \varepsilon_j\left( \tilde{c}_j^\dagger \tilde{c}_j -
+    \frac{1}{2}\right)
+\end{align}
+We can then do the so-called ``particle-hole transformation''
+\begin{align}
+    C: \quad
+    \tilde{c}_j^\dagger &\to \tilde{c}_j\\
+    \tilde{\gamma}_j &\to {(-1)}^{j+1}\tilde{\gamma}_j
+\end{align}
+which also can transform the Hamiltonian under conjugation with
+\begin{align}
+    C:\quad
+    H\to CHC = -H.
+\end{align}
+This means tthat eigenvalues must come in pairs $(E, -E)$.
+
+If all $\varepsilon_i \ne 0$
+then the lowest energy state is uniqued and gapped.
+
+
+Consider the fermion parity of the ground state.
+Consider a single pair
+\begin{align}
+    H &= \frac{i}{2} \sum \gamma_1 \gamma_2
+\end{align}
+which for the ground state if $\varepsilon > 0$ with
+$i\gamma_1 \gamma_2 = -1$
+implies
+$P = -i \gamma_1 \gamma_2 = \pm 1$.
+The parity $P=\sgn(\varepsilon)$.
+
+For the whole system,
+\begin{align}
+    P &=
+    \prod_{i=1}^{N} \sgn\left( \varepsilon_i \right)
+    =
+    \sgn\left[ \Pf(D) \right]
+    = \sgn\left( \Pf\left( A \right) \det W \right)
+\end{align}
+where $\Pf$ denotes the Pfaffian,
+which is defined for an $N\times N$ matrix with $N$ even matrix by
+\begin{align}
+    \Pf(M) &=
+    \frac{1}{2^{N}}
+    \frac{1}{N!}
+    \sum_{\text{permutations }\sigma}
+    {(-1)}^{\sgn(\sigma)}
+    \prod_{i=1}^{N}
+    A_{\sigma(2 i - 1), \sigma(2i)}.
+\end{align}
+
+For example,
+\begin{align}
+    \Pf
+    \begin{pmatrix}
+        0 & \varepsilon\\
+        -\varepsilon & 0
+    \end{pmatrix}
+    = \varepsilon
+\end{align}
+and
+\begin{align}
+    \Pf
+    \begin{pmatrix}
+        0 & \varepsilon & &\\
+        -\varepsilon & 0 & &\\
+        & & 0 & \varepsilon'\\
+        & & -\varepsilon' & 0
+    \end{pmatrix}
+    = \varepsilon\cdot \varepsilon'
+\end{align}
+A useful property is that
+\begin{align}
+    \det(X) = {\left[ \Pf(X) \right]}^2
+\end{align}
+
+If we fixed the definition of fermion parity,
+only consider $W\in SO(2N)$,
+then
+\begin{align}
+    P(H) &= \sgn \Pf A
+\end{align}
+
+\section{Boundary Majorana Zero Modes}
+Consider the Hamiltonian
+\begin{align}
+    H &=
+    \sum_{i}\left[
+        -t \left( c_i^\dagger c_{i + 1} + c_{i+1}^\dagger c_i\right)
+        - \mu\left( c_i^\dagger c_i^\dagger - \frac{1}{2} \right)
+        + \Delta c_i c_{i+1}
+        + \Delta^* c_{i+1}c_{i}
+    \right]
+\end{align}
+where $\Delta = |\Delta| e^{i\phi}$,
+in which case we can just redefine
+\begin{align}
+    c_i \to \tilde{c}_i = e^{i\phi/2}c_i
+\end{align}
+to absorb the $\phi$.
+Then you would write
+\begin{align}
+    \tilde{c}_i &= \frac{1}{2}
+    \left( \gamma_{2i - 1} + i\gamma_{2i} \right).
+\end{align}
+Then
+\begin{align}
+    H &= \frac{i}{2}\sum_{i}\left[
+        \left( |\Delta| + t \right)\gamma_{2i}\gamma_{2i+1}
+        + \left( |\Delta| - t \right) \gamma_{2i - 1} \gamma_{2i + 2}
+        - \mu \gamma_{2i - 1} \gamma_{2i}
+    \right]
+\end{align}
+Let us consider two limiting cases with open boundary conditions.
+
+Case 1: $|\Delta| = t = 0$ and $\mu > 0$.
+Then
+\begin{align}
+    H &= -\frac{i}{2}\mu\sum_{i}\gamma_{2i - 1}\gamma_{2i}
+\end{align}
+so each site has
+\begin{align}
+    -i\gamma_{2i - 1}\gamma_{2i} = 1 = P_i
+\end{align}
+This is an ``atomic superconductor''
+with tightly bound Cooper pairs
+and strong pairing phases.
+The cooper wave function is exponentially decaying.
+
+Case 2: $|\Delta| = t > 0$ and $\mu = 0$.
+$\gamma_1$ and $\gamma_{2N}$ are boundary Majorana zero modes with
+\begin{align}
+    \left[ H, \gamma_1 \right] =
+    \left[ H, \gamma_{2N} = 0 \right]
+\end{align}
+which means there is a 2-fold degeneracy of the 0 energy state
+corresponding to
+\begin{align}
+    i\gamma_1 \gamma_{2N} = \pm 1
+\end{align}
+
+Away from the idealized points,
+still free fermion,
+we can look for solutions to
+\begin{align}
+    \left[ H, \tilde{\gamma}_{L} \right]
+    = \left[ H, \tilde{\gamma}_{R} \right] = 0
+\end{align}
+in the limit $N\to\infty$ where
+\begin{align}
+    \tilde{\gamma}_L &= \alpha_1 \gamma_1 + \alpha_2 \gamma_2 + \cdots\\
+    \tilde{\gamma}_R &= \beta_{2N}\gamma_{2N} + \beta_{2N - 1}\gamma_{2N - 1} +
+    \cdots
+\end{align}
+where
+\begin{align}
+    \alpha_x &\sim e^{-x/\xi}\\
+    \beta_{2N - x} &\sim e^{-x/\xi}.
+\end{align}
+For $\nu=-1$,
+can find solution $\alpha$ and $\beta$
+decay experimentally away from the boundary.
+
+The finite size system boundayr Majorana zero modes will have some wave function
+overlap.
+This effective Hamiltonian ground state is in a subspace
+with effective Hamiltonian
+\begin{align}
+    H_{\textrm{eff}} &=
+    \frac{i}{2} t_{\textrm{eff}} \tilde{\gamma}_L \tilde{\gamma}_R
+\end{align}
+where the effective hopping coefficient is
+$t_{\textrm{eff}}\sim e^{-N/\xi}$.
+
+At the phase transition,
+$\xi\to\infty$,
+the MZMs become delocalized.
+This is the critical point that is a field theory of 1D gapless Majorana modes.
+
+Note that when
+\begin{align}
+    \left[ H, \tilde{\gamma}_L \right]
+    = \left[ H, \tilde{\gamma}_R \right] = 0
+\end{align}
+it is called a ``string zero mode.''.
+
+If we turn on interactions,
+\begin{align}
+   \delta H \propto
+   \sum_{ijkl} \gamma_i \gamma_j \gamma_k \gamma_l
+\end{align}
+The boundary MZMs still exist,
+but they have a doubly degenerate ground state
+in the $N\to\infty$ limit,
+but generically no longer commute with $H$.
+
+The ground state degeneracy is ``topological''
+in the following sense.
+\begin{enumerate}
+    \item Robust to perturbations.
+    \item No \emph{local} bosonic operator that can distinguish between the
+        ground states.
+        Specifically,
+        \begin{align}
+            \bra{j}\mathcal{O}\ket{i} \propto \delta_{ij}
+            + O\left( e^{-L/\xi} \right)
+        \end{align}
+        for any local bosonic operator $\mathcal{O}$.
+        It is not protected against local fermionic operators though.
+        \begin{align}
+            \bra{j}c_1\ket{i}, \bra{j} c_N\ket{i}
+            \not\propto \delta_{ij}
+        \end{align}
+        As long as we can protect the system from stray fermions,
+        we have a
+        ``topologically protected qubit''.
+        Otherwise,
+        we have so-called ``quasi-particle'' poisoning.
+\end{enumerate}
+Boundary Majorana Zero Modes can be understood from field theory.
+
+Suppose we have a spinless $p$-wave superconductor with Hamiltonian
+\begin{align}
+    H &= \frac{1}{2}\sum_{k\in\mathrm{BZ}}
+    \Psi_k^\dagger
+    \begin{pmatrix}
+        \varepsilon_k & \Delta_k^*\\
+        \Delta_k & -\varepsilon_k
+    \end{pmatrix}
+    \Psi_k
+\end{align}
+where
+\begin{align}
+    \Psi_k =
+    \begin{pmatrix}
+        \Psi_k\\
+        \Psi_k^\dagger
+    \end{pmatrix}
+\end{align}
+and $t=|\Delta|$, $\mu\approx -2t$ and
+\begin{align}
+    \varepsilon_k &= -2t\cos k - \mu\\
+    \Delta_k &= -2i\Delta\sin k.
+\end{align}
+
+The the limit $k\to 0$ and we get
+\begin{align}
+    \varepsilon_k &\to -2t - \mu = m\\
+    \Delta_k &\to -2i\Delta k
+\end{align}
+where $m$ is defined as the mass term in the field theory.
+Assume $\Delta$ is real so that $\tilde{\Delta}:= 2\Delta$.
+The Hamiltonian thus can be written as
+\begin{align}
+    H_k &=
+    \begin{pmatrix}
+        m & i\tilde{\Delta}k\\
+        -i\tilde{\Delta}k & -m
+    \end{pmatrix}
+    = \tilde{\Delta}k\sigma^y + m\sigma^z.
+\end{align}
+In real space continuous variables,
+\begin{align}
+    H &=
+    \frac{1}{2}\int dx\,
+    \Psi^\dagger(x)
+    \left( -i\tilde{\Delta}\sigma^y \partial_x + m\sigma^z \right)
+    \Psi(x)
+\end{align}
+where
+\begin{align}
+    \Psi(x) &=
+    \begin{pmatrix}
+        \Psi(x)\\
+        \Psi^\dagger(x).
+    \end{pmatrix}
+\end{align}
+here, we have
+\begin{align}
+    \Psi^*(x) &= \left( \Psi^\dagger(x) \right)^T
+\end{align}
+and the Majorana condition is
+\begin{align}
+    \Psi(x) &= \sigma^x \Psi^*(x).
+\end{align}
+The ``trivial phase'' is for $\mu + 2t < 0$ which means $m>0$.
+The topological phase occurs when
+$\mu + 2t > 0$ which implies $m < 0$.
+And the critical point is when $\mu = -2t$ and we get $m=0$.
+This is a massless $(1+1)D$ Majorana field.
+
+\subsection{Digression: Jackiw-Rabbi system}
+Consider a $(1 + 1)D$ massive Dirac fermion.
+Then if we define
+\begin{align}
+    \Psi =
+    \begin{pmatrix}
+        \Psi_1\\
+        \Psi_2
+    \end{pmatrix}
+\end{align}
+consider a $(1+1)D$ massive Dirac fermion
+\begin{align}
+    H_{\textrm{Dirac}} &=
+    \frac{1}{2}\int dx\,\left[
+    -i \nu \Psi^\dagger \sigma^y \partial_x \Psi
+    + m\Psi^\dagger \sigma^z \Psi
+    \right]
+\end{align}
+which arises as the continuum limit of the SSH model
+\begin{align}
+    H_{\mathrm{SSH}} &=
+    -\sum_{i}\left[
+    \left( t + {(-1)}^{i} \delta t \right) c_i^\dagger c_{i+1} + \textrm{h.c.}
+    \right]
+\end{align}
+This is used to model polyaccetaline if we enable two spin $\frac{1}{2}$.
+Lable each unit cell by
+\begin{align}
+    \Psi_r &=
+    \begin{pmatrix}
+        c_{2r - 1}\\
+        c_{2r}
+    \end{pmatrix}
+\end{align}
+Also $\delta t \approx m$ of Dirac point.
+
+Consider a domain wall in $m(x)$.
+Look for eigenstates of $H_{\textrm{Dirac}}$.
+\begin{align}
+    q^\dagger &= \int dx\,\left[ 
+    \phi_1(x) \psi_1^\dagger(x)
+    + \phi_2(x) \psi_2^\dagger(x)
+    \right]
+\end{align}
+defines eigenstate of energy $\varepsilon$ since
+\begin{align}
+    \left[ H_{\mathrm{Dirac}}, q^\dagger \right] &=
+    \varepsilon q^\dagger.
+\end{align}
+where $\phi =
+\begin{pmatrix}
+    \phi_1\\
+    \phi_2
+\end{pmatrix}$.
+
+Consider a simple limit with 1 fermion pre unit cell.
+And we have 2 chains.
+1 fermion = 2 domain wall.
+1 domain wall = $\pm\frac{1}{2}$ charges.
+Example of charge fractionalization in charge topological insulator.
+
+Generalization: $\frac{1}{m}$ fillings.
+CDW with on sites per unit cell $\to$
+elementary domain wall
+$\implies$
+$\pm \frac{1}{m}$ charges.
+
+\begin{enumerate}
+    \item Modulation arises from spontaneous symmetry breaking
+        both dimerization patterns have some energy.
+        Domain walls are ``deconfined''.
+    \item Modulation from ``explicit'' symmetry breaking terms domain wall.
+        Then two dimerization patterns have different energy
+        $\to$ confined linear energy cost.
+\end{enumerate}
+
+\subsection{MZMs and J-R soliton}
+\begin{align}
+    \Phi(x) &=
+    \begin{pmatrix}
+        \Psi\\
+        \Psi^\dagger
+    \end{pmatrix}\\
+    \Psi &= \sigma_x \Psi^*\\
+    \Phi_0 &=
+    \begin{pmatrix}
+        \phi_0\\
+        \lambda \phi_0
+    \end{pmatrix}\\
+    q^\dagger &=
+    \int dx\, \left[
+    \phi_0\Psi^\dagger(x) + \lambda \phi_0\Psi(x)
+    \right]
+\end{align}
+$\phi_0$ is real $\implies$ $q= \lambda q^\dagger$ and
+\begin{align}
+    \gamma &=
+    \begin{cases}
+        q & \lambda = 1\\
+        iq & \lambda = -1
+    \end{cases}
+\end{align}
+which implies
+\begin{align}
+    \gamma^\dagger &= \gamma\\
+    \gamma^2 &= 1
+\end{align}
+which are Majorana zero modes bound to domain walls.
