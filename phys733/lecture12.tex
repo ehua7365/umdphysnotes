@@ -1,0 +1,498 @@
+\section{Massive Dirac Fermion Model}
+The dispersion relation $E(k_x, k_y)$ looks like a cone.
+
+New band touching,
+we get Dirac fermion
+\begin{align}
+    H &=
+    \int d^2 x\,
+    \Psi^\dagger\left(
+        -i\sigma^x v_x D_x
+        - i\sigma^y D_y
+        + m\sigma^z
+    \right)\Psi
+\end{align}
+where
+\begin{align}
+    D_j &= \partial_j - i A_j
+\end{align}
+We can rescale space to get isotropic velocity
+\begin{align}
+    y \to \frac{v_y}{v_x}y
+\end{align}
+
+In the Lagrangian formulation
+\begin{align}
+    S &= \int d^3x\, \mathcal{L}
+\end{align}
+the Lagrangian density is
+\begin{align}
+    \mthcal{L} &=
+    \overline{\Psi} \left( i \slash{D} - m \right) \Psi
+\end{align}
+where we use Feynman slash notation
+\begin{align}
+    \slash{D} = \gamma^{\mu}D_{\mu}
+\end{align}
+and
+\begin{align}
+    \overline{\Psi} &= \Psi^\dagger \gamma^0
+\end{align}
+and the Dirac matrices here are
+\begin{align}
+    \gamma^0 &= \sigma^z\\
+    \gamma^1 &= i \sigma^x\\
+    \gamma^2 &= i\sigma^y.
+\end{align}
+In continuum,
+can also define on curved space-time a metric $g_{\mu\nu}$
+with action
+\begin{align}
+    S &= \int d^3x\,
+    \sqrt{|g|} \mathcal{L}
+\end{align}
+where you can diagonalize the metric with orthonormal frame fields
+\begin{align}
+    g_{\mu\nu}^a \eta_{\alpha\beta} e_{\nu}^b
+\end{align}
+and we use the Minkowski metric
+\begin{align}
+    \eta &=
+    \begin{pmatrix}
+        1 & &\\
+        & -1 &\\
+        & & -1
+    \end{pmatrix}.
+\end{align}
+The group of transformations which leaves the metric invariant is
+$SO(2, 1)$, which means there is a redundancy in this description,
+as transformations like
+\begin{align}
+    e_{\mu}^a \to \sum_{b} W_{ab} e_\mu^b
+\end{align}
+where $W\in SO(2,1)$ describe the same thing.
+This gauge symmetry leads to a $SO(2, 1)$
+non-Abelian gauge field
+\begin{align}
+    W_\mu^{ab}
+\end{align}
+which is also called the ``spin connection''.
+The holomony of this gauge filed will tell you how you wind up rotated as you go
+in a closed loop.
+It tells you how to do parallel transport in your space to relate frame fields to
+each other in different points in space.
+
+So the field strength of the spin connection will then give you the curvature of
+spacetime.
+
+The way you couple Dirac fermions to space-time curvature is to couple them to
+this non-Abelian gauge field,
+the spin connection.
+
+\begin{question}
+    What was the redundancy?
+    If $W$ is just a redundancy,
+    how can it define a field?
+\end{question}
+When you have $U(1)$ gauge symmetry,
+you have
+\begin{align}
+    \psi \to e^{i\theta} \psi
+\end{align}
+Then we gauge the global symmetry.
+
+\begin{question}
+    Although it's called spin connection,
+    it seems only related to the $SO(2, 1)$ spacetime,
+    but not the field that lives on the spacetime?
+\end{question}
+What you're alluding to will come up next,
+how to couple the field to the Dirac spinor,
+during which we must pick a representation,
+and we have to pick the spinor representation.
+
+\begin{question}
+    How will we be gauging this?
+    These are local transformations to begin with,
+    do we need to gauge them?
+\end{question}
+It's like turning on gravity.
+When you turn on $g$,
+you have curved spacetime,
+and to describe it,
+it's turning on a gauge field associated with $SO(2, 1)$.
+It gives a way of thinking of curvature as an ordinary gauge term,
+of $SO(2,1)$ in this case.
+
+\begin{question}
+    If you want your theory to be invariant,
+    there should be some cancellation of fermionic field,s
+    and since the field is present,
+    it can demonstrate the curvature of spacetime.c
+    But sine the $W$ is just a local Lorentz transformation,
+    it doesn't carry.
+\end{question}
+I'm not spelling this out,
+I'm just sketching the general thing.
+Just to see what fields are involved in the description.
+So fermions should couple to this gauge field $W_\mu^{ab}$.
+So the covariant derivative $D_\mu \psi_\alpha$.
+
+The spinor should be written as
+\begin{align}
+    \Psi =
+    \begin{pmatrix}
+        \psi_1\\
+        \psi_2
+    \end{pmatrix}
+\end{align}
+and then we want to couple to the gauge field the following way.
+\begin{align}
+    D_{\mu}\psi_\alpha &=
+    \left( \partial_\mu - iA_\mu \right)\psi_\alpha
+    + \frac{1}{2} W_\mu^{ab}\left( S_{ab} \right)_{\alpha\beta}\psi_\beta
+\end{align}
+where the $S_{ab}$ is the spinor representation of the Lorentz group,
+can be written in terms of Gamma matrices.
+
+So now we can consider integrating out the fermions.
+
+By integrating out the fermions,
+I mean we do something like this.
+\begin{align}
+    e^{iS_{\mathrm{eff}}[A,W]} &=
+    \int \mathcal{D}\overline{\Psi}\,\mathcal{D}\Psi\,
+    e^{iS[\Psi, A, W]}.
+\end{align}
+It will be homework,
+but the point  is,
+to lowest order,
+you get Chern-Simons terms.
+\begin{align}
+    S_{\mathrm{eff}} &=
+    \frac{1}{4\pi} \frac{\sgn(m)}{2}
+    \int \epsilon^{\mu\nu\lambda} A_\mu \partial_\nu A_\lambda
+    + \frac{\sgn(m)}{2} S_{\mathrm{CS,grav}}
+\end{align}
+where the second term is the gravitational Chern-Simons term for the non-Abelian
+gauge field.
+
+And this term is
+\begin{align}
+    S_{\mathrm{CS,grav}} \propto
+    \int\Tr\left( w\wedge dw + \frac{2}{3} w\wedge w \wedge w \right).
+\end{align}
+Changing the sign of the mass gives
+\begin{align}
+    \Delta S &= \frac{1}{4\pi} \int A\, dA
+    + S_{\mathrm{CS,grav}}
+\end{align}
+The point of this was to see what the effective action is from the point of view
+of the Dirac fermions and see how we can reproduce the
+$A_\mu \partial_\nu A_\lambda$
+Chern-Simons term and that we also get this over gravitational term.
+
+Every time we describe topological phases with free Fermions,
+there's always some way to also describe it in terms of Majorana fermions
+or Dirac fermion.
+
+\begin{question}
+    Why is there a 1/2 factor in
+    \begin{align}
+        \frac{1}{2}W_\mu^{ab} \left( S_{ab} \right)_{\alpha\beta}\psi_\beta.
+    \end{align}
+\end{question}
+
+Now we have a Dirac fermion of 2+1D and we can chase the phase we're in by
+changing the mass.
+The same thing happens in other dimensions,
+and by changing the mass term,
+you can go through different topological phases.
+
+\subsection{Chiral fermion on domain wall in mass}
+If you have a system with boundaries,
+you can have chiral fermion modes.
+Because changing the sign of the mass changes the Chern number,
+because it changes the effective action by one unit of the CS term.
+It turns out,
+at the domain wall,
+we're going to have exponentially localized to the domain wall,
+that's gapless and chiral.
+Let $m(x)$ is negative for negative $x$ and positive for positive $x$.
+It reduces to the Jakiw-Rabbi soliton in 1D.
+The Hamiltonian is
+\begin{align}
+    H &=
+    \int dx\, dy\,
+    \Psi^\dagger\left(
+        -i\sigma^x \partial_x - i\sigma^y \partial_y + m(x) \sigma^z
+    \right)
+\end{align}
+where I set the velocities to 1.
+
+For a plane wave
+\begin{align}
+    \Psi(x, y) &= \Psi(x) e^{ik_x y},
+\end{align}
+the eigenvalue equation is
+\begin{align}
+    \left( -i\sigma^x \partial_x + m(x) \sigma^z \right)\psi
+    &=
+    \left( E_{k_y} - k_y \sigma^y \right)\psi.
+\end{align}
+If you remember what we did in the Jakiv-rabbi Soliton,
+there was a zero-energy solution where
+$E_{k_y} + k_y \sigma^x$ was the solution
+and it was exponentially localized to the domain wall.
+
+Recall in the J-R soliton,
+there is a $z$ mode solution $\psi_0$
+with
+\begin{align}
+    \sigma^x \psi_0 = \lambda \psi_0
+\end{align}
+where $\lambda = \pm 1$.
+This zero-energy solution means that we get a solution localized to the domain
+wall with an energy
+\begin{align}
+    E_{k_y} &= -\lambda k_y.
+\end{align}
+If we had a domain wall where $m(x)<0$ on one side
+but $m(x)>0$ on the other side, 
+we have a propagating fermion exponentially confined to the domain wall.
+
+We have a chiral anomaly and a gravitational anomaly,
+which is partially responsible for a quantized thermal quantum hall effect.
+
+The $(1+1)D$ chiral fermion has a
+$U(1)$ chiral anomaly,
+which is a t' Hooft anomaly.
+There is also a gravitational anomaly.
+Both of these anomalies can be cancelled by the
+$(2+1)D$ bulk,
+which is the Chern insulator.
+This is an example
+of how you have anomalies in one dimension,
+but are cancelled in higher dimensions.
+Related to this is the fact that the chiral fermion is gives a quantized thermal
+hall conductance.
+
+The gravitational anomaly and the quantized thermal Hall conductance
+defines a chiral central charge $C_{-}$.
+It is the same as the Chern number for free fermion systems,
+but that breaks down for interacting systems.
+
+If you view them as boundaries of a Chern insulator,
+there's no longer anything wrong with the anomalies.
+
+U(1) chiral anomaly
+
+The effective action for Dirac fermions is
+\begin{align}
+    S_{\mathrm{eff}} &=
+    \int A\, dA
+    + S_{\textrm{CS,grav}}
+\end{align}
+
+Then if we turn on the electric field
+\begin{align}
+    \frac{dp}{dt} &= E
+\end{align}
+and suppose we increase the momentum by $\Delta t= \int E\, dt$.
+Imagine putting it on a  ring with periodic boundary conditions.
+$p$ is quantized in units $2\pi/L$.
+Then the charge is
+\begin{align}
+    \Delta Q &=
+    \frac{\Delta p}{2\pi /L}\\
+    &= \frac{L}{2\pi} \int E\, dt\\
+    &= \frac{1}{2\pi} \int E\, dy dt\, j
+\end{align}
+and also nothing that the charge is just
+\begin{align}
+    \int \partial_t n \, dt\, dy
+\end{align}
+where $n$I s the charge density,
+you get
+\begin{align}
+    \partial_t n &= \frac{1}{2\pi E}.
+\end{align}
+The covariant versions of this is
+\begin{align}
+    \partial_\mu j^\mu &= \frac{1}{2\pi}\epsilon_{\mu\nu}F^{\mu\nu}.
+\end{align}
+The key is that some conservation law breaks down when you turn on the field.
+
+Suppose you have a cylinder with boundaries 
+The bulk cancels the anomaly because it tells you exactly where the charge comes
+from.
+If you have both edges at the same time,
+
+Include both edges.
+\begin{align}
+    \partial_\mu j_{\nu}^{\mathrm{axial}} &=
+    \frac{1}{2\pi} \epsilon_{\mu\nu} F_{\mu\nu}..
+\end{align}
+Sometimes axial current is called chiral current.
+
+Earlier in the course I said you can have 't Hooft anomalies
+which allow you to couple to the background gauge do
+Trying to $A_\mu$
+\begin{align}
+    S_{\mathrm{coupling}} &=
+    \int A_\mu j^\mj
+    = \to \int_{} \left( A_\mu - \partial_\mu f \right) \gamma^\mu\\
+    \delta S &= \int f \partial_\mu j^\mu &= 0
+\end{align}
+
+\subsection{Gravitational Anomaly}
+To couple a field theory to gravity,
+that means we want to couple it to some spacetime metric.
+If we want to couple to $g_{\mu\nu}$,
+we need a conserved stress energy tensor $T_{m\nu}$
+which is conserved meaning
+\begin{align}
+    \Delta_\mu T^{\mu\nu}.
+\end{align}
+And the gravitational anomaly is a breakdown of this equation.
+For example,
+for the chiral fermion,
+\begin{align}
+    \nabla_\mu T^{\mu\nu} \propto C_{-}\epsilon^{\nu\sigma}\partial_{\sigma}R
+\end{align}
+where $C_{-}$ is the chiral central charge
+and $R$ is the space-time curvature.
+
+The next thing I want to describe is the last property,
+which is the quantized thermal Hall conductance.
+
+\subsection{Quantized Thermal Hall Conductance}
+Suppose we have a $(2+1)$D Chern insulator region
+where $C=1$,
+which is coupled to a thermal bath at temperature $T_1$ with $C=0$
+and the other side is coupled to a thermal bath at temperature $T_2$.
+So we have a \emph{thermal current}
+\begin{align}
+    \vec{j}_Q = -\kappa \vec{\nabla} T
+\end{align}
+But here there is a quantized thermal hall conductance
+\begin{align}
+    \kappa_H &=
+    \frac{\pi^2}{3} \frac{k_B^2}{h}T
+\end{align}
+per chiral edge mode
+so the quantized thermal current is
+\begin{align}
+    j_{Q,X} &= -\kappa_H \Delta T.
+\end{align}
+
+The intuition is as follows.
+If you couple the top to some temperature,
+you're creating a thermal density of excitations,
+where the average energy is $k_B T_1$
+and same for the other side.
+But because it's chiral,
+you have a flow of energy along that boundary,
+and a flow of energy along the other boundary in the opposite direction,
+and if the temperatures and thus energies different,
+there is a net flow of energy.
+
+Consider a single chiral edge mode at temperature $T$.
+The average energy density
+\begin{align}
+    n_Q &=
+    \int \frac{dk}{2\pi}
+    \left( \varepsilon_k - \mu \right)\left[ 
+    \frac{1}{e^{\beta\left( \varepsilon_k - \mu \right)} + 1}
+    - n_{FD;k}(T = 0)
+    \right]
+\end{align}
+where the energy is $\varepsilon_k = \hbar v\cdot k$ and the thermal current is
+\begin{align}
+    j_Q = v\cdot n_Q = \frac{\pi^2}{6} \frac{k_B^2}{h}T^2.
+\end{align}
+For two edge modes,
+one going to the right with current
+\begin{align}
+    j_{Q,1} &=
+    \frac{\pi^2}{6} \frac{k_B^2}{h} T_1^2
+\end{align}
+and one going to the left
+\begin{align}
+    j_{Q,2} &=
+    \frac{\pi^2}{6} \frac{k_B^2}{h} T_2^2
+\end{align}
+so the total current is their difference
+\begin{align}
+    j_{Q,\mathrm{tot}} &=
+    \frac{\pi^2}{6} \frac{k_B^2}{h}
+    \left( T_1^2 - T_2^2 \right)\\
+    &=
+    \underbrace{\frac{\pi^2}{6} \frac{k_B^2}{h} 2T_1 \Delta T}_{\kappa_H}
+    + \mathcal{O}\left( \Delta T^2 \right)
+\end{align}
+where $T_2 = T_1 + \Delta T$.
+In general,
+\begin{align}
+    \kappa_H &=
+    C_{-} \frac{\pi^2}{3} \frac{k_B^2}{h}T
+\end{align}
+and here the chiral central charge $C_{-}$ is the number of right-moving chiral
+fermion modes minus the number of left-moving chiral fermion modes on a given
+edge.
+
+The reason we introduce this is because
+Majorana fermions are half a complex fermion,
+so it has a $\frac{1}{2}$ chiral central charge.
+In fact,
+it's much more general,
+and has to do with a conformal field theory.
+More complicated topological quantum phases of matter
+with boundaries not described by chiral fermions,
+but there is still a chiral central charge.
+
+\begin{question}
+    About the $U(1)$ anomaly there's a way to see the bulk.
+    Is there a way to see how the gravitational anomaly comes from the bulk?
+\end{question}
+The gravitational anomaly,
+you can do calculations and put your system on a curved spacetime,
+you see extra energy,
+and if you write the extra CS term,
+it will account for the non-conservation of the stress energy tensor.
+But you won't be able to relate it to the quantized thermal Hall effect,
+because there is no boundary.
+The boundaries are supposed to be moving as we adiabatically insert flux.
+You can't really relate it to the thermal hall effect in a clear way.
+
+\begin{question}
+    Is the only way you can have these chiral fermions is in relation to the
+    bulk?
+\end{question}
+
+\begin{question}
+    Is the gravitational anomaly what leads to the quantized hall conductance?
+\end{question}
+I don't have a good explanation except that $C_-$ appears in both cases.
+Just like how we derive conductivity by turning on an electric field,
+you can turn on thermal conductivity by turning on a gravitational field.
+In the context of the quantum Hall effect,
+there have been many studies,
+but I don't think it led to a direct connection between the thermal Hall effect
+and the gravitational response.
+From my perspective,
+there's central charges appearing in both places.
+There might e ways of introducing thermal conductivity on the edge
+by introducing gravitational potential.
+There's a fundamental mismatch,
+because the bulk can never have thermal quantum hall effect.
+It's possible other people might have a better answer.
+
+\begin{question}
+    A cylinder with a gradient around the cylinder?
+\end{question}
+That doesn't even make sense.
+You can't really put a temperature gradient on the boundary of this thing
+because it's chiral.
+I didn't put a gradient along the edge,
+I don't think it's even something you can do.

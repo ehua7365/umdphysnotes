@@ -1,0 +1,281 @@
+\section{Massive Dirac Fermion Model}
+The dispersion relation $E(k_x, k_y)$ looks like a cone.
+
+New band touching,
+we get Dirac fermion
+\begin{align}
+    H &=
+    \int d^2 x\,
+    \Psi^\dagger\left(
+        -i\sigma^x v_x D_x
+        - i\sigma^y D_y
+        + m\sigma^z
+    \right)\Psi
+\end{align}
+where
+\begin{align}
+    D_j &= \partial_j - i A_j
+\end{align}
+We can rescale space to get isotropic velocity
+\begin{align}
+    y \to \frac{v_y}{v_x}y
+\end{align}
+
+In the Lagrangian formulation
+\begin{align}
+    S &= \int d^3x\, \mathcal{L}
+\end{align}
+the lagrangian density is
+\begin{align}
+    \mthcal{L} &=
+    \overline{\Psi} \left( i \slash{D} - m \right) \Psi
+\end{align}
+where we use Feynman slash notation
+\begin{align}
+    \slash{D} = \gamma^{\mu}D_{\mu}
+\end{align}
+and
+\begin{align}
+    \overline{\Psi} &= \Psi^\dagger \gamma^0
+\end{align}
+and the Dirac matrices here are
+\begin{align}
+    \gamma^0 &= \sigma^z\\
+    \gamma^1 &= i \sigma^x\\
+    \gamma^2 &= i\sigma^y.
+\end{align}
+In continuum,
+can also define on curved space-time a metric $g_{\mu\nu}$
+with action
+\begin{align}
+    S &= \int d^3x\,
+    \sqrt{|g|} \mathcal{L}
+\end{align}
+where you can diagonalzie the metric with orthonormal frame fields
+\begin{align}
+    g_{\mu\nu}^a \eta_{\alpha\beta} e_{\nu}^b
+\end{align}
+and we use the Minkowski metric
+\begin{align}
+    \eta &=
+    \begin{pmatrix}
+        1 & &\\
+        & -1 &\\
+        & & -1
+    \end{pmatrix}.
+\end{align}
+The group of transformations which leaves the metric invariant is
+$SO(2, 1)$, which means there is a redundancy in this description,
+as transformations like
+\begin{align}
+    e_{\mu}^a \to \sum_{b} W_{ab} e_\mu^b
+\end{align}
+where $W\in SO(2,1)$ describe the same thing.
+This gauge symmetry leads to a $SO(2, 1)$
+non-abelian gauge field
+\begin{align}
+    W_\mu^{ab}
+\end{align}
+which is also called the ``spin connection''.
+The holomony of this gauge filed will tell you how you wind up rotated as you go
+in a closed loop.
+It tells you how to do parallel transport in your space to relate frame fields to
+each other in different points in space.
+
+So the field strength of the spin connection will then give you the curvature of
+spacetime.
+
+The way you couple Dirac fermions to space-time curvature is to couple them to
+this non-Abelian gauge field,
+the spin connection.
+
+\begin{question}
+    What was the redundancy?
+    If $W$ is just a redundancy,
+    how can it define a field?
+\end{question}
+When you have $U(1)$ gauge symmetry,
+you have
+\begin{align}
+    \psi \to e^{i\theta} \psi
+\end{align}
+Then we gauge the global symmetry.
+
+\begin{question}
+    Although it's called spin connection,
+    it seems only related to the $SO(2, 1)$ spacetime,
+    but not the field that lives on the spacetime?
+\end{question}
+What you're alluding to will come up next,
+how to couple the field to the Dirac spinor,
+during which we must pick a representation,
+and we have to pick the spinor representation.
+
+\begin{question}
+    How will we be gauging this?
+    These are local transformations to begin with,
+    do we need to gauge them?
+\end{question}
+It's like turning on gravity.
+When you turn on $g$,
+you have curved spacetime,
+and to describe it,
+it's turning on a gauge field associated with $SO(2, 1)$.
+It gives a way of thinking of curvature as an ordinary gauge term,
+of $SO(2,1)$ in this case.
+
+\begin{question}
+    If you want your theory to be invariant,
+    there should be some cancellation of fermionic field,s
+    and since the field is present,
+    it can demonstrate the curvature of spacetime.c
+    But sine the $W$ is just a local Lorentz transformation,
+    it doesn't carry.
+\end{question}
+I'm not spelling this out,
+I'm just sketching the general thing.
+just to see what fields are involved in the description.
+So fermions should couple to this gauge field $W_\mu^{ab}$.
+So the covariant derivative $D_\mu \psi_\alpha$.
+
+The spinor should be written as
+\begin{align}
+    \Psi =
+    \begin{pmatrix}
+        \psi_1\\
+        \psi_2
+    \end{pmatrix}
+\end{align}
+and then we want to couple to the gauge field the following way.
+\begin{align}
+    D_{\mu}\psi_\alpha &=
+    \left( \partial_\mu - iA_\mu \right)\psi_\alpha
+    + \frac{1}{2} W_\mu^{ab}\left( S_{ab} \right)_{\alpha\beta}\psi_\beta
+\end{align}
+where the $S_{ab}$ is the spinor representation of the Lorentz group,
+can be written in terms of Gamma matrices.
+
+So now we can consider integrating out the fermions.
+
+By integrating out the fermions,
+I mean we do something like this.
+\begin{align}
+    e^{iS_{\mathrm{eff}}[A,W]} &=
+    \int \mathcal{D}\overline{\Psi}\,\mathcal{D}\Psi\,
+    e^{iS[\Psi, A, W]}.
+\end{align}
+It will be homework,
+but the point  is,
+to lowest order,
+you get Chern-Simons terms.
+\begin{align}
+    S_{\mathrm{eff}} &=
+    \frac{1}{4\pi} \frac{\sgn(m)}{2}
+    \int \epsilon^{\mu\nu\lambda} A_\mu \partial_\nu A_\lambda
+    + \frac{\sgn(m)}{2} S_{\mathrm{CS,grav}}
+\end{align}
+where the second term is the gravitational Chern-Simons term for the non-Abelian
+gauge field.
+
+And this term is
+\begin{align}
+    S_{\mathrm{CS,grav}} \propto
+    \int\Tr\left( w\wedge dw + \frac{2}{3} w\wedge w \wedge w \right).
+\end{align}
+Changing the sign of the mass gives
+\begin{align}
+    \Delta S &= \frac{1}{4\pi} \int A\, dA
+    + S_{\mathrm{CS,grav}}
+\end{align}
+The point of this was to see what the effective action is from the point of view
+of the Dirac fermions and see how we can reproduce the
+$A_\mu \partial_\nu A_\lambda$
+Chern-Simons term and that we also get this over gravitational term.
+
+Every time we describe topological phases with free Fermions,
+there's always some way to also describe it in terms of Majorana fermions
+or Dirac fermion.
+
+Now we have a Dirac fermion of 2+1D and we can chase the phase we're in by
+changing the mass.
+The same thing happens in other dimensinos,
+and by chnagin the msas term,
+you can go thorugh different topological phases.
+
+\subsection{Chiral fermion on domain wall in mass}
+If you have a system with boundaryies,
+you can have chiral fermion modes.
+Because changing the sign of the mass chnages the Chern number,
+because it changes the effective action by one unit of the CS term.
+It turns out,
+at the domain wall,
+we're going to have exponentially localized to the domain wall,
+that's gapless and chiral.
+Let $m(x)$ is negative for negative $x$ and positive for positive $x$.
+It reduces to the Jakiw-Rabbi soliton in 1D.
+The Hamiltonian is
+\begin{align}
+    H &=
+    \int dx\, dy\,
+    \Psi^\dagger\left(
+        -i\sigma^x \partial_x - i\sigma^y \partial_y + m(x) \sigma^z
+    \right)
+\end{align}
+where I set the velociities to 1.
+
+For a plane wave
+\begin{align}
+    \Psi(x, y) &= \Psi(x) e^{ik_x y},
+\end{align}
+the eigenvalue equation is
+\begin{align}
+    \left( -i\sigma^x \partial_x + m(x) \sigma^z \right)\psi
+    &=
+    \left( E_{k_y} - k_y \sigma^y \right)\psi.
+\end{align}
+If you remember what we did in the Jakiv-rabbi Soliton,
+there was a zero-energy solution where
+$E_{k_y} + k_y \sigma^x$ was the solution
+and it was exponentially localized to the domain wall.
+
+Recall in the J-R soliton,
+there is a $z$ mode solution $\psi_0$
+with
+\begin{align}
+    \sigma^x \psi_0 = \lambda \psi_0
+\end{align}
+where $\lambda = \pm 1$.
+This zero-energy solution means that we get a solution localized to the domain
+wall with an energy
+\begin{align}
+    E_{k_y} &= -\lambda k_y.
+\end{align}
+If we hada domain wall hwere $m(x)<0$ on one side
+but $m(x)>0$ on the other side, 
+we have a propagatiting fermion exponentially confined to the domain wall.
+
+We have a chiral anomaly and a graviational anomaly,
+which is partially responsible for a quantized thermal quantum hall effect.
+
+The $(1+1)D$ chiral fermion has a
+$U(1)$ chiral anomaly,
+which is a t' Hooft anomaly.
+There is also a graviataionl anomaly.
+Both of these anomalies can be cancelled by the
+$(2+1)D$ bulk,
+which is the Chern insulator.
+This is an exammple
+of how you have anomalies in one dimesion,
+but are cancelled in higher dimensions.
+related to this isthe fac that the chiral fermion is gives a quantized thermal
+hall conductance.
+
+The gravitational anomaly and the quantized thermal Hall conductance
+defines a chiral central charge $C_{-}$.
+It is the same as the Chern number for free fermion systems,
+but that breaks down for interactiing systems.
+
+If you view them as boundaries of a Chern insulator,
+there's no longer anything wrong with the anomalies.
+
+U(1) chiral anomaly
