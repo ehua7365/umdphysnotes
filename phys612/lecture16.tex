@@ -1,0 +1,48 @@
+[40 min late]
+
+\section{Equivalence of microcanonical and canonical ensembles}
+\begin{align}
+    Z &= \Tr e^{-\beta H}\\
+    &=
+    \int_{0}^{\infty}\, \Gamma(E) e^{-\beta E}
+\end{align}
+where the density of states is $\Gamma(E)=e^{S(E)/k_B}$.
+Then
+\begin{align}
+    E &=
+    \int_{0}^{\infty} dE\,
+    e^{\frac{S(E)}{k_B} - \frac{E}{k_B T}}\\
+    &\approx 
+    \left. \Delta e^{\frac{1}{k_B}\left( S - \frac{E}{T} \right)}
+    \right|_{E = E^*}
+\end{align}
+and we don't care about the $\Delta$ because it's just a constant factor that
+goes away in the log.
+It is sharpley bpead as
+\begin{align}
+    \frac{\Delta E}{E} \to \frac{1}{\sqrt{N}}
+\end{align}
+
+
+\section{``Derivation'' of the canonical ensemble from the microcanonical}
+Allow heat exchange.
+Subsystem.
+Heat reservoir.
+\begin{align}
+    \rho_T (\underbrace{q, p}_{\text{subsystem}}, \underbrace{Q,
+    P}_{\text{reservoir}}) &\sim
+    \delta_\Delta\left( 
+    H(p,q,P,Q) - E_T
+    \right)
+\end{align}
+where $\delta_\Delta$ is a delta function with finite width $\Delta$.
+I'm going to sum over all values of the reservoir of that probability
+distribution and I'm going to get a function of that subsystem only.
+\begin{align}
+    \rho(q, p) &=
+    \int dQ\, dP\,
+    \underbrace{\rho_T\left( q, p, Q, P \right)}_{%
+    \delta_\Delta\left( H(q, p) + H_R(Q,P) - E_T \right)
+    }\\
+    &= \Gamma_R\underbrace{\left( H(q,p) - E_T \right)}_{E_R}
+\end{align}
