@@ -1,0 +1,859 @@
+\section{Many-body definition of Chern number}
+I want to talk about the many-body definition of Chern number.
+
+For every band you can assign a Chern number.
+At the face of it,
+it's only a property of band structure,
+of single-particle TI system.s
+There's 2 pieces of evidence for something more general.
+
+1. The Chern number dictate th Hall conductivity,
+which is quantized.
+So if the Hall conductivity is given by an integer invariant in the free band
+theory,
+as you slowly turn on interaction,
+that shouldn't change,
+so there should also be a quantized invariant for that
+but how do you extract that from the GS wave function.
+2. I had a continuum Dirac theory,
+that you have a mass term,
+and integrate out the other degrees of freedom.
+In that field theory,
+you can have higher order field theory interaction
+and you get a 4-fermion interaction that is irrelevant by RG,
+which you ignore,
+so you still have this integer quantity that is still defined if you change
+the sign of the mass.
+
+So the Chern number should be well-defined for interacting systems that doesn't
+require TI.
+
+I will give you multiple ways of calculating the Chern number fro GS
+wavefunctions.
+
+
+Hall conductivity and twisted boundary conditions.
+Suppose we put our system on a torus,
+and we insert flux on both holes of the torus,
+so consider changing the vector potential in the $x$ and $y$ directions.
+\begin{align}
+    \delta A_x &=
+    \frac{\Phi_0}{L_x} \frac{\theta_x}{2\pi}\\
+    \delta A_y &= 
+\end{align}
+adding these fluxes changes the Hamiltonian,
+and we get a term that looks like the gauge fields coupling to the current
+\begin{align}
+    \delta H &=
+    \int d^2x \, \delta A_i J^i\\
+    &=
+    - \sum_{i=x,y} \frac{\Phi_0}{L_i} \frac{\theta_1}{2\pi}
+    \int d^2 x\, J^i
+\end{align}
+and $H[\theta_x, \theta]$
+Twisted boundary conditions vs flux through the hole of the torus are related by
+singular gauge transformations.
+Given this Hamiltonian,
+we have a ground state wave function of this Hamiltonian
+\begin{align}
+    \ket{\Psi(\theta_x, \theta_y)}
+\end{align}
+from which we can construct the Berry connection,
+just like before in momentum space.
+
+So I can define
+\begin{align}
+    A_j(\theta_x, \theta_y) &=
+    -i \bra{\psi(\theta_x, \theta_y)}
+    \frac{\partial}{\partial \theta_j}
+    \ket{\psi(\theta_x, \theta_y)}
+\end{align}
+and from this we can define a field strength
+\begin{align}
+    F_{ij} &= \partial_i A_j - \partial_j A_i
+\end{align}
+And here the closed surface is the torus,
+because $\theta_x$ can go from $0$ to $2\pi$,
+and once it's $2\pi$,
+we can do a large gauge transformation
+to relate it to the system without the flux.
+And we get
+\begin{align}
+    C &=
+    \frac{1}{2\pi}\int d^2\theta\,
+    F
+    \in \mathbb{Z}
+\end{align}
+And this is really an integral over the torus.
+\begin{align}
+    \theta_x $\sim \theta_x + 2\pi\\
+    \theta_y $\sim \theta_y + 2\pi
+\end{align}
+The BZ was a torus,
+but here the space is also a torus.
+We integrate this field strengh over a closed surface,
+it has to be an integer from thes ame argument I gave before.
+
+If we look at hte $\theta$-dependence,
+\begin{align}
+    \frac{\delta H}{\delta \theta_i} &=
+    \frac{\Phi_0}{L_i} \frac{1}{2\pi}
+    \underbrace{%
+    \int d^2x\,
+    J_i
+    }_{\text{0-momentum part of current}}
+\end{align}
+and so we will be able to relate the Chern number
+to some current-current corelation function,
+which shoud be related to the Hall conductivity.
+In fact,
+you can prove that the Hall conducivity is
+\begin{align}
+    \sigma_H &=
+    \frac{e^2}{h} \frac{1}{2\pi} F_{xy}(\theta_x, \theta_y)
+\end{align}
+The proof is in the homework.
+The relation between the Hall conductivity and the Chern number is that if you
+average the Hall conductivity over the space of wave funtions,
+the you find
+\begin{align}
+    \langle \sigma_H \rangle
+    = C \frac{e^2}{h}
+\end{align}
+that is,
+the average over twisted boundary conditions.
+In fact,
+you find
+\begin{align}
+    \sigma_H &= \langle \sigma_H \rangle_{BC's}
+\end{align}
+People understood you get thse two formulae
+and you should expect the Hall conducitvity is an average over boudnar
+yconditions,
+and witha gapped system,
+no quantity should care what the flux is thorugh these non-contractible cycles,
+in the infinite system size,
+because there is a finite-correlation lngh.
+If hte cycle is large,
+locally you need some coherenetnce thorugh the yccle,
+so you need some correlation length that scales with teh size of the system.
+Intuitively,
+people expected
+but in a tour-de-force of mathematical physics a decade,
+this was proven about 2010 by Hastings and Michalakis.
+
+If you think of inserting flux,
+or you can do a singular gauge transformation,
+remove the flux,
+and do some twisted boundary conditions,
+and the twist is the $\theta$.
+You can relate
+\begin{align}
+    \psi\left( r_1, r_2, \ldots, r_N \right) &=
+    e^{i\theta_x}\psi\left( r_1 + L_x \hat{x}, r_2,\ldots \right)
+\end{align}
+and the point is,
+that this is related by a singular gauge transformation.
+I'm not spelling out the whole story, because I assume you know already.
+
+The main lesson,
+is that this way of defining Chern number
+gives a way to define an integer invariant in a many-body system.
+We can define a Chern number for any $U(1)$ symmetry,
+because the moment I have a U(1) symmetry,
+I can turn on a background gauge field,
+and insert flux through that torus,
+and define a symmetry associated with it.
+So every U(1) symmetry can have a  Chern number associated with it,
+and that gives a way to define a U(1) symmetry in a gapped many-body system.
+And there's few things I want to emphasize here.
+
+This thing is intrinsically many-body.
+Not a single free fermions,
+not assuming translationally invariant.
+So not band theory.
+
+We also assumed implicitly that the system has a unique ground state.
+
+This definition of the Chern number so far assumes you have a unique ground
+state.
+We're adiabatically inserting flux,
+but in some system like fractional quantum hall effect,
+if you insert integer flux,
+you actually wind to a different ground state,
+so you need many flux quanta to wind up in the same ground state.
+So here with $2\pi$ flux,
+you end up with the same exact ground state.
+We get this Berry phase by moving around in one direction,
+and if you consider may directions,
+you get a single ground ate.
+
+We can still define a Chern number with degenerate ground sates,
+but there is an index here,
+and this is a non-Abelian gauge field,
+and this field strength because a non-Abelian gauge field,
+and we need some extra fields,
+and the Chern number is the trace of that field strength.
+You can still define Chern number,
+but it's not a U(1).
+I won't say anything more.
+You can do it,
+but you need to consider non-Abelian Berry gauge fields.
+
+\begin{question}
+    To go to a non-Abelian symmetry,
+    how would we do that?
+\end{question}
+So now you're saying,
+suppose we have $SU(2)$ symmetry,
+can you still define a Chern number?
+The quick way to answer this question is,
+Chern number we associated with an effective action
+and the coefficient was the Chern number.o
+With SU(2),
+you turn on non-Abelian SU(2) gauge fields,
+then write down a non-Abelian CS theory,
+and that will also have a coefficient that is also a Chern number.
+There will be a Chern number,
+but to define it,
+you're going to consider.
+Then what you do is insert flux associated with some U(1) subgroup of
+SU(2)
+Just compute it for some U(1) subgroup.
+I said that quickly,
+because I didn't explain.
+
+\begin{question}
+    what about discrete groups instead of U(1)?
+\end{question}
+We can write down
+\begin{align}
+    S_{CS}[A] = \int \frac{C}{4\pi} A\, dA
+\end{align}
+but this doesn't make sense if you have some net flux through your manifold,
+like a net magnetic monopole,
+you can't globally define $A$,
+and make sense.
+But here is a remedy,
+and it is to go to group cohomology.
+I'll just stop there.
+Once you view the Chern-Simons theory through that more appropriate lens,
+then that framework you can easily extend to discrete groups.
+
+\begin{question}
+    Why not glue the state to $SU(2)$ state at the boundary?
+\end{question}
+Let me say just a bit more about this $SU(2)$ case
+For $SU(2)$ symmetry
+you would consider SU(2) gauge fields.
+And the effective action would be some integer
+\begin{align}
+    S_{\text{eff}} &=
+    \frac{C}{8\pi}
+    \int \Tr\left( 
+    A\wedge dA
+    + \frac{2}{3} A \wedge A \wedge A
+    \right)
+\end{align}
+If the goal was just to know $C$,
+you can pick $A$ to live in some $U(1)$ subgroup,
+evaluate the action,
+and figure out what this coefficient is.
+You know the whole thing si $SU(2)$ invariatn,
+so you can just pick $A$ to be in a particular $U(1)$ sugroup,
+then evaluate to figure out what the coefficient is.
+
+In general,
+you could imagine you have some $SU(2)$ flux here,
+but you can do an $SU(2)$ rotation,
+so this $\theta_x$ lies in some $U(1)$ subgroup,
+but then you have to wrory about thsi $\theta_y$.
+It's not the most general thing to do,
+to figure out Chern number,
+just have $A$ lie in some subgroup,
+and evaluate the subgroup frmo there.
+Once you figured out hte Chern number,
+there is only one possible Chern number.
+
+I'm just giving you a trick to calculate the Chern number in the $SU(2)$ case.
+It doesn't map analogously.
+
+In general,
+you could imagien in the $x$ direciton,
+yocuould have a genera l$SU(2)$ matrix,
+and you tyr to cnostruct something like the $A_j(\theat_x,\theta_y)$ formula.
+But I haven't thought about tha procedure.
+
+\begin{question}
+$C$ here can be any integer,
+but is it still integer for $SU(2)$?
+\end{question}
+The CS theory for $U(1)$,
+we usually write as
+\begin{align}
+    S_{eff}^{U(1)} &=
+    \frac{C_{U(1)}}{4\pi}\int A\, dA
+\end{align}
+but for $SU(2)$,
+\begin{align}
+    S_{\text{eff}} &=
+    \frac{C}{8\pi}
+    \int \Tr\left( 
+    A\wedge dA
+    + \frac{2}{3} A \wedge A \wedge A
+    \right)
+\end{align}
+Note the $4\pi$ vs $8\pi$.
+For bosonic systems,
+\begin{align}
+    C_{U(1)} &\in 2\mathbb{Z},\\
+    C_{SU(1)} &\in 2\mathbb{Z},
+\end{align}
+But for fermionic system,s
+\begin{align}
+    C_{U(1)} &\in \mathbb{Z}\\
+    C_{SU(1)} &\in \mathbb{Z}
+\end{align}
+
+\section{Thouless Pond}
+Let's view the Chern number from polarization in 1D.
+Recall if we put our system on a cylinder,
+and insert flux through the cylinder.
+Let's say we have some $\theta_x = \Phi$ flux.
+And the cyclinder is alnog the $x$ direciton.
+This causaes an electric field in the $y$ direciton,
+which auses a current $j_x$.
+Charge is flooiwng alon the $x$ direciton,
+and if you view htis as 1D system,
+the polarization is changing with time that gives rise to the current.
+Think about the Chern number in terms of the polarizaiton of this effecively 1D
+system.
+
+That's the perspective,
+and see how it relates to the Chern number in 2D.
+
+Let's start off discussing dimensional reduction of a 2D tight binding model.
+Suppose we have a tight-binding model on a cylinder.
+$x$ is alnog, $y$ is around the cylinder,
+because $y$ is periodic, $k_y$ is a good quantum number.
+
+It's a cylinder in the sense there are boundaries at the two ends
+in the $x$ direction.
+We can do a fermion operator,
+with band $\alpha$.
+\begin{align}
+    C_{k_{y,\alpha}} &=
+    \frac{1}{\sqrt{L_y}}
+    \sum_y C_{\alpha}(x, y)
+    e^{i k_y y}
+\end{align}
+the Hamiltonian is
+\begin{align}
+    H &= -\sum_{ij} t_{ij} c_i^\dagger c_j + \textrm{h.c.}\\
+    &= \sum_{k_y} H_{1D}[k_y]
+\end{align}
+It's a sum of independent 1D systems where $k_y$ is just some parameter now.
+You can think of your system as a bunch of $L_y$ different 1D chains.
+For this 1D system,
+$k_y$ is effective just some number.
+
+Let's insert flux.
+\begin{align}
+    A_y &= - E_y t = \frac{\Phi(t)}{L_y}\\
+    A_x &= 0
+\end{align}
+where $E_y$ is the electric field.
+You can think of it as.
+\begin{align}
+    H &= \sum_{k_y} H_{1D}\left( k_y + A_y \right)
+\end{align}
+and this causes a current,
+and remember the Hamiltonian is decoupled in $k_y$,
+\begin{align}
+    J_x &=
+    \sum_{k_y} J_{1D}(k_y).
+\end{align}
+Let's calculate the charge flowing across the cylinder
+\begin{align}
+    \Delta Q &=
+    \int_{0}^{\Delta t} dt\,
+    \sum_{k_y} J_{1D}(k_y)
+\end{align}
+Now,
+what's happening is,
+you can think of this $J_{1D}(k_y)$,
+as having some polarization,
+and the current is the time derivative of this 1D system.
+\begin{align}
+    J_{1D}(k_y) &=
+    \frac{d P_{1D, x}(k_y)}{dt}
+\end{align}
+so a changing polarization leads to a current,
+charged being pumped in that direction.
+And this is just
+\begin{align}
+    \Delta Q &=
+    \int_{0}^{\Delta t} dt\,
+    \sum_{k_y} J_{1D}(k_y)
+    =
+    \left.\sum_{k_y} \Delta P_x (k_y)\right|_{0}^{\Delta t}\\
+    &=
+    \left.\frac{L_y}{2\pi} \int_{0}^{2\pi} dk_y\,
+    \Delta P_x(k_Y)\right|_{0}^{\Delta t}
+\end{align}
+And we're inserting flux in the adiabatic limit,
+and say we insert one flux quanta.
+\begin{align}
+    E\, \Delta t &=
+    \frac{2\pi}{L_y}
+\end{align}
+and here
+I'm assuming all units are 1.
+And the change in polarization is just going to be
+\begin{align}
+    \Delta P_x (k_y) &=
+    P_x\left( k_y + \frac{2\pi}{L_y} \right)
+    - P_x(k_y)
+\end{align}
+and in the limit,
+this becomes
+\begin{align}
+    \Delta P_x (k_y) &=
+    \frac{dP_x}{dk_y} \frac{2\pi}{k_y}
+\end{align}
+and what we leran is that the $2\pi/L_y$ factors cancel, so
+\begin{align}
+    \Delta Q &=
+    \int_{0}^{2\pi} dk_y\,
+    \frac{dP_x}{d k_y}
+\end{align}
+and we can just htink of this as a look integral in the Brilluoin zone.
+\begin{align}
+    \Delta Q &=
+    \oint dk_y\,
+    \frac{dP_x}{d k_y}
+\end{align}
+and you can just think of $\Delta Q$
+as the winding number of the polarization,
+which is equal to the charge pumped across the system.
+
+\begin{question}
+    Between the time and frequency arguemnts,
+    $\Delta P$ should be the difference in polarizaiton at different times?
+\end{question}
+The current is the change in polarization,
+but the reason it's change in time is becake $k_y(t)$ is in time.
+\begin{align}
+    J_{1D}(k_y) &=
+    \frac{dP_x\left( k_y(t) \right)}{dt}
+\end{align}
+
+\begin{question}
+    What's the physical meaning of polarization winding?
+\end{question}
+Physically,
+this is what's going on.
+Physically,
+take the states in a given Chern band,
+and because our band has a Chern number,
+we cannot write localized Wannier functions,
+but they can be paritally localized Wannier functions.
+Physically, localized wannier functions for the Chern band
+$\ket{W(k_y, x)}$.
+
+As $k_y$ increases,
+these Wannier functions are shifting in position,
+the states get shifted in $x$,
+specifically let's look at the expectation values
+\begin{align}
+    \bra{W(k_y,x)} \hat{x} \ket{W(k_y, x)}
+    = x + P(k_y)
+    = \bar{x}_{k_y, x}
+\end{align}
+Some extra steps of algebra area needed to show this.
+we have partially.
+The fact the polarization winds
+means that if you tried to plot this average
+$\bar{x}_{k_y, x}$ vs $k_y$,
+it means that if you start at lattice site 0,
+you end up at lattice site $C$ after $k_y$ goes up by $2\pi$.
+There are two ways of saying it.
+
+What it's saying is that the average positiion of this partially localized
+Wannier function changes by $C$ units
+\begin{align}
+    \bar{x}_{k_y + 2\pi, x} &=
+    \bar{x}_{k_y, x} + C
+\end{align}
+Alternatively,
+after inserting $2\pi$ flux,
+this average changes by $C$ windings.
+At each particular poin,
+the polizariotn has changed,
+and the net change in polairziaton is just hte net charge that goes from one
+side toe another.
+This is why you relate $J$ and $P$.
+
+\begin{question}
+    What's the picture of the winding number of $P$ around $y$?
+\end{question}
+The winding
+\begin{align}
+    \oint dk_y\, \frac{dP}{dk_y}
+    &=
+    p(k_y + 2\pi) - P(k_y)
+\end{align} shift by $2\pi$ and see how much polarization changes.
+
+
+\begin{question}
+    If $C$ is zero,
+    we expect this to be locallized?
+\end{question}
+No,
+if $C=0$,
+there's no obstruction to write down localied Wannier funcfions,
+but we can still write paritally lcoalized Wannier functions.
+As we change $k_y$,
+these positions would be shifted over by $C$,
+which means they don't shift over at all.
+
+
+\begin{question}
+    These Wannier functions are not deinite combinatinos of Bloch states?
+\end{question}
+You cna think of these nsulators as filling some single-articulare stares,
+but which basis you think in is up to you.
+You alwasy have the right ot think in the basis they are paritally localized.
+winding literally means graduatlly
+
+
+A nice exercise is to write down the Wannier functino in terms of the Bloch
+states of the bands,
+and tune the superpsoitiosn so you maximize the lcoalizeation o the wannier
+function.
+
+\begin{question}
+    Do we have a known quantity for the lcoalization?
+\end{question}
+For the moment forget about Chern numbers entirely,
+and just think about 1D systesm.
+More generally,
+consider some 1D system that depends on some apramter $\theta$.
+\begin{align}
+    H_{1D}(\theta)
+\end{align}
+If $\theta$ varies with time,
+we could get some current in this system.
+Because $\theta$ is the only thing changing in this setup,
+the current is going to be some response linear function $G(\theta)$ times the
+derivative.
+\begin{align}
+    J(t) &= G(\theta) \frac{d\theta}{dt}
+\end{align}
+and this is varying adiabatically in time,
+so we can apply linear response,
+as the sytem is always in equilibrim.
+Now the current,
+is almost by definition
+\begin{align}
+    J(t) &= \frac{dP}{dt},
+\end{align}
+but we can also think of it in terms of
+\begin{align}
+    J(t) &= \frac{dP}{dt}
+    = \frac{\partial P}{\partial \theta} \frac{d\theta}{dt}
+\end{align}
+which means
+\begin{align}
+    G(\theta) = \frac{\partial P}{\partial \theta}.
+\end{align}
+what you find for the tight-binding model is that you get a clean expression
+\begin{align}
+    G(\theta) &=
+    \oint \frac{dk_x}{2\pi}\left( 
+    \frac{\partial A_x}{\partial \theta} - \frac{\partial A_\theta}{\partial k_x}
+    \right)
+\end{align}
+where this $A_\theta$ is the Berry connection,
+with
+\begin{align}
+    A_x &=
+    -i \bra{u(k,\theta)} \frac{\partial}{\partial k_x}
+    \ket{u(k,\theta)}\\
+    A_\theta &=
+    -i \bra{u(k,\theta)} \frac{\partial}{\partial \theta}
+    \ket{u(k,\theta)}\\
+\end{align}
+and these $u$ are Bloch wave functions.
+It should look familiar to you.
+This is just the field strength of this Berry connection in this
+$(k_x,\theta)$-space.
+Now interestingly,
+if $\theta$ is a periodic parameter so that
+\begin{align}
+    H(\theta + 2\pi) = H(\theta)
+\end{align}
+then ifwe take the inetegral,
+\begin{align}
+    \frac{1}{2\pi}\int d\theta\, G(\theta) &=
+    C
+\end{align}
+where $C$ is some integer Chern number.
+This is an amazing cool thing.
+You have a family of 1D systems,
+you try to look at the current floiwng through the system,
+and that current is dteermined by a response function,
+and that respnose fucntion
+is just het integral of the field strength of the Berry connection.
+
+So to do one mofre thing.
+If we pick a gauge where $A_\theta$ is single-valued,
+\begin{align}
+    G(\theta) &=
+    \frac{\partial}{\partial\theta}
+    \oint \frac{dk_x}{2\pi} A_x
+    = \frac{\partial P}{\partial \theta},
+\end{align}
+so we learnt something cool:
+$P$ itself is equal to the Berry phase.
+\begin{align}
+    P &=
+    \oint \frac{dk_x}{2\pi}A_x
+\end{align}
+The poliaziaton is taking the Berry conntion,
+and looking at hte holonomy of the Berry gauge field in momentum space.
+This is the so-called
+\emph{Berry phase theory of 1D polarization}.
+Once caveat is that this is only well-defined mod integer.
+Because,
+I can always do a gauge transformation of my insgle-aprticle gauge funtions,
+which chagnes the flux thorugh the BZ by $2\pi$.
+That is,
+this is only well-defined mod $\mathbb{Z}$,
+adn we can do large gauge transfomrations to chagne
+$\oint_{k_x} A$ by $2\pi$.
+
+This miplies that when $\theta$ is periodic,
+\begin{align}
+    \Delta Q &=
+    \int J\, dt\\
+    &= \int G(\theta) \frac{d\hteta}{dt}dt\\
+    &=
+    \int G(\theta)\, d\theta\\
+    &= C \in \mathbb{Z}
+\end{align}
+So if we do a loop in paratere psace,
+we pump charge,
+and that can be related to the Chern number,
+arising frmo the 1 extra dimension $\theta$.
+
+So topological pumps in 1D are tightly connected to Chern numbers in 2D.
+
+The cna also relate the charge density to the polarization.
+The current is the time derivative of the charge,
+but if you havet he gradient of the polarization,
+that means you have some charge density somehwere.
+
+By the continuity equation,
+\begin{align}
+    \frac{d\rho}{dt} &=
+    -\frac{dJ}{dx}
+    =
+    -\frac{\partial^2 P(\theta)}{\partial x\, \partial t}
+\end{align}
+and that tells us the charge density is
+\begin{align}
+    \rho &=
+    - \frac{\partial P(\theta)}{\partial x}
+\end{align}
+and combining iwth
+\begin{align}
+    J &= \frac{\partial P}{\partial t},
+\end{align}
+we get
+\begin{align}
+    i_{\mu} &=
+    \epsilon_{\mu\nu} \frac{\partial P}{\partial x_\nu}
+\end{align}
+from which we get an effective action
+\begin{align}
+    S_{\text{eff}} &=
+    \int dx\, dt\,
+    P e^{\nu \mu} \partial_\nu A_\mu
+\end{align}
+which means
+\begin{align}
+    S_{\text{eff}} &=
+    \int P\, F_{xt}.
+\end{align}
+Integrating by parts,
+we can confirm that
+\begin{align}
+    j_{\mu} &=
+    \frac{\partial S_{\text{eff}}}{\delta A_\mu}
+    = -\epsilon^{\mu\nu} \partial_\nu P
+\end{align}
+So the Berry phase of the Bloch wave functions as you go around in momentum
+space in 1D.
+You can think of polairziaton in 1D,
+where the effective action is literally just the field strength of $A$.
+Finally,
+there is a tight relation between pumps in 1D and chern numbers in 2D.
+
+\begin{question}
+    Does the correspondence carry in higher dimesnions?
+\end{question}
+There's a Simons cllaboartion caleled ultra-quantum matter.
+There's an ultra quantum theory of polarizaiton.
+Andy ou can generalize this to higher dimensions,
+ubt it's a research topic.
+What enters is you need translation gauge fields in higher dimensinos,
+guage fields assocatied with tarnslation symmetry,
+and then there's a natural way of witing down this higher dimnsional verios of
+this effective action.
+
+\begin{question}
+    Why don't we need them now for 1D?
+\end{question}
+I think it's because in 2D you can go around in a loop,
+but in 1D thereis no loop except for the toal loop,
+so there are no small loops.
+In some sense,
+you can get a way with less structure in 1D,
+because it just has a lot less structure.
+
+\begin{question}
+    How to generalize Chern numbers to 3D?
+\end{question}
+Several modern things have happend literally in the last few years.
+ify ou want to geliraze the pump 1D to Chern number 2D,
+therae ra few aperps about amoalies in thespace of coupling constants.
+Ify ou chagne $\theta$,
+it's not eactly invairatn,
+and that's averison fo an anomaly.
+You can recase everything that happened here more abstratly.
+
+There's an orthoagonal set of things happend,
+that is genralis the theroy of polarization to higher dimesnison.
+
+Ther'es not really a connection betwen those two things,
+but maybe that oculd e a resaerch project.
+
+\section{Many-body definition of Chern number}
+Let's go back ot the many-body defimtiion of chern number
+using our knowledge of polarization in 1D.
+
+Suppose we havea torus.
+Consider $\oint A_y = \theta_y$.
+Then we have the gorund state $\ket{\psi(\theta_y)}$.
+
+Let me define the exponentiated polarization operator
+\begin{align}
+    R_x :=
+    \prod_{x, y}
+    e^{i \frac{2\pi x}{L_x} \hat{n}(x, y)}
+\end{align}
+and then I want to define
+\begin{align}
+    \mathcal{T} &=
+    \frac{\bra{\psi(\theta_y)} R_x \ket{\psi(\theta_y)}}{%
+    \braket{\psi(\theta_y)}{\psi(\theta_y)}
+    }
+\end{align}
+The polarization is $\arg \mathcal{T}(\theta_y)$.
+Then the Chern number is
+\begin{align}
+    C &= \frac{1}{2\pi} \oint d\hteta_y\,
+    \frac{d}{d\hteta_y} P(\theta_y)
+\end{align}
+This is differnt to twisted boundary conditions defiiton.
+that was twitisting in x and y,
+constructing a berry connection, field strength.
+But here,
+I'm only inserting $\theta_y$
+and seeing how the polarization winds.
+
+The important thing to note about this formula is that before knowing the wave
+function as a function of both $\theta_x$ and $\theta_y$,
+we only consider the wave function has a function a function of 1 parameter,
+$\theta_y$.
+
+\begin{question}
+    What's $R_x$?
+    What's the meaning of it?
+\end{question}
+If you write down the formula for polarization in 1D,
+it's just
+\begin{align}
+    P &\propto \sum x n(x)
+\end{align}
+If you have a 2D system,
+\begin{align}
+    P &\propto  \sum_{x, y} x n(x, y)
+\end{align}
+So this $R_x$ you can think of as an exponentiated polarization
+\begin{align}
+    P_x :\propto e^{i P}
+\end{align}
+
+\begin{question}
+    What is the minimum number of ground states to find the Chern number?
+\end{question}
+I'm glad you asked.
+The original definition uses the wave function in terms of 2 parameters.
+We dropped than down to 1 parameter here.
+It turns out you can drop it down to not depend on any parameters.
+
+We can also extrat many-body Chern numbers fom a single GS wave funtion.
+
+Suppose we have a cylinder iwth axis in $x$,
+winding in $y$.
+Then we have cylinder regions $R_1$, $R_2$, $R_3$, \ldots
+and $l_y$ is the lenght in the $y$-direction.
+This is pretty amazing
+\begin{align}
+    \mathcal{T}(\phi) &=
+    \bra{0}
+    W_{R_1}^\dagger(\phi) 
+    \mathrm{SWAP}_{1, 3}
+    W_{R_1}(\phi)
+    V_{R_1 \cup R_2}
+    \ket{0}
+\end{align}
+where
+\begin{align}
+    W_R &= \prod_{(x, y)\in R} e^{i\hat{n} (x, y) \phi}\\
+    V_R &=
+    \prod_{(x, y)\in R} e^{i \frac{2\pi y}{l_y} \hat{n}(x, y)}
+\end{align}
+then the Chern number is
+\begin{align}
+    C &= \frac{1}{2\pi} \oint d\phi\,
+    \frac{d}{d\phi} \arg\mathcal{T}(\phi)
+\end{align}
+We have a paper on this.
+You think in terms of TQFT and cutting and gluing.
+There are open questions about this.
+We dropped down from 2 params, 1 param, to 0 params.
+But this only works on a cylinder.o
+Can we get it on justa patch of space?
+Empriically,
+this formula works even with patches.
+
+The question is how much topological can you extract from a single ground state
+wave function on a disc.
+We don't know how to do it,
+complexity,
+algorithsm,
+etc.
+
+\begin{question}
+    You've transfoered the parameter ot the operator?
+\end{question}
+Whether this is really a win depends.
+I think it's a win,
+it's a matter of if a single ground state wave functino contains all the
+topology.
+
+Also,
+the homework is due on Monday.
