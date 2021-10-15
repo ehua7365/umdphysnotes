@@ -1,0 +1,871 @@
+\section{Recap}
+The reservoir is not going to get colder.
+It's a technique used in arts and sciences.
+You want to heat something up,
+you have a pan,
+fill it with water,
+put a smaller pan inside the water.
+What's called called?
+Double boiling?
+I don't know.
+
+The temperature is very constant,
+so you don't burn your food.
+
+Same thing here,
+this thing stays at a very constant temperature.
+
+What I was trying to do was the following.
+
+I'm going to apply the ergodic principle.
+All microscopic states are equally probable,
+assuming fixed temperature.
+If not then it's crazy.
+
+
+The probability density is $ \rho_T (q, p, Q, P)$
+where $q,p$ refers to the system and $Q,P$ referred to the reservoir.
+This is not one variable,
+but an enormous number of variables,
+all the particles in the system.
+I realise this is a better notation.
+\begin{align}
+    \rho_T (q, p, Q, P) &\sim
+    \delta_\Delta(E_t - H_T(q,p,Q,P))
+\end{align}
+where the $\delta_\Delta$ is a finite-width delta function.
+
+Now what is the probability of finding my subsystem here in a particular
+microscopic state regardless of the reservoir state.
+Well I just have to integrate over all coordinates of the reservoir
+\begin{align}
+    \rho(q, p) &=
+    \int dQ\, dP\,
+    \rho_T(q, p, Q, P)\\
+    &=
+    \int dQ\, dP\,
+    \delta_\Delta\left( E_T - H_T(q, p, Q, P) \right)
+\end{align}
+The bulk is bigger than the surface for big systems,
+because the bulk is cubed,
+but the surface is squared,
+so it is negligible,
+so write the Hamiltonian as
+\begin{align}
+    H(q, p) - H_R(Q,P)
+\end{align}
+\begin{align}
+    \rho(q, p) &=
+    \int dQ\, dP\,
+    \rho_T(q, p, Q, P)\\
+    &=
+    \int dQ\, dP\,
+    \delta_\Delta\left( E_T - H(q, p) - H_R(Q, P)\right)\\
+    &= \Gamma_R \left( E_T - H(q, p) \right)
+\end{align}
+where $\Gamma_R$ is the number of microstates in the reservoir in the
+microcanonical ensemble.
+\begin{align}
+    \int dQ\, dP\, \delta_\Delta\left( E_T - H - H_R \right)
+    &= \Gamma_R \left( E_T - H(q, p) \right)
+\end{align}
+In general,
+you have to sum the microstates of the system minus the Hamiltonian of the
+system.
+You want to get the energy minus the energy of the subsystem.
+
+Because now,
+this is going to be related to the entropy of the system.
+The number of microscopic states is the exponential of the entropy of the
+reservoir.
+
+\begin{align}
+    \rho(q, p) &=
+    \exp\left[ \frac{S_R}{k_B} \left( E_T - H(q, p) \right) \right]
+\end{align}
+and remember that $H$ is the energy of the subsystem,
+much smaller than $E_T$ the energy of the huge reservoir,
+so I can expand this as a Taylor series.
+\begin{align}
+    \rho(q, p) &=
+    \exp\left\{ 
+    \frac{1}{k_B}\left[ 
+    S_R(E_T) - H(q, p) \frac{\partial S_R(E_T)}{\partial E_T}
+    + \cdots
+    \right]
+    \right\}
+\end{align}
+Now note
+\begin{align}
+    \frac{\partial S_R(E_T)}{\partial E_T} = \frac{1}{T_R}
+\end{align}
+by definition,
+and this energy is defined in the microcanonical ensemble.
+When you put two systems together they exchange energy,
+and because of that you get this relation.
+Then we are looking for a function of $q$ and $p$,
+and that dependence is in $H(q,p)$,
+and everything else is just a big fat constant.
+What I find is
+\begin{align}
+    \rho(q, p) &\sim
+    \exp\left[ -\frac{H(q, p)}{k_B T} \right]
+\end{align}
+where there are big overall constants I don't care about.
+So when I look ta the microcanonical ensemble of the subsystem,
+it is a canonical ensemble.
+I just take that function and normalize it,
+then I get the canonical ensemble.
+The whole system is in a microcanonical ensemble,
+then by the ergodic hypothesis,
+the subsystem is in a canonical ensemble.
+
+Are they completely isolated?
+Not really.
+In the thermodynamic limit,
+you get the same answer anyway.
+You can take htis as a motivation for cnaoniacal ensemble.
+
+It's motivation,
+but you get the same answer anyway.
+This ensemble and that ensemble are idfferent.
+They look completely different but they are not.
+The reason is thata of states with large energy,
+and there are few states with low energies.
+Only microscopic states iwth that energy actually matter.
+It's usually easier to do calculatioss over all energies over all states
+than to do integrals iwth this constraint.
+The $e^{-H/k_BT}$ is better.
+
+It is true that in some large systems,
+you are couled to a large reservoir.
+
+A chemical reaction in abucket.
+The room is a thermal reservoir.
+Everything is going to go back to 72 degrees,
+because the room is big and the air conditioner is going to turn on.
+
+The justitication for whole of statical mechanics fromes from the microcanonical
+ensemble and the ergodic hypotheiss.
+Most mportantly,
+tHe canonical and microcanonical give the same answer anywa.
+
+I want to continue the argument
+with an important comment.
+What we showed with  this,
+ifwe look at the parittion function of the canonical ensemble,
+I could write it as as sum over the enrgy,
+the numbero f states of the energy
+\begin{align}
+    Z &=
+    \int dE\,
+    e^{\frac{S(E)}{k_B T} - \frac{E}{k_B T}}
+\end{align}
+and I say that
+\begin{align}
+    \Gamma(E) &= e^{\frac{S(E)}{k_B T}}
+\end{align}
+is a constant
+and hte only quantity that matters is
+the area around $E^*$,
+because this $\Gamma(E)$ is strongly peaked around there,
+so the integral becomes approximately
+\begin{align}
+    Z &=
+    \int dE\,
+    e^{\frac{S(E)}{k_B T} - \frac{E}{k_B T}}
+    \approx
+    \left. e^{-\beta\left( E - TS \right)}\right|_{E=E^*}
+\end{align}
+It is the quantity that minimizes $E-TS$.
+What is it that minimizes $E-TS$?
+Just find
+\begin{align}
+    0 &=
+    \left.\frac{d}{dE}\left( E - TS(E) \right)\right|_{E=E^*}\\
+    &=
+    \left.
+    1 - T \frac{\partial S}{\partial E} \right|_{E=E^*}
+\end{align}
+and you have seen this before.
+Choose the value of the derivative that gives $1/T$.
+Do you recognize the Legendre transform here?
+This is a common mathematical construction.
+It has a geometric meaning.
+It was presented to you without motivation,
+but I will tell you.
+
+Take a mental picture of this,
+and I'm going to go back,
+and tell you,
+see it's the same thing.
+So take a picture of this.
+This piece of mathematics
+I'm not going to explain why,
+actually comes from studies from the Renaissance
+from presecive drawing.
+
+Distant things dhould be smaller.
+Lines that are parallel in the real world seem to converge to a point.
+Completely obvious to us,
+but not obvious 500 years ago.
+Google Byzantine art,
+they have an opposite idea.
+Close things are big,
+but far away things are big.
+You look and it looks naturla,
+but it doens't loko realisatic,
+buthten you realise it's all wrong,
+it's hte other way around.
+Then people started figuring out the mathematics of persepctive,
+and 200 years later they come up with something that has nothing to do with
+persepcive.
+I'm going to tell you taht.
+
+
+Suppose we have af unction $f(x)$.
+I need to specify what value of $f$ for each value of $x$.
+That's what you learnt in 5th grade.
+So the height is the $f(x)$ for each value of $x$ on the horziontal axis,
+like sliced bread.
+
+But there's another way.
+Look at the slope of this function,
+look at this tangent.
+What if I want to specify this function
+not in terms of $x$,
+but in terms of the slope $\frac{df}{dx}$.
+Every point has a unique slope,
+so maybe I can specify the function in terms of the slope in
+terms of the $x$ coordainte.
+So If I defined the slope to be
+\begin{align}
+    p &= \frac{df(x)}{dx}
+\end{align}
+then what is $f(p)$ supposed to be?
+
+For example,
+suppose $f(x)=x^2$,
+then $p=2x$ which implies $x=p/2$ and so
+then $f(p) = (p/2)^2$.
+
+So the question is,
+how high does it have to be to get a given tangent.
+
+The same slope same height,
+draw everything to the right,
+and say that's my curve.
+If I specify my function in terms of the slope,
+the curve is not unique
+if I shift myfunction to the right.
+
+It does matter,
+because there is a constant
+that is a function of the other variables,
+and it's not a constant anymore.
+Suppose you have $f(x - c)$ instead,
+then you have many possible heights.
+The non-uniqueness in enormous.
+
+So someone invented something smarter than that.
+
+By the way,
+you see perspective here,
+drawing tangents on curves?
+I dno't.
+It's historical.
+
+Instead of specifying theheight as a function so the slope.
+Instead,
+give me a slope,
+and I will give you where the tangent hits the vertical axis.
+I'm not giving you the $f(x)$ hieght,
+but I'm giving you where the tangent intersects the $y$ axis.
+And so for a given tangent,
+I'm going to give you the $y$ intercept of the tangent.
+
+So let's draw a picture.
+Let $p=dp/dx$ be the slope.
+Then let the $y$-axis intersection of the tangent be $\tilde{f}(p)$.
+Just by looking at this picture,
+I can tell you the slope is going to be figured out by looking at
+$f - \tilde{f}$.
+Take the ratio  of similar triangles
+\begin{align}
+    p &= \frac{f - \tilde{f}}{x}
+\end{align}
+If that's true,
+then I can isolate $\tilde{f}$ as a function of $p$.
+And I can get
+\begin{align}
+    \tilde{f}(p) &=
+    \left .f(x) - px\right|_{x\text{ such that } \frac{df}{dx}=p}
+\end{align}
+Now of course,
+this condition is the same as saying that the
+$x$ you're using is minimal.
+But this is the same condition you get if you took $f(x) - px$
+and minimize it in relation to $x$.
+So it's the same thing.
+
+The lesson is this.
+I can give all the information about this curvei n two wasy.
+I eigher specify the height $f(x)$ for every point $x$.
+Or I specify this intercept point $\tilde{f}(p)$ for every possible slope $p$.
+Now there is no freedom to move this around,
+because the point specified is now unique.
+
+That's the geometry I wanted you to know.
+
+So either give me the height for every point,
+or give me the intercept of the tangent for every slope,
+and they contain the same information.
+
+So let's do an example.
+Suppose
+\begin{align}
+    f(x) &= x^2 + c
+\end{align}
+Then
+\begin{align}
+    p = \frac{df}{dx} = 2x
+\end{align}
+which means $x=p/2$ and so
+\begin{align}
+    \tilde{f}(p) &=
+    \left. f - px\right|_{\frac{df}{dx}=p}\\
+    &=
+    \left.
+    x^2 + a - pa
+    \right_{x=p/2}\\
+    &=
+    \frac{p^2}{4} + a - \frac{p^2}{2}\\
+    &= -\frac{p^2}{4} + a
+\end{align}
+If you have nothing better to do,
+you can try to draw these tangents and points.
+But,
+we're not going to have to think about this geometry anymore.
+
+Now what does this have to do with thermodynamics.
+So remember that the partition function was
+\begin{align}
+    Z &=
+    \left.
+    \exp\left[ -\beta\left( E - TS \right) \right]
+    \right|_{E = E^*}\\
+    &=
+    \left.
+    \exp\left[ -\beta\left( E - TS \right) \right]
+    \right|_{\left.\frac{\partial S}{\partial E}\right|_{E=E^*} =
+    \frac{1}{T}}
+\end{align}
+So I want to write $Z$ as a function of $T=\frac{\partial E}{\partial S}$,
+but I lose information,
+so instead of playing with $E$,
+I play with $E-TS$.
+This allows me to get rid of the $S$,
+in the same way the Legendre transform $\tilde{f} = f - px$
+allows me to get rid of the $x$.
+And htis has a name,
+i'ts the Helmholtz free energy.
+\begin{align}
+    Z \sim
+    e^{-\beta F(T, U, N)}
+\end{align}
+
+I want to talk about 3 things:
+Why is this an energy?
+What's free about it?
+And some examples.
+
+Why is it free? There is an explaatintio sort of I'll explain later.
+
+Who is Helmholtz?
+A physicist of course.
+But actually he wasn not,
+he was a professor of medicine.
+Helmholtz free energy,
+Helmholtz coil,
+but that's not what he's famous for.
+His main thing was to understand how to understand the ear works.
+Psychoacoustics.
+that's hwy Helmholtz appears in PDEs,
+solving the wave eqution.
+How does that interact iwth the ears.
+His famous book is the sound of tones.
+I learnt a huge amount of this as an amateur musician,
+and I could tlka and talk.
+
+The story is this:
+There's a trandition in the academic route,
+more theroetical than expeirmenta,
+more in math than physics.
+Your advisor is an important person in your life,
+more important than your mother, your spouse.
+It's old-fashinoed,
+so there's a tradition of following your academic advisor.
+
+There's a websitte that keeps track of those things.
+One interesting happens,
+those things converge on a few peple.
+The world of physics was smaller 100 years ago.
+The rason is because,
+there are people productive in terms of students,
+and others who are not.
+We all had a common mother,
+but same thing hapens in phycis.
+
+My advisor,
+was a student of some guy yo don't know,
+who was studyent of some guy yo udont't kno,w
+a student of some guy you don't know,
+who was a sutdent of some guy you don't know,
+who was a student of Helmholtz!
+
+There are few schools fof physics.
+In the US,
+everyt student was a student of Schwinger.
+Oppenheimer was not,
+but he shared with Schwinger.
+
+Sommerfeld had good students.
+Heisenberg, Pauli,
+and those had many others.
+So Sommerfield.
+
+Einstine has 0 zeros.
+There was one guy who claimed to be,
+but he was an epximerntalist and he signed his papapers.
+
+At some point we're in the middle ages,
+the only people who are scientsits are people who read and write,
+and they are from the Church.
+So basically it's who was the head of hte Monastary.
+The Church kept records,
+and then you can find themenotor of that person.
+There's no PhD,
+but there were records.
+And then they go down to Jesus.
+So I'm a direct line from Jesus.
+Does that mean I should take more stdents because of that?
+
+But Jesus was baptized by John the Baptist,
+so that's his advisor.
+
+A new continent has been discovered.
+They want ot colonie the place.
+They say you hvae land,
+you can start your own farm.
+Howm uch land?
+
+I'm going to give you some amount of fence.
+A mile.
+Whatever land you can enclose in the fence,
+you have it for life.
+People go there and the question is what shape is best?
+You're a farmer and you want as much land as possible.
+But the perimeter is fixed.
+What's the shape?
+I'ts a circle.
+Can anyone prove that?
+I'm not goin to prove it but its' corect.
+
+
+Then there's ano hte continent.
+Fencing is very expensive.
+The government fixes a certain amount of area and land they can claim.
+They can surround byfence.
+So for a fixed area they want otm imize the amount of fencing.
+A circle too!
+
+So if you arrive ina contentn and see all the farms are circles,
+the govenremnt must hvae given them a fixed amount of frncnig each.
+
+We play this game where we play the system,
+and you have walls.
+When you can change the walls,
+and it's isolated from everything else.
+The total energy is fixed.
+$E = E_1 + E_2 + \cdots$.
+
+But to find the final state.
+The entropy is
+$S=S_1+S_2+\cdots$.
+
+How can I divide energy among the systems to maximise the energy?
+There's ano hte quantit y fixed,
+that's the total volume
+$V=V_1+V_2+\cdots$.
+
+We want to do this maxmiiation over a certain substate of all macroscopic
+states.
+The walls can move,
+but I cannot change the sum of them.
+I maximize the entropy under some constraints.
+The constratins are the total energy $E$,
+the total vomelume $V$, the totla number $N$.
+
+Circles are the ones with largest area for a fixedp erimeter.
+
+But hter'es naother way to characerise the same state.
+You can say circles are the minimial perimeter for a given area.
+For us,
+you minimize the energy $E=E_1+E_2+\cdots$
+assuming the energy is fixed,
+that is $S,V,N$ are fixed.
+
+After the final state,
+it doesn't matter how you got there.
+The same satate is characterized by thet minmimal energy
+f o a fixed tempreatuer.
+Even though in pracitse,
+it's not mimimze the enrgy and fix the tempratuere,
+theres no way ot fix the entorpy in the real world,
+but it doesn't matter because mathematically it's the same thing.c
+This requires a proof,
+and the proof is done by a very good drawing,
+because that's the best way to prove things.
+
+You want a good drawing?
+Look at my lecture notes.
+It sucks to draw good on the board.
+
+Think.
+
+I'm going to have an axis $S$.
+The energy starts out as $E_1,E_2,\ldots$,
+then it's going to become
+$E_1',E_2',\ldots$.
+So let's have another axis $E_1'$.
+I plot $S$ as a function of $E_1'$.
+It looks like a curve with some maximum.
+Then I have another axis,
+the total energy $E$.
+Suppose I did the same problem,
+but with a total energy that was larger.
+My claim is that the drawing would look like the following.
+I have a surface $S(E,E_1')$.
+Do you sense a 3D thing here?
+Does that help?
+Pretty good.
+
+[picture]
+
+Now,
+the entropy goes as a the total energy gorws.
+That's a feature.
+The more energy,
+the more microstates.
+
+What this principle says is to ask what are the surfaces of fixed energy.
+
+I take a surface of fixed energy $E$
+and I draw this plane.
+The intersection.
+
+If you fix the energy $E$,
+and look for the maximum $S$.
+
+Now I'm going to do an identical drawing.
+
+Now I'm going to think about this other principle here.
+Constant total energy means this plane here.
+
+Now I look for a macroscopic state with fixed entropy.
+that minimizes the energy.
+
+I screwed up the drawing,
+but they should be the same point.
+
+That's my picture proof of this principle.
+
+This principle is called the maximum entropy principle,
+which follows from the ergodic hypothesis.
+This macroscopic state corresponds to the maximum number of microscopic states.
+
+This one here is called the minimum energy principle,
+and is justified because the maximum entropy principle.
+I have never used the minimum energy principle,
+but I am only using it as a steping stone to prove something else.
+
+
+Consider the Helmholtz free energy of two systems
+\begin{align}
+    F = F_1 + F_2
+\end{align}
+and the problem is to minmize $F=F_1+F_2$ subject
+to the constraint of fixed $T,V,N$.
+THe idea is this.
+
+You have some subsystem immersed in a thermal reservoir of temperature
+$T$.
+
+Think of this as two subsystems $A$ and $B$.
+Then we maximize the total energy.
+Altenratively,
+consdier entropy fixed and minimize the energy.
+
+The energy is fixed,
+it can vary,
+but states vary and you fix the entropy.
+THep roblem is that you have to look at 3 different systems,
+and if one if the systmes is a thermal reservoir,
+it's a special system that doesn't change temperature and that simplifies
+things.
+So rather than apply maximal energy,
+you just minimal free energy,
+and I'm going toshow tat.
+
+We want to minimze free eneergy
+\begin{align}
+    F &= E - TS
+\end{align}
+for fixed temperature $T$.
+Let's start assuming that minimal energy is correct.
+We want to minimize $E_T$ at fixed $S$.
+What's the chnage in the energy of the whole thing?
+
+The change in total energy is $E_T=E+E_R$,
+so
+\begin{align}
+    dE_T &= dE + dE_R
+\end{align}
+and I want to set $dE_R$.
+The energy doesn't change because it does work,
+it doesn't change because particles corss the wall,
+it changes only because heat energy isexchanged.
+How is that related to the changing entropy?
+Remember that
+\begin{align}
+    \left.\frac{dS}{dE}\right|_{V,N} &= \frac{1}{T}
+\end{align}
+and rememver $dE_R = T_R \,dS_R$.
+
+The reservoir gains some energy when this looses some entroy,
+so
+\begin{align}
+    T_R dS &= - T_R dS
+\end{align}
+so we get
+\begin{align}
+    0 &= dE - TdS = d(E - TS) = dF
+\end{align}
+Bottom line,
+fix the energy,
+find the maximmum entropy.
+Altenratively,
+fix the entropy
+and minmiaze the energy.
+
+But you can forget about he reservoir completely.
+Then you only need to minimize the free energy.
+Forget the reservoir.
+Then that gives you the state.
+
+\begin{question}
+    The assumption is,
+    the bath is holding the subsystme at a fixed tempeature.
+\end{question}
+Yes, they're in thermal equilibrim by definition.
+
+At this point,
+you might be confused by many little observations made here and there.
+But that's okay.
+I'm going to bring everything together.
+The goal is to organize everything you learn about physics.
+
+I actually did write this on my lecture notes.
+It's not just a colletion of formluae to mmmorize.
+It's the logical relation between them that mattersl
+I'm going to write how you do things in the microcanonical ensemble.
+And on this other board,
+how to do things in the canonicla ensembler.
+
+\subsection{Microcanonical Ensemble}
+The probability of getting a particular state is
+\begin{align}
+    \rho(q, p) &=
+    \frac{\delta_\Delta\left( E - H(q, p) \right)}{%
+        \int \frac{d^Nq\, d^N}{h^N} \delta_\Delta\left( E - H(q, p) \right)
+    }
+\end{align}
+The $h$ constant does not matter.
+In the classical limit,
+this gets left out here if I compute things.
+But if you don't write $h$,
+like when they first invented statistical mechanics,
+they still got everything right.
+And this denomianotr is the number o states,
+which we call
+\begin{align}
+    \Gamma(E,V,N) &=
+    \int \frac{d^Nq\, d^N}{h^N} \delta_\Delta\left( E - H(q, p) \right)
+\end{align}
+Then the average of an observable is a weighted average
+\begin{align}
+    \overline{\mathcal{O}}
+    &=
+    \int \frac{d^Nq \, d^Np}{h^N}
+    \rho(q, p) \mathcal{O}(q, p)
+\end{align}
+and that's in principle all you need.
+But there are ways around,
+which is thermodynamics.
+The entropy is
+\begin{align}
+    S(E,V,N) &=
+    k_B \ln \Gamma(E, V, N)
+\end{align}
+If yo uwant to find s attae,
+you should always maximize $S$ at fixed $E,V,N$.
+This confused the hell out of me as a student.
+I was stupid.
+How can I maximize $S$?
+The total $E,V,N$ cannot change,
+but the distribution of $E,V,N$ can change!
+
+Finally, a very good thing to remember is that
+\begin{align}
+    \left.\frac{\partial S}{\partial E}\right|_{V,N} &= \frac{1}{T}
+\end{align}
+has to be the same for any two systems in equilibrium.
+And another thing equal for systems in equilibirum is this quantity
+\begin{align}
+    \left.\frac{\partial S}{\partial V}\right|_{E,N} &= \frac{P}{T}
+\end{align}
+and another hting is also the chemical potneital
+\begin{align}
+    \left.\frac{\partial S}{\partial N}\right|_{E,N} &=
+    -\frac{\mu}{T}
+\end{align}
+We rarely do things in the microcanonical ensemble because yo uhave to compute
+these crazy integrals with constraints.
+
+
+\subsection{Canonical ensemble}
+This is easier to work with.
+The partition function is
+\begin{align}
+    Z(T,V,N) &=
+    \int \frac{d^Nq\, d^Np}{h^N} e^{-\beta H(q,p)}
+\end{align}
+and the probability distribution is
+\begin{align}
+    \rho(q, p) &=
+    \frac{e^{-\beta H(q, p)}}{%
+    \int \frac{d^Nq\, d^Np}{h^N} e^{-\beta H(q,p)}
+    }
+    =
+    \frac{e^{-\beta H(q, p)}}{%
+    Z
+    }
+\end{align}
+and the average of an observable is likewise
+\begin{align}
+    \overline{\mathcal{O}}
+    &=
+    \int \frac{d^Nq \, d^Np}{h^N}
+    \rho(q, p) \mathcal{O}(q, p)
+\end{align}
+And then I consider the free energy which is the Legendre transform of the
+energy
+\begin{align}
+    F(T,V,N) &= E - TS = -k_B T \ln Z(T, V, N).
+\end{align}
+It contains the same information as the entropy.
+
+You could compute the $\rho$,
+but it's easier to compute the denominator $Z(T,V,N)$,
+then I compute the free energy from $Z$.
+
+One thing is that
+\begin{align}
+    \left. \frac{\partial F}{\partial T}\right|_{V,N} &= -S\\
+    \left. \frac{\partial F}{\partial U}\right|_{T,N} &= -P\\
+    \left. \frac{\partial S}{\partial N}\right|_{T,V} &= N\\
+\end{align}
+
+Note
+\begin{align}
+    \left.\frac{\partial E}{\partial S}\right|_{V,N}
+    =
+    \left.\frac{\partial E}{\partial U}\right|_{S,N}
+    = -P
+\end{align}
+and
+\begin{align}
+    \left.\frac{\partial E}{\partial N}\right|_{S,V} &= \mu
+\end{align}
+The sign comes from the fact that if you compress a system,
+you increase the energy of a system.
+
+Also,
+you can take other kinds of Legrendre transforms with respect to other
+variables,
+enthalpy,
+only chemists use it,
+it's bad.
+There's Gibb's free energy.
+And also with respect to $N$,
+you get the grand canonical potential.
+
+So there's a family of thermodynamic potentials.
+I'm not going to work out the details,
+but it's very straightforward.
+I'll have a different ensemble.
+
+The point is not to memorize the relations,
+the point is to remember what's varying with what.
+
+\begin{question}
+    Is there a quantum version of $E+PV$?
+\end{question}
+Think of $v$ as the size of the box,
+so it's just a parameter in the Hamltonian.
+But it's not an operator.
+Imagine you have a system,
+therei s a quanutm satte where particles are spread
+and another one concentrated here.
+There will be an operator that measures the volume distribution though.
+
+\subsection{Quantum Version}
+The density matrix,
+now an opeator is
+\begin{align}
+    \hat{\rho} &=
+    \frac{e^{-\beta \hat{H}}}{\Tr e^{-\beta\hat{H}}}
+\end{align}
+where the bottom is the partition function
+\begin{align}
+    Z(T,V,N) &= \Tr e^{-\beta\hat{H}}
+\end{align}
+The moment you hi thermodynamics,
+those macrosconpic quantites are the same for classical and quantum.
+That's weird.
+When relativity awas discovered,
+clasical physics had to change.
+When QM was discovered,
+classical physics, EM had ot change.
+Butwhen stat mech was dicovered,
+nothing had to change.
+It's true in this universe,
+true in proably many other universes we cna imagine.
+
+There's antoher point of view.
+Thermodynamics has to be true even in different worlds.
+
+Cna I write the equivalent quantum mechnical formula for these other equations?
+Yes, but it's ugly.
+\begin{align}
+    \bar{\mathcal{O}} &=
+    \Tr(\hat{\rho}\hat{\mathcal{O}})
+\end{align}
+and
+\begin{align}
+    \hat{\rho} &=
+    \frac{\displaystyle \sum_{n:E<E_n<E+\Delta} \ket{n}\bra{n}}{%
+    \displaystyle\sum_{n: E<E_n<E+\Delta} 1}.
+\end{align}
+Not nice to compute.
+Do not waste a microsecond thinking about this.
