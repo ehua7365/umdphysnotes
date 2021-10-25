@@ -1,0 +1,420 @@
+\section{}
+The chiral central charge tells you the heat current.
+If you had a single chiral Majorana mode it's half.
+
+\begin{table}
+    \centering
+    \begin{tabular}{ccccc}
+        (1+1)D & $\mathbb{Z}_2$ invariant &
+        $\mathcal{I}=P_0 P_\pi$ &
+        $G_f = \mathbb{Z}_2^f$ &
+        $\psi\to e^{i\theta}\psi$ Class D\\
+        (2+1)D & $\mathbb{Z}$ invariant Chern number &
+        C &
+        $G=U(1)$ &
+        [$G_f=U(1)^f$] Class A\\
+        & $\mathbb{Z}$ invariant &
+        $\nu=2C_{-}$ (sp. Chern # for free fermions) &
+        $G_f=\mathbb{Z}_2^f$
+    \end{tabular}
+    \caption{Free fermion models}
+    \label{tab:freefermions}
+\end{table}
+
+\begin{question}
+    What is a full Majorana measurement?
+\end{question}
+Measurement of $\gamma_1 \gamma_j \gamma_k \gamma_l$.
+Joint fermion parity.
+
+
+Consider $U(1)_\uparrow$ with Chern number $C_\uparrow$
+and $U(1)_\downarrow$ with Chern number $C_\downarrow$
+with
+$C_{\uparrow} = -C_{\downarrow} = C$.
+There is also time-reversal symmetry.
+
+Chern number breaks time-reversal and reflection symmetry.
+It breaks time rerseal because the direction of the current on the edge would
+have to switch sign.
+
+But if they have opposite Chern number on both sides with two components then
+you can.
+
+A two-component system with $C_\uparrow = -C_\downarrow$ can be time-invariant.
+
+Let's study the edge theory in a particular case here.
+
+\subsection{Edge theory for $C_\uparrow=C_\downarrow=1$}
+The Hamiltonian would be like
+\begin{align}
+    H &=
+    \sum_k \left[ 
+    |V_\uparrow| k \psi_{\uparrow,k}^\dagger \psi_{\uparrow,k}
+    |V_\downarrow| k \psi_{\downarrow,k}^\dagger \psi_{\downarrow,k}
+    \right]
+\end{align}
+Non-trivial topological phases have something interesitng at the edges.
+So consider a backscatttering term or a mass term for htis fermion
+\begin{align}
+    m \psi_\uparrow^\dagger \psi_\downarrow + h.c.
+\end{align}
+This breans spin consdervation,
+which is the relative $U(1)$.
+This breaks the $S_z$ spin conservation.
+But that's not so surprising because you have an up fermion and that gets
+backscattered by a down fermion,
+and it's not so surprising that breaks spin conservation.
+More interesting,
+this term also breaks time-reversal symmetyr.
+
+Let's deine time reversal to hae the following actiona
+\begin{align}
+    T: \psi_\uparrow &\to \psi_\downarrow\\
+    \psi_\downarrow &\to -\psi_\uparrow
+\end{align}
+which means on a single fermion $T^2=-1$,
+and so
+\begin{align}
+    T^2 &= {(-1)}^F
+\end{align}
+So you could say this is a $\mathbb{Z}_4^{T,f}$ symmetry.
+But there's also a $U(1)^f$ symmetry.
+But if you apply one and apply another,
+the order matters,
+and there's a complex conjugation when you reverse the order.
+And you need to mod out to consider equivalence.
+So the symmetry of the system is this
+\begin{align}
+    G_f &=
+    \frac{U(1)^f \rtimes Z_4^{T,f}}{\mathbb{Z}_2}.
+\end{align}
+This is called the class AII symmetry group in the Cartan classification.
+
+Fermionic symmetry group $G_f$.
+Consider whath appens when you act the symmetry only on bosonic operators,
+then you can ask what symmetry acts on them,
+and that allows you to define a bosoinc symmetry gorup
+\begin{align}
+    G_b &= G_f/\mathbb{Z}_2^f
+\end{align}
+
+If you look at the bosoinc symmetry group,
+then
+\begin{align}
+    G_b &=
+    U(1) \rtimes \mathbb{Z}_2^T
+\end{align}
+Under time-reversal symmetry,
+\begin{align}
+    T (M \psi_\uparrow^\dagger \psi_\downarrow) T^\dagger &=
+    - m^* \psi_\downarrow^\dagger \psi_\uparrow
+\end{align}
+You'd think there's a single total Chern number.
+Surprisingly,
+there's still something non-trivial left over.
+This suggests there's still some non-trivial topological phase still left over
+in the system.
+You can then consider two copies.
+\begin{align}
+    C_\uparrow = - C_\downarro = 2
+\end{align}
+then you can write the same thing,
+but there's an extra flavour $s$.
+\begin{align}
+    H &=
+    \sum_{k,s} \left[ 
+    |V_{\uparrow,s}| k \psi_{\uparrow,k,s}^\dagger \psi_{\uparrow,k,s}
+    |V_{\downarrow,s}| k \psi_{\downarrow,k,s}^\dagger \psi_{\downarrow,k,s}
+    \right]
+\end{align}
+Under time-reversal,
+\begin{align}
+    T: \psi_{\uparrow, s} & \to \psi_{\downarrow,s}\\
+    \psi_{\downarrow,s} &\to -\psi_{\uparrow,s}
+\end{align}
+And now you can consdier what terms you can add,
+and it turns out you can add a backscaettering term.
+\begin{align}
+    \delta H_{\textrm{backscattering}} &=
+    m\left(
+    \psi_{\uparrow,1}^\dagger \psi_{\downarrow, 2}
+    - \psi_{\downarrow,1}^\dagger \psi_{\uparrow, 2}
+    + \mathrm{h.c.}
+    \right)
+\end{align}
+and now you can open an energy gap.
+This suggests the bulk topological phase should have
+$\mathbb{Z}_2$ invariant.
+
+This is the bulk-edge correspondence.
+You can deduce the bulk properties by looking at he stability of the boundary
+modes under action of the symmetry group.
+
+Now we can consider whath appens when this time-reversal symmetry does not have
+this minus sign.
+Suppose that instead
+\begin{align}
+    T: \psi_\uparrow &\to \psi_\downarrow\\
+    \psi_\downarrow & \to \psi_\uparrow
+\end{align}
+and so $T^2=+1$.
+Then the symmetry groups are
+\begin{align}
+    G_f &= U(1)^f \rtimes \mathbb{Z}_2^T\\
+    G_b &= U(1) \rtimes \mathbb{Z}_2^T
+\end{align}
+and then $C_\uparrow = C_\downarrow = -1$
+and it does not have protected edge modes.
+The fact that $G_f$ is different has consequences on what ind of backscattering
+terms you can add.
+
+Fermions can ermge in a variety of situations in solid state systems.
+I don't have a good example,
+but you can have fermions show up in solid state systems.
+Of ten this kind of time reversal can be thoguht of as a effectie time reversal
+where you combien it wiht some kind of rotation.
+This may be the true time reversal plus some rotation,
+but we still call it time reversal because it's anti hermitian.
+
+The $\pi$ rotation in $G_f$ becomes the $1$ operation in $G_b$.
+This becomes implicit in
+\begin{align}
+    G_b &= G_f / \mathbb{Z}_2^f
+\end{align}
+This becomes a trivial operation as far as a boson is concerned.
+
+\begin{question}
+    Why do we ultimately have to define $G_b$?
+    The first symmetry gourp is $G_f$.
+    Why do we not just work with $G_f$?
+\end{question}
+I didn't use $G_b$ anywhere,
+I just noted $G_b$.
+And depending on how sophisticated the theroy is,
+it could be useful,
+but not in this particular scenario.
+
+Let me remind you of the important Kramers theorem.
+
+If $T^2=-1$,
+it measn the minimal representation is 2-dimensional,
+whichm eans if you have a state on which $T^2$ acts as $-1$,
+it has to be a doublet.
+The proof is two lines.
+Suppose you act $T$ on a state and you don't change it
+\begin{align}
+    T\ket{\psi} &= \lambda\ket{\psi}\\
+    -\ket{\psi} = T^2 = \lambda^* \lambda \ket{\psi}
+\end{align}
+So therefore,
+$T$ msut bring it to another state
+\begin{align}
+    T\ket{\uparrow} &= \lambda \ket{\downarrow}\\
+    T\ket{\downarrow} &= \lambda^' \ket{\uparrow}
+\end{align}
+and $\lambda\lambda' = -1$.
+which is a contradiction.
+So that's Kramers theorem.
+
+consider a cylinder with a momentum around a circle $k_y$ and let $x$ e the axis
+of the cylinder.
+
+Consider the spectrum of $E$ vs $k_y$.
+there are bulk states in tethe valence conduction bands.
+You can see that $T: k \to -k$,
+because intiuitively time reversal changes the sign of momentum.
+Then the possible time-reversal momenta are
+\begin{align}
+    \vec{k} &=
+    \begin{cases}
+        (0, 0)\\
+        (0, \pi)\\
+        (\pi 0)\\
+        (0, 0)
+    \end{cases}
+\end{align}
+There's two topological distrinct scenarios that can happen.
+Either these states connect up in a non-trivial way.
+This merges into the bulk and then this comes out.
+
+Thisis topological.
+No matter where I put my chemical otential,
+I'mg going to hit exactly 1.
+The trivial situation is when Karmers pairs connect up in a non-trial wahuoWe
+have these states and I can have ooThe Kramrs degenerate states in time-reversal
+omentua connect up.
+
+You can geta band invariant bby mulitplying hte hern nmber through the Brilluoin
+zone.
+
+\section{\mathbb{$Z_2$}c  band invariant}
+Define
+\begin{align}
+    W_{mn}(k) &=
+    \bra{U_m(k)} T \ket{U_n(-k)}
+\end{align}
+where $w$ is unitary.
+
+\begin{align}
+    w^T(k) = -w(-k)
+\end{align}
+$\Lambda_a$ = $ trim,
+$a+1,\dpts.a$4$
+\begin{align}
+    \lambda_n = \mathrm{TRIM}\qquad a=1,\ldots, 4\\
+    w^T(\Lambda_a) &= -w(`A_a)
+\end{align}
+and
+\begin{align}
+    \delta_a &= \frac{\Pf(w(\Lambda_a))}{\sqrt\det(w(\lambda_a))}}
+    = \pm 1
+\end{align}
+Here
+\begin{align}
+    \pm 1 &= (-1)^{\nu}
+    = \prod_{a=1}^{N}
+\end{align}
+Need $\sqrt{deg{w(k)}}$ continuous everywhere in BZ.
+Can do this if Bloch wave functions we defined continuously everywhere.
+Possible boundary condition that total Chern number = 0 by $T$.
+
+
+\subsection{Time-reversal polarization in 1D}
+Fu-Kane arXiv 0606336.
+Can split up Bloch states of occupied bands in the two classes.
+\begin{align}
+    \ket{U_m^I(k)}, \ket{U_m^{II}(k)}\\
+    T\ket{U_m^I(k)} &= e^{i\chi_m(k)}\ket{u_m^{II}(-k)}.
+\end{align}
+Define polarization $P_I$ and $P_{II}$ fore each class.
+Total polarization
+\begin{align}
+    P &= P_I + P_{II}
+\end{align}
+and time-reversal polarization
+\begin{align}
+    P_T &= P_I - P_{II}
+\end{align}
+\begin{align}
+    \pm 1 &= (-1)^{P_T} = \delta_1 \delta_2
+\end{align}
+for $\Lambda_1=0$ $\Lambda_2=\pi$ where
+\begin{align}
+    \delta_{a} &=
+    \frac{\Pf(w(\Lambda_a))}{\sqrt{\det(w(\Lambda_a))}}
+\end{align}
+
+The physical meaning is this.
+$(-1)^{P_T}=-1$ means boundary has a Kramers degeneracy in each end.
+
+\subsection{Back to 2D}
+Can think of 2D system as parameterized 1D
+\begin{align}
+    H_{2d} &=
+    \sum_{k_y} H_{1d}\left( k_y \right)
+\end{align}
+Consider change in $P_T$ from $k_y=0$ to $\pi$.
+\begin{align}
+    {(-1)}^{P_T(k_y=\pi) - P_T(k_y=0)} &=
+    \delta\left( (0, 0) \right)
+    \delta\left( (\pi ,0) \right)
+    \delta\left( (0, \pi) \right)
+    \delta\left( (\pi, \pi) \right)\\
+    &=
+    {(-1)}^{\nu}
+\end{align}
+You can think of this as localized Wannier states.
+
+Just like there is a story for insulators as superconductors,
+this story also has an analogue for topological superconductors.
+Instead of Chern number $\pm 1$,
+we can also consider $p+ip$ or $p-ip$.
+
+Consider a different symmetry group
+\begin{align}
+    G_f = \mathbb{Z}_4^{T,f}
+\end{align}
+and there's no $U(1)$.
+This is called class DIII.
+This would be for topological superconductors.
+Consider 2 layers.
+There is an invariant $\nu$ for the $p+ip$ layer and
+$-\nu$ for the $p-ip$ layer.
+
+All this stuff about topological pumps.
+The story on why states are protected.
+We get the $\mathbb{Z}_$ classification of topological phases.
+From a high level it's very similar.
+
+If you're okay,
+we can go to (3+1)D.
+Once we've done that,
+we'll just leave the world of free fermion topological phases
+and go on to describe some other kinds of things.
+
+So we wrote down this band invariant $\nu$.
+If you go up one dimension you can consider a similar invariant.
+
+For (3+1)D Classs AII,
+\begin{align}
+    G_f &= \frac{U(1)^f\rtimes \mathbb{Z}^{T,f}}{\mathbb{Z}_2}
+\end{align}
+and
+\begin{align}
+    (-1)^\nu &= \prod_{a=1}^8 \delta_a
+\end{align}
+8 TRIM:
+\begin{align}
+    \Lambda_a &= \left( \pi s_1, \pi s_2, \pi s_3 \right)
+\end{align}
+
+
+\section{(3+1)D massive Dirac fermion}
+It is useful to start in (4+1)D.
+\begin{align}
+    H &=
+    \sum_{a=0}^{4}
+    \sum_{k} \psi_k^\dagger d_a(k)\cdot \Gamma^a \psi_k
+\end{align}
+where $\Gamma^\mu$ are $4\times 4$ Dirac matrices wiht $\mu=0,\ldots,4$.
+Then the anticommutation is
+\begin{align}
+    \left\{ \Gamma^{\mu}, \Gamma^{\nu} \right\} = 2\delta_{\mu\nu} II
+\end{align}
+This can be  parameterized family of 3 + 1 dimensional models,
+parameetrized by a parameter $k_w$.
+\begin{align}
+    d_a(k) &=\left( 
+    m +c \sum_{i=1}^{4}\cos(k),
+    \sin k_x,
+    \sin k_y,
+    \sin k_z,
+    \sin k_w
+    \right)
+\end{align}
+so
+\begin{align}
+    H &= \sum_{k_w} H_{3+1Dj}(k_1,k_2,k_3,k_w).
+\end{align}
+Then we couple this to a background $U(1)$ gauge field.
+
+View $k_w + A_w = \theta$ as a parameter.
+I view this fourth dimension as a parameter.
+The 4 + 1 D effective action if we integrate out the fermions is basically a
+Chern Simons term.
+So it's going to give
+\begin{align}
+    S_{\mathrm{eff}} &=
+    \frac{C_2}{24\pi^2}
+    \int d^4x\, dt\,
+    \epsilon^{\mu\nu\lambda\sigma}
+    A_{\mu} \partial_{\nu} A_{\lambda} \partial_{\rho} A_{\sigma}
+\end{align}
+where $C_2$ is the second Chern number of Bloch states
+\begin{align}
+    C_2 &=
+    \int \mathcal{F}_{\mu\nu} \mathcal{F}_{\lambda\sigma}
+    \epsilon^{\mu\nu\lambda\sigma}
+\end{align}
+where $\mathcal{F}_{\mu\nu}$ is the Berry curvature of the Bloch wave functions.
