@@ -1,0 +1,255 @@
+\section{Quadratic Hamiltonians and the Equipartition Function}
+\begin{align}
+    H &= \sum_{i=1}^{N}\left( 
+    \frac{p_i^2}{2m_i} + \frac{m_i\omega_i^2}{2}x_1^2
+    \right)
+\end{align}
+The partition function is
+\begin{align}
+    Z &= \int_{-\infty}^{\infty} \prod_{i=1}^{N} \frac{dx_i\, dp_i}{h^N}
+    e^{-\beta\sum_{i}\left( 
+    \frac{p_i^2}{2m_i}
+    + \frac{m_i\omega_i^2}{2} x_i^2
+    \right)}\\
+    &=
+    \prod_{i=1}^{N}\frac{1}{h}\int_{-\infty}^{\infty} e^{%
+    -\frac{\beta m_i\omega_i^2}{2}x_i^2
+    }
+    \int_{-\infty}^{\infty} dp_i\,
+    e^{-\beta \frac{p_i^2}{2m_i}}\\
+    &= {\left(\frac{k_B T}{\hbar}\right)}^{N} \frac{1}{\prod_{i=1}^{N}\omega_i}
+\end{align}
+Then the free energy is
+\begin{align}
+    F &= -k_B T \ln Z \\
+    &=
+    -N k_B T \ln\left( \frac{k_B T}{2} \right)
+    +
+    k_B T \sum_{i=1}^{N} \ln\omega_i
+\end{align}
+The energy is
+\begin{align}
+    E &= F + TS
+\end{align}
+where
+\begin{align}
+    S &= \frac{\partial F}{\partial T}\\
+    &= Nk_B \ln\left( \frac{k_B T}{\hbar}  \right)
+    + \frac{N k_B T}{T}
+    - k_B \sum_{i=1}^{N}\ln \omega_i
+\end{align}
+and so the energy is
+\begin{align}
+    E &= Nk_B T =
+    \left(
+    \frac{k_B T}{2}
+    + \frac{k_B T}{2}
+    \right) N
+\end{align}
+Textbooks are confusing and students fall for it.
+I think a 1D harmonic oscillator has 1 degree of freedom.
+I think a 1D free particle also has 1 degree of freedom.
+Forget degrees of freedom,
+what matters is the number of quadratic terms in the Hamiltonian.
+
+Each quadratic term in the Hamiltonian has energy $\frac{1}{2}k_B T$.
+
+\begin{example}
+    1D array of masses connected by springs with periodic boundary conditions.
+\end{example}
+The Hamiltonian is
+\begin{align}
+    H &=
+    \sum_{i=1}^{N}\left[ 
+    \frac{p_i^2}{2m}
+    + \frac{k}{2} {\left( x_i - x_{i-1} \right)}^2
+    \right]
+\end{align}
+So this is quadratic but a slightly more complicated quadratic.
+You see there are cross-terms like $-2x_2x_3 + \cdots$ in there.
+You have to account for boundary conditions too.
+You have to say that $x_N = x_0$,
+including the one that wraps around.
+There are 3 terms and they are all there.
+
+What you learn in Chacko's class is that you can do a change of variables that's
+going to make this quadratic Hamiltonian that is decoupled.
+This is called finding the normal modes.
+It's something you're going to relearn in Chacko's class.
+
+I'm going to state here that you can do a change in variables.
+That's going to be equivalent to this
+\begin{align}
+    H &=
+    \sum_{i=0}^{N-1}\left[ 
+    \frac{p_i^2}{2m}
+    + \frac{m\omega_1^2}{2} q_i^2
+    \right]
+\end{align}
+Basically the $q_i$s are Fourier transforms of the $x_i$'s.
+You will find that the magic works and the $q$'s are independent of one another.
+
+If there s one canonical transformation to learn,
+it's this one.
+The range of applicability of this calculation is huge.
+Basically physics is to do more and more complicated cases of harmonic
+oscillators.
+
+Now I can complete the partition function of these guys,
+taking both terms and just writing the answer.
+
+What is the average energy of this guy of temperature $T$?
+
+It's $\frac{1}{2}k_B T$ for every quadratic term.
+There are $2N$ terms.
+This is going to be again
+\begin{align}
+    E &= \frac{1}{2}k_B T \times 2 \times N = Nk_BT
+\end{align}
+All you needed to know how many normal modes.
+You didn't even need to find the frequency.
+In physics 101,
+they shake a slinky.
+There are transverse modes,
+longitudinal modes,
+and more complicated modes I can't do with my hands.
+Each one has different frequencies.
+Some long wavelength ones move fast or slow,
+but it doesn't matter for the average energy $E$,
+it's just $\frac{1}{2}k_BT$ for every quadratic term in the Hamiltonian.
+
+We can now state the equipartition theorem.
+
+\begin{question}
+    How do you know how many terms?
+\end{question}
+If you start with $N$ coordinates,
+you get $N$ normal modes no matter how complicated.
+
+\begin{theorem}[Equipartition]
+    The thermal average energy of a Hamiltonian $H$ is
+    \begin{align}
+        E &= \frac{1}{2} k_B T N
+    \end{align}
+    where $N$ is hte numbero f quadratic terms in $H$.
+\end{theorem}
+This is true for classical systems.
+
+Let's consider a few systems now for examples.
+
+\begin{example}
+    Imagine you have a solid insulator.
+    what is the average enregy of an insulating solid?
+\end{example}
+Please give an example of a solid.
+You give 5 things that re not solids with crystal structures.
+Glass, styrofoam, plastic.
+They're all rigid,
+but they're not solids.
+The reason I'm not talking about insulators,
+is because they have electrons that move around adn that changes the energy.
+I'm thinking of an insulator solid,
+just a bunch of molecules in a lattice that shake.
+
+The modules have an equilibrium position,
+andthey shake around in a complicated way.
+To first approximation,
+they have some quadratic terms,
+and you expand in powers like the distance between the atoms,
+and the energy is quadratic.
+
+You want to know how many modules htere are.
+Supposey ou have $N$ modules on my chunck of rock.
+How many quadratic terms do I have in the Hamiltnian?
+
+There's a 3D knietic term,
+so that's 3 quadratic terms for the kinetic enregy.
+Whata bout the potential energy?
+Again every module has 3 coordiantes $x,y,z$,
+so there are 3 quadratic terms per molecule.
+So the energy should be
+\begin{align}
+    E &= \left( 
+    \underbrace{3N}_{\text{kinetic}}
+    + \underbrace{3N}_{potential}
+    \right)
+    \frac{1}{2}k_B T\\
+    &= 3Nk_B T
+\end{align}
+
+\begin{question}
+    Are you assuming a cubic lattice?
+\end{question}
+No, it could bea really complicated crystal structure,
+but you still have the same number of normal modes.
+
+The specific heat of the substance is
+\begin{align}
+    c &= \frac{1}{N}\frac{\partial E}{\partial T} = 3k_B
+\end{align}
+
+We could check this.
+Every insulating solid should have exactly the same specific heat.
+That's amazing.
+Andi t's not just any number,
+nad it's a specific number.
+
+You can see this thing here
+What I have here isa bunch of pure elements,
+andh ere I have a specific heat of hte number.
+The line in  the middle is $3k_B$.
+
+This starts from 30,
+and they're all around 23.
+So you know there are bad ones like potassium 29,
+there's another one 23.
+
+It's an amazing result.
+See the work we did.
+
+\begin{question}
+    Are we assuming only neighbouring particles are talking to each other?
+\end{question}
+No, I could have $x_1$ connected to $x_{42}$.
+As long as the energy is quadratic in distance,
+it doesn't matter.
+You could find the normal modes,
+and you find there are $3N$ normal modes,
+and that's the only thing that matters.
+
+\begin{question}
+    At higher temperatures in a crystal lattice,
+    you'l have anharonic effects 
+    like thermal expansion,
+    does that influene the specifi heat?
+\end{question}
+There's no non-linear effects that contribute at high temperature.
+How much does a rock expand when you heat a rock.
+
+This is the Dulong-Petit law.
+Validity because it really cnovineced people that convineced people statistical
+mechanics was right.
+It's failure is that it suggested quantum mechanics.
+
+Before we dothat,
+let's do a really classic case.
+Classic in classical mechanics and classic in that you do it in high school.
+
+\begin{example}[diatomic gas]
+    Ideal, nonrelativistic, classical gas.
+    What if it's diatomic?
+\end{example}
+The molecules now look like this.
+[picture]
+So what's the answer?
+If there are $N$ molecules,
+how many quadratic terms are you going to have?
+
+Every particle can move in the $x,y,z$ directions,
+but the two particles don't move independently,
+so that's $6N$ terms.
+But there is a potential term for the spring between the two particles,
+so
+\begin{align}
+    E &= (6N + N)\frac{1}{2}k_B T = \frac{7}{2}Nk_B T
+\end{align}
