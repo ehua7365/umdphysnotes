@@ -1,0 +1,393 @@
+\section{Hamiltonian Mechanics}
+Recall hte Lagrangian is
+\begin{align}
+    L = T - U
+\end{align}
+which is a function $L(q_1,\ldots,q_n, \dot{q}_1,\ldots,\dot{q}_n)$.
+Let use define
+\begin{align}
+    p_i &= \frac{\partial L}{\partial q_i}
+\end{align}
+where $p_i$ is called the \emph{canonical momentum} or momentum conjugate to
+$q_i$.
+The \emph{Legendre transform} is
+\begin{align}
+    H &= \sum_i p_i \dot{q}_i - L
+\end{align}
+where $H=H(q_i, p_i)$.
+
+The $n$ q_i$ and $n$ p_i$ define a point in a $2n$-dimensional space,
+called \emph{phase space}.
+Hamilton's equations determine a unique path in phase space,
+starting from any initial point.
+
+Let's derive Hamilton's euqations for a 1D system.
+\begin{align}
+    H &=
+    p\dot{q}(q, p) - L\left( q, \dot{q}(q, p) \right)
+\end{align}
+The point is that $\dot{q}$ is determined implicitly in terms of $q$ and $p$
+by the definition of $p$.
+\begin{align}
+    \left(\frac{\partial L}{\partial \dot{q}}\right)_{q} = p.
+\end{align}
+where we are holding $q$ fixed in the derivative.
+Let's calculate the derivative
+\begin{align}
+    \left( \frac{\partial H}{\partial q} \right)_p
+    &=
+    p \left( \frac{\partial\dot{q}}{\partial q} \right)_p
+    - \left[ 
+    \left( \frac{\partial L}{\partial q} \right)_p
+    \underbrace{\left(\frac{\partial q}{\partial q}_\right)_p}_{1}
+    +
+    \underbrace{\left( \frac{\partial L}{\partial q} \right)_q}_{p}
+    \left( \frac{\partial \dot{q}}{\partial q} \right)_p
+    \right]
+\end{align}
+It's just an exercise of partial derivatives.
+You see that one of the terms cancel.
+So using Lagrange's equation,
+\begin{align}
+    \left( \frac{\partial H}{\partial q} \right)_p
+    &=
+    - \left( \frac{\partial L}{\partial q} \right)_{\dot{q}}\\
+    &=
+    -\frac{d}{dt}\left( \frac{\partial L}{\partial \dot{q}} \right)_{q}\\
+    &= -\frac{dp}{dt}
+\end{align}
+where it's true on a classical path
+
+Similarly,
+\begin{align}
+    \left( \frac{\partial H}{\partial p} \right)_{q}
+    &=
+    \dot{q}
+    +
+    p \left( \frac{\partial \dot{q}}{\partial p} \right)_{q}
+    -
+    \left[ 
+    \left( \frac{\partial L}{\partial q} \right)_{\dot{q}}
+    \underbrace{\left( \frac{\partial q}{\partial p} \right)_{q}}_{0}
+    +
+    \underbrace{\left( \frac{\partial L}{\partial \dot{q}}
+    \right)_{q}}_{p}
+    \left( \frac{\partial \dot{q}}{\partial p} \right)_{q}
+    \right]\\
+    &= \dot{q}
+\end{align}
+And so we have derived Hamilton's equations
+\begin{align}
+    \left( \frac{\partial H}{\partial q} \right)_{p} &= -\dot{p}\\
+    \left( \frac{\partial H}{\partial p} \right)_{q} &= -\dot{q}
+\end{align}
+These are first order equations.
+This tells you how a point $(q,p)$ changes with time in phase space.
+
+In the Lagrangian approach,
+fora system with one degrees of freedom,
+we obtain a single second order equation.
+In the Hamiltonian approach,
+we obtain two first order equations.
+
+\subsection{Atwood's Machine}
+Once again,
+we consider the Atwood's machine as an example.
+
+We have a string on a pulley with two masses on its end
+$m_1$ and $m_2$.
+The length of the string on the $m_1$ is  $x$
+and the length of the string on the $m_2$ side is $y$.
+The constraint is that
+\begin{align}
+    x + y = \textrm{constant}
+\end{align}
+which means the string is inextensible,
+so if one goes up the other goes down.
+
+The Lagrangian is
+\begin{align}
+    L &=
+    \frac{1}{2}m_1\dot{x}^2
+    +
+    \frac{1}{2}m_2 \dot{y}^2
+    - \left( 
+    -m_1 gx
+    - m_2 gy
+    \right)\\
+    &=
+    \frac{1}{2}m_1\dot{x}^2 + \frac{1}{2}m_2\dot{y}^2
+    + m_1 gx + m_2gy\\
+    &=
+    \frac{1}{2}\left( m_1 + m_2 \right) \dot{x}^2
+    +
+    \left( m_1 - m_2 \right) gx
+\end{align}
+Then we can calculte the momenta
+\begin{align}
+    p &= \frac{\partial L}{\partial x}\\
+    &=
+    \left( m_1 + m_2 \right)\dot{x}
+\end{align}
+and write the velocity in terms of momentum
+\begin{align}
+    \dot{x} &= \frac{p}{m_1 + m_2}
+\end{align}
+which we can substitute into the Lagrangian
+\begin{align}
+    L &=
+    \frac{1}{2} \frac{p^2}{m_1 + m_2}
+    +
+    \left( m_1 - m_2 \right)gx
+\end{align}
+so the Hamiltonian is
+\begin{align}
+    H &= p\dot{x} - L\\
+    &=
+    p \frac{p}{m_1 + m_2} - L\\
+    &=
+    \frac{1}{2}\frac{p^2}{m_1 + m_2}
+    -
+    \left( m_1 - m_2 \right)gx
+\end{align}
+Using Hamilton's equations
+\begin{align}
+    -\dot{p} &= \frac{\partial H}{\partial q}\\
+    \dot{x} &= \frac{\partial H}{\partial p}
+\end{align}
+you can convince yourself it gives
+\begin{align}
+    \dot{p} &= \left( m_1 - m_2 \right)g\\
+    \dot{x} &= \frac{p}{m_1 + m_2}
+\end{align}
+Differentiate the second equation with respect to time and we gte
+\begin{align}
+    \ddot{x} &=
+    \frac{\left( m_1 - m_2 \right)g}{m_1 + m_2}
+\end{align}
+
+You could of course get the same differential equation from the Euler-Lagrange
+equations in the Lagrangian approach.
+\begin{align}
+    \frac{d}{dt}\left( \frac{\partial L}{\partial \dot{x}} \right)
+    - \frac{\partial L}{\partial x} &= 0\\
+    \frac{d}{dt}\left[ 
+    \left( m_1 + m_2 \right)x
+    \right]
+    -
+    \left( m_1 - m_2 \right)g
+    &= 0\\
+    \ddot{x} &=
+    \frac{\left( m_1 - m_2 \right)g}{m_1 + m_2}
+\end{align}
+Why bother with Hamilton's equations with a fraction of the work.
+
+After Hamilton came up with these equations they made him a professor at Dublin
+when he was just an undergrad!
+So what is the great insight of Hamilton?
+
+The minus sign changes the symmetry from the obvious one into a more subtle
+symmetry.
+If you are a theoretical physicist,
+you see they have a symplectic geometry.
+The Hamiltonian formalism leads to a symmetry between the $p$ and $q$'s.
+You know how much easier it is to solve a system if it has the right coordinate
+system?
+
+Now the fact is,
+there is a symmetry between the coordinates and momentum,
+which means you have the option to choose coordaintes which are combinations of
+coordaintes and momenta.
+You can make transformations between coordaintes and moemnta together,
+which increases the choics of possible coordinates,
+with so much more freedom to choose coordinates.
+
+There are problems you can solve using thismethod no one knows how to solve
+otherwise.
+It's because of this greater flexibility.
+Unfortunatley,
+there's no problem you will lsolve in this course where this is actually true.
+That's why it's important even in classical mechanics.
+These transformations are called \emph{canonical transformations}.
+
+\section{Phase space orbits}
+The generalization of Hamilton's equations to many degrees of freedom is
+\begin{align}
+    \dot{q}_i &= \frac{\partial H}{\partial p_i}\\
+    -\dot{p}_i &= \frac{\partial H}{\partial q_i}
+\end{align}
+You will need to remember these equatinos,
+but it's pretty easy to remember,
+just need to know where the sign is.
+If you can't remember,
+just consider the free particle with Hamiltonian
+$H=p^2/2m$ and so $\partial H/\partial q = p/m$ and $\dot{q}=p/m$.
+
+\begin{align}
+    \dot{q}_i &= \frac{\partial H}{\partial p_i} = f_i(q_j, p_j)\\
+    -\dot{p}_i &= \frac{\partial H}{\partial q_i} = g_i(q_j, p_j)
+\end{align}
+Introduce the $2n$ dimensional vectors
+\begin{align}
+    \vec{z} &=
+    \begin{pmatrix}
+        q_1\\
+        \vdots\\
+        q_n\\
+        p_1\\
+        \vdots\\
+        p_n
+    \end{pmatrix}
+\end{align}
+and
+\begin{align}
+    \vec{h} &=
+    \begin{pmatrix}
+        f_1(q_j, p_j)\\
+        \vdots\\
+        f_n(q_j, p_j)\\
+        g_1(q_j, p_j)\\
+        \vdots\\
+        g_n(q_j, p_j)
+    \end{pmatrix}
+\end{align}
+so we can write all of Hamilton's equations as
+\begin{align}
+    \dot{\vec{z}} &= \vec{h}(\vec{z}).
+\end{align}
+The vector $\vec{z}$ defines the ``position'' of the system in phase space.
+
+There's a $2n$-dimensional phase space.
+There's one dimension for every $p$ and one dimension for every $q$.
+If you know what $z$ is,
+you know the particle position in phase space at any given time,
+and this equation tells you how the particle moves in phase space as a function
+of time.
+
+Let's say you have some trajectory on phase space.
+Because the vector $\dot{\vec{z}}$ is unique for a given $\vec{z}$,
+there should be no crossing of paths in phase space.
+
+\subsection{Harmonic Oscillator in 1 dimension}
+The Lagrangian is
+\begin{align}
+    L &= \frac{1}{2}m\dot{x}^2 - \frac{1}{2}kx^2
+\end{align}
+so the Hamiltonian is
+\begin{align}
+    H &= p\dot{x} - L\\
+    &= \frac{p^2}{m} - \left[ 
+    \frac{1}{2}m\left( \frac{p}{m} \right)^2
+    - \frac{1}{2}kx^2
+    \right]^2\\
+    &=
+    \frac{1}{2}\frac{p^2}{m}
+    + \frac{1}{2}kx^2
+\end{align}
+so Hamilton's equations gives
+\begin{align}
+    \frac{\partial H}{\partial p} &= \dot{x}
+    &\implies
+    \frac{p}{m} &= \dot{x}\\
+    \frac{\partial H}{\partial q} &= -\dot{p}
+    &\implies
+    kx &= -\dot{p}
+\end{align}
+Eliminating $p$,
+we get
+\begin{align}
+    m\ddot{x} &= -kx
+\end{align}
+and if we define $\omega^2 = k/m$,
+we get the solution
+\begin{align}
+    x &= A \cos(\omega t - \eta)\\
+    p &= m\dot{x} = - mA\omega \sin(\omega t - \eta)
+\end{align}
+The phase space for the harmonic oscillator is the 2D space with coordinates
+$(x,p)$.
+As time changes,
+the particle traces out a path in phase space,
+called the \emph{orbit} in phase space.
+Despite the name, it's generally not a closed path.
+
+For a Harmonic oscillator in 1 dimensions,
+the orbit is an ellipse
+\begin{align}
+    \frac{x^2}{A^2} + \frac{p^2}{mA^2\omega^2} &= 1
+\end{align}
+and it's going clockwise.
+
+\section{About the Midterm}
+I've written the exam already.
+If you did the homework,
+understand how to solve those problems,
+it should be quite straightforward to get 50\% very easily.
+I think it's an exam where to get 100\% is not easy,
+to get 90\% is tough.
+Some questions are straightforward,
+but some are had.
+All carry equal points.
+It's not that easy questions are first.
+You can read the exam,
+recognise the questions.
+Make sure you do the ones you know how to do.
+In the end,
+the most important thing is to pass.
+Nail all those you know.
+Once you're confident they're right,
+spend time on the tough ones.
+
+You need to memorize the formula for the Method of Steepest descent.
+There is no cheat sheet.
+
+It's not like the qualifier,
+where you need to know
+all of classical, all of quantum, and you have to pass them all at once,
+or some BS like that.
+Trust me, the midterm is much easier than being tested on all of physics.
+
+The questions are like this.
+2 from the first homework, 2 from the second homework and 2 from the last.
+All questions are are of equal weight.
+On Thursday, try to get here early!
+Class is 9:30 to 11:20 but try to get here early.
+I will hand out the question papers early enough so you begin exactly at 09:30.
+You can look at the question paper before that,
+but you can only start writing at 09:30.
+
+I will try to provide paper,
+but just in case bring your own.
+
+I suggest spending time doing the homework problems,
+make sure you can absolutely do all the homework problems.
+Once you've done that,
+look at all the worked examples I did in class.
+That's basic preparation.
+If you have time beyond that,
+there's all those books,
+some of them have problems,
+look through the problems and see if you know how to do those problems.
+
+Do we need a calculator?
+I don't think you should need a calculator.
+
+Are we scanning or handing in physical paper at the end?
+I'm thinking of handing in physical paper,
+because it will take you 10 minutes of scanning.
+
+A calculator might be useful for binomial coefficients,
+but you can calculate the first 2 or 3.
+You'll get some points for sure.
+
+Will we be given the contours to integrate over?
+Choosing contour shapes, should we learn?
+Look very carefully through all the homework problems.
+I'm not going to tell you which contour to choose,
+you're going to have to figure it out yourself.
+That's important.
+
+Will the mapping for mapping problems be provided?
+The choice of mapping will be provided.
+
+Also, one last thing, there's a new set of notes online.
