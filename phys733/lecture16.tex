@@ -1,0 +1,728 @@
+\section{Lecture 16}
+In (1+1)D there are two types of anomaly.
+Chiral anomaly $U(1)$, characterised by some integer, the Chern number.
+Gravitational anomaly, characterised by Chiral central charge.
+They are different,
+but the minimal example of a theory with a chiral anomaly is a 1D complex
+fermion.
+A chiral fermion will have chiral anomaly.
+When they say chiral anomaly,
+they mean two different things.
+If you have a left and right mover,
+there is a symmetry corresponding to the left and right,
+sometimes called the axial current.
+The fact there's a chiral anomaly here
+means that if you take two copies,
+that anomaly will persist.
+If you take a single chiral fermion,
+and it has this gravitational anomaly.
+
+If you have a general interacting CFT,
+these don't have to be the same thing.
+
+Hopefully I'll put up another homework assignment to cover what we've done since
+last homework assignment.
+We've been talking about topological insulators,
+discovered by Charlie Kane who's here today.
+
+Let me clarify some things I didn't explain,
+then we'll go to 3D.
+
+\section{2+1D case}
+Here we have a topological insulator.
+The fermionic symmetric group was
+\begin{align}
+    G_F &= U(1)^f \rtimes \mathbb{Z}_4^{T,f} / \mathbb{Z}_2
+\end{align}
+$U(1)$ is the same as fermion parity.
+Time reversal also square the fermion parity.
+This is class AII.
+
+Then then are matrix elements of the time-reversal operator.
+\begin{align}
+    w_{m,n}(k) &=
+    \bra{U_m(k)} \tau \ket{U_n(-k)}
+\end{align}
+and there are 4 time-reversal invariant momenta (TRIM) labelled $\Lambda_a$.
+
+So we have $(0,0)$, $(\pi ,0)$, $(\pi, \pi)$, $(0, \pi)$.
+Then we have $\mathbb{Z}_2$ topological band invariant.
+\begin{align}
+    \left( -1 \right)^{\nu} &= \prod_{a=1}^{4} \delta_a
+    \prod
+\end{align}
+where
+\begin{align}
+    \delta_a &=
+    \frac{\Pf(w(\Lambda_a))}{\sqrt{\det(w(\Lambda_a))}}
+\end{align}
+and we need to pick Bloch wave functions $\ket{u_n(k)}$ such that
+$\sqrt{\det(w(k))}$ is continuous.
+
+For 1D systems,
+time-reversal polarization
+\begin{align}
+    (-1)^{P_T} &=
+    \prod_{a=1}^{2}\delta_a = \delta_1 \delta_2
+    = \delta_` \delta_2
+\end{align}
+When the time-reversal polarization is odd,
+it has a Kramers degeneracy on the boundary,
+and none if it's even.
+A 1D system is not a well-defined thing,
+because putting an electron at the end will ad a Kramers degeneracy.
+When you do a gauge transformation the Bloch wave functions,
+you can actually change $P_T$ from $0$ to $1$.
+
+$P_T=0,1$ tells us if the boundary of a 1D system has Kramers degeneracy,
+but there is a gauge transformation taking
+$\ket{u_n(k)}\to e^{i\theta_k}\ket{u_n(k)}$.
+So there is some phase change of the Bloch wave function that will change $P_T$
+from $0$ to $1$.
+
+There is an integer ambiguity of the charge polarization in 1D.
+When we talk about Chern number,
+the Chern number tells us how polarization changes affects the 1D changes.
+If we had a 1D system,
+if we insert flux,
+the polarization as we insert flux changes from 0 to 1,
+means we pump change from one end to another.
+Adiabatic changes to polarization around a cycle are well defined and define
+a topological pump.
+Whether it's 0 to 1 in a given 1D system is not useful,
+however if you think of a 2D system this way,
+when you insert flux, or tune $k_y$,
+the fact that the time-reversal polarization is changing between 0 and $\pi$
+is the basic effect that describes what's going on here.
+In equations,
+this invariant is the same as
+\begin{align}
+    (-1)^{\nu} = (-1)^{P_T(k_y=0) - P_T(k_y = \pi)}
+\end{align}
+And it could be a plus.
+
+What does it mean for the surface stats.
+If $\nu$ is odd,
+we have helical edge modes with counter propagating complex fermions as I said
+last time.
+
+Now, I want to explain the connection to the surface states a little more
+clearly.
+
+\section{Connection to Surface States}
+The equality I didn't derive last time
+\begin{align}
+    (-1)^{\nu} = (-1)^{P_T(k_y=0) - P_T(k_y = \pi)}
+\end{align}
+I didn't describe,
+so I might put that in your homework.
+What does it actually mean?
+
+We conclude that we have to have gapless surface states if the symmetry remains
+intact.
+Taking $k_y$ from 0 to $\pi$.
+Remember $k_y + A_y$ enters the equation when we insert flux.
+So $k_y + A_y$ is what enters the Hamiltonian.
+So
+\begin{align}
+    A_y &= \Phi/L_y
+\end{align}
+Taking $A_y$ from $0$ to $\pi$ is equivalent to taking
+$\Phi$ from $0$ to $\pi L_y$.
+The cylinder is along $x$.
+
+$2\pi$ flux is equivalent to no flux,
+so this is just $\pi$ flux if $L_y$ is odd.
+So take $L_y$ odd and consider inserting $\pi$ flux.
+$\phi=0\to \pi$.
+
+If we start with a Kramers singlet on a boundary,
+we need to get to a Kramers doublet.
+What this tells us is that if we start off with a non-degenerate ground sate,
+we adiabatically insert flux.
+If $\nu$ is odd,
+we better get to a Kramers doublet.
+That immediately tells us it's gapless?
+
+Why?
+Suppose it's gapped.
+Then inserting flux can only change the ground state energy by an amount
+$\Delta E \propto e^{-L_y/\xi}$.
+So that means if it starts off in a Kramers singlet,
+there's no way it could become a Kramers doublet.
+It has to remain a Kramers singlet.
+
+So if the boundary is gapped,
+there are 2 possibilities.
+Either this $\nu=0$ is trivial,
+so a singlet stays singlet.
+Or, we break time-reversal symmetry,
+so it doesn't make sense to talk about Kramers doublet or singlet anymore.
+
+If we break $U(1)$ charge conservation,
+we have asuperconductor on the boundary,
+inserting flux is well defined anymroe if you want to stay on the ground state
+manifold.
+If I insert flux, it gives lare enrgy cost.
+
+We can conlude that if $\nu=1$ mod 2,
+then either
+\begin{enumerate}
+    \item The boundary is gapped and symmetry-breaking.
+    \item The boundary is gapless, so it can preserve the symmetry.
+\end{enumerate}
+If it's gapless it actually may or may not preserve the symmetry,
+but the point is that if we want to preserve the symmetry,
+the boundary must be gapless.
+Remember this picture where I drew $E$ as a function of $k_y$,
+where we had one bad down here and one bad up there.
+
+At $k_y=\pi$,
+they had to be Kramers degenerate,
+and these Kramers pairs split at $k_y=0$.
+There are two ways they can connect going from $k_y=0\to \pi$.
+Either they can switch partners like this [picture].
+
+Or they don't switch partners.
+In the case of no switching pairs,
+there is symmetry,
+and if it's gapped, it's in conflict,
+so it must be the pair switching case if $\nu$ is odd,
+and not switching if $\nu$ is even.
+
+This establishes a connection betwen the bulk nivariatn $\nu$ and the way the
+edge modes connect on to the boundary,
+which guarantees these robust edge states.
+
+You could go further.
+Suppose you had one of these situations,
+can you convinceyouself that the insertion of $\pi$ flux would change the bands.
+
+Now I'm going to draw the bnads from $-\pi$ to $\pi$.
+Suppose your chemical potential is exactly at this point,
+so htis state which isa Kramers doublet,
+and bothsates in the doublet are occuppied.
+And then all the states below that chemical potential are also occupied.
+So then you can insert the $\pi$ flux,
+which shifts all tese states over to hte right by $\pi/L_y$.
+And we get a picture where one of these states goes up a little,
+and hte other states shifts down.
+But here there's an empty state.
+So this guy becomes empty and this guy becomes filled.
+Under $\pI$ flux,
+these states hsfit over,
+and you have occupied and unoccpied states.
+This start is Kramers doublet because there's an exact anaolgous state with a
+Kramers degeneracy with a degeneracy.
+You can draw these diagrams in all scenarios and convince yourself that iserting
+$\pi$ flux changes a state from an even number of doublets to an odd number of
+doublets, and vice versa.
+That makes the surface and bulk correspondnce even more explicit.
+
+I wanted to fill in this hole last time.
+I didn't make a connecino with suraace staes.
+
+THis (1+1)D helical boudnary,
+in the Chern number case,
+we had a U(1) anomaly.
+Something has ot cancel out the anomaly,
+which si the bulk.
+Here the anomaly is a mix between $U(1)$ and time-reversal.
+If we want to preserve both of them so these gapless modes are robust,
+that's a signature that we hav ea mixed anomaly between U(1) and TR symmetry.
+The fact you insert $\pI$ flux and the Kramers degeneracy of the ground state
+chagnes,
+you can think of it as a symptom of the anomaly.
+So the ground sate went from beinga Karmers singlet to Kramers doublet.
+
+If you take this helical theroy,
+noe way to see hwat's wrong is the study it on a spacteim that iss Klein bottle.
+It's useful to put sapceteime on a non-orientable manifold,
+it turns out you can also in that case see more things wrong and inconsistent
+with the theory.
+Just like the chiral fermion, thei nconsistency wwas curretn conservation breka
+down.
+
+Seeing anomalies wiht discrete ymmetries is a muc hmore complicated game poeple
+only started to understand 10 years ago.
+Studying on a Klein bottle is one thing you could do to se the anomaly.
+But I'm not going to go down that path here.
+
+So now let's go to (3+1)D.
+We're still in Class AII and TI still squares to -1.
+And here we have 8 TRIM,
+which I write as
+\begin{align}
+    \Lambda_a=(n_1,n_2,n_3)
+    =
+    \frac{1}{2}n_1 \vec{b}_1
+    + \frac{1}{2}n_2 \vec{b}_2
+    + \frac{1}{2}n_3 \vec{b}_3
+\end{align}
+where the $b$s are primitive reciprocal lattice vectors and $n$s are iether 0 or
+1.
+This defines a 3D topological insulator.
+The topological invariant is
+\begin{align}
+    (-1)^\nu &= \prod_{a=1j^{8}}\delta_a.
+\end{align}
+Consider a cubic lattice.
+Consider a surface in the $z$ direction.
+We can look at hte surface states.
+At the time-reversal invaritn mometna,
+at a stte in this TRIM,
+we have Kramers degenercy,
+but as soon as we go away,
+the bands split.
+So that means we have a Dirac node,
+when we locally have some state at some energy.
+
+So surface states at $(k_x,k_y)=(0,0)$, $(0,\pi)$, $(\pi, 0)$, $(\pi, \pi)$
+come in Kramers pairs,
+and that means we have Dirac cones every time we have states with these momenta.
+
+We can draw a picture.
+We have these different points here,
+these TRIM,
+and wheneter you have some state that comes iwth degeneracy,
+there's a bunch of dirac cones when we hvae some staes at these moemnta.
+For exmplae
+at this momenta,
+we have Dirac cones at vairous energis.
+And just like this dimension,
+just like here,
+it was a question of how the states connect up.
+Similarly here,
+it's a uestion of how these diract cones all connect up with each other.
+This index $\nu$ ultimately gives informatino about the way these cones connect
+up to each other.
+
+The fermi level could be anywhere.
+
+The question is how do these cones connect up.
+And basically hte answer is that if $\nu=1$.
+Let me mention nadi mportant property of Dirac cones,
+I hsould put on the homework.
+If you calculate the Bery phase of going around a dirac cone,
+you get a $\pI$ Berry phase,
+it's the most important property of a Dirac cone.
+
+When $\nu=1$,
+the cones connect up in such a way that wheterver your chemical potential is,
+if you lok tahte Fermi suaces,
+and claculate the Berry phase to go aorund all your fermi surfaces,
+you get a Berry phase of $\pi$.
+If $\nu=1$,
+the cones connect up sothat the Fermi surface encloses an odd numbero f Dirac
+cones,
+or more precisely there is a $\pi$ Berry phase.
+
+For example, suppose you had $k_x$ and $k_y$.
+At each $\Lambda_a$, define
+\begin{align}
+    \pi_a = \delta_{\Lambda_a} \delta_{\Lambda_a + \pi \hat{z}} = \pm 1
+\end{align}
+Depending on the sign of this guy,
+what you can argue is that every time you want to go from a filled to an empty
+circle,
+youhave to cross the Fermi circle.
+Every time you went from 0 to $\pi$ we had to cross the band so that the Fermi
+surface lies here.
+It's anlogous in higher dimension,
+that if you want to gor from one poitn ot another,
+whether you hae to cross a Fermi surface is determined by this number here.
+
+So far I've just told you what happens,
+but I haven't explaine dhtis very much,
+but I won't explain this to you,
+just too much band theory.
+I hope you got the idea.
+It's imlar to 1D.
+You want to go from one side to another,
+whether you cross the band depends on some invariants,
+and in this case happens to be this one.
+It's more confusing to think of this 3D case.
+If you are interested in understanding this point in detail,
+I can recommend references.
+
+If $\nu=1$ mod 2,
+then the surface can be modelled by an odd number of Dirac cones at some
+chemical potnetial nd the minimal surface model would be having just 1 Dirac
+cone.
+
+So we've writtne Dirac cones before in class, for example
+\begin{align}
+    H &=
+    \int d^2x\,
+    \left[
+    \Psi^\dagger\left( 
+        i\sigma^x D_x - i\sigma^y D_y
+    \right)\Psi
+    - \mu \Psi^\dagger \Psi
+    \right].
+\end{align}
+Can the Fermi surface be gapped?
+
+In this model,
+time-reversla symmetry can e implmented by
+\begin{align}
+    \mathcal{T} &= i\sigma^y K
+\end{align}
+where $K$ is complex conjugatino.
+In 1D it's either gapped and breaks the smmetry
+or it's not gapped and preserves the symmetry.
+Same thing here.
+
+A surface is either
+\begin{enumerate}
+    \item Trivially gapped and symmetry-breaking.
+        The things you can dd to the Hamiltonian to gap out the Fermi surface
+        would be a mass term
+        \begin{align}
+            \delta H_1 &= m \Psi^\dagger \sigma^z \Psi
+        \end{align}
+        which breaks TR symmetry, but conserves $U(1)$.
+        If you ahvea single massive dirac fermion,
+        integrate out the fermion,
+        look tah te electrmagnetic response,
+        you geta Chern-Simons term in the background gauge field with a value of
+        half.
+        so this leads to a $\frac{1}{2}$ integer Hall conductivity,
+        meaning hte Hall conducatnce is
+        \begin{align}
+            \sigma_H &= \frac{1}{2} \frac{e^2}{h}
+        \end{align}
+        So breaknig TR symmetyr leads to Hall condcityity that is half.
+        But if there is an integer ambiguoulity more generally,
+        it's
+        \begin{align}
+            \sigma_n &= \left( n + \frac{1}{2} \right) \frac{e^2}{h}
+        \end{align}
+        the half shift of the Landau levels is related to the Dirac cone.
+        You will never see the surface in a pure 2D system,
+        because in a 2D system,
+        you only have an even numbero f Dirac cones.
+        Having an odd number of Dirac cones gives that 1/2 conduance,
+        and is non-trivial.
+
+        Another term you could add to theHamiltonain to gap the Fermi surface is
+        \begin{align}
+            \delta H_2 &=
+            \Delta \Psi^\dagger i\sigma^y \Psi + \mathrm{h.c.}
+            \propto
+            \Delta \Psi_1\Psi_2 + \mathrm{h.c.}
+        \end{align}
+        This term by itsefl opens a gap at the Fermi surface.
+        Superconducting terms usually produced gapped at the surface.
+        there's no way of introducing a gap trivially,
+        by trivally I mean adding a Fermion bilinear and gapping hte surface.
+        These are really the only two terms you could add.
+    \item The other possiblity is that you don't hvae these terms and the
+        surface is symmetry-preseriving.
+        But now you have in general an odd number of Dirac cones,
+        with this symmetry and time-reversal,
+        and this has a ``parity anomaly''.
+        And in our situtiona,
+        this is really a mixed anomaly between U(1) and time-reversal.
+        What this mixed anomaly means is that if you take a theory of a single
+        Dirac cone,
+        make it well defined,
+        then you run into problems and you need to regularize it,
+        and any way of regualirazting necessarily breaks U(1) or T symmetry.
+        For examle, compue the harge of the U(1) symmetry,
+        but you need to do a sum you need to regularize,
+        but ther's no way of regularlizing wihtout brekaign T.
+        You need to introduce an extra dimensino.
+        Alternatively,
+        you could try to get teh sign of the path integral real to be
+        consistentwtih TR symetry without messing the bulk.
+        This discussion is probably a lecture of its own.
+        There's a really nice review by Ed Witten from 5 or 6 years ago where he
+        does it and he releates it to TSE index theorems,
+        which I encourage you to look up.
+    \item This is new to this dimensino and wasn't discovered until after 5 or 6
+        years after topological insulators were discovered.
+        This is the possbility that the surface is gapped and
+        symmetry-preserving,
+        but the surface has a non-invertible topological order.
+        Somtimes people call this ``intrinsic toplogical order''.
+        This means anyonic excitaitons,
+        particles iwth topological nontrivial faactional statsitics,
+        and the particles act on the anyons in anomalous ways that show upin a
+        2+1D system.
+        We haven't discussed non-invertible toolgoical ordre yet,
+        so we're not in a position to discuss this third possibility,
+        there there is such a possibility.
+        The ground state on a nontrivial surface is degenerate,
+        in fact a topological degeneracy.
+        For example, if the surface of your system isa torus,
+        you would havea ground sate degenarcy coming from hte boundaries,
+        likethe Majoranas.
+        In 1 you also have a ground state degenearcy,
+        but it is trivial.
+\end{enumerate}
+
+\begin{question}
+    When it says we have to enclose an odd numbero f Dirac coenes.
+    Say I sweep the fermi level,
+    that means it should come in paris?
+    If I sweep up the Fermi level,
+    and I need to retain an odd number of Dirac cones,
+    then i have to pass 2 Dirac cones at a time?
+\end{question}
+Just ignore ``Fermi surface enclosed odd number of Dirac cones''.
+What matters is that when you go around the Dirac cone,
+you have a $\pi$ Berry phase.
+
+You have to think pretty carefully about what happens in 2D, 3D, but 3D is much
+more complicated.
+It's analysis you have to go through.
+
+
+Those are just a few words bout hte surface.o
+Bulk response theory.
+I assert what the bulk response theory is .
+
+\begin{question}
+    Trivial gapping is being introduced by fermion bilinears,
+    by non-trivial you mean higher order terms?
+\end{question}
+Let me be more specific.
+Trivially gapped means that the surface does not have intrinsic topological
+order.
+Now,
+if the surface does not have intrinsic topological order,
+usually those kinds of gapped surfaces which don'th ave intrinsic gapped order
+can always be cancleeleld by adding fermion bilinears.
+But if you add a four-fermion term,
+that could lead ot expectation values for two-fermion blinears.
+That's what happesn in superconductivity.
+what I really mean is more naunced.
+
+\begin{question}
+    Given a material,
+    would you be able to tell from this band diagram?
+\end{question}
+You have to find whether the symmetry is preserved or not,
+which you can convince experiennatally.
+
+\begin{question}
+    Possiblity 4 with gappless and symmetry breaking?
+\end{question}
+That's kind of trivial.
+It could be gapless and symmetry breaking.
+The reason I emphasies symmetry preserving is because that's usually the
+possiblity that occurs if you preserve the symmetry.
+
+Once you break the symmetries,
+you could think of what's hapening as another manifestatino of hte anomaly.
+Symmetry brekaing ofa system with an anolay is an intersting subject itself.
+Usulaly it means various defects have nontrivial properties because of the
+anomaly.
+
+One thing I didn't mention.
+This superconductivity is superconducting in a single fermion band.
+Ify ou inteoduced supercondcutivty in a single band systme,
+you expect ot et Majorana zero modes.
+The vortices of this superconector $\delta H_2$ carry Majorana zero modes.
+This gave the first example beyond
+which doesn't have a non-trivial pairing symmetry,
+you can have an odd numberof so vortices carry MZMs.
+
+It's really a single band,
+there's no spin degenearcy.
+
+\section{Electromagnetic response}
+I want to discuss the electromagnetic response.
+The electromagneti response has an effective action that is topological
+\begin{align}
+    S_{3+1}^{top}[\theta, A] &= \theta\cdot P
+\end{align}
+this is the so-called $\theta$ term in gauge theory.
+This is called the instanton number.
+\begin{align}
+    P &= \frac{1}{32\pi^2} \int d^3x\, dt\,
+    \epsilon^{\mu\nu\rho\sigma} F_{\mu\nu} F_{\rho\sigma}
+    =
+    \frac{1}{4\pi^2} \int d^3x\, dt\, \vec{E}\cdot\vec{B}
+\end{align}
+Let me define the non-abelian Berry conncetion,
+where we take Bloch states from different bands.
+\begin{align}
+    a_i^{\alpha\beta} &=
+    -i \bra{\alpha,k}
+    \frac{\partial}{\partial k_i}
+    \ket{\beta,k}
+\end{align}
+Before we were taking Blcoh staes from the same band,
+but now we're taking them from different bands.
+the non-abelian field strength
+\begin{align}
+    f_{ij}^{\alpha\beta} &=
+    \partial_i a_j^{\alpha\beta}
+    - \partial_j a_i^{\alpha\beta}
+    + i[a_i, a_j]^{\alpha\beta}
+\end{align}
+Then the $\theta$ term is
+\begin{align}
+    \theta &=
+    \frac{1}{2\pi}\int d^3k \, \epsilon^{ijk}\Tr\left( 
+    \left( f_ij - \frac{1}{3}[a_i, a_j] \right)a_k
+    \right)
+\end{align}
+The trace is over occupied bands.
+This is called the ``theta term'',
+the ``topological magnetoelectric effect''
+or the magnetoelectric polarizability.
+
+Note that $F\wedge F$ is a total derivative because
+\begin{align}
+    \epsilon^{\mu\nu\rho\sigma} F_{\mu\nu} F_{\rho\sigma}
+    \propto
+    \epsilon^{\mu\nu\rho\sigma} \partial_{\mu}\left( 
+    A_\nu \partial_\rho A_\sigma
+    \right)
+\end{align}
+One way of thinking about this is either a surface effect,
+and you can think of it as a property that does something to monopoles in your
+system.
+We see both of those.
+
+Just like the Chern number arises from integrating fields strength over a
+surface.
+But here, w'ere integrating $F\wedge F$ over a closed $4$-manifold.
+
+$P$ is an integer if space-time is closed.
+And because $P$ is an integer and spacetime is closed,
+our path integral,
+or effective parition function looks like
+\begin{align}
+    e^{i\theta P}
+\end{align}
+and because $P$ is an integer,
+changing $\theta$ to $\theta+2\pi$ doesn't change anything,
+so in the bulk it doens't change anything
+$\theta \sim \theta + 2\pi$.
+We're just trying to undertand the bulk of hte sytem by putting it on a closed
+sacetime manifodl,
+and ther's no effect changing by $2\pi$.
+Then you can ask what time-versal does.c
+It doesn't do anytign to $\vec{E}$, 
+but it flips $\vec{B}$.
+So effeively time-reversal is like flipping $\theta$.
+
+So, you could say a time-versed system would have a $-\theta$ response,
+which means that $T:\theta \to -\theta$.
+
+And because $\theta=0$ or $\pi$,
+but are consistent with timer-reversal.
+
+\begin{question}
+    The anlog of $\theat$ in 2+1 dimensisno is anot integer,
+    but now we can define something up to an integer?
+\end{question}
+There's a fundamental distinction betwen even and odd idmensions.
+In odd dmidension,
+youhave $\theat$ terms.
+If you have a insulator wiht no particular symemtries,
+$\theat$ can be anything.
+But now we add a symmetry and we quatnzie it.
+The coefficient in the CS theory was integer.
+The short answer is there is a fundamental distcintion betwene odd and even
+dimensions.
+There's a long answer how to relate 2+1 and 3+1 dimensinos,
+but I can't go into that at the moment.
+
+As an aside,
+let me say that if you're intersted in the TQFT aspect of it,
+you might also be interested in not only turning on a non-trival spacteime,
+but also be interested in putting it on a non-trivial spacetime so it has
+curvature.
+So if you include the gravatiational response,
+here we have not just $F\wedge F$,
+but also $R\wedge R$ where $R$ is the Riemann tensor.
+So
+\begin{align}
+    S[A, g] &=
+    \theta\cdot P
+    -
+    \frac{1}{48} \int \frac{1}{\left( 2\pi \right)^2} \Tr R\wedge R
+\end{align}
+Let me mention some physical consequences of this magnetoelectric term.
+
+\begin{enumerate}
+    \item Surface quantum Hall effect.
+        Suppose that we have a domain wall of $\theta$ as a function of $z$.
+        And $\theta$ goes from $0$ at $z=-\infty$ to $\pi$ at $z=+\infty$.
+        So then
+        $\theta(z)=\pi H(z)$ as a step function and its derivatve is
+        $\theta'(z) = \pi \delta(z)$.
+        Then
+        \begin{align}
+            \frac{1}{8\pi^2}\int\theta(z)
+            \epsilon^{\mu\nu\lambda}\partial_z\left( 
+            A_\mu \partial_\nu A_\lambda
+            \right)
+            &= -\frac{1}{8\pi}\int \partial_z\theta\cdot
+            \epsilon^{\mu\nu\lambda} A_\mu \partial_\nu A_\lambda\\
+            &= -\frac{1}{2} \frac{1}{4\pi}\int_{z>0}
+            A_\mu \partial_\nu A_\lambda \epsilon^{\mu\nu\lambda}
+        \end{align}
+        and so we get the Hall conductance
+        \begin{align}
+            \sigma_H &= -\frac{1}{2}
+        \end{align}
+    \item Witten effect.
+        Suppose we have a bulk cube with boundaries.
+        Suppose $\theta$ goes from $\pi$ to $0$ as discussed.
+        Imagine a monopole form the outside and bring it inside.
+        The basic effect is that monopole carries half charge.
+        One quick way of seeing that is tht the surface has half-integer QHE,
+        I take the monompole iwth strnght $2\pi$,
+        and this monopole feels flux $2\pI$,
+        so it changes by $2\pi$.
+        Becasue of the half integer efefct,
+        it has to bind the half charge,
+        so I get a half-charge at the surface and that needs to be compensated
+        somewhere else,
+        and that's in the monopole.
+        That's a quick way to see the half-integer hall effect.
+        You could do a few lines of algebra and actually derive it a little more
+        concretely.
+        Let me derive it quickly.
+        \begin{align}
+            j^{\mu} &=
+            \frac{\delta S}{\delta A^{\mu}} =
+            \frac{1}{2\pi} \epsilon^{\mu\nu\lambda\rho}
+            \partial_\nu \theta
+            \partial_\lambda A_\rho
+        \end{align}
+        Suppose $\theta$ is uniform in spce,
+        but time-varying
+        \begin{align}
+            \partial_i j^i &=
+            \frac{1}{2\pi}
+            \epsilon^{itjk} \partial_t \theta
+            \partial_i \partial_j A_k\\
+            &= -\frac{1}{2\pi} \partial_t \theta \partial_i B^i
+        \end{align}
+        and this is the same as the time-derivativeof the charnge
+        \begin{align}
+            \partial_t \rho &=
+            \frac{1}{2\pi} \partial_t \theta \partial_i B^i
+        \end{align}
+        So then
+        \begin{align}
+            \rho &= \frac{1}{2\pi}\theta\nabla\cdot\vec{B}
+        \end{align}
+        and so tthe electric charge is half the monopole charge
+        \begin{align}
+            Q_e &= \frac{1}{2} Q_m
+        \end{align}
+\end{enumerate}
+
+Ther'es one other consequence I want to discuss next time,
+then I'll do dimensinoal reduction from 4+1D Chern insulator.
+
+Let me just take a few minutes and do one another thing,
+which is closely replated to the Hall conductivity called the Witten effect.
