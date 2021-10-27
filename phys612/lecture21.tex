@@ -1,0 +1,40 @@
+\section{Diatomic gas}
+The heat capacity is
+\begin{align}
+    c_v &= (6N + N)\frac{1}{2}k_B = \frac{7}{2}k_B N
+\end{align}
+Harmonic oscillator.
+For $k_B T \gg \hbar\omega$, $\bar{E} = k_B T$.
+
+Back to solids.
+Bebye
+\begin{itemize}
+    \item Normal modes have $\omega_k=v k$ for all 3 modes.
+    \item Brilluoin zone is a sphere
+        \begin{align}
+            3N = V \int dk
+        \end{align}
+        i.e. number of normal modes equals number of fourier modes.
+\end{itemize}
+The partition function is
+\begin{align}
+    Z &= \Tr e^{-\beta H}
+    =
+    \prod_{k,\alpha}\sum_{n_k=0}^{\infty} e^{-\beta\hbar\omega\left( n_k +
+    \frac{1}{2}
+    \right)}
+\end{align}
+where each term is partition function for one oscillator for one oscillator of
+frequency $\omega_k$.
+where $\alpha = 1,2,3$
+so
+\begin{align}
+    Z &=
+    \prod_{k,\alpha}
+    \frac{e^{-\beta\hbar\omega/2}}{1 - e^{-\beta\hbar\omega_k}}
+\end{align}
+so
+\begin{align}
+    F &= -k_B T\ln Z
+\end{align}
+
