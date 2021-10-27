@@ -1,0 +1,678 @@
+\section{Response Theory for (3+1)D Topological Insulator}
+The response theory has action
+\begin{align}
+    S[A,g] &=
+    \theta\cdot \frac{1}{32\pi^2}
+    \int_{M^4} F_{\mu\nu}F_{\lambda\sigma} \epsilon^{\mu\nu\lambda\sigma}
+    - \frac{1}{48}
+    \int \frac{1}{\left( 2\pi \right)^2} \Tr R\wedge R
+\end{align}
+where $\theta=\pi$ for non-trivial and $\theta=0$ for trivial.
+Recall that
+\begin{align}
+    \int F_{\mu\nu}F_{\lambda\sigma} \epsilon^{\mu\nu\lambda\sigma}
+    =
+    \vec{E}\cdot\vec{B}
+\end{align}
+
+The physical consequences are TME:
+\begin{enumerate}
+    \item Domain wall in $\theta$, $\frac{1}{2}$ integer Hall conductance at
+        surface.
+    \item Witten effect
+        \begin{align}
+            Q_e &= \frac{1}{2}Q_m
+        \end{align}
+    \item Magnetic field induces charge polarization
+\end{enumerate}
+the current is
+\begin{align}
+    j^{\mu} &= \frac{\delta S}{\delta A^\mu}
+    = \frac{1}{2\pi} \epsilon^{\mu\nu\lambda\sigma}
+    \partial_\nu \theta \partial_\lambda A_\sigma
+\end{align}
+Let $\theta$ be uniform and time-dependent
+\begin{align}
+    j^i &=
+    -\frac{1}{2\pi}
+    \epsilon^{tijk} \partial_t \theta \partial_j A_k\\
+    &= -\frac{1}{2\pi}\partial_t \theta\cdot B^i
+\end{align}
+so then the current is
+\begin{align}
+    \vec{j} &=
+    \frac{\partial\vec{p}}{\partial t}\\
+    &=
+    -\frac{1}{2\pi} \partial_t \theta \vec{B}
+\end{align}
+and so the magnetic polarizability is
+\begin{align}
+    \vec{P} &=
+    -\frac{\theta}{2\pi}\vec{B} + \mathrm{const}
+\end{align}
+For a topological insulator $\theta=\pi$.
+It's a bulk polarization but poarlizaiton only has an effect on the surface.
+When I change $\theta$ from 0 to $3\pi$ for example,
+my quantum hall effeect on the surface is $\left(1 + \frac{1}{2}\right)e^2/h$.
+
+In 1D I can always add an integer charge on the surface.
+If I put $2\pi$ here,
+the efect is tackign on a quantum hall effect on the surace.
+The bulk didn't play a special role,
+it's just something intrinsicaly 2D you can do.
+
+\begin{question}
+    Why is QHE layer the same as surface charge?
+\end{question}
+The magnetic field induces the surface carge.
+Charge density is attached to magnetic field in the integer quantum hall effect.
+
+\begin{question}
+    How do you physically increase $\theta$?
+    Whatif you wanted to?
+\end{question}
+This was just a trick to get this eqution.
+Every insulator in 3D has a $\theat$.
+Could be anything.
+Buti f it's time-reversal invariatn,
+it's pinned to $0$ or $\pi$.
+What $\theta$ is for a specific material,
+its' a aproperty of hte matieral.
+
+\begin{question}
+    Insead of magnetic field, the charge goes ot the edge of the system?
+\end{question}
+If I insert a magnetic field localy,
+I locally get a charge.
+If I insert a uniform magnetic field then I get a uniform charge.
+
+\begin{question}
+    So the divergence of $\vec{B}$ is zero,
+    does that mean there's no net charge within anywhere in the system?
+\end{question}
+From the Witten effect,
+charge is attached to the monopole.
+If you have no monopoles,
+then you won't have any.
+
+I told you all thsi stuff,
+just asserted the response theory of the TI  has a $\theta$ term,
+but I didn't derive it from any mdoel.
+I want to give you one type of model.
+This goes back to the dimensional reduction from (4+1)D.
+
+To describe (3+1)D TI,
+it's useful to start with a (4+1)D analogue of the Chern insulator.
+
+What is a (4+1)D Chern insualtor?
+In 2+1D,
+we wrote the berry connection.
+But now you have to define a non-abelian Berry connection.
+\begin{align}
+    a_i^{\alpha\beta} &=
+    -i \bra{\alpha,k} \frac{\partial}{\partial k_i} \ket{\beta,k}\\
+    f_{ij}^{\alpha\beta} &=
+    \partial_i a_j^{\alpha\beta}
+    - \partial_j a_i^{\alpha\beta}
+    + i\left[ a_i, a_j \right]^{\alpha\beta}
+\end{align}
+where $i,j$ are spatial indices and $\alpha\beta$ are band indices.
+The second Chern number is
+\begin{align}
+    C_2 &=
+    \frac{1}{32\pi^2} \int d^4k
+    \epsilon^{ijkl} \Tr f_{ij}f_{kl}
+\end{align}
+Here we get a (4+1)D Chern-Simons term
+\begin{align}
+    S_{CS,4+1} &=
+    \int
+    \frac{C_2}{24\pi^2} A_{\mu}\partial_\nu A_\lambda \partial_\rho A_\sigma
+    \epsilon^{\mu\nu\lambda\sigma}
+\end{align}
+There isa Maxwell term with two factors of $A$,
+but here we have3 factors of $A$,
+so this is subleading,
+but this term is topological,
+wherease Maxwell si not toolgocial.
+
+In (2+1)D we had a model for the Chern Insulator,
+where it's basically a massive Dirac fermion you put on a lattice.
+
+Here we write a $(4+1)D$ massive Dirac fermion instead.
+So the mdoel for the $(4+1)D$ Chern insulator is a massive Dirac fermion,
+which in momentum space you would write
+\begin{align}
+    H &= \sum_k \psi_k^\dagger d_a(k)\Gamma^a \psi_k
+\end{align}
+where the $\psi_k$ are 4-component fermions,
+and these $\Gamma$ are $(4+1)D$ Dirac matrices which satisfy the Clifford
+algebra
+\begin{align}
+    \left\{ \Gamma^\mu, \Gamma^\nu \right\} = 2\delta_{\mu\nu}
+\end{align}
+where $\mu,\nu=0,\ldots,4$.
+And our lattice vectors are
+\begin{align}
+    d(k) &=
+    \left( 
+    m + c\sum_{i}\cos k_k,
+    \sin k_x,
+    \sin k_y,
+    \sin k_z,
+    \sin k_w,
+    \right)
+\end{align}
+and to be concrete,
+we can write explicityly the Gamma matrices
+\begin{align}
+    \Gamma^a &=
+    \sigma^a \otimes \tau^2
+\end{align}
+for $a=1,2,3$
+and
+\begin{align}
+    \Gamma^4 = I\otimes \tau^1\\
+    \gamma^0 &= I\otimes \tau^3
+\end{align}
+and the lattice vectors
+\begin{align}
+    \hat{d}(k) &=
+    \frac{\vec{d}(k)}{|d(k)|}
+\end{align}
+The second Chern number is
+\begin{align}
+    C_2 &=
+    \frac{3}{8\pi^2}
+    \int d^4k
+    \epsilon^{abcde}
+    \hat{d}_a
+    \partial_x \hat{d}_b
+    \partial_y \hat{d}_c
+    \partial_z \hat{d}_d
+    \partial_w \hat{d}_2\\
+    &=
+    \begin{cases}
+        0 & m < -4c, m >4c\\
+        1 & -4c < m < -2c
+    \end{cases}
+\end{align}
+and just like before,
+there are $(3+1)D$ gapless chiral fermions on the surface with
+$|C_2|$ flavours.
+
+The surface Hamiltonian will be
+\begin{align}
+    H_{\mathrm{surface}} &=
+    \sgn(C_2)
+    \int \frac{d^3k}{(2\pi)^3}
+    \sum_{i=1}^{|C_2|}
+    V_i \psi_i^\dagger \vec{\sigma}\cdot\vec{k} \psi_i
+\end{align}
+where these are 2-component fermions.
+
+There is a chiral anomaly
+\begin{align}
+    \partial_\mu j^\mu \propto FF
+\end{align}
+
+Now that we have this $(4+1)D$ cherin insulator,
+we can dimension-reduce and view one of these $A$ componetns as a parameter,
+and we effectively get an $F\wedge F$ term in the dmiensinoally reduce dmouel
+
+These chircal fermions onthe surface descend into Dirac cones on the surface of
+the $(3+1)D$ topological insulator.
+
+\begin{question}
+    Why are there $C_2$ flavours?
+\end{question}
+It is the analogue of $C_1$ flarous in $(2+1)D$.
+
+It's always a 2-component fermion,
+buti t's a question of how many you have.
+The Chern numbero f bulk is just like the $(2+1)D$ case.
+
+\begin{question}
+    Why 2 component fermions?
+\end{question}
+I don't have a quick answer.
+
+The point is you decompose your fermions
+with a chirality operator,
+so you split the 4 componet into 2, 2 components,
+and because it's chiral,
+you only have 2.
+They are $C_2$ flarous of the 2-compoent fermion.
+
+\begin{question}
+    How do you visualize a $(2+1)D$ chiral fermion.
+\end{question}
+I don't have a godo visualization.
+There's chirality operator,
+and you project them onto two eigenvectors.
+
+If you have massless particles moving in a direciton,
+you can attribute a handedness of the particles,
+which you cannot Loretnz boost out of.
+
+Yeah, it's basically in this language,
+$1\pm \Gamma^0$,
+that's how you define the Chirality operator.
+Projection onto some particular chirality.
+
+\begin{question}
+In 2 spatial dimensions,
+you have only clockwise and anti-clockwise.
+What's the analog of this?
+\end{question}
+I don't usually think of chiral fermions in 3 dimensions.
+
+\begin{question}
+    In the 1D case,
+    you could think of the Chern number as the wrapping of the sphere?
+\end{question}
+Oh yes.
+The $\hat{d}$ vector is a map from the Brilluoin zone $\hat{d}:T^4\to S^4$.
+This is computing the winding numbero f the map from $S^4\to S^4$.
+
+If you take $k\to\infty$, it is the case that it all points in the same
+direction,
+I don't know if there's an easy way of saying it.
+
+His point is if I take $k_x$ to $\infty$ but not the other ones,
+
+I was plannig on presenting the dimensinoal reduction from $(4+1)D$
+to $(3+1)D$.
+
+The point is the $(4+1)D$ model can be thought of as
+decoupled $(3+1)D$ models parameterized by $k_w$.
+We did a version of this in $(2+1)D$,
+where we thoguht of it as a $(1+1)D$ Hamiltonian parametrized by $k_y$.
+
+Let's write the Hamiltnoian first in real space on a lattice.
+On real space on a lattice,
+that Hamiltnoian will look like
+\begin{align}
+    H_{(4+1)D} &=
+    \sum_{\sigma,a=1,\ldots,4}\left[ 
+    \psi_{\vec{r}}^\dagger
+    \left(
+    \frac{c\Gamma^0 - i\Gamma^i}{2}
+    \right)
+    \psi_{\vec{r} + \hat{a}}
+    e^{i A_{\vec{r},\vec{r} + \hat{a}}}
+    + \mathrm{h.c.}
+    + m\psi_{\vec{r}}^\dagger \Gamma^0 \psi_r
+    \right]
+\end{align}
+and then I can write it in the ``Landau gauge''
+translationlaly invariatn in $w$ direction
+\begin{align}
+    H_{(2+1)D}[A] &=
+    \sum_{k_w} H_{(3+1)D}[k_w, A]
+\end{align}
+and then
+\begin{align}
+    H_{(3+1)D} [k_w, A] &=
+    \sum_{\vec{r}, a=1,\ldots,3}\left[ 
+    \psi_{\vec{r}, k_w}^\dagger
+    \left( 
+    \frac{c\Gamma^0 - i\Gamma^a}{2}
+    \right)
+    \psi_{\vec{r} + \hat{a}, k_w}
+    e^{i A_{\vec{r},\vec{r} + \hat{a}}}
+    + 
+    \mathrm{h.c.}
+    \right]\\\nonumber
+    &\qquad+
+    \sum_{\vec{r}}
+    \psi_{\vec{r}, k_w}^\dagger\left[ 
+    \sin\left( k_w + A_{\vec{r}, w} \right)\Gamma^4
+    +
+    \left( m + c\cos\left( k_w + A_{\vec{r},w} \right)\right)\Gamma^0 
+    \right]
+\end{align}
+So if I set $\theta=k_w + A_{\vec{r},w}$,
+I just replace $k_w + A_{\vec{r},w} = \theta_{\vec{r}}$
+and this gives us
+$H_{(3+1)D}[A,\theta]$.
+
+At the level of the effective action,
+we can figure out the efective response theory
+by doing dimensinoal reduction in the response theory.
+
+And so
+\begin{align}
+    S_{(4+1)D} &=
+    \frac{C_2}{24\pi^2} \int d^4x \, dt\,
+    \epsilon^{\mu\nu\rho\sigma\tau}
+    A_{\mu} \partial_\nu A_\rho \partial_\sigma A_\tau
+\end{align}
+and under dimensional reduction $C_2=$,
+and I can just rewrie this action as
+\begin{align}
+    S &=
+    \frac{1}{24\pi^2} 3
+    \int d^3x \, dt\,
+    \epsilon^{w \mu\nu\rho\sigma}
+    A_w \partial_\mu A_\nu \partial_\rho A_\sigma\\
+    &=
+    \frac{\theta}{32\pi^2}
+    \int \epsilon^{\mu\nu\rho\sigma} F_{\mu\nu}F_{\rho\sigma}
+\end{align}
+
+Why did we set $C_2=1$?
+Because I want to describe the non-trivial topological insulator.
+If I set $C_2=2$, then I would just get two copies of the TI.
+
+You can just do perturbation theory to see what the response theory looks like.
+
+\begin{question}
+    Is $\theta$ here defined on $2\pI$ and does it save the time-reversal
+    symmetry?
+\end{question}
+Here it does, just follows from the same argumetn I made before.
+
+This $k_w + A_{r,w}=\theta_r$,
+which you can see is periodic in $2\pi$.
+
+If you write the time-reversal operator,
+this term does not commute with the time-reversal operator,
+so $\theta$ has to be $0$ or $\pI$.
+
+\begin{question}
+    When is dimensional reduction not possible?
+    This is quite general argumetn.
+\end{question}
+You can always do dimensional reduction,
+but it's not necesarily the case that you start with some theory,
+and you do dimesnional reductino and yo uget an interseting and nontrivial
+theory.
+
+For example, if I set $C_2=2$,
+I get two copies and I get the trivial insulator.
+
+In $(2+1)D$ where we did dimesniaonl reductnio,
+the $(1+1)D$ theory was not trivial because it realised a topological pump.
+
+We start with a topological pahse characterised by integer $C_2$,
+and then $\mathbb{Z}_2$ invariants.
+
+You could dmiensional reduce one more time,
+and yo uget the $(2+1)D$ topological insulator,
+which is time-reversal invariant.
+
+\begin{question}
+    Do we need the model gapped?
+\end{question}
+If you start witha gapped model,
+you usually wind up with a gapped model.
+But if you started with a gapless mdoel,
+you might not end up with a gapless model.
+
+
+Now you can also do the $(2+1)D$ surface.
+If we take $C_2=1$,
+we would only have one flavour,
+and if I dmeinosaly reduce,
+and set $k_w=0$,
+then I would just get a single Dirac cone.
+This ia nice way to se the (2+1)D surface
+would jsut beceom a (2+1)D Dirac cone.
+I won't write it out,
+because it's obvious from this.
+
+
+Let me write out one more thing to be a little more clear.
+Wen you do dimensinoal reduction,
+you can think of putting a system on a cylinder,
+in which case the azimuthal direction is $w$.
+Then your momentum would be quantized
+\begin{align}
+    k_w &= \frac{2\pi}{L-w}n
+\end{align}
+and the low-energy mode is the one where $n=0$.
+If you start with Chiral fermions and do dimesnioanl reductio
+you have one massless fermion, the zero-ommentum mode
+that descends to the massless dirac cone,
+but you would have higher dmieinosal massive Dirac fermions.
+
+
+Intersting commetn:
+If you start with the $(2+1)D$ surface Dirac cone,
+I mentinoed before this theory has a Perry anomaly,
+hwich is a mix of U(1) and TR symmetry,
+but you see the theory has problems,
+you can decude the fact that the only way of preserving the symmetyra nd makig
+making the theory well-define is to inroduce a bulk (3+1) respone theory.
+
+So start with a (2+1)D surface theory with a Dirac cone,
+then try to make the path integral well-defined with
+$T$, $U(1)$.
+Then educe a $(3+1)D$ bulk with
+\begin{align}
+    S_{eff} &=
+    \int F\wedge F + R\wedge R
+\end{align}
+There's a paper by Witten in 2015,
+which is nice because he uses the APS index therem by Atiyah.
+I would go thorugh it,
+but it would be an entire lecture.
+
+\begin{question}
+    Does it go up to higher dimensions?
+\end{question}
+In Witen's paper,
+he only does $(3+1)D$ topological theories,
+but the index theorem hsould work.
+
+The thing is,
+this parity anomaly you don't have in every dimension,
+you have it in every 8 dimensisno.
+There's a periodicity of 8.
+Everything we did for free fermions has periodicity 8.
+Deep,
+but we don't care beyond 3 dimensions.
+
+\begin{question}
+    Are zero modes of (3+1)D a subset of zero modes in (4+1)D
+\end{question}
+I don't know, it's not obvious.
+
+\begin{question}
+    Experimental progress in realising these?
+\end{question}
+There are multiple generations of people who predicted various matirerals.
+The first material is BismuthAntimony,
+but since then many materials have been porpsoed.
+There's no problem gettinga band structure exhitibing this topolgoical
+insulator,
+but the problem is getting the chemical potential in the gap.
+You can't tune the chemical potential like in 2D,
+you need to use doping,
+but it's hard to get hese materials into actual insualtors.
+Early on,
+it was difficult getting the chmiceal potential in the right place.
+But in the band structre,
+you could confirm things like an odd numberof Dirac conesno the surface.
+I don't know if people actually sucessfully made an insulating matieral that was
+topogoloical and gets the chemcial potential in the right palce.
+
+Was anyone following?
+
+Now I want to switch gears a little bit.
+Let's summarize what we did.
+
+We talked about a $(1+1)D$ Majorana system with
+$G_f = \mathbb{Z}_2^f$,
+and there is a $\mathbb{Z}_2$ invariant.
+
+Then we considered $(2+1)D$ systems with $G_f=\mathbb{Z}_2^f$.
+There is a $\mathbb{Z}$ invariatn which si the chiral central charge,
+which is realised by the $p+ip$ superconductor.
+$G_f = U(1)^f$And there is a $\mathbb{Z}$ invariant Chern insulator.
+And we studied 
+$G_f = U(1)^f \rtimes \mathbb{Z}_4^{t,f}/\mathbb{Z}_2$
+which results in a $\mathbb{Z}_2$ invariatn in class AII.
+
+Then in $(3+1)D$,
+we geta $\mathbb{Z}_2$ invariant to class AII.
+
+All the above are examples of invertible topological phases.
+They all have free fermion realisations.
+These are all examples,
+once we look at what states are at the free fermion level,
+all states were stable to added interaciton.
+They all had phsycal propblems.
+the $\mathbb{Z}$ invairnat is jus the QHE conducatnce.
+And we also solved for hte phsycial properties of these invariats.
+We didn't formally argue it,
+but it is plausible because iti s a physical quantitiy you could measure its
+properties.
+
+There are other tings tha could hapepen.
+thera resiutaltios in free fermions you get $\mathbb{Z}$ invariatns,
+but when you add interactinos,
+it drops to $\mathbb{Z}_8$.
+
+And then you could have invertible models with no fre fermion ralisations.
+And then you have non-invertible models.
+
+\section{Bosonic in (1+1)D}
+Theseare inrinsically strongly interacting,
+because if not they will condense into superfuliud state.
+I necessarily need a strongly interacting system.
+So all the tools we had for free fermion models become useless.
+In $(1+1)D$ for bosons,
+bosons can only realize a certina subclass of invertible phases.
+
+There are some aspects.
+\begin{enumerate}
+    \item There's no topological order in 1D.
+        This means if you forget about any symmetries of your model,
+        any gapped bosonic state in 1D can be adiabatically conencted to trivila
+        state.
+        That's difernt to the fermionic case,
+        where if you ignore all pases,
+        it's still non-trivial bcause thereare stil MZMs.
+        For bosons,
+        if you ignore symmetries,
+        everything can be adiabatically connected to the trivial phase.
+        So no topological order in 1D.
+    \item If you add symmetry,
+        then we couldh ave a class of topological phases called SPT phases.
+        SPT stands for symmetry protected topological.
+        These are a subset of invertible phases,
+        which has the property that if you break the symmetry,
+        it can be adiabatically connected to a trivail state,
+        but if you have the symmetyr,
+        it cannot be in a way that preserves the symmetry.
+        These are classified by a quantitiy called the group cohomology
+        $H^2(G, U(1))$.
+        The second cohomology group with group elements of $G$ wiht coefficients
+        in $U(1)$.
+\end{enumerate}
+Rigorous proof will require mathematical frameowrks not in this class.
+We can establish this using matrix product states.
+
+Ther eare no invertible phaess that are not SPTs.
+There are no chiral phases.
+You wouldn't be able to define chiral,
+the boundary is zero dmiensional,
+so there are no chiral moedes.
+$(2+1)D$ is special,
+even bosons have an nivertible phase that is not an SPT.
+
+Let me start off by giving an example of an interesting 1D state.
+The most important example is the AKLT state.
+
+These guys considered a spin-1 chain,
+with $G=SO(3)$ symmetry.
+
+The Hamiltonian includes a Heisenberg term,
+but in addition,
+there's an extra term that is the square of he Heisenberg term
+and a constant offset
+\begin{align}
+    H_{AKLT} &=
+    \frac{1}{2} \sum_{i} \left( 
+    \vec{S}_i\cdot \vec{S}_{i+1}
+    + \frac{1}{3} \left( \vec{S}_i\cdot\vec{S}_{i+1} \right)^2
+    + \frac{2}{3}
+    \right)\\
+    &= \sum_i P_{i,i+1}^{(2)}
+\end{align}
+where $S_i^{\alpha}$ is a $3\times 3$ matrix
+and $P_{i,i+1}^{(2)}$ is a projector onto spin-2 subspace of neighbouring spin
+1s.
+
+This is simply the explicit form of this projector.
+For spin $1/2$ particles,
+there is no square term.
+Once we have this sum of projectors,
+G
+the ground state is the state that is annihilated by all projects.
+
+I have a spin chain,
+and I am summing over every site on the spin chain.
+The first term would be $P_{1,2}$,
+where I project 1 and 2 onto spin 2, etc.
+
+Is there a non-trivial state that si annihilated by all $P$s.
+You might be worried thesubspace annihlated by this is zero-dimensiona,
+but it's one-dimensional on a periodic chain.
+
+The one way to construct the ground state is a cool trick.
+Think of every spin 1 as coming from 2 spin 1/2 systems,
+but project onto the spin 1 subspace.
+
+This is site $i$ for example,
+would have two spin $\frac{1}{2}$ systems,
+which I project onto spin-1 subspace.
+You'll notice that in order for these two sites $i$ and $i=1$,
+the only way this projector is going to give something non-trival
+is if every pair of spin-1/2 fuses into a state of spin-1.
+
+If any two spin-$\frac{1}{2}$ fuse to spin 0,
+that subspace is going to be annihilated by this projector
+$P^{(2)}$.
+
+Imagine if you had
+\begin{align}
+    \frac{1}{2}\otimes \frac{1}{2}\otimes
+    \frac{1}{2}\otimes \frac{1}{2}
+    =
+    (0 \oplus 1) \oplus (0 + 1)
+\end{align}
+I can consider where these spin-1/2s from neighbouring parts fouse across.o
+
+consider a state
+where each spin-1 you break down into spin-1/2s,
+and then project them onto spin1.
+Andthen you draw lines connecting adjacent spin-1/2s in different proejctors.
+
+If you put this on a zero chain,
+you won't hvae ege modé.o
+
+The 0-energy ground state í the unique gapped grouned sate in AKLT.
+
+This is a ``frustration free'' state.
+There will be dangling spin-1/2 degrees of freedon.
+On an open chin,
+
+Just likewe found we have anomalies for the boundaries,
+this eges system is ano.
+
+Spin-1 degrese offreedom form faithful linear optaions of SO(3) symmetry,
+wherease spin-$\frac{1}{2}$ is only a projection.
+
+There will be dangling spin-$\frac{1}{2}$ degrees of freedom.
+Edge degeneracy forms a projective representation of $SO(3)$.
+Wahereas,
+
+There's anomalies associated iwth global symemtries,
+and then there are graviational anomalies,
+and they are more severe.
+The edges system is 
+
+Some boudnary theories might be in conflict iwththe.
