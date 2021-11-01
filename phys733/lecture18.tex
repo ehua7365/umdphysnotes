@@ -1,0 +1,678 @@
+\section{1D boson SPTs}
+Last time,
+we started talking about SPT states,
+bosons in 1D.
+We talked about AKLT states,
+which is the ground state for spin-1 chains.
+We saw the Hamiltonian was
+\begin{align}
+    H &= \sum_i \vec{S}\cdot\vec{S}_j
+    + \frac{1}{3} \left( S_i \cdot S_j \right)^2 + \frac{2}{3}
+\end{align}
+and we saw this is the sum of projects where neighbouring spins are projected
+onto the spin-2 chain.
+\begin{align}
+    H &= \sum_i P_{i,i+1}^{(2)}
+\end{align}
+and then we have spin-$\frac{1}{2}$s projected onto spin-1s on each site.
+Before you do that though,
+you put the left and right on different sites into a spin-singlet state,
+and we so we said that this ground state,
+AKLT proved that this is the unique gapped ground state
+of this $H_{ALKT}$.
+
+In particular, this ground state is actually annhilated by every single term
+here,
+and this Hamiltnoian is called a frustration-free Hamiltonian.
+
+It's useful to note that the motivation for AKLT to study this was actually how
+Haldane conjectured that the spin-1 Heisenberg chain is gapped.
+
+The motivation for AKLT was the Haldane conjecture.
+The spin-one-half Heisenberg chain was known to be gapless,
+but Dr Haldane predited the spin-1 Hesenberg chain is gapped.
+That was suprising,
+bcause poeple asuemd the spin half wouldh ave the same behaviour,
+but Haldane's conjectre said that spin-1 and spin-half behave very
+differently,
+which is intrinsically QM.
+
+\begin{question}
+    Does it have Goldstone bosons?
+\end{question}
+No, it doesn't order, no long range order in 1D.
+
+It's non-trivial the spin-half chain is gapless,
+but the  spin-1 half is gapped.
+
+SO this AKLT,
+you can think of this thing as smoothly connected,
+or close,
+to the HEisenberg point,
+because you can slowly ramp up this parameter from 0 to 1/3.
+AKLT noticed this Hamiltonian was similar to the Heisenberg model,
+but you could prove it was gapped and has this interesting ground state.
+
+So the spin-1 Heisenberg chain is in the same phase as this,
+turning from 0 to 1/3,
+and show the gap is still open,
+so this isa mdoel to see whath e spin-1 Heisenberg chain looks like.
+
+The key point about this tate,
+is that you see youhaave these edge modes,
+whic his a key non-trivial aspect of this tate as opposed to trivial.
+
+\begin{question}
+    How do you see there's nophase transition from 0 to 1/3.
+\end{question}
+I think numerically you can see it?
+This is 1D,
+so there are all sorts of analytically solvable tricks,
+maybe yes,
+but I don't know.
+Therei s aphase transitoin,
+but it's beyond 1/3.
+I forgot exactly what.
+
+They key point si that you hvae these dangling spin-1/2 things on the edge,
+which are dge modes.
+The global symmetry is SO(3),
+but actaully the chain has more symmetries,
+it is time-reverla invaraint,
+tralsationally invaraitn,
+reflection symmetry,
+but we're interested in the OS(3) global symmetry.
+
+The property of SO(3) is that it acts anomalously on the boundary.
+Here, anomalous means microscopically each latice site is pin-1,
+so it forms a linear repseration of SO(3),
+but spin-1/2 is a projective representation of SO(3).
+I will remind you mathematically what projective means.
+
+Spin-$\frac{1}{2}$ is a projective representation of SO(3),
+but microscopically we have spin-1 per site,
+which is a linear representation of SO(3).
+
+So let me tell you what projective representations are,
+in case you don't know exactly what this means.
+The short summary is taht if you do a combination of rotaitons in SO(3),
+that for examle add up to dientity,
+whereaase Spin-1/2 would give you a minus sign,
+but linaer represetnations would not give you a minus sign.
+
+Suppose you have a group $G$ with a finite-dimensional representation.
+\begin{align}
+    R: G \to GL(d; \mathbb{C})
+\end{align}
+What that means is that for eveyr gorup element,
+you have the group of $d\times d$ complex matrix.
+
+A \emph{faithful} or \emph{linear} representation has the property that when you
+compose group elements,
+youget the representation for the product.
+\begin{align}
+    R_g R_h = R_{gh}
+\end{align}
+However, this is not always the case,
+because in general you could have
+\begin{align}
+    R_g R_h = w(g, h) R_{gh}
+\end{align}
+where $w(g,h)$ is a phase in U(1).
+So in other words,
+\begin{align}
+    w \in C^2(G, U(1))
+\end{align}
+so $\omega$ is a function of two group elements and it gives you a U(1) phase.
+If you have this rule,
+you could consider associativity for 3 group elements,
+which tells you you can first multiply them in any way.
+\begin{align}
+    R_g R_h R_k &=
+    \omega(h, k) \omega(g, hk) R_{ghk}\\
+    &= \omega(g, h)\omega(gh, k) R_{ghk}
+\end{align}
+And this takes us to an important equation.
+It tells us the phases must satisfy an important equality
+\begin{align}
+    \omega(h, k) \omega(g, hk)
+    =
+    \omega(g, h) \omega(gh, k)
+\end{align}
+and this is called the \emph{2-cocycle condition}.
+
+We can define this differential map $d$ that maps $n$-cochains to
+$n+1$-cochains.
+\begin{align}
+    d: C^n(G, U(1)) \to C^{n+1}(G, U(1))
+\end{align}
+and we can define this differential as
+\begin{align}
+    d\omega_2 (g, h, k)
+    =
+    \frac{\omega(h, k) \omega(h, hk)}{\omega(g, h) \omega(gh, k)}
+\end{align}
+and so the 2-cocyle equation is really just the equation that
+\begin{align}
+    d\omega_2 = 1
+\end{align}
+and if it satisfies this eqaution,
+we call it a 2-cocycle
+so actually
+$\omega_2 \in Z^2(G, U(1))$,
+which is the space of 2-cocycles.
+In other words,
+\begin{align}
+    Z^2(G, U(1)) &=
+    \left\{
+    x_2 \in C^2(G, U(1)) \,|\,
+    dx_2 = 1
+    \right\}
+\end{align}
+However,
+there is some reduencay here,
+because you could change any of these by a phase and potentially get rid of
+these $\omega$s.
+That is,
+if $R_g R_h = \omega(g, h) R_{g,h}$,
+you could just redefine
+\begin{align}
+    R_g \to R_g \epsilon(g) = R_g'
+\end{align}
+so then
+\begin{align}
+    R_g' R_h' &= \omega_2'(g, h) R_{gh}'\\
+    R_g R_h &=
+    \underbrace{\frac{\omega_2^1(g, h) \epsilon(gh)}{\epsilon(g)
+    \epsilon(h)}}_{\omega_2(g, h)} R_{gh}
+\end{align}
+and thus
+\begin{align}
+    \omega_2'(g,h) &=
+    \omega_2(g, h) \frac{\epsilon(g) \epsilon(h)}{\epsilon(gh)}
+\end{align}
+So you need to consider 2-cocycles modulo this equivalence relation,
+which youccan think of as equilvanet proejctive rerepstionas.
+This $\epsilon(g)\in C^1(G, U(1))$ is a 1-cochain associated iwth a single grup
+elements,
+with
+\begin{align}
+    d\epsilon &=
+    \frac{\epsilon(g) \epsilon(h)}{\epsilon(gh)}
+\end{align}
+And now you can define the space of 2-coboundaries,
+\begin{align}
+    B^2(G, U(1)) := \left\{ 
+    X_2 \in C^2(G, U(1)) \, \mid\,
+    X_2 = d\epsilon_1,\,
+    \epsilon_1 \in C^1(G, U(1))
+    \right\}
+\end{align}
+that are differentials of 1-cochains
+\begin{align}
+    \omega_2 \sim \omega_2 \cdot d\epsilon_1
+\end{align}
+
+So projective rpesenations should be classified by 2-cocycles modulu by
+2-coboundaries.
+
+You have these rlrestnations,
+you have hese extra phases,
+andthat phase,
+you might be agble to get rid of it by redefingin $R_g$,
+but if you can't,
+then you have a non-trivial projetive rpesetnation,
+and two projective represtnatinos are equivalnet if you can just rephase these
+$R_g$'s so distinct ones are lcassifed by this group.
+
+Thus distinct projective representations are classified by
+the second cohomology group
+\begin{align}
+    \frac{Z^2(G, U(1))}{B^2(G, U(1))} =:
+    H^2(G, U(1))
+\end{align}
+And indeed,
+you could also generalize this wigh
+\begin{align}
+    H^n (G, U(1)) &=
+    \frac{Z^n(G, U(1))}{B^n(G, U(1))}\\
+    Z^n(G, U(1)) &=
+    \left\{ X_n \in C^n(G, U(1)) \mid dX_n = 1 \right\}\\
+    B^n\left( G, U(1) \right)
+    &=
+    \left\{ 
+    X_n \in C^n(G, U(1)) \mid
+    X_n = d\epsilon_{n-1},
+    \epsilon_{n-1} \in C^{n-1}(G, U(1))
+    \right\}
+\end{align}
+The only thing I haven't defined is how the differential map is defined,
+but we only need $n=2$ for now for 1D spin-1 chains.
+We will come back to higher-dimensional SPTs later.
+
+\begin{question}
+    Is $H^2$ always a group because the coefficient is $U(1)$?
+\end{question}
+Well $Z^2$ is always a group.
+You can actually replace $U(1)$ with a module over $G$ and still define all
+these things.
+For $U(1)$,
+we don't really need all that,
+we just need $U(1)$ coefficients.
+
+Let's just stick to the math we need to do the physics.
+
+
+\begin{question}
+    The stateis symmetric under $G$ means linear represatatino?
+    Is there any reason why linear represetnations are special in that way?
+\end{question}
+No, not ncesarily.
+Linear represetnations are special for a wide vairteyt of reasons,
+but you could defintiely hav astate symmetric under $G$ but forms a projetcive
+rpesetations.
+There are theorems which govern what ht low-energy behaviour has to be.
+It's imporant to know forh tsystem,
+but they are both equally valid as a system and ans as symmetry.
+
+
+\begin{question}
+    Is there a simple quantum example of a projective prestation?
+\end{question}
+Yes, spin-1/2.
+
+\begin{question}
+    We can either say it forms a linear represetnation of spin-1
+    or a spin
+\end{question}
+Let me reprhase your qeustion.
+A spin-1/2 chain can be thought of as a projective rpestenation of SO(3),
+or it can be thought of a linear representation of SO(3).
+It's also thel inear reprsetnation of the cover of some group.
+Suppose I have a spni-1/2 chian,
+should I think of the symmetry of the sytem being SU(2) or SO(3).
+This is actually a pretty delicate quesiton.
+
+It depends on how many spin-1/2s you have.
+if you ahve an even numberof spin-1/2s, it should be SO(3),
+but if you had an odd number of spin-1/2s, it should be SU(2) technically.
+It depends on odd or even.
+
+\begin{question}
+    Regardless of even or odd,
+    excitaitons are alwasy even spin,
+    is there somtehting to interpet?
+\end{question}
+The local operators for a spin-1/2 are the Pauli matrices $\sigma^i$,
+and they themselves form a spin-1 represetnation of SO(3).
+The way that $\sigma^i$ transforms under an SO(3) represatatnion,
+is the same as a spin-1.
+So the Pauli operatosr transform as Spin-1 under SO(3).
+Local operators always carry integer spin,
+because these $\sigma^i$ transforma nd tranform as a spin-1 represetnation.
+
+\begin{question}
+    This is true even if we have a spin-2 chain?
+\end{question}
+If you had a spin-2 chain,
+then the local operatosr would not e pauli matrices,
+it would be whatever for spin-2.
+Spin-2 is not the best examle.
+Spin-3/2 is better,
+where they are 4x4 matrices,
+but under SO(4) rotations would transform as a local spin.
+The formal statement is that clocal exctiations carry integer spin.
+
+Let me say that
+\begin{align}
+    H^2(SO(3), U(1)) = \mathbb{Z}_2
+\end{align}
+So it's linear in the spin-1 represetantio nand porjective in the SU(2)
+represtnation.
+
+There's a relation between $H^2$ and $\pi^1$.
+I think there may be smoe theorem for Lie groups,
+$H^2$ is related to $\pi^1$.
+$H^1$ is related to $\pi^1$.
+$H^1$ is athe abelianization of $\pi^1$.
+This is group cohomology.
+
+OK, so going back to AKLT,
+the edge modes form this projective representation and we can actually see
+what's going on there.
+In general for SPT states in 1-dimensions,
+suppsoe you have a ground state and you apply your symmetry operation,
+on the represetantion on the full-many-body state,
+and because in the bulk it's symmetric and you hav a finite-correlation length,
+ify ou apply $R_g$ on a ring,
+youget back the original state,
+\begin{align}
+    R_g \ket{\psi} = \ket{\psi}
+\end{align}
+but on an open chain,
+you get the ground satte back,
+but up to some boundary opeartions near the left boundary $U_g^{(L)}$
+and some operations acting on the right boundary,
+up to corrections exponentially small in the isze of teh system.
+\begin{align}
+    R_g \ket{\psi} \approx
+    U_g^{(1)} U_{g}^{(R)} \ket{\psi}
+\end{align}
+and so
+\begin{align}
+    R_g R_h \ket{\psi} &\approx
+    U_g^{(L)} U_h^{(L)} 
+    U_g^{(R)} U_h^{(R)} 
+    \ket{\psi}\\
+    R_{gh}\ket{\psi} &= U_{gh}^{(L)} U_{gh}^{(R)} \ket{\psi}
+\end{align}
+Now this is a genearl statemetn that doesn't even need ALKLT.
+In 1D, you hvae as ymemtric gapped state,
+and you apply your symemtry transfmatoin on an open chain,
+then yo hvae these local operators acting on the boundary,
+and you compre aply $R_{gh}$ and $R_g R_h$,
+and the only way they can be eqaul is that the $U$s are equal up to a phase.
+Because some are localized onthe left and some are localized on the right
+boundary,
+and the only wa this could possibly hold is that
+\begin{align}
+    U_g^{(L)} U_{h}^{(R)} \ket{\psi} &=
+    \omega_2(g, h) U_{gh}^{(L)} \ket{\psi}\\
+    U_g^{(R)} U_{h}^{(R)} \ket{\psi} &=
+    \omega_2^{-1}(g, h) U_{gh}^{(R)} \ket{\psi}
+\end{align}
+In general,
+you have one projective erepsertaniotn on the left,
+and the inverse one on the right.
+It's just he thing about SO(3) that you find the projective rpesetnation is its
+own inverse and so you have spin-$\frac{1}{2}$ in each direciton.
+
+And so this tells us the equivalence class
+\begin{align}
+    [\omega_2] \in H^2(G, U(1))
+\end{align}
+classifies the symmetry action on the edge.
+
+Let's do another example.
+AKLT was not the simplest thing.
+Even thoguh it's fustration free,
+it's nontrivial to prove the ground state is simple and gapped.
+
+There's an even simpler example.
+This is called the 1D cluster state model,
+sometimes called the $ZXZ$ model,
+or sometimes $XZX$ model.
+Here, $X$ and $Z$ are the Pauli operators.
+\begin{align}
+    H &=
+    -\sum_{j=2}^{N-1} Z_{j-1} X_j Z_{j+1}
+\end{align}
+Note that every term commutes with each other.
+If I have $ZXZ$ on 3 sites,
+and I have another $XZX$ on 3 sites shifted by 1,
+they commute with one another.
+So every term in the Hamiltnoian commutes and furthermore squares to the
+identity,
+so the gournd state is jsut the simultaneous $+1$ eigenstate of the $XZX$.
+
+And furthermore,
+the global symmetry we're intersted here is the
+$G=\mathbb{Z}_2\times \mathbb{Z}_2$,
+which are generated by
+\begin{align}
+    \bar{X}_1 &=
+    \prod_{k\mathrm{ odd}} X_k\\
+    \bar{X}_2 &=
+    \prod_{k\mathrm{ even}} X_k\\
+\end{align}
+
+
+\begin{question}
+    Is this encoding $k$ logical qubits into $n$ physical qubits?
+    Is it something like stabilizer groups?
+\end{question}
+These are just symmetries,
+I wouldn't call it logical oeprators.
+These are jsut symmetry operators.
+They square to the identity and they commute with the whole Hamiltonian.
+
+On each boundary,
+say on the left boundary,
+we actually have a set of operators that commute with the Hamiltonian exactly.
+Let's call them
+\begin{align}
+    \bar{X}_L &= X_1 Z_2\\
+    \bar{Z}_L &= Z_1
+\end{align}
+and these commute with the Hamiltonian.
+You see $Z_1$ commutes iwth teh Hamitna,
+because the only operator that hits site 1 is the first ermm,
+which has a $Z$ there, so that commutes.
+You can also see that with the $X_1 Z_2$.
+
+But these have a non-trivial algebra among themselves.
+They anti-commute with one another.
+\begin{align}
+    \bar{X}_L \bar{Z}_L = - \bar{Z}_L \bar{X}_L
+\end{align}
+Because they comute with te Hamiltonai,
+the ground state must frm a rperestaion of this algebra,
+and because they anticommute,
+there must be a two-fold degeneracy on each edge.
+There's a simlar one on the right one as well.
+This is not an accidental degenearcy.
+No local perturbation can lift this degeneracy as long as the
+$\mathbb{Z}_2\times \mathbb{Z}_2$ symmetry is preserved.
+Oneway to lift hte dgenracy is to add these 2 tersm to the Hamiltonian,
+but these don't commute with one another,
+so you cannot add these both and preservet the symmetry.
+
+You can directly see this behaviour exactly in this model.
+Suppose that you want to apply the first symmetry operator to the ground state.
+Let me consider a half-infinite chain,
+so we only have the left boundary,
+but then it goes off to inifitey on the other end so we don't have to worry
+about it.
+\begin{align}
+    \bar{X}_1\ket{\psi_{gs}} &=
+    \bar{X}_1 \prod_{k=2}^{\infty} Z_{2k - 2} X_{2k -  1} Z_{2k}
+    \ket{\psi_{gs}}
+\end{align}
+and then I pull some things out,
+and the nice thing about pulling them out is that if I get a lot of cancelation
+\begin{align}
+    \bar{X}_1 Z_2 X_3 Z_4 Z_4 X_5 Z_6\cdots &=
+    (X_1 X_3 X_5\cdots) Z_2 (X_3 X_5 \cdots)\\
+    &= X_1 Z_2
+\end{align}
+so actually you have
+\begin{align}
+    \bar{X}_1\ket{\psi_{gs}} &=
+    \bar{X}_1 \prod_{k=2}^{\infty} Z_{2k - 2} X_{2k -  1} Z_{2k}
+    \ket{\psi_{gs}}\\
+    &=
+    X_1 Z_2 \ket{\psi_{gs}}\\
+    &=
+    \bar{X}_L \ket{\psi_{gs}}
+\end{align}
+
+\begin{question}
+    Something about $C^*$ algebra.
+\end{question}
+I'll leave it as an exercise.
+If you really do a more honest calfcaultion end at $N$ rather than infinity,
+you should get $\bar{X}_L$ and $\bar{X}_R$.
+If you simillarly did 
+$\bar{X}_2\ket{\psi_{gs}}$,
+and instead of pulling the even rather than the odd one,
+you find.
+\begin{align}
+    \bar{X}_2\ket{\psi_{gs}} &=
+    Z_1 \ket{\psi_{gs}}
+\end{align}
+and this is really similar to how
+$\bar{X}_1$ and $\bar{X}_2$ act as
+$\bar{X}_L$ and $\bar{Z}_2$
+on the left edge
+
+And $\bar{X}_L$, $\bar{Z}_L$ form a projective represetnation of
+the global symmetry
+$\mathbb{Z}_2\times \mathbb{Z}_2$.
+
+\begin{question}
+    Is it clear this is a gapped state?
+\end{question}
+yes, every term commutes,
+and each terms is +1 or -1,
+and it costs an energy of 2 to raise it frmo the ground state to the next
+excited state.
+
+If you had a gapless situation on the ege,
+you wouldn't have a sitaution where exactly the boundayr gets affected but the
+bulk doesn't get affected at all.
+
+You could have a sysetm fully symmetric on a chain,
+but if you did have edge modes,
+you owud have poewr law correaltions,
+and if wasn't exaclty symmetric,
+you wouldh ave some power law decay.
+Also, if it wasn't gapped,
+it wouldn't give an SPT phase which is by definition gapped.
+
+This $R_g\ket{\psi} \approx U_g&L U_g^R \ket{\psi}$
+really relies on the fact that it is gapped.
+Are there any other questions?
+
+\begin{question}
+    How do you see there's no edge modes connected with other symmetries and
+    translations?
+\end{question}
+In this particular model,
+you can probably just count the number of degrees of freedom and see that we've
+accounted for everything.
+
+We have $Z_1 X_2 Z_3, \cdots Z_{N-2}X_{N-1}Z_N$.
+The entire Hilbert space is accounted for already by counting.
+
+\begin{question}
+    Are we just partitioning the system?
+\end{question}
+They coexist.
+Ify ou had a symmetry that is $G\times H$,
+on each edge you would have a projective represenation of $G\times H$.
+Spatial symmetries like translation and reflection are special.
+here, the point is that even if we have a boundary,
+the systeme iwth the boudnary stil rferelcets th symmetery.
+Hwoever, wiht transltaiton symemtry,
+the sysetme in the prescenece of the boudndary doesn't relaly resepct that,
+so it desno't really makes sense to talk about hte action of tranlation symetron
+when there is a boundary.
+
+Often wiht spatial symmetries,
+you couldh ave nootrivial SPTs associtated iwth te systemery,
+but there may not be edge modes.
+It's a more delicate task to figure out what ist he desintct property of the
+SPTs given  it's hard to probe them becasue the boundary breaks the symmetry.
+
+\section{Full classification of bosonic 1+1D topological phases}
+What we saw so far is that we have this classfificaiton of how the symmetry acts
+on the edge modes.
+In fact,
+this is the full classification of 1D SPTs.
+
+The full classification of $(1+1)$-D topological phases is by
+$H^2(G, U(1))$.
+There are 2 pieces of evidence more easy to come by.
+
+\begin{enumerate}
+    \item We can use matrix product states.
+    \item Try to develop a classification of TQFTs and see that deformation
+        classes.
+\end{enumerate}
+
+\section{Matrix product states}
+Suppose you have a chain with $N$ spins with periodic boundary conditions.
+Then a \emph{matrix product} state is of the following form
+\begin{align}
+    \ket{\psi} &=
+    \sum_{i_1,\ldots,i_N} 
+    \Tr\left( 
+    A_{i_1}^{[1]}
+    A_{i_2}^{[2]}
+    \cdots
+    A_{i_N}^{[N]}
+    \right)
+    \ket{i_1,\ldots,i_N}
+\end{align}
+where $i_k=1,\ldots,d$ where $d$ si the local qudit dimension,
+each $A_{i_k}^{[k]}$ are $D\times D$ matrices
+where $D$ is the bond dimension.
+
+The beauty of this state is that there are very few parameters.
+There are only $dND^2$ parameters,
+as opposed to the $d^N$ parameters for the most general $N$-qudit state.
+This is an efficient parameterization of a very large class of systems.
+
+The point of these matrix product states is that the entanglement entropy of a
+matrix product state is upper-bounded by its bond dimension.
+So if you had a chain,
+let's say you have an open chain,
+and you split it up into a left and a right piece,
+then the entanglement entropy would satisfy
+\begin{align}
+    S = -\Tr \rho_L \ln \rho_L \le 2 \ln D
+\end{align}
+It is bounded by the bond dimension $D$.
+In 1D,
+any generic gapped ground state forms an area law.
+What that means is that any gapped 1D ground state has ``area law''
+entanglement,
+which means that if I look at the entanglement entropy of some segment,
+then $S_{1d}=\mathrm{constant}$,
+meaning that it is independent of system size.
+
+Actually, the more precise statement is that the entanglement entropy $S$ is of
+order
+\begin{align}
+    S = O\left( 
+    \frac{\log_3 d}{E_{gap}}
+    \right)
+\end{align}
+This was originally proven by Hastings in 2007,
+but then it was exponentially improved 6 years later by
+Arod, Kitaev, Landau, Vazirani in 2013,
+and the statement above is from the latter paper.
+This latter papaer also improved another result of Hastings,
+which is that you can approximate any gapped ground state to an accuracy that is
+$1/poly(N)$ where $N$ is system size with an MPS of sublinear bond dimension,
+sublinear means the bond dimension grows slower than the size of the system.
+We don't care what the polynomial is.
+The more speicfic thing they proved is that
+\begin{align}
+    D &=
+    O\left( 
+    e^{\log_{3/4} N / E_{gap}^{1/4}}
+    \right)
+\end{align}
+The main ponit is taht gapped ground states have area law entalmenet in 1D,
+and MPS is a way of parameterizing states iwth area law entanglmeent.
+So if you have a gapped ground state,
+you can have a fairly good approximation with MPS.
+
+You need fewer than $dND^2$ parameters to very accurately approximate the ground
+state.
+
+\begin{question}
+    is the converse true?
+    Any state that satisfies area law entanglement is gapped?
+\end{question}
+I don't have a counter example.
+Every system I know has an entropy that grows logarithmically at worst.
+The converse of these statements usually have some sick counterexample.
+For example,
+finitely correlated Hamiltonians don't imply gapped.
+I don't recall hearing any for this one though.
+
+What we can actually do is use matrix product states to prove the
+classification.
+In particular, there is no topological order for 1D bosonic states.
