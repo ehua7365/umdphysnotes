@@ -1,0 +1,395 @@
+\section{Recap}
+Suppose you have a box at temperature $T$.
+Maxwell equations gives you $\vec{A}(\vec{r}, t)$,
+which has a lot of degrees of freedom.
+The Lagrangian is
+\begin{align}
+    L_0 &=
+    \frac{1}{8\pi} \int d^3r \left[ 
+    \left( \frac{\partial A}{c\partial t} \right)^2
+    - \left( \vec{\nabla}\times \vec{A} \right)^2
+    \right]
+\end{align}
+There is some exercise to show this is equivalent to Maxwell's equations,
+but that is a classical physics problem.
+You could keep going and find the classical Hamiltonian,
+which you know how to find and is a function of the degrees of freedom $\vec{A}$
+and their canonical momentum $\Pi$.
+\begin{align}
+    H &= 
+    \frac{1}{8\pi}
+    \int d^3 r\, \left[ 
+    \left( 4\pi c \right)^2 
+    \Pi^2 (r, t)
+    + \left( \vec{\nabla}\times\vec{A}  \right)^2
+    \right]
+\end{align}
+where the canonical momenta are
+\begin{align}
+    \Pi(\vec{R}, t) &=
+    \frac{\partial L}{\partial A(\vec{r}, t)}
+\end{align}
+It's an infinite-dimensional phase space but that's okay.
+It's a quadratic Hamiltonian,
+so you can carry out all the calculations.
+The way to do this is that you have to go to normal coordinates.
+If I had only terms like $A^2(\vec{R})$,
+it only couples to itself.
+But since there are derivatives of $A$,
+I have terms like
+$\left( A(\vec{r} + d\vec{r}, t) - A(\vec{r}, t) \right)^2$,
+which is very similar to the chain of masses connected by springs
+with $-k(x_1 - x_2)^2$.
+If you remember the normal coordinates of the mass and springs system,
+you just take the Fourier transform to decouple the Fourier modes to get the
+normal coordinates.
+
+Again,
+for the electromagnetic field,
+I can write the transformation to normal coordinates like
+\begin{align}
+    A(\vec{r},t) &=
+    \sqrt{4\pi c}
+    \sum_{\vec{k}}
+    e^{i\vec{k}\cdot\vec{r}} Q(\vec{k}, t)
+\end{align}
+where $Q$ are the cavity modes inside the box,
+and the wave vectors are of the form
+\begin{align}
+    \vec{k} &= \frac{2\pi}{L} \vec{n}
+\end{align}
+where $\vec{n}$ are vectors with integer components.
+Then the canonical momenta are
+\begin{align}
+    \Pi(\vec{r}, t) &=
+    \frac{1}{\sqrt{V}\sqrt{4\pi c}} \sum_{\vec{k}}
+    e^{i\vec{k}\cdot\vec{r}} P(\vec{k}, t)
+\end{align}
+and now the degrees of freedom are decoupled and I can calculate the partition
+function in my head.
+
+When we found the Lagrangian,
+we picked a certain gauge,
+that is divergence of the potential is zero and the curl of $A$ is zero,
+so what extra constraints do we have?
+\begin{align}
+    \nabla\cdot A &= 0
+    \implies
+    \vec{k}\cdot\vec{Q}(\vec{k}, t) = 0
+\end{align}
+which means one less degree of freedom,
+so electromagnetic waves are not longitudinal.
+It's hard to do the counting,
+but I start with a real vector $A$,
+and I'm left with a complex $Q$,
+so the degrees of freedom doubles,
+but that can't be.
+The trick here is that because $A$ is real,
+that implies something about these $Q$'s.
+\begin{align}
+    \vec{Q}(k) = \vec{Q}^*(-k)
+\end{align}
+which is because if you take the complex conjugate of the definition,
+you should get the same thing for $-k$.
+And the same thing applies for the $\vec{P}$.
+One way of thinking is that if I know the real value of $Q$,
+I also know its imaginary value,
+so I don't double the number of degrees of freedom,
+it's the same.
+
+This transformation is canonical because it satisfies certain conditions you
+should know from Chacko's class.
+I am allowed to do this and what's going to happen is that I'm going to find out
+then what my Hamiltonian is going to look like in terms of $P$ and $Q$.
+\begin{align}
+    H &= \frac{1}{2} \sum_{\vec{k}}\left[ 
+    \vec{P}(\vec{k}, t)\cdot\vec{P}^*(\vec{k}, t)
+    + c^2 k^2 \vec{Q}(\vec{k}, t)\cdot \vec{Q}^*(\vec{k}, t)
+    \right]
+\end{align}
+Before the $A$'s of neighbouring parts are coupled,
+but now they are not.
+A valid $k$ is not next to any other valid $k$,
+just a sum of completely independent parts,
+one for each $k$.
+One harmonic oscillator for every value of $k$.
+
+I don't know if you know that,
+but EM an all that complication with curls and divergences,
+is just a bunch of this.
+
+Do you recognize this?
+\begin{align}
+    H &= \frac{1}{2}p^2 + \frac{1}{2}q^2
+\end{align}
+That's a harmonic oscillator.
+This is for many oscillators.
+\begin{align}
+    H &= \sum_{i}\frac{1}{2}p_i^2 + \frac{1}{2}q_i^2
+\end{align}
+And the EM Hamiltonian is just an infinite number of oscillators.
+
+Interesting thing to observe is that it tells us the frequency of each mode.
+$c^2 k_^2 = \omega^2$.
+If you calculate the velocity of the waves,
+you get the velocity of the light $c$,
+which is the same for any wavelength of light.
+It's much like low-momentum phonons.
+
+Note that I could have written
+\begin{align}
+    \vec{P}\cdot\vec{P} =
+    \left( \Re P \right)^2 + \left( \Im P \right)^2
+\end{align}
+
+So I'm done right?
+
+I can find classically what the average energy is going to be.
+By equipartition,
+I should have $\frac{1}{2}k_BT$ for every quadratic term in the Hamiltonian.
+\begin{align}
+    E &= \sum_{\vec{k}}\frac{1}{2}k_B T\left( 
+    \underbrace{2}_{\textrm{``kinetic'' + ``potential''}}
+    + \underbrace{2}_{\textrm{polarization}}
+    \right) = \infty
+\end{align}
+Only the transverse polarizations survives because
+$vec{k}\cdot\vec{Q}=0$,
+so you only have 2 polarizations.
+Classically,
+the energy does not depend on the frequency of the oscillators.
+Differently from the phonons though,
+this never ends,
+because the maximum $k$ you could have is $\pi/a$,
+but there is no lattice spacing $a$,
+so this sum diverges!
+
+It diverges because it can have modes of arbitrarily small wavelengths and each
+one contributes exactly the same.
+
+And so of course,
+this is the famous ultraviolet catastrophe.
+That's how quantum mechancis was invinented.
+They did this calculation,
+the result was not just slightly wrong,
+but profoundly wrong.
+And there you go.
+
+There are some steps,
+you may ask why you should believe,
+but there is a reason to believe that this result is off because it's infinitely
+off.
+
+The reason is this.
+Suppose now that you calculate the energy for a particular magnitude of
+$k=|\vec{k}|$,
+which corresponds to many different $k$ on a sphere of that radius.
+Then you could try to calculate the energy density.
+
+It's hard to do the sum because it lives on lattice,
+but for large $k$,
+you can do an approximation.
+
+\begin{align}
+    \frac{E}{V} &=
+    =
+    \frac{2k_B T}{2\pi^2} \int_{0}^{\infty} dk\, k^2\\
+    &=
+    \frac{8 k_B T \pi}{c^3} \int_{0}^{\infty} d\nu\, \nu^2
+\end{align}
+and if we define the Rayleigh-Jeans density
+\begin{align}
+    u_T(\nu) &= \frac{8 k_B T \pi}{c^3} \nu^2,
+\end{align}
+we find $u_T(\nu)$ is a quadratic.
+At the time,
+people did precise measurements of this thing.
+I don't know how did this,
+but I don't know how they measured the energy so precisely.
+But they did it,
+and then know that the correct curve was not quadratic.
+They knew that it increased, peaked,
+then decreased.
+
+However,
+they kind of agreed in the low-$\nu$ limit.
+So they got something right.
+
+And we know why.
+It's because small frequencies corresponds to bulk quantum energies in the
+regime
+\begin{align}
+    k_B T \gg \hbar \omega.
+\end{align}
+However, for large $\nu$,
+this is violated,
+and those high-frequency modes are actually frozen,
+and we no longer satisfy the equipartition theorem.
+
+That just tells you our story nowadays.
+
+Let's take this Hamiltnoian here and don't treat it classically.
+The same way that you have a particle moving on line,
+you make the coordaintea nd mometa ot be operaotr,s
+adn you know they have acertain commutation relation,
+all that thing holds true,
+except that you have an $a$ and $a^\dagger$
+for every polarziation Foufier mode.
+I'm not going to do this because we don't have the time,
+but this is what we call \emph{quanutm field theory},
+where you take a classical field,
+apply quantum mechanicss to it.
+the states of hte field are interpeted as particles,
+like photons for example.
+The particles ocrrespdongin to quantize leectromeatice field sare like phonons,
+ecept hte lattice is the EM field.
+
+To keep long story short,
+quantum mechanically,
+I'm going to have a Hamiltonian exactly like this,
+except it doesn't change the fact I have a bunch of quantum harmonic
+oscillators.
+
+First of all,
+let's find what the eigenstates of this Hamiltnoian are.
+It could be that every harmonic oscilllator is in the ground sate,
+the minimum amount of energy.
+That's goingto have some energy.
+Imagine if I take all of hte modes.
+
+And I say only for that particular oscilators and iwht this poarlizatoin here,
+I'm going to t tae the stateo f that oscillatora nd move it to the first excited
+state.
+Howmuch am I going to raise the energy?
+It's going to be $\hbar\omega_k_1 = \hbar c k_1$.
+I state like this,
+we have created a photon of wavelength $2\pi/k_1$.
+This is identical to what we have if we had a particle moving wit momentum
+$\hbar k$.
+This is the energy of the particle $cp_1$,
+and rememver relativity,
+this i the energy of a massless particle,
+and htat's why we say it has zero mass.
+
+What if I take that very same oscillator and I raise that energy level to the
+second excited state?
+Because the energy levels are equally spaced,
+I would just get $2\habar\omega_{_k_1}$.
+
+I could get two different oscillators,
+and that would ocrrespond to the sum of theenrgies.
+The fact hte nerg is just the sum of the enrgies of each one,
+it means they are not interacting,
+no potential enegy between them and that's it.
+
+That's hte beginning of quantum electrodynamics,
+let someone else teach you that.
+But now I just want to compute the paritiotn function.
+
+You've done this a million times.
+Look at your notes.
+After that we considered the case of phonos,
+just a bunch of harmoinc oscilaotrs.
+Here again,
+we hve a bunchof harmoinc oscillators.
+We're doing statistical mechanics of quantum field theory,
+it's veyr fancy stuff.
+Anyway,
+what is the parittion function?
+
+I have to take htis Hamilontina here,
+put some hats on them and do the sum.
+\begin{align}
+    Z &=
+    \Tr e^{-\beta H}\\
+    &=
+    \prod_{\vec{k},{\alpha}}
+    \sum_{n_k=0}^{\infty}
+    e^{-\beta \hbar \omega \left(n_{k} + \frac{1}{2}  \right)}\\
+    &= \prod_{\vec{k},\alpha}
+    \frac{e^{-\beta \omega_{\vec{k}}} \hbar/2}{%
+    1 - e^{-\beta \omega_{\vec{k}}\hbar}}
+\end{align}
+where $\alpha=1,2$ are polarization indices.
+To convince yourself it's right to take products,
+\begin{align}
+    \Tr e^{-\beta \left( H_1 + H_2 \right)} &=
+    \Tr\left[
+    e^{-\beta H_1} e^{-\beta H_2}
+    \right]\\
+    &=
+    \sum_{n_1,n_2} \bra{n_1} e^{-\beta H_1} \ket{n_1}
+    \bra{n_2} e^{-\beta H_2}\ket{n_2}
+\end{align}
+where $H_1$ and $H_2$ are independent.
+Let me give you some advice.
+Ther'es just so much more I could explain,
+but I'm just feeling the time here.
+Ifyo usee a large expression that doesn't have meaning to you hard to digest,
+you can break it down,
+by working out the trivial cases.
+After you do 2,
+everything becomes clear.
+If you do this tomrrow,
+and the day after,
+and then it becomes eh,
+not a big deal this infintie oscillaotrs,
+it takes 30 years.
+The alternative is ot manipulate formulas using rules no one told you,
+and you'll feel all around.
+
+And now we can calculate the Helmholtz free energy.
+\begin{align}
+    F(T, V) &=
+    -k_B T \ln Z\\
+    &=
+    -k_B T \sum_{\vec{k},\alpha}\left[ 
+    \ln\left( 1 - e^{-\beta\omega_k\hbar} \right)
+    + \frac{\beta\hbar\omega_k}{2}
+    \right]
+\end{align}
+By the way,
+we invented QM becauseo f hte embarassing divergeence,
+buti fy ou calcualte the ground stae of the infinite harmonic oscillaotrs,
+you get $\hbar\omega/2$,
+but how many ar ethere?
+Infintiely many.
+This theory predicts the enrgy density of hte vacuum is infinite.
+That's bad right?
+But that's hte predition.
+We do't wrry about it,
+is because if you add a photon,
+you add energy,
+so hte infinite amount of energy goes on both sides of the quation,
+but we can ignore.
+So delete that second term.
+\begin{align}
+    F(T, V) &=
+    -k_B T \sum_{\vec{k},\alpha}\left[ 
+    \ln\left( 1 - e^{-\beta\omega_k\hbar} \right)
+    \right]
+\end{align}
+
+That is the energy by the way people on the internet want ot harness to move
+spaceships or someting.
+The rest is just like phonons.
+The dispersion is not linear forever.
+Here htere is no maximum value of $\vec{k}$.
+Hopefuly thisp art that is temperature dependent.
+
+There's one step I'm going to do that I'm going to defy detail.
+I want ot transform this sum into an integral,
+by an approxiamtion,
+and when I do this,
+I claim the answer is.
+\begin{align}
+    F(T, V) &=
+    2k_B T V \int d^3k\, \ln\left( 1 - e^{-\beta \hbar ck} \right)
+\end{align}
+And this $2$ comes from the polarizations.
+The free energy is an extensive quantity,
+so you should expect it to be proportional to volume,
+which makes sense.
+
+Then we're going to move to the next topic of quantum gases next class.
+Monday we have office hours.
