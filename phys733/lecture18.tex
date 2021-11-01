@@ -1,4 +1,4 @@
-\section{1D boson SPTs}
+\section{1D Bosonic Symmetry-Protected Topological states}
 Last time,
 we started talking about SPT states,
 bosons in 1D.
@@ -21,21 +21,21 @@ and we so we said that this ground state,
 AKLT proved that this is the unique gapped ground state
 of this $H_{ALKT}$.
 
-In particular, this ground state is actually annhilated by every single term
+In particular, this ground state is actually annihilated by every single term
 here,
-and this Hamiltnoian is called a frustration-free Hamiltonian.
+and this Hamiltonian is called a frustration-free Hamiltonian.
 
 It's useful to note that the motivation for AKLT to study this was actually how
 Haldane conjectured that the spin-1 Heisenberg chain is gapped.
 
 The motivation for AKLT was the Haldane conjecture.
 The spin-one-half Heisenberg chain was known to be gapless,
-but Dr Haldane predited the spin-1 Hesenberg chain is gapped.
-That was suprising,
-bcause poeple asuemd the spin half wouldh ave the same behaviour,
-but Haldane's conjectre said that spin-1 and spin-half behave very
+but Dr Haldane predicted the spin-1 Heisenberg chain is gapped.
+That was surprising,
+because people assumed the spin half would have the same behaviour,
+but Haldane's conjecture said that spin-1 and spin-half behave very
 differently,
-which is intrinsically QM.
+which is intrinsically quantum mechanical.
 
 \begin{question}
     Does it have Goldstone bosons?
@@ -48,7 +48,7 @@ but the  spin-1 half is gapped.
 SO this AKLT,
 you can think of this thing as smoothly connected,
 or close,
-to the HEisenberg point,
+to the Heisenberg point,
 because you can slowly ramp up this parameter from 0 to 1/3.
 AKLT noticed this Hamiltonian was similar to the Heisenberg model,
 but you could prove it was gapped and has this interesting ground state.
@@ -56,36 +56,36 @@ but you could prove it was gapped and has this interesting ground state.
 So the spin-1 Heisenberg chain is in the same phase as this,
 turning from 0 to 1/3,
 and show the gap is still open,
-so this isa mdoel to see whath e spin-1 Heisenberg chain looks like.
+so this is a model to see what the spin-1 Heisenberg chain looks like.
 
-The key point about this tate,
-is that you see youhaave these edge modes,
-whic his a key non-trivial aspect of this tate as opposed to trivial.
+The key point about this state,
+is that you see you have these edge modes,
+which is a key non-trivial aspect of this state as opposed to trivial.
 
 \begin{question}
-    How do you see there's nophase transition from 0 to 1/3.
+    How do you see there's no phase transition from 0 to 1/3.
 \end{question}
 I think numerically you can see it?
 This is 1D,
 so there are all sorts of analytically solvable tricks,
-maybe yes,
+maybe yes
 but I don't know.
-Therei s aphase transitoin,
+There is a phase transition,
 but it's beyond 1/3.
 I forgot exactly what.
 
-They key point si that you hvae these dangling spin-1/2 things on the edge,
-which are dge modes.
+They key point is that you have these dangling spin-1/2 things on the edge,
+which are edge modes.
 The global symmetry is SO(3),
-but actaully the chain has more symmetries,
-it is time-reverla invaraint,
-tralsationally invaraitn,
+but actually the chain has more symmetries,
+it is time-reversal-invariant,
+transitionally invariant,
 reflection symmetry,
 but we're interested in the OS(3) global symmetry.
 
 The property of SO(3) is that it acts anomalously on the boundary.
-Here, anomalous means microscopically each latice site is pin-1,
-so it forms a linear repseration of SO(3),
+Here, anomalous means microscopically each lattice site is pin-1,
+so it forms a linear representation of SO(3),
 but spin-1/2 is a projective representation of SO(3).
 I will remind you mathematically what projective means.
 
@@ -95,33 +95,33 @@ which is a linear representation of SO(3).
 
 So let me tell you what projective representations are,
 in case you don't know exactly what this means.
-The short summary is taht if you do a combination of rotaitons in SO(3),
-that for examle add up to dientity,
-whereaase Spin-1/2 would give you a minus sign,
-but linaer represetnations would not give you a minus sign.
+The short summary is that if you do a combination of rotations in SO(3),
+that for example add up to identity,
+whereas Spin-1/2 would give you a minus sign,
+but linear representations would not give you a minus sign.
 
 Suppose you have a group $G$ with a finite-dimensional representation.
 \begin{align}
     R: G \to GL(d; \mathbb{C})
 \end{align}
-What that means is that for eveyr gorup element,
+What that means is that for every group element,
 you have the group of $d\times d$ complex matrix.
 
 A \emph{faithful} or \emph{linear} representation has the property that when you
 compose group elements,
-youget the representation for the product.
+you get the representation for the product.
 \begin{align}
     R_g R_h = R_{gh}
 \end{align}
 However, this is not always the case,
 because in general you could have
 \begin{align}
-    R_g R_h = w(g, h) R_{gh}
+    R_g R_h = \omega(g, h) R_{gh}
 \end{align}
-where $w(g,h)$ is a phase in U(1).
+where $\omega(g,h)$ is a phase in U(1).
 So in other words,
 \begin{align}
-    w \in C^2(G, U(1))
+    \omega \in C^2(G, U(1))
 \end{align}
 so $\omega$ is a function of two group elements and it gives you a U(1) phase.
 If you have this rule,
@@ -156,7 +156,7 @@ and so the 2-cocyle equation is really just the equation that
 \begin{align}
     d\omega_2 = 1
 \end{align}
-and if it satisfies this eqaution,
+and if it satisfies this equation,
 we call it a 2-cocycle
 so actually
 $\omega_2 \in Z^2(G, U(1))$,
@@ -165,12 +165,12 @@ In other words,
 \begin{align}
     Z^2(G, U(1)) &=
     \left\{
-    x_2 \in C^2(G, U(1)) \,|\,
-    dx_2 = 1
+    X_2 \in C^2(G, U(1)) \,|\,
+    dX_2 = 1
     \right\}
 \end{align}
 However,
-there is some reduencay here,
+there is some redundancy here,
 because you could change any of these by a phase and potentially get rid of
 these $\omega$s.
 That is,
@@ -183,7 +183,7 @@ so then
 \begin{align}
     R_g' R_h' &= \omega_2'(g, h) R_{gh}'\\
     R_g R_h &=
-    \underbrace{\frac{\omega_2^1(g, h) \epsilon(gh)}{\epsilon(g)
+    \underbrace{\frac{\omega_2'(g, h) \epsilon(gh)}{\epsilon(g)
     \epsilon(h)}}_{\omega_2(g, h)} R_{gh}
 \end{align}
 and thus
@@ -192,8 +192,8 @@ and thus
     \omega_2(g, h) \frac{\epsilon(g) \epsilon(h)}{\epsilon(gh)}
 \end{align}
 So you need to consider 2-cocycles modulo this equivalence relation,
-which youccan think of as equilvanet proejctive rerepstionas.
-This $\epsilon(g)\in C^1(G, U(1))$ is a 1-cochain associated iwth a single grup
+which you can think of as equivalent projective representations.
+This $\epsilon(g)\in C^1(G, U(1))$ is a 1-cochain associated with a single group
 elements,
 with
 \begin{align}
@@ -213,17 +213,17 @@ that are differentials of 1-cochains
     \omega_2 \sim \omega_2 \cdot d\epsilon_1
 \end{align}
 
-So projective rpesenations should be classified by 2-cocycles modulu by
+So projective representations should be classified by 2-cocycles modulo by
 2-coboundaries.
 
-You have these rlrestnations,
-you have hese extra phases,
-andthat phase,
-you might be agble to get rid of it by redefingin $R_g$,
+You have these representations,
+you have these extra phases,
+and that phase,
+you might be able to get rid of it by redefining $R_g$,
 but if you can't,
-then you have a non-trivial projetive rpesetnation,
-and two projective represtnatinos are equivalnet if you can just rephase these
-$R_g$'s so distinct ones are lcassifed by this group.
+then you have a non-trivial projective representation,
+and two projective representations are equivalent if you can just re-phase these
+$R_g$'s so distinct ones are classified by this group.
 
 Thus distinct projective representations are classified by
 the second cohomology group
@@ -232,7 +232,7 @@ the second cohomology group
     H^2(G, U(1))
 \end{align}
 And indeed,
-you could also generalize this wigh
+you could also generalize this with
 \begin{align}
     H^n (G, U(1)) &=
     \frac{Z^n(G, U(1))}{B^n(G, U(1))}\\
@@ -260,68 +260,68 @@ For $U(1)$,
 we don't really need all that,
 we just need $U(1)$ coefficients.
 
-Let's just stick to the math we need to do the physics.
+Let's just stick to the mathematics we need to do the physics.
 
 
 \begin{question}
-    The stateis symmetric under $G$ means linear represatatino?
-    Is there any reason why linear represetnations are special in that way?
+    The state is symmetric under $G$ means linear representation?
+    Is there any reason why linear representation are special in that way?
 \end{question}
-No, not ncesarily.
-Linear represetnations are special for a wide vairteyt of reasons,
-but you could defintiely hav astate symmetric under $G$ but forms a projetcive
-rpesetations.
-There are theorems which govern what ht low-energy behaviour has to be.
-It's imporant to know forh tsystem,
-but they are both equally valid as a system and ans as symmetry.
+No, not necessarily.
+Linear representations are special for a wide variety of reasons,
+but you could definitely have a state symmetric under $G$ but forms a projective
+representation.
+There are theorems which govern what the low-energy behaviour has to be.
+It's important to know for the system,
+but they are both equally valid as a system and its symmetry.
 
 
 \begin{question}
-    Is there a simple quantum example of a projective prestation?
+    Is there a simple quantum example of a projective representation?
 \end{question}
 Yes, spin-1/2.
 
 \begin{question}
-    We can either say it forms a linear represetnation of spin-1
-    or a spin
+    We can either say it forms a linear representation of spin-1
+    or a spin\ldots
 \end{question}
-Let me reprhase your qeustion.
-A spin-1/2 chain can be thought of as a projective rpestenation of SO(3),
+Let me rephrase your question.
+A spin-1/2 chain can be thought of as a projective representation of SO(3),
 or it can be thought of a linear representation of SO(3).
-It's also thel inear reprsetnation of the cover of some group.
-Suppose I have a spni-1/2 chian,
-should I think of the symmetry of the sytem being SU(2) or SO(3).
-This is actually a pretty delicate quesiton.
+It's also the linear representation of the cover of some group.
+Suppose I have a spin-1/2 chain,
+should I think of the symmetry of the system being SU(2) or SO(3).
+This is actually a pretty delicate question.
 
 It depends on how many spin-1/2s you have.
-if you ahve an even numberof spin-1/2s, it should be SO(3),
+If you have an even number of spin-1/2s, it should be SO(3),
 but if you had an odd number of spin-1/2s, it should be SU(2) technically.
 It depends on odd or even.
 
 \begin{question}
     Regardless of even or odd,
-    excitaitons are alwasy even spin,
-    is there somtehting to interpet?
+    excitations are always even spin,
+    is there something to interpret?
 \end{question}
 The local operators for a spin-1/2 are the Pauli matrices $\sigma^i$,
-and they themselves form a spin-1 represetnation of SO(3).
-The way that $\sigma^i$ transforms under an SO(3) represatatnion,
+and they themselves form a spin-1 representation of SO(3).
+The way that $\sigma^i$ transforms under an SO(3) representation,
 is the same as a spin-1.
-So the Pauli operatosr transform as Spin-1 under SO(3).
+So the Pauli operators transform as Spin-1 under SO(3).
 Local operators always carry integer spin,
-because these $\sigma^i$ transforma nd tranform as a spin-1 represetnation.
+because these $\sigma^i$ transform as a spin-1 representation.
 
 \begin{question}
     This is true even if we have a spin-2 chain?
 \end{question}
 If you had a spin-2 chain,
-then the local operatosr would not e pauli matrices,
+then the local operators would not be Pauli matrices,
 it would be whatever for spin-2.
-Spin-2 is not the best examle.
+Spin-2 is not the best example.
 Spin-3/2 is better,
-where they are 4x4 matrices,
+where they are $4\times 4$ matrices,
 but under SO(4) rotations would transform as a local spin.
-The formal statement is that clocal exctiations carry integer spin.
+The formal statement is that local excitations carry integer spin.
 
 Let me say that
 \begin{align}
@@ -575,7 +575,7 @@ It's a more delicate task to figure out what ist he desintct property of the
 SPTs given  it's hard to probe them becasue the boundary breaks the symmetry.
 
 \section{Full classification of bosonic 1+1D topological phases}
-What we saw so far is that we have this classfificaiton of how the symmetry acts
+What we saw so far is that we have this classification of how the symmetry acts
 on the edge modes.
 In fact,
 this is the full classification of 1D SPTs.
@@ -604,7 +604,7 @@ Then a \emph{matrix product} state is of the following form
     \right)
     \ket{i_1,\ldots,i_N}
 \end{align}
-where $i_k=1,\ldots,d$ where $d$ si the local qudit dimension,
+where $i_k=1,\ldots,d$ where $d$ is the local qudit dimension,
 each $A_{i_k}^{[k]}$ are $D\times D$ matrices
 where $D$ is the bond dimension.
 
@@ -635,27 +635,27 @@ Actually, the more precise statement is that the entanglement entropy $S$ is of
 order
 \begin{align}
     S = O\left( 
-    \frac{\log_3 d}{E_{gap}}
+    \frac{\log^3 d}{E_{gap}}
     \right)
 \end{align}
 This was originally proven by Hastings in 2007,
 but then it was exponentially improved 6 years later by
-Arod, Kitaev, Landau, Vazirani in 2013,
+Arad, Kitaev, Landau, Vazirani in 2013,
 and the statement above is from the latter paper.
-This latter papaer also improved another result of Hastings,
+This latter paper also improved another result of Hastings,
 which is that you can approximate any gapped ground state to an accuracy that is
-$1/poly(N)$ where $N$ is system size with an MPS of sublinear bond dimension,
+$1/\poly(N)$ where $N$ is system size with an MPS of sublinear bond dimension,
 sublinear means the bond dimension grows slower than the size of the system.
 We don't care what the polynomial is.
-The more speicfic thing they proved is that
+The more specific thing they proved is that
 \begin{align}
     D &=
     O\left( 
-    e^{\log_{3/4} N / E_{gap}^{1/4}}
+    e^{\log^{3/4} N / E_{gap}^{1/4}}
     \right)
 \end{align}
-The main ponit is taht gapped ground states have area law entalmenet in 1D,
-and MPS is a way of parameterizing states iwth area law entanglmeent.
+The main point is that gapped ground states have area law entanglement in 1D,
+and MPS is a way of parametrizing states with area law entanglement.
 So if you have a gapped ground state,
 you can have a fairly good approximation with MPS.
 
