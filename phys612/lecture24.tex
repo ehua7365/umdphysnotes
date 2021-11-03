@@ -1,0 +1,127 @@
+[30 min late]
+\section{Planck's Law}
+Derived Planck's law.
+
+\section{Identical particles}
+Suppose you have two particles moving along a line.
+As you know, the system only has one wave function,
+which is $\psi(x_1,x_2)$,
+not a wave function for each but one wave function for all.
+Suppose it's one dimensional and there is the kinetic energy operator
+\begin{align}
+    -\frac{\hbar^2}{2m}\frac{\partial}{\partial x_1}
+    -\frac{\hbar^2}{2m}\frac{\partial}{\partial x_2}
+\end{align}
+but the new thing in QM is that you can have identical particles.
+There is nothing you can do to distinguish them.
+That has consequences.
+Suppose someone exchanged the two particles,
+and I don't measure anything else.
+Should I obtain any results?
+I shouldn't.
+
+So the magnitude squared of the wave function before and after exchange should
+be the same.
+\begin{align}
+    |\psi(x_1, x_2)|^2 &= |\psi(x_2, x_1)|^2
+\end{align}
+Putting those two things together,
+I can have either
+\begin{align}
+    \psi(x_1, x_2)^2 &= \pm\psi(x_2, x_1)^2
+\end{align}
+There could be a phase,
+but if I exchange the particle twice, I should get the same thing back.
+
+The not obvious thing is that if I have two electrons,
+any two electrons at any time,
+this sign is a property of the kind of particle.
+
+All particles in the universe are two types.
+Either they don't flip the sign,
+called bosons,
+or they do,
+called fermions.
+
+Another interesting fact,
+is particles have spin, as you know,
+which could be either integer and they're always bosons,
+or they could be fermions, spin in half-integers.
+
+Give me examples of bosons?
+Photons.
+How do we know?
+
+Two photons of the same wavelength,
+one particle mode is excited,
+and there are states in the magnetic field with an arbitrary number of photons
+with the same momentum,
+and they are bosons.
+Same with phonons.
+It could be very complicated.
+
+In fact,
+every time you have a state with two fermions,
+the composite system is going to be a boson.
+Every time you have an even number of fermions you have bosons.
+
+That's why we don't know if you are a fermion or a boson,
+because you'd have to know exactly how many particles you have.
+
+All this is obvious.
+
+Let me do an example.
+
+Consider particles in a 3D box.
+Let's say we have a single particle
+\begin{align}
+    \braket{xyz}{\psi} = \psi(x, y, z) =
+    \left( \frac{2}{L} \right)^{3/2}
+    \sin\left( \frac{n_x \pi x}{L} \right)
+    \sin\left( \frac{n_y \pi x}{L} \right)
+    \sin\left( \frac{n_z \pi x}{L} \right)
+\end{align}
+where $n_x,n_y,n_z=1,2,\ldots$.
+
+And the energy is
+\begin{align}
+    E_{n_x,n_y,n_z} &=
+    \frac{\hbar^2}{2mL^2}\left(
+        n_x^2 + n_y^2 + n_z^2
+    \right)
+\end{align}
+by dimension analysis.
+Dimension analysis is hard to teach.
+People don't know.
+
+And so the Hamiltonian can be indexed by
+\begin{align}
+    H\ket{m} =  \frac{\hbar^2}{2ML^2} m^2 \ket{m}
+\end{align}
+
+All I have to do is create single particle states,
+and I remember the Hamiltonian is the sum of kinetic energies.
+$H=K_1 + K_2$.
+Then what happens?
+
+I act with $K_1$ on the first one,
+and I leave along the second one.
+Then I act $K_2$ on the second one,
+and leave alone the first one.
+That's really what I mean by $K_1 + K_2$,
+a shorthand for
+\begin{align}
+    H = K_1\otimes I + I\otimes K_2
+\end{align}
+What's going to happen?
+
+This gives
+\begin{align}
+    H\ket{m_1}\otimes\ket{m_2} &=
+    E_{m_1}\ket{m_1}\otimes\ket{m_2} +
+    E_{m_2}\ket{m_1}\otimes\ket{m_2}\\
+    &=
+    \left( E_{m_1} + E_{m_2} \right)
+    \ket{m_1}\otimes\ket{m_2}
+\end{align}
+We'll continue next time.
