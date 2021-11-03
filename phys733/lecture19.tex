@@ -1,0 +1,665 @@
+\section{Matrix Product States}
+MPS closed chain.
+\begin{align}
+    \ket{\psi} &=
+    \sum_{i_1,\ldots,i_N} \Tr\left( 
+    A_{i_1}\cdots A_{i_N}
+    \right)
+    \ket{i_1,\ldots,i_N}
+\end{align}
+where $A_i$ are $D\times D$ matrices, and $i=1,\ldots, d$ where
+$d$ is the dimension of the site Hilbert space.
+There are $dND^2$ parameters here to describe a quantum state.
+
+Gapped ground states of local Hamiltonians satisfy the area law for entangelment
+entropy.
+
+Can apprxoimate gapped gorund staes to accuracy $1/\poly(N)$
+with MPS with $D$ sublinear in $N$.
+
+A MPS is injective if there exists finite $L_0$ such that
+\begin{align}
+    \tilde{A}_I &=
+    A_{i_1} A_{i_2} \cdots A_{i_N}
+\end{align}
+spans the whole space of $D\times D$ matrices.
+
+The question is if these matrices span the entire space of $D\times D$
+matrices.
+
+The reason injectivity is important is that you can show that an injective MPS
+has the following properties.
+\begin{enumerate}
+    \item Finite correlation length.
+    \item There are unique gapped ground states of a frustration-free parent
+        Hamiltonian.
+\end{enumerate}
+
+There is a book by Xiao-Gang Wen, Xie Chen, Bei Zeng and one other author which
+has a nice discussion of MPS and in particular the relation between MPS and SPT
+phases.
+
+There's another formulation called PEPS,
+projected entangled pair states.
+
+Consider a chain of maximally entangled pairs which are then projected.
+So you have on each site,
+imagine you have two kinds of spins.
+And then you put the spins on nearby states into singlets,
+and then you do a projection.
+
+So here, 
+this singlet bond,
+what that really means,
+you can think of it as a maximally entangled state between the Hilbert space on
+the two sides.
+\begin{align}
+    \frac{1}{\sqrt{D}} \sum_{\alpha=1}^{D} \ket{\alpha}\ket{\alpha}
+\end{align}
+where $D$ is some internal bond dimension.
+The idea is that each of these are some virtual spin,
+and $D$ would be the dimension of the virtual spin.
+
+And then the projection projects from two virtual spins to a physical degree of
+freedom of dimension $D$.
+
+So this projection,
+if you write it in the following way
+\begin{align}
+    P &= \sum_{i,\alpha,\beta} A_{i,\alpha\beta} \ket{i}\bra{\alpha\beta}
+\end{align}
+Then this state is actually equivalent to the MPS $\ket{\psi}$.
+
+So the MPS is exactly equivalent to this PEPS when the projection is written
+like above.
+
+Something thath apend in 2010,
+that led to people thinking all 1D phases are classifed by $H^2(G, U(1))$,
+is that if you take the bond dimension,
+and what can be analysed by onstant depth circuits,
+is the following.
+
+One can show that any MPS with fixed bond dimension can be disentangled
+to exponential accuracy by local constant depth circuit.
+
+The fact you can do this is evidence for no bosonic topological order,
+meaning no topologically ordered phases of bosons without any symmetry.
+
+Disentangle means toke to the direct product state.
+
+It doesn't prove it of course,
+because the bnod idmensino is assumed to be fixsed,
+but in general you should consider the bnod dimension to grow wiht system size.
+
+Last time in the paper,
+they show the bond dimension is sublinear in $N$,
+but not necessairly constant in $N$.
+This discovery of distanglement with fixed bond dimension doesn't prove there is
+no topological order in 1D but it does strongly suggest there is no bosonic
+topological order in 1D.
+
+Then you could add symmetry in the circuit,
+and let the circuit be symmetric,
+and then you can show from there that you basically get this PEPS form.
+That is,
+you can show that any MPS with a fixed bond dimension and symmetry $G$
+can be converted into an entagled pair form via a symmetric constant depth
+circuit.
+
+Furthermore, each virtual spin is in projective represenation of $G$
+characterized by this cocycle
+$[w] \in H^2(G,U(1))$.
+
+This again,
+is evidence that the classification of gapped phases should be
+$H^2(G,U(1))$.
+The caveat is that we're considering MPS,
+and cnostantt depth local circuits tnat distangle,
+or take any generic MPS to this fixed point form.
+
+I'm not going to tgo through the exact construction,
+but this book has s nice account of it.
+
+I want to describe a different model for thinking about SPT states in terms of
+path integrals,
+state sums and wave functions that can genrealize to egery dimesnion.
+This whole discussion about MPS is limited to 1D.
+While it's interesting and illuminated,
+I'm not going to dwell more on it because it's so specific to 1D.
+This is the overview of what happened 10 years ago in 1D that led people to go
+further and classify higher dimensions.
+
+\begin{qeustion}
+    Expeirmental AKLT?
+\end{qeustion}
+The spin-1 Heisenberg chain si  gapped phase of matter iwth dangling gapped egde
+modes,
+and ther are expeirments.
+The Haldane chain is half the reason why Haldane won the Nobel prize,
+even though he didn't realize it's an SPT state at the time.
+
+\begin{question}
+    Is it because of ground state degeneracy?
+\end{question}
+Every 1D bosonic topological phase is a trivial phase,
+if you forget about symmetry.
+For fermions,
+it's not hte case because we have Majorana chains.
+Even though it has no edge modes on a ring,
+it's still topological.
+
+It's not exactly because of ground satte degenearcy,
+because the Majorana chain does not have groud state degeneracy on a closed
+chain iether.
+
+\begin{question}
+    Why is the second satement evdicen?
+\end{question}
+Eveyr sate,
+youcan run it thogh some constant depth symetric circuit,
+and take it inot a form like this,
+where every one is a projective representation,
+with a dangling edge state.
+You could run some RG procedure that takes a constant number of steps,
+but takes you to this idealized fixed-point form to good accuracy.
+
+\begin{qeustion}
+    Is the second statement still true for $d=1$.
+\end{qeustion}
+You can actually get from PEPS to the trivial product state by disentangling each
+of these guys,
+but he only way to do that is break the symmetry $G$.
+But to fully disentangle,
+you need that one extra step to break the symmetry.
+
+I encourage to read the relevant chapter in the book by X.G. Wen.
+There's also a book by Ignacio Cirac.
+
+\section{Group Cohomology Model (Dijkgraaf-Witten theory)}
+I want to turn to a model for SPT state,
+first in 1D,
+but this model actually generalized to higher dimensions as well.
+
+The idea is that we're going to construct a TQFT that gives SPT states
+by constructing the path integral.
+Construct a path integral fora TQFT
+\begin{align}
+    Z(M^2, A)
+\end{align}
+We have a symmetry $G$, so there is a gauge field $A$ for that $G$ symmetry.
+
+The first step is to triangulate spacetime.
+
+Then the next step is define a branching structure.
+A branching structure is a local ordering of the vertices.
+Another way of saying what it is is to make all edges directed in a way such
+that there are no closed loops.
+That's all a branching structure is.
+
+For example, take some triangle,
+with vertices labelled 0, 1, 2.
+Then arrows pointing from lower to higher number vertices on edge,
+and you see there're no loops.
+
+Then we introduce an orientation.
+You can reverse the arrows,
+and you notice you can't rotate one to make it look like the other,
+because if you follow two of the arrow,
+your thumb points down,
+but it points up on the other orientation.
+You call one the $+$ orientation and you call the other the $-$ orientation.
+
+The next thing to do is to assign group elements to vertices.
+
+It effectively introduces a gauge field into the problem,
+because if I draw a triangle with
+$g_0$, $g_1$ and $g_2$ on vertices,
+the links between them will be $g_0^{-1}g_1$ from $g_0$ to $g_1$,
+$g_{0}^{-1}g_2$ from $g_0$ to $g_2$ and
+$g_1^{-1}g_2$ from $g_1$ to $g_2$.
+
+[picture]
+
+This defines a special kind of gauge field,
+it's a \emph{flat} gauge field.
+that is,
+there is no net flux through a plaquette.
+
+For example,
+the flux through one triangle is
+$A_{01}A_{12}A_{20}=1$
+and in fact the product of any loop is 1 with
+\begin{align}
+    \prod_{\textrm{loop}} A = 1
+\end{align}
+so in fact $A$ is a \emph{trivial} flat gauge.
+
+Then for each 2-simplex (triangle),
+we're going to associate a phase factor,
+which is an amplitude,
+that depends on the group elements.
+
+To each 2-simplex $\Delta^2$, define
+\begin{align}
+    \left[ \nu_2\left( g_0, g_1, g_2 \right) \right]^{S\left( \Delta^2 \right)}
+\end{align}
+where $\nu_2 \in U(1)$.
+I assume the labels are labelled $g_0,g_1,g_2$.
+$S$ is the orientation of $\Delta^2$.
+
+\begin{question}
+    Is this an invertible TQFT?
+\end{question}
+This will be an invertible TQFT,
+and the fact that this is just a $U(1)$ phase is important why it's invertible.
+You can generalize it,
+but it's significantly more complex to make $U(1)$ not just a phase.
+
+The path integral that we're going to define is defined as follows.
+\begin{align}
+    Z &=
+    \frac{1}{|G|^{N_V}}
+    \sum_\left\{ {g_i \right\}}
+    \prod_{\Delta_2 \ni (i, j, k)}
+    \left[ 
+    \nu_2 \left( g_i, g_j, j_k \right)^{S(\Delta_2)}
+    \right]
+\end{align}
+we're taking the product over all 2-simplices $\Delta_2$
+each of which have vertices $i,j,k$ in order.
+And I'm going to tkae the product of all these phasees $\nu_2$
+and I'm going to raise it to the orientation $S\left( \Delta_2 \right)$.
+And then I'm going to sum over all possible choices of vertices $\left\{ g_i
+\right\}$
+and then I'm going to average by didding by $|G|^{N_V}$
+where $N_V$ is the number of vertices and $|G|$ is the number of elements in $G$.
+
+We'll come to this,
+but if you're a mathematician and see this,
+you might think we're crazy,
+because you'll see the sum is completely useless for defining the path integral,
+but the sum is here for physics.
+What you find here is that every term is here is the same.
+I haven't otld you what $\nu_2$ are.
+It turns out every term in hte term is the same.
+
+We're just summing over all possible labellings.
+
+\begin{question}
+    $G$ survives permutations?
+\end{question}
+We have some crazy triangulation,
+and I'm just summing over every possible value of $G$.
+Every vertex has a group element attacthed to it,
+and each vertex has a different group element.
+
+\begin{question}
+    Are there as many group elements as vertices?
+\end{question}
+There are $N_V$ group elements,
+which is different from $|G|$.
+For example $G=\mathbb{Z}_2$,
+then there are $2^{N_V}$.
+
+
+\begin{question}
+    How does it connect to the system we're trying to study?
+\end{question}
+Maybe you should wait.
+If you rmember in TQFT,
+you cand efine a path integral for spacetime.
+If your spacteime has  boundary,
+you have a state on the boundary.
+This parth integral can give a wave fucntion state on the boundary.
+
+
+Any boundary is going to be a circle,
+or a bunch of disconneted circels,
+so we cna get a wave function on circles that describes SPTs.
+And from those circles,
+we deduce an exactly solvable Hamitonain as well.
+
+This gives a topoloigclaly invarint path integral,
+form which we extract topoooical invariants.
+
+\begin{question}
+    Is branching structure the same as consistent orietnation?
+\end{question}
+No, it's more than that.
+It's even more than a specific set of orientaitons.
+It's a specific set of orrdering of vertics.
+
+\begin{question}
+    Should neighbouring vertices have the same ordering?
+\end{question}
+Not necessarily.
+
+\begin{question}
+    We take all gauge-equivalent into one term?
+\end{question}
+Yes, this is goindg to wind up being an average over gauge transformations.
+
+It's gauge equivalent to no $G$,
+we haven't defined $\nu_2$ yet.
+We'll be able to relax this product of $A=1$ condition,
+so we can introduce twists and things wrap around,
+and it won't be gauge-equivalent to nothing.
+
+It's also useful to think of $Z$ in the following way,
+as a sum over all $g$s normalized
+over the exponetniail of some topological action.
+\begin{align}
+    Z &=
+    \frac{1}{|G|^{N_V}}
+    \sum_\left\{ {g_i \right\}}
+    e^{i S_{\mathrm{top}}\left( \left\{ g_i \right\} \right)}
+\end{align}
+i'm being a bit sloppy here,
+when I say $A$,
+I really mean equivlance clases of $[A]$,
+by gague equivalnece.
+But if we know $ZA$ is gauge invariatn,
+I don't really need to write the square brackets.
+\begin{align}
+    Z = Z\left( M^2 , [A] \right)
+\end{align}
+
+This has a globla symmetry,
+and what I mean is that the amplitude should be the same as if multiplied by
+some global $g$.
+Every term in the sum is explicitly the same if I change all $g_j$'s at once by
+some global $g$.
+\begin{align}
+    e^{iS\left( \left\{ g_i \right\} \right)}
+    =
+    e^{iS\left( \left\{ gg_i \right\} \right)}
+\end{align}
+which also means
+\begin{align}
+    \nu_2\left( gg_0, gg_1, gg_2 \right) &=
+    \nu_2\left( g_0, g_1, g_2 \right)
+\end{align}
+We're assuming $g$ is unitary,
+but if it's anti-unitary,
+you just introduce a complex conjugate in the above equation.
+
+What this allows is to do is define a 2-cochain.
+The reason it defines a 2-cochain is because I can defnie the usual 2-cochain,
+which I introduced last lecture,
+which is
+\begin{align}
+    \omega_2(g_1, g_2) &=
+    \nu_2 (1, g_1, g_1 g_2)
+\end{align}
+Furthermor,
+I can multiply every elmeent by $g_0^{-1}$ so
+\begin{align}
+    \nu_2 (g_0, g_1, g_2) &=
+    \nu_2 \left( 
+    1, g_0^{-1},g_1, g_{0}^{-1} g_1 g_1^{-1} g_2
+    \right)\\
+    &= \omega_2\left( g_0^{-1} g_1, g_1^{-1} g_2 \right)
+\end{align}
+We thoguht of 2-cochains as something that takes in 2 group lemetns and splits
+out a phase factor.
+But here,
+we can think of it tas taking 3 group lemetns and spits out a factor,
+but it has some symmetry in the inputs.
+$\nu_2$ is called a homoeneous 2-cochain,
+wheraas $\omega_2$ is an inhomogenous 2-cochain.
+
+\begin{question}
+    What's inhomoegneosu about it?
+\end{question}
+If you think about it,
+
+\begin{question}
+    What is symmetric?
+\end{question}
+I want the action to be symmetric.
+Usually when yo utalk abouta symmetric systm,
+I say the path integrla is a sum over all field configurations.
+BUt I say my system is symmetric if my action has the symmetry.
+
+\begin{question}
+    Can't we have each equality up to a phase
+    so the phases cancel instead?
+\end{question}
+I haven't thoguht about that too more carefully.
+I'm saying that this implies this,
+but not the other way around.
+You could relax things and consider it more general,
+but I'm not sure how to do that in a way that's compatible iwth locallity.
+At the very least,
+it gives us a way of getting a symmetric paht integral.
+
+\begin{question}
+    Every group elment can be mapped to another gourp lemetn by another grup
+    elment.
+    Why are not all the vertices not connected to each other.
+    You can always form a side that connects $g_1$ to $g_3$.
+    What is the point of tirangulation?
+    All group elmeent sare connected to each other.
+\end{question}
+I don't understand the question.
+That's the graph of the group.
+You can think if this as defining a gauge field on a manifold.
+
+\begin{question}
+    We're assuming $\nu_2$ to have a global $g$ symmetry,
+    not a local $g$ symmetry.
+\end{question}
+We have a global $g$ symmetry,
+which means we watn every amplitiude independetn of $g$,
+but there's also a gauge symmetry,
+in that I can do a gauge transfomraitonof $A$ and not change the paht integral.
+There's something much stronger that's happening here in that ther'es alos a
+local gauge symmetry.
+
+
+\section{Topological invariance of the path integral}
+Now we get to the topological invariance of $Z$.
+So far, 
+we had to triangulate spacetime and add a branching structure.
+That's just geometry.
+But for topological invariance,
+we need it to be independent of geometry and choice of branching structure.
+
+The point is,
+that we want $Z$ to be independent of triangulation and branching struture.
+that's what we want to demand,
+but actually we want to demand something even stringer,
+that is the action $e^{iS}$ is topological,
+meaning independent of triangluation.
+
+And the way that you can require that smoething be indepeneent of tringulation,
+is given any trignaulation,
+youcan alwasy get to another tirangulation by a series of moves,
+and these moves are called \emph{Pacher moves}.
+
+Suppose I have two triangles like this.
+One Pacher move is to have a rhmobus with a diagonal,
+and change the diagonal to the other diagaonal. This is a 2-2 move.
+
+There is a 1-3 move which inserts a vertex on a triangle,
+and draws raws from the new vertex.
+
+It's just pasting a simplex of one higher dimension.
+In 2D you have a 2-simplex that is a triangle.
+But in one-higher dimension,
+you have a tetrahedron.
+Think of pasting a tetrahedron onto a triangle and flattening it.
+
+So one way of thinking about Pachner moves is pasting $D+1$-simplices onto your
+$D$ simplices and flattening it out.
+
+
+But we actually need branched Pachner moves,
+which also deals with the ordering.
+
+I need some extra conditions.
+For example,
+in the 2-2 Pachner move,
+there would be
+\begin{align}
+    \nu_2 (g_0, g_1, g_2)
+    \nu_2 (g_0, g_2, g_3)
+    =
+    \nu_2 (g_0, g_1, g_3)
+    \nu_2 (g_1, g_2, g_3)
+\end{align}
+[picutre]
+
+To be careful,
+you should also check the orientation and make sure you put the right complex
+conjugation.
+For the 1-3 Pachner move,
+you would have
+\begin{align}
+    \nu_2(g_0, g_1, g_2) =
+    \nu_2(g_0, g_1, g_3)
+    \nu_2(g_1, g_2, g_3)
+    \nu_2(g_0, g_2, g_3)
+\end{align}
+
+But secretly,
+they are the same equation,
+in fact they are just the 2-cocycle equation that
+\begin{align}
+    d\nu_2 = 1
+\end{align}
+
+To make the topological action re-triangulation invariant,
+we require that $\nu_2$ to be a 2-cocycle.
+
+And finally,
+let's look at the invariant under 2-coboundaries
+
+\subsection{Invariance under coboundaries}
+Suppose that we take
+\begin{align}
+    \nu_2 (g_0, g_1, g_2)
+    \to
+    \nu_2 \cdot 
+    b_1 (g_0, g_1)
+    b_1 (g_1, g_2)
+    \left[ b_1 (g_0, g_2) \right]^*
+\end{align}
+and I'm going to require
+\begin{align}
+    b_1 (g_1, g_2) &= b_1 (gg_1, gg_2)
+\end{align}
+And $e^{iS}$ is invariant because each edge (1-simplex) appears in exactly two
+2-simplieces with opposite induced orientation.
+
+The reason it's invariatn, is every single 1-simlex appears iwth 2 neibhbouring
+triangles.
+For exmaple, if I have a triangulartion,
+every 1-simplex has 2 neibhrougin triangles.
+And eveyr 1-simlex has opposite orentaiton relative to each triangle.
+That means that if one triangle changes by this factor $b_1(g_1,g_2)$,
+the niehobur is going to change by a similar factor,
+but it's going to appear complex conjugated in the neighbour so they're all going
+to cancel out.
+
+In terms of inhomogeneous 2-cocycles,
+applying $g_0^{-1}$ to each term,
+we get
+\begin{align}
+    \nu_2(1, g_0^{-1} g_1, g_{0}^{-1} g_2)
+    &\to
+    \nu_2 \cdot
+    \frac{b_1(1, g_{01}) b_1(1, g_{12})}{b_1(1, g_{02})}
+\end{align}
+and
+\begin{align}
+    \omega_2(g_{01}, g_{12}) \to
+    \omega_2
+    \frac{\epsilon_1(g_{01}) \epsilon_1_1\left( g_{12} \right)}{\epsilon_1\left(
+    g_{02} \right)}
+\end{align}
+
+That means, if we change our 2-coboundary by 2-cocycles,
+the topological boundary doesn't change.
+That is,
+distinct $G$-symmetric path integrals are classified by
+\begin{align}
+    [\nu_2] \in
+    H^2\left( G, U(1) \right)
+    = \frac{\mathbb{Z}^2}{B^2}
+\end{align}
+Actually,
+the last step is a bit of a jump.
+
+Let me give more details.
+
+On closed manifolds,
+what we defined so far always gives us one with
+$Z(M^2)=1$.
+That's because what we have is a trivial $G$-bundle,
+meaning that
+$\prod_{\textrm{loop}}A=1$.
+
+To get non-trivial results we non-trivial flat bundles with
+$\prod_{\textrm{loop}}A \ne 1$.
+We want it to be flat but we want holomony over non-contractible loops.
+
+One way of doing this is this construction we've defined,
+is we can cut our manifold along whatever loop we're interested with having
+holomony,
+then inserting some $G$-twist when we glue them back together.
+
+Let me draw a picture.
+Suppose w have a cylinder,
+and we want to put a $h$ branch cut along the cylinder axis.
+So then this loop at the end of the cylinder is $\gamma$,
+with $\prod_\gamma A = h$.
+
+Then if you roll out the cylinder flat,
+you can draw a triangulation like this.
+
+[picture of unrolled cylinder sheet]
+
+The point is that if we have $g_1,g_2,\ldots$ on the bottom edge of the cut,
+which we identify with the vertices on the top edge of the cut to get a
+cylinder.
+To do the twist,
+just make the top edge vertices labelled $hg_1, hg_2, \ldots$.
+
+For a closed $M^2$
+non-trivial flat bundle,
+\begin{align}
+    |Z(M^2, A)| = 1
+\end{align}
+but the phase is going to be non-trivial,
+with $Z(M^2, A)$ being a gauge-invariant polynomial in $\omega_2$.
+For every element of $H^2$,
+we're going to get a path integral that will spit out a $U(1)$ phase and if we
+look at al possible closed manifolds and all possible closed bundles,
+we find htat all elments of $H^2(G, U(1))$ corresponds to a distinct path
+integral $Z(M^2, A)$.
+
+So there is a one-to-one correspondnce betwene this gorup and these TQFTs by
+picking approrpiate fluxes along uncontractible cycles.
+\begin{align}
+    H^2(G, U(1)) \leftrightarrow Z(M^2, A)
+\end{align}
+I didn't prove that $Z(M^2)=1$ if it's flat and tirvial,
+because I didn't prove that the sum over $G$ is actually invariatn yet.
+
+\begin{question}
+    What is the definition of $\prod A$?
+\end{question}
+If you hae a torus.
+If you take a product of lops on a contractible bundle,
+you get 1.
+But you get a holonomy over a non-contracgile loop?
+
+\begin{question}
+    What if we genrlize to cellultations?
+\end{question}
+well this $\nu_2(g_0, g_1, g_2)$ only makes sense over triangles becausei t has
+3 inputs,
+but you could consuder celluations,
+but the framework will be a difernt,
+but ultimately you geth same answer.
