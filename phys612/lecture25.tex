@@ -1,0 +1,160 @@
+[1.5 hours late]
+\section{Second Quantization notation}
+We use the notation
+\begin{align}
+    \ket{\varphi} = \ket{n_1, n_2, \ldots}
+\end{align}
+where
+\begin{align}
+    \hat{N} &=
+    \left( n_1 + n_2 + \cdots \right)
+    \ket{n_1, n_2, \ldots}
+\end{align}
+is the total number operator and the Hamiltonian is
+\begin{align}
+    \het{H} \ket{\varphi} &=
+    \left( 
+    n_1 E_{n_1} + n_2 E_{n_2} + \cdots
+    \right)
+    \ket{n_1, n_2, \ldots}
+\end{align}
+
+\section{Bosonic Ideal Gas}
+Second quantization notation.
+We had a sum over all multiparitcle states over all multiparticle states.
+Now we just have
+\begin{align}
+    Z_G(T, V, \mu) &=
+    \sum_{n_1, n_2, \cdots = 0}^{\infty}
+    \bra{n_1,n_2,\ldots} e^{-\beta(H - \mu N)} \ket{n_1,n_2,\ldots}\\
+    &=
+    \sum_{n_1=0}^{\infty} e^{-\beta(E_1 - \mu) n_1}
+    \sum_{n_2=0}^{\infty} e^{-\beta(E_2 - \mu) n_2}
+    \cdots\\
+    &=
+    \frac{1}{1 - e^{-\beta(E_1 - \mu)}}
+    \frac{1}{1 - e^{-\beta(E_2 - \mu)}}
+    \cdots
+\end{align}
+So then
+\begin{align}
+    \Omega(T, V, \mu) &=
+    -k_B T \ln Z_G\\
+    &=
+    -k_BT \sum_k \ln\left( 1 + e^{-\beta (E_k - \mu)} \right)\\
+    &\approx
+    k_B TV \int \frac{d^3k}{(2\pi)^3}
+    \ln\left( 1 - e^{-\beta(E_k - \mu)} \right)
+\end{align}
+where each
+\begin{align}
+    E_k &= \frac{\hbar^2 k^2}{2M}
+\end{align}
+
+It's just the same thing as the modes of a crystal vibrations.
+They're the same as an EM field,
+because I can find the normal modes of th EM feld.
+This has nothing to do with Harmoinc oscillators except it does.
+Each single aprticle state mode is like a harmonic oscillator.
+The state is indexed by the particle number,
+and the enregy levels are equally spaced just like the harmoinc oscillator.
+That's the special property.
+
+\section{Fermion ideal gas}
+For fermions,
+just change the limit of the sum from $\infy$ to $1$
+and you get
+\begin{align}
+    \Omega(T, V, \mu) &=
+    -k_B T V g \int \frac{d^3k}{(2\pi)^3}\,
+    \ln\left( 
+    1 + e^{\beta(E_k - \mu)}
+    \right)
+\end{align}
+where $g$ is the number of internal states,
+like the spin.
+
+The little difference in sign changes things profoundly.
+
+Just using the general formalism of the grand canonical ensemble,
+I should be able to find the boson canonical ensemble,
+etc.
+
+
+For example,
+if I have $\Omega$,
+I can find the average $N$.
+Let's compute the average number of particles over the volume so we get a
+density.
+\begin{align}
+    \frac{N}{V} &=
+    \frac{1}{V}
+    \left. \frac{\partial \Omega}{\partial\mu}\right|_{T,V}\\
+    &=
+    - k_B T g
+    \int \frac{d^3k}{(2\pi)^2}
+    \frac{ \beta e^{-\beta \epsilon_k}}{%
+        1 \mp e^{-\beta \epsilon_k}
+    }
+\end{align}
+where $\epsilon_k=E_k - \mu$ which appears so frequently I may as well have a
+name for it,
+where the upper sign is for fermions and the lower sign is for bosons.
+And then
+\begin{align}
+    \frac{N}{V} &=
+    g \int \frac{d^3k}{(2\pi)^2}
+    \frac{1}{e^{\beta\epsilon_k}\mp 1}
+\end{align}
+and the only difference is the sign.
+The integrand is interpeted as the average occupation number.
+THen I take an average over many states.
+For a particular single energy state
+what is the average expecation?
+Well that is just the occupation number
+\begin{align}
+    n(E) &=
+    \frac{1}{e^{\beta\epsilon_k}\mp 1}
+\end{align}
+which is the occupation number of hte density per unit of $k$.
+
+Another thing I like to calculate is the enrgy density.
+How do I find that?
+I can thnk of this $\Omega$ here,
+take a derivative in relation to $T$ to find the entropy,
+then use the Lengedre trnasform to find the entorpy.
+The little trick about this is the following.
+This gives me $N$ as a functio of the tempreaturea nd the chemical potential
+but it's hard to invert the relation to find what $\mu$ is needed to givea
+aparicular $N$.
+Although it's easy to say Legendre tranform,
+it's hard to do in partice.
+
+It doesn'tmatter,
+you can manipulate the integrals back and forth,
+I won't do this in front of you or do tell you to do it in the homework.
+Which one do yo uwant?
+Of course it's in the homework.
+
+Thea nswer is something you'd expect.
+It's as um over single particle states.
+We're looking for the total energy.
+That's the occupation number for one particular satte.
+If I multiply it by the enrgy of the single particular state I get hte enrgy.
+\begin{align}
+    \frac{E}{N} &=
+    g \int \frac{d^3k}{(2\pi)^3}
+    \frac{E_k}{e^{\beta\left( E_k - \mu \right)} \mp 1}
+\end{align}
+where the  $g \int \frac{d^3k}{(2\pi)^3}$ means sum over single particle states,
+the $\frac{1}{e^{\beta\left( E_k - \mu \right)} \mp 1}$ is the occupation number
+for the $k$ and $E_k$ is the energy ofa single particle.
+
+In the mideterm,
+If I ask a question inthe midterm,
+I will not give you this equation,
+ecause it's so intuitive and obvious.
+
+I'll give you the $N/V$ because the sign is not obvious,
+but this $E/N$ formula is obvious from that.
+It's difficult to compute but it's a simple answer in the end.
