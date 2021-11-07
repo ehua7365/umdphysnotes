@@ -7,34 +7,115 @@ Harmonic oscillator.
 For $k_B T \gg \hbar\omega$, $\bar{E} = k_B T$.
 
 Back to solids.
-Bebye
+Debye model.
 \begin{itemize}
     \item Normal modes have $\omega_k=v k$ for all 3 modes.
+        2 transverse and 1 longitudinal.
     \item Brilluoin zone is a sphere
         \begin{align}
-            3N = V \int dk
+            3N = 3V \int^{k_D} \frac{d^3 k}{(2\pi)^3}
+            =
+            \frac{V}{2\pi^2} k_D^3
         \end{align}
-        i.e. number of normal modes equals number of fourier modes.
+        i.e. number of normal modes $3N$ equals number of fourier modes.
 \end{itemize}
+We used that
+\begin{align}
+    \sum_{\vec{k}} f(\vec{k}) \approx
+    V \int \frac{d^3k}{(2\pi)^3} f(k)
+\end{align}
+If you don't know this,
+we'll discuss it in detail soon.
+
 The partition function is
 \begin{align}
-    Z &= \Tr e^{-\beta H}
-    =
+    Z &= \Tr e^{-\beta H}\\
+    &=
     \prod_{k,\alpha}\sum_{n_k=0}^{\infty} e^{-\beta\hbar\omega\left( n_k +
     \frac{1}{2}
     \right)}
 \end{align}
 where each term is partition function for one oscillator for one oscillator of
 frequency $\omega_k$.
-where $\alpha = 1,2,3$
-so
+Here $\alpha = 1,2,3$
+are the polarizations.
+So
 \begin{align}
     Z &=
     \prod_{k,\alpha}
     \frac{e^{-\beta\hbar\omega/2}}{1 - e^{-\beta\hbar\omega_k}}
 \end{align}
-so
+The free energy is
 \begin{align}
-    F &= -k_B T\ln Z
+    F &= -k_B T\ln Z\\
+    &=
+    k_B T
+    \sum_{\vec{k},\alpha}
+    \left[
+    \ln\left( 1 - e^{-\beta\hbar\omega_k} \right)
+    +
+    \underbrace{\frac{\beta\hbar\omega_k}{2}}_{\textrm{negelect zero-point}}
+    \right]\\
+    &\approx
+    3 k_B T V \int^{k_D} \frac{d^3k}{{(2\pi)}^3}
+    \ln\left( 1 - e^{-\beta\hbar vk} \right)
+\end{align}
+We neglect the zero-point energy because it's independent of $T$.
+The factor of 3 comes from the 3 polarizations.
+
+The entropy is then
+\begin{align}
+    S &= \left.\frac{-\partial F}{\partial T}\right|_{V}\\
+    &=
+    -3k_B V \int^{k_D} d^3k\, \ln(\cdots)
+    +
+    \frac{3k_B T}{k_B T^2} V
+    \int^{k_D} d^3k
+    \frac{\hbar v k e^{-\beta\hbar v k}}{1 - e^{-\beta\hbar v k}}
 \end{align}
 
+And finally the energy is
+\begin{align}
+    E &= F + TS\\
+    &=
+    3V \int^{k_D} \frac{d^3k}{(2\pi)^3}
+    \frac{\hbar vk}{e^{\beta\hbar vk} - 1}.
+\end{align}
+Then the heat capacity is
+\begin{align}
+    C_v &=
+    \left.\frac{1}{N} \frac{\partial E}{\partial T}\right|_{V,N}\\
+    &=
+    \frac{1}{N} V
+    \frac{\partial}{\partial T}
+    \int_{0}^{k_D} \frac{d^3k}{(2\pi)^3}
+    \frac{3\hbar\omega_k}{e^{\beta\hbar\omega_k} - 1}\\
+    &=
+    \frac{3V}{N} \frac{1}{k_B T^2}
+    \int_{0}^{k_D} \frac{d^3k}{(2\pi)^3}
+    \frac{(\hbar\omega_k)^2}{e^{\beta\hbar\omega_k} - 1}
+    e^{\beta\hbar\omega_k}\\
+    &=
+    \frac{3V}{N} \frac{1}{2\pi^2}
+    \frac{(\hbar v)^2}{k_B T^2}
+    \left( \frac{k_B T}{\hbar v} \right)^5
+    \int_{0}^{\beta\hbar vk} dx\,
+    \frac{x^4}{\left( e^x - 1 \right)^2} e^x
+\end{align}
+which for $k_B T \ll \hbar v k_D$
+gives
+\begin{align}
+    C_V &\approx
+    3 \frac{V}{N}
+    \left( \frac{k_B T^}{\hbar v} \right)^3
+    \frac{1}{2\pi^2}
+    \int_{0}^{\infty} dx\,
+    \underbrace{\frac{x^4 e^{x}}{\left( e^x - 1 \right)^2}}_{4\pi^4/15}\\
+    &=
+    \frac{V}{N}
+    k_B
+    \frac{2\pi^2}{5}
+    \left( \frac{k_B T}{\hbar v} \right)^3\\
+    &\sim T^3
+\end{align}
+which is the $C_v \sim T^3$ law for low temperatures.
