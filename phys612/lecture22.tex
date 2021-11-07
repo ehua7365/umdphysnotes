@@ -1,2 +1,360 @@
-Skipped because it was raining.
-Derived black body radiation.
+\section{Photons}
+Suppose you have a metal box at temperature $T$.
+There is an electromagnetic field inside in equilibrium with the walls.
+The field vanishes at the walls though.
+
+Why should anybody study this?
+Because all bodies which absorb all radiation shining on them (black bodies)
+emit radiation the same way when heated and a metal cavity is the best or
+easiest way to study.
+
+The energy emitted by A equals the energy absorbed by a black body B equals the
+energy emitted by B.
+This is true frequency by frequency,
+so $u(\nu)$ which is the energy density per unit is universal for every black
+body.
+
+We will find $u(\nu)$ by applying equilibrium statistical mechanics to the
+electromagnetic field inside the box.
+
+In order to have a Hamiltonian formalism,
+we'll use the variables
+$\vec{A}(\vec{r}, t)$ instead of $\vec{E}$ and $\vec{B}$.
+
+Different $\vec{A}$'s differing by a gauge transformation,
+give the same $\vec{E}$ and $\vec{B}$ and describe the same physics.
+We'll impose the condition
+\begin{align}
+    \vec{\nabla}\cdot{A} &= 0\\
+    \phi &= 0
+\end{align}
+to select one $\vec{A}$ for every physically distinct field $\vec{E},\vec{B}$.
+Recalling that we can recover the electric and magnetic fields with
+\begin{align}
+    \vec{E} &= -\frac{\partial A}{c \partial t} - \vec{\nabla}\phi
+    =
+    -\frac{1}{c}\frac{\partial \vec{A}}{\partial t}\\
+    \vec{B} &= \vec{\nabla}\times\vec{A}
+\end{align}
+The Lagrangian
+\begin{align}
+    L &=
+    \frac{1}{8\pi} \int d^3 r\,
+    \left[ 
+    \left( \frac{\partial \vec{A}}{c \partial t} \right)^2
+    - \left( \vec{\nabla}\times\vec{A} \right)^2
+    \right]
+\end{align}
+leads to the equation of motion
+\begin{align}
+    \frac{1}{c^2} \frac{\partial A}{\partial t^2}
+    - \nabla^2 \vec{A} &= 0
+\end{align}
+which is equivalent to Maxwell's equations.
+The Hamiltonian is
+\begin{align}
+    H &=
+    \int d^3r\left[
+    \vec{\Pi}\cdot \frac{\partial \vec{A}}{\partial t} - H
+    \right]\\
+    &=
+    \int d^3r\,\left[
+    \Pi^2 4\pi c^2
+    - \frac{(4\pi c)^2}{8\pi} \Pi^2
+    + \frac{\vec{\nabla}\times\vec{A}}{8\pi}
+    \right]
+\end{align}
+where
+\begin{align}
+    \vec{\Pi} &:=
+    \frac{\partial H}{\partial \dot{\vec{A}}(\vec{r})}
+    =
+    \frac{1}{4\pi} \frac{1}{c^2} \frac{\partial \vec{A}}{\partial t}\\
+\end{align}
+so then
+\begin{align}
+    H
+    &=
+    \frac{1}{8\pi} \int d^3r\,\left[ 
+    \underbrace{\left( 4\pi c \right)^2 \Pi^2}_{E^2}
+    +
+    \underbrace{\vec{\nabla}\times\vec{A}}_{B^2}
+    \right]
+\end{align}
+Applying a change of variables to
+\begin{align}
+    \vec{A}(\vec{r}, t) &=
+    \frac{1}{\sqrt{V}} \sum_k
+    \vec{Q}(\vec{k}, t) e^{i\vec{k}\cdot \vec{r}}\\
+    \vec{\Pi}(\vec{r}, t) &=
+    \frac{1}{\sqrt{V}} \sum_k
+    \frac{\vec{P}(\vec{k}, t)}{\sqrt{4\pi} c^2} e^{i\vec{k}\cdot\vec{r}}
+\end{align}
+where $\vec{k}=\frac{2\pi}{L}\vec{n}$ with $\vec{n}=0,\pm 1,\ldots$
+and
+\begin{align}
+    \vec{Q}_{\vec{k}}^* &= \vec{Q}_{-\vec{k}}\\
+    \vec{P}_{\vec{k}}^* &= \vec{P}_{-\vec{k}}
+\end{align}
+so then the Hamiltonian becomes decoupled as
+\begin{align}
+    H &=
+    \frac{1}{2}\sum_{k}\left[ 
+    \vec{P}_{\vec{k}}\cdot\vec{P}_{-\vec{k}}
+    +
+    \underbrace{c^2 k^2}_{=:\omega_k^2}
+    \vec{Q}_{\vec{k}}\cdot\vec{Q}_{-\vec{k}}
+    \right]
+\end{align}
+which is very much like the phonon Hamiltonian.
+Classically,
+the energy density is given by the equipartition theorem
+\begin{align}
+    E &=
+    \sum_{k} \frac{1}{2} k_B
+    \times \underbrace{2}_{\textrm{$P$ and $Q$ are quadratic}}
+    \times \underbrace{2}_{\textrm{2 independent polarizations}}\\
+    &\approx V \int d^3 k 2k_B T\\
+    &\to \infty
+\end{align}
+The divergence comes because contrary to the phonon case,
+there is not cutoff at high momentum $k$.
+Still,
+the contribution from every frequency range
+\begin{align}
+    \frac{E}{V} &=
+    \frac{2k_B T}{2\pi^2} \int_{0}^{\infty} dk\, k^2\\
+    &=
+    \int_{0}^{\infty}
+    \underbrace{\frac{k_B T}{\pi^2} \frac{(2\pi)^3}{c^3} \nu^2}_{u(\nu)}
+    \, d\nu
+\end{align}
+and with $\nu = \frac{kc}{2\pi}$,
+the energy density between $\nu$ and $\nu + d\nu $ is
+\begin{align}
+    u(\nu) \, d\nu &=
+    \frac{8k_B T \pi}{c^3} \nu^2\, d\nu
+\end{align}
+this is known as the \emph{Rayleigh-Jeans law},
+which agrees with experiments in the low frequency regime.
+But not for high frequencies as it diverges!
+
+The quantum theory is obtained by making
+$\vec{A}$, $\vec{\Pi}$, $\vec{Q}$ and $\vec{P}$
+into operators.
+
+Assuming canonical commutation relations for $\vec{A}$ and $\vec{\Pi}$.
+\begin{align}
+    \left[ \hat{A}_i(\vec{r}), \hat{\Pi}_j(\vec{r}') \right]
+    =
+    i\hbar \delta_{ij} \delta\left( \vec{r} - \vec{r}' \right)
+\end{align}
+we find
+\begin{align}
+    \left[ \hat{A}_i(\vec{r}), \hat{\Pi}_j(\vec{r}') \right] &=
+    \frac{1}{V} \sum_{k,k'}
+    e^{i\left( \vec{k}\cdot\vec{r} + \vec{k}'\cdot\vec{r}' \right)}
+    \underbrace{ \left[ Q_i(\vec{k}), P_j(\vec{k}') \right]}_{%
+    i\hbar \delta_{ij} \delta_{\vec{k},-\vec{k}'}
+    }\\
+    &=
+    \frac{i\hbar}{V} \sum_{\vec{k}}
+    e^{i\vec{k}\cdot\left( \vec{r} - \vec{r}' \right)} \delta_{ij}\\
+    &=
+    i\hbar \delta_{ij} \delta\left( \vec{r} - \vec{r}' \right)
+\end{align}
+so then
+\begin{align}
+    \left[ Q_i\left( \vec{r} \right), P_j\left( \vec{r}' \right) \right]
+    =
+    i\hbar \delta_{ij} \delta_{\vec{k}, -\vec{k}'}
+\end{align}
+and all the other commutators between $Q_k$ and $P_k$ vanish.
+We then define
+\begin{align}
+    \hat{a}_{\vec{k}}^{\alpha} &=
+    \left( 
+    \sqrt{\frac{\omega_k}{2\hbar}} \vec{Q}(\vec{k})
+    + \frac{i}{\sqrt{2\omega_k\hbar}} \vec{P}(\vec{k})
+    \right)
+    \cdot e_{\vec{k}}^{\alpha}\\
+    {\hat{a}_{\vec{k}}^{\alpha}}^\dagger &=
+    \left( 
+    \sqrt{\frac{\omega_k}{2\hbar}} \vec{Q}(\vec{k})
+    - \frac{i}{\sqrt{2\omega_k\hbar}} \vec{P}(\vec{k})
+    \right)
+    \cdot e_{\vec{k}}^{\alpha}
+\end{align}
+where $e_{\vec{k}}^1$ and $e_{\vec{k}}^2$
+are two unit vectors orthogonal to $\vec{k}$,
+which are the polarization directions.
+And the commutation relations
+\begin{align}
+    \left[
+    \hat{a}_{\vec{k}}^{\alpha},
+    {\hat{a}_{\vec{k}}^{\beta}}^\dagger,
+    \right]
+    &=
+    -i \sqrt{\frac{\omega_k}{2\hbar}}
+    \frac{1}{\sqrt{2\omega_{k'}\hbar}}
+    \underbrace{\left[ Q_i(\vec{k}), P_j(\vec{k}'), \right]}_{%
+    i\hbar \delta_{ij} \delta_{k,k'}
+    }
+    e_i^{\alpha}(k)
+    e_j^{\beta}(k)\nonumber\\
+    &\qquad
+    - \sqrt{\frac{\omega_{k'}}{2\hbar}}
+    \frac{1}{\sqrt{2\omega_k \hbar}}
+    \underbrace{\left[ P_j(\vec{k}), Q_i(\vec{k}') \right]}_{%
+    -i\hbar \delta_{ij} \delta_{k,k'}
+    }
+    e_j^{\alpha}(k)
+    e_i^{\alpha}(k')\\
+    &=
+    \delta_{\alpha\beta} \delta_{\vec{k},\vec{k}'}
+\end{align}
+and also
+\begin{align}
+    \left[ \hat{a}_{\vec{k}}^{\alpha}, \hat{a}_{\vec{k}'}^{\beta} \right] =
+    \left[
+    {\hat{a}_{\vec{k}}^{\alpha}}^\dagger,
+    {\hat{a}_{\vec{k}'}^{\beta}}^\dagger
+    \right] = 0
+\end{align}
+Thus,
+$\hat{a}^\alpha(k)$ and ${\hat{a}^{\alpha}}^\dagger(k)$
+are creation and annihilation operators for photons with momentum $k$ and
+polarization $e^{\alpha}(k)$.
+In terms of them,
+the Hamiltonian is
+\begin{align}
+    \hat{H} &=
+    \frac{1}{2} \sum_{\alpha=1,2} V \int d^3k\,\left[
+    -\frac{\hbar\omega_k}{2}
+    \left( 
+    \hat{a}_{\vec{k}}^{\alpha}
+    - {\hat{a}_{-\vec{k}}^{\alpha}}^\dagger
+    \right)
+    \left( 
+    \hat{a}_{-\vec{k}}^{\alpha}
+    - {\hat{a}_{\vec{k}}^{\alpha}}^\dagger
+    \right)
+    +
+    \omega_k^2
+    \left( 
+    \hat{a}_{\vec{k}}^{\alpha}
+    - {\hat{a}_{-\vec{k}}^{\alpha}}^\dagger
+    \right)
+    \left( 
+    \hat{a}_{-\vec{k}}^{\alpha}
+    - {\hat{a}_{\vec{k}}^{\alpha}}^\dagger
+    \right)
+    \right]\\
+    &\approx
+    \frac{1}{2} \sum_{\alpha=1,2} \int d^3k\left[ 
+    \frac{\hbar\omega_k}{2} 2
+    \hat{a}_{k}^{\alpha}
+    {\hat{a}_{k}^{\alpha}}^\dagger
+    +
+    {\hat{a}_{k}^{\alpha}}^\dagger
+    \hat{a}_{k}^{\alpha}
+    2
+    \frac{\hbar\omega_k}{2}
+    \right]\\
+    &=
+    \sum_{\alpha=1,2} \int d^3k\left[ 
+    {\hat{a}_{k}^{\alpha}}^\dagger
+    \hat{a}_{k}^{\alpha}
+    +
+    \frac{1}{2}
+    \right]
+    \hbar\omega_k
+\end{align}
+so that's one harmonic oscillator for every $\vec{k}$ and $\alpha$.
+
+How we can calculate the partition function
+\begin{align}
+    Z &= \Tr e^{-\beta \hat{H}}\\
+    &=
+    \prod_{\vec{k},\alpha} \sum_{n_k=0}^{\infty}
+    e^{-\beta\hbar\omega_k\left( n_k + \frac{1}{2} \right)}\\
+    &= \prod_{\vec{k}, \alpha}
+    \frac{e^{-\beta\hbar\omega_k/2}}{1 - e^{-\beta\omega_k\hbar}}\\
+    &= \prod_{\vec{k},\alpha} \frac{2}{\sinh(\beta\hbar\omega_k/2)}
+\end{align}
+and the free energy
+\begin{align}
+    F &=
+    -k_B T \ln Z\\
+    &=
+    k_B T \sum_{\vec{k}, \alpha} \ln\left( 
+    \frac{1 - e^{-\beta \omega_k \hbar}}{e^{-\beta\hbar\omega_k/2}}
+    \right)\\
+    &=
+    k_B T \sum_{\vec{k},\alpha}\left[ 
+    \ln\left( 
+    1 - e^{-\beta\hbar\omega_k}
+    \right)
+    +
+    k_B T \beta \hbar\omega_k
+    \right]\\
+    &=
+    k_B T \sum_{\vec{k},\alpha}\left[ 
+    \ln\left( 
+    1 - e^{-\beta\hbar\omega_k}
+    \right)
+    +
+    \underbrace{\hbar\omega_k}_{\textrm{$T$-independent zero-point energy}}
+    \right]\\
+    &\approx
+    2 k_B T V \int d^3k \ln\left( 
+    1 - e^{-\beta \hbar\omega_k}
+    \right)
+    + \textrm{const}
+\end{align}
+which is the free energy of an ideal gas of bosons with dispersion relation
+$\omega_k=kc$ and two polarizations plus a constant.
+
+The energy is then
+\begin{align}
+    \frac{E}{V} &=
+    2 \int d^3 k \frac{\hbar ck}{e^{\beta \hbar c k} - 1}\\
+    &=
+    \frac{2}{\left( \beta\hbar c \right)^3 }
+    \frac{1}{2\pi^2}
+    \frac{1}{\beta}
+    \underbrace{\int_{0}^{\infty}
+    dx\,
+    \frac{x^3}{e^{x} - 1}}_{%
+    \pi^4/15
+    }\\
+    &=
+    \frac{\pi^2 \left( k_B T \right)^4}{15 \hbar^3 c^3}
+\end{align}
+This is the \emph{Steffan-Boltzmann law}.
+
+Also, to get the spectrum,
+\begin{align}
+    \frac{E}{V} &=
+    2 \frac{1}{2\pi^2} \int_{0}^{\infty} dk\,
+    \frac{k^2 \hbar ck}{e^{\beta\hbar ck} - 1}\\
+    &=
+    \frac{\hbar c}{\pi^2} \left( \frac{2\pi}{c} \right)^4
+    \int_{0}^{\infty} d\nu\,
+    \frac{\nu^3}{e^{\beta h\nu} - 1}\\
+    &=
+    \int_{0}^{\infty} d\nu\,
+    \underbrace{%
+    \frac{16\pi^2\hbar}{c^3}
+    \frac{\nu^3}{e^{\beta h \nu} - 1}}_{%
+    u(\nu)
+    }
+\end{align}
+where
+\begin{align}
+    u(\nu) = 
+    \frac{16\pi^2\hbar}{c^3}
+    \frac{\nu^3}{e^{\beta h \nu} - 1}
+\end{align}
+is the energy per volume per frequency.
+This is \emph{Planck's law}.
