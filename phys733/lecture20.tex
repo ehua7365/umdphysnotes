@@ -1,0 +1,732 @@
+\section{Group Cohomology Model for SPT}
+So we've been discussing this Dijkgraaf-Witten theory.
+Because there were questions about this last time,
+let me mention the big picture.
+
+Before discussing topological phases,
+all models were free fermion models.
+We could exactly solve them,
+understand everything about them,
+the ground state wave function,
+the topological invariant and so on.
+
+Now with strongly interacting systems,
+they are not free.
+For bosons,
+you need strongly interaction,
+because if not they will condensed into a superfluid.
+
+These group cohomology models are kind of like free fermion system,s
+in that they are exactly solvable classes of models.
+You could exactly write down a path integral you could exactly compute,
+and exact ground sate wave functions.
+They are idealized exactly solvable models analogous to the free fermion case.
+
+Of course these are not free,
+they are strongly interacting.
+
+Once we work with these exactly solvable modes,
+these TQFTs,
+this opens the entire door to a huge class of exactly solvable TQFTs with idea
+Hamiltonians,
+and so on.
+This is the tip of the iceberg.
+
+We start off discussing the path integrals,
+then discuss the ground state wave function.
+
+We're discussing the 1+1D case.
+What we did was triangulate spacetime.
+
+We add a branching structure,
+which is a local ordering of vertices.
+
+Then we put group elements on vertices.
+
+And then we define the path integral,
+which depends on a background gauge field $A$,
+which is essentially the twist you can put on these non-contractible paths.
+\begin{align}
+    Z(M^2, A) &=
+    \frac{1}{|G|^{N_V}}
+    \sum_\left\{{g_i\right\}}
+    \prod_{\Delta_2 \ni (i,j,k)}
+    \nu_2^{S\left( \Delta_2 \right)} \left( g_i, g_j, g_k \right)
+\end{align}
+So then this $\nu_2$ is a homogeneous 2-cocycle.
+So then if you write
+\begin{align}
+    \nu_2\left( g_i, g_j, g_k \right)
+    &=
+    \nu_2^{\sigma\left( g_i^{-1} \right)}
+    \left( 1, g_{ij}, g_{ik} \right)
+\end{align}
+it doesn't change if you multiply everything by $g$,
+where
+$g_{ij} := g_{i}^{-1} g_j$.
+And hen I can define the in-homogeneous 2-cochain which is
+\begin{align}
+    \omega_2(g_{ij}, g_{ik}) :=
+    \nu_2\left( 1, g_{ij}, g_{ij} g_{jk} \right)
+\end{align}
+and the reason they needed to satisfy the 2-cocycle equation is that we needed
+this topological action phase
+\begin{align}
+    e^{iS_{\mathrm{top}}\left( \left\{ g_i \right\} \right)}
+    \prod_{\Delta_2 \ni (i,j,k)}
+    \nu_2^{S\left( \Delta_2 \right)} \left( g_i, g_j, g_k \right)
+\end{align}
+to be retriangulation-invariant,
+which led us to the 2-cycle equation.
+
+I also said this 
+$\frac{1}{|G|^{N_V}} \sum_\left\{{g_i\right\}}$
+which is averaging over gauge transformations is actually unnecessarily.
+
+We could have instead,
+if you had some triangle,
+just defined $g_{ij},g_{jk},g_{ik}$,
+and have gauge field $A_{ij} = g_{ij}$.
+
+What we picked here is a flat gauge field.
+Flat means that
+$g_{ij}, g_{jk}, g_{ki} = 1$.
+And so the action is just the product over all triangulations $\Delta_2$
+of the 2-cocycles.
+\begin{align}
+    Z\left( M^2, A \right)
+    &=
+    \prod_{\Delta_2}
+    \omega_2^{S\left( \Delta_2 \right)}
+    \left( g_{ij}, g_{jk} \right)
+\end{align}
+The $S\left( \Delta_2 \right)$ is the orientation of the triangulation.
+This path integral is independent of the choice of gauge.
+Let's say we have a gauge transformation $h_i$ and we define
+$g_{ij}:= g_i^{-1} g_j$.
+Then the gauge transformation can be defined to act like
+\begin{align}
+    g_{ij} \to
+    h_i g_i^{-1}g_j h_j
+\end{align}
+So if I think of taking
+\begin{align}
+    g_i \to g_i h_i
+\end{align}
+by right multiplication.
+To see this path integral is independent of gauge transformations,
+take a group element assigned to a single vertex,
+then get the new group element,
+then show the path integral is independent of this transformation.
+
+One way to convince yourself that this would work is that you could draw your
+initial system,
+say here,
+which has some choice of $g_i$,
+then you could draw the exact copy of this.
+Say you have some vertex $g_i$.
+And then we change it go $g_i h_i$,
+a gauge transformation.
+You could get from this picture to this picture,
+by doing a series of Pachner moves.
+One way to think how it works,
+is think of it as an evolution of a 2D system from some initial time  a late
+time,
+so we have a 3D system and now we triangulate the 3D system.
+Draw some additional lines,
+and there's a way of triangulating this system,
+which is the cobordism
+So we have a cobordism
+from the initial slice to the final slice.
+
+In Pachner moves,
+you could think of it as stacking a simplex of one higher dimension.
+If I had a single triangle,
+and I do a Pachner move that adds an extra vertex in the middle,
+then you could think of it as pasting a 3-simplex on top of this triangle,
+so the original triangle is just the bottom of the 3-simplex tetrahedron.
+And so the 1-3 Pachner move is pasting a 3-simplex.
+You could think of these Pachner moves as starting with some initial
+configuration,
+and some final configuration,
+I have a 3-manifold that interpolates between them,
+I triangular the manifold,
+and all I'm doing is the sequence of Pachner moves of 3-simplices that I
+continuously paste onto here to get the final configuration.
+This whole thing is invariant under triangulation and Pachner moves,
+so we could start with some $g_i$ and do some triangulation of 3-manifolds,
+and those are some series of Pachner moves,
+and ultimately we end up with $g_i h_i$ on that vertex.
+
+Ultimately,
+this is an explanation that we can do Pacher moves to to implement the gauge
+transformation $g_i \to g_i h_i$.
+This then means that this whole amplitude $Z\left( M^2, A\right)$
+is gauge-invariant.
+
+And because it's gauge invariant,
+when we do the sum,
+which is just picking different group elements in the vertices,
+we don't have to do the sum,
+because changing the group elements on the vertices is equivalent to doing a
+gauge transformation.
+Because of that,
+the path integral we wrote there is just a phase,
+an element of $U(1)$.
+
+\begin{question}
+    What is the gauge field?
+\end{question}
+
+If you have a cylinder,
+you could have holomony when you go around a loop.
+You could do that by cutting the cylinder surface open along its axis,
+and then I glue it back with a twist.
+So if this is $g_i,g_j,g_k,\ldots$ on the bottom edge,
+I would just identify it with a twist $hg_i,hg_j,hg_k,\ldots$,
+which effectively determines some gauge transformations.
+
+There's a slightly different way.
+You could define gauge field separately on the links.
+That is exactly the same as doing what I said.
+
+\begin{question}
+    Where do we encode the fact that we are describing physical systems which
+    are gapped and have unique ground sate.
+\end{question}
+There's no notion of gapped yet,
+because there's no Hamilton defined yet.
+After I define it,
+I will show these do define a gapped system.
+
+\begin{question}
+    Can we say this describes only gapped systems?
+\end{question}
+Depends what you mean by describe.
+I'm going to do it right now,
+so in a minute,
+suing this path integral
+I can define a wave function on the boundary.
+That wave function on the boundary is going to be the unique gapped ground state
+of a certain ideal exactly solvable Hamiltonian.
+You could ask,
+can the aground sate also be the ground state of a gapless Hamiltonian.
+I don't know if there is a proof if that can or cannot happen.
+
+But hits thing gives a lot of information.
+This can't really describe a gapless system in a comprehensive way,
+although it could describe gapped systems.
+
+Any questions about the exact setup.
+It's a bit strange,
+because in condensed,
+we want these on the vertices,
+but if you're a field theorist you don't care.
+It's awkward by you will see why.
+
+\begin{question}
+    What will change in the formula with gauge fields?
+\end{question}
+Let me write it in this one over here.
+You  think of $\omegag_2\left( g_{ij}, g_{jk} \right)$
+as
+$\omegag_2\left( A_{ij}, A_{jk} \right)$.
+But maybe it's more clear,
+if there is a background gauge field $A_{ij}$,
+which is flat,
+and the path integral is
+\begin{align}
+    Z\left( M^2, A \right)
+    &=
+    \prod_{\Delta_2}
+    \omega_2^{S\left( \Delta_2 \right)}
+    \left( A_{ij}, A_{jk} \right)
+\end{align}
+and then if I want,
+I can sum over gauge transformations to get
+\begin{align}
+    Z\left( M^2, A \right)
+    &=
+    \frac{1}{|G|^{N_V}}
+    \sum_\left\{ {g_i \right\}}
+    \prod_{\Delta_2}
+    \omega_2^{S\left( \Delta_2 \right)}
+    \left( g_i^{-1} A_{ij} g_j, g_j^{-1} A_{jk} g_k \right)
+\end{align}
+So I fix my flat background gauge field with $A_{ij}$ on the links.
+Then I write down the amplitude for each 2-simplex,
+and because this amplitude is invariant,
+if I do a gauge transformation,
+that changes
+$A_{ij} \to g_{i}^{-1} A_{ij} g_j$.
+
+And the point is that this formula,
+I ca do what I said about cutting open the cylinder and gluing together with a
+twist.
+Maybe that was a cleaner way of presenting it in terms of $A$,
+but I didn't write it explicitly.
+But this is probably the most best comprehensive definition.
+
+If you take any two triangulations,
+you could definitely construct this manifold,
+which is this piece times $I$ basically.
+And you can triangulate the 3-manifold.
+It's clear that this is basically this with some 3-simplices attached to it.
+You could just think of it just one by one.
+
+\begin{question}
+    Why did you introduce this picture?
+\end{question}
+I wanted to introduce this picture to show you could change $g_i$ on a vertex to
+$g_i h_i$ by Pachner move.
+
+\begin{question}
+    Did you really show that?
+\end{question}
+i just sketched it.
+I showed this $Z$ is invariant under Pachner moves,
+and then I showed you could get from one to another.
+I have a cobordism that I triangulate,
+and I have 3-simplices I glue on one-by-one,
+each of which is equivalent to a Pachner move.
+
+\begin{question}
+    We have lines that are intersecting the triangle.
+\end{question}
+that might be a function of how you look at it.
+It might be useful to take a simple example.
+Suppose you have a triangle,
+with a vertex in the centre and rays to vertices.
+Then I want to take this $g_i$ on the centre vertex I want to transform to
+$g_i'$.
+I just do a Pachner move to delete the vertex.
+And then I do another Pachner move to reintroduce the vertex with $g_i'$ on the
+vertex.
+Just play  a bunch of examples it works.
+But this is the general proof.
+
+So far we defined the path integral by triangulating and labelling the group
+elements coupled to this background gauge field,
+and that defines a path integral.
+Now we discuss the wave function.
+Remember from TQFT,
+If I evaluate a path integral on a manifold with a boundary,
+then I get a state on the boundary.
+
+Imagine a 1D system on a circle like this.
+I can write down a wave function for the group elements that live on the edge of
+my manifold,
+and I write down a path integral where I sum over all the group elements in the
+bulk
+\begin{align}
+    \Psi\left( \left\{ g_i^{\textrm{edge}} \right\} \right)
+    &=
+    \frac{1}{|G|^{N_{v,bulk}}}
+    \sum_\left\{ {g_i^{bulk} \right\}}
+    \prod_{\Delta^2\ni (i, j, k)}
+    \nu_2^{S\left( \Delta^2 \right)}
+    \left( g_{i}, g_{j}, g_{k} \right)
+\end{align}
+So now I have a wave function defined on a circle defined on chain.
+And by studying the wave function,
+I can learn some interesting things.
+
+Firstly,
+we have a system that has a global symmetry.
+Here,
+the global symmetry would act just by left multiplication.
+If I multiply every group element on the edge by $g$,
+you can see what that does is \ldots.
+It's easy to see this in the special case.
+Suppose you have vertices on the boundary, say 4 vertices.
+And the bulk is retriangulation-invariant,
+I can do enough retriangulations such that there is only t only a single vertex
+in the bulk, say it's called $g_*$,
+and on the edge we have $g_1, g_2, g_3, g_4$.
+Suppose $g_*$ has the largest ordering number,
+so they the arrow lines go like this (toward the centre vertex and around the
+edges clockwise)
+But because $\nu_2$ has this property where it's symmetric itself,
+I can multiply $g^{-1}$ everywhere,
+and I could just raise it to $\sigma(g)$,
+which is the complex conjugate symbol if it's anti-unitary.
+\begin{align}
+    \Psi\left( \left\{ g g_i^{\text{edge}} \right\} \right)
+    &=
+    \frac{1}{|G|}
+    \sum_{g_*}
+    \prod_{\Delta^2}
+    \left[ \nu_2^{S\left( \Delta_2 \right)}
+    \left( g_i, g_j, g^{-1} g_* \right)\right]^{\sigma(g)}\\
+    &=
+    \left[ \Psi\left( \left\{ g_i^{\textrm{edge}} \right\} \right)
+    \right]^{\sigma(g)}
+\end{align}
+where I relabelled $g^{-1} g_i^* \to g_*$.
+
+The local Hilbert space on the edge is
+\begin{align}
+    \mathcal{H}_i &=
+    \span\left( \left\{ \ket{g_i} \right\} \right)
+\end{align}
+The degrees of freedom compose the Hilbert space on the boundary.
+
+The physical degrees of freedom are the group elements on the vertices,
+the $A$'s are just a background gauge field which tells you whether you have
+twist on the boundaries.
+
+Even though this is technically a sum over $g_*$,
+the actual $g_*$ on the bulk doesn't matter,
+because we can just retriangulate to completely get rid of $g_*$.
+So the amplitude shouldn't even depend on $g_*$ at all.
+
+\begin{question}
+    What is $\sigma(g)$?
+\end{question}
+To be clear,
+\begin{align}
+    \sigma(g) &=
+    \begin{cases}
+        * & \text{if $g$ is anti-unitary symmetry}\\
+        1 & \text{if $g$ is unitary symmetry}\\
+    \end{cases}
+\end{align}
+
+
+\begin{question}
+    Why is it 2+1D?
+\end{question}
+Usually spacetime is $M^{d+1} = \Sigma^d\times \mathbb{R}$,
+but in TQFT,
+we consider arbitrary spacetime manifolds.
+For example,
+for states on the edge of a circle,
+you could thick of the radial direction as ``time''.
+I still like to say 2+1,
+because it's not clear if it's 2+1 or 3D if I just say 3D.
+
+Anyway,
+we can actually get rid of that bulk vertices by Pachner moves.
+I can just imagine that the triangulation looks something like this.
+(triangulation without vertices in the bulk)
+So each term in the sum should be independent of the bulk.
+And so we can actually just pick an arbitrary $g_*$.
+And write the wave function without the sum.
+\begin{align}
+    \Psi\left( \left\{ g_i^{\textrm{edge}} \right\} \right)
+    &=
+    \prod_{\Delta_2}
+    \left[ 
+    \nu_2\left( g_i, g_{j}, g_* \right)
+    \right]^{S\left( \Delta_2 \right)}
+\end{align}
+which means that the wave function is just a phase
+\begin{align}
+    \left|
+    \Psi\left( \left\{ g^{\textrm{edge}} \right\} \right)
+    \right|
+    = 1
+\end{align}
+So there is no intrinsic topological order.
+And so that means there is no intrinsic topological order,
+so we can disentangle by constant depth circuit.
+The state itself
+\begin{align}
+    \prod_{\Delta_2}
+    \ket{\Psi_{1D}}
+    &=
+    \sum_\left\{ {g_i^{\textrm{edge}} \right\}}
+    \left[ \nu_2 \left( g_i, g_j, g_* \right) \right]^{S\left( \Delta_2 \right)}
+    \ket{
+    g_i^{\textrm{edge}}
+    }
+\end{align}
+And so we can define a new basis
+\begin{align}
+    \ket{g_i'}
+    &=
+    U\ket{g_i}\\
+    &=
+    \prod_{\Delta_2}
+    \left[ \nu_2\left( g_i, g_j, g_* \right) \right]^{S(\Delta_2)}
+    \ket{\left\{ g_i \right\}}
+\end{align}
+This unitary is just a local unitary circuit.
+That means,
+we can view this as a constant depth local unitary.
+
+
+It's a local unitary because every term only depends on the $g_i$ and $g_j$ that
+are close to each other with this $g_*$ in the bulk.
+It's constant depth,
+because I could just imagine that I do these links on the edge all at the same
+time,
+and then apply the links to the center vertex.
+
+So with depth 2 I could implement the sequence of phases.
+YOu could also redefine the basis as the original $\ket{g_i}$ times a unitary of
+constant depth circuit.
+
+It's a fairly trivial state in the new basis.
+In the new basis,
+\begin{align}
+    \ket{\Psi_{1D}}
+    &=
+    \sum_{\left\{ g_i' \right\}}
+    \ket{\left\{ g_i' \right\}}\\
+    &=
+    \bigotimes_i\left( 
+    \sum_{g_i} \ket\left\{ g_i' \right\}
+    \right)
+\end{align}
+which is just a tirvial product state.
+hence no intrinsic topological order.
+
+But this $U$ does not actually preserve the symmetry,
+unless the cohomology class of $\nu_2$ is trivial,
+that is the class $[\nu_2]$
+is trivial in $H^2\left( G, U(1) \right)$.
+
+If I do  symmetyr transofmraiton,
+I'm changing the ones on the edge.
+This itself does not equal.
+\begin{align}
+    \nu_2\left( gg_1, gg_j, g_* \right) \ne
+    \nu_2\left( g_i, g_j, g_* \right)
+\end{align}
+because to get the symetry you also need to transafomr the $g_*$.
+only the trivial cocycle would satisfy the above equality.
+
+Let me just say that
+two cocycles in the same $H^2(G, U(1))$ class
+define wave functions that can be related by a constant depth symmetric circuit.
+The idea is that if I take some cocylce $\nu_2' = \nu_2\, d\mu_1$,
+and if I draw a picture with $g_i, g_j, g_k, g_l$ on four corners,
+then the ones on the bulk will come iwth compelx conugation,
+the only one left is the $\mu$ on the boundary,
+so you get a factor of $\mu\left( g_i, g_j \right)$ on the boudnary because
+there is no $g_*$ anymore.
+Yougeta different wave fucntio nif you change this on the coboundary,
+but it onlydiffers by the gound elmetns on the boundary,
+so we won'th ave this issue iwht the $g_*$ that spoils the symmetry so you can
+get a symmetric constant depth circuit.
+
+The pathe integral defines a wvae funtion that is symmetric.
+It has no intrinsci toploical order.
+IT can be distentagled by a constant depth circuti,
+butit can not be distentabled by a constant depth symmetryc circuit.
+This cohomology class determines equivlaence classes of ground satte wwave
+ufnctions that cannot be reached to each other by aconstantt depth symmetric
+circuit.
+
+\begin{question}
+    Is it easy to see how the ege transforms projectively?
+\end{question}
+Not yet.
+So far I've only defined the ground state wave funiton on a ring.
+What I coulddo is look at the entanglement of the ave fucntion,
+I can loko ath the reduced density matrix on the interval,
+and how it decomposes into a product of terms.
+You should be able to do that,
+but I havne't gone thoruh the anlaysis myself.
+
+\begin{question}
+    What's the symmetic of the constant dpeth circuit?
+\end{question}
+The symmtery group is $G$.
+I said that on each site,
+we have $\ket{g_i}$ that takes this form,
+and the symmetry is
+\begin{align}
+    \ket{g_i} \to \ket{ gg_i}
+\end{align}
+which is the symmetric action nthe state.
+This constant depth circuit $U$ doesn't respect that symmetry,
+because if it did,
+we would need to hae this equlity.
+\begin{align}
+    \nu_2\left( gg_1, gg_j, g_* \right) =
+    \nu_2\left( g_i, g_j, g_* \right)
+\end{align}
+
+Now that we have this wave fucntion,
+we could alos write down an ideal Hamiltonian.
+Three's a one-line way of writing down the ideal Hamiltonian.
+
+\subsection{Ideal Hamiltonian}
+I can start with the trivial Hamiltonian
+\begin{align}
+    H_{\text{trivial}} &=
+    \sum_{i}
+    H_{i,\text{trivial}}
+\end{align}
+where
+\begin{align}
+    H_{i,\text{trivial}}
+    &=
+    \ket{\phi_i}\bra{\phi_i}
+\end{align}
+where
+\begin{align}
+    \ket{\phi_i} &=
+    \sum_{i} \ket{g_i}
+\end{align}
+It's like the paramagnet.
+Each site is uniform to position with respect to all the $g$'s.
+
+Then I can write the SPT Hamiltonian as
+\begin{align}
+    H_{SPT} &=
+    U H_{\text{trivial}} U^\dagger
+\end{align}
+where $U$ is the constant depth circuit that disentangles 
+$\ket{\Psi_{1D}}$.
+So I start with the trivial one and I do this basis transformation.
+
+A more useful way of thinking is the following.
+The ground state wave function is a path integral defined on a disk,
+where we are summing over group elements on the interior.
+Let's focus on just some segment of the chain,
+with vertices
+$\ldots,g_{i-1},g_i,g_{i+1},\ldots$.
+Now let's introduce a bulk vertex $g_i'$
+that has links to each
+$g_{i-1},g_i,g_{i+1}$.
+So then imagine doing a bulk transformation.
+The new wave function is now
+\begin{align}
+    \Psi\left( \ldots, g_{i-1}, g_i', g_{i+1},\ldots \right)
+    &=
+    \frac{1}{|G|}
+    \sum_{g_i}
+    \nu_2\left( g_{i-1}, g_i, g_i' \right)
+    \nu_2^*\left( g_{i-1}, g_i', g_{i+1} \right)
+    \Psi\left( \ldots, g_{i-1}, g_i, g_{i+1}, \ldots \right)
+\end{align}
+So that's how they are related under bulk transformation.
+And now I can just write down the Hamiltonian
+\begin{align}
+    H &=
+    \sum_i
+    \sum_{g_i, g_i'}
+    \frac{\nu_2\left( g_{i-1}, g_i, g_i' \right)}{
+    \nu_2\left( g_i, g_i', g_{i+1}\right)
+    }
+    \ket{\ldots, g_i', \ldots}
+    \bra{\ldots, g_i, \ldots}
+\end{align}
+So now we have a ground sate and the Hamiltonian.
+Now e can study the system on an open chain with boundaries,
+and we have a complete solvable model.
+
+\begin{question}
+    We considered the Hamiltonian hat considered one edge state and change it to
+    a different group element,
+    why don't we consider it simultaneously and onwards?
+\end{question}
+That's just doing it twice.
+
+The beautiful thing about this group cohomology model,
+is that everything we do generalizes to higher dimensional models.
+I could have $D$-cochains and $D$-cocycles.
+That's why it's a nice way of thinking about a system.
+The MPS description on the other hand,
+while deeply related to this group cohomology construction,
+this is really what's going on behind the scenes.
+
+\section{Higher dimensions}
+Firstly,
+let me define the higher dimension cohomology groups.
+Consider some $n$-cochain
+\begin{align}
+    \omega_d \in C^n_\rho (G, M).
+\end{align}
+$M$ is going to be an Abelian group,
+which used to be $U(1)$
+with a $G$-action $\rho$.
+It is a map that takes in a group element 
+\begin{align}
+    \rho: G \times M &\to M
+\end{align}
+so this $M$ is a $G$-module.
+And this $\omega_$ has values
+\begin{align}
+    \omega_2\left( g_1,\ldots, g_n \right) \in M
+\end{align}
+Then define the coboundary map
+\begin{align}
+    d: C^n \to C^{n+1}
+\end{align}
+and the way we define this is 
+\begin{align}
+    d\omega(g_1, \ldots, g_{n+1})
+    &=
+    \rho_{g_1}\left( 
+    \omega\left( g_2,\ldots, g_{n+1} \right)
+    \right)
+    \times
+    \prod_{j=1}^{n}
+    \left[\omega^{\left( -1 \right)^j}
+    \left( g_1,\ldots, g_{j-1}, i, g_{j+1}, g_{j+2}, \ldots \right)
+    \right]
+    \times
+    \left[
+    \omega\left( g_1,\ldots, g_n \right)
+    \right]^{\left( -1 \right)^{n+1}}
+\end{align}
+This is a complicated expression,
+but it does have the property that
+\begin{align}
+    d^2\omega = 1
+\end{align}
+Even though this thing looks weird,
+one way of thinking about where this complicated expression comes from is the
+triangulation invariance we want to impose.
+We want our path integral to be independent of triangulation.
+This invariance under triangulation literally gives you this.
+That's geometrically where this complicated expression actually comes from.
+
+Now we have this sequence of cochains.
+\begin{align}
+    C_\rho^{n-1}
+    \xrightarrow{d_{n-1}}
+    C_\rho^n
+    \xrightarrow{d_n}
+    C_\rho^{n+1}
+    \to \cdots
+\end{align}
+Cohomology groups are
+\begin{align}
+    \frac{\ker d_n}{\im d_{n-1}}
+    =
+    H_\rho^n\left( G, M \right)
+    =
+    \frac{Z_\rho^{n}(G, M)}{B_\rho^n(G,M)}
+\end{align}
+The $n$-cocycles are
+\begin{align}
+    Z_\rho^n(G, M) &=
+    \left\{
+    \omega \in C_\rho^n
+    \mid
+    d\omega = 1
+    \right\}
+    =
+    \ker d_n
+\end{align}
+and the $n$-coboundaries are
+\begin{align}
+    B_\rho^n &=
+    \left\{ 
+    \omega \in C_\rho^n
+    \mid
+    \omega = d\mu\,
+    \text{ for some }
+    \mu\in C_\rho^{n-1}
+    \right\}
+    =
+    \im d_{n-1}
+\end{align}
+Time-reversal actually complex conjugates things,
+because it's anti-unitary.
+So we need this $\rho$ for SPTs.
