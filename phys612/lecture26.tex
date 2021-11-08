@@ -1,0 +1,290 @@
+\section{Quantum gases}
+Grand canonical ensemble.
+Second quantization. $\ket{n_1,n_2,\ldots}$.
+
+Upper sign is for bosons,
+lower sign is for fermions.
+The grand potential is
+\begin{align}
+    \Omega &= \pm gk_B T V
+    \int \frac{d^3k}{(2\pi)^3}
+    \ln \left[ 
+    1 \mp e^{-\beta\left( 
+    \frac{\hbar^2 k^2}{2M} - \mu
+    \right)}
+    \right]
+\end{align}
+and then the number density is
+\begin{align}
+    \frac{N}{V} &= - \frac{1}{V}\left.\frac{\partial \Omega}{\partial
+    \mu}\right|_{T,V}\\
+    &=
+    g \int \frac{d^3k}{(2\pi)^3}
+    \frac{1}{e^{\beta\left( E_k - \mu \right) \mp 1}}
+\end{align}
+and the energy density is
+\begin{align}
+    \frac{E}{V} &=
+    \frac{\Omega - TS - \mu N}{V}\\
+    &=
+    g \int\frac{d^3 k}{(2\pi)^3}
+    \frac{E_k}{e^{\beta\left( E_k - \mu \right)} \mp 1}
+\end{align}
+
+We don't know what the chemical potential is if I give you a box of atoms.
+More likely you know the density and energy.
+
+I adjust $\mu$ and I know the temperature.
+I can then get a particular values of $N$ for a particular $T$ I know.
+Then I get $\mu$ to compute the temperature nd anything you want.
+
+There is no instrument I can stick in a bottle and measure the chemical
+potential.
+Maybe there is but it's not practical.
+
+I need to go through this dance of fixing this and tuning $\mU$ to get the
+property density.
+If I have this integral calculated,
+I will do this once and I'm done.
+But I can't.
+So I compute the integral numerically find the value of $\mu$.
+
+Maybe I should put it in the homework so you do it once in your life.
+
+I do this to approximate and make the physics explicit.
+To be sincere,
+it is a stupid tradition that I know no computers and I have to do everything
+with pen and paper.
+It's not completely meaningless to do this because it does bring up some physics.
+
+Let's pretend we do not own computes and extract things with pen and paper.
+The first thing I want to consider is the classical limit.
+The classical limit may surprise you,
+because you think it's getting $\hbar\to 0$,
+but that's fake situation,
+not even God can change $\hbar$,
+because it's a creation of the human mind.
+If I use a unit system where $\hbar=1$,
+it's gone.
+So the classical limit is actually when
+\begin{align}
+    e^{\beta\mu} \ll 1
+\end{align}
+How can this be small?
+Certainly possible because it's an exponential.
+
+It's necessary that $\mu$ is negative,
+very negative.
+That is,
+\begin{align}
+    - \mu \gg k_B T
+\end{align}
+So then $\mu$ has to be very negative and in magnitude much larger than
+$k_BT$.
+I claim this is the classical limit,
+because it recovers the good old results you recover in kindergarten.
+
+Let's look at the occupation number
+\begin{align}
+    n(k) &=
+    \frac{1}{e^{\beta\left( E_k - \mu \right) \mp 1}}
+\end{align}
+This exponential is always a positive number,
+so some people call this quantity
+$z = e^{\beta \mu}$,
+called a very poetic name,
+the fugacity,
+the property of being temporary,
+something that goes away very quickly.
+I have no idea where it's used in any other circumstances.
+
+Richard: I used to hear geochemists use that term often about the exchange of
+oxygen and CO2.
+
+If I consider the limit where the fugacity is small,
+no matter what $e$ is,
+this is going to be much larger than 1,
+and I can neglect this $\mp 1$,
+and so approximately,
+\begin{align}
+    n(k) &=
+    \frac{1}{e^{\beta\left( E_k - \mu \right) \mp 1}}\\
+    &\approx 
+    e^{-\beta E_k} e^{\beta \mu}
+\end{align}
+and this is classical.
+You see a Boltzmann factor appear here,
+so it's beginning to look lie a classical gas.
+And Siri is giving me a band called fugacity.
+Why is the band called fugacity?
+That's an optional question in the homework.
+
+I can then do this approximation inside of the integral.
+\begin{align}
+    \frac{N}{V} &=
+    g \int \frac{d^3k}{(2\pi)^3}
+    e^{-\beta \frac{\hbar^2 k^2}{2m}} e^{\beta\mu}
+\end{align}
+which is a Gaussian integral you've been doing the whole semester,
+and if I'm not mistaken.
+\begin{align}
+    \int \frac{d^3k}{(2\pi)^3}
+    e^{-\beta \frac{\hbar^2 k^2}{2m}}
+    &=
+    \frac{1}{8\pi^2}
+    \left( \frac{2mk_B T}{\hbar^2} \right)^{3/2}
+    = 
+\end{align}
+which you could check out by dimension analysis.
+I wrote it in this particular way because it has a name
+Here $\lambda_T$ is the thermal length,
+\begin{align}
+    \frac{1}{\lambda_T^2}
+    =
+    \frac{2mk_B T}{\hbar^2}
+\end{align}
+which different books may define differently up to factors of $2\pi$.
+
+
+Serious people wrote papers about how to do dimensional analysis to work out
+factors of $2\pi$ in particle physics.
+Completely insane.
+$2\pi$ is a big number, like 6,
+so if you miss it you get the number completely wrong.
+It's not a science,
+it's an art,
+looking at integrals,
+squinting and extracting powers of $2\pi$.
+It's dark magic, but we're not going to do that,
+just compute the integral.
+\begin{align}
+    \frac{N}{V} &=
+    g e^{\beta N} \frac{1}{\lambda_T^3}
+\end{align}
+
+One thing I know here,
+if I work in the regime of small fugacity,
+This is going to be small.
+Small compared to what?
+
+Then we compute the free energy
+\begin{align}
+    F &= \Omega + \mu N\\
+    &=
+    \pm k_B T V
+    \int \frac{d^3k}{(2\pi)^3}
+    \ln\left[ 
+    1 \mp e^{-\beta \left( E_k - \mu \right)}
+    \right]
+\end{align}
+
+Story about the astronaut pen.
+
+\begin{question}
+    What would I google to dabble the dark arts of $2\pi$?
+\end{question}
+Places you shouldn't.
+There's an actual paper called counting powers of $2\pi$.
+It's not general,
+only a very particular context on particle physics.
+It's based on the absurd statement that the number of $\pi$'s on the left and
+right have to match.
+It's hilarious,
+because open the textbook and find an exception to this rule.
+It's an irrational number.
+
+Anyway, then I have to do this approximation.
+Look at the log.
+\begin{align}
+    F &\approx
+    k_B T N + \mu` N
+\end{align}
+but which term is larger in magnitude?
+$\mu$ of course.
+So my energy is just
+\begin{align}
+    F &= N\mu
+\end{align}
+But what is $\mu$?
+Well I can extract it from $N/V$.
+\begin{align}
+    F &=
+    N\ln \left( \frac{N}{V} \frac{\lambda_T^3}{g} \right) \frac{1}{\beta}
+\end{align}
+That's what I promised before.
+Explicitly then I get that.
+Writing the thermal wavelength the way it's supposed to be,
+I get
+\begin{align}
+    F & k_B T N
+    \ln\left( 
+    \frac{V}{N} \left( k_B T \right)^{3/2} \cdots
+    \right)
+\end{align}
+which is what you derived before the hard way.
+What's cool about this,
+is that you don't have to stick the fudge factor of $N!$.
+
+The fact we got $N$ here in the quantum derivation means we really need the $N!$
+in the classical case.
+Track down the $N!$ in the classical case derivation in our homework,
+and you will find it will not match if you don't have the $N!$.
+
+We had that fudge factor for 2 months for no good reason,
+but finally we have a good reason for it.
+\begin{question}
+What's the physical interpretation of the thermal length.
+\end{question}
+If I have a particle in a gas,
+the de Broglie wavelength is the thermal wavelength.
+QM,
+every particle you can think of as a wave,
+and the wavelength of that wave is the wavelength of a typical particle.
+
+The approximation was that the fugacity $z=e^{\beta N}\ll 1$,
+but that's the same thing as saying the density times the thermal volume,
+which is the de Broglie wavelength cubed is very small
+\begin{align}
+    \frac{N}{V} \lambda_T^3 \ll 1
+\end{align}
+and that is what I mean by a dilute gas.
+What I'm saying is that to have a classical gas,
+the de Broglie wavelength of a particle has to be a lot smaller than that.
+If you think about it that's how quantum mechanics works.
+If you have a particle moving along obstacles this big,
+it's like rays.
+But if you have wavelengths similar to distances,
+it's behaving like waves.
+
+Te complicated integral isn't that visible,
+and the trivial thing is not.
+
+By the way,
+this is typically how you calculate the free energy,
+you typically have to solve for $\mu$ from the formula for the density $N/V$.
+
+It's a little too fast to say high temperature is classical because $T$ is
+larger than $\mu$,
+because not really,
+because $\mu$ can also increase with $T$.
+
+It's more useful to say that you want $z=e^{\beta N}$ to be large.
+You want high density and low temperature.
+
+You want the temperature to be large,
+but large compared to what.
+There's nothing large to compare against.
+So you compare the thermal wavelength with the density.
+That's the only thing that make sense.
+There are classical gases that are not that hot,
+as long as the density is smaller.
+
+It's only the relation.
+
+The direction is right.
+Cold and dense things are quantum mechanical.
+That's why every day at the physics department,
+you get a truck with liquid nitrogen,
+because no one wants to do high temperature.
+Unless you do plasma physics,
+and you live your life in classical physics.
