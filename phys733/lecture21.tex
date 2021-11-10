@@ -1,0 +1,691 @@
+\section{(2+1) dimensional SPT path integral}
+\begin{align}
+    H_\rho^n(G, M)
+    &=
+    \frac{Z_\rho^n(G, M)}{B_\rho^n(G, M)}\\
+    &=
+    \frac{\ker d_n}{\im d_{n-1}}
+\end{align}
+where
+\begin{align}
+    d_n:
+    C_\rho^n(G, M)
+    \to
+    C_\rho^{n+1}(G, M)
+\end{align}
+
+You can have $+$ orientation tetrahedrons.
+You can also have $-$ orientation tetrahedrons.
+
+Let $\nu_3$ be homogeneous and $\omega_3$
+be inhomogeneous.
+Then the path integral is
+\begin{align}
+    Z &=
+    \frac{1}{|G|^{N_V}}
+    \sum_\left\{ {g_i \right\}}
+    \prod_{\Delta^3\ni (i,j,k,l)}
+    \left[ 
+    \nu_3\left( g_i, g_j, g_k, g_l \right)
+    \right]^{S\left( \Delta^3 \right)}
+\end{align}
+Note that
+\begin{align}
+    g\cdot \nu_3\left( g_1,\ldots, g_4 \right)
+    &=
+    \left[ 
+    \nu_3\left( gg_1, gg_2, gg_3, gg_4 \right)
+    \right]^{\sigma(g)}
+\end{align}
+due to $g$ -action
+and then due to $G$-symmetry,
+\begin{align}
+    g\cdot \nu_3\left( g_1,\ldots, g_4 \right)
+    &=
+    \left[ 
+    \nu_3\left( gg_1, gg_2, gg_3, gg_4 \right)
+    \right]^{\sigma(g)}
+    =
+    \nu_3\left( g_1, \ldots, g_4 \right)
+\end{align}
+Then
+\begin{align}
+    \nu_3\left( g_1,\ldots, g_4 \right)
+    &=
+    \left[ \nu_3\left( 1, g_{12}, g_{13}, g_{14} \right) \right]^{\sigma\left(
+    g_1 \right)}
+\end{align}
+recalling $g_{ij} = g_i^{-1} g_j$.
+And so
+\begin{align}
+    \omega_3\left( g,h,k \right)
+    &=
+    \nu_3\left( 
+    1,g,gh,ghk
+    \right)
+\end{align}
+Thus we have the path integral
+\begin{align}
+    Z\left( M^3, A \right)
+    &=
+    \prod_{\Delta^3\ni \left( i,j,k,l \right)}
+    \left[
+    \omega_3\left( A_{ij}, A_{jk}, A_{kl} \right)
+    \right]^{S\left( \Delta^3 \right)}\\
+    &=
+    \frac{1}{|G|^{N_V}}
+    \sum_\left\{ {g_i \right\}}
+    \prod_{\Delta^3\ni (i,j,k,l)}
+    \left[
+    \omega_3\left( g_i^{-1}A_{ij} g_{j},
+    g_j^{-1}A_{jk}g_k,
+    g_k^{-1}A_{kl}g_l\right)
+    \right]^{S\left( \Delta^3 \right)}
+\end{align}
+
+We can draw out the Pachner motes in 3D.
+
+There is the 1-4 Pachner move which inserts a vertex inside a tetrahedron to
+produce 4 tetrahedrons.
+
+There is also the 2-3 Pacher move,
+which takes two tetrahedrons sharing a face,
+to produce 3 tetrahedra.
+If the vertices are labelled 0123 and 01234
+no the two original tetrahedra,
+then new tetrahedra have vertices
+01234, 1234, 0234.
+
+We want our path integral to be invariant under Pacher moves.
+In mathematics,
+there is the famous \emph{pentagon equation}
+\begin{align}
+    \nu \nu = \nu\nu\nu
+\end{align}
+which implies
+\begin{align}
+    d\omega_3 = 1
+\end{align}
+so that
+$\nu_3$ and $\omega_3$ are 3-cocycles.
+
+If we change
+$\omega_3 \to \omega_3\, d\mu_2$,
+then this cancels out of the path integral.
+Every $\mu_2$ enters the product twice with opposite orientation,
+so this cancels out the $\mu_2$.
+
+Ultimately,
+distinct (2+1)D topological actions will be classified by
+\begin{align}
+    H_\rho^3\left( G, U(1) \right)
+\end{align}
+The $\rho$ is there so that every time the symmetry $G$ is anti-unitary,
+it's the complex conjugate.
+The $U(1)$ can be replaced by another group,
+but it has to be a unitary group.
+$\rho$ is just a map $\rho: G\times U(1)\to U(1)$ such that
+\begin{align}
+    \rho_g\left( e^{i\theta} \right)
+    &=
+    e^{i\theta'}
+\end{align}
+
+We can repeat this whole thing in any general dimensions,
+so what we get is that in $(d+1)$ dimensions,
+we have distinct actions which are classified by
+$H^{d+1}\left( G, U(1) \right)$.
+This gives a path integral
+\begin{align}
+    Z_{\left[ \omega_{d+1} \right]}
+    \left( 
+    M^{d+1},
+    A
+    \right)
+\end{align}
+for flat $G$ gauge field $A$
+and
+\begin{align}
+    \left[ \omega_{d+1} \right]
+    \in H^{d+1}\left( G, U(1) \right)
+\end{align}
+is just a cohomology class.
+And this gives us invertible TQFT with background flat $G$ gauge field,
+because $|Z(M,A)|=1$.
+
+So just like in $1+1$ dimensions,
+we can write down the wave function,
+we can write down the wave function in $d$ dimensions,
+and show there is no intrinsic order in SPT,
+and this gives a general solvable model with SPT in general dimensions.
+
+This gives us a whole class of distinct SPTs classified by $H^{d+1}$.
+This is not the full classification of SPTs actually.
+There is a more general classification in terms of cobordisms.
+In the dimensions we're interested in,
+this is often the full classification,
+but often there are states beyond cohomology,
+there a  whole class of SPT phases called ``beyond cohomology''.
+The often appear in anti-unitary symmetries in higher dimensions.
+
+So far we have invertible TQFT.
+
+Let me just say a few more things in terms of how much this classifies.
+In (1+1)D,
+this $H^2\left( G, U(1) \right)$ is the full classification of invertible
+bosonic phases.
+
+In (2+1)D,
+this $H^3(G,U(1))$ is a full classification of bosonic SPTs,
+but there are invertible phases that are not SPTs.
+These occur when you have chiral central charge,
+you can have bosonic states with chiral edge mods.
+Strictly speaking,
+if you break the symmetry,
+they are not adiabatically connected to the ground state.
+
+And then in $(3+1)D$,
+this $H^4\left( G, U(1) \right)$
+is a full classification of invertible bosonic invertible theories if $G$ is
+unitary.
+But it's partial classification if $G$ has anti-unitary elements.
+This leads us to so-called \emph{beyond cohomology} SPTs.
+
+There is a theory which is expected to capture everything,
+which is the cobordism theory,
+which I mentioned earlier on in the course.
+For now I'll leave it at this.
+
+
+\begin{question}
+    In 1+! dimension,
+    there are bosonic phases?
+\end{question}
+In 1+1 D,
+even with no symmetry there is the Majorana chain.
+
+\begin{question}
+    In 1D you can always bosonize?
+\end{question}
+There is a real difference between fermions and bosons.
+When you bosonize,
+something that is local on one side is no longer local on the other side.
+It's precisely because the notion of locality changes.
+
+\begin{question}
+    The cobordism is larger than the group cohomology.
+    In 6D,
+    they become the same cobordism phase.
+    Different phases have different topological invariants.
+    How do they collect into the same/
+\end{question}
+I don't know.
+The argument why these different phases are different,
+in 1D we say the constant depth circuits which trivialize it,
+but I don't know what goes wrong in higher dimensions.
+
+\begin{question}
+    Example of invertible phases in (2+1)D?
+\end{question}
+The basic one is called the $E_8$ phase,
+which has a chiral central charge of 8.
+It does not need any symmetry to exist,
+but it has chiral central charge of 8.
+One way of thinking about it,
+is stack 8 copies of the Kitaev honeycomb model,
+condense a bunch of vortices,
+and you get this.
+Everything is made out of these $C_{-}=8$.
+
+\begin{question}
+    Is this related to the $E_8$ the Lie group?
+\end{question}
+You can take $E_8$ level 1 Chern-Simon theory and you get this.
+Or you can get the Cartan matrix of the Lie algebra $E_8$.
+It's intriguing this exceptional group $E_8$ comes up.
+
+\begin{question}
+    ??
+\end{question}
+We wrote this class of modes,
+but there's no reason to expect this is full classification.
+This is not even proven,
+I would say,
+in every dimensions.
+This is just the current dimension.
+The current understanding is,
+there is a conjecture,
+which is that bosonic SPTs in $(d+1)$-dimensions
+are classified these cobordism groups
+\begin{align}
+    \Hom\left(\Omega_{d+1}\left( BG \right), U(1)
+    \right)
+\end{align}
+which means the manifolds are equipped with a $G$-gauge field as well.
+This is the Pontryagin dual.
+Nothing is really proven in terms of full classification.
+To prove rigorously topological phases are fully classified,
+means you have to understand all topological phases,
+which is really beyond our understanding.
+This is based on what we understand so far and what seems to make sense.
+
+
+This sketch, what is not captured?
+In 2+1D the ones not captured are he ones with chiral edge models.
+Its' because the edge gives you a Hamiltonian as a sum of commuting projectors,
+which you can argue will always gap the edge.
+This class of models cannot exhibit fully robust chiral edge modes.
+The reason some anti-unitary symmetries are outside the group cohomology models
+is a deeper issue.
+It ultimately has to do with the fact that group cohomologies characterise the
+ability to couple to background gauge fields,
+but there's something beyond background gauge fields,
+and there's no reason to think $G$-gauge theory should be enough on its own
+anyway.
+
+\begin{question}
+    Edge modes in 1+1D?
+\end{question}
+Those are captured,
+but hose are gappable.
+If I break the symmetry I can get rid of them.
+These are ones where even if you break all symmetries you cannot get rid of
+them.
+
+\begin{question}
+    ??
+\end{question}
+These chiral central charge has nothing to do with symmetry,
+it's like thermal Hall conductance.
+It's true that anti-unitary symmetries,
+you cannot gauge.
+When you have a background $G$-gauge field,
+you can promote it to a dynamical gauge field by summing over configurations.
+You can't do that if talking about anti-unitary symmetries.
+
+Let's talk a bit more about what the physical meaning of this $H^3$ is.
+So far this $H^3$ we used to describe a class of models,
+we saw in 1+1D,
+we saw a projective action on the edge.
+You guys asked if there is an analogy for higher dimensions.
+There is.
+
+\section{Physical origin of $H^3(G, U(1))$}
+Let's just briefly recall that in $(1+1)$-D,
+for the $H^2(G, U(1))$ what happens.
+We considered a system on an open chain,
+then applied a symmetry operation of $G$,
+with representation $R_g$,
+which localizes a s an action on the left $U_g^L$ and an action on the right end
+point $U_g^R$,
+and we get a projective phase we cannot get rid of and that is why we have this
+second cohomology class.
+\begin{align}
+    U_g^L U_h^2
+    =
+    \omega_2(g, h)
+    U_{gh}^L
+\end{align}
+
+Now consider $(2+1)$D. (Else-Nayak 2014)
+The idea is to apply some symmetry operation and see hat happens on the edge.
+Say your system is on a disk,
+you apply a symmetry operation,
+and see what it looks like on the edge.
+We have some restriction of the operator on the edge,
+then we cut that operator open,
+so it looks like an operator on a segment.
+Then we restrict $U_g^{\left( edge \right)}$
+on a segment,
+and we reduce it down to a point,
+and we have a projective phase that turns up.
+
+That's the rough idea.
+To get this in more detail,
+I want to say more about the idea 
+if we have a local unitary,
+a unitary operator that arises as a constant depth local unitary circuit,
+there's an idea of restricting that unitary to a subregion.
+
+Consider a unitary $U$ acting on a space $C$.
+$U$ is a local unitary,
+meaning that it's a constant depth local quantum circuit.
+
+Another local unitary $U_M$ is going to be the restriction of $U$ to a
+submanifold $M$
+if it acts exactly the same as $U$ on the subregion $M$ away from the
+boundaries.
+That is,
+it acts the same as $U$ in the interior of $M$ far way from $\partial M$.
+There are a few things you can say about such a restriction.
+
+Firstly,
+the restriction always exists.
+Suppose we have a unitary that acts as some circuit on a bunch of qubits.
+So something like this [picture].
+
+Let's say this is $U$ acting on $C$.
+I can always define a restriction
+by cutting this unitary along some lines here,
+and looking at the unitary only acting on the middle.
+Obviously there's some ambiguity on the edge,
+but in the bulk it's clear I can define a unitary that acts in the same way as
+$U$.
+
+It's important that $U$ is a constant depth circuit,
+so there is a kind of light cone,
+nothing on this side is going to cross to this side beyond a certain size.
+Of course near the boundaries of $M$ there are ambiguities.
+
+The restriction is obviously ambiguous near the boundaries,
+and they are ambiguous up to some operators.
+
+\begin{question}
+    We must have some conditions on the size of the submanifold as well?
+\end{question}
+If it's too small compared to the depth of the circuit,
+we can't do this.
+We're assuming the region is large compared to the depth of the circuit.
+
+The second thing is that this is defined modulo local unitaries near the
+boundary $\partial M$.
+
+This is the analogue of what we saw in $1+1$ dimensions.
+We applied the symmetries,
+acting like $U_g^L$ and $U_g^R$
+where we could change the phase near the boundary,
+and that's the ambiguity.
+But here,
+instead of a phase,
+This is the higher-dimensional generalization of phase ambiguity.
+
+Let's consider the symmetry operator
+acting on the low energy subspace of the edge theory.
+It's a unitary.
+This state is gapped on the bulk,
+but it's gapless on the boundary.
+The states we are concerned with are where the edge is in some low energy
+subspace,
+so the excitations on the edge have a much lower energy than the bulk energy
+gap.
+
+Then we apply some symmetry operations.
+Because the bulk is in the ground state and symmetric,
+after applying $R_g$,
+this is just applying $U_g^{edge}$ on the edge.
+
+
+So let's assume $R_g R_h = R_{gh}$.
+That's going to also be true for these edge operators.
+If not,
+there will be a projective representation no the edge,
+which is in conflict that the ground state is unique and in the ground state.
+For 1+1 D open chain,
+the ground state is not symmetric,
+because we have these edge states that can fuse to a singlet,
+so we can have a symmetric ground state,
+but we have a degeneracy when these things are far away from each other.
+In higher dimensions,
+the edge is connected,
+even though there are gapless excitations on the edge,
+it is still unique and symmetric.
+\begin{align}
+    U_g^{edge} U_h^{edge} u_{gh}^{edge}
+\end{align}
+
+If the edge preserves symmetry,
+the ground state is unique,
+then there is no projective representation for the edge.
+Now we take this local unitary on the edge and we cut it open.
+
+So suppose I take a cut.
+\begin{align}
+    U_g^{cut} U_h^{cut} = \Omega(g, h) U_{gh}^{cut}
+\end{align}
+where $\Omega(g, h)$
+is a unitary operator with only support for the new end points $a$ and $b$.
+For the bulk we do satisfy the group law,
+but it's only at the edge boundary where we don't necessarily support the group
+law.
+
+
+Now we can consider associativity.
+We considered
+\begin{align}
+    U_g^6cut U_h^{cut} U_k^{cut}
+    =
+    U_g^{cut}
+    \Omega(h, k)
+    U_{h,k}^{cut}\\
+    &=
+    ^g\Omega(h, k)\Omega(g, h, k) U_{ghk}^{cut}
+\end{align} 
+where
+\begin{align}
+    ^g\Omega(h, k)
+    :=
+    U_g^{cut} \Omega(h, k)
+    \left( U_g^{cut} \right)^{-1}
+\end{align}
+so then
+\begin{align}
+    U_g^6cut U_h^{cut} U_k^{cut}
+    &=
+    \Omega(g, h)
+    \Omega(gh, k)
+    U_{ghk}^{cut}
+\end{align}
+And so we are led to this equation
+\begin{align}
+    \Omega(g, h) \Omega(gh, k)
+    =
+    ^g\Omega(h, k)
+    \Omega(g, h, k)
+\end{align}
+But now we realise $\Omega$ is an operator with support on $a$ nd $b$.
+Consider restriction of $\Omega(g, h)$
+to $\Omega_a(g, h)$.
+And so we can consider some phase
+\begin{align}
+    \Omega_a(g, h)
+    \Omega_a(gh, k)
+    =
+    \omega_3(g, h, k)
+    ^g\Omega_a(h, k)
+    \Omega_a(g, hk)
+\end{align}
+where $\omega_3(g,h,k) \in U(1)$
+and $\omega_3 \in C^3(G, U(1))$.
+But you see that $\Omega_3$ does need to satisfy the $3$-cochain equation
+\begin{align}
+    d\omega_3 = 1
+\end{align}
+So then if we change
+\begin{align}
+    \Omega_a(g, h)
+    \to
+    \Omega_a(g, h)
+    \mu_2(g,h)
+\end{align}
+for $\mu_2\in U(1)$,
+then
+\begin{align}
+    \omega_3 \to \omega_3\, d\mu_2
+\end{align}
+This shows us the distinct set of phases is classified by $H^2(G,U(1)$.
+So distinct $\omega_3$'s are classified by
+\begin{align}
+    H^3(G, U(1))
+\end{align}
+So that associativity condition is satisfied up to a phase and that's where we
+get this $H^3$.
+
+There's no projective representation anywhere.
+We're just restricting and cutting
+until we finally get this.
+
+In order to get this to work,
+we need to assume something more specific about how $U_g^{edge}$ looks like.
+In higher dimensions,
+we have to assume
+\begin{align}
+    U_g^{edge}
+    &=
+    N_g
+    S_g
+\end{align}
+where $N_g=\sum_\alpha e^{i N_g'(\alpha)}$ is non-on site but diagonal,
+and $S_g=\sum_\alpha \bra{g \alpha}\ket{\alpha}$
+And in general,
+the docs appear 
+
+\begin{question}
+    what happens if you had a system living on an annulus.
+\end{question}
+If you're taking about intrinsically 2D systems,
+you can talk about the edge on a 
+
+I'm just focusing on this operator on one segment.
+On that segment,
+I satisfy this group up to 1 
+
+There are for mathematicians rigorous definitions and derivations.
+
+I just wanted to mention one more ting.
+Three's another way of phrasing these topological.
+
+There is a compact way to define the topological action for group cohomology
+models
+\begin{align}
+    Z\left( M^{d+1}, A \right) &=
+    e^{iS_{top}(A)}
+\end{align}
+Firstly, every group $G$ has a corresponding space called ``classifying
+spare'' $BG$.
+The defining property is that
+$\pi_1(GB) = G$
+and
+$\pi_k(BG)=0$
+for $k>1$.
+Every $G$ gauge field is in one-to-one correspondence with
+homotopy classes of maps.
+You can think of gauge fields as being a map from your manifold into your
+classifying space.
+$f: M^d \to BG$.
+What we did when we triangulated the manifold,
+and put gauge fields on links,
+that actually does specify a map from $M$ to $BG$.
+This is just a fancy way of saying what we did in practice.
+
+The classifying space for the circle is
+$B\mathbb{Z} = S^1$.
+The classifying space for $\mathbb{Z}_2$ is
+$B\mathbb{Z}_2 = \mathbb{RP}^{\infty}$.
+The classifying space for phases is
+$BU(1) = \mathbb{CP}^{\infty}$.
+
+Secondly, the other thing is that group cohomology
+$H^k(G, U(1))$
+is equivalent to
+``regular'' cohomology (singular de Rham cohomology)
+Nakahara has a nice book called geometry, topology and physics..
+\begin{align}
+    H^k(G, U(1)) \simeq 
+    H^k(BG, U(1))
+\end{align}
+is true for finite $G$,
+but is more subtle for groups.
+
+
+Thirdly,
+if I had a cohomology on $Y$,
+I can get a class on $X$ and the map that does this is called
+$f^*$, the \emph{pullback}.
+That is,
+if $f:X \to Y$,
+then
+\begin{align}
+    f^*: H_k(Y, U(1)) \to H^k(X, U(1))
+\end{align}
+is the pullback.
+
+We can put these 3 facts together.
+Given a class $[w_{d+1}] \in H^{d+1}\left( BG, U(1) \right) \simeq H^{d+1}(G,
+U(1)$
+which is isomorphic
+and a $G$ gauge field determined by
+\begin{align}
+    f_A: M^{d+1} \to BG
+\end{align}
+then we can define an element of the $H^{d+1}$ cohomology class
+\begin{align}
+    f_A^\left[ \omega_{d+1} \right]
+    \in
+    H^{d=1}\left( M^{d+1}, U(1) \right)
+\end{align}
+and then we have our path integral
+\begin{align}
+    e^{iS_{top}}
+    &=
+    e^{i\int_{M^{d+1}} f_A^*\left[ \omega_{d+1} \right]}\\
+    &= Z\left( M^{d+1}, A \right)
+\end{align}
+These 3 facts allow you to package this path integral in this nice way.
+Unfortunately,
+I would need at least 3 lectures to unpack all of this.
+I'm just telling you so you know where to look to learn about this.
+Are there any questions?
+Actually,
+if you have questions,
+I might not be able to answer it.
+
+In the last minute,
+I want to mention where I'm going next.
+
+Suppose we have a TQFT with $G$-symmetry $T$.
+We can always ``gauge'' $G$.
+That means we promote he background $G$ gauge field to a dynamical gauge field,
+which gives a new configuration $T$ mod $G$,
+which is $T/G$.
+I can then sum over flat gauge field configurations.
+I put brackets to say we are summing over inequivalent ones that are not related
+by gauge transformation.
+\begin{align}
+    Z_{T/G}\left( M^{d+1} \right)
+    =
+    \sum_{\left[ A \right]}
+    Z_{\left[ \omega_{d+1} \right]}
+    \left( M^{d+1}, A \right)
+\end{align}
+And so dynamical, topological $G$-gauge theory is classified by
+$H^{d+1}\left( G, U(1) \right)$.
+We are interested in 2 classes of this phenomena.
+
+1. Discrete and finite $G$.
+This leads to models like the toric code,
+and more generally quantum double models.
+Like Levin-Wen models, etc.
+If we start off with an invertible theory,
+and we gauge $G$,
+we end up with a non-irreversible theory.
+SO one way of getting non-invertible theories is this.
+
+2. Continuous $G$.
+This takes us toe Chern-Simons theory in $(2+1)$D.
+At this point,
+the discussion bifurcates.
+
+We can talk about non-invertible phases
+you get from gauging invertible theories.
+
+We can also label things on triangulations and sum over all labels.
+Next time,
+I'll start getting into this quantum Chern-Simon theories,
+which allows us to describe fractional quantum hall states,
+which are the only experimentally realised non-invertible theory.
+
+Are all non-invertible topological phases obtainable by gauging an invertible
+TQFT.
+30 year old conjecture by Moore and Cyberg still standing.
+There are candidate counterexamples,
+but we're not sure.
