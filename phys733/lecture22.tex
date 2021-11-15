@@ -1,0 +1,822 @@
+\section{Lecture 22}
+\begin{question}
+    Last time for 2D systems,
+    something about them not being gapped?
+    In 1 spatial dimension you can have degenerate gapless modes,
+    but not in 2D?
+\end{question}
+If I take a 1D system with boundaries,
+in general you have edge modes,
+and in general there is a ground state degeneracy
+with dimension $\dim \mathcal{H}_L \times \dim \mathcal{H}_R$.
+
+In 2D,
+you only have a single edge,
+so if the ground state is preserved,
+the ground state is unique.
+
+Of course,
+you could have an annulus with two edges,
+but it's still true with an edge far away.
+There is no way of having just a single edge in 1D.
+You always have to have two edges.
+You can have an edge which is connected.
+
+The presence of 2 edge still allow you to have 2 edges?
+The edge may spontaneously break a symmetry,
+but these tow are in spin singlet together and together they may preserve
+symmetry,
+but that's not useful and natural to do.
+You talk about a single edge and its properties in 2D.
+
+Maybe the better thing to say is that in 2D,
+the edge can have a unique ground state that is symmetric,
+but of course it doesn't have to be if you had multiple edges,
+whereas in 1D it cannot under any circumstances,
+unless maybe the edges are in a singlet with one another.
+
+
+\section{(2+1)D Chern-Simons Theory}
+So the idea here is that this is some gauge theory,
+based on a gauge group $G$.
+You can consider all kinds of gauge groups with strange properties,
+but for our purposes,
+we're interested in cases where this is a compact gauge group.
+This gives rise to a large class of TQFTs
+
+In general if you want to specify a Chern-Simons theory,
+let me just mention that,
+you want to specify the gauge group and you also want to specify some element
+$[\alpha] \in H^4(BG,\mathbb{Z})\simeq H^3(BG, U(1))\simeq H^3(G, U(1))$
+So a Chern-Simons theory is defined by a group and some choice of cohomology
+class.
+
+The CS theory is very powerful.
+It's a class of gauge theories that is topological,
+and when you quantize it,l
+it leads to a class of TQFTs,
+and in general these TQFTs can be non-invertible.
+They typically depend on a framing,
+and they may also depend on a spin structure
+with spin TQFTs in the most general case.
+
+In fact,
+it is a conjecture that all $(2+1)D$ TQFTs can come from a Chern-Simons theory.
+This conjecture goes back to about 1989 to 1990.
+And there's still no definitive counterexample.
+Although there are some candidate theories people don't know how to interpret
+in terms of CS theory,
+so there are some tentative counterexample,s
+although it's not clear whether they actually are.
+There's n definitive counterexample yet,
+so CS theory is very powerful.
+
+I want to talk about the simplest case where the gauge group is $U(1)$.
+
+\section{$U(1)_k$ CS theory}
+Consider an action
+\begin{align}
+    S &=
+    \frac{k}{4\pi}
+    \int_{M^3} a\, da\\
+    &=
+    \frac{k}{4\pi}
+    \int_{M^3}
+    \epsilon^{\mu\nu\lambda}
+    a_\mu
+    \partial_\nu
+    a_\lambda
+    \,
+    d^3x
+\end{align}
+where $a$ is a $U(1)$ gauge field.
+If you stare at it,
+this does not actually make sense in general.
+
+The reason it doesn't make sense in general,
+is that a U(1) gauge field is not globally well defined in general.
+
+A gauge field is locally just a 1-form $a_\mu \, dx^\mu$.
+\begin{align}
+    \int_{Y_2} F = 2\pi
+\end{align}
+If the field strength through some 2-cycle is $2\pi$,
+you cannot pick a global gauge for $A$ if $Y_2$ is closed.
+So this expression doesn't make sense,
+because there's no globally well-defined choice of a $U(1)$ gauge field.
+If $Y_2$ is a closed 2-manifold,
+then there is no global gauge $a$.
+
+So we cannot make sense of $S_{CS}$ itself,
+but we can make sense of $e^{iS_{CS}}$.
+
+We can in general evaluate this $\theta$ term in one dimension higher.
+
+To make sense of this,
+we pick a 4-manifold $W^4$ such that the boundary
+$\omega W^3 = M^3$.
+Furthermore,
+we're going to extend the gauge field $a$
+to be defined over $W^4$.
+It turns out this is always possible.
+For any 3-manifold,
+you can always pick a 4-manifold whose boundary is that 3-manifold.
+Conceptually,
+the reason this can always be done is precisely because this cobordism group is
+zero
+\begin{align}
+    \Omega_3 \left( BU(1) \right) = 0
+\end{align}
+That this is zero is that every 3-manifold with a U(1) gauge field is 
+is the boundary of a 4-manifold with a U(1) gauge field.
+The mathematicians tell us this fact.
+
+\begin{question}
+    What about other groups?
+\end{question}
+This doesn't necessarily hold for every group.
+
+But suppose instead you were interested in SU(2).
+Turns out this problem doesn't occur anymore,
+because for SU(2) the first Chern class if trivial.
+That we run into this problem is specific to the U(1) case.
+It doesn't happen for SU(2),
+but it doesn't happen for SO(3).
+I'm not sure how general this statement is.
+Everything that comes up in physics,
+this cobordism group does always vanish.
+I don't quite remember.
+Let's just stick to U(1).
+For SO(3) you might need to do something a little different.
+
+
+Anyway, so then define
+\begin{align}
+    S_{CS} &=
+    \frac{k}{4\pi}
+    \int_{W^4} \partial_\mu a_\nu \partial_\lambda a_\sigma
+    \epsilon^{\mu\nu\lambda\sigma}\\
+    &=
+    \frac{k}{16\pi}
+    \int f_{\mu\nu} f_{\lambda\sigma} \epsilon^{\mu\nu\lambda\sigma}\\
+    &=
+    \frac{k}{4\pi} \int f\wedge f
+\end{align}
+This is completely well-defined because $f$ is a locally well-defined quantity.
+The reason it gives the CS term on the boundary is because this term is a total
+derivative,
+and if you evaluate over the boundary it just gives you the CS term.
+
+So this term is a total derivative and it gives a CS term on the boundary.
+\begin{align}
+    \partial_\mu a_\nu \partial_\lambda a_\sigma
+    \epsilon^{\mu\nu\lambda\sigma}
+    &=
+    \partial_\mu\left( 
+    a_\nu \partial_\lambda a_\sigma
+    \right)
+    \epsilon^{\mu\nu\lambda\sigma}
+\end{align}
+
+You might be worried,
+because I'm it looks like I'm defining a (3+1)D theory,
+but the result should better not depend which 4-manifold I pick,
+and how I choose the gauge field in one-higher dimension.
+To get an intrinsically $(2+1)D$ theory,
+$S_{CS}$ should not depend on the extension $W^4$ and $a$.
+
+
+In order it makes sure they're not the same,
+compare 2 different extensions.
+
+We want this difference to be $2\pI$ times an integer
+\begin{align}
+    \delta S &=
+    \frac{k}{4\pi} \int_{W^4}f \wedge f
+    - \frac{k}{4\pi} \int_{W^4'} f' \wedge f'
+    \in 2\pi\mathbb{Z}
+\end{align}
+What I do is glue these two 4-manifolds together on the boundary which is $M^3$
+and I end up with a closed 4-manifold.
+\begin{align}
+    X^4 &= W^4 \cap_{M^3} \overline{W_4'}
+\end{align}
+with
+\begin{align}
+    \tilde{A} &=
+    \begin{cases}
+        a & \text{on } W^4\\
+        a' & \text{on } W^4'\\
+    \end{cases}
+\end{align}
+Recall that
+\begin{align}
+    \frac{1}{4\pi^2}
+    \int_{X^4} F\wedge F \in \mathbb{Z}
+\end{align}
+for a closed $X^4$.
+And that's just integrating the entire field strength over this entire manifold.
+So then
+\begin{align}
+    \delta S
+    &=
+    \frac{k}{4\pi}
+    \int _{X^4} \tilde{f} \wedge \tilde{f}
+\end{align}
+so in order for this to be an extension,
+I need $k\in 2\mathbb{Z}$ to be an even integer.
+
+For this CS theory with $e^{iS}$ to make sense,
+we need $k$ to be an even integer.
+
+\begin{question}
+    global gauge?
+\end{question}
+No the point is that on a 4-manifold I don't need to pick a global gauge,
+because $f$ always makes sense.
+On the boundary it's the same,
+but it can be whether on the bulk.
+
+Another way to see why $k$ has to be an even integer,
+consider $M^3=T^3$ is a torus.
+Assume
+\begin{align}
+    \int_{T^2} F_{12} = 2\pi
+\end{align}
+Then the action is
+\begin{align}
+    S_{CS} &=
+    \int
+    \frac{k}{4\pi}
+    \left( 
+    a_0 f_{12}
+    +
+    a_1 f_{21}
+    +
+    a_2 f_{01}
+    \right)
+\end{align}
+and so let's do a large gauge transformation,
+which takes
+\begin{align}
+    a_0 \to a_0 + 2\pi/L_0
+\end{align}
+where $L_0$ is the length in the time (0) direction.
+So under this large gauge transformation,
+there's going to be a change in this action
+\begin{align}
+    \delta S_{CS}
+    &=
+    \frac{k}{2}
+    \int_{T^2}
+    f_{12}
+    =\pi k
+\end{align}
+and in order for this action to be independent of large gauge transformations,
+we need $k$ to be an even integer.
+Maybe that's a quicker way to see why $k$ needs to be an even integer
+
+\begin{question}
+    Why is it called a large gauge transformation?
+\end{question}
+Because this gauge transformation changes a flux through a hole by $2\pi$.
+That kind of gauge transformation is not continuously connected to the identity.
+Let's say
+\begin{align}
+    a \to a - \delta \lambda
+\end{align}
+what would $\lambda$ be?
+We would need $\lambda = \frac{2\pi}{L_0}t$,
+which is winding,
+which is topologically non-trivial.
+
+You might be a little bothered if you've done nay CS theory,
+because now I'm telling you $k$ has to be even,
+but we often work with $k$ being odd or 1 in integer quantum Hall states.
+
+So here's the catch.
+If you're working with fermions,
+then $k$ is odd.
+
+When working with fermions in your theory,
+and you're doing QFT,
+you want the manifold to have spin structure.
+
+It's a fact that all 3-manifolds
+admit a spin structure.
+So we can define fermions on them,
+but not all 4-manifolds admit a spin structure.
+And the counter example would be $\mathbb{CP}^2$.
+If you demand your theory has fermions,
+then you only ant to consider extending to 4-manifolds
+that admit spin structure.
+
+So you require that $W^4$ is actually a spin manifold,
+which is just a manifold that admits a spin structure.
+So if $W^4$ is a spin manifold,
+then $X^4$ is also going to be a spin manifold.
+
+Extension is always possible,
+and this time it's because
+\begin{align}
+    \Omega_3^{spin}\left( BU(1) \right) = 0
+\end{align}
+which we have to resort to mathematicians telling us this is the case.
+Turns out if you have a spin 4-manifold,
+then the second Chern class is actually even.
+\begin{align}
+    \frac{1}{4\pi^2}
+    \int_{X^4}
+    F\wegde F
+    \in 2\mathbb{Z}
+\end{align}
+for closed spin 4-manifolds.
+So what you find is
+\begin{align}
+    \delta S &= 2\pi k
+\end{align}
+which implies that
+\begin{align}
+    k \in \mathbb{Z}
+\end{align}
+and so $k$ can be odd.
+
+If $k$ is odd,
+we have a TQFT that has fermions,
+that has to have spin structure,
+and in the extension to 4D must also have spin structure.
+
+So odd $k$ defines a \emph{spin} TQFT that describes a theory with fermions.
+
+CM physicists don't worry about this issues,
+because often when CM physicists work with CS theory,
+they are only interested in the case when the manifold $M^3$ is $\mathbb{R}^3$
+or just a ball $D^3$.
+If we never consider topologically non-trivial manifolds,
+then these issues don't really come up.
+And we don't need to worry about the quantization of $k$.
+
+On the other hand,
+if the gauge group is $\mathbb{R}$ instead of $U(1)$,
+then again we don't have to worry about the quantization of $k$.
+
+So the quantization of $k$ only comes up when we use the fact that the gauge
+group is $U(1)$,
+which means for large gauge trnasofmation,
+integrating magnetic field thorugh large lookps is quantized.
+
+The quantization of $k$ only comes up when thinking of topologically non-trivial
+situations.
+
+\begin{question}
+    What goes on with this argument?
+    You can't even define on patcthes?
+\end{question}
+With fermisns,
+you shouldn't even consider this 3D action,
+you sould start with the 4D action,
+and this issue won't come up.
+You can consider the theory on $\mathbb{R}^3$ or a ball,
+but you just can't do it for topologically non-trivial situations.
+Maybe ther's a way of putting it together,
+but I don't know.
+
+So either you work in patches or $\mathbb{R}^3$,
+or just consider the gauge group to be $\mathbb{R}$.
+But for fermions,
+it's even more necessary because of this issue.
+
+Often,
+we continue using this action when we care the gauge group is $U(1)$ and the
+situation is topologically non-tvivial,
+but usually that's when you have to hae enough expertise to know when and when
+not it gives the right answers because of these subtlties.
+
+\section{CS-Maxwell theory}
+One more thing I want to just mention,
+but I'll put the calculation in your homework.
+
+Consider $\mathbb{R}^3$, but let's add the Maxwell action as well.
+\begin{align}
+    S_{CS-Maxwell}
+    &=
+    \int_{\mathbb{R}^3}
+    \left( 
+    \frac{k}{4\pi}
+    a\, da
+    -
+    \frac{1}{4g^2}
+    f_{\mu\nu} f^{\mu\nu}
+    \right)
+\end{align}
+And we know Maxwell theory has gapless photons in Maxwell theory
+if $k=0$.
+But if $k\ne 0$,
+then the photon acquires a mass,
+and gets a gap.
+It's away of giving the photon a mass gap,
+very similar to the Higgs mechanism,
+like in superconductors,
+with the Meister effect which gaps out.
+
+
+If we consider pure Chern-Simons theory,
+just this $S_{CS} = \frac{k}{4\pi}\int a\, da$,
+then the classical equation of motion tells us the field strength is actually
+zero with $f_{\mu\nu} = 0$.
+But since we're on $M^3 = \mathbb{R}^3$,
+there's really nothing to talk about here.
+We can write $a_\mu = \partial_\mu \phi$,
+and the action is going to be zero because the field strength is zero.
+If $S=0$, then the Hamiltonian $H=0$.
+So pure classical CS theory on $\mathbb{R}^3$ has nothing in it.
+Everything is completely trivial.
+
+\section{Quantizing CS Theory}
+The quantization of CS theory is non-trivial and subtle if you want to do it
+completely.
+We'll start off doing canonical quantization and try to understand the Hilbert
+space of the system on some space.
+Let me just give a preamble.
+
+Formally,
+one thing we can do is to define the path integral.
+\begin{align}
+    Z 
+    \int \mathcal{D} a\,
+    e^{i S_{CS}(a)}
+\end{align}
+but we need to do some gauge fixing,
+as you know from QFT.
+
+At the classical level,
+we have this action that has no geometry dependence on the metric at all,
+unlike maxwell.
+So at a classical level,t
+her theory is fully topological,
+but it's not clear it will remain topological after quantizing.
+You have to gauge fix to properly evaluate the path integral,
+and you could lose it.
+This is where the notion of framing comes in.
+When gauge fixing,
+you pick some metric to do gauge fixing,
+then define a path integral independent of metric,
+but it turns out you can't make it completely independent,
+so her is some residual which is the framing.
+I don't want to do all that right now.
+I want to do something simpler,
+just the canonical quantization of theory on $M^3$ being the form
+torus cross time $M^3 = T^2 \times \mathbb{R}$.
+
+Here things are easier.
+I can always just pick a gauge where the time component $a_0=0$
+I can't just forget about it entirely,
+I need to remember the equation of motion for $a_0$ is non-trivial,
+which hence places a constraint.
+The equation of motion is
+\begin{align}
+    \frac{\delta S}{\delta a_0}
+    \propto
+    \epsilon^{ij}f_{ij} = 0
+\end{align}
+which becomes a constraint.
+I find this explanation a bit opaque.
+I prefer the following equivalent explanation.
+Consider the Lagrangian
+\begin{align}
+    \mathcal{L}
+    &=
+    \frac{k}{4\pi}\left( 
+    a_0 \epsilon^{0ij} \partial_i a_j
+    +
+    \epsilon^{i0j} a_i \dot{a}_j
+    +
+    \epsilon^{ij0} a_i \partial_j a_0
+    \right)
+\end{align}
+and then I integrate by parts,
+change around the order and relabel things,
+terms come together
+\begin{align}
+    \mathcal{L} &=
+    \frac{k}{2\pi}
+    a_0 \epsilon^{ij} \partial_i a_j
+    +
+    \frac{k}{2\pi}
+    a_2 \dot{a}_1
+\end{align}
+and note $a_0$ only enters on the first term,
+and I can think of $a_0$ as a Lagrange multiplier
+enforcing the constraint
+\begin{align}
+    \frac{k}{2\pi}\epsilon^{ij} \partial_i a_j = 0
+\end{align}
+
+\begin{question}
+    By framing you mean framing of the gauge?
+\end{question}
+No, I haven't gotten into it,
+but what I meant was fixing a gauge means choosing a metric.
+Evaluate the path integral,
+and you find the path integral depends on the metric.
+But then you try to see if you could have done anything to save the topological
+invariance.
+You could get rid of the metric almost completely,
+but not completely,
+and it depends on a choice of framing,
+which is a choice of trivialization of the tangent bundle.
+You have to choose 3 vectors everywhere that don't degenerate,
+which is picking a trivialization of the tangent bundle.
+I'm not presenting that, so don't worry about it.
+
+
+So the gauge field needs to have no magnetic field in space.
+We can parametrize the flat gauge field configuration on $T^2$ with
+\begin{align}
+    a_i(x_1, x_2, t) &=
+    \frac{2\pi}{L_i} X_i(t)
+\end{align}
+The gauge field should have no magnetic field through the torus,
+and there will be holonomic which can be parametrized by writing in this form.
+These $X_i$'s are called zero modes.
+This $X_i$ is like the spatial average of $a_i$.
+This is proportional to an integral over space,
+and overall average if you like
+\begin{align}
+    X_i(t) \propto \int d^2x\, a_i
+\end{align}
+And so $X_i$ is related to $X_i + 1$ by large gauge transformations
+with $X_i \sim X_i + 1$.
+So $X_1$ and $X_2$ live on a torus.
+If I substitute this form back into the Lagrangian,
+remembering that $a_0$ is zero,
+so only the second term remains,
+and when I substitute this 
+\begin{align}
+    L &=
+    \int_{T^2} d^2x \, \mathcal{L}\\
+    &=
+    2\pi X_2 \dot{X}_1
+\end{align}
+Doing some classical mechanics,
+the canonical momentum is
+\begin{align}
+    P_{X_1} &=
+    \frac{dL}{d \dot{X}_1} = 2\pi k X_2
+\end{align}
+so the Hamiltonian is
+\begin{align}
+    H &=
+    P_{X_1}\dot{X}_1 - L = 0
+\end{align}
+which is strange.
+But you find that your phase space itself is compact with some finite volume.
+And the volume of this phase space is $2\pi k$.
+This is a very unusual situation.
+Almost always in classical mechanics,
+your phase space is infinite volume.
+Even if your coordinate is bounded,
+the momentum is unbounded.
+So this is a weird situation where the phase space itself has finite volume.
+If you remmeber QM,
+one way of thinknig about quantum sates,
+for every phase space volume,
+you assing one quantum state.
+Here $\hbar=1$,
+we get one quantum state for each $2\pi$ volume of phase space.
+So we conclude the dimension of this Hilbert space on a torus has to be $k$.
+\begin{align}
+    \dmi \mathcal{H}\left( T^2 \right) &= k.
+\end{align}
+
+So what we learn is that
+\begin{align}
+    |Z(T^2 \times S^1)|
+    =
+    \dim \mathcal{H}(T^2) = |k|
+\end{align}
+
+\begin{question}
+    Does that have something to do with the path integarl not being well defined
+    yo umentinoed in the beginningof the course?
+\end{question}
+No.
+Think aoubt this path integral,
+it's integrating over all possible gauge fields.
+this is perfectly well defined with phase space compact.
+Usually in QFt,
+you need to make sense of this paht integral hwihhci is infintie,
+so you can only define correlation fucntions which are ratios of path integrals.
+If you do this precisely,
+you can make this path integral well-deifined and convert it to actual numbers.
+I haven't told you how to do that yet.
+The phase space compact is just a weridness of Chern-Simons theory.
+
+You can repeat the above calculation on any genus $g$ surface.
+
+Now you can think about all these fluxes through all the cycles.
+Insteadof just $X_1$ and $X_2$ which parametrized 2 of hte cycles,
+we're going to get $g$ copies of that kind of situation that we found,
+and we're going to find that the dimension of the Hilbert space on a genus $g$
+surafce ends up being
+\begin{align}
+    \dim \mathcal{H}\left( \Sigma_g \right) = 
+    |k|^g
+\end{align}
+which I'll ask you to prove in your homeowrk.
+
+There's one more generalization I'll put in your homeowrk.
+You could instead consider multiple $U(1)$ gaue fields,
+so you consdier $U(1)^n$ CS theory,
+in which case the Lagrangian is
+\begin{align}
+    \mathcal{L}
+    &=
+    \frac{1}{4\pi} K_{IJ}
+    a_\mu^{I} \partial_\nu a_\lambda^J \epsilon^{\mu\nu\lambda}
+\end{align}
+where $K$ is an integer symmetric matrix.
+And then
+\begin{align}
+    \dim\mathcal{H}\left( \Sigma_g \right) = 
+    |\det K|^g
+\end{align}
+
+Looking back.
+So the Hailtonian is zero and we have a finite number of states in total.
+There are very few degrees of freedom at all.
+We could have instead considred the CS-Maxewll theory.
+if you do CS-Maxwel theory,
+the Hamiltonian is not zero,
+and phase space will be non-compact.
+And so what you'll find there is that you'll have $k^g$
+ground states degeneracy,
+and you'll have phase space that is noncompact,
+and the photon becomes massive,
+soo you havea finite gap,
+but you hvae all these topologically degenerate groud states,
+which are zero modes of the gauge field.
+Physcally, this $a\, da$ term is only the leading term.
+In the cnotex of the faracitoal quantum Hall effect,
+there are gapped non-trivail excitations,
+like the magneto-roton,
+and that's what these excitations describe.
+They're all gapped,
+becaseu it's a gaped liquid,
+they can e modelled by these higher order terms in $a$.
+\begin{align}
+    \mathcal{L} &=
+    -\frac{k}{4\pi} a\, da
+    +
+    \frac{1}{4g^2} f^2
+    + \cdots
+\end{align}
+
+When we use CS theory to describe fracitonal quantum Hall effect,
+the meaning of these is the density of particles.
+\begin{align}
+    j^{\mu}
+    &=
+    \frac{1}{2\pi} \epsilon^{\mu\nu\lambda}
+    \partial_\nu a_\lambda
+\end{align}
+So these are just hydrodynamic modes in a gapped liquid.
+In Maxwell-Chern-Simons,
+I don't remember the formula,
+but it kas to depend on $k$.
+If you take $g$ to infinitey,
+all these states go away and you'rel eft with pure CS theory.
+You'll have to do calcuations yourself to get the gap.
+
+\begin{question}
+In thep icutero f illing Landau levels,
+what do these $k$ states correspond to?
+\end{question}
+You're getting two things confused
+becauseI ddn't empphasises hte physcal conneiton so much.
+We have 2 physical situations where CS thoery turns up.
+\begin{enumerate}
+ \item background $U(1)$ gauge field $A$.
+     A fixed static background.
+     And the effectie action for this gauge field for the $\nu=k$ integer
+     quantum Hall effect,
+     or if you like Chern number $k$,
+     \begin{align}
+         S_{eff}[A] &=
+         \frac{k}{4\pi}
+         \int A\, dA
+     \end{align}
+     The TQFT is invertible,
+     with some symmetry $G$ for the gauge field.
+ \item Dynamical U(1) guage field (emergent),
+     the action is the same,
+     but this is no longer fixed and we have to integrate over it
+     \begin{align}
+         S_{eff}[a] =
+         \frac{k}{4\pi} \int a\, da
+     \end{align}
+     and the path integral is
+     \begin{align}
+         Z\left( M^3 \right)
+         =
+         \int \mathcal{D} a\,
+         e^{iS[a]}
+     \end{align}
+     and now it's a non-inveritble TQFt.
+     Here we gauge the theory,
+     which si just a redundancy in the description,
+     and we get a non-invertible theory.
+     You could couple this to the backgorund $U(1)$ iwwth
+     \begin{align}
+         S_{eff}[a] =
+         \frac{k}{4\pi} \int a\, da
+         +
+         \frac{1}{2\pi} A\, da
+     \end{align}
+     And you have
+     \begin{align}
+         Z\left( M^3 \right)
+         =
+         \int \mathcal{D} a\,
+         e^{iS[a,A]}
+     \end{align}
+\end{enumerate}
+
+\begin{question}
+    Currents?
+\end{question}
+You're confusing 2 currents.
+This $j^\mu$ is the current of flux.
+If you have flux of the gauge field that moves aorund,
+this is what it is.
+This is hte instanton current.
+There are 2 currents.
+There si the current of particles charged under $a$ that is conserved wiht
+$\partial_\mu j^\mu=0$,
+and then there is the monopole instanton conserved current,
+which is what I'm talking about.
+
+\section{Wilson loops}
+Okay,
+so we've quantized the theory at least on this manifold
+and we've understood the states.
+But now it's useful to talk about Wilson loops.
+
+For any curve $\gamma$,
+we can write down a Wilson loop
+\begin{align}
+    W_\gamma &=
+    e^{i\oint_\gamma a\cdot dl}
+\end{align}
+and let's consider $M63 = T^2\times \mathbb{R}$.
+Consider the Wilson loops on the directions on the torus.
+\begin{align}
+    W_1 &=
+    e^{i\oint_{\gamma_1} a\cdot dl} = e^{i 2\pi X_1}\\
+    W_2 &=
+    e^{i\oint_{\gamma_2} a\cdot dl} = e^{i 2\pi X_2}
+\end{align}
+And remember when we quantize,
+we have
+\begin{align}
+    \left[ x_1, P_{x_1} \right] = i
+\end{align}
+we learn that
+\begin{align}
+    \left[ X_1, X_3 \right] = \frac{i}{2\pi k}
+\end{align}
+Here capital $X$ is the zero mode and $x$ is the coordinate.
+This means the Wilson loops in the two directions acquire a non-trivial value.
+\begin{align}
+    W_1 W_2 &=
+    W_2 W_1 e^{-4\pi^2\left[ X_1, X_2 \right]}\\
+    &= W_2 W_1 e^{2\pi i/k}
+\end{align}
+Since $H=0$, $[H,W_1]=0$.
+And so the ground state of the system needs to form a representation of this
+algebra,
+and every representation of this algebra needs to have an integer multiple of
+$k$ and so the minimal representation is $k$-dimensional.
+So we must have at least $k$ dimensional Hilbert space.
+
+And we can pick a basis for these Wilson loops to act.
+And you can check that this action with the states is compatible with the
+algebra.
+\begin{align}
+    W_2\ket{n} &=
+    \ket{n + 1 \mod k}\\
+    W_1 \ket{n} &=
+    e^{2\pi i/k}\ket{n}
+\end{align}
+What this means is that these particles have fractional statistics.
+You can think of these Wilson loops describing particles of charge 1 moving
+around the loop $\gamma$.
+If I create a particle and its antiparticle,
+moving them around a loop and annihilate.
+That they don't commute with each other in different loops implies that these
+particles carry fractional statistics.
+
+\begin{question}
+    Does this group have a name?
+\end{question}
+Yes. I think this group is called the Heisenberg group.
