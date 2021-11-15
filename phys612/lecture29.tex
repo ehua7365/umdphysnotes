@@ -1,0 +1,293 @@
+\section{Ideal Fermi Gas}
+The potential is
+\begin{align}
+    \Omega\left( T, V, \mu \right)
+    &=
+    -k _B T g
+    \int \frac{d^3k}{\left( 2\pi \right)^3}
+    \ln\left[ 
+    1
+    +
+    e^{-\beta\left( E_k - \mu \right)}
+    \right]
+\end{align}
+so the density is
+\begin{align}
+    \frac{N}{V}
+    &=
+    -\frac{\partial}{\partial \mu}
+    \Omega\\
+    &=
+    g \int \frac{d^3k}{\left( 2\pi \right)^3}
+    \underbrace{\frac{1}{e^{\beta\left( E_k - \mu \right)} + 1}}_{n(k)}
+\end{align}
+so the energy density is
+\begin{align}
+    \frac{E}{V} &=
+    g \int \frac{d^3k}{\left( 2\pi \right)^3}
+    \frac{E_k}{e^{\beta\left( E_k - \mu \right)} + 1}
+\end{align}
+The Sommerfeld expansion is in $T/T_F$.
+\begin{align}
+    \int_{0}^{\infty} \, n(k) k^{2\alpha}
+    &= I(\alpha)\\
+    &=
+    \left( \frac{2m}{\hbar^2} \right)^{\alpha - \frac{1}{2}}
+    \frac{m}{\hbar^2}
+    \int_{0}^{\infty} dE\,
+    n(E) E^{\alpha - \frac{1}{2}}
+\end{align}
+and recalling
+\begin{align}
+    E &=
+    \frac{\hbar^2 k^2}{2m}
+\end{align}
+and
+\begin{align}
+    dE &=
+    \frac{\hbar^2 k}{m}dk
+\end{align}
+we get
+\begin{align}
+    \int_{0}^{\infty} dE\, n(E)
+    E^{\alpha - \frac{1}{2}}
+    &=
+    n(E)
+    \left.
+    \frac{E^{\alpha - \frac{1}{2}}}{\alpha + \frac{1}{2}}
+    \right|_{0}^{\infty}
+    -
+    \int_{0}^{\infty} dE\,
+    E^{\alpha + \frac{1}{2}}
+    \frac{dn(E)}{dE}\\
+    &=
+    -\beta \int_{0}^{\infty}\left[ 
+    \mu^{\alpha + \frac{1}{2}}
+    +
+    \frac{E - \mu}{\beta}
+    \mu^{\alpha + \frac{1}{2}}
+    +
+    \frac{\left( E - \mu \right)^2}{2\beta^2}
+    \mu^{\alpha - \frac{1}{2}}
+    \left( \alpha + \frac{1}{2} \right)
+    \left( \alpha - \frac{1}{2} \right)
+    +
+    \cdots
+    \right]
+    \frac{e^{\beta\left( E - \mu \right)}}{
+    \left( e^{\beta\left( E - \mu \right)} + 1 \right)^2
+    }\\
+    &=
+    \frac{1}{\alpha + \frac{1}{2}}
+    \int_{-\beta \mu}^{\infty} dx\,
+    \left[ 
+    \mu^{\alpha + \frac{1}{2}}
+    +
+    \mu^{\alpha - \frac{1}{2}}
+    \left( \alpha + \frac{1}{2} \right)
+    x
+    +
+    \frac{\mu^{\alpha - \frac{1}{2}}}{2\beta^2}
+    \left( \alpha + \frac{1}{2} \right)
+    \left( \alpha - \frac{1}{2} \right)
+    x^2
+    +
+    \cdots
+    \right]
+    \frac{e^{x}}{\left( e^x + 1 \right)^2}
+\end{align}
+where we have defined $x = \beta\left( E - \mu \right)$.
+Then you can use the fact that
+\begin{align}
+    \int_{-\inty}^{\infty} dx\,
+    \frac{x^n e^x}{\left( e^x + 1 \right)^2} = 0
+\end{align}
+for odd $n$
+and
+\begin{align}
+    \int_{-\infty}^{\infty} dx\,
+    \frac{x^{n} e^x}{\left( e^x + 1 \right)^2}
+    =
+    \begin{cases}
+        1 & \text{if } n = 0\\
+        \frac{\pi^2}{3} & \text{if } n = 2\\
+        \vdots
+    \end{cases}
+\end{align}
+Sommerfeld was probably the greatest physicist of his age,
+with Heisenberg and Pauli,
+all people of the same caliber.
+They were just good at it.
+The circle around him,
+he was good,
+prominent,
+knew what the latest thing was.
+People around him were at the forefront of science.
+But he was an old man like myself.
+Great physicists,
+but other his best years when QM came around.
+So his students got famous.
+Different from today.
+These days if you discover,
+your advisor gets famous.
+Generous man,
+etc.
+He wrote books,
+one of them studied the picture of atoms,
+using not quantum mechanics,
+but using old Bohr quantum theory.
+So he did things,
+like relativistic corrections of the helium atom
+wrote a book this thick.
+By the time his book had finished,
+his student Heisenberg invented quantum mechanics,
+and found a correct way to calculate these things.
+There's no translation into English because it's irrelevant,
+but it's funny to see written in German.
+HE wrote pedagogical books,
+on electromagnetism, and stuff like that,
+more or less the level of this class.
+They're still readable today 100 years later.
+You can get it from the library,
+there's little development after that.
+
+This is something for you to do at home.
+Before we found that
+\begin{align}
+    N &\propto
+    g V
+    \frac{k_F^2}{6\pi^2}
+\end{align}
+and this is just at shorthand
+\begin{align}
+    k_F &= \sqrt{2M \mu}
+\end{align}
+But now we have a correction to this
+\begin{align}
+    N &\propto
+    g V
+    \frac{k_F^2}{6\pi^2}
+    \left[ 
+    1
+    +
+    \pi^2
+    \left( \frac{k_B T}{\mu} \right)^2
+    + \cdots
+    \right]
+\end{align}
+This is hard to invert to get $\mu$ as a function of $N$.
+People in my class are smart.
+They understand that this is an approximation,
+so this is valid only if this term is much smaller than that,
+and $\mu$ is approximately given by this.
+There's no point in getting the exact $\mu$ here,
+the corrections are higher order terms.
+You can exercise this in the homework.
+You're going to invert it perturbatively.
+Same thing for the other expressions.
+\begin{align}
+    E &=
+    gV
+    \frac{\hbar^2}{2m}
+    k_F^5
+    \frac{2^{3/2}}{5\pi^2}
+    \left[ 
+    1
+    +
+    5\pi^2
+    \left( \frac{k_B T}{\mu} \right)^2
+    +
+    \cdots
+    \right]
+\end{align}
+A little physical interpretation here would be good.
+
+One more thing.
+The specific heat at fixed volume.
+\begin{align}
+    c_V &=
+    \frac{1}{N}
+    \left.
+    \frac{\partial E}{\partial T}
+    \right|_{V,N}\\
+    &\approx
+    \frac{\pi^2}{2} \frac{k_B T}{T_F}
+    + \cdots
+\end{align}
+Remember the specific heat of a classical ideal gas.
+It was a constant?
+
+With phonons?
+It was $T^3$.
+
+You might say of course,
+because you can calculate in your head.
+Do you know where the powers of $T$ come from?
+
+What about black body?
+Same thing,
+because phonons and photons are like the same thing.
+
+But Fermi gas has different behaviour.
+It goes to zero at zero temperature,
+unlike a classical gas.
+
+So imagine a Fermi surface with radius $k_F$.
+At zero temperature,
+you fill up every level up to $k_F = \sqrt{2m\mu}$.
+But what happens at finite temperature?
+
+Now consider increasing the temperature by a little bit.
+The distribution $n(k)$ goes from a sharp step function
+to a smooth step.
+I created a hole and a particle.
+That is called a particle and hole.
+
+The low-lying corresponds to this particle-hole excitation.
+Take the energy of the Fermi surface and increase it slightly.
+
+But particles deep in the Fermi surface,
+cannot increase their energy by a lot,
+they don't contribute much to the partition function.
+Only states that are relatively close to the Fermi surface are going to be
+promoted or excited.
+So I'm going after the region around the Fermi surface,
+where the occupation number if neither zero or 1.
+
+The radius of this sphere,
+let's calculate the volume of this spherical shell in momentum space.
+Do you think the radius is going to be $\sim k_F^2 k_B T$?
+No,
+not really.
+The correction to the energy is order $(k_BT/\mu^2$,
+so this thickness is not proportional to $k_BT$,
+but proportional to $(k_B T)^2$.
+
+So the thickness of this region is 0
+for zero temperature,
+but it's proportional to $(k_B T)^2$
+for small finite temperature.
+
+At small temperature,
+the excitations are particle-hole excitations,
+and the thickness of the Fermi surface region is quadratic.
+
+One way to think about why it's quadratic,
+you can think of the step smoothing out,
+because the particle part and the hole part cancel out to first order
+and you're left with
+
+Years later the only thing you'll remember is that the Fermi surface is fuzzy at
+finite temperature and its thickness is going to be proportional to $T^2$.
+\begin{align}
+    E &\approx
+    E_{T=0}
+    +
+    \#
+    k_F^2 (k_BT)^2
+\end{align}
+
+We have a month of class left.
+The syllabus is crazy.
+It looks like most of you survived so far.
+Pat yourself on the back a little bit.
