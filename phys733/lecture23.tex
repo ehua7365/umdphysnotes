@@ -1,0 +1,830 @@
+Please do your homework.
+\section{U(1) Chern-Simons theory}
+Last there were $|k|^g$ states on genus $g$ surface.
+We also figured out we have these loop operators
+\begin{align}
+    W_\gamma
+    &=
+    e^{i\oint_\gamma a\cdot dl}
+\end{align}
+and if you're on a torus,
+we have loops going in two directions,
+which I just called 1 and 2.
+And you find that
+\begin{align}
+    W_1 W_2 &=
+    W_2 W_1 e^{-2\pi i/k}
+\end{align}
+What this means is that you can consider a basis of states where one of them is
+diagonal
+\begin{align}
+    W_2 \ket{n}
+    &=
+    e^{2\pi in/k} \ket{n}
+\end{align}
+and the other one acts like a clock operator that shifts $n$ by 1.
+\begin{align}
+    W_1\ket{n}
+    &=
+    \ket{n + 1\mid k}
+\end{align}
+That there are $k$ ground states,
+is related to the fact that around a given loop there are $k$ distinct
+operators.
+
+So that $k$ states on a torus is directly related to the fact that there are $k$
+distinct Wilson loop operators along a given curve $\gamma$.
+When I write a loop operator for a curve $\gamma$,
+I can consider a charge $\ell$ particle going around a loop.
+\begin{align}
+    W_\gamma^{\ell}
+    &=
+    e^{i\ell \oint_\gamma a\cdot dl}
+\end{align}
+and furthermore this acts like the identity on the Hilbert space.
+\begin{align}
+    W_\gamma^k &= \mathbf{1}
+\end{align}
+For example, if I consider $W_1^k$,
+it's going to make the phase go away.
+Hence the distinct values of $\ell$ are $\ell=0,\ldots, k-1$.
+
+From the condensed matter perspective,
+there are $k$ topologically distinct types of particles.
+And these $k$ distinct types of particles are what we call anyons in the system.
+
+So far because we're working entirely in CS theory,
+I haven't defined what topologically distinct,
+but in CS theory,
+it just means there are $k$ Wilson loop operators that act non-trivially on your
+subspace.
+
+\begin{question}
+    This is difeernt from $k$ speciies of particles.
+    This seems strange?
+\end{question}
+The way to thik about this is imagine some physical system described by CS
+theory at long wave lengths.
+There are $k$ distinct ground staes.
+Thew ay to go from one ground state to anohter,
+you create a quasiparticle, and a quasihole,
+take one around the torus,
+and annihliiate them.
+If it is trivial,
+such an operation has no effect no the ground state.
+The corresponding Wilson loop should act in the ground state subspace.
+
+
+\begin{question}
+    There are $k$ ground states?
+\end{question}
+In the CS hteory,
+there are only $k$ states.
+In CS-Maxwell,
+we have $k$ ground states and a gap to other states.
+There's a ground state sector described by CS and then excitations above a gap.
+there are infinitely many excitations that take you from the ground state to
+anexcited state,
+but they can be classified by topological operators
+to make equivalence classes.
+The topological operators are Wilson loops.
+
+\begin{question}
+Should we say there are $k$ different particeles?
+\end{question}
+I would say htere are $k$ ddistinct particles.
+each are $k$ inequivalent types of paritcles,
+But there is a single generator,
+and elementary particle.
+
+\begin{question}
+    Discrete translation for mangetic field.
+    Is htere an analogy for magnetic flux?
+\end{question}
+If you start with CS-Maxwell theory,
+your Lagrangian would be
+\begin{align}
+    \mathcal{L}
+    &=
+    \frac{k}{4\pi}a\, da
+    -
+    \frac{1}{4g^2}f^2
+\end{align}
+If you look at the ground state sector,
+you can define
+\begin{align}
+    X_i \propto \int d^2x \, a_i
+\end{align}
+but then you fnid the Lagrangian winds up looking like
+\begin{align}
+    L &=
+    X_1 \dot{X}_2
+    -
+    \frac{m^2}{2}\left( 
+    \dot{x}_1^2
+    + \dot{x}_2^2
+    \right)
+\end{align}
+which is literally a particle in a magnetic field.
+You can think of the particle as a zero mode of the gauge field.
+that makes the more specific connection.
+
+When you go to fractional quantum Hall,
+the translatioanl symmetry in FQHE has the same effect.
+Translation symmetry acts the same way as Wilson loops act.
+There's a deep connection there.
+
+
+\begin{question}
+    What was the motivaiton for WL?
+\end{question}
+When you have a gauge theory,
+the natural thing to talk a bout his lop operaotrs.
+One way to think is
+suppose you hvae some action $S(a)$ for your gauge theoyr,
+you could always add a term for some exeternal source current
+\begin{align}
+    S(a) + a_\mu j^\mu
+\end{align}
+So if I take my path integral,
+I could always add a term here for some source current $j^\mu$,
+\begin{align}
+    \int \mathcal{D}a\,
+    e^{i S(a)}
+    \left( 
+    e^{a_\mu j^\mu}
+    \right)
+\end{align}
+some external source yo put in yoru system.
+If this $j$ describes a paritcle travelling around,
+this is literally the Wilson loop.
+You could write the charge
+\begin{align}
+    j^0 &= \delta(\vec{x} - \vec{x}_*(t))
+\end{align}
+and then the current would be
+\begin{align}
+    j^i &= \frac{dx_*'}{dt} \delta^{(3)}(\vec{x} - \vec{x}_*(t))
+\end{align}
+So it describes a particle travelling in a loop.
+And then if you write the integral,
+that just becomes a loop integral on a curvve.
+
+So the loop operator coresponds ot inserting a source in the current.
+
+\begin{question}
+    With this source current,
+    that allows you todistinguish these staes?
+\end{question}
+Every time you hvae agauge thoery,
+Wilson loops are a natural thing.
+What we find ni CS theory,
+we have a degenerate set of states.
+If we're on a torus,
+taking a paritcle around a loop 
+either shifts the state or measures which state we're in.
+
+Suppose you fix your state to be an eigenvalue,
+you can insert your loop in hte other direction adn shuffle your states.
+There's a deep connection betwen the number of distinct typeso f apritcles you
+have and the number of ground states on your torus.
+The number of ground states on your torus is equal to the number of
+topologically distinct types of particles.
+
+I havne't given you a general proof,
+but we've seen it play out.
+
+\begin{question}
+    So each of these loops,
+    were you able to?
+\end{question}
+If I loop athte Wilson loops,
+I have $W_\gamma^{\ell} = e^{i\ell \oint_\gamma a\cdot dl}$
+I have charge $\ell$.
+And if I put $\ell=k$,
+I get the trivial operation.
+
+Now the fact that those Wlison loops have this non-trivial algebra,
+you can infer that hte associated particls that go around these trajectories
+have fracitonal statsitcs.
+
+Imagine that my gournd stae is a on a torus.
+
+SUppose I apply a Wilson loop operator for this guy,
+then another one.
+
+Suppose I do it in an oppsoite order,
+and we know the phase idfferenece is $e^{2\pi i/k}$.
+So if one particle goes aroudn another loop,
+I get a phse $e^{2\pi i/k}$ relative to unlinked.
+
+We can see this more precisely in the following way by looking at the equation
+of motion.
+From the equation of motion,
+we have
+\begin{align}
+    j^0 &=
+    \frac{\delta S}{\delta a_0}
+    \\
+    &=
+    \frac{k}{2\pi}
+    \underbrace{\left( \partial_1 a_2 - \partial_2 a_1 \right)}_{b}
+\end{align}
+which is just hte magnetic field inthe parentheses
+\begin{align}
+    b &= \frac{2\pi}{k}j^0
+\end{align}
+This tells us a charge 1 particle carries flux $2\pi/k$.
+Because magnetic field is bound ot particle density iwth coefficeitn $2\pi/k$.
+If you introduce a paritcle of charge $1$,
+the CS term is that it dresses the particle with flux.
+A particle with charge 1 is dressed wiht flux $2\pi /k$.
+The CS theory binds flux to the charge.
+That's the ssense of CS theory.
+Now e see fracitonal statitcs.
+
+SUpoose I have another paritcle of chagge 1 and also $2\pi/k$ flus.
+I have charge going around flux,
+so I have Aaronov-Bohm phase.
+The phase for braiding this round another is going to be
+\begin{align}
+    e^{i2\pi/k}
+\end{align}
+Naively you should expect $e^{2\cdot 2\pi i/k}$,
+but it turns out it's half of what you naively expect if you go through the
+subtle calculations of CS theory.
+Let me sketch how to do that calculation.
+Let's go through the CS calculation of the fractional statistics.
+
+Consider the manifold $M^3 = S^3$.
+Consider the expectation of product of Wilson loop operators
+\begin{align}
+    \left\langle
+    W_{\gamma_1}^{\ell_1}
+    W_{\gamma_2}^{\ell_2}
+    \cdots
+    W_{\gamma_n}^{\ell_n}
+    \right\rangle
+    &=
+    \int \mathcal{D} a\,
+    e^{i S_{CS}(a)}
+    e^{i
+    \sum_\alpha \ell_\alpha \oint_{\gamma_\alpha} a\cdot dl
+    }
+\end{align}
+Suppose I have some complicated knot that is $\gamma_1$,
+and $\gamma_2$ is knotted and linked with it in some complicatd way.
+Just as I mentioned Wilson loops corresponding to source current,
+whatwe have is that the 
+$ e^{i \sum_\alpha \ell_\alpha \oint_{\gamma_\alpha} a\cdot dl }$
+is like adding an external source current.
+
+So we can write our Lagrangian as
+\begin{align}
+    \mathcal{L} &=
+    \frac{k}{4\pi} a_\mu \partial_\nu a_\lambda \epsilon^{\mu\nu\lambda}
+    +
+    a_\mu j^\mu
+\end{align}
+where the current is
+\begin{align}
+    j^\mu &=
+    \sum_{\alpha} \ell_\alpha j_{\alpha}^{\mu}
+\end{align}
+and then the charge density part is just a particle
+\begin{align}
+    j_{\alpha}^{\mu}
+    &=
+    \delta^{(3)}\left( 
+    \vec{x} - \vec{x}_{\alpha}(t)
+    \right)
+\end{align}
+and the current
+\begin{align}
+    j_\alpha^i
+    &=
+    \frac{dx_\alpha^i}{dt}
+    \delta^{(3)}\left( 
+    \vec{x} - \vec{x}_{\alpha}(t)
+    \right)
+\end{align}
+
+In order to understand how braiding gives fractional phases,
+we need to calculatine this espcation vuae.
+Therea re two ways to think about how you'd calcaulte the epectaiotn vlaue.
+One is that this is a Gaussian integral,
+the actoin is quadratic in hte fh field.
+You could literally integrate out.
+
+A slighly different way is to solve hte classical equation of motino
+and plug that back in.
+It works because this is a Gaussian integral.
+
+To calculate the expectaiton vlaue,
+solve hte quation of motion
+\begin{align}
+    \frac{\partial S}{\delta a_\mu}
+\end{align}
+which implies
+\begin{align}
+    \frac{k}{2\pi} e^{\mu\nu\lambda} \partial_\nu a_\lambda = -j^\mu
+\end{align}
+Imagine we solve for the classical solution $a^{cl}$ and plug that back into the
+action.
+Then substitutling it into the action,
+\begin{align}
+    S\left( a^{cl} \right)
+    &=
+    \int \left( 
+    \frac{k}{4\pi} a^{cl} da^{cl} 
+    + a^{cl}\cdot j
+    \right)\\
+    &=
+    \int\left( 
+    -\frac{1}{2} a^{cl} j
+    + a^{cl}\cdot j
+    \right)\\
+    &=
+    \int \frac{1}{2} a^{cl}\cdot j
+\end{align}
+where I'm using a shorthand to avoid writing the $\epsilon$.
+And so then
+\begin{align}
+    \left\langle
+    \prod_{\alpha} W_{\gamma_\alpha}^{\ell_\alpha}
+    \right\rangle
+    &=
+    \mathcal{N}
+    e^{-i \frac{k}{4\pi} \int a^{cl} \, da^{cl}}\\
+    &=
+    \mathcal{N}
+    e^{i\frac{1}{2}\int a^{cl}\cdot j}
+\end{align}
+
+\begin{question}
+    Does the Wilson loops not commuting matter in the ordering?
+\end{question}
+We can just define the expecation value using this.
+The fact we're on $S^3$ also simplifies the situation,
+as the only thing to talk about is hte linkingof the loops.
+
+
+\begin{question}
+    There should be some paht ordering in order to define the linking?
+\end{question}
+Usually a Wilson loop is defined like this,
+but it only matters if it's a non-abelian gague field.
+\begin{align}
+    W &= \mathcal{P} e^{i\oint a\cdot dl}
+\end{align}
+Path ordering only shows up for non-Abelian things.
+Here we're working on $S^3$,
+so there are no non-contractible cycles where things don't commute.
+T could have just written
+\begin{align}
+    \left\langle
+    W_{\gamma_1}^{\ell_1}
+    W_{\gamma_2}^{\ell_2}
+    \cdots
+    W_{\gamma_n}^{\ell_n}
+    \right\rangle
+    &=
+    \int \mathcal{D} a\,
+    e^{i S_{CS}(a)}
+    \prod_{\alpha}
+    e^{i
+    \ell_\alpha \oint_{\gamma_\alpha} a\cdot dl
+    }
+\end{align}
+and these are just phases.
+
+\begin{question}
+    How to do you classify a systme of knotted loops.
+    Does that mean I just consider the knots and evaluate thep ahte integral?
+\end{question}
+That was Witten's point.
+Even before Witten,
+people know you get linking numbers of loops when you calculate these ntegarls.
+Witten did this for non-Abelian CS theory,
+and show the corresponding expectation value
+evaluates the Jones polynomial of the knot,
+which si asophisticated knot invariatn mathematicains had invented earlier.
+there was no intrinsic 3D version.
+He won a Fields medal.
+
+\begin{question}
+    If w'ere on a sphere,
+    toologically there's no difference betwen a path that takes you around the
+    north pole and a path that doesn't take you aroud the north pole.
+\end{question}
+You're getting confusing it with $S^2$.
+We're in $S^3$.
+You're right htere is a configuation in $S^2$,
+but this configuration cannot happen
+because a chage 1 particle has flux $2\pi /k$.
+So htere has to be $k$ of them.
+
+\begin{question}
+    Does $k$ has to be even?
+\end{question}
+No I don't think $k$ being even is needed.
+
+\begin{question}
+    Is there a physical reason tht he charge around the fluxes is not twice?
+\end{question}
+No,
+I don't have a good reason for that excpt that's what CS theory gives.
+If you have some lattice model,
+like $\mathbb{Z}^n$ toric code state,
+you would get stuff consitstent with CS theory.
+Our intuitition comes for Maxwell,
+and this is CS theory,
+whici s difernet.
+
+\begin{question}
+    For 2D,
+    we sometimes impose $\pI$ flux on particles,
+    which makes paritcles go from boson to fermions,
+    but in this case hte full braidig braiding is trivial.
+    If I take $k=2$,
+    the full braiding is $e^{i\pi}$.
+\end{question}
+But that describes semions,
+not fermions.
+
+I might put this in your homework and guide you through it,
+but the result is that you get hte Gauss linking number,
+meaning htat this expectaiton vlaue of curves is equal
+up to to smoe overall normalization
+\begin{align}
+    \left\langle
+    \prod_{\alpha} W_{\gamma_\alpha}^{\ell_\alpha}
+    \right\rangle
+    &=
+    \mathcal{N}
+    e^{\frac{2\pi i}{2k}
+    \sum_{\alpha,\beta}
+    \ell_\alpha \ell_\beta
+    L\left( \gamma_\alpha, \gamma_\beta \right)
+    }
+\end{align}
+where the Gauss linking number is defined by
+\begin{align}
+    L\left( \gamma_\alpha, \gamma_{\beta} \right)
+    &:=
+    \frac{1}{4\pi}
+    \int_{\gamma_\alpha} dx^{\mu}
+    \int_{\gamma_\beta} dy^{\nu}
+    \epsilon^{\mu\nu\lambda}
+    \frac{x^\lambda - y^\lambda}{|x - y|^3}
+\end{align}
+and this means unlinking loops gives you a $e^{2\pi i/k}$ phase,
+which si what we mean by fractional statistics.
+
+But there's a problem,
+when $\alpha=\beta$,
+this is not well-defined,
+because $x=y$ and it blows up,
+so it doesn't make sens for the diagonal piece,
+the self-linking.
+CS theory gave us something we can't make sense of.
+When ever you find infinities in QFT,
+you try to get a well-defined ansewr by regularizing hte theory in some way.
+
+In this case,
+there is self-linking $L(\gamma_\alpha, \gamma_\beta)$ is ill-defined.
+So to regularize,
+introduce framing of the loop.
+Framing means you consider it as a ribbon instead of just a string.
+You have $\gamma$ and then you have $\gamma'$ that is infintetsminally pushed
+off from the original $\gamma$.
+You have a world-line as a ribbon,
+then the self-linking is the linking between $\gamma$ and $\gamma'$.
+In general,
+it's completely arbitrary how I define this framing.
+I could have chosen a different framing.
+
+I could have made the ribbon twist around,
+and I would get a differnt number.
+So the ansewr is ambigiuos until I pick a framing,
+and we know how the resutl changes when we change the framing.
+So it is well-defined how it changes under changes of framing.
+The point is that the flat ribbon is related ot the one-twist ribbon
+by a fator of $e^{\frac{2\pi i}{2k}}$.
+
+It's only well-defined if we pick a framing,
+which is arbitrary,
+but we can clacualte how te expecation vlaues chnage under framing changes.
+
+\begin{question}
+    Is it depednent on the overall framing on the manifold?
+\end{question}
+No, it's independent of hte overall framing.
+
+Why does it have to be a ribbon?
+If I had a particle,
+it doesn't makesense to talk about it spinning aorund ont itself..
+But if it's a ribbon,
+you have an arrow spniing around.
+You have charge and flux
+in CS thery,
+so your particle has a little arrow,
+and you can then talk about how the arrow twists around by $2\pi$.
+We talked about topological spin.
+
+We can write
+\begin{align}
+    e^{\frac{2\pi i}{2k}}
+    = e^{2\pi i h_1}
+\end{align}
+so we can define
+$h_1 = \frac{1}{2k}$ as topological spin,
+or more generally
+\begin{align}
+    h_\ell
+    =
+    \frac{\ell^2}{2k}
+\end{align}
+
+The idea is to think of a ribbon instead of a loop.
+If you had a ribbon,
+but the ribbon is in a loop,
+then you can't actually smoothly deforma framing.
+You owuld have to cut it,
+twist it,
+and glue it back.
+It's nota global property of the loop.
+
+\begin{question}
+    How do we change the linking number as we change the framing?
+\end{question}
+The point is the framing was wa choice.
+Imagine two lops with different fraings.
+Then what is the hange in the path ingerals if I consider the two lops in
+didfetn frames.
+It's just $e^{\frac{2\pi i}{2k}}$ phase difference.
+
+\begin{question}
+    The difference comes even looknig at self-linking.
+\end{question}
+yes,
+otherwise the off-diagonal terms are linking diferent loops,
+and the selflonking wouldn't matter at all.
+
+\begin{question}
+    This almost seems like picking up an arbitrayr numbe fo reach diagonal term,
+    so we just pick a finite linking nubmer?
+\end{question}
+Yes,
+but the point is we have rules for how that number changes under hcange of
+framing.
+Wihtout hte rule,
+this would be meaningless.
+that this does havea rule means we can make sense.
+
+\begin{question}
+    What did you mean by topological spin?
+\end{question}
+I just meant whatehr comes in hte exponent.
+The change ni phase under change in framing si topological spin.
+It's $\ell^2$ because there is the $\ell_\alpha \ell_\beta$.
+I implicitly assumed it was a charge 1 wilson loop,
+but if it was carge $\ell$ it's $\ell^2$.
+
+\begin{question}
+    Whatis the physcial relvance of framing?
+    Why not just set it all to zero and not care?
+\end{question}
+Suppose I can just ermove al hte idagonal terms.
+The problem is that htins wouldn't relaly make sense.
+The point of this thing is that these phases are important.
+They contain important physics.
+One way of undersatndin the physics is that these spins show up in a log of
+idffertn eways.
+One way they show up for example,
+is suppose I hae torus and I take awilson lop of a particle thoruhg here.
+I can do certain mapping class group operations,
+such as Dane twists,
+which you can think of cutting hte manifold alnog a cycle,
+twisting it by $2\pi$,
+and clugin it back together.
+Thati s the same a changing the framing by 1.
+thew ay the ground state changes under mapping clas group actions
+is these charges.
+The naive thing of forgettigng about them will fail to reproduce a lot of
+physics in systems that do show up.
+The point is there's something smarter you can do than just setting htem to
+zero.
+The point is ther is a way to regularie them.
+
+\begin{question}
+    What is hte physical meaning of Wilson loops in physical space?
+\end{question}
+You mean these $h_\ell$'s?
+These $h$s were from changing the framing of Wilson loops.
+they were not well defined,
+but we need to choose a framing,
+and there are many,
+but they are related to geter by the phase.
+
+\begin{question}
+    This framing and expectation values of Wilson loops?
+\end{question}
+Suppose I have a state where I have some particles at various places.
+Then I have that evole to another state.
+then they go around in some braid.
+The fact htese particle have factoinal statistics means
+that if I have my initial state and pply a stransmtation $U$,
+the point is I get some phases,
+which gives me my final state.
+\begin{align}
+    U\ket{\psi_{in}}
+    &=
+    e^{i \cdots}
+    \ket{\psi_{in}}
+    =
+    \ket{\psi_{final}}
+\end{align}
+These phaes are essentially given by these kinds of expecatation values.c
+In this case,
+consider $M^3=\mathbb{R}^2\times I$.
+That causes all these particles to braid around each other.
+If I take the inner product,
+that essentially becomes an execation vlaueof Wilson loops.
+\begin{align}
+    \bra{\psi_{in}}U\ket{\psi_{in}}
+\end{align}
+If I thiknk of time as periodic,
+this guy would be the expeation of these loops knotted in some way.
+Physicaly it corespnods to the evoution of quazparticles moving aorund in space
+and time and what phases you get.
+
+\begin{question}
+    If you're chosing some framing to calcualte expecation value,
+    where is the comparison between these framings that inttoduces these phases.
+\end{question}
+When you write down this $W$,
+I need to implicitly specifiy the $\gamma_\alpha'$ the shifted version.
+For every $\gamma$ you need to tell me what he shiftd version is like,
+and then we know the value of the expectaion value.
+We would also know how differnt shiftings would relate to the orignial $\gamma$.
+
+\begin{question}
+    What's the situation you would comapre thse to?
+\end{question}
+You might be interested ina situation where you're intested in some evoultion
+wherethe patricles evolv like this,
+but you want o compare to a situatio where the paritcles eolve like this
+(pictures with braidings).
+In a sense you're asking what hte application is.
+I feel like we'll see it when we get there.
+One applicatoin isin that Dane twist picture.
+If I have a paicle sittin on the plane,
+I can imagine that the particle twists as it evovles in time,
+relative to not twisting in time,
+and you want to know hwath e phase idffernece is.
+
+\begin{question}
+    Isn't htat depending in hte framing you choose,
+    how do you standadaris it?
+\end{question}
+In whatI was tlaking about,
+imagine some evolution of your system that corespond to this (not doing
+anything).
+Then theren's another eovlution where you twist the space around.
+Ify ou compare it to that,
+if your system was evolging,
+you would get smoe transition amplitud e from intial tofinal.
+Insteado f donig that,youhave your system evolving,
+rotate space by $2\pi$. and then come back to where you started.
+Comapring htse two situatinos,
+I get exaclty the same thing up to some phase,
+the topological spinn.
+
+In QFt we have the spin-statistics theorem.
+It turns out
+if I have some paticle that spins aorund on itself,
+relative to not hvaing spun around itself,
+we get this topological spin $e^{2\pi ih}$.
+Another way to think about htis picture is what happend?
+A particle was going here,
+particle and antiparitcle got eated ot of vacuum,
+then they sexhcnaged.
+So three is  deep relation with exchange statsitics.
+Thsi $e^{2\pi i h}$ is also the exchanges tatistcs
+becasue of the spin statistics theorem.
+This topological spin just tells us what hte exchange statistics is.
+If I have two fermiosn,
+spinnig it aorund should give $-1$,
+which is the same as exchanging them.
+
+Here I have a phase of $e^{i2\pi/k}$
+but if I exchange them I also get $e^{i2\pi /k}$.
+
+\section{Global U(1) symmetry}
+This CS thoery has global U(1) symetry,
+which si not to be confused with the gauge symetry that defines the teory.
+We have a U(1) gauge fidl $a$ which is dynamical.
+We can introduce particles that are charged under $a$,
+which describes a conserved current $j$.
+Then we can write down
+\begin{align}
+    \mathcal{L}
+    &=
+    \mathcal{L}_{CS}
+    + a_\mu j^\mu
+\end{align}
+For example,
+you could couple it to a scalar field,
+\begin{align}
+    \mathcal{L}
+    &=
+    \frac{k}{4\pi} a\, da
+    +
+    |\left( \partial + ia \right)\phi|^2
+\end{align}
+and this term would contain a $j\cdot a$ term,
+where $j$ is the curretn of thse $\phi$ particles.
+
+But there's another conserved cucrent beyond any kind of particle you cna couple
+with $a$.
+You have a conserved current
+\begin{align}
+    J^\mu &=
+    \frac{1}{2\pi}
+    \epsilon^{\mu\nu\lambda}
+    \partial_\nu a_\lambda
+\end{align}
+with $\partial_\mu J^\mu = 0$.
+We can write out the components
+\begin{align}
+    J^0 &= \frac{1}{2\pi}
+\end{align}
+the magnetic field and the eltric cfiel
+\begin{align}
+    J^1 &\propto \frac{1}{2\pi}e^2\\
+    J^2 &\propto \frac{1}{2\pi} e^1
+\end{align}
+Flux of $a$ describes  conserved current.
+$J^\mu$ is a conserved cucfrent for flux $a$.
+
+This isa ddep thing for $(2+1)D$ in genreal.
+Any time you have some theory iwhta glboal U(1) symmetry,,,
+you can write down the symmetry for hatt ocnsierved *(1)
+and yu can ``dualize'' it and get a conserved U(1) current,
+and that is something deep I can discuss more if we have time.
+
+So this conserved current for flux,
+you can think of as dual to current of charges of $a$.
+
+\begin{question}
+    Is this statment true for arbitrary 2D manifolds or just $\mathbb{R}^2$.
+\end{question}
+I think it should be true in teeral.
+
+We can couple a conserved U(1) current to a background U(1) gauge field.
+You can couple the global U(1) to a background U(1) gauge field $A$.
+So you can write a Lagrangian
+\begin{align}
+    \mathcal{L} &=
+    \frac{k}{4\pi}\epsilon^{\mu\nu\lambda} a_\mu \partial_\nu a_\lambda
+    +
+    \underbrace{
+    \frac{q}{2\pi}\epsilon^{\mu\nu\lambda} A_\mu \partial_\nu a_\lambda
+    }_{
+    a\cdot A_\mu J^\mu
+    }
+\end{align}
+and here $a$ would be a dynmical U(1)
+but $A$ is a fixed static $U(1)$ field.
+And $q$ is a new parameter that tells us how to couple this with the global U(1)
+symmetry.
+
+
+Once consequence of this is that when we go back to the non-trivla particls of
+the original theory,
+those trivial particels which were associated with $2\pi/k$ flux of $a$,
+but now we see those particles also carry a fractional charge under the
+background $A$.
+we can write down the current.
+You can stare at it and find
+\begin{align}
+    J^0 &=
+    \frac{\delta \mathcal{L}}{\delta A_0}
+    =
+    \frac{q}{2\pi}b
+\end{align}
+which means that $2\pi/k$ flux of $a$ has charge 
+\begin{align}
+    Q_{2\pi/k} = q/k
+\end{align}
+So putting it togethe.
+If I have a particle that has cahrge $\ell$ under $a$,
+then htere will be a flux $2\pi \ell / k$
+of $a$,
+which gives a charge of
+\begin{align}
+    Q &=
+    \frac{q\ell }{k}
+\end{align}
+so these have fractional statistics but also fractional charge.
