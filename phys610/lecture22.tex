@@ -1,0 +1,381 @@
+\section{Uniqueness of Solutions to Laplace equation}
+Assume 2 solutions $\phi_1$ and $\phi_2$ with
+$\phi_2\ne \phi_1$.
+$\phi_1,\phi_2$ satisfy some boundary conditions,
+Dirichlet or Neumann
+$\vec{\nabla}\cdot\hat{n}$.
+
+Consider $U=\phi_2 - \phi_1$.
+We know $\nabla^2 U=0$ so
+\begin{align}
+    \int d^3x\,
+    \underbrace{
+    U \nabla^2 U
+    }_{
+    \vec{\nabla}\cdot\left( U\vec{\nabla} U \right)
+    -
+    \left( \vec{\nabla} U \right)^2
+    }
+    &=0\\
+\end{align}
+which implies
+\begin{align}
+    \int_V d^3x\,
+    |\vec{\nabla} U|^2
+    &=
+    \underbrace{
+    \int_V d^3x\, \vec{\nabla}\cdot\left( U\vec{\nabla}U \right)
+    }_{
+    \oint_S dS\, U\left( \vec{n}\cdot\vec{\nabla}U \right)
+    }
+\end{align}
+hence
+\begin{align}
+    \int_V d^3x\, |\vec{\nabla}U|^2
+    &=
+    \oint_S dS\, U\left( \vec{\nabla} U\cdot\hat{n} \right)
+\end{align}
+For Dirichlet boundary conditions,
+value of $\phi$ is specified on boundary $S$.
+Then $U=0$ on $S$
+and
+\begin{align}
+    \int d^3x\,
+    |\vec{\nabla}U|^2 = 0
+\end{align}
+and we're integrating a positive quantity to be zero,
+which means
+\begin{align}
+    \vec{\nabla}U = 0
+\end{align}
+everywhere in $V$
+and so $U$ is constant.
+But since $U=0$ on boundary,
+$U=0$ everywhere.
+
+For Neumann case,
+$\hat{n}\cdot\vec{\nabla}\phi$ is specified on the boundary.
+This is basically saying the normal component of the electric field is
+specified.
+Then $\vec{n}\cdot\vec{\nabla}U=0$
+on the boundary.
+
+So once again,
+\begin{align}
+    \int d^3x \left| \vec{\nabla} U\right|^2 = 0
+\end{align}
+Now by exactly the same logic,
+$U$ is a constant everywhere.
+But we don't know it's actually zero on the boundary.
+And so this is as far as we can go.
+So all we can really show is that
+$\phi_2 - \phi_1$
+is a constant in $V$.
+So the solution is unique up to an arbitrary constant.
+
+You can always shift the minimum of the potential,
+you can change your potential by a constant everywhere and the electric field
+doesn't change.
+It's the potential differences that matter,
+not the absolute value.
+
+You specify the Neumann boundary conditions,
+you're just specifying the electric field of the boundary,
+the normal component.
+Since you didn't specify the potential anywhere,
+you can choose your zero potential anywhere,
+so you can shift your potential by a constant and the electric field will still
+be the same.
+
+In that sense the solution is unique,
+because the physical thing,
+which is the electric field,
+is unique and doesn't change.
+
+The electric field everywhere is completely specified.
+
+The next thing to consider is electrostatics.
+
+\section{Electrostatic Energy}
+Change $q_1$ located at $\vec{x}_1$.
+Potential at $\vec{x}$ is due to $\vec{q}_1$.
+\begin{align}
+    \phi\left(\vec{x}\right)
+    &=
+    \frac{1}{4\pi\epsilon_0}
+    \frac{q_1}{\left|\vec{x} - \vec{x}_1\right|}
+\end{align}
+Now move another charge $q_2$ from $\infty$
+to $\vec{x}_2$.
+Potential energy is the work done
+\begin{align}
+    W &=
+    q_2 \phi\left( \vec{x}_2 \right)\\
+    &=
+    \frac{1}{4\pi\epsilon_0}
+    \frac{q_1 q-2}{\left|\vec{x}_2 - \vec{x}_1\right|}
+\end{align}
+And now if we bring in a third charge $q_3$,
+you have to include the potential of the two existing charges.
+\begin{align}
+    W &=
+    \frac{1}{4\pi\epsilon_0_0}
+    \left\{ 
+    \frac{q_1 q_2}{\left| \vec{x}_2 - \vec{x}_1 \right|}
+    + \frac{q_1 q_3}{\left| \vec{x}_3 - \vec{x}_1 \right|}
+    + \frac{q_2 q_3}{\left| \vec{x}_3 - \vec{x}_2 \right|}
+    \right\}
+\end{align}
+This generalizes pretty easily to the case where you have $N$ charges.
+You add it all up,
+up to when you bring the $n$th charge to one point and consider the potential of
+all the other $N-1$ charges.
+
+This generalizes in a simple way.
+In the case of $n$ charges,
+\begin{align}
+    W &=
+    \sum_{i=1}^{n}
+    \sum_{j<i}
+    \frac{1}{4\pi\epsilon_0}
+    \frac{q_i q_j}{\left| \vec{x}_i - \vec{x}_j \right|}\\
+    &=
+    \frac{1}{2}
+    \sum_{i=1}^{n}
+    \sum_{j=1: i\ne j}^{n}
+    \frac{1}{4\pi\epsilon_0}
+    \frac{q_i q_j}{\left| \vec{x}_i - \vec{x}_j \right|}
+\end{align}
+For continuous charge distributions,
+\begin{align}
+    W &=
+    \frac{1}{2}
+    \int d^3\vec{x}
+    \int d^3\vec{x}\,
+    \frac{\rho\left( \vec{x} \right) \rho\left( \vec{x}' \right)}{
+    \left| \vec{x} - \vec{x}' \right|
+    }
+    \frac{1}{4\pi\epsilon_0}
+\end{align}
+Notice that almost all those factors are there.
+We can rewrite this in terms of the potential
+$\phi(\vec{x})=\frac{1}{4\pi\epsilon_0} \frac{\rho(\vec{x}')}{
+\left|\vec{x} - \vec{x}'\right|}$
+to get
+\begin{align}
+    W &=
+    \frac{1}{2}
+    \int d^3x\,
+    \rho\left( \vec{x} \right)
+    \phi\left( \vec{x} \right)
+\end{align}
+And now what we can do is use Poisson's equation to eliminate this.
+Using Poisson's equation,
+this becomes
+\begin{align}
+    W &=\frac{1}{2}\epsilon_0 \int d^3x\,
+    \underbrace{\phi\left( \vec{x} \right) \nabla^2 \phi(\vec{x})}_{
+    \vec{\nabla}\cdot\left\{ 
+    \phi \vec{\nabla} \phi
+    \right\}
+    -
+    \left( \vec{\nabla} \phi \right)^2
+    }\\
+    &=
+    \frac{1}{2}\epsilon_0 \int d^3x\,
+    \left( \vec{\nabla}\phi \right)^2
+    -
+    \frac{1}{2}\epsilon_0
+    \underbrace{
+    \int d^3x\,
+    \vec{\nabla}\cdot\left\{ 
+    \phi \cdot \vec{\nabla} \phi
+    \right\}
+    }_{
+    \int_S dS \phi\left( 
+    n\cdot \underbrace{\vec{\nabla}\phi}_{=0}
+    \right)
+    }
+\end{align}
+where the surface we are integrating over is at infinity.
+So then
+\begin{align}
+    W &=
+    \frac{1}{2} \epsilon_0 \int d^3x\,
+    \left( \vec{\nabla}\phi \right)^2\\
+    &=
+    \frac{1}{2}
+    \epsilon_0
+    \int d^3x\,
+    \left|\vec{E}\right|^2
+\end{align}
+Note even far apart,
+there is self energy of the charges.
+On the other hand,
+you're calculating the work needed (change in potential energy)
+to bring charges from infinity into your configuration.
+That is a physical thing,
+because it's a potnetial energy difference.
+That's a convnetion.
+
+The self-energy has a long and interesting history I could give several lectures
+on, but we don't have time for that.
+The energy density stored in electrostatic field.
+\begin{align}
+    w &=
+    \frac{1}{2}
+    \epsilon_0
+    \left| \vec{E} \right|^2
+\end{align}
+So you can think of the energy density per unit energy stored in the electric
+field.
+
+\section{Force on a conducting surface}
+There are two ways you can compute this.
+\begin{enumerate}
+    \item Energy change from a virtual displacement.
+    \item Directly from the electric field.
+\end{enumerate}
+
+First method.
+The energy density is $u = \frac{1}{2} \epsilon_0 \left| \vec{E} \right|^2$.
+At the surface of conductor $\vec{E} = \sigma/\epsilon_0$
+directed normal to the surface.
+
+Consider a small displacement $\Delta x$ in a direction normal to a surface
+element $\Delta A$.
+
+Change in energy
+\begin{align}
+    \Delta W &=
+    -\frac{\epsilon_0}{2}
+    |\vec{E}|^2 \Delta A \Delta x\\
+    &=
+    -\frac{1}{2\epsilon_0} \sigma^2 \Delta A \Delta x
+\end{align}
+So the force is
+\begin{align}
+    F &=
+    -\frac{\Delta W}{\Delta x}\\
+    &=
+    \frac{\sigma^2 \delta A}{2\epsilon_0}
+\end{align}
+directed outward from surface.
+Force per unit area is
+\begin{align}
+    f &=
+    \frac{\sigma^2}{2\epsilon_0}
+\end{align}
+outwards.
+To get the total force on conductor integrate $f$ over the surface of conductor
+bar.
+
+Second method.
+The force on an element of area $\Delta A$
+is given by
+\begin{align}
+    \vec{F} &=
+    \left( \sigma \Delta A \right)\vec{E}_{ext}
+\end{align}
+where $\vec{E}_{ext}$ is the electric field after contribution from $\Delta A$
+has been removed.
+The force is thus
+\begin{align}
+    F &=
+    \left( \sigma \Delta A \right)
+    \frac{\sigma}{2\epsilon_0}\\
+    &=
+    \frac{\sigma^2}{2\epsilon_0} \Delta A
+\end{align}
+outwards.
+The hard part is finding the charge distribution $\sigma$,
+but once you've found it,
+it's easy to get the force.
+
+\section{Capacitance}
+The capacitance is defined as
+charge divided by potential
+\begin{align}
+    C := \frac{Q}{\phi}
+\end{align}
+An object with large capacitance means it can hold a large amount of charge
+without much potential.
+
+Two conductors carrying equal and opposite charge
+$+Q$ and $-Q$,
+with potential difference $\Delta \phi$
+between them,
+the capacitance is by definition
+\begin{align}
+    C &:=
+    \frac{Q}{\Delta \phi}.
+\end{align}
+
+\section{Boundary Value Problems}
+\subsection{Method of images}
+Imagine a charge near a conducting surface.
+
+\begin{example}
+    A grounded conducting sphere of radius $a$ is centred at the origin.
+    A point of charge $q$ is located at point $\vec{y}$.
+    Find the potential in the region outside the sphere.
+\end{example}
+The potential due to $q$ and $q'$ is
+\begin{align}
+    \phi(\vec{x})
+    &=
+    \frac{1}{4\pi\epsilon_0}
+    \left\{ 
+    \frac{q}{\left| \vec{x} - \vec{y} \right|}
+    \right\}
+    +
+    \frac{1}{4\pi\epsilon_0}
+    \left\{ 
+    \frac{q'}{\left| \vec{x} - \vec{y}' \right|}
+    \right\}
+\end{align}
+Let $\hat{n}$ be the unit vector in direction of $\vec{x}$.
+Let $\hat{n}'$ be in the direction of $y$.
+Then
+\begin{align}
+    \hpi\left( \vec{x} \right)
+    &=
+    \frac{1}{4\pi\epsilon_0}\left\{ 
+    \frac{q}{\left| x\hat{n} - y\hat{n}'\right|}
+    + \frac{q'}{\left| x\hat{n} - y\hat{n}'\right|}
+    \right\}
+\end{align}
+where
+\begin{align}
+    |\vec{x}| &= x\\
+    |\vec{y}| &= y\\
+    |\vec{y}'| &= y'
+\end{align}
+We need $\phi\left( |\vec{x}| = a \right) = 0$.
+Then
+\begin{align}
+    \phi(\vec{x}=a)
+    &=
+    \frac{1}{4\pi\epsilon_0}
+    \left\{ 
+    \frac{q}{a\left| \hat{n} - \frac{1}{a} \hat{n}'\right|}
+    + \frac{q'}{y'\left| \hat{n}' - \frac{1}{y'} \hat{n}\right|}
+    \right\}
+\end{align}
+If we choose
+\begin{align}
+    \frac{q}{a}
+    &=
+    - \frac{q'}{y'}
+\end{align}
+and
+\begin{align}
+    \frac{y}{a} &= \frac{a}{y'}
+\end{align}
+then $\phi\left( |\vec{x}| = a \right) = 0$
+for all $\hat{n}$ and $\hat{n}'$.
+Then the position and magnitude of the image charge is
+\begin{align}
+    q' &= -\frac{a}{y}q\\
+    y' &= \frac{a^2}{y}
+\end{align}

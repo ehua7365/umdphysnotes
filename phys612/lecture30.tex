@@ -1,0 +1,271 @@
+\section{Ideal Bose gas}
+\begin{align}
+    N &= gV \int \frac{d^3k}{\left( 2\pi \right)^3}
+    \frac{1}{\frac{1}{Z} e^{\beta E_{k}} - 1}
+    + N_0\\
+    &=
+    \frac{gV}{\lambda_T^3} \underbrace{g_{3/2}(z)}_{\zeta(3/2)\approx 2.6\ldots}
+    + N_0
+\end{align}
+That's it for now.
+Let's do phase transitions.
+
+The interesting stuff happens when the particles interact with each other.
+Today we're going to look at one particular thing,
+study something phenomenologically.
+I'm going to give you some equations of state and ask you what doest hat men.
+Later on,
+I'll give you Hamiltonians and ask you about phase transitions.
+
+
+\section{Phase transitions}
+The thermodynamics of phase transitions is unjustly complicated,
+it's not that complicated,
+but it does require you to have good drawings.
+You can download the drawings in my notes now.
+I'll do my best to do good drawings,
+but they're better in my lecture notes.
+
+Example: van der Waals.
+
+This is phenomenological,
+there is no Hamiltonian for it.
+\begin{align}
+    P
+    &=
+    \frac{N k_B T}{V - bN} - \frac{a}{V^2}
+\end{align}
+We have two extra parameters $a,b$.
+More parameters means you can fit your data better.
+There's an interpretation that $b$ is the volume of a molecule.
+And $a$ is motivated by why not.
+There are dozens of equations of state,
+some better some worse.
+
+Let's start making pretty drawings.
+
+I'm going to draw isothermal.
+At high temperature,
+this is very close to being an ideal gas.
+But then I lower the temperature,
+And it starts looking like this.
+
+Each of those curves is an isothermal.
+From the start,
+I want to point down one fact.
+Look at that region.
+As I increase the volume the pressure goes up.
+Does that make sense to you?
+This is just nuts.
+
+Imagine a system with that property.
+I put it next to the system with a movable wall.
+The pressure exerted on my system s going to go down.
+And it goes further and further until it shrinks to nothing.
+So this region here is just unstable.
+
+Even if I don't couple my system.
+If just one region happened to have a pressure a little larger here.
+Since the more you push the lower the pressure,
+so the region that had a slightly smaller pressure gets shrunk to nothing.
+So nothing can exist in this region here
+\begin{align}
+    \left.
+    \frac{\partial P}{\partial V}
+    \right|_{T,N}
+    > 0
+    \text{ (unstable)}
+\end{align}
+So you should not believe the equation of state here.
+Suppose I decrease the pressure from high pressure,
+and it expands,
+keeping the temperature fixed.
+What happens when it comes here?
+Is it possible for my system to have a particle temperature and have it like
+this?
+What happens?
+It's unclear.
+One attitude is to say the equation is wrong.
+But no it's not.
+I'll explain what happens.
+
+The best argument is the following.
+
+I'm going to give different names along this curve.
+
+Everything is in this picture.
+There are no equations.
+
+[picture]
+
+If I put some pressure $P=P_C=P_I=P_K$ by booking a book weight on the cylinder,
+what's $V$?
+The equation of state says there are 3.
+We know it's not going to be $P_I$,
+so is it $P_C$ or $_K$?
+
+Let us use the pressure ensemble.
+Consider the probability density
+\begin{align}
+    Z
+    &\sim
+    e^{-\beta\left( E - TS + PV \right)}
+    =
+    e^{-\beta G(T, P, N)}\\
+    \rho\left(q, p, V \right)
+    &\sim
+    e^{-\beta\left( H(q,p) + PV \right)}
+\end{align}
+where $G(T, P, N)$ is the Gibbs free energy.
+Since $G$ is the Legendre transform of $E$,
+we can write a few things.
+\begin{align}
+    \left.
+    \frac{\partial G}{\partial T}
+    \right|_{P, N}
+    &=
+    -S\\
+    \left.
+    \frac{\partial G}{\partial P}
+    \right|_{T,N}
+    &=
+    V\\
+    \left.
+    \frac{\partial G}{\partial N}
+    \right|_{T,P}
+    &=
+    \mu
+\end{align}
+We want to minimize $G(T, P, N)$ obeying other constraints.
+So I'm going to compute which has the largest Gibbs free energy.
+They both have the same $P$ and $N$.
+So which one is larger?
+
+Consider the integral
+\begin{align}
+    G_K - G_C
+    &=
+    \int_{C}^{K} V\, dP > 0
+\end{align}
+so $C$ is stable.
+Consider the integral
+
+\begin{align}
+    G_M - G_E
+    &=
+    \int_{E}^{M} V\, dP > 0
+\end{align}
+so $M$ is stable.
+
+Hence we have the equal area construction.
+
+Chocolate can be solid.
+Warm it  up and everything in between.
+There's chocolate of all consistencies.
+There is no water of all consistencies.
+It's either water or ice.
+
+This phenomenon here is called a phase transition.
+This particular one is called a first-order phase transition.
+
+There is a thermodynamic quantity that is actually discontinuous.
+Sometimes it's the derivative that is distcontinuous,
+and that's a second order.
+
+There's a region in the $P$-$V$ plot where the system is metastable.
+Many things metastable are actually metastable.
+The famous example is glass.
+At small enough temperatures,
+the ground state is messy.
+The problem is ordering.
+glass is someting rigorously speaking is metastable.
+
+The way you make iron is that you melt it,
+pour it the shape you want and cool down.
+The atoms of iron don't have time to oraganise themselves into structure at
+large scalces.
+So actual pieces of metal have defects,
+and so regular metals have defets.
+Take a piece of metal,
+hammer it,
+where does it break?
+It's defects!
+
+How do yo uget rid of defects?
+You heat it up,
+hammer it,
+force the atoms.
+Then you make swords.
+
+Funny story.
+They all sent their kids to school.
+They aid they were taking 2 blacksmithing classes 2 semesers,
+so don't joke.
+
+Another story.
+Let's do the following experiment,
+I take my substance,
+I instead of fixing the pressure,
+I fix the volume.
+It's up to the fluid to do whatever.
+What happens to the volume here?
+There is no truly stable state in that region.
+So What is going to happen?
+What happens is phase separation.
+If your volume is this,
+your system can either have a much bigger volume or a much smaller volume.
+Half of your molecules are going to be a state with lower volume,
+half are going to be in a state of higher volume.
+Inside the box you're actually going to have regions where the density is much
+larger.
+You see this happen many times.
+Go to your fridge,
+you can control the temperature to be zero celsius,
+whatever farenheit that is.
+You're going to have little bits floating.
+This coexistence point,
+you can have two phases at the same time.
+You can have ice and water and both.
+Is it true that if I start at zero detrees,
+slightly below zero,
+increase the temperature a little bit and it melts?
+Yes,
+but it doesn't happen simultaneously.
+You can not do this easily and I will show you why not.
+
+Consider
+\begin{align}
+    \left| \frac{\partial G}{\partial T} \rigth|_{P,N} &= -S
+\end{align}
+Let me fix a particular $P$ and $N$.
+I'll have to consider the Gibbs free energy here and the Gibbs free nergy there,
+(between two close isotherms) which would give me the entropy.
+Now consider that on the line.c
+When I calcualte $\frac{\partial G}{\partial T}$ on one sidse and another side,
+I get a completely different answer.
+Here I get a different entropy
+even though I am coexisting.
+
+THe entropy of ice at zero and the entropy of ice at zero celsius is different.
+Which one is larger?
+You have more ways of aranging the liquid.
+So if it's $10^{-3}$ below zero it's ice,
+but if it's $10^{-3}$ above zero it's water.
+But it doesn't happen straight away.
+You have to put heat into it.
+
+Same thing for boiling water.
+It transforms from liquid into gas.
+It happens at 100 degrees celsius.
+If it's 101 it's steam.
+If it's 99 it's water.
+It takes a long time to get from water to steam,
+you need to put in heat.
+The temperature doesn't charge,
+it takes a long time for that little bit of tempeature.
+That's called the latent heat.
+
+If you have more phases,
+you need more dimensions.
+
+We'll talk about the phase diagram of water next time.
