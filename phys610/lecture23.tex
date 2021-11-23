@@ -1,0 +1,463 @@
+\section{Green function method}
+Let's do an example.
+Consider the differential equation
+\begin{align}
+    \frac{d^2y}{dx^2} + y &= f(x)
+\end{align}
+Boundary conditions $y=0$ at $x=0$
+and $y=0$ at $x=\frac{\pi}{2}$.
+Introduce the green function $G(x, x')$ which satisfies
+\begin{align}
+    \frac{d^2 G}{dx^2} + G &=
+    \delta\left( x - x' \right)
+\end{align}
+Why introduce $G$?
+In general,
+$G$ is easier to find than $y$.
+Once $G$ has been determined,
+we can obtain $y$ with
+\begin{align}
+    y(x) &=
+    \int_{0}^{\pi/2}
+    G\left( x, x' \right)
+    f\left( x' \right)\,
+    dx'
+\end{align}
+To see that this is a solution,
+substitute it into the original ODE.
+\begin{align}
+    \frac{dd^2 y}{dx^2} + y
+    &=
+    \int_{0}^{\pi/2}
+    \underbrace{\left\{ 
+    \frac{d^2 G}{dx^2} + G
+    \right\}}_{
+    \delta\left( x - x' \right)
+    }
+    f\left( x' \right)
+    \,dx'\\
+    &=
+    f(x).
+\end{align}
+It also satisfies boundary conditions
+\begin{align}
+    y(x=0) &=
+    \int_{0}^{\pi/2}
+    \underbrace{\left.G\left( x, x' \right)\right|_{x=0}}_{=0}
+    f\left( x' \right)\,dx' = 0
+\end{align}
+and
+\begin{align}
+    y\left( x=\frac{\pi}{2} \right)
+    &=
+    \int_{0}^{\pi/2}
+    \underbrace{\left.G\left( x, x' \right)\right|_{x=\pi/2}}_{=0}
+    f\left( x' \right)
+    \,dx'
+    =0
+\end{align}
+But how do we find $G$?
+\begin{align}
+    \frac{d^2G}{dx^2} + G &= \delta\left( x - x' \right)
+\end{align}
+Away from $x=x'$,
+\begin{align}
+    \frac{d^2 G}{dx^2 + G} = 0
+\end{align}
+The solutions are of the form
+\begin{align}
+    G &=
+    A\sin(x) + B\cos(x)
+\end{align}
+In general the solution for $x<x'$ and $x>x'$ will be different
+because they must satisfy different boundary conditions at each end.
+\begin{align}
+    G &=
+    \begin{cases}
+        G_{<} = A_{<}\sin(x) + B_{<}\cos(x) & \text{for } x < x'\\
+        G_{>} = A_{>}\sin(x) + B_{>}\cos(x) & \text{for } x > x'\\
+    \end{cases}
+\end{align}
+Requiring $G=0$ at $x=0$,
+we get $B_{<}=0$.
+Requiring $G=0$ at $x=\frac{\pi}{2}$,
+we get $A_{>}=0$.
+Now we need match the two pieces across $x'$.
+
+In quantum mechanics have you solved for a delta function potential?
+Now let's look at this differential equation here.
+
+I claim that this is what we mean.
+I want $G$ to be continuous across the boundary,
+but $dG/dx$ is not necessarily continuous.
+That's the way this works for this example.
+
+Requiring that $G$ be continuous at $x=x'$,
+we have
+\begin{align}
+    G_{<}\left( x = x' \right)
+    =
+    G_{>}\left( x = x' \right)
+\end{align}
+we get
+\begin{align}
+    A_{,}\sin\left( x' \right)
+    &=
+    B_{>}\cos\left( x' \right)
+\end{align}
+But we need one more condition,
+and that has to come from the derivatives.
+So what we do is integrate that differential equation for $G$ across $x=x'$.
+\begin{align}
+    \lim_{\epsilon\to 0}
+    \int_{x'=\epsilon}^{x' + \epsilon}dx\left\{ 
+    \frac{d^2 G}{dx^2} + \underbrace{G}_{O(\epsilon)}
+    \right\}
+    &=
+    \underbrace{\int_{x' - \epsilon}^{x' + \epsilon}
+    dx\,
+    \delta\left( x - x' \right)}_{1}
+\end{align}
+which gives
+\begin{align}
+    \left.\frac{dG}{dx}\right|_{x'-\epsilon}^{x'+\epsilon}
+    = 1
+\end{align}
+which means
+\begin{align}
+    \left. \frac{dG_{>}}{dx}\right|_{x=x'}
+    -
+    \left. \frac{dG_{<}}{dx}\right|_{x=x'}
+    &= 1\\
+    -B_{<}\sin\left( x' \right) - A_{<}\cos\left( x' \right) &= 1
+\end{align}
+When all the dust settles,
+the solution is
+\begin{align}
+    A_{<} &= -\cos\left( x' \right)\\
+    B_{>} &= -\sin\left( x' \right)
+\end{align}
+Hence
+\begin{align}
+    G\left( x, x' \right)
+    &=
+    \begin{cases}
+        G_{<}\left( x, x' \right)
+        =
+        -\sin\left( x \right)\cos\left( x' \right)
+        &\text{for } x<x'\\
+        G_{>}\left( x, x' \right)
+        =
+        -\cos\left( x \right)\sin\left( x' \right)
+        &\text{for } x> x'
+    \end{cases}
+\end{align}
+Notice that
+\begin{align}
+    G\left( x, x' \right) &= G\left( x', x \right)
+\end{align}
+You should check that your Greens function has this property.
+If it doesn't your probably screwed up.
+It's a powerful consistency check.
+
+Some people like to write it in shorthand
+\begin{align}
+    G\left( x, x' \right)
+    &=
+    -\sin\left( x_{<} \right)\cos\left( x_{>} \right)
+\end{align}
+where $x_{<}$ refers to the smaller of $x$ and $x'$
+and $x_{.}$ refers to the larger of $x$ and $x'$.
+To get the final solution
+\begin{align}
+    y(x) &=
+    \int_{0}^{\pi/2}dx'\,
+    G\left( x, x' \right)
+    f\left( x' \right)\\
+    &=
+    \int_{0}^{x}
+    dx'
+    f\left( x' \right)
+    G_{>}\left( x, x' \right)
+    +
+    \int_{0}^{\pi/2}dx\,
+    f\left( x' \right)
+    G_{<}\left( x, x' \right)\\
+    &= -\cos(\pi)\left[ 
+    \int_{0}^{\pi}dx'\,
+    f\left( x' \right)
+    \sin\left( x' \right)
+    \right]
+    -
+    \sin\left( x \right)
+    \left[ 
+    \int_{x}^{\pi/2}dx'\,
+    f\left( x' \right)
+    \cos\left( x' \right)
+    \right]
+\end{align}
+So that's the solution.
+This is a standard way to solve inhomogeneous differential equations.
+
+You've actually been using this method for a long time.
+The potential from a point charge admits an interpretation as the Green function
+of the Laplacian operator $\nabla^2$.
+Consider the Poisson equation
+\begin{align}
+    \nabla^2\phi &=
+    -\frac{\rho}{\epsilon_0}
+\end{align}
+For a point charge $q$ located at $\vec{x}'$,
+\begin{align}
+    \rho\left( \vec{x}' \right)
+    &=
+    q\delta^{(3)}\left( \vec{x} - \vec{x}' \right).
+\end{align}
+The resulting potential $\hat{\phi}$ satisfies
+\begin{align}
+    \nabla^2\hat{\phi}
+    &=
+    -\frac{q}{\epsilon_0}
+    \delta^{(3)}\left( \vec{x} - \vec{x}' \right)
+\end{align}
+with
+\begin{align}
+    \hat{\phi}
+    &=
+    \frac{1}{4\pi\epsilon_0}
+    \frac{q}{\left| \vec{x} - \vec{x}'\right|}
+\end{align}
+By definition,
+the Green function for the Laplacian operator is required to satisfy
+\begin{align}
+    \nabla^2 G
+    &=
+    -4\pi \delta^{(3)}\left( \vec{x} - \vec{x}' \right)
+\end{align}
+This Poisson equations is the kind of equation we're trying to solve.
+We set up a Greens function,
+replacing the source term by a delta function,
+just the way we did earlier.
+We use the same differential operator,
+but we replace the arbitrary source by a $\delta$ function.
+The only difference is the factor of $-4\pi$.
+Previously we set it to 1,
+which is more standard,
+but in electrostatics,
+it's just a convention we put a $-4\pi$ there.
+
+Comparing we see that
+\begin{align}
+    G\left( \vec{x}, \vec{x}' \right)
+    &=
+    \frac{4\pi\epsilon_0}{q}\hat{\phi}
+    =
+    \frac{1}{\left|\vec{x} - \vec{x}'\right|}
+\end{align}
+Then the solution of the Poisson equation is
+\begin{align}
+    \phi\left( \vec{x} \right)
+    &=
+    -\frac{1}{4\pi}
+    \int d^3\vec{x}\,
+    G\left( x, x' \right)
+    \left\{ 
+    -\frac{\rho(x)}{\epsilon_0}
+    \right\}\\
+    &=
+    \frac{1}{4\pi\epsilon_0}
+    \int d^3x
+    \frac{\rho(x)}{\left|\vec{x} - \vec{x}'\right|}
+\end{align}
+
+Let's summarize the results.
+Consider the example we had
+\begin{align}
+    y'' + y &= f(x)\\
+    G'' + G &= \delta\left( x - x' \right)\\
+    G\left( x, x' \right) &= -\sin\left( x_{<} \right)\cos\left( x_{>}
+    \right)\\
+    y &= \int dx\, f\left( x' \right) G\left( x, x' \right)
+\end{align}
+The same method applies for electrostatics.
+\begin{align}
+    \nabla^2 \phi &=
+    -\frac{\rho\left( \vec{x} \right)}{\epsilon_0}\\
+    \nabla^2 G &=
+    -4\pi \delta^{(3)}\left( \vec{x} - \vec{x}' \right)\\
+    G\left( \vec{x}, \vec{x}' \right)
+    &=
+    \frac{1}{\left|\vec{x} - \vec{x}'\right|}\\
+    \phi &=
+    -\frac{1}{4\pi}\int d^3\vec{x}\,
+    G\left( \vec{x}, \vec{x}' \right)
+    \left\{ 
+    \frac{-\rho\left( \vec{x}' \right)}{\epsilon_0}
+    \right\}
+\end{align}
+So this is the general method for solving linear inhomogeneous differential
+equations.
+$G\left( \vec{x}, \vec{x}' \right)$
+is the potential from a charge $q=4\pi\epsilon_0$
+located at $\vec{x}=\vec{x}'$.
+
+Consider a charge $q$ near a grounded conducting sphere.
+For a point charge $q$,
+\begin{align}
+    \phi(\vec{x})
+    &=
+    \frac{1}{4\pi\epsilon_0}
+    \left\{ 
+    \frac{q}{\left|\vec{x} - \vec{x}'\right|}
+    -
+    \frac{aq}{\left|\vec{x}'\right|}
+    \frac{1}{\left|\vec{x} - \frac{a^2}{\left|\vec{x}'\right|^2}\vec{x}'\right|}
+    \right\}
+\end{align}
+which we obtained by the method of images.
+Now consider 
+\begin{align}
+    \nabla^2 \phi
+    &=
+    -\frac{q\delta^{(3)}\left( \vec{x} - \vec{x}' \right)}{\epsilon_0}
+\end{align}
+with boundary conditions
+$\phi=0$ at $\left|\vec{x}\right|=a$.
+$\phi=0$ at $\left|\vec{x}\right|=\infty$.
+
+Then the Green function is
+\begin{align}
+    G\left( \vec{x}, \vec{x}' \right)
+    &=
+    \left\{ 
+    \frac{1}{\left|\vec{x} - \vec{x}'\right|}
+    -
+    \frac{a}{\left|\vec{x}'\right|}
+    \frac{1}{\left|
+    \vec{x}
+    -
+    \frac{a^2}{\left|\vec{x}\right|^2}
+    \vec{x}'
+    \right|}
+    \right\}
+\end{align}
+such that for a more general charge distribution,
+\begin{align}
+    \phi(\vec{x})
+    &=
+    \frac{1}{4\pi\epsilon_0}
+    \int d^3\vec{x}'
+    G\left( \vec{x}, \vec{x}' \right)
+    \rho\left(\vec{x}'\right)
+\end{align}
+
+We need to generalize the Green function method to problems where $\phI$ or
+$\vec{E}\cdot\hat{r}$ are specified on boundaries.
+Start from Green's theorem.
+\begin{align}
+    \int_V
+    \left( 
+    \phi \nabla^2 \psi
+    - \psi \nabla^2 \phi
+    \right)
+    dV
+    &=
+    \oint_S
+    \left[ 
+    \phi\left( \vec{\nabla}\psi\cdot\hat{n} \right)
+    - \psi\left( \vec{\nabla}\phi\cdot\hat{n} \right)
+    \right]
+    dS
+\end{align}
+To prove this is straightforward.
+\begin{align}
+    \psi\nabla^2 \psi &=
+    \vec{\nabla}\cdot\left( 
+    \phi\vec{\nabla}\psi
+    \right)
+    - \vec{\nabla}\psi
+    \cdot \vec{\nabla} \psi\\
+    \psi\nabla^2\phi
+    &=
+    \vec{\nabla}\cdot\left( 
+    \psi\vec{\nabla}\phi
+    \right)
+    -
+    \vec{\nabla}\phi
+    \cdot\vec{\nabla}\cdot\vec{\nabla}\psi
+\end{align}
+Subtract
+\begin{align}
+    \phi\nabla^2\psi
+    - \psi\nabla^2\phi
+    &=
+    \vec{\nabla}\cdot\left( 
+    \phi\vec{\nabla}\psi
+    -
+    \psi\vec{\nabla}\phi
+    \right)
+\end{align}
+Integrate over volume and apply divergence theorem.
+
+For $\phi$ choose the potential.
+For $\psi$ choose the Green function $G\left( \vec{x}, \vec{x}' \right)$.
+
+\begin{align}
+    \vec{\nabla}'^2 G\left( \vec{x}, \vec{x}' \right)
+    &= -4\pi \delta^{(3)}\left( \vec{x}' - \vec{x} \right)
+\end{align}
+Then
+\begin{align}
+    \int_V \left[ 
+    \phi\left( \vec{x}' \right)
+    \underbrace{
+    {\nabla'}^{2}
+    \psi\left( \vec{x}' \right)
+    }_{-4\pi\delta^{3}\left( \vec{x}' - \vec{x} \right)}
+    -
+    \psi\left( \vec{x}' \right)
+    \underbrace{{\nabla'}^2 \phi\left( \vec{x}' \right)}_{
+    -\rho\left( \vec{x}' \right)/\epsilon_0
+    }
+    \right]
+    d^3\vec{x}'
+    &=
+    \int \left[ 
+    \phi\left( \vec{x}' \right)
+    \left( 
+    \vec{\nabla}' \psi\left( \vec{x}' \right) \cdot \hat{n}'
+    \right)
+    -
+    \psi\left( \vec{x}' \right)
+    \left( 
+    \vec{\nabla}' \phi\left( \vec{x}' \right) \cdot \hat{n}'
+    \right)
+    \right]
+    dS'
+\end{align}
+So
+\begin{align}
+    \phi\left( \vec{x} \right)
+    &=
+    \frac{1}{4\pi\epsilon_0}
+    \int_V
+    \rho\left( \vec{x}' \right)
+    G\left( \vec{x}, \vec{x}' \right)
+    d^3\vec{x}'
+    +
+    \frac{1}{4\pi}
+    \oint_S
+    \left[ 
+    G\left( \vec{x}, \vec{x}' \right)
+    \left( 
+    \vec{\nabla}' \phi\left( \vec{x}' \right)\cdot\hat{n}'
+    \right)
+    -
+    \phi\left( \vec{x}' \right)
+    \left( 
+    \vec{\nabla}' G\left( \vec{x}, \vec{x}' \right)
+    \cdot \hat{n}'
+    \right)
+    \right]
+    dS'
+\end{align}
