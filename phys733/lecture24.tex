@@ -1,0 +1,659 @@
+\section{Luttinger Liquid}
+Last time we coupled a U(1) gauge theory with a background gauge field
+\begin{align}
+    \mathcal{L} &=
+    -\frac{k}{2\pi}
+    a_\mu \partial_\nu a_\lambda \epsilon^{\mu\nu\lambda}
+    +
+    \underbrace{
+    \frac{8}{2\pi} A_\mu \partial_\nu a_\lambda \epsilon^{\mu\nu\lambda}
+    }_{
+    q A_\mu J^\mu
+    }
+\end{align}
+There is a global U(1) current
+\begin{align}
+    J^\mu &=
+    \frac{1}{2\pi}
+    \epsilon^{\mu\nu\lambda}
+    \partial_\nu a_\lambda
+\end{align}
+This means $2\pi/k$ flux of $a$ carries charge
+\begin{align}
+    Q_{2\pi/k} = \frac{q}{k}
+\end{align}
+Charge $\ell$ under $a$ implies that
+$2\pi\ell /k$ flux of $a$
+
+From the classical equation of motion
+\begin{align}
+    \frac{\delta S}{\delta a_0} &= 0
+\end{align}
+implies that
+\begin{align}
+    \frac{k}{2\pi}b &=
+    -\frac{q}{2\pi}B
+\end{align}
+which tells us that
+\begin{align}
+    B &=
+    -\frac{k}{q}b
+\end{align}
+This is another way of seeing that flux of $a$
+comes with flux of $A$.
+
+In particular,
+$2\pi/k$ flux of $a$ is going to come with
+$-2\pi/q$ flux of $A$.
+
+One thing we can deduce from all of this is that this theory actually gives us a
+fractional quantized Hall conductance associated with this background $U(1)$.
+Let me explain.
+
+\section{Fractional quantized Hall conductance}
+So far we deuced $2\pi/k$ flux of $a$
+comes with a $-2\pi/q$ flux of $A$.
+But we also know that $2\pi/k$ fox of $a$ also comes with
+$q/k$ charge under $A$.
+
+So all together,
+this tells us that $-2\pi$ flux of $a$
+would give us charge of $q^2/k$.
+This is precisely what you expect if the system had a Hall conductivity
+\begin{align}
+    \sigma_H &=
+    - \frac{q^2}{k} \frac{1}{2\pi}
+\end{align}
+If your hall conductance was $\sigma_H = \nu \frac{1}{2\pi}$.
+
+If you inserted $-2\pi$ flux of $A$,
+after you inserted that,
+you should get a $q^2/k$ charge.
+Physically,
+if you had an annulus,
+inserting the electric field in the angular direction,
+which causes charge to flow radially,
+and if that is the amount of charge that's accumulated,
+that means this is the Hall conductivity.
+
+That means we have effective action given by the Lagrangian density
+\begin{align}
+    \mathcal{L} &=
+    - \frac{q^2}{k}
+    \frac{1}{4\pi}
+    A_\mu \partial_\nu A_\lambda \epsilon^{\mu\nu\lambda}
+\end{align}
+Now another way of thinking about this is let's pick our spacetime manifold to
+just be $M^3 = \mathbb{R}^3$.
+Imagine your system is on space times time,
+and space is the Euclidean plane.
+Then we don't have to worry about non-trivial topological gauge configurations.
+Let's define the part integral
+\begin{align}
+    Z\left( M^3, A \right)
+    &=
+    e^{iS_{eff}[A]}
+    Z\left( M^3, A=0 \right)
+\end{align}
+where that effective action is
+align
+\begin{align}
+    &=
+    \int \mathcal{D} a\,
+    e^{
+    i\int_{\mathbb{R}^3}
+    \left( 
+    \frac{k}{4\pi} a\,d a
+    +
+    \frac{q}{2\pi} A\, da
+    \right)
+    }
+\end{align}
+We're going to shift $a$ to absorb the second term and only get a term that
+depends on $A$.
+So write
+\begin{align}
+    S[a, A] &=
+    \frac{k}{4\pi}
+    \left( a + \frac{q}{k} A \right)
+    d\left( 
+    a + \frac{q}{k}A
+    \right)
+    -
+    \frac{1}{4\pi}
+    \frac{q^2}{k}
+    A\, dA
+\end{align}
+Now shift
+\begin{align}
+    a &\to
+    a^1 =
+    a + \frac{q}{k}A.
+\end{align}
+And now
+\begin{align}
+    Z\left( M^3, A \right) &=
+    \left( 
+    \int \mathcal{D} a'\,
+    e^{i \frac{k}{4\pi} a'\ , a'}
+    \right)
+    e^{-\frac{1}{4\pi} \frac{q^2}{k}
+    \int_{\mathbb{R}^3 A\, dA}
+    }
+\end{align}
+which means we can write
+\begin{align}
+    S_{eff} &=
+    -\frac{1}{4\pi}
+    \frac{q^2}{k}
+    \int_{M^3}A\, dA.
+\end{align}
+
+One thing that should bother you is that this $q^2/k$ coefficient
+is a fracton.
+And I told you the coefficient of the CS term should be an integer.
+Why is this allowed?
+What happened here?
+
+We picked $\mathbb{R}^3$ so we don't have to worry about large gauge
+transformations,
+we led to the quantization restriction.
+
+Suppose I let $M^3$ be general.
+What part of this derivation did we make some wrong assumption that allowed us
+to get to this point where the coefficient is not integer?
+One issue is that because $a$ is a $U(1)$ gauge field,
+there are certain quantisations on $a$.
+Fr example,
+\begin{align}
+    \frac{1}{2\pi}\int_{S^2} f \in \mathbb{Z}
+\end{align}
+But if you shift $a$ by $\frac{q}{k}A$,
+you ruin all these quantisation conditions.
+
+Another useful perspective on what goes wrong is,
+this theory if you quantize n a torus has a bunch of ground sates.
+Just to regularize it,
+you can imagine it has a Maxwell term,
+so the actual spectrum of the quantum theory
+is a bunch of degenerate ground states,
+and a bunch of excited states.
+When we integrate out $a$,
+and forget about $a$,
+we're doing something not quite allowed,
+because we're integrating out something that gives rise to ground state
+degeneracy,
+which you shouldn't do.
+It's not a high energy mode anymore.
+It's a zero mode in this case.
+We shouldn't integrate out $a$
+because of the zero does,
+so at best we should split and integrate.
+But because we picked $M^3=\mathbb{R}^3$,
+we don't have to worry.
+But it wouldn't be valid if we did it on other manifolds.
+
+What we can conclude from all this is that this $U(1)_{-k}$
+CS theory with $q=1$
+gives fractional quantized hall conductance of
+\begin{align}
+    \sigma_H &=
+    \frac{q^2}{k}\frac{1}{2\pi}.
+\end{align}
+If we used SI units,
+\begin{align}
+    \sigma_H &=
+    \frac{q^2}{k} \frac{e^2}{h}.
+\end{align}
+This theory describes the most prominent fractional quantum Hall states.
+They are gapped phase of matter but they have this fractional quantum Hall
+conductance.
+
+Note for $k=1$,
+\begin{align}
+    \mathcal{L}
+    &=
+    -\frac{1}{4\pi} a\, da
+    +
+    \frac{1}{2\pi} A\, da
+\end{align}
+This actually describes a Chern insulator with Chern number 1,
+which dis a Chern insulator or integer quantum Hall state.
+This describes a fermionic theory because $k$ is odd
+In fact the world line of this fermion is described by
+\begin{align}
+    e^{i\oint_{\gamma} a\, dl}
+\end{align}
+with $h=\frac{1}{2}$.
+Furthermore,
+it has a unique ground state.
+Also  $\sigma_H=1$.
+Also it is gapped.
+
+\section{Gauge-invariance and boundary theory}
+This is a boundary theory.
+
+We studied the Chern insulator,
+and we know it has a chiral.
+Suppose you had an action
+\begin{align}
+    S &=
+    \frac{m}{4\pi} dx^3 \, a\, da\,
+    \partial_\mu \left( f \partial_\nu g_\lambda \right)
+    \epsilon_{\mu\nu\lambda}\\
+    &=
+    \frac{m}{4\pi}
+    \int_{y=0}
+    \int dx\, dt\,
+     \right)
+\end{align}
+To define theory,
+restrict $\left. f\right_{\partial M = 0}$
+Some gauge degrees of freedom of $a_\mu$
+become physical degrees of freedom on body.
+
+To study the edge theory,
+consider
+\begin{align}
+    a_t &= 0
+\end{align}
+Then requiring
+\begin{align}
+    \frac{\partial S}{\partial a_t} &= 0
+\end{align}
+gives
+\begin{align}
+    \partial_x a_y - \partial_y a_x = 0.
+\end{align}
+Solve the constraint
+\begin{align}
+    a_i &= \partial_i \phi
+\end{align}
+So the action is
+\begin{align}
+    S &=
+    \frac{m}{4\pi}
+    \int d^3 x\,
+    a_i \partial_t a_j \epsilon^{ij}\\
+    &=
+    \frac{m}{4\pi}
+    \in d^3x
+    \partial_ii \phi \partial_t \partial_j \phi\\
+    &=
+    \frac{m}{4\pi} \int_{V=0}
+    dx\, dt\,
+    \underbrace{
+    \partial_x \phi \partial_t
+    }_{pq  - H}
+\end{align}
+but since $H=0$,
+the velocity of edge modes = 0.
+Instead could have set
+\begin{align}
+    a_\tau &= a_t + v_a_x = 0
+\end{align}
+which implies
+\begin{align}
+    S &=
+    \frac{m}{4\pi} \int_{y=0}
+    dx\, dt\,
+    \left( \partial_t + v\partial_x \right)\phi\cdot
+    \partial_x \phi
+    + v'\partial_x \phi \partial_x \phi
+\end{align}
+so the equation of motion is
+\begin{align}
+    \partial_t \phi + v\partial_v \phi &= 0
+\end{align}
+Modes are chiral with velocity $v$
+
+\section{Quantizing chiral boson theory}
+\begin{align}
+    S &=
+    \frac{m}{2\pi}
+    \sum_{k>0}
+    dt\,
+    \left( 
+    ik \phi_k dot{\phi}_k
+    - vk^2 \phi_k\phi_k
+    \right)
+\end{align}
+and because $\phi$ is real,
+\begin{align}
+    \phi_k &= \phi_{-k}^{*}
+\end{align}
+Because $\phi_k$ with $k>0$ are canonical coordinates,
+The canonical momenta are
+\begin{align}
+    \pi_k &=
+    \frac{\partial S}{\partial \dot{\phi}_k}\\
+    &= \frac{m}{2\pi} ik \phi_{k}
+\end{align}
+Then
+\begin{align}
+    \left[ \phi_k, \pi_{k'} \right]
+    &=
+    i\delta_{k, k'}
+\end{align}
+which gives
+\begin{align}
+    [\phi_k, k'\phi_{k'}]
+    &=
+    \frac{2\pi}{m}\delta_{kk'}
+\end{align}
+We can define the density as
+\begin{align}
+    \rho &=
+    \frac{1}{2\pi} \partial_x \phi
+\end{align}
+sot then
+\begin{align}
+    \left[ \rho_k, \pho_{k'} \right]
+    &=
+    -\frac{1}{4\pi^2} kk' \left[ \phi_k, \phi_{k'} \right]
+\end{align}
+and finally we have
+\begin{align}
+    \left[ \rho, \rho_{k'} \right]
+    &=
+    \frac{1}{2\pi m} k \delta_{k+k',0}
+\end{align}
+and if you have an operator that satisfy this,
+you have a U(1) Kac-Moody algebra.
+
+In real space,
+if you just Fourier transform this equation,
+you get
+\begin{align}
+    \left[ 
+    \rho(x), \rho(y)
+    \right]
+    &=
+    \frac{i}{2\pi m}
+    \delta'\left( x - y \right)
+\end{align}
+which means that
+\begin{align}
+    \left[ \rho(x), \phi(y) \right]
+    &=
+    -\frac{i}{m} \delta\left( x - y \right)
+\end{align}
+You can actually integrate it one more time
+to get the real space commutation relation for $\phi$.
+This is telling us that
+\begin{align}
+    \left[ \partial_x \phi(x), \phi(y) \right]
+    &=
+    -\frac{2\pi i}{m} \delta\left( x - y \right)
+\end{align}
+and then
+\begin{align}
+    \left[ \phi(x), \phi(Y) \right]
+    &=
+    -\frac{i\pi}{m} \sgn\left( x - y \right)
+\end{align}
+And the derivative of that gives you the delta function.
+This is a crucial commutation relation.
+This means the field $\phi$ doesn't even commute with itself at different points
+in space.
+Usually it commutes with itself in different points in space.
+Or anti commutes if fermionic.
+No matter how far apart,
+it doesn't commute with itself at different points.
+This is the manifestation of the fact that particles have fractional statistics.
+If you move world lines across each other gives fractional statistics,
+and this is kind of a manifestation of that in the edge theory.
+
+If you write the Hamiltonian in momentum space,
+\begin{align}
+    H &=
+    2\pi m V
+    \sum_{k> 0}
+    \rho_k^\dagger \rho_k
+\end{align}
+There's some restriction on $m$ and $V$,
+because you want it to be bound from below.
+In order for $H$ to be bounded from below,
+you're going to need $mV>0$ for stability.
+
+This is interesting.
+Just from the sign of $m$,
+you can determine the sign of the velocity.
+The direction of the propagation is determined by the sign of $m$.
+
+So we basically completely understand this theory so far.
+We have these modes with different momenta $k$,
+and we can occupy different states at different modes.
+The point is that this Hamiltonian looks like decoupled harmonic oscillators.
+
+For each $k>0$,
+there is a $\rho_k$ that satisfies $\rho_k^\dagger = \rho_{-k}$
+and the commutation relations
+\begin{align}
+    \left[ \rho_k, \rho_k^\dagger \right]
+    &=
+    -\frac{1}{2\pi m} k\\
+    \left[ \rho_k, \rho_{k'}^\dagger \right] &= 0
+    \qquad\text{if }k \ne k'
+\end{align}
+
+So these $\rho_k$, $\rho_k^\dagger$ are creation and annihilation operations
+for oscillator modes.
+
+
+I can have the ground states of some bulk that is described by a CS theory,
+ad the edge corresponds to these Luttinger Liquid modes.
+They are like phonons,
+with density fluctuations near the boundary of the system.
+These can happen at arbitrarily low energy,
+because you can have arbitrarily long wavelength excitations.
+
+This $\rho_k$ excitations describe overall neutral density fluctuations
+at the edge of the system.
+If you let it go,
+these excitations will travel in a particular direction along the boundary.
+
+\begin{question}
+    How is this associated with fractional statistics?
+\end{question}
+That's the next thing I'm going to say.
+
+\begin{question}
+    Has this been measured experimentally.
+\end{question}
+So far what would you measure?
+You perturb it and watch it move in a chiral fashion.
+Not really,
+you don't have that much control,
+to perturb it and image it at a  resolution high enough to see they move in a
+particular direction,
+so no that has not been directly seen.
+
+Remember this overall theory has overall U(1) charge conservation associate
+with the $A$ that we couple to.
+Not only should we have neutral excitations,
+which is what this $\rho_k$ are,
+but there should also be charged excitations,
+that is,
+operators that carry charge.
+Let's find what these operators are in this theory.
+
+So operators that create charged excitations.
+For example,
+let's look for an operator $\Psi^\dagger$
+that creates charge $1$.
+
+Now in fractional quantum Hall context,
+this $\Psi$ is the electron operator,
+because our fundamental constituent that carries charge of unit 1 is really the
+charge $e$ operator,
+which is the electron operator.
+What do we demand of an operator that carries charge 1?
+It should have the commutation relation
+\begin{align}
+    \left[ \rho(x), \Psi^\dagger\left( x' \right) \right]
+    &=
+    \delta\left( x - x' \right)\Psi^\dagger(x')
+\end{align}
+You can think of this as the definition of an operator with charge 1.
+Because it give you back the operator with density with coefficient 1.
+And it turns out
+\begin{align}
+    \Psi \propto e^{im\phi}
+\end{align}
+and you can see this from the commutation relations for $\phi$ and $\rho$.
+We previously learnt that
+\begin{align}
+    \left[ \rho, \phi \right]
+    &=
+    \frac{i}{m}
+    \delta\left( x - y \right)
+\end{align}
+which implies
+\begin{align}
+    \left[ \rho, e^{im\phi} \right]
+    &=
+    \frac{i}{m}
+    \left( im \right)
+    e^{im\phi}
+    \delta\left( x - x' \right)
+\end{align}
+I may have made a sign error.
+But this is the operator that creates a charge 1 operation.
+\begin{align}
+    \Psi \propto e^{im\phi}
+\end{align}
+We can try to figure out what its statistics are.
+If I look at
+\begin{align}
+    \Psi(x)\Psi(y)
+    =
+    e^{im\phi(x)}
+    e^{im\phi(y)}
+    =
+    e^{im\phi(y)}
+    e^{im\phi(x)}
+    e^{-m^2\left[ \phi(x), \phi(y) \right]}
+\end{align}
+so then
+\begin{align}
+    \Psi(x) \Psi(y)
+    &=
+    \Psi(y) \Psi(x)
+    \underbrace{e^{+im\pi \sgn(x - y)}}_{
+    \left( -1 \right)^m
+    }
+\end{align}
+so what you learn is that
+\begin{align}
+    \Psi(x) \Psi(y)
+    &=
+    \Psi(y) \Psi(x)
+    (-1)^m
+\end{align}
+so if $m$ is odd then $\Psi$ is a fermionic operator,
+and if $m$ is even then $\Psi$ is bosonic.
+
+So the microscopic degrees of freedom that carry charge 1 are fermions.
+
+I'm going to call this $\Psi$ the electron operator from now on.
+Let's calculate the electron correlation function.
+First you need to calculate the correlation function of the boson.
+\begin{align}
+    \left\langle
+    \phi\left( x, t \right)
+    \phi\left( 0, 0 \right)
+    \right\rangle
+    &=
+    -\frac{1}{m}
+    \ln
+    \left|
+    x - vt
+    \right|
+    +
+    \text{constant}
+\end{align}
+That's the result for this correlation function.
+I'll put it in the homework to derive this operator.
+That means the Green function is
+\begin{align}
+    G(x, t) &:=
+    \left\langle
+    T\left( 
+    \Psi^\dagger(x, t)
+    \Psi(0, 0)
+    \right)\\
+    &=
+    e^{m^{2}\left\langle\phi(x, t), \phi(0, 0)\right\rangle}\\
+    &\propto
+    \frac{1}{\left( x - vt \right)^m}
+\end{align}
+so this Greens function has a non-trivial integer exponent 4$m$
+For the free fermion Chern insulator,
+$m$ is just 1.
+The fact that the exponent here is raised to $m$
+signals some much more non-trivial correlations that go beyond free fermion.
+
+Let me write the result in momentum space we will use later.
+\begin{align}
+    G(k, \omega) &=
+    \frac{\left( vk + \omega \right)^{m-1}}{
+    \omega - vk + i\sgn(\omega) 0^+
+    }
+\end{align}
+where $0^+$ is a positive infinitesimal used to regularize things,
+which you set to zero at the end of the calculation.
+Then the density of states is the imaginary part of the Greens function at
+$k=0$.
+\begin{align}
+    N(\omega) &\propto
+    \Im G(k=0, \omega)
+    \propto
+    |\omega|^{m-1}
+\end{align}
+
+Tunneling experiments.
+You could try to tunnel into these fractional quantum hall edge modes,
+and have tunnelling from  a metal from the outside.
+In these experiments,
+you can measure the current vs voltage across the gap.
+That $I$-$V$ characteristic measure the density of states.
+In particular,
+\begin{align}
+    \frac{dI}{dV} \propto N(v) \propto |v|^{m-1}
+\end{align}
+The prediction is that because you have this chiral Luttinger liquid with
+nontrivial $m$,
+the tunneling conductance should be quantized and non-linear.
+
+This is a fairly traditional condensed matter experiment.
+It was tested in experiment,
+and it looks  like there is some non-linear conductance,
+but it doesn't seem to be quantized.
+There's all sorts of messy physics that ruins the quantization.
+We think we know why that extra messy physics comes in.
+Because I'm focusing on field theory,
+I didn't set up the stuff to tell you why.
+
+But at the end of the day,
+you have some confining potential that confines your electron to some disk.
+It could be sharp or smooth.
+In the experiments,
+it's quite smooth,
+and when it's smooth,
+you have extra modes that contribute to the $dI/dV$ curve
+and that ruins the quantization.
+In principle,
+if you have sharp wells,
+at low enough energy and temperature,
+you should see this effect.
+
+\begin{question}
+    Smooth compared to what length scale?
+\end{question}
+In fractional quantum Hall,
+there is a characteristic length called the magnetic length
+\begin{align}
+    \ell_B \sim \frac{1}{\sqrt{B}}
+\end{align}
+So it's smooth compared to the magnetic length.
