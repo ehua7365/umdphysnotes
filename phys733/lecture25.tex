@@ -1,0 +1,582 @@
+\section{Chern-Simons and Edge theory}
+\begin{align}
+    \mathcal{L} &=
+    \frac{m}{4\pi} a_\mu \partial_\nu a_\lambda \epsilon^{\mu\nu\lambda}
+\end{align}
+The boundary theory is
+\begin{align}
+    \mathcal{L}_{\mathrm{edge}}
+    &=
+    \frac{m}{4\pi}
+    \partial_x \phi \partial_t \phi
+    -
+    V \left( \partial_x \phi \right)^2
+\end{align}
+The field doesn't commute with itself at different locations
+\begin{align}
+    \left[ \phi(x) , \phi(y) \right]
+    &=
+    \frac{-i\pi}{m}
+    \sgn\left( x - y \right)
+\end{align}
+Then
+\begin{align}
+    \partial\mathcal{L}
+    &=
+    \lambda\cos\left( m\phi \right)
+\end{align}
+
+This edge theory with $m=1$ is the bosonize theory.
+This chiral Luttinger liquid is the ``bosonized'' description
+($m=1$) of the chiral free fermion.
+Based on what we said last time,
+we can write the fermion
+\begin{align}
+    \Psi(x)
+    &\propto
+    e^{im\phi}
+\end{align}
+for $m=1$.
+Your question was why can we gap out free fermions when they don't commute with
+each other.
+You actually cannot gap out chiral free fermions.
+
+If we had counterpropagating fermions,
+we have $\Psi_L$ and $\Psi_R$,
+then we could add terms like
+$\Psi_L^\dagger \Psi_R + \mathrm{h.c.}$.
+And that wed be like adding
+\begin{align}
+    e^{-i\phi_L} e^{i\phi_R} + \mathrm{h.c.}
+    = \cos\left( \phi_L - \phi_R \right)
+\end{align}
+So if you had two counter-propagating modes,
+and you looked at the commutation relation,
+you would find that
+\begin{align}
+    \left[ \phi_L - \phi_R(x),
+    \phi_L - \phi_R(y)
+    \right] = 0
+\end{align}
+Fully chiral modes however cannot be gapped out.
+The key is to put everything in terms of bosonized description,
+add a cosine term and see if you can pin the argument.
+You can't if it's fully chiral.
+
+Last time,
+we looked at the ``electron operator''
+\begin{align}
+    \Psi(x)
+    \propto e^{im\phi}
+\end{align}
+And we wanted just to get an operator with charge 1.
+We derived it by requiring its commutation with the density operator
+\begin{align}
+    \left[ \rho(x), \Psi^\dagger(y) \right]
+    &=
+    \Psi^\dagger (y) \delta\left( x - y \right)
+\end{align}
+and
+\begin{align}
+    \rho &= \frac{1}{2\pi} \partial_x \phi.
+\end{align}
+And we knew the statistics had this algebra
+\begin{align}
+    \Psi(x) \Psi(y)
+    &=
+    \Psi(y)\Psi(x)
+    \left( -1 \right)^{m}
+\end{align}
+which came from the commutation relation.
+
+We can also write down the quasiparticles on the edge.
+Here we would have operators like
+\begin{align}
+    V_a &\propto
+    e^{ia\phi}
+\end{align}
+There are proportionality factors that don't really matter.
+The important piece is this part.
+These operators just from studding how it commutes with the density operator,
+you can see carry charge $a/m$.
+
+So then $V_a$ and $V_a^\dagger$ are the creation and annihilation operators for
+charge $a/m$ excitations.
+This is a representation of those to on the edge theory.
+
+If you applied this operator here on the edge,
+you would locally create an excitation on the edge.
+
+It's fractional statistics by looking athte commutation relations of this
+operator.
+\begin{align}
+    V_a(x) V_b(y)
+    &=
+    V_b(y) V_a(x)
+    e^{i\frac{\pi}{m} a\cdot b}
+\end{align}
+That's like a manifestation of hte fact that exchanging the two has fracitonal
+statistics
+that arises on the edge from that algebra.
+
+Previously,
+I mentioned that if you take smoe FQHE state descibed by a $U(1)_m$ CS theory,
+then we put a metal near it,
+and we can have electrons tunnel from the metal to the FQH edge.
+The tunneling conductance
+\begin{align}
+    \frac{dI}{dV} \propto
+    \text{density of states}
+    \propto
+    V^{m-1}
+\end{align}
+measures the density of states of the system you're tunneling into.
+And the density of states is given by the imaginary part of the Greens function
+or correlation function.
+
+The prediction is that there is a quantized conductance given by this integer
+$m$.
+Experiments try to look for this.
+They never saw good quantization,
+believed to be because the actual physical systems that arise
+aren't really perfectly described by this idealized theory.
+It's a whole topic to talk about what the departures from the idealized theory
+actually are and so on.
+
+You could also study quasipartciles tunneling from say one edge to another.
+If you had some FQH system,
+like a strip with two edges,
+you could bring the two edges close to each other
+and realize what's called a ``quanutm point contact''.
+Because the bulk supports these $m-1$ excitations,
+you could have edges tunneling into each other.
+So your Lagrangian would have left mover and right mover
+plus a particulars point that cause the quasiparticle from one edge
+to tunnel to another one
+\begin{align}
+    \mathcal{L}
+    &=
+    \mathcal{L}_L
+    + \mathcal{L}_R
+    +
+    \delta(x) \left( 
+    V_{a,R}^\dagger V_{a,L} + \mathrm{h.c.}
+    \right)
+\end{align}
+This cause the current to backscatter.
+Electrical current can only go in one direction,
+but the tunnel could go across,
+and you could try to measure that backscatter current.
+It turns out properties of this $V^_{a,R}^\dagger V_{a,L}$ show up in the
+backscatter current.
+
+You could try to measure the noise in the backscatter current
+$\langle I_{bs}^2\rangle$
+which would contain properties of the quantization.
+
+I just want to give you some flavour of what you can do once you have this
+theory.
+You could study all kinds of properties,
+and non-trivial properties of these functions,
+and the scaling and so on enter.
+
+\begin{question}
+    Is $a$ arbitrary?
+\end{question}
+Here $a$ must be an integer.
+The reason is because $\phi$ is a compact boson,
+so $\phi$ is equivalent to $\phi + 2\pi$.
+That's why $a$ needs to be an integer.
+Where does that come from?
+That realises the gauge field $a$ in
+\begin{align}
+    \mathcal{L} &=
+    \frac{m}{4\pi} a\, da
+    +
+    \frac{q}{2\pi} A\, da
+\end{align}
+And we found the charge of excitations is
+\begin{align}
+    \frac{q\cdot \ell}{m}
+\end{align}
+where $\ell$ is the charge carried under $a$.
+The reason that $q$ and $\ell$ had to be integers is because $A$ and $a$ are
+compact gauge fields.
+To make sure the theory is invariant under large gauge transformations,
+you need to make sure any particle charged under $a$ has to be integer,
+and that's why the $a$ in $V_a$ has to e integer.
+When you go to the edge theory,
+you  find $\phI$ itself is a compact variable and that's why this $a$ is
+quantized too.
+Maybe I should call it $\ell$ instead.
+\begin{align}
+    V_{\ell} \propto e^{i\ell \phi}
+\end{align}
+and the $V_{\ell}$ and $V^_\ell^\dagger$ are the creation and annihilation
+operators for charge $\ell/m$ excitations.
+
+\begin{question}
+    Are there exactly solvable models for this.
+\end{question}
+Some aspects can be solved,
+but no.
+This comes down to something deep in the study of topological phases of matter.
+There is a dichotomy between phases of matter with gapless edge modes,
+like this $U(1)_m$ CS theories,
+and those that do admit gapped boundaries,
+which have exactly solvable models.
+Models with gapless edge modes can be solved by numerics to see these properties
+though.
+
+
+\section{Quantum Spin Liquids}
+I want to discuss various physical contexts in which these abstract theory arise
+in.
+FQH states are the most important context,
+but we'll come back to that.
+For now I want to talk about quantum spin liquids.
+Quantum spin liquids are phases of matter that have the properties that they are
+electrical insulators,
+and furthermore,
+this is not an essential property,
+but it's where the name comes from,
+that the spin not order at $T=0$.
+Here the spins don't order,
+so they form some liquid state at zero temperature.
+This is unusual,
+because if you go to low enough temperature,
+spins should order,
+like a ferromagnetic,
+spin density wave or whatever.
+Hiving the spins not order at zero temperature is a little unusual.
+
+TO have these two properties is extremely non-trivial if you have a system with
+one electron per unit cell.
+
+If you remember band theory,
+in order to form a band insulator,
+you need to have one fermion per unit cell,
+but with a spin degeneracy,
+you have 2 electrons per unit cell
+to form an insulator.
+If you form an insulator with only one electron per cell,
+and you have spin symmetry,
+interactions must be involved and you cannot understand it with just band
+theory.
+
+Band insulator with with SO(3) spin interaction symmetry requires 2 electrons
+per unit cell.
+
+Such a thing is called a Mott insulator.
+There's no precise definite,
+but the closest to a definition is something like this.
+More importantly,
+it is a system that is insulating because of Coulomb interactions.
+
+So you have electrons,
+and one electron per unit cell,
+but even with half filling,
+they don't want to move on top of each other because of a strong Coulomb effect,
+and the system could potentially form an insulator.
+Coulomb interaction is stopping electrons from going on top of each other and
+therefore forming and insulating state.
+
+Any insulator with 1 electron per unit cell plus OS(3) spin with symmetry
+requires strong interactions.
+It's not something you can understand with free fermions and weak interactions.
+
+\section{LSM theorem}
+So far I said that you can have a system with one electron per unit cell,
+it can still form an insulator,
+but suppose I move away from 1 electron per unit cell.
+If your system is clean without disorder,
+you have mobile charges moving around,
+so your system comes metal or superconducting,
+because they might pair up an and condense.
+Unless you have Impurity states that trap this extra charge.
+
+It's not just this,
+there's something much more powerful you can say.
+that goes back to the Lieb-Schulz-Mattis theorem,
+which places very strong constraints on the ground state properties of a system
+with one spin-one-half particle on each unit cell.
+the statement is from 1961 in 1D.
+
+A spin-$\frac{1}{2}$ chain has an excitation gap $\Delta E \le \mathrm{const}/L$
+where $L$ is the size of the system.
+Assuming the Hamiltonian $H$ has $SO(3)$ spin rotation symmetry
+and it has translation symmetry.
+
+This is a really deep statement.
+It's saying that I cannot havea unique ground state wihta finite gap ot a uniuqe
+ground state
+if I want o preseve these smmetries.
+
+what are the options then?
+What states could I have?
+
+The implication of this thoery is that he ground state is either
+\begin{enumerate}
+    \item Spontaneous symmetry breaking.
+        For example, the system could spntaneously dimerize,
+        break the translational symmetry,
+        so you have 2 spin-$\frac{1}{2}$
+        per unit cell,
+        so neighbouring spins can form singlests,
+        and it costs a finite gap to creating excivatiosns
+        butecause you have to beraak some bonds.
+        But this state is an example of a valence bond solid that soona-=onesly
+        break the symmetry.
+        Asside from the finitegrund state,
+        the spectrum has a finiteeeerg gap.
+    \item The other possibility is that hte systme is just gaplesss,
+        which means tpower la correlations infinite correaltion length.
+\end{enumerate}
+You still have finite corrrelation lnegth,
+The tower of aroanother onseuqneceis th the tiial gappped state is not
+possibe=l.e
+
+This is spin-$\frac{1}{2}$ which is Go
+
+This is the new result.
+For $d>1$,
+(Hastings $N$).
+Let there be $V/m^3$.
+For an odd number of unit spin$_Y_2$  per unit cell.
+\begin{align}
+    SO(3) \times \mathbb{Z}^d
+\end{align}
+and
+\begin{align}
+    \Delta E \ge \frac{c\log L}{L}
+\end{align}
+
+If I have $SO(3($ s
+$V$ unit cells $L_i$ length ni $i$ dimension.
+$L:= L_i$.
+
+\subsection{Oshikava (2000)}
+For systems vertices $U(1)\times \mathbb{Z}^2$ unique gapped ground filling
+charge to inconstant equivalent ${Z}^2$.
+There is a unique ground state filling charge per unit cell
+\begin{align}
+    \nu = n \in m\mathbb{Z}.
+\end{align}
+there is spin-$\frac{1}{2}$ per unit cell with SO(3) symmetry
+equals half-filling $Y_2$ for any $I(1)$ subgroup.
+\begin{align}
+    \ket{\downarrow} &= \ket{0}\\
+    \ket{\uparrow} &= \ket{1}\\
+    \langle S^Z\rangle &= 0
+   \textrm{implies}
+   \langle n\rangle &= \frac{1}{2}.
+\end{align} 
+
+For all $d>1$,
+if odd numbers of spin$\frac{1}{2}$ per unit cell and or fractional filling,
+these are the possibilities
+\begin{enumerate}
+    \item ground states spontaneously breaks $SO(3)$\\
+    \item Gapless (compatible with symmetries)\\
+    \item topological order (compatible with symmetries)
+        Typically degenerate local ground states with periodic body conditions
+\end{enumerate}
+This is a powerful theorem.
+It constraints the infrared from UV information.
+
+LSM constraints are examples of anomalies in QFT.
+
+The first most important thing in QFT are symmetries,
+the second most important things are anomalies.
+like 't Hooft anomaly.
+
+Anomalies provide strong constraints,
+but the LSM theorems is more general than anomalies.
+This i the are instances where you have low energy constraints on high energy
+data.
+
+There is a poor mans' proof of LSM,
+which you can see in 30 seconds see why it has to be true,
+but is not rigorous.
+The point is the following.
+
+Considers a system with spin-$\frac{1}{2}$ per unit cell,
+and you have spin rotation symmetry.
+If I have $n$ unit cells,
+the state space if fusing sin-half tensor spin-half $n$ times.
+If odd,
+that has to fuse to a half-integer spin just by presentation theory of SU(2) or
+SO(3)
+If the Hamiltonian preserves that,
+then this Hamiltonian has to come with double degeneracy at least.
+With an odd length system,
+I obviously have to have a bound on the excitation gap,
+because I need to have at least two degenerate ground states.
+
+For a system with an odd number of unit cells with an odd number
+of spin $\frac{1}{2}$ spins per unit cell,
+the ground state must be at least 2-fold degenerate because
+$\frac{1}{2}\otimes \frac{1}{2}\otimes
+\cdots
+= \frac{1}{2}\oplus \frac{3}{2} \oplus$.
+
+Now for the even.
+If the system is gapped,
+then it has a finite correlation length,
+so the number of unit cells should not matter for energy spectrum up to
+$O\left( e^{-L/\xi} \right)$ corrections..
+If it has a finite correlation length,
+if I put the system on a large ring
+and I change the number of  unit ells by one,
+it should be sensitive only to what's happening in some small region,
+roughly a correlation length away,
+and it shouldn't care what the overall size of the ring is up to exponentially
+small corrections.
+
+From this,
+we can conclude that if the system is gapped,
+then it must come with at least a 2-fold degeneracy up to exponentially small
+corrections,
+Regardless of whether we have even or odd.
+
+Consider a torus $T^d$,
+and consider if hte total numbero f unit cells is even or odd.
+If gappe,d
+the toal numbero f unit cells should not matter,
+so it should be true up to these corrections.
+
+In $d=1$,
+the only way of having a gapped ground state with degenerate ground states,
+is through spontaneous symmetry breaking.
+The only way to have a gapped degenrate ground state,
+aside from accidental degeneracies,
+is through spontaneous symmetry breaking.
+The example of valence bond crystals that deimerizes,
+foms singlests,
+then fors some crystal arrangmenet of singlets.
+For $d>1$,
+we can have topological order.
+Specifically,
+we mena non-invertible topologcial order.
+So we cna have topological degeneracy on a non-trivla space.
+In this case,
+we want a degenerate set of ground states.
+Likethese examples of CS theories that we studied.
+
+The generalization to other groups is obvious.
+Consider your symetry to be an on-site symmetry cross some integer symmetry
+$G = G_{\mathrm{on-site}}\times \mathbb{Z}^d$.
+Consider a projective rpresenation of $G_{\mathrm{on-site}}$ per unit cell.
+So spin-$\frac{1}{2}$.
+Projective reperenstaions are classiifed by a second cohomology group that is in
+general some finite abelian group $A$.
+\begin{align}
+    [w]
+    \in H^2\left( G_{\mathrm{on-site}}, U(1) \right)
+    = A = \mathbb{Z}_{n_1}\times\mathbb{Z}_{n_2}\times\cdots
+\end{align}
+and projective representaions necessarily have dimension greater than one,
+just like spin-half has dmiension 2.
+As long as the numbero f unit cells is not commensurate iwth these factors
+$n_i$,
+then the overall Hilbert space of the large system needs to also form a
+projective represntation for a smilar reaons that an odd number of spin-half
+fuse ot an odd number of spins.
+
+This poor man's argumetn si not a proof and gives not much insight.
+
+\subsection{More Detailed Argument}
+
+Consider a $U(1)$ symmetry,
+filling $\nu$.
+Consider a cylinder with $x$ azimuthal of length $L$ around it.
+Consider a ground sate and its translation
+\begin{align}
+    \hat{T}_x\ket{\Psi_0}
+    &=
+    e^{i\hat{P}_x}\ket{\Psi_0}\\
+    &=
+    e^{iP_x^0} \ket{\Psi_0}
+\end{align}
+and now we adiabatically insert flux into the Hamiltonian $H[\Phi]$.
+Then the state will adiabatically transform to another state after inserting one
+flux quantum.
+And after one flux quantum,
+\begin{align}
+    \ket{\Psi_0} \to \ket{\Psi_0'}
+\end{align}
+and if the ground state is unique,
+then
+\begin{align}
+    \ket{\Psi_0'} &= c \ket{\Psi_0}
+\end{align}
+for some constant $c$.
+After inserting one unit of flux,
+we can do a large gauge transformation and come back to the original
+Hamiltonian.
+
+The large gauge transformation looks like
+\begin{align}
+    U &=
+    e^{i \frac{2\pi}{L} \sum_{\vec{r}} x \hat{n}_{\vec{r}}}
+\end{align}
+so that
+\begin{align}
+    U H[2\pi] U^\dagger &= H[0]
+\end{align}
+and after inserting $2\pi$ flux plus a large gauge transformation,
+then
+\begin{align}
+    \ket{\Psi_0} &\to U\ket{\Psi_0'}
+    = cU \ket{\Psi_0} = \ket{\tilde{\Psi}_0}
+\end{align}
+and now the idea is let's calculate the eigenvalues of translation on
+$\ket{\Psi_0'}$,
+or alternatively,
+let's calculate the momentum of $\ket{\Psi_0'}$
+
+We're going to use the property that
+\begin{align}
+    U^\dagger T_x U &=
+    e^{-\frac{2\pi i}{L} \sum_r x n_r} T_x
+    e^{+ \frac{2\pi i}{L} \sum_r x n_r}\\
+    &=
+    e^{\frac{2\pi i}{L} \sum_r n_r} T_x
+\end{align}
+so then the momentum can be calculated by
+\begin{align}
+    T_x \ket{\tilde{\Psi}_0 }
+    &=
+    T_x c U\ket{\Psi_0}\\
+    &=
+    c e^{\frac{2\pi i}{l} \sum_r n_r}
+    U T_x \ket{\Psi_0}
+\end{align}
+so then
+\begin{align}
+    T_x \ket{\tilde{\Psi}_0 }
+    &=
+    e^{\frac{2\pi i}{L} \sum_r n_r}
+    e^{i P_x^0}
+    \ket{\tilde{\Psi}_0}
+\end{align}
+so the state $\ket{\tilde{\Psi}_0}$ has momentum
+\begin{align}
+    P_x^0 + 2\pi \nu
+\end{align}
+which is the momentum of the new state.
+If $\nu$ is not an integer,
+the new state $\ket{\tilde{\Psi}_0}$ has a momentum which is different from the
+original state, and so therefore must be orthogonal.
+If it's orthogonal,
+then that contradicts the original assumption that there is a unique ground
+state.
+
+Another  way of saying this is that if you have fractional filling,
+you can construct another state which is really low energy which is orthogonal
+to it.
+That's the more sophisticated argument for why the filling needs to be an
+integer if you want a unique ground state.
+
+here I just showed if I have $U(1)$ symmetry and a unique gapped ground state,
+then the filling must be integer.
