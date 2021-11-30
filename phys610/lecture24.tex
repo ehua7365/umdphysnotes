@@ -1,0 +1,591 @@
+\section{Green functions}
+Up to now we have left the boundary conditions that $G$ has to satisfy
+unspecified.
+
+Which boundary conditions we choose depends on convenience.
+\begin{align}
+    \phi(\vec{x})
+    &=
+    \frac{1}{4\pi\epsilon_0}
+    \int_V \rho\left( \vec{x}' \right) G\left( \vec{x}', \vec{x} \right)\,
+    d^3\vec{x}'\\\nonumber
+    &\qquad
+    + \frac{1}{4\pi}
+    \oint_S\left[ 
+    G\left( \vec{x}', \vec{x} \right)
+    \left( 
+    \vec{\nabla}' \phi\left( \vec{x}' \right)
+    \cdot \hat{n}'
+    \right)
+    -
+    \phi\left( \vec{x}' \right)
+    \left( 
+    \vec{\nabla}' G\left( \vec{x}', \vec{x} \right)
+    \right)
+    \right]\, dS'
+\end{align}
+
+The simplest consistent choice is
+\begin{align}
+    \vec{\nabla}' G_N \left( \vec{x}', \vec{x} \right)
+    &=
+    -\frac{4\pi}{S}
+\end{align}
+where $S$ is the teal area of the boundary surface.
+\begin{align}
+    \phi\left( \vec{x} \right)
+    &=
+    \langle \phi\rangle_S
+    +
+    \frac{1}{4\pi\epsilon_0}
+    \int_V \rho\left( \vec{x}' \right)
+    G_N\left( \vec{x}', \vec{x} \right)
+    \, d^3 \vec{x}'
+    +
+    \frac{1}{4\pi}
+    \oint_S G_N\left( \vec{x}', \vec{x} \right)
+    \left( 
+    \vec{\nabla}' \phi\left( \vec{x}' \right)
+    \cdot
+    \hat{n}'
+    \right)\, dS'
+\end{align}
+where $\langle \phi\rangle_S$
+is the average of $\phi$ over the bounding surface.
+
+Finding the Green function is the hard part.
+Everything else is easy.
+
+\subsection{Example: Two hemispheres}
+Let's do an example.
+
+Consider a sphere made up of two conducting hemispheres that are kept at
+different potentials.
+And the centre of the sphere is the origin.
+The upper sphere is at potential $+V$ and the lower potential is at potential
+$-V$.
+
+The problem is to find the potential due to the sphere everywhere in space.
+A very standard problem.
+It doesn't look very much like a Greens function problem.
+Why are we able to solve this?
+Because using them method of images,
+we found the Green's function for a grounded conducting sphere.
+
+Recall that using them method of images,
+we found the potential due to a point charge near a conducting sphere,
+and from just that we can obtain the Greens function.
+\begin{align}
+    G_0\left( \vec{x}', \vec{x} \right)
+    &=
+    \frac{1}{\left| \vec{x} - \vec{x}'\right|}
+    -
+    \frac{a}{r'\left|
+    \vec{x}
+    -
+    \frac{a^2}{r'^2}\vec{x}'
+    \right|}
+\end{align}
+Here is the magic.
+We didn't solve this for an arbitrary potential,
+we solved it for a conducting sphere grounded.
+But that is the boundary condition for the Dirichlet Green function,
+which is chosen so that $G=0$ on the surface.
+So it happens that when we solve this problem for the grounded conducting
+sphere,
+we were actually finding the Dirichlet Greens function.
+Zero potential on the bounded surface,
+so it's grounded.
+That is exactly the Greens function.
+What we were solving the problem,
+what we were really solving is the Dirichlet Greens function.
+So we know the answer.
+That's the Dirichlet greens function.
+Now you might say what does that have to do with  completely different
+problem where the potential nd boundary have nothing to do with the grounded
+sphere we originally solved.
+That's the magic of the Greens function method.
+
+Once you know the Greens function of the Dirichlet function,
+then for any Dirichlet boundary function of the potential,
+the answer is given in terms of these integral.s
+
+Recall that
+\begin{align}
+    \phi\left( \vec{x} \right)
+    &=
+    \frac{1}{4\pi\epsilon_0}
+    \int_V 
+    \rho\left( \vec{x}' \right)
+    G_D\left( \vec{x},\vec{x}' \right)
+    \, d^3\vec{x}'
+    -
+    \frac{1}{4\pi}
+    \oint_S
+    \phi\left( \vec{x}' \right)
+    \left\{ 
+    \vec{\nabla}' G_D \left( \vec{x}', \vec{x} \right)
+    \cdot \hat{n}'
+    \right\}
+    \,dS'
+\end{align}
+Now here's the thing.
+What is $\rho\left( \vec{x}' \right)$?
+It's zero, because there are no charges.
+We know the Greens function,
+so we can calculate this gradient.
+And $\phi(\vec{x}')$ is specified on the surfaces.
+
+And then we can do the problem we want to solve by evaluating this integral.
+You see the power of this method.
+The problem you originally solved looks noting like this problem.
+The only thing the same is the surface.
+This is a sphere
+that's a sphere.
+Everything else is changed.
+Charges are changed,
+boundary conditions have changed.
+
+Once you know the Greens function for that surface,
+then it just doesn't matter.
+It's the surface that matters.
+Once you have solved the Greens function for that surface with Dirichlet
+boundary conditions,
+you're done.
+Just plug it into this formula.
+That's the magic.
+Then of course you may say this is a messy integral,
+but that's completely different.
+That's not the hard work.
+The real hard work was finding the Greens function.
+
+It was easy with the method of images here,
+but for more general geometries it's much harder.
+
+Any problem you can solve by the method of images you can use this method.
+
+In spherical coordinates
+\begin{align}
+    \left|
+    \vec{x} - \vec{x}'
+    \right|
+    &=
+    \sqrt{%
+    r^2 + {r'}^2
+    - 2rr' \cos\gamma
+    }
+\end{align}
+where $\gamma$ is the angle between $\vec{x}$ and $\vec{x}'$.
+
+Then
+\begin{align}
+    r'
+    \left|
+    \vec{x}
+    -
+    \frac{a^2}{r'^2}\vec{x}'
+    \right|
+    &=
+    \sqrt{
+    r^2 r'^2 - 2a^2 rr' \cos\gamma
+    + a^4
+    }
+\end{align}
+and
+\begin{align}
+    \cos \gamma &= \hat{e}_r \hat{e}_{r'}
+\end{align}
+where
+\begin{align}
+    \hat{e}_r
+    &=
+    \sin\theta \cos\phi \hat{e}_x
+    + \sin\theta \sin\phi \hat{e}_\phi
+    + \cos\theta \hat{e}_z\\
+    \hat{e}_{r'}
+    &=
+    \sin\theta' \cos\phi' \hat{e}_x
+    + \sin\theta' \sin\phi' \hat{e}_\phi
+    + \cos\theta' \hat{e}_z\\
+\end{align}
+And in spherical coordinates
+\begin{align}
+    \cos\gamma
+    &=
+    \cos\theta \cos\theta'
+    + \sin\theta \sin\theta' \cos\left( \phi - \phi' \right)\\
+    G_D\left( \vec{x}, \vec{x}' \right)
+    &=
+    \frac{1}{\sqrt{
+    r^2 + r'^2 + 2r r' \cos\gamma
+    }}
+    -
+    \frac{1}{\sqrt{
+    \frac{r^2 r'^2}{a^2} 
+    + a^2
+    - 2 r r' \cos\gamma
+    }}
+\end{align}
+We need to calculate $\vec{\nabla}'G_D$.
+You can check that the Green function is symmetric
+\begin{align}
+    G\left( \vec{x}, \vec{x}' \right)
+    &=
+    G\left( \vec{x}', \vec{x}' \right)
+\end{align}
+Coming back to this,
+what is $\hat{n}'$.
+What should I choose for it in the coordinate systems I've chosen.
+You should choose
+\begin{align}
+    \hat{n}' &= -\hat{e}_{r'}
+\end{align}
+But why the minus sign?
+Remember,
+we're living in the volume outside the sphere.
+$\hat{n}'$ is the unit vector going \emph{out} of our volume
+where we are trying to solve for the potential,
+so it should be going into the sphere.
+That's a common thing to mess up.
+
+So then this becomes
+\begin{align}
+    \vec{\nabla}' G_D \left( \vec{x}', \vec{x} \right)
+    \cdot \hat{n}'
+    &=
+    - \frac{\partial G_D}{\partial r'}
+\end{align}
+and it's just a lot of algebra,
+but all the steps are given in my notes.
+When all the dust settles,
+\begin{align}
+    - \frac{\partial G_D}{\partial r'}
+    &=
+    \frac{-\left( r^2 - a^2 \right)}{
+    \left( r^2 + a^2 - 2ar\cos\gamma \right)^{3/2}
+    }
+\end{align}
+
+So after doing some steps,
+\begin{align}
+    \phi\left( \vec{x} \right)
+    &=
+    \frac{1}{4\pi}
+    \int_S
+    \phi\left( a, \theta', \phi' \right)
+    \frac{-\left( r^2 - a^2 \right)}{
+    \left( r^2 + a^2 - 2ar\cos\gamma \right)^{3/2}
+    }
+    d\Omega'
+\end{align}
+where $d\Omega' = \sin\hteta' \, d\theta'\, d\phi$
+is the solid angle,
+with $dS' = a^2 d\Omega'$.
+
+This thing reduces to
+\begin{align}
+    \phi\left( \vec{x} \right)
+    &=
+    \frac{V a^2\left( r^2 - a^2 \right)}{4\pi a}
+    \int_{0}^{2\pi}
+    d\phi'
+    \left[
+    \int_{0}^{1}
+    d\left( \cos\theta' \right)
+    -
+    \int_{-1}^{0}
+    d\left( \cos\theta' \right)
+    \right]
+    \frac{1}{\left( a^2 + r^2 - 2ar\cos\gamma \right)^{1/2}}
+\end{align}
+At this point the physics is kind of done.
+In other words,
+knowing this Greens function,
+you can find the potential for this sphere,
+reduced to some integral,
+which we may not do in closed form,
+but the answer is here.
+
+\begin{question}
+    What if there are multiple surfaces?
+\end{question}
+Then you have many integrals.
+
+But this is about as an easy of a problem as you can get with Green's function.
+That was a very easy problem.
+
+\section{Method of Orthogonal Basis Functions}
+Suppose you know the Greens function for some boundary,
+for arbitrary boundary conditions you can find the potential.
+But how do you find the Green's function?
+In general it's hard.
+
+The method of images works some times.
+
+I will now discuss another method.
+
+The idea here is that in the end,
+solving a partial differential equation,
+like Poisson's equation or Laplace's equation,
+the physicist favorite method is separation of variables.
+There are certain geometries where the Laplacian geometry is separable.
+There are a dozen or so where Laplace's equation is separable.
+We're not going to do all the dozen.
+If you took the math methods class 40 years ago,
+you would learn a whole dozen.
+Nowadays you only have to study 3,
+which are Cartesian, spherical and cylindrical.
+That's pretty much the rest of the course.
+
+So we're just going to do a couple of examples with Cartesian,
+spherical, cylindrical.
+For some reason,
+the number of cylindrical examples in the books is fewer,
+even though it's harder.
+
+Let's start with the easy case of Cartesian.
+
+Here's the problem.
+Not sure if you've solved this as an undergraduate.
+The problem is that you have a rectangular box
+with sides $\Delta x = a$,
+$\Delta y = b$ and $\Delta z = c$.
+This box is sitting with one of its corners in the origin.
+This height is $c$,
+this distance is $a$ and this distance if $b$.
+It's a rectangular box.
+So you understand this geometry or is it mysterious?
+Anyway that's what it is.
+
+All the sides of the box are at zero potential except the top
+$z=c$,
+which is at potential $V(x, y)$,
+which is some specific function that is specified.
+You're told that at the top of the box,
+the potential satisfies this.
+
+The problem is to solve for $\phi$ everywhere inside the box.
+This is not particularly hard.
+You just have to solve Laplace's equation inside the box.
+Since the sides of the box parallel to $xyz$,
+it's most convenient to use Cartesian coordinates.
+\begin{align}
+    \frac{\partial^2 \phi}{\partial x^2}
+    +
+    \frac{\partial^2 \phi}{\partial y^2}
+    +
+    \frac{\partial^2 \phi}{\partial z^2}
+    &=
+    0
+\end{align}
+We're going to solve this using the method of separation of variables.
+
+Here's the idea.
+We begin by looking for a solution
+of very specific form.
+\begin{align}
+    \hat{\phi}\left( x, y, z \right)
+    &=
+    X(x) Y(y) Z(z)
+\end{align}
+In the end the final solution will not be of this form,
+but it will be a superposition of solutions of this form.
+So you find solutions like this and then you add them up to satisfy the boundary
+conditions.
+Substituting into Laplace's equation,
+\begin{align}
+    \frac{1}{X}\frac{d^2 X}{d x^2}
+    +
+    \frac{1}{Y}\frac{d^2 Y}{d y^2}
+    +
+    \frac{1}{Z}\frac{d^2 Z}{d z^2}
+    &=
+    0
+\end{align}
+Before they were partial derivatives,
+but here they are ordinary derivatives.
+Rewrite this as
+\begin{align}
+    \frac{1}{X} \frac{d^2 X}{dx^2}
+    + \frac{1}{Y} \frac{d^2 Y}{dx^2}
+    &=
+    -\frac{1}{Z}
+    \frac{d^2 Z}{dz^2}
+\end{align}
+Now comes the crucial step.
+The right side of the equation only depends on $z$.
+The left side depends on $x,y$ but not on $z$.
+Suppose I change $z$,
+the right hand side should change,
+but the left hand side can't change,
+and the only way that can be true is if the right side doesn't actually depend
+on $z$ at all.
+Hence
+\begin{align}
+    -\frac{1}{Z}
+    \frac{d^2 Z}{dz^2}
+    =
+    \text{constant}
+\end{align}
+that is independent of $z$
+Let's give this constant a name.
+\begin{align}
+    -\frac{1}{Z}
+    \frac{d^2 Z}{dz^2}
+    =
+    -\gamma^2.
+\end{align}
+Why the minus sign?
+Because I know the answer.
+Sometimes you can get the solution and find the sign is not nice and you have to
+go back to this step to change the sign.
+I know the answer and this choice is good.
+
+Similarly,
+you can say the same thing about the other side,
+with $x$ and $y$.
+
+Then we have two equations.
+We started wiht one equation,
+but now we have 2 equations.
+\begin{align}
+    \frac{1}{X}\frac{d^2 X}{dx^2}
+    +
+    \frac{1}{Y}\frac{d^2 Y}{dy^2}
+    &=
+    -\gamma^2
+\end{align}
+and we have
+\begin{align}
+    -\frac{1}{Z} \frac{d^2 Z}{dz^2} &= -\gamma^2
+\end{align}
+So now we can rewrite the first equation as
+\begin{align}
+    \frac{1}{X} \frac{d^2 X}{dx^2}
+    &=
+    -\frac{1}{Y} \frac{d^2 Y}{dy^2}
+    - \gamma^2
+\end{align}
+and now we apply the same logic as before.
+If I change $x$,
+I should expect the left hand side ot chnage,
+but the right side dosn't change,,
+and the only way for that to be possible is that the left doesn't actually
+depend on $x$ and so it's some constant independent of $x$ and $y$,
+and let's call it $-\alpha^2$.
+Once again there's a sign because I know the answer.
+\begin{align}
+    \frac{1}{X} \frac{d^2 X}{dx^2}
+    &=
+    -\alpha^2.
+\end{align}
+We can then define a parameter
+\begin{align}
+    \beta^2 &:= \gamma^2 - \alpha^2
+\end{align}
+and now we have 3 equations.
+\begin{align}
+    \frac{1}{X} \frac{d^2 X}{dx^2}
+    &=
+    -\alpha^2\\
+    \frac{1}{Y}
+    \frac{d^2 Y}{dy^2} &=
+    -\beta^2\\
+    \frac{1}{Z}\frac{d^2 Z}{dz^2} &=
+    + \gamma^2.
+\end{align}
+So we have 3 ODEs and we know the boundary conditions
+\begin{align}
+    X(x) &= 0 &\text{at }x = 0 \text{ and } x = a\\
+    Y(y) &= 0 &\text{at }y = 0 \text{ and } y = b
+\end{align}
+Then
+\begin{align}
+    X(x) &=
+    \sin\left( \frac{n\pi x}{a} \right)\\
+    Y(y) &=
+    \sin\left( \frac{m\pi y}{b} \right)
+\end{align}
+where $n,m$ are integers
+and we know
+\begin{align}
+    Z(z) &= 0 &\text{at } z = 0
+\end{align}
+so then
+\begin{align}
+    Z(z) &= \sinh\left( \gamma_{nm} z \right)
+\end{align}
+where
+\begin{align}
+    \gamma_{nm} &=
+    \pi \sqrt{
+    \left( \frac{n}{a} \right)^2
+    +
+    \left( \frac{m}{b} \right)^2
+    }
+\end{align}
+There's still one boundary condition at the top we haven't used yet.
+The thing about the hyperbolic sine is that it's monotonic.
+If $\phi$ is zero at the top,
+then I just get $\phi(z)=0$ everywhere,
+so it's important I have some interesting boundary conditions.
+
+To satisfy boundary conditions at $z=c$ for a linear superposition,
+\begin{align}
+    \ph(x, y, z)
+    &=
+    \sum_{n,m=1}^\infy
+    A_{mn}
+    \sin\left( \frac{n \pi x}{a} \right)
+    \sin\left( \frac{m \pi y}{b} \right)
+    \sinh\left( \gamma_{mn} z \right)
+\end{align}
+and we require that
+\begin{align}
+    \phi\left( x, y, c \right) &= V\left( x, y \right)
+\end{align}
+This is really just double Fourier seris for $V(x, y)$.
+What we need to do is invert this and find the Foufier coefficients 
+$A_{nm}$.
+Use the identity
+\begin{align}
+    \frac{2}{L}\int_{0}^{L} dx\,
+    \sin\left( \frac{n\pi x}{L} \right)
+    \sin\left( \frac{n'\pi x}{L} \right)
+    &=
+    \delta_{n,n'}
+\end{align}
+iSo then
+\begin{align}
+    \int_{0}^{a}dx\,
+    \left( \frac{z}{a} \right)
+    \sin\left( \frac{n'\pi x}{a} \right)
+    \int_{0}^{b}dy\,
+    \left( \frac{z}{b} \right)
+    \sin\left( \frac{m' \pi y}{b} \right)
+    V\left( x, y \right)
+    &=& 
+    \sum_{n,m}
+    A_{nm} \delta_{nn'} \delta_{mm'}
+    \sin\left( \Gamma_{nm} z \right)
+\end{align}
+which gives
+\begin{align}
+    A_{nm}
+    &=
+    \frac{4}{ab}
+    \frac{1}{\sinh\left( \gamma_{nm} z \right)}
+    \int_{0}^{a} dx
+    \int_{0}^{L} dy\,
+    \sin\left( \frac{n\pi x}{a} \right)
+    \sin\left( \frac{m\pi y}{b} \right)
+    V\left( x, y \right)
+\end{align}
+
+Meake sure you can solve the problems in hte homework chop chop.
+The problems aresimliar but not the same.
+You need to do those right quicklky.
+Some questions are straightforward but longer,
+but you can do those later once you've finished the fast ones.
+You guys should do well in this exam.
+EM no matter how easy is going to be a hard exame.
