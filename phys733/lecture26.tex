@@ -1,0 +1,544 @@
+\section{Quantum Spin Liquids}
+\subsection{LSM Constraints}
+If Hamiltonian has symmetry
+\begin{align}
+    G = \underbrace{SO(3)}_{\text{spin rotation}}\times
+    \underbrace{ \mathbb{Z}^d}_{\text{trans sym}}
+\end{align}
+and an odd number of spin-$\frac{1}{2}$ per unit cell,
+then no trivial unique gapped ground state is possible.
+
+In $d=1$, either
+\begin{enumerate}
+    \item Ground state either breaks symmetry
+    \item Or gapless
+\end{enumerate}
+In $d>1$
+\begin{enumerate}
+    \item  ''''
+    \item ''''
+    \item Topological order (compatible with symmetry)
+\end{enumerate}
+With
+\begin{align}
+    G &= U(1) \times \mathbb{Z}^d
+\end{align}
+filling $\nu$ is charge per unit cell.
+
+If $\nu$ is fractional then no unique gapped ground state is possible.
+
+The general version.
+\begin{align}
+    G &=
+    G_{\textrm{on-site}} \times \mathbb{Z}^d
+\end{align}
+If projective representation per unit cell
+\begin{align}
+    [w] \in H^2 \left( G, U(1) \right)
+\end{align}
+the no unique gapped ground state is possible.
+
+Consider $U(1)$ symmetry.
+Consider a cylinder with space like $T^d$.
+Let $L_x=: L$.
+$V$ is then umber of unit cells, and $C=V/L$.
+Then translational symmetry acts like
+\begin{align}
+    T_x \ket{\Psi_0} &=
+    e^{iP_x^0}
+    \ket{\Psi_0}
+\end{align}
+Suppose ground state is unique and gapped.
+Insert one flux quantum adiabatically,
+then large gauge transformation
+\begin{align}
+    U &= e^{i \frac{2\pi}{L} \sum_r x n_r}
+\end{align}
+acts like
+\begin{align}
+    \ket{\Psi_0} &\to
+    U c \ket{\Psi_0} = \ket{\tilde{\Psi}_0}
+\end{align}
+and
+\begin{align}
+    T_x \ket{\tilde{\Psi}_0}
+    &=
+    e^{i \tilde{P}_x^0}
+    \ket{\tilde{\Psi}_0}
+\end{align}
+Then the new momentum is
+\begin{align}
+    \tilde{P}_x^0
+    &=
+    P_x^0
+    +
+    \frac{2\pi}{L} \sum n_r\\
+    &=
+    P_x^0 + \frac{2\pi N}{L}\\
+    &=
+    P_x&0 + 2\pi \frac{V}{L} \frac{p}{q}
+\end{align}
+where we let $\nu = N/V$.
+Assume $\nu = p/q$ for some integers $p$ and $q$ which are coprime.
+Pick $V/L$ to be coprime with $q$ so that
+$\frac{V}{L} \frac{p}{q}$ is not an integer.
+So then
+\begin{align}
+    e^{i\tilde{P}_x^0}
+    \ne e^{i P_x^0}
+\end{align}
+which implies
+$\ket{\Psi_0}$ and $\ket{\tilde{\Psi}_0}$
+must be orthogonal,
+which is a contradiction.
+
+\begin{question}
+    This is not a full proof?
+\end{question}
+No, to get a full and rigorous proof,
+it was done originally by LSM.
+They considered a variational state,
+and showed you get could to $e^{1/L}$ energy of the ground state.
+Hastings gave a long rigorous proof,
+but add to give a number of assumptions about then umber of unit cells.
+He was able to prove it for even cells,
+but still had restrictions on the size.
+
+\begin{question}
+    How do you have the freedom to pick $V/L$.
+\end{question}
+We're assuming we have enough freedom to choose the case.
+This proof would not work for specific vlaues of $V/L$.
+Then ext step is that if I cannot have a unique ground state for this system
+size,
+then I also cannot have it for any system size.
+The intuition is that if you did have a gapped ground state,
+even if it wre degenerate,
+then it has a finite coreelaiton elngth,
+so the spectrum shouldn't care xactly what hte systme size is because it'sa
+lgobal thing up to exponentially small corrections.
+Go from speicfic system sizes to generic syste msizes,
+by arguing correlation lengths.
+
+\begin{question}
+    This smells like the FQH argument,
+    where $V/L$ is the number of orbitals.
+\end{question}
+In FQH yo uhave fractional filling,
+and htis is exactly a way of proving FHQ has degenerate ground states,
+and if you did the work,
+then number of degenerate ground states if $q$.
+If you went further,
+you could show that if I insert one flux quantum,
+that toggles from one state to another,
+and you can go futher and argue that you have to have $q$ states.
+
+\begin{question}
+    What if there is no translational symmetry?
+\end{question}
+Whatwe learn her is that if you have translational symmetry and on site
+symmetry,
+no unique ground state is possbile.
+For $d>1$ there are 3 psosiblities.
+Topologcial order is compatible wiht symmetry.
+The degenarcy itself is robust to breaking tansliaontl symmetry.
+The topological degeneracy when you insert flux does change which degenerate
+state you are in.
+The main point is that once you have topolgoical order you can satisfy this
+theorem,
+but the teorem itself sdone't require TI,
+but jsut that TI requires you have these almsot degenerate states.
+The tarnslation symetry and this filling requirement imply that you musth ave a
+degenearcy,
+but that degenracy can still be robust to breaking these tnralsioantl symmetry.
+Nothing says the egeneracy isn't robust if I brek the translational symmetry.
+
+\begin{question}
+    Here you asumed periodiciiyt in the $x$ direction,
+    but where did we use it?
+\end{question}
+Technically we used it because I asumed it had trnalaiotnl symmetry in any
+direciton,
+but if I had a boundary,
+I would technically break tranlationl symmetry.
+And I needdd translaitonal symmetry to define a filling.
+It's there implicitly,
+but explicitly I didn't use it.
+In practise it would get a bit more subtle wiht boundaries,
+becase you would have chiral edg modes on the boundary,
+and it wouldn't necessarily gapped.
+
+This result applies to way more states if I put it on a torus.
+
+\section{Spin liquids}
+That was all motivation.
+Once you have a system with fractional filling,
+then topological order is the only way to still have a gapped state and be
+compatible with the symmetry.
+Interestingly if you have such a system with an odd number of spin-$\frac{1}{2}$ 
+per unit cell,
+plus the other conditions,
+then that implies topological order.
+You have systems with fractional filing and spin-half per unit cell,
+ad if the system wants to preserve the symmetry and be gapped,
+the only thing that can make that happen is topological order.
+
+The physical picture for what the quantum spin liquid is,
+comes from the idea of a resonating valence bond.
+\begin{align}
+    H &=
+    \sum_{\langle ij\rangle}
+    J_{ij} \vec{s}_{i} \cdot \vec{s}_{j}
+\end{align}
+for $J_{ij}>0$.
+
+For a single pair $J_{ij} S_i S_j$,
+the lowest energy state is a spin singlet.
+Idea of resonating valence bond,
+is the idea that it's a superpositions of different singlet configurations.
+This goes back to chemistry,
+where you have molecules like benzine,
+where you have 6 carbon atoms,
+and hydrogen out here,
+and then the electrons can form singlet configurations.
+But the actual state of the molecule is a superposition between this singlet
+configurations and the other.
+People knew about it in Chemistry,
+and Linus Pauling started thinking about many-body valences bond resonance in
+metal,
+and that motivated Phil Anderson to think about resonating valence bond in
+insulators.
+Anderson in 1973 proposed the idea that you could have an electrically
+insulating system where the spin degrees of freedom form resonating valence
+bonds.
+Meaning that the ground state is a superposition over valence bond
+configurations.
+
+The system is forming a quantum liquid of singlets,
+a gorund stae superpositon of all posssible singlet configuraotns.
+Andreson talked about it in 1973 andit ws completely ignored.
+In 1986,
+physicist dicovered high temperature superconductivity in the cuprates.
+Right after that there was  big explosion in the field.
+People tried to come pu with theories for why cuprates where high-temperature
+superconductors,
+and Anderson had this spin liquid lying in a draw,
+and he said look,
+maybe this spin liquid could have something to do with it.
+
+Since 1987,
+there's a huge explosion about understanding spin liquids and resonance states.
+I'm not going to mention the relationship with high-temperature superconductivity,
+because it's very tenuous and controversial.
+It may or may not have anything to do with high-$T_c$ superconductivity,
+and there are opposing camps of physicists who hate each other.
+It led to the destruction of the careers of many young scientists in the
+1990s,
+and there should be dramatic books written about the sociology about this,
+extremely fascinating.
+
+Now,
+we're getting to a point where those people are dying and retiring,
+so maybe the new generation can solve this problem.
+It was pretty bad.
+
+The kind of ground states natural to think about,
+once you realise that the lowest energy state is a singlet,
+the natural states to think about are a crystal of these valence bonds,
+sometimes called VBS or valence band solid.
+
+These bonds form singlets,
+for do so in some ordered pattern.
+This kind of state breaks translation symmetry,
+but it preserves the SO(3).
+In the context of LSM,
+it's the first possibliity where you just breka the symmetry.
+
+Another state possible is a spin-density wave.
+The simplest example is a ferromagnet.
+So you have spins up and down.
+An anti-ferromagnetic is a special spin density wave with wave vector $k=\pi$.
+This thing breaks SO(3) as translatoin,
+but it preserves some combination.
+
+The third interesting possiblitiy s htis RVB state,.
+There are two kinds of RVB states we talk about.
+One is short-range RVB,
+where spins near each other form valence bonds,
+so only a superposition over states where nearby spins for valence bonds.
+THis kind of thing means systems have finite correlation lnegth.
+Anything happening in some reaosn,
+spins are only connected to spins nearby,
+so they come with finite corelation length,
+which is typically associated with gapped states.
+
+Ify ou had a short range RVB states,
+a gapped state,
+then it has to have topological order by the LSM theorem.
+Specifically,
+if you put it on a torus,
+there iwlll be a gorund satte degenearcy as required by LSM.
+
+Then you have long-range RVB,
+where you have valnece bonds arbirarily far apart,
+but of course the amplitude for having long range valence bonds will decrease
+far away but perhaps power law decay.
+
+
+It's the same reason why you have gapless systems at all.
+A gapless system is one where the correlation decays as a power law.
+How can that happen when I only have short-range interactions?
+The system some how conspires to have long-range correlations,
+power law decay,
+but still long range.
+
+One thing you can think of physically is suppose that these bonds are really
+strong.
+This guy has really strong bonds wiht this one,
+but the bonds iwht this guy are weak,
+
+So far I've given you a picutre,
+from which you can construct variatonal states,
+where you can write down a ground sate that is a superpositon of different
+configuraitons.
+You can try to figure out are these energetically favourable ground states.
+That's what Anderson did.
+It's not super concrete either.
+I have a Hamiltonian whose ground state is going to look like this form.
+
+\section{Quantum Dimer Model}
+An importnat devlopment after 1987 was quantum dimer models,
+which gave a nice way to think about spin liquids,
+changing the rules a little to make thisp icutre more precise.
+It changed the rules a bit so people don't like that.
+But the good review article is arXiv 0809.3051,
+and the original paper was Rokhsar-Kivelson 1987.
+
+The quantum dimer model says let's forget about the spins entirely,
+and think of a quantum state system of dimers,
+which are just colorings on edges.
+
+The idea is to directly model valence bonds.
+We replace valence bonds with dimers.
+The key point is that we treat different dimer configurations as orthogonal
+quantum states.
+This is the key thing.
+This is actually incorrect for spin systems.
+If I take a spin system,
+consider some condition nation of singlets, valence bonds,
+that's not going to be orthogonal to every other configuration.
+But the idea of the dimer model is to forget that and just demand they are
+orthogonal.
+
+The next thing is to assume the dimers cannot touch each other.
+So if one spin forms a singlet with one spin,
+it cannot also form a singlet with another spin.
+So dimers cannot touch.
+
+Here we just set up the Hilbert space.
+Now we want a Hamiltonian,
+for example on a square lattice.
+The Hamiltonian will have two terms,
+the sum over plaquettes of the square lattice.
+\begin{align}
+    H_{QDM}
+    &=
+    \sum_{\square}
+    -t \left(
+        \ket{=}\bra{||}
+        + \mathrm{h.c.}
+    \right)
+    +
+    V
+    \left( 
+    \ket{=}\bra{=}
+    +
+    \ket{||}\bra{||}
+    \right)
+\end{align}
+The properties of the ground state depend very sensitively what dimension we are
+considering,
+whether square, cubic,
+and it also depends very sensitively on the geometry,
+like triangle, honeycomb, etc.
+
+Because we have these local rules which flip configurations,
+let me define some terminology.
+
+We could have a \emph{flippable plaquette}
+which takes $=$ to $||$.
+
+A non-flippable plaquette,
+consider 3 plaquettes,
+each with 1 singlet,
+but the bonds are not touching.
+Then that's not flippable.
+
+We could also have a \emph{flippable loop}.
+
+I can draw a fictitious loop that surrounds these guys.
+For a dimer configuration on this loop,
+if I can flip it with local moves to get the complementary configuration,
+then if I can get from one to another by dong local moves in the interior of
+the loop and maybe a little outside of it,
+then that would be  flippable loop.
+
+Once we introduce these local moves,
+the question is which dimer configuration can be converted to another dimer
+configuration by local moves.
+And that introduces topology and winding into the system.
+
+You can ask if there are dimer configurations that cannot be transformed into
+each other by local moves,
+and if there are are,
+then you can argue they are topologically distinct from one another.
+
+It turns out the biggest difference in dimer models is whether your lattice
+bipartite or non-bipartite.
+Bipartite means that you can colour the vertices with 2 colours such that no
+nearest neighbour has the same colour.
+Square lattice you can do that so it's bipartite,
+but you can't do that on a triangular lattice, so it's non-bipartite.
+
+The notion of topological sector is that you count the number of dimers that are
+crossing some line.
+What I mean is that suppose you draw a triangular lattice.
+Then you draw a dotted line that crosses some plaquettes.
+You draw your line and you count how many crossings with dimers there are.
+One thing you'll notice is that the local moves only change the number of
+crossings by an even amount.
+
+Local moves here means a specific move on two triangles.
+The key point it's always 2 to 2.
+That's where this parity thing comes up.
+
+\begin{question}
+    Is there a physical reason we have this constraint.
+\end{question}
+No.
+We're just writing down interesting Hamiltonians for these and considering
+interesting classes of moves.
+We'll find these map to lattice gauge theory,
+and changing the kind of moves allowed is changing the gauge constraints,
+but there's really no physical reason.
+It's made up anyway.
+Physically motivated,
+but the actual Hamiltonian is argued from another starting point.
+
+\begin{question}
+    Perhaps it's conservation of energy?
+\end{question}
+There are terms you can write down like
+$S_i^+ S_j^+ S_k^- S_k^-$.
+But then you can write down 3 spin terms as well\ldots
+Suppose I have a full dimer covering,
+so there are no extra dimers you can place anywhere that is compatible with the
+rules.
+Then you cannot move a single dimer.
+Requiring we have  full dimer covering will restrict the local moves you can
+have.
+
+The point is that if I count the parity of the number of crossings,
+that's a topological invariant because it's invariant under local moves.
+
+Putting this on a torus gives four topological sectors,
+because we have 2 non-contractile cycles,
+one called $\alpha$ and another called $\beta$.
+Suppose the number of crossings is $n_c^\alpha$ and $n_c^\beta$,
+then the invariants are
+\begin{align}
+    n_c^\alpha\mod 2\\
+    n_c^\beta\mod 2
+\end{align}
+You can get these from local plaquette moves.
+We don'th ave such a term n the Hamilonitna htat allowed me to do that.
+
+On a bipartitlelattcek we have the number o crossngs $\mod 2$.
+
+If you have a bipartitle lattice,
+then you have A sites and B sites.
+Imagine that all of our dimers actually have an arrow on them,
+but points to the A subslattice to the B sublattice,
+so they implcitly have arrows on a to b aso on.
+
+I can count the winding number,
+which is
+\begin{align}
+    n_{\textrm{winding}}
+    &=
+    n_{\textrm{left-crossings}}
+    - n_{\textrm{left-crossings}}
+\end{align}
+Ona a torus,
+there are $\mathbb{Z}\times mathbb{Z}$
+
+\section{Topological Excitations}
+There are two kind of excitations we can have.
+First first one are called \emph{visons}.
+
+\begin{question}
+    It's not clear it's the same for each vison
+\end{question}
+
+???
+
+I vison is a dual excitation that lives on plaquettes.
+Imagine a line that connects the two.
+Then count the dimer crossings on that line.
+The number of crossings is $n_c$.
+
+The wave function of a vison is
+\begin{align}
+    \ket{\mathrm{ground state}} = \sum_c (-1)^{n_c} A_c \ket{c}
+\end{align}
+but the ground state is
+\begin{align}
+    \ket{\mathrm{ground state}} = \sum_c A_c \ket{c}
+\end{align}
+
+Why are they of this form?
+Because it's like vortex.
+These excitations become defined finite energy excitations.
+
+In general,
+the choice of line matters,
+and the energy wold even depend on\ldots
+
+The next type of topological excitation is called a \emph{monomer}.
+
+I can have terms like this to $H$
+\begin{align}
+    \ket{|}\bra{:} + \ket{:} \bra|{}
+\end{align}
+The dots just means separate spins by themselves.
+The name vison is controversial.
+It was introduced in 1997 by Matt Fischer.
+All people 10-years liquid than $\mathbb{Z}_2$ vortices got renamed to something
+new.
+there's a reason to change the name.
+One way to think about what's going on,
+say you have a normal superconductor with vortices.
+You can have a $+1$ vortex,
+or a $-1$ vortex.
+A vison is kind of a superposition between a $+1$ and $-1$ vortex.
+You can think of it as all quantum superposition of odd-number winding
+vortices.
+The -on is for particle.
+V for vortex, and is for Ising.
+So vison.
+
+The key point is that depending on whether the ground state is ordered,
+valence bond crystal,
+or resonating valence bond state,
+a uniform superposition over all kinds of valence bond configurations,
+pending on which type of ground state we're in,
+these excitations will either be confined or deconfined excitations.
+
+Confined means linear in separation.
+Deconfined means you can separate them arbitrarily far apart without energy cost.
+
+There are mutual statistics between visons and monomers.
+
+In ordered states they are confined and in spin liquid RVB they are deconfined.
+
+Ordered VBS confined vs spin liquid RVB deconfined.
