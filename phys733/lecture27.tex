@@ -1,1 +1,706 @@
-skipped
+\section{Quantum Dimer Model}
+Each site is involved in no more than one dimer.
+
+Complete dimer covering each site involved in exactly 1 dimer.
+Different dimer configurations are assumed orthogonal states.
+This is not the case in real systems,
+but is assumed in the dimer model.
+
+Then we considered a square lattice,
+with a Hamiltonian that has a hopping term where the configurations get flipped
+plus a potential energy term.
+\begin{align}
+    H_{qdm} &=
+    \sum -t \left( \ket{||}\bra{=} + \mathrm{h.c.} \right)
+    +
+    V\left( 
+    \ket{||} \bra{||} + \ket{=}\bra{=}
+    \right)
+\end{align}
+
+
+Last time we considered hot topological sectors.
+We have a non-bipartite lattice.
+Fix reference line count parity of dimer crossings $n_c\mod 2$.
+And $n_c\mod 2$ is invariant under logical dimer moves.
+
+This winding number $n_c$,
+the reference line matters.
+If you choose a different reference line,
+this number does change,
+so to define the topological sector you must fix the reference line first.
+You can see this if you draw a triangular lattice.
+Because each site is connected to exactly one dimer,
+if I change my reference line to cross a particular site near it,
+I will always cross an extra dimer when I deform the line like this.
+Because each site is part of 1 dimer,
+$n_c\mod 2$ depends on the reference.
+Once we fix our reference looks and do this counting,
+the result is going to be an invariant of these local moves.
+On a torus,
+we can consider two reference loops corresponding to non-contractible cycles of
+the torus and we get the 2 non-contractible sectors.
+
+On a bipartite lattice,
+we pick 2 reference lines and nay integer associated with 2 reference lines.
+
+
+\subsection{Topological Excitations}
+\begin{align}
+    \ket{g.s}
+    &=
+    \sum_c A_c \ket{c}
+\end{align}
+Then we talked about topological excitations.
+It's probably better to call them topological defects.
+Depending on what phase you're in,
+they may or may not be deconfined excitations.
+We talked about visons,
+
+Say you have a vison at $i$ and a vison at $j$.
+Suppose that you had a ground state which was the sum over some dimer
+configurations with some amplitudes.
+Then you can introduce the visons by picking some reference line.
+And $i$ and $j$ are the endpoints of the line.
+So a vison $i$ and vison at $j$ connected by this line would be the same sum
+with configurations
+but a $(-1)^{n_c}$.
+\begin{align}
+    \ket\left\{ V_i V_j \right\}
+    &=
+    \sum_c
+    A_c \left( -1 \right)^{n_c} \ket{c}
+\end{align}
+Think of it as a $\mathbb{Z}_2$ vortex,
+because it's like a branch cut,
+and along the branch cut,
+we change the state depending on how many dimers are crossing it.
+So $-1$ associated with branch cuts.
+
+Then you can break them into 2 monomers,
+and you allow the monomers to move around.
+The local moves only break the dimers.
+If I had a dimer on some particular link,
+then that creates two monomers or vice versa.
+\begin{align}
+    \left( \ket{:}\bra{|} + \mathbb{h.c.} \right)
+\end{align}
+A single monomer requires some string of moves to break and move far apart.
+A single monomer is thus a topological excitation
+because it cannot be created by any local operator.
+
+Let's rephrase some notation.
+Let's call the reference line $\gamma$,
+and the number of crossings along it $n(\gamma)$.
+Then
+\begin{align}
+    \ket\left\{ V_i V_j \right\}
+    &=
+    \sum_c
+    A_c
+    \left( -1 \right)^{n_c\left( \gamma \right)}
+    \ket{c}
+\end{align}
+If you fix $\gamma$,
+this will have multiple configurations,
+but I haven't told you they are all related by local moves.
+This $\gamma$ here is just a line segment.
+The number of line crossings is not topologically protected.
+It could be topologically protected if it were a closed loop though.
+But here the $\gamma$ is a line segment that starts at $i$ and ends at
+$j$.
+
+\begin{question}
+    Different dimer coverings could ave different $n_c(\gamma)$'s?
+\end{question}
+Yes that's right.
+If $\gamma$ is a non-contractible loop,
+then local moves will not change $n_c\left( \gamma \right)$.
+
+\begin{question}
+    Are monomers topological excitations?
+\end{question}
+There's no operator that creates a single monomer.
+The only way is to break a dimer,
+get 2 monomers and move one far away.
+This has become important recently,
+because last year in Harvard,
+in a Rydberg atom array,
+they managed to create the quantum dimer model,
+and a particular ground state that corresponds to a $\mathbb{Z}_2$ spin liquid.
+
+\begin{question}
+    Dimer models can be defined even without translational symmetry
+    on arbitrary tribulations?
+\end{question}
+Yes it's more general.
+
+\begin{question}
+    If you have a square lattice,
+    and or have a dislocation,
+    it will become non-bipartite.
+\end{question}
+We can do it on bipartite or non-bipartite lattices.
+
+\subsection{Square Lattice Dimer Model}
+There is a particular point in the parameter space where you set $V=t$.
+This point is called the RK point, which stands for Rocksta-GUilson.
+When you set $V=t$,
+then you can write the Hamiltonian as
+\begin{align}
+    H &=
+    V\sum
+    \left( 
+    \ket{||}
+    -\ket{=}
+    \right)
+    \left( 
+    \bra{||}
+    -
+    \bra{=}
+    \right)\\
+    &= V \sum_{\square} P_{\square}
+\end{align}
+And the point here is that this is actually a sum of projectors,
+so you can define a projector on each plaquette,
+so you're just summing over plaquettes.
+Projector means if you square it you get the same thing.
+\begin{align}
+    P_{\square}^2 = P_{\square}
+\end{align}
+
+The nice thing is that the ground state is the state that is annihilated by
+every projector.
+
+\begin{question}
+    Is that always possible?
+\end{question}
+You don't know it's always possible,
+but here it is.
+You can have projects that are weird.
+Here it will be possible.
+
+A generic wave function that is annihilated by projectors takes the form
+of a sum over configurations $c$.
+\begin{align}
+    \ket{\Phi} &= \sum_{c} A_c \ket{c}
+\end{align}
+If the configurations $c$ and $c'$ differ by some flipped plaquette,
+then $A_c = A_{c'}$.
+So you can write a ground state as a uniform superposition over all coverings,
+but a restricted sum over all configurations that can be obtained by local flip
+moves.
+\begin{align}
+    \ket{\Psi_0}
+    &=
+    \sum_{c} \ket{c}
+\end{align}
+This is a uniform superposition over dimer coverings related by flipping terms.
+
+This RK point is nice because we have a nice understanding of the wavefunction
+as just a uniform superposition over dimer coverings related by these local
+flips.
+But the actual properties of the state,
+like what phase of matter it corresponds to depends sensitively on what
+dimension you're in and the specific geometry of the lattice.
+Here we're on a square lattice,
+but it could be triangular.
+What phase and what properties depends sensitively on lattice geometry and
+dimension.
+
+Depending on lattice geometry and dimension,
+RK point has different physics.
+If you're on a 2D bipartite lattice,
+for example a square or honeycomb lattice,
+the RK point is actually a critical point
+between 2 different ordered phases.
+On the other hand,
+if you're on a non-bipartite lattice,
+then the RK point is just one point in a larger phase that corresponds to a
+$\mathbb{Z}_2$ short
+range RVB phase,
+sometimes called a $\mathbb{Z}_2$ spin liquid.
+I think the RK point in 3D is part of really interesting gapless phase of spin
+liquid.
+To figure this out,
+you in general need to do complicated numerics,
+but writing the Hamiltonian and doing numerics to diagnose what phase you're
+in,
+and perturb the Hamiltonian to see what the properties are.
+It's generally not something to be understood analytically.
+
+\begin{question}
+    The ground state is a uniform superposition over states related by local
+    moves,
+    but with different topology sectors,
+    we have different ground state for each sector?
+    Also, the classification depends on which reference loop we choose?
+\end{question}
+That might affect how you label the states,
+but not that they are different states.
+
+So that's what happens when $V=t$,
+but what about other limits?
+
+What if $V/t \to \infty$?
+
+One phase is called the \emph{columnar phase},
+where you have dimers just along columns like this.
+This breaks translation symmetry,
+and it breaks rotation symmetry.
+Here this would happen in the limit $t>0$ and $V\to -\infty$.
+You want to satisfy that second term in the Hamiltonian,
+which really likes plaquettes which look like this,
+so it has the maximum number of flippable plaquettes.
+
+On the other hand,
+if $t>0$ and we take $V\to +\infty$,
+then we want to minimize the number of flippable plaquettes.
+If you really want to violate that second term in the Hamiltonian,
+you would have a staggered configuration.
+No plaquette looks like that second term.
+These are different kinds of ordered phases that break translational and rotating
+symmetry.
+
+Spin liquid type phases on the critical point are particularly interesting
+because they are described by gauge theories.
+
+This quantum dimer model so far,
+may look familiar to you,
+they arise in the context of gauge theory,
+like $U(1)$ and $\mathbb{Z}_2$ gauge theory.
+There's in fact a mapping from quantum dimer model to gauge theory.
+And this RK point will correspond to some gapless U(1) gauge theory,
+and iff you're non-bipartite,
+the RK point corresponds to the deconfined phase of a $\mathbb{Z}_2$ gague
+theorey.
+
+\begin{question}
+    In the 2D non-bipartite phase,
+    is there a more complciated orderd phase?
+\end{question}
+There's generally huge different kinds of orderd phasess.
+You essentially break the symmetyr into any subgroup of that.
+If you write down a paritcular Hamiltnoian on the tringaulr lattice,
+it's a complicated story you need to do mnumerics to figure out.
+
+\begin{question}
+    How does this relate to the original system without orthogonal states?
+\end{question}
+You could try to hink of the Dimer model on its own and try to realise that,
+like the Rydberg atom array.
+So physiical models on themselves.
+
+You can think of this quantum dimer model,
+imagine on each link htere is a particle with occupation number 0 or 1,
+so you can map this quantum dimer model to some kind of model of bosons defined
+on links.
+The fact that dimer coverings will be orthognal,
+but there will be a dimer constraint,
+so no two sites will have 2 paricles,
+so each site will have 1 boson.
+So you map it to a model of bosons,
+where you forbid any link that talks to a different site.
+
+each dimer maps to the occupation number of a boson.
+The constraint that each site is connected to 1 dimer becomes a constraint that
+the sum of the occupation number of the bosons for each link,
+\begin{align}
+    \sum_{l \in +} n_{b, l} = 1
+\end{align}
+for any link that's conected to a star site has to equal 1.
+You can map the dimer model to a boson hopping and make the constraint an
+energetic constraint,
+so the Hamiltonani is bosons hopping on a link,
+plus a sum over all sites and sum over all links with some coefficietn $K$
+infinitely large.
+\begin{align}
+    H &=
+    -t \sum\left( b_i^\dagger b_i + \mathbb{h.c.}\right) 
+    - K
+    \sum_s
+    \left( 
+    \sum_{l \in +}
+    n_{b,l} - 1
+    \right)^2
+\end{align}
+If you start with the trignaulr lattice,
+you get the Kagome lattice,
+which is the balanced Fisher-Girven mdoel,
+a model of bosons hopping on a Kagome lattice,
+with dimer constraints made energetic.
+
+Just think of the dimer mdoel as some constarinted boson model,
+or just think of it as inspirational from the original spin-singlet problem.
+Both perspectives are used.
+
+\section{Quantum Lattice Gauge Theory}
+But first,
+let's talk about lattice gauge theory.
+
+Let's start with U(1) lattice gauge theory on a square lattice.
+We have gauge fields defined on links.
+I'm going to call it $a_{ij}$,
+which is a $U(1)$ gauge field defined on links.
+And then $a_{ij}$ is actually an angle $a_{ij}\in [0,2\pi)$.
+Furthermore,
+if we have some gauge field defined on some link,
+we should think of the link as being directed.
+When I say $a_{ij}$,
+I really mean them link is directed from $i$ to $j$,
+and if it's the other away around,
+\begin{align}
+    a_{ij} &= -a_{ji}
+\end{align}
+In addition  to the gauge field,
+we have some matter fields which are defined on site vertices,
+$c_i$ which could be a boson or fermion operator,
+agnostic for now.
+It carries charge 1 under this $U(1)$ gauge field,
+which means under a gauge transformation
+\begin{align}
+    c_i &\to e^{i\theta_i} c_i\\
+    a_{ij} &\to a_{ij} + \theta_i - \theta_j
+\end{align}
+
+\begin{question}
+    How are the links directed?
+\end{question}
+There's no constraint?
+You just pick everything in the same direction.
+
+A generic Hamiltonian will have nearest-neighbour hopping terms
+and a magnetic field and electric field term.
+\begin{align}
+    H_{U(1)}
+    &=
+    -\sum_{\langle ij \rangle}
+    t c_i^\dagger c_j e^{ia_{ij}} + \mathbf{h.c.}
+    - K
+    \sum_{\square}
+    \cos\left( b_{\square} \right)
+    +
+    J
+    \suM_{\langle ij \rangle} e_{ij}^2
+\end{align}
+where $b$ is a magnetic field associated with each plaquette.
+Each $b_{\square} =
+a_{ij} + a_{jk} + a_{kl} + a_{li}$
+can be thought of as a holomony term.
+You could think of $a_{ij}$ as the phase of some rotor variable,
+so a phase on a $U(1)$ rotor,
+and $e_{ij}$ would be its corresponding angular momentum.
+
+So $e_{ij}$ would have integer eigenvalues.
+And canonical commutation relations between them are
+\begin{align}
+    \left[ e_{l}, a_{l'} \right] &=
+    i \delta_{ll'}
+\end{align}
+Equivalently,
+this is just saying $e^{ia}$ acts like a raising operator for the electric field
+\begin{align}
+    \left[ e_{l}, e^{ia_{l'}} \right]
+    &=
+    e^{ia_{l'}}
+    \delta_{ll'}
+\end{align}
+So $e^{ia}$ is the raising operator for $e$.
+So it's like having rotor degrees for freedom where $e$ is the angular
+momentum and $a$ is the phase.
+But there is an important gauge redundancy,
+which is the same as saying that we need to have a Gauss law,
+$\nablea\cdot e = n$
+where $n$ is charge density.
+But here this is a lattice divergence.
+To be specific,
+suppose I have a site $i$,
+and I have links directed inwards $l_1, l_2, l_3, l_4$.
+What that means is that I add up electric field coming in from these links and
+that should be equal to the density on that site.
+\begin{align}
+    e_{l_1} + e_{l_2} + e_{l_3} + e_{l_4} &= n_i
+\end{align}
+Thus the Gauss law \emph{generates}
+the gauge transformation,
+which means that suppose you had some state $\ket{\left\{ a_{ij}, n_i \right\}}$
+then
+\begin{align}
+    e^{i\sum_j \left( \nabla\cdot e - n_j \right) \theta_j}
+    \ket{}\left\{ a_{ij}, n_i \right\}
+    &=
+    \ket{\left\{
+    a_{ij} + \theta_j - \theta_j
+    ,
+    n_i
+    \right\}}
+\end{align}
+The first term,
+you can integrate by parts,
+and what a single $e$ does is that $e^{ie\theta}$ shifts $a$ by $\theta$.
+This is just the same as the gauge transformation I wrote down before for $c_i$
+and $a_{ij}$.
+The gauge transformation changes the phase of the state by this amount.
+Because
+$e^{i\sum_j \left( \nabla\cdot e - n_j \right) \theta_j}=1$,
+it means that
+\begin{align}
+    \ket{\left\{ a_{ij}, n_i\right\} }
+    =
+    e^{-i\sum _j n_j \theta_j}
+    \ket\left\{ a_{ij} + \theta_j - \theta_i , n_i\right\}}
+\end{align}
+This is the gauge redundancy in our description.
+Let's write it down explicitly.
+For the second term,
+\begin{align}
+    e^{-in_j \theta_j} \ket{n_j}
+\end{align}
+is equivalent to
+$c_i \to e^{i\theta_i} c_n$.
+For the first term,
+\begin{align}
+    e^{e_{ij\left( \theta_j - \theta_i \right)}}\ket{a_{ij}}
+    &=
+    \ket{a_{ij} + \theta_j - \theta_i}
+\end{align}
+In the continuum limit,
+this becomes a continuum $U(1)$ gauge field coupled to matter.
+\begin{align}
+    H &=
+    \int d^2 r
+    \left[ 
+    c^\dagger (r)
+    \frac{\left( i\partial - a \right)^2}{2m}
+    c(r)
+    -
+    \tilde{K} \cos b
+    - \tilde{J} e^2
+    \right]
+\end{align}
+And remember pure maxwell theory has a Hamiltonian that is proportional to $E^2
+- B^2$ with
+\begin{align}
+    H_{\text{Maxwell}}
+    \propto e^2 - b^2
+\end{align}
+Here,
+the coefficients for the $e^2$ and $b^2$ terms are not the same,
+and remember the reason they're the same in Maxwell is because of Lorentz
+invariance,
+but there is no Lorentz invariance in the lattice gauge theory,
+so there's no reason why $\tilde{K}$ and $\tilde{J}$ would be related to each
+other.
+So we have no special relationship between $\tilde{K}$ and $\tilde{J}$.
+
+In the Hamiltonian framework,
+$e$ is the canonicmal momentum relative to $a$.
+But $b$ would be the curl of $a$.
+In the continuum,
+you would have
+\begin{align}
+    b &= \nabla\times a
+\end{align}
+while $e$ and $a$ are canonically conjugate.
+
+\subsection{$\ZZ_2$ gauge theory}
+So $\mathbb{Z}_2$ gauge theory is just breaking the $U(1)$ down to
+$\mathbb{Z}_2$.
+Can understand by ``spontaneous gauge symmetry breaking''
+It will spontaneously obtain an expectation value.
+You pick an operator with charge 2,
+so something like $\langle C^2 \rangle$.
+Then you calculate the expectation value of $C^2$,
+and if it's non-zero,
+then that's gauge symmetry breaking.
+The transition where this happens is sometimes called the Anderson-Higgs
+transition,
+but colloquially we sometimes call it ``Higgsing''.
+Higgs is a verb now.
+
+More formally,
+we can define $\mathbb{Z}_2$ gauge theory as follows.
+Again we have this square lattice,
+which has gauge fields on links,
+and matter fields on sites.
+Here our $\ZZ_2$ gauge fields are $\sigma_{ij}^z= \pm 1$ Pauli $Z$ operators.
+Then $\ZZ_2$ charged matter defined on sites.
+I'm going to take the matter fields to be Ising spin variables,
+so there's a basis where its eigenvalues are $+1$ or $-1$.
+So we have a spin operator defined on sites $S_{i}^{x}$
+which takes $-1$ to $+1$.
+Though in general the matter can be either bosonic or fermionic.
+To make a connection to $U(1)$ gauge theory,
+you could think
+\begin{align}
+    \sigma_{ij}^{z} &7=
+    e^{ia_{ij}\pi}
+\end{align}
+and then
+\begin{align}
+    \sigma_{ij}^{x}
+    &=
+    e^{i e_{ij} \pi}
+\end{align}
+can be thought of as an electric field.
+Here $a_{ij}$ and $e_{ij}$ have eigenvalues 0 or 1 mod 2.
+Then the gauge transformation is
+\begin{align}
+    \sigma_{ij}^z \to \lambda_i \lambda_j \sigma_{ij}^z
+\end{align}
+for $\lambda_i = \pm 1$,
+while
+\begin{align}
+    a_{ij} \to a_{ij} + \theta_j + \theta_i \mod 2
+\end{align}
+and 
+\begin{align}
+    S_i^x \to \lambda_i S_i^x
+\end{align}
+
+For simplicity,
+consider nearest-neighbour hopping.
+Remember these $S^x$ are boson creation and annihilation operators,
+but because it's mod 2,
+creation and annihilation are the same thing.
+\begin{align}
+    H &=
+    -\sum_{\langle ij \rangle}
+    t 
+    S_i^x S_j^x \sigma_{ij}^Z
+    - K
+    \sum_{\square}
+    \prod_{\langle ij\rangle \in \square}
+    \sigma_{ij}^z
+    - h
+    \sum_{\langle ij \rangle}
+    \sigma_{Ij}^x
+\end{align}
+And this is the thing that minimizes the magnetic fields at the plaquettes.
+This is what you would call $\mathbb{Z}_2$ lattice gauge theory
+coupled to matter.
+Although in this specific example,
+the matter itself is an Ising spin.
+
+One last thing we haven't done is the Gauss law,
+which we did in the U(1) case but no the $\ZZ_2$ case.
+Before we had a charge on each site,
+but now we need a $\ZZ_2$ charge on each site.
+So let us define a $\ZZ_2$ charge on each site.
+Call our $\ZZ_2$ charge $n_i = 0 \mod 2 $ in some basis.
+And so
+\begin{align}
+    \left( -1 \right)^{n_i}
+    \ket{S_i^z} = s_i^z \ket{s_i^z}
+\end{align}
+The matter field is an Ising spin that is pointing in up or down direction,
+but if it's up we say it's $\ZZ_2$ charge even,
+and odd if down.
+If I start with $\ZZ_2$ charge even on two neighbouring sites,
+then that's going to create $\ZZ_2$ charge odd on the neighbouring sites.
+
+Let $\sigma^x = \ZZ_2$ be the electric field and then
+\begin{align}
+    \left( \nabla\cdot e \right) - n_i = 0 \mod 2
+\end{align}
+
+\begin{question}
+    Is there a generalization to higher neighbours?
+\end{question}
+Yes.
+Consider a term like
+\begin{align}
+    \sum_{ij}
+    c_{i_1}^\dagger c_{i_n}
+    e^{i\left( 
+    a_{i_1 i_2}
+    + a_{i_2 i_3}
+    + \cdots +
+    a_{i_{n-1} i_n}
+    \right)}
+\end{align}
+
+\begin{question}
+    What's the classical analogue?
+\end{question}
+There's multiple things you could say.
+First you could ignore the magnetic term,
+and it's purely classical,
+this is the 2D classical $\ZZ_2$ gauge theory coupled to matter.
+If you think fo the path integral or partition function of this quantum model,
+spacetime is 3D,
+youcauld map that to a classical 2D Ising model.
+
+If I draw some site $i$ and consider its neighbouring links $l_1,l_2,l_3,l_4$,
+then what the Gauss law is saying si that
+\begin{align}
+    \sigma_{l_1}^x
+    \sigma_{l_2}^x
+    \sigma_{l_3}^x
+    \sigma_{l_4}^x
+    &=
+    s_i^z
+\end{align}
+And this means that
+\begin{align}
+    \left( 
+    \prod_{l\in +} \sigma^x
+    \right)
+    S_i^z
+    = +1
+\end{align}
+which is the Gauss law constraint.
+
+The cleeer thing:
+Inseead of thinking it as a hard constrain on the Hilbert space,
+you cna think of it as an energetic constraint you add as an extra term in the
+Hamiltonian.
+\begin{align}
+    H &=
+    -\sum_{\langle ij \rnagle}
+    t S_i^x S_j^x \sigma_{ij}^z
+    -
+    K \sum_{\square} \prod_{\langle ij \rangle} \sigma_{ij}^z
+    - h \sum_{\langle ij \rangle} \sigma_{ij}^x
+    - J \sum_i
+    \left( 
+    \prod_{l \in +} \sigma_l^x
+    \right)
+    S_i^z
+\end{align}
+with $J\to\infty$.
+
+
+Now let's assume $S$ forms a trivial paramagnet.
+\begin{align}
+    \langle S_i^x \rangle &= 0\\
+    \langle S_i^z \rangle &= 1
+\end{align}
+Then we can do a mean field approximation
+\begin{align}
+    H_{mf} &=
+    - K \sum_{\square} \prod_{l\in\square} \sigma_l^z
+    - J\sum_{+} \prod_{l \in +} \sigma_l^x
+    - h\usm_{\langle ij\rangle} \sigma_{ij}^x
+\end{align}
+THis is pure $\ZZ_2$ lattice gauge theory because there are no matter fields,
+but it's a pure $\ZZ_2$ lattice gague theory iwthteh Gaus law treated
+energetically.
+
+If you set $h=0$,
+you get the famous Kitaev toric code Hamiltonian.
+IT's really just $\ZZ_2$ latice gauge theory wher you treat Gauss law as an
+energetic cosntraitn.
+This was fundanetmally a conseptaionlly umpotatn thing to  do.
+Rather than not treating the Gauss law as a fundmenatl Hilbert space constrat,
+was not a trivia step.
+Befoer the Hilbert space had a hard constarin,
+adn we canont factor.
+Now instead,
+the Hilbert space is much bigger,
+but it does factorize.
+Before when you implmeent the constraint it was not a spin model.
+Here we havea spin mdoel that reproduces the gauge field.
+Kitaev became famous for making this 1 important step.
+everything was knonwn since the 1907s,
+but hte new insight was to make the Gauss law constraint energetic.
