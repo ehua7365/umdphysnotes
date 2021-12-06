@@ -1,0 +1,386 @@
+\section{Mean-field approximation for Ising Model}
+This is the main equation
+\begin{align}
+    h_{\mathrm{eff}}
+    &=
+    h
+    +
+    4J T gh \beta h_{\mathrm{eff}}
+\end{align}
+The critical temperature
+\begin{align}
+    k_B T_c &= 4J
+\end{align}
+The susceptibility
+\begin{align}
+    \chi
+    &=
+    \frac{1}{\beta}
+    \left.\frac{\partial m}{\partial h}\right|_{T=T_c, h=0}
+    \sim
+    \left| T - T_c \right|^{\overbrace{-1}^{\gamma}}
+\end{align}
+and the magnetisation is
+\begin{align}
+    m &\sim
+    \left| T - T_c \right|^{\overbrace{1/2}^{\beta}}
+\end{align}
+I can then write
+\begin{align}
+    \underbrace{h_{\mathrm{eff}}}_{h + 4Jm}
+    &=
+    h
+    +
+    4 J T gh \beta h_{\mathrm{eff}}
+\end{align}
+which implies
+\begin{align}
+    m &=
+    Tgh \beta \left( 4J m + h \right)
+\end{align}
+so
+\begin{align}
+    4J m + h
+    &=
+    \frac{1}{\beta_c}
+    \arctanh m\\
+    &\approx
+    \frac{1}{\beta_c}
+    \left( 
+    m
+    +
+    \frac{m^3}{3}
+    + \cdots
+    \right)
+\end{align}
+so then
+\begin{align}
+    h \sim m^{\overbrace{3}^{\delta}}
+\end{align}
+which is not obvious at all.
+
+The relation between $m$ and $h$ depends on that equation,
+but depends only on the fact that this s an odd function and that it is smooth.
+This is very robust because even though it's only approximate.
+
+There are perfect analogies of mean field all over physics.
+In fact you've seen those before.
+So I'm going to erase this and I'm going to make some drawings in two different
+colours.
+On the left we have the mean field approximation,
+and on the right I'm going to tell another thing that you already know,
+which are fluids that obey the van der Waals equation of state.
+
+\subsection{Ising}
+I'm going to draw the external magnetic field vs the temperature.
+This is $T_c$.
+What happens when I'm above $T_c$ and I have a negative $h$?
+It favours spin down so magnetisation is going to be down.
+If $h>0$,
+then up is favoured.
+If the magnetic field is zero,
+then it's zero.
+So nothing interesting happens here when I cross $h=0$ for $T>T_c$.
+
+Now below $T_c$,
+the magnetisation doesn't go to zero.
+When $h$ is slightly negative,
+they are all spin down.
+
+The discontinuity disappears in the critical region.
+
+The analogy with the van der Waals fluid is
+\begin{align}
+    h &\sim P\\
+    m &\sim \frac{1}{V}
+\end{align}
+
+[lots of pictures]
+
+In a lot of systems,
+there is an order parameter $\phi$ such that its average value is
+\begin{align}
+    \begin{cases}
+        \langle \phi \rangle
+        =
+        0 & T > T_c\\
+        \langle \phi \rangle
+        \ne
+        0 & T > T_c
+    \end{cases}
+\end{align}
+If there is such a situation,
+then there is spontaneous symmetry breaking.
+The order parameter doesn't have the symmetry of the Hamiltonian,
+because when it flips it flips sign,
+but the Hamiltonian doesn't change.
+The thermal average is not zero,
+even though it should be naively if you look at the Hamiltonian.
+
+A lot of cases,
+when the expectation picks up a non-zero expectation value like this,
+frequently this means spontaneous symmetry breaking.
+
+It happens even when equal to zero.
+
+It's worth while going close to the critical point and looking at the
+configuration that contributes the most.
+The ones with smallest energy are ordered and there are few of them.
+They are not typical.
+The more typical ones are the high energy ones.
+
+I'm going to try to draw some configurations that are critical.
+
+[picture]
+
+When above the critical temperature,
+the typical size of clusters $\xi\approx a$,
+the lattice size.
+When at $T=T_c$,
+you're going to get clusters of all sizes,
+from the size of a lattice spacing to large clusters that go from one corner of
+the system to another,
+and everything in between.
+
+So we talk about the critical exponents in the mean field model.
+I want it to be the centre piece of everything we compute here.
+It turns out that close to the critical point,
+the heat capacity diverges.
+\begin{align}
+    C &\sim \left| T - T_c \right|^{-\alpha}
+\end{align}
+Let's compute $\alpha$.
+
+The magnetisation when you approach the critical temperature is like
+\begin{align}
+    m ~ \left| T - T_c \right|^{\beta}
+\end{align}
+and the susceptibility
+\begin{align}
+    \chi &=
+    \left| \frac{\partial m}{\partial h} \right|_{h=0}
+    \sim
+    \left| T - T_c \right|^{-\gamma}
+\end{align}
+Suppose we calculate the correlation
+about how close or far spins influence each other
+\begin{align}
+    \left\langle
+    \sigma_0
+    \sigma_{0 + R}
+    \right\rangle
+    &\sim
+    e^{-R/\xi}
+\end{align}
+and this parameter $\xi$ is the correlation length,
+which is measurer f how far you need to go to not get correlation.
+The correlation length diverges too at the critical temperature.
+\begin{align}
+    \xi &\sim
+    \left| T - T_c\right|^{-\nu}
+\end{align}
+I didn't show you but $\nu=\frac{1}{2}$ for mean field Ising.
+
+I can take a Fourier transform.
+
+This is the only integral you need to do in your head
+\begin{align}
+    \sum_{\vec{R}}
+    \left\langle
+    \sigma_0
+    \sigma_{0 + R}
+    \right\rangle
+    e^{i\vec{k}\cdot\vec{R}}
+    \sim
+    \frac{1}{k^{2 - \eta}}
+\end{align}
+where $\eta$ is called the \emph{anomalous dimension}.
+
+\section{Universality classes}
+Numerical experiments and exact results.
+The Ising model in 2D was solved exactly on paper.
+First surprise,
+it's not what mean field theory says.
+It maybe shouldn't surprise you much,
+because mean field was a bit hand waving anyway.
+
+But the surprising thing was a different one.
+It wasa big surprise back them.
+
+There was a theory called Landau mean field theory,
+a lot of hand wavin,
+but it's Landau hand waving,
+and he talks to God directly.
+It's like mean field theory on steroids.
+Tremendous theory,
+no argument whatsoever.
+
+Then you find something interesting with the exact solution.
+There are what we call Universality classes.
+
+People looked at the 2D Ising model.
+People made this relation between this and the liquid phase transition.
+You can measure the critical exponents of water evapoerating,
+and you find it's 3D Ising model.
+One is a stupid magnet model,
+one is a real system.
+They agree within error bars.
+But then you look at other systems,
+and there are sets of critical exponents that appear frequently.
+
+The critical exponents of the 3D Ising model are common,
+probably the most common one.
+And then there are other common ones.
+The systems are completely diffrent.
+In the notes,
+I give some critical exponents calculated from numerics,
+conformal bootstrap.
+Let me just write these here.
+\begin{table}
+    \centering
+    \begin{tabular}{cccc}
+        & 3D Ising & CO$_2$ & Ni Magnet\\
+        $\alpha$ & 0.11008(1) & 0.10 & 0.0(?)\\
+        \vdots\\
+        $\delta$ & 4.28984(1) & 4.20 & 4.22
+    \end{tabular}
+    \caption{Critical Exponents Theory vs Experiment}%
+    \label{tab:criticalexponents}
+\end{table}
+There's an uncertainty for Ni magnet that I don't know.
+All systems in nature seem to fall into 
+
+Here are some common universality classes
+\begin{itemize}
+    \item 3D Ising
+    \item 2D Ising
+    \item Mean field
+    \item Kosterlitz-Thouless
+    \item 3-Potts model
+\end{itemize}
+I knew Thouless.
+A lot of things come from experience.
+People get data and they see a pattern.
+Roughly the pattern people see is the following.
+
+The first thing you have to discern is the dimensionality of the state.
+The other one is more subtle,
+it's the ``pattern of spontaneous symmetry breaking''.
+For example,
+consider the Ising model.
+The Hamiltonian has a symmetry $\mathbb{Z}_2$
+which is basically spin flip.
+This symmetry has 2 elements,
+do nothing and flip all the spins.
+The point is that at low temperatures,
+the magnetisation,
+the order parameter,
+is not zero.
+It's pointing either up or down.
+When I did a spin flip,
+I get a different state.
+What's the symmetry of the sate below the critical temperature?
+That's what I mean by a matter of symmetry breaking,
+how it's broken to the final state
+$\mathbb{Z}_2 \to \textrm{nothing}$.
+
+Another model is the Heisenberg model,
+every point on a lattice has a spin-$\frac{1}{2}$ on it.
+You can make it ferromagnetic or antiferromagnetic or whatever.
+The point is that it's not just up or down,
+it could be many other states you can rotate by.
+
+The dot product between two spins stays the same under rotation.
+People call this SO(3),
+which are 3 by 3 orthogonal matrices.
+The special orthogonal matrices.
+Also known as rotations.
+You don't know this,
+but the ferromagnetic model,
+the ground state is all spins pointing in the same direction,
+because that maximizes the dot product and minimized the energy just like thei
+Ising model.
+
+Suppose this direction is picked up,
+there's still some symmetry left.
+If I do rotations around this axis,
+the magnetisation order parameter doesn't change.
+$SO(3) \to O(2)$.
+
+There is a particular type of liquid crystal called nematic liquid crystal.
+How can something be a liquid and a crystal at the same time?
+It's made of long molecules,
+and the head and tails are different.
+It turns out below a certain critical temperature,
+they organize themselves like this.
+Their position is not organized on a crystal,
+like a liquid,
+not organized in a nice pattern.
+Their direction is not organized either,
+there are as much head up and head down.
+The only thing is that they are all aligned that way.
+The Hamiltonian has a symmetry that they can rotate any direction they like.
+Here there's nothing to point,
+the order parameter is a tensor.
+But it can still flip.
+\begin{align}
+    SO(3) \to O(2)\times \mathbb{Z}_3
+\end{align}
+Rotation goes to 2D rotation and flips.
+
+Meanwhile there are other liquid crystals
+where the centres of molecule positions are fixed by the orientation are not.
+
+Remember the Bose gas,
+which has a phase transition,
+a condensate.
+I claimed that it's superfluid.
+I'm not even going to attempt to explain.
+The pattern of symmetry breaking in that case is $U(1)$.
+That's exactly the same group as $O(2)$ by the way.
+This is broken to almost nothing.
+This phase has to do with changing the wave function by a phase
+$\psi \to e^{i\beta} \psi$.
+Superfluid helium and BEC follow this pattern,
+and they have their own universality class.
+
+You probably heard something that if you look at the physics of elementary
+particles,
+there is a symmetry
+\begin{align}
+    SU_c(3)
+    \times
+    SU_w(2)
+    \times
+    U_Y(1)
+    \to
+    SU_c(3)
+    \times
+    U_{EM}(1)
+\end{align}
+If you have 2 systems with the same dimension,
+they follow the same universality class.
+That was an experimental observation.
+
+Examples.
+
+Consider the Ising model in 2D
+\begin{align}
+    H &=
+    -J \sum \sigma_i \sigma_j
+\end{align}
+consider my made up Paulo model
+\begin{align}
+    H^P &=
+    -J \sum_{\textrm{plaquette}}
+    \sigma_{i} \sigma_{j} \sigma_{k} \sigma_{l}
+\end{align}
+They have the same dimensionality and the same pattern of spontaneous symmetry
+breaking so they should have the same critical exponents.
+Same for the sum
+\begin{align}
+    H &=
+    -\tilde{J} \sum \sigma_i \sigma_j
+    -J \sum_{\textrm{plaquette}}
+    \sigma_{i} \sigma_{j} \sigma_{k} \sigma_{l}
+\end{align}
