@@ -1,0 +1,737 @@
+\section{Toric Code}
+Last time I talked about $U(1)$ and $\ZZ_2$ lattice gauge theory,
+and I said that we can make the Gauss law constraint an energetic constraints.
+I emphasised that this is dramatic change to the system,
+because it's not just change the Hamiltonian but fundamentally changes the
+Hilbert space.
+Before we had a constrained Hilbert space,
+whereas afterwards,
+our Hilbert space is just that of a many-spin system.
+Our Hilbert space decomposes into a tensor product of qubits on sites
+and qubits on links.
+\begin{align}
+    \mathcal{H}
+    =
+    \underbrace{\bigotimes_{i\in\mathrm{sites}} \CC^2}_{\text{matter}}
+    \otimes 
+    \underbrace{\bigotimes_{i\in\mathrm{links}} \CC^2}_{\text{gauge field}}
+\end{align}
+This is an important conceptual shift.
+Before you think gauge theory is something special and were does it come
+from.Gauge theory was put on some crazy pedestal.
+Once you understand this point,
+you can think of the gauge field as just some phase of a many-body spin system.
+You automatically have an emergent gauge field that is dynamical and so on.
+You realise that gauge theory can emerge from some interacting spin system.
+
+In a way,
+this addresses one of the great fundamental question in physics,
+and we now understand gauge theory can come from pretty many any many-body system
+emerging dynamically.
+
+\begin{question}
+    Can we create a QED theory from this?
+\end{question}
+Yes.
+You could get nonce normalizable gauge theories.
+
+We removed the constraint entirely,
+but we have some particular term in the Hamiltonian that enforces.
+
+\begin{question}
+    Is this a computational or conceptual advance?
+\end{question}
+It's more a conceptual advance,
+but we could simulate spin system.so
+It convinces us that gauge theories can emerge from a system that has no gauge
+fields.
+Whether the standard model arises from this is its own question.
+The standard model has Lorentz invariance,
+there are a lot of gapless particles and they all have the same speed.
+It's not obvious how to get that.
+
+You can show that for some systems if you go to low energy Lorentz invariance
+can emerge,
+but it's slow and logarithmic so people are not convinced.
+But gravity is nowhere here.
+
+People think it can emerge if the cosmological spacetime is anti-de Sitter
+space,
+but that's a different story.
+
+Last time,
+we went to pure $\ZZ_2$ lattice gauge theory
+with Gauss law implemented energetically.
+And we had a Hamiltonian on plaquettes and vertices.
+\begin{align}
+    H &=
+    -K \sum_{\square} B_{\square}
+    - J \sum_{+} A_{+}
+    - h\sum_{l} \sigma_l^{x}
+\end{align}
+where
+\begin{align}
+    B_{\square} &=
+    \prod_{l \in \square}
+    \sigma_l^z\\
+    A_{+} &=
+    \prod_{l\in +}
+    \sigma_l^x
+\end{align}
+If we set $h=0$,
+this model is the famous $\ZZ_2$ toric code model of Kitaev.
+And what's special about his $h=0$ limit is that every term commutes with each
+other and the mole becomes exactly solvable.
+
+From now on,
+I will only talk about the $h=0$ limit that is exactly solvable because
+the $B$'s and the $A$'s all commute with each other.
+It's easy to see that because if you take a plaquette and a vertex star,
+if they don't overlap they obviously commute.
+But if they overlap,
+they will always share two links with two $\sigma_x$ and $\sigma_z$.
+
+Thus we can simultaneously diagonalize every operator here.
+Because they are all Paulis,
+$B^2=1$ and $A^2=1$,
+so we can just go into  some basis that simultaneously diagonalises these and the
+star is just labelled by the eigenvalues $\pm 1$ of these operators.
+Excited states would correspond to flipping these eigenvalues.
+
+We can actually add a constant to this Hamiltonian and make it a sum of
+commuting projectors.
+We can define the projector for a plaquette as
+\begin{align}
+    P_{\square}
+    &=
+    \frac{1}{2}\left( 
+    1 - B_{\square}
+    \right)
+\end{align}
+so that $P_{\square}^2 = p_{\square}$
+and similarly for the vertices
+\begin{align}
+    P_{+}
+    &=
+    \frac{1}{2}\left( 1 - A_+ \right)
+\end{align}
+and so the Hamiltonian is just a sum of commuting projectors
+\begin{align}
+    H &=
+    \frac{K}{2} \sum_{\square} P_{\square}
+    +
+    \frac{J}{2} \sum_{+} P_{+}
+\end{align}
+Before in the AKLT it was as sum of projectors but he projectors weren't
+commuting.
+There's a whole world here.
+
+A nice way to think of the ground star of this model is basically as a loop gas,
+a sum over all loop configurations.
+
+Pick a basis for $\sigma_z$.
+Let's say $\sigma^z = +1$ is the absence of a string on an edge.
+And if it's $-$ it's  the presence of a string on an edge.
+The product of $\prod_{l\in\square}\sigma_l^z=1$
+means that there should be an even number of links that have strings.
+Then what does $\prod_+ \sigma_l^x$ on a star do?
+If I have no strings on a star,
+then it's going to create strings on the star when you apply it.
+
+Actually, I got it backwards.
+
+If $\sigma^z = +1$ for a link,
+it means that there is a string that crosses it.
+If $\prod_{l\in\square} \sigma_l^z = 1$ then that means there is an even number
+of strings on a plaquette.
+This means that the strings on the dual lattice do not end.
+
+You can think of $\prod_{l\in +} \sigma_l^$ as it as a plaquette on the dual
+lattice.
+
+If we have an even number of strings around the plaquettes of the dual lattice,
+I better have a string somewhere else,
+basically the strings cannot end and have to keep going.
+
+So basically we have to have closed strings on a dual lattice,
+and this other term says that if I apply it I get another closed string.
+So the $+1$ eigenstate of
+$\sum_{\square}B_{\square}$
+is the uniform superposition state of only closed loops on the dual lattice.
+
+And the $+1$ eigenstate of the $A_+$ operator is a uniform superposition of all
+closed loop configurations.
+It's not every closed loop,
+but only loops that can be made by deforming a single operator.
+
+At least in the situation where $K$ and $J$ are positive,
+we can think of the ground state as a uniform superposition of closed loops.
+For $K,J>0$,
+the ground state is a uniform superposition of closed loops.
+
+A basis of $\sigma^z$ is loops on the dual lattice.
+$\sigma^x$ is loops on the primal lattice,
+but it's just a change in perspective depending on which basis you pick.
+
+This means that on this torus there are 4 topologically degenerate states,
+given by whether you have an even or odd number of closed loops around each
+cycle.
+
+This is an example of a non-invertible topological phase,
+because we have this topological degeneracy.
+You can in fact not need to define it on a square lattice,
+but could have used any graph with the same basic properties,
+planar graph,
+then you can also define it on any triangulation on a genius $g$ surface,
+and you would have $2^{2g}$ different sectors.
+So you can define a similar model on any triangulation of genus $g$ surface with
+$2^{2g}$ topologically degenerate ground states.
+
+\subsection{Excitations}
+This model is basically $\ZZ_2$ lattice gauge theory,
+and you should know what the excitations are.
+
+You can think of creating excitations by applying local operators.
+
+Suppose you apply a $\sigma^x$ operator to a single link.
+That's going to flip the eigenvalues of the $B_{\square}$ operator on nearby
+plaquettes.
+If I apply an $\sigma^x$ on a link,
+that's going at flip the eigenvalues next to it.
+If you apply a product of $\sigma^x$ operators along some string $\gamma$,
+then this think creates $2$ plaquette excitations far away
+\begin{align}
+    W_m(\hat{\gamma}) &= \prod_{l\in \hat{\gamma}} \sigma_l^x
+\end{align}
+And the energy cost is just $2K$ at one end and $2K$ at the other end,
+and we can separte them arbitrarily far apart.
+These are deconfined excivations because they can be separated arbtrarily far
+without using energy besides the initial creation.
+These are $m$ particles.
+We say $\hat{\gamma}$ denotes a string on the dual lattice.
+Then
+
+Similarly,
+we can apply $\sigma^z$ to a link and that does exactly the same thing,
+except on the dual lattice.
+Creating it on the original lattice creates a star excitation.
+\begin{align}
+    W_e\left( \gamma \right)
+    &=
+    \prod_{l\in \gamma} \sigma_l^z
+\end{align}
+These are $e$ excitations.
+No local operator can create any individual one,
+and you cannot convert one to another by local operators either,
+so they are topologically distinct.
+The way we think about it is this.
+
+\subsection{Topological classes of excitations}
+We have topologically classes of excitations.
+1, $e$, $m$, and the composite particle $\epsilon = e\times m$.
+These are 4 topological distinct excivations.
+And we have fusion rules for these,
+whch tell us how different topological excivations fuse together to give other
+classes of topolgoical excitaitons.
+\begin{align}
+    e\times e &= 1\\
+    m\times m &= 1\\
+    \epsilon \times \epsilon &= 1\\
+\end{align}
+
+They have fractional statiics if yo utake these particls around each other and
+you have intersting phases.
+Imagine applying a string operator that creates a pair of $m$ particles
+using $W_m\left( \hat{\gamma} \right)$,
+and then we take $W_e\left( \gamma \right)$ around one of the $m$ particles.
+
+And then I consider the order they apply
+\begin{align}
+    W_e\left( \gamma \right) W_{m}^{\hat{\gamma}}
+    \ket{\mathrm{g.s.}}
+    &=
+    -W_m\left( \hat{\gamma} \right)
+    W_e\left( \gamma \right)
+    \ket{\psi_{\mathrm{g.s.}}}
+\end{align}
+This $-$ sign is the mutual statistics between $e$ and $m$.
+
+One more thing to mention.
+If $\gamma$ is a closed loop,
+then
+\begin{align}
+    W_e\left( \gamma \right)
+    \ket{\psi_{\mathrm{g.s.}}}
+    &=
+    \ket{\psi_{\mathrm{g.s.}}}
+\end{align}
+and if $\hat{\gamma}$ is a closed loop then
+\begin{align}
+    W_m\left( \hat{\gamma} \right)
+    \ket{\psi_{\mathrm{g.s.}}}
+    &=
+    \ket{\psi_{\mathrm{g.s.}}}
+\end{align}
+So we have these loop operators that keep the ground state invariant.
+So actually the ground state has a symmetry,
+but it's a strange kind that is generated by loop operators.
+The reason we have this symmetry because we actuallyhad it microsocpially,
+and these operators commute with the Hamiltonian.
+
+$H$ also commutes with $W_e\left( \gamma \right)$ and $W_{m}\left( \hat{\gamma}
+\right)$
+if $\gamma$ and $\hat{\gamma}$ are closed.
+
+Comapred to conventional symmetries,
+like flipping spins,
+this Hamiltonian has a spcial clsass of symmetreis,
+called $1$-symmetries,
+becaue thyeare dimension-1 operators.
+
+Even if we broke the symmetry they the level few the Hamiltonian by adding some
+perturbation,
+for example the $h \sigma^x$ perturbation,
+then we would break the $W_m$ symmetry.
+We could also add terms to break the $W_e$ symmetry.
+The Hamiltonian will still have these loop symmetries,
+but these operators will be slightly different.
+
+So the existence of these loop symmetries is a \emph{stable} property.
+These days we say that these have an emergent 1-form symmetry.
+
+There exist loop operators associated with $e$ and $m$ particles even if those
+symmetries don't exist in in the original Hamiltonian.
+At least  the toric code Hamiltonian,
+those statements are certainly true.
+
+Coming back here,
+we have these mutual statistics between $e$ and $m$.
+The exact form of the operators may change,
+but you can think of topologically orderd phases as being characterisd by
+topological order,
+but they can also be cahactersied by these emergent symmetries,
+which are just lop operators for hte non-trivial topological operators.
+
+For example,
+here we but the $m$ loop open to get an $m$ segement,
+and we go through it with a $W_e$ loop.
+So you cna in general get signs and phases,
+and more complicated things can happen.
+In general,
+they not even be invertible,
+and that leads at the concept of non-invertible symmetries.
+
+That you have a minus sign n the mutual statistics is just a property of the
+toric code.
+
+You can imagine a different gound satte with $e$ particles
+The point is that as $r\to\infty$,
+$E(r)\to\mathrm{const}$..
+Don't tkae the gneral thing I said too literally.
+
+Now the $e$ and the $m$ partio
+$e,m$ are bososns.
+$\epsilon$ is a fermion.
+You could do an exchange to find out  the phase.
+Or you can find out if you did a $2\pi$ rotation,
+locally this guy goes around itself.
+
+Thisis all I wantd to say about $\ZZ_2$ lattice gauge theory.
+
+\begin{question}
+    Is it a loop?
+\end{question}
+You can have a more non-trivial algebra so they don't multiple = t
+
+We noted how these can come form lattice guage htoery,
+and pure lattice gauge theory without magnteic field,
+that'sj s t Kitaev toric code.
+There are 4 topological excitations,
+generated by the $\ZZ_2$ charge $e$
+and the $\ZZ_2$ flux $m$.
+
+\ssection{Parton/Slave particle approach}
+What I want to do now is to discuss another approach for describing spin
+liquids.
+The phrase slave-particle has been cancelled,
+so it's called Parton, projected construction.
+XG-Wen 2004 Chapter 9 has a good description of this.
+
+Where gauge theory comes from in a spin model,
+you stat with microscopic spins,
+embed the 2-state Hilbert space in a larger Hilbert space with a constraint.
+The idea here is that we parametrize microscopic Hilbert space in a real way by
+expanding the Hilbert space and adding a constraint.
+
+So let me say what I mean by the way.
+At the opeartor level,
+take my spin operator and represent it in terms of other operaotrs,
+for example.
+
+\begin{align}
+    \vec{S} &=
+    \begin{cases}
+        \frac{1}{2}f^\dagger \vec{\sigma} f\\
+        \frac{1}{2}z^\dagger \vec{\sigma} z
+    \end{cases}
+\end{align}
+$f$ is a 2-component operator and it's a fermion.
+\begin{align}
+    f &=
+    \begin{pmatrix}
+        f_1\\
+        f_2
+    \end{pmatrix}
+\end{align}
+sometimes called a slave-fermion or
+Schwinger fermion.
+Meanwhile,
+\begin{align}
+    z &=
+    \begin{pmatrix}
+        z_1\\
+        z_2
+    \end{pmatrix}
+\end{align}
+is a complex calar that describes boson,
+sometimes called ``slave boson'' or Schwinger bosons.
+
+This i the Fermionic parton.
+So we can write
+\begin{align}
+    S^\dagger &=
+    S^x + iS^y\\
+    &=
+    \begin{pmatrix}
+        f_1^\dagger & f_2
+    \end{pmatrix}
+    \begin{pmatrix}
+        0 & 1\\
+        0 & 0
+    \end{pmatrix}
+    \begin{pmatrix}
+        f_1\\
+        f_2
+    \end{pmatrix} \\
+    &=
+    f_1^\dagger f_2
+\end{align}
+and then
+\begin{align}
+    S^z &=
+    \frac{1}{2}
+    \left( 
+    f_1^\dagger f_1
+    -
+    f_2^\dagger f_2
+    \right)
+    S^-\\
+    &=
+    f_2^\dagger f_1
+\end{align}
+It is an exercise to check that
+\begin{align}
+    \left[ S^a, S^b \right]
+    &=
+    2i \epsilon^{abc} S^c
+\end{align}
+There are two states $\ket{\uparrow}$ and $\ket{\downarrow}$.
+But in the fermionic picture,
+there are 4 states
+$\ket{00}, \ket{01}, \ket{10}, \ket{11}$.
+So then $\ket{\uparrow}=\ket{10}$ and $\ket{\downarrow}=\ket{01}$
+and we consider $\ket{00}$ and $\ket{11}$ to be unphysical state.
+To remove these unphysical states,
+we enforce the constraint that there is just one fermion on each site.
+\begin{align}
+    n_1 + n_2 = 1\\
+    n_1 &= 1- n_2
+\end{align}
+
+We can think of the number of $f_1$s being equal to the number of holes of
+$f_2$.
+
+Constraints on a Hilbert space is the same as saying there's a gauge redundancy
+invovled.
+We can introduce a gauge transformation such that the physcial states are
+invariatn undergauge transfomraiotn,
+but the unphysical states are not.
+And the gauge transformation is just to project on to the gauge invariant
+states.
+
+\subsection{Gauge redundancy}
+Consider the $U(1)$ gauge redundancy.
+\begin{align}
+    f_{\alpha}
+    &\to
+    e^{i\theta} f_{\alpha}
+\end{align}
+which keeps $\vec{S}$ invariant.
+
+I have introduced these Fock states for the fermions,
+and consider how they transform.
+\begin{align}
+    \ket{0}_{f_1} &\to \ket{0}_{f_1}\\
+    \ket{1}_{f_1} =
+    f^\dagger \ket{0}_{f_1}
+    &\to
+    e^{-i\theta} f_1^\dagger f_1^\dagger \ket{0}_{f_1}
+    =
+    e^{-i\theta}\ket{1}_{f_1}
+\end{align}
+Menawhile
+\begin{align}
+    \ket{0}_{f_2} &\to e^{i\theta} \ket{0}_{f_2}\\
+    \ket{1}_{f_2} &\to \ket{1}_{f_2}
+\end{align}
+So that means $\ket{01}$ and $\ket{10}$ are gauge invaritn but $\ket{00}$ and
+$\ket{11}$ are not gauge invariant.
+That meansa the physical space is equal to the gauge invariant subspace of the
+fermions.
+
+It turns out the redundancy is not just $U(1)$,
+but we actually ahve $SU(2)$ gauge redunancy.
+Let me just tell you what it is.
+
+If we consider
+\begin{align}
+    \begin{pmatrix}
+        f_1\\
+        f_2^\dagger
+    \end{pmatrix}
+    &\to
+    W
+    \begin{pmatrix}
+        f_1\\
+        f_2^\dagger
+    \end{pmatrix}
+\end{align}
+for some $W\in SU(2)$,
+then the spin vector $\vec{S}$ will be invariant.
+Let me rewrite this as
+\begin{align}
+    S^+
+    &=
+    f_1^\dagger f_2\\
+    &=
+    \frac{1}{2} \epsilon_{\alpha\beta} \tilde{f}_{\alpha} \tilde{f}_{\beta}
+\end{align}
+noting that
+\begin{align}
+    \tilde{f}_1 &= f_1^\dagger\\
+    \tilde{f}_2 &= f_2
+\end{align}
+THis is paritcle-hole tranfomaitno.
+Because fermions anticommute,
+I just do this with the $\epsilon$ tensor and put in $\frac{1}{2}$.
+If we do it in this langgue
+
+And then we can write this as
+\begin{align}
+    \begin{pmatrix}
+        \tilde{f}_1^\dagger\\
+        \tilde{f}_2
+    \end{pmatrix}
+    &\to
+    W
+    \begin{pmatrix}
+        \tilde{f}_1^\dagger\\
+        \tilde{f}_2^\dagger
+    \end{pmatrix}
+\end{align}
+which I can write as a shorthand
+\begin{align}
+    \tilde{f} \to W \tilde{f}
+\end{align}
+And what that tells us is that
+\begin{align}
+    S^\dagger &\to
+    \frac{1}{2} \epsilon_{\alpha\beta} W_{\alpha\alpha'}
+    W_{\beta\beta'} \tilde{f}_{\alpha'}
+    \tilde{f}_{\beta'}
+\end{align}
+and for $W\in SU(2)$,
+we have
+\begin{align}
+    \epsilon_{\alpha\beta}
+    W_{\alpha\alpha'}
+    W_{\beta\beta'}
+    &=
+    \epsilon_{\alpha'\beta'}\\
+    W_{1\alpha'}
+    W_{2\beta'}
+    -
+    W_{2\alpha'}
+    W_{1\beta'}
+\end{align}
+For $\alpha',\beta'=1$,
+\begin{align}
+    W_{11}W_{21} - W_{21}W_{11} &=0
+\end{align}
+and for
+$\alpha'=1$ and $\beta'=2$,
+\begin{align}
+    W_{11} W_{22} - W_{21} W_{12} &= |W| = 1
+\end{align}
+So the spin operator is kept invariant by this $SU(2)$ transformation.
+The point is that once you write it in this way with the expanded Hilbert space,
+that gives you access to new kinds of approximations you didn't have access to
+before,
+in particular new types of mean field theory.
+
+This parton decomposition gives access to new mean-field approximations.
+To see this,
+consider the usual mean field theory on the Heisenberg model
+\begin{align}
+    H
+    &=
+    \sum_{ij} J_{ij} \vec{S}_{i} \cdot \vec{S}_{j}
+\end{align}
+and you just replace the $S$ with its expectation value,
+so the mean-field Hamiltonian is
+\begin{align}
+    H_{\mathrm{m.f.}}
+    &=
+    \sum_{ij}
+    J_{ij}
+    \left( 
+    \langle\vec{S}_i\rangle
+    \cdot
+    \vec{S}_j
+    +
+    \vec{S}_i\cdot
+    \langle \vec{S}_j \rangle
+    -
+    \langle\vec{S}_i\rangle
+    \cdot
+    \langle\vec{S}_j\rangle
+    \right)
+\end{align}
+But you want to enforce consistency with
+\begin{align}
+    \langle \vec{S}_i \rangle
+    &=
+    \bra{\Phi_{mf}}
+    \vec{S}_i
+    \ket{\Phi_{mf}}
+\end{align}
+This is useful a lot of the time,
+but this is useless for $\langle S_i \rangle=0$,
+because everything is just zero.
+
+So this could only be useful for ordered states of spins.
+If I want to describe states that have topological order,
+usual mean field theory is no good.
+But if I rewrite in terms of partons,
+that goes me a new way of doing mean-field theory,
+which gives me a window into describing a whole new class of phases of matter
+that I couldn't have described just by talking about expectation values of $S$.
+
+Let me just write it down and analyse it next time.
+For the parton mean field,
+I replace the $S$ with my fermion operators.
+\begin{align}
+    H &=
+    \sum_{ij}
+    J_{ij}
+    \vec{S}_i
+    \cdot
+    \vec{S}_j\\
+    &=
+    \sum_{ij}
+    \sum_{a}
+    J_{ij}
+    f_{i\alpha}^\dagger
+    f_{i\beta}
+    f_{i\gamma}^\dagger
+    f_{i\delta}
+    \sigma_{\alpha\beta}^{a}
+    \sigma_{\gamma\delta}^{a}
+\end{align}
+and the identity to use here from QFT class is
+\begin{align}
+    \sum_{a}
+    \sigma_{\alpha\beta}
+    \sigma_{\delta\gamma}
+    &=
+    2\delta_{\alpha\beta'}
+    \delta_{\alpha'\beta}
+    -
+    \delta_{\alpha\beta}
+    \delta_{\alpha'\beta'}
+\end{align}
+and the Hamiltonian simplifies to
+\begin{align}
+    H &=
+    \sum_{ij}
+    \left[ 
+    -\frac{1}{2}
+    J_{ij}
+    f_{i\alpha}^\dagger
+    f_{j\alpha}
+    f_{j\beta}^\dagger
+    f_{i\beta}
+    +
+    J_{ij}
+    \left( 
+    \frac{1}{2} n_i
+    -
+    \frac{1}{4} n_i n_j
+    \right)
+    \right]
+\end{align}
+with a constraint that
+\begin{align}
+    n_i = 1
+\end{align}
+So far this is just an exact rewriting.
+
+\begin{question}
+    ???
+\end{question}
+In gauge theory,
+you could have defined our gague field in the spin sstem,
+and eery time the Guass law is violated
+I'm going to call that thing matter,
+and then you can exacly embed the gague field sapce with matter,
+and it becomes and exat mapping.
+But if you want pure gauge theory,
+it always has to be a subset.
+Here there is a mtter field.
+Thera is a conjecture.
+If you want ot exactly map the gauge field to a spin mdoel,
+you need to mave am tter field,
+that's the completeness conjecture.
+But you're right,
+it seems like I embeeed it in hte larger space,
+but there's this other thing yo ucould do,
+and that is call every Gauss law violation ``matter''
+and that maps on to the Hilbert space.
+
+\begin{question}
+    Do these necesasrily follow fermionic commutation relations?
+\end{question}
+I don't know.
+It's not entirely obvious how you would define that.
+You're thiknig of oeprators htat create a aprticular fluctuation and what its
+properties are.
+It oden'st have to be bosonic or fermionic.
+I might be able to talk about that level fo genearlity.
+I would have some gauge field,
+and I would have some matter,
+so I can't decompose anything,
+I can only talk about the whole of what's happening.
+In this particular relation,
+I can decompose what I call matter and what I call gauge field and it might be
+tricky to do that.
+So I don't have a good answer.
+
+Certainly in the theories we write down,
+it's gauge fields the couple to matter that is fermionic or bosonic.
+
+\begin{question}
+    If bosonic matter,
+    you could call any violation of the Gauss law constraint bosonic,
+    because yo can have as many bosons at a site as you want?
+\end{question}
+I think there will be fermionic and bosonic violations.
