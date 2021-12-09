@@ -195,7 +195,7 @@ for $r>r'$.
 The solutions are different for $r<r'$ and $r>r'$,
 which is similar to the solution for the box
 where the solution was different above and below the box
-and you had to stick the solutions together at hte boundary.
+and you had to stick the solutions together at the boundary.
 So now let's stitch the solutions together.
 
 Since solutions must be continuous at $r=r'$,
@@ -263,3 +263,194 @@ and the final answer is
     {Y^*}_{l}^{m}\left( \theta', \phi' \right)
     Y_{l}^{\;m}\left( \theta, \phi \right)
 \end{align}
+
+\section{Cylindrical Coordinates}
+\begin{example}
+    Consider an infinitely long cylinder of radius $b$
+    that is aligned so its axis is along the $z$-axis.
+    The potential on surface is independent of $z$
+    and given by $V_0(\phi)$.
+
+    Find the potential inside the cylinder.
+\end{example}
+So the cylinder has radius $b$ and you're given the potential $V_0(\phi$ on the
+boundary surface.
+The problem is to solve for $\nabla^2 V=0$.
+
+Once again we're going to use separation of variables.
+\begin{align}
+    \frac{1}{\rho}
+    \frac{\partial}{\partial \rho}
+    \left( 
+    \rho
+    \frac{\partial V}{\partial \rho}
+    \right)
+    +
+    \frac{1}{\rho^2}
+    \frac{\partial^2 V}{\partial \phi^2}
+    +
+    \frac{\partial^2 V}{\partial z^2}
+    &=
+    0
+\end{align}
+Note it should be independent of $z$.
+So we get
+\begin{align}
+    \frac{\partial^2 V}{\partial \rho^2}
+    +
+    \frac{1}{\rho}
+    \frac{\partial V}{\partial \rho}
+    +
+    \frac{1}{\rho^2}
+    \frac{\partial^2 V}{\partial \phi^2}
+    &=
+    0
+\end{align}
+Using separation of variables,
+\begin{align}
+    V\left( \rho, \phi \right)
+    &=
+    R\left( \rho \right)
+    \Phi\left( \phi \right)
+\end{align}
+so the equation becomes separable
+\begin{align}
+    \frac{\rho^2}{R}
+    \left\{ 
+    \frac{d^2 R}{d\rho^2}
+    +
+    \frac{1}{\rho}
+    \frac{dR}{d\rho}
+    \right\}
+    &=
+    -\frac{1}{\Phi}
+    \frac{d^2 \Phi}{d\phi^2}
+    =\nu^2
+\end{align}
+where $\nu$ is a constant.
+So we have the ODE
+\begin{align}
+    \frac{d^2\Phi}{d\phi^2}
+    +
+    \nu^2 \Phi
+    &= 0
+\end{align}
+which has the solution
+\begin{align}
+    \Phi
+    &=
+    A \sin\left( \nu \phi \right)
+    +
+    B \cos\left( \nu \phi \right)
+\end{align}
+If $\phi$ runs from $0$ to $2\pi$,
+$\Phi(\phi) = \Phi\left( \phi + 2\pi \right)$,
+which means $\nu$ must be an integer.
+
+Now for the other equation.
+\begin{align}
+    \frac{d^2 R}{d\rho^2}
+    +
+    \frac{1}{\rho}
+    \frac{dR}{d\rho}
+    -
+    \frac{\nu^2}{\rho^2}R
+    &=
+    0
+\end{align}
+So the solution should be something like $R\sim \rho^\nu$
+and $R\sim \rho^{-\nu}$.
+There will be a homework problem with power law but imaginary power,
+but for this problem it's not relevant now.
+But what if $\nu=0$ so there are no two independent solutions?
+Well in the case $\nu=0$,
+then we have the special case
+$R\left( \rho \right) =$ constant and $R\left( \rho \right) = \log \rho$.
+
+Now we can expand out the solution
+\begin{align}
+    V\left( \rho, \phi \right)
+    &=
+    a_0 + b_0 \log\rho
+    +
+    \sum_{n=1}^{\infty}
+    a_n \rho^n \sin\left( n\phi + \alpha_n \right)
+    +
+    \sum_{n=1}^{\infty} b_n \frac{1}{\rho^n}
+    \cos\left( n \phi + \beta_n \right)
+\end{align}
+and this is the general solution.
+Note that the $\frac{1}{\rho^n}$ blows up at the origin,
+so we must have $b_n=0$ for our problem.
+Suppose we were looking for solutions outside the cylinder,
+then in that case it wouldn't be.
+But for our case,
+$b_n=0$.
+In fact, $b_0$ is also $0$ because the logarithm also blows up at $\rho=0$.
+
+So then for our particular problem,
+\begin{align}
+    V\left( \rho, \phi \right)
+    &=
+    a_0
+    +
+    \sum_{n=1}^{\infty}
+    a_n \rho^n \sin\left( n\phi + \alpha_n \right)
+\end{align}
+Now we have to determine these coefficients.
+What we use to determine these coefficients is that we know
+this is equal to $V_0(\phi)$ at $\rho = b$,
+so it's kind of like a Fourier series with the sum of trigonometric functions.
+First let's rewrite this as the standards Fourier series
+\begin{align}
+    V\left( \rho, \phi \right)
+    &=
+    \frac{1}{2} c_0
+    +
+    \sum_{n=1}^{\infty}
+    \rho^n\left\{ 
+    c_n \cos\left( n\phi \right)
+    +
+    d_n \sin\left( n\phi \right)
+    \right\}
+\end{align}
+so it's been expanded in sine and cosine term.s.
+At the surface of the cylinder $\rho=b$,
+\begin{align}
+    V\left( b, \phi \right)
+    &=
+    V_0
+    +
+    \frac{1}{2} b_0
+    \sum_{n=1}^{\infty}
+    b^n
+    \left\{ 
+    c_n \cos\left( n\phi \right)
+    + d_n \sin\left( n\phi \right)
+    \right\}
+\end{align}
+and now this really is exactly the form of a Fourier series,
+so now you can invert it to find the $c_n$ and $d_n$ coefficients.
+You can use the standard formula for Fourier series.
+\begin{align}
+    c_n &=
+    \frac{1}{\pi}
+    \frac{1}{b^n}
+    \int_{0}^{2\pi}
+    d\phi'\,
+    V_0\left( \phi' \right)
+    \cos\left( n\phi' \right)\\
+    d_n &=
+    \frac{1}{\pi}
+    \frac{1}{b^n}
+    \int_{0}^{2\pi}
+    d\phi'
+    V_0\left( \phi' \right)
+    \sin\left( n\phi' \right)
+\end{align}
+and it turns out with a page of algebra and mathematical tricks,
+it turns out you can resum this.
+Go through the notes to see the trick,
+and there is a homework problem where you have to use this trick.
+The steps themselves are not very difficult,
+just follow the in the notes.
