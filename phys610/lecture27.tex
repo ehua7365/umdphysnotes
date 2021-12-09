@@ -1,0 +1,265 @@
+\section{Spherical Harmonics}
+Since $V\to 0$ at $r\to\infty$, then $a_{lm}=0$.
+Impose boundary condition at $r=a$.
+\begin{align}
+    \sum_{l=0}^{n}\sum_{m=-l}^{+l}
+    \frac{b_{lm}}{a^{l + 1}} Y_{lm}\left( \theta, \phi \right)
+    =
+    V_0 \left( \theta, \phi \right)
+\end{align}
+note
+\begin{align}
+    V\left( \theta, \phi \right)
+    &=
+    \sum_{l,m}
+    \left( a_{lm}
+    r^l
+    +
+    \frac{b_{lm}}{r^{l + 1}}\right)
+    Y_{lm}\left( \theta, \phi \right)
+\end{align}
+Use orthogonality of spherical harmonics to find $b_{lm}$,
+\begin{align}
+    \int d\Omega \, Y_{l'm'}^* \left( \theta,\phi \right)
+    \left\{ 
+    \sum_{l,m}
+    \frac{b_{lm}}{a^{l + 1}}
+    Y_{lm\left( \theta, \phi \right)}
+    \right\}
+    &=
+    \int d\Omega\,
+    Y_{l'm'}^*\left( \theta, \phi \right)
+    V_0\left( \theta, \phi \right)
+\end{align}
+so
+\begin{align}
+    b_{lm}
+    &=
+    a^{l + 1}
+    \int d\Omega\,
+    Y_{lm}^*\left( \theta, \phi \right)
+    V_0\left( \theta, \phi \right)
+\end{align}
+so finally
+\begin{align}
+    V\left( r, \theta, \phi \right)
+    &=
+    \sum_{l=0}^{\infty}
+    \int_{m=-l}^{+l}
+    \left( \frac{a}{r} \right)^{l + 1}
+    Y_{lm}\left( \theta, \phi \right)
+    \int d\Omega'
+    Y_{lm}^*\left( \theta', \phi' \right)
+    V_0\left( \theta', \phi' \right)
+\end{align}
+I'll show you your formula sheet before the exam.
+Usually you just express the answer in terms of Legendre polynomials.
+Usually you're going to leave your answer in terms of the $Y_{lm}$ except where
+there is spherical symmetry and you can write it in terms of Legendre
+polynomials.
+
+You can either not bother with $Y_{lm}$ and use Legendre polynomials,
+or just use spherical harmonics and reduce it to the Legendre polynomials.
+Remember the relation between the spherical harmonics and the Legendre
+polynomials.
+
+Let's do another example.
+\begin{example}
+    Find the Dirichlet Green function for a sphere of radius $b$ centered at
+    origin.
+    \begin{align}
+        \nabla^2 G\left( \vec{r}, \vec{r}' \right)
+        &=
+        -4\pi \delta^{3}\left( \vec{r} - \vec{r}' \right)
+    \end{align}
+    such that $G\left( \vec{r}, \vec{r}' \right) = 0$
+    at $\left|\vec{r}\right| = b$.
+\end{example}
+This is a very standard problem.
+I have a charge here somewhere in the sphere and I want to find the charge here.
+It's Laplace's equation except for that one point,
+so we look for a solution like that.
+
+Awa from $\vec{r}=\vec{r}'$,
+the Green function satisfies Laplace's equation
+\begin{align}
+    G\left( \vec{r}, \vec{r}' \right)
+    &=
+    \sum_{l=0}
+    \sum_{m=-l}^{l}
+    g_{lm}\left( r \right)
+    Y_{l}^{\,m}\left( \theta, \phi \right)
+\end{align}
+So we look for a separable solution.
+Now take this and plug it in to the definition of the Green function.
+
+And then yo get
+\begin{align}
+    \sum_{l,m}
+    \left\{ 
+    \frac{d^2 g_{lm}}{dr^2}
+    +
+    \frac{2}{r}
+    \frac{dg_{lm}}{dr}
+    -
+    \frac{l(l + 1)}{r^2}g_{lm}
+    \right\}
+    Y_{l}^{\,m}\left( \theta, \phi \right)
+    &=
+    -4\pi \delta^3 \left( \vec{r} - \vec{r}' \right)
+\end{align}
+Then we multiply both sides by ${Y^*}_{l'}^{\, m'}\left( \theta, \phi \right)$
+and integrate over $\Omega$.
+\begin{align}
+    \frac{d^2 g_{l'm'}}{dr^2}
+    +
+    \frac{2}{r} \frac{dg_{l'm'}}{dr}
+    -
+    \frac{l'\left( l' + 1 \right)}{r^2} g_{l'm'}
+    &=
+    -4\pi
+    \int d\Omega\,
+    {Y^*}_{l'}^{\,m'}\left( \theta, \phi \right)
+    \underbrace{\delta^3\left( \vec{r} - \vec{r}' \right)}_{
+    \frac{\delta\left( r - r' \right)}{r^2}
+    \delta\left( \cos\theta - \cos\theta' \right)
+    \delta\left( \phi - \phi' \right)
+    }\\
+    &=
+    -\frac{4\pi}{r^2}
+    {Y^*}_{l'}^{\,m'}\left( \theta, \phi \right)
+\end{align}
+This is much simpler because this is just an ODE,
+so like the 1D problem we solve.
+
+Away from $r=r'$,
+\begin{align}
+    g_{lm}\left( r \right)
+    &=
+    A_{lm} r^l + B_{lm} \frac{1}{r^{l + 1}}
+\end{align}
+So it's just like Laplace's equation.
+The only difference is that you have a sphere and a delta function source
+somewhere here.
+This source is at $\vec{r}'$.
+So we have Laplace's equation everywhere except $\vec{r}'$.
+So we're going to get one value of the $A_{lm}$ for $r<r'$
+and another value for $r>r'$.
+So we are solving Laplace's equation for $r<r'$ and then for $r>r'$
+and then we stick the two solutions together.
+This is similar to what we did when we were solving for the Greens function for
+the box,
+where we had a point charge in the middle of the box and we had to divide the
+box into two pieces,
+which we solved and matched the distributions,
+did using a more careful sophisticated way using the convergence theorem,
+but here I'm doing it much quicker,
+as the two are mathematically equivalent,
+and you won't have time in an exam to do all those divergence theorems.
+So this is equivalent to what we did.
+Here we are breaking the sphere into two pieces,
+one $r<r'$ and $r>r'$,
+just done much more directly than the box,
+and this is much faster,
+because very quickly it gets reduced to a 1D ODE.
+
+So in general,
+$A_{lm}$ and $B_{lm}$ will be different for $r<r'$
+and $r>r'$.
+This $1/r^{l+1}$ blows up when $r=0$,
+so since $g_{lm}(r)$ must be regular at $r=0$,
+we have
+\begin{align}
+    g_{lm}^{<}\left( r \right)
+    &=
+    A_{lm}^{<} r^l
+\end{align}
+which is the solution for $r < r'$.
+Also, we need that
+\begin{align}
+    g_{lm}\left( r \right) = 0
+\end{align}
+at $r=b$,
+so
+\begin{align}
+    g_{lm}^{>}\left( r \right)
+    &=
+    A_{lm}^{>}
+    \left( 
+    r^l
+    -
+    \frac{b^{2l + 1}}{r^{l + 1}}
+    \right)
+\end{align}
+for $r>r'$.
+The solutions are different for $r<r'$ and $r>r'$,
+which is similar to the solution for the box
+where the solution was different above and below the box
+and you had to stick the solutions together at hte boundary.
+So now let's stitch the solutions together.
+
+Since solutions must be continuous at $r=r'$,
+\begin{align}
+    g_{lm}^{<}\left( r' \right)
+    &=
+    g_{lm}^{>}\left( r' \right)
+\end{align}
+so you get this condition
+\begin{align}
+    A_{lm}^{<}
+    &=
+    A_{lm}^{>}
+    \left( 
+    1
+    -
+    \frac{b^{2l + 1}}{r'^{2l + 1}}
+    \right)
+\end{align}
+And then integrate the ODE on both sides over $r$
+from $r=r' - \epsilon$ to $r=r' + \epsilon$,
+which is the region that contains the delta function.
+Then you get
+\begin{align}
+    \left\frac{dg_{lm}}{dr}\right|_{r' + \epsilon}
+    -
+    \left\frac{dg_{lm}}{dr}\right|_{r' - \epsilon}
+    &=
+    -\frac{4\pi}{r'^2}
+    {Y^*}_{l}^{m}\left( \theta', \phi' \right)
+\end{align}
+So this is the second condition.
+And this is a lot messier.
+\begin{align}
+    A_{lm}^{>}
+    \left\{ 
+    l {r'}^{l - 1}
+    +
+    \left( l + 1 \right)
+    \frac{b^{2l + 1}}{ {r'}^{l + 2}}
+    \right\}
+    -
+    A_{lm}^{,}
+    \left\{ 
+    l {r'}^{l - 1}
+    \right\}
+    &=
+    - \frac{4\pi}{ {r'}^2 }
+    {Y^*}_{m}^{\, l} \left( \theta', \phi' \right)
+\end{align}
+And then you do some algebra,
+and the final answer is
+\begin{align}
+    G\left( \vec{r}, \vec{r}' \right)
+    &=
+    \sum_{l,m}
+    \frac{4\pi}{\left( 2l + 1 \right)}
+    r_{<}^{l}
+    r_{>}^{l}
+    \left\{ 
+    \frac{1}{r_{>}^{2l + 1}}
+    -
+    \frac{1}{b^{2l + 1}}
+    \right\}
+    {Y^*}_{l}^{m}\left( \theta', \phi' \right)
+    Y_{l}^{\;m}\left( \theta, \phi \right)
+\end{align}
