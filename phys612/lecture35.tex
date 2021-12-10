@@ -1,0 +1,172 @@
+\section{Renormalization Group}
+Block spin trnasformation for matrice slacing $a$ to $la$.
+The parttion function is
+\begin{align}
+    Z &=
+    \sum_{ \left\{ \sigma \right\}} e^{K\left[ \sigma \right]}\\
+    &=
+    \sum_{ \left\{ \sigma' \right\}} e^{K' \left[ \sigma' \right]}
+\end{align}
+where
+\begin{align}
+    K'
+    &=
+    K_0'
+    +
+    K'_2
+    \sum_{n,m} \sigma'_{i} \sigma'_{j}
+    +
+    K'_3
+    \sum_{n-m,n} \sigma'_i \sigma'_j
+    +
+    K_4' \sum_{\square}
+    \sigma'_i \sigma'_j \sigma'_k \sigma'_l
+    + \cdots
+\end{align}
+At fixed points
+\begin{align}
+    K^* &= R\left( K^* \right)
+\end{align}
+which we can expand near fixed point
+\begin{align}
+    K'_{\alpha}
+    -
+    K_{\alpha}^*
+    &=
+    R\left( K \right)
+    -
+    K^*\\
+    &\approx
+    R\left( K^* \right)
+    +
+    \left( K - K^* \right)_{\beta}
+    \left.
+    \frac{\partial R}{\partial K_{\beta}}
+    \right|_{K=K^*}
+    +
+    \cdots
+\end{align}
+For simplicity assume the matrix $\frac{\partial R_\alpha}{\partial K_\beta}$
+is symmetric.
+Then if $\lambda > 1$ we say it is a relevant direciton,
+but if $\lambda < 1$ it is irrelevant.
+And if it's equal to zero then it's marginal.
+THey are relevant for areason.
+
+Big diagram here.
+\begin{figure}[h]
+    \begin{center}
+        \includesvg{rgflow}
+    \end{center}
+    \caption{RG flow}%
+    \label{fig:rgflow}
+\end{figure}
+\begin{align}
+    K &=
+    \beta J\\
+    &=
+    \frac{J}{k_B \left( T - T_c + T_c \right)}\\
+    &\approx
+    \frac{J}{k_B T_c}
+    \left( 
+    1
+    +
+    \underbrace{\frac{T - T_c}{T_c}}_{t}
+    + \cdots
+    \right)
+\end{align}
+
+Critical exponent $\nu$.
+\begin{align}
+    t' &= \lambda t\\
+    t^{(n)} &= \lambda^n t\\
+\end{align}
+so the correlation length scales like
+\begin{align}
+    \xi\left( t' \right) &= \frac{1}{l} \xi\left( t \right)\\
+    \xi\left( t^{(n)} \right)
+    &=
+    \frac{\xi\left( t \right)}{l^n}
+\end{align}
+with
+\begin{align}
+    n
+    &=
+    \frac{\ln \left( b/t \right)}{\ln \lambda}
+\end{align}
+Note
+\begin{align}
+    \lambda^n t
+    &=
+    e^{n \ln \lambda} t
+    =
+    e^{\frac{\ln (b/t)}{\ln \lambda} \ln \lambda} t\\
+    &=
+    \frac{b}{t} t\\
+    &= b
+\end{align}
+And
+\begin{align}
+    l^n &=
+    e^{n\ln l}\\
+    &=
+    e^{\frac{\ln(b/t)}{\ln \lambda} \ln \lambda}\\
+    &=
+    \left( \frac{b}{t} \right)^{\frac{\ln l}{\ln \lambda}}
+\end{align}
+so then
+\begin{align}
+    \xi\left( t \right)
+    &=
+    l^n \xi\left( t' \right)
+    =
+    \underbrace{l^n}_{t/b}
+    \xi\left( \underbrace{\lambda^n t}_{b} \right)\\
+    &\sim
+    t^{- \frac{\ln l}{\ln \lambda}} = t^{-\nu}
+\end{align}
+Hence
+\begin{align}
+    \nu &=
+    \frac{\ln l}{\ln \lambda}
+\end{align}
+
+Now let us calculate the $\alpha$.
+Consider $f(t)$ to be the free energy per site.
+\begin{align}
+    l^d f(t)
+    &-
+    f\left( t' \right)
+\end{align}
+which implies
+\begin{align}
+    f(t)
+    &=
+    \underbrace{
+    \frac{1}{l^{dn}}
+    }_{
+    \left( \frac{t}{b} \right)^{-d \underbrace{
+    \frac{\ln l}{\ln \lambda}}_{
+    \nu
+    }}
+    }
+    f\left( \lambda^n t \right)\\
+    &\sim t^{d\nu}
+\end{align}
+Recalling that
+\begin{align}
+    n &=
+    \frac{\ln b/t}{\ln \lambda}
+\end{align}
+And the specific heat is proportional to
+\begin{align}
+    C &\sim
+    -\frac{\partial^2 f}{\partial t^2}
+    \sim
+    t^{\underbrace{d\nu - 2}_{\alpha}}
+\end{align}
+hence
+\begin{align}
+    \alpha &= d\nu - 2
+\end{align}
+which is the Josephson relation.
