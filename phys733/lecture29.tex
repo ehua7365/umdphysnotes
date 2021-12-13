@@ -1,0 +1,796 @@
+\section{Last lecture}
+Finish off parton construction with quantum spin liquids and spend the last 20
+minutes for an overview of what we did in the course and try to tie things
+together a bit.
+Fermionic parton construction.
+\begin{align}
+    \vec{S} &=
+    \begin{cases}
+        \frac{1}{2}f^\dagger \vec{\sigma} f\\
+        \frac{1}{2}z^\dagger \vec{\sigma} z
+    \end{cases}
+\end{align}
+
+We had spin operators with 2 states per site.
+And two flavours of fermions per site.
+We actually get 4 states per site for the fermions,
+but we deemed two of them unphysical,
+so that's how we describe the two initial states.
+
+So we have $\ket{\uparrow}=\ket{01}$
+and $\ket{\downarrow}=\ket{10}$
+which are physical states but the states
+$\ket{00}$ and $\ket{11}$ are not gauge invariant and hence unphysical.
+
+There is a $U(1)$ gauge redundancy that keeps physical operators invariant.
+\begin{align}
+    f &\to e^{i\theta}f
+\end{align}
+Actually there is an $SU(2)$ gauge redundancy.
+
+To implement this gauge constraint,
+we need to enforce a constraint,
+which is that the number of particles per site should always be 1.
+\begin{align}
+    n_1 + n_2 = 1
+\end{align}
+So we're in the $01$ and $10$ subspace.
+If we decompose the operator this way and enforce the constraint,
+that gives us new mean-field approximations that we didn't have access to
+before.
+
+We started with the Heisenberg model,
+and rewrote it as just  model of fermions hopping.
+\begin{align}
+    H &=
+    \sum_{ij} \vec{S}_i\cdot\vec{S}_j J_{ij}\\
+    &=
+    \sum_{ij}
+    \left[ 
+    -\frac{1}{2} J_{ij} f_{i\alpha}^\dagger
+    f_{j\alpha}
+    f_{j\beta}^\dagger
+    f_{i\beta}
+    +
+    J_{ij}
+    \left( 
+    \frac{1}{2}n_i
+    -
+    \frac{1}{4} n_i n_j
+    \right)
+    \right]
+\end{align}
+And, we can then write the ansatz that
+\begin{align}
+    \chi_{ij} &=
+    \langle f_{i\alpha}^\dagger f_{j\alpha}\rangle
+\end{align}
+which if we put nito the Hamiltonian gives the mean-field Hamiltonian
+\begin{align}
+    H_{mf}
+    &=
+    \sum_{ij}
+    \left[ 
+    \left( 
+    -\frac{1}{2} J_{ij} f_{i\alpha}^\dagger f_{i\alpha}
+    \chi_{ji}
+    +\mathrm{h.c.}
+    \right)
+    -
+    \left| \chi_{ij} \right|^2
+    \right]
+\end{align}
+where we have replaced $f_{i\alpha}^\dagger f_{j\alpha}$
+by the mean field.
+And for consistency,
+we want ot enforce the equation
+$ \chi_{ij} = \langle f_{i\alpha}^\dagger f_{j\alpha}\rangle$.
+
+The zeroth order thing to do is to not require this constraint exactly,
+but require it on average.
+So there is a zeroth order mean field which is to treat the constraint on
+average.
+
+One thing we can do is add an extra Lagrange mulitiplier in the Hamiltonian
+which acts like a chemical potential that fixes this average
+$\langle n_i \rangle = 1$.
+So we have
+\begin{align}
+    H_{0-mf}
+    &=
+    H_{mf}
+    +
+    \sum_i a_0 
+    \left( 
+    f_{i\alpha}^\dagger f_{i\alpha}
+    - 1
+    \right)
+\end{align}
+so this is basically a site-dependent chemical potential to enforce
+$\langle n_i \rangle = 1$.
+We hvae this Hamiltonian that is afree-fermion Hamitonian,
+and we hvae thse parameters $a_0$ and $\chi$ we can tune,
+but we want to choose them to be self-consistent such.
+Choose $a_0$ such that $\langle n_i\rangle = 1$.
+
+We are assuming $\chi_{ij} &= \bar{\chi}_{ij}$
+ad $a_0(i) = \bar{a}_0$
+satisfy self-consistency equations.
+The fermions carry spin half but are electrically neutral.
+These excitations are electrically neutral spin-$\frac{1}{2}$ fermions.
+We call these fermionic \emph{spinons},
+which are excitations that carry spin-$\frac{1}{2}$.
+Local excitaitons always carry integer spin,
+because every spin flip operation changes the spin by one,
+when it goes from $-\frac{1}{2}$ to $\frac{1}{2}$.
+
+Any logcal opeator can only create integer spin excitations,
+so a spin-$\frac{1}{2}$ is a non-trivial thing.
+They also happen to be electrically neutral fermions.
+The zeroth order mean field theory is useful because you can deduce you can have
+fermionic spinon excitations,
+but in some sense you can only treat the constrant on average,
+but you should rally treat hte constaint exactly.
+
+We don't know if hte meanf ifeld theory is stable to flutcuations either,
+which could be in phase or amplitude of the $\chi_{ij}$ mean field.
+Another way of arriving at the $\chi_{ij}$
+is instead of doing a mean field theory is do a
+Hubbard-Stratonvich transformation,
+where you replace
+$\phi^4 \to \phi^2 \phi^2 + \chi^2$
+completing the square.
+It's a common trick,
+but if you're familiar wiht it,
+just consider it a mean field hteory.
+
+\subsection{First-order mean field}c:w
+we consider a first-order mean field theory
+to check the stability of the zeroth order mean field
+and treat hte constraint exactly.
+
+The first fluctuations to consider are phase fluctuations.
+\begin{align}
+    \chi_{ij} &=
+    \bar{\chi}_{ij} e^{i a_{ij}}
+\end{align}
+The amplitude fluctuation is gapped due to the $|\chi_{ij}|^2$
+term so we don't have to worry about it.
+
+A useful way of thinking about this is the integral language.
+\begin{align}
+    Z &=
+    \int \mathcal{D} f \mathcal{D} \bar{f}\,
+    e^{iS}
+    \prod_{i,t} \delta\left( f_i^\dagger f_i - 1 \right)
+\end{align}
+Every site and time has a delta function.
+
+And we can introduce fields $a_0(i, t)$ 
+\begin{align}
+    Z &=
+    \int \mathcal{D} f \mathcal{D} \bar{f} \mathcal{D} a_0\,
+    e^{i \sum_{i, t} a_0 (i, t)} \left( f_9^\dagger f_i - 1 \right)
+    e^{iS}
+\end{align}
+and hte Hamiltonian becomes
+\begin{align}
+    H_{1,mf}
+    &=
+    \sum_{ij}
+    -\frac{1}{2} J_{ij}
+    \left[ 
+    \left( 
+    f_{i\alpha}^\dagger f_{j\alpha}
+    \bar{\chi}_{ji} e^{-ia_{ij}}
+    + \mathrm{h.c.}
+    \right)
+    -
+    \left| \bar{\chi}_{ij} \right|^2
+    \right]
+    -
+    \sum_{i} a_0\left( i \right) \left(
+    f_{i\alpha}^\dagger f_{i\alpha} - 1
+    \right)
+\end{align}
+and now $a_0$ becomes a dynamical field.
+Then $a$ can be thought of as a $U(1)$ gauge field,
+with the transformation
+\begin{align}
+    f_{i} &\to e^{i\theta_i} f_i\\
+    a_{ij} &\to a_{ij} + \theta_j - \theta_i
+\end{align}
+keeping it invariant.
+Then $a_0$ literally enters the theory as the time-componento f the gauge field.
+\begin{align}
+    \mathcal{L} &=
+    i \sum_{i}
+    f_i^\dagger \left( \partial_t - i a_0 \right) f_i
+\end{align}
+So basically we get to fermionic spinons plus $U(1)$ gauge fields.
+We should emphases the gauge field is a dynamical emergent gauge field.
+It wasn't there microscopically,
+but once we do this decomposition,
+it has to be there due to the gauge redundancy,
+because we expanded the Hilbert space got expanded and we need to restrict it
+back down.
+
+The fluctuations of $\chi_{ij}$ correspond to the gauge field fluctuations.
+If we want to understand the stability of the mean-field ansatz,
+we need to understand the stability to fluctuations of this $U(1)$ gauge field.
+
+The stability of mean field is related to the stability to $U(1)$ gauge field
+fluctuations.
+There's  lot to do in this direction,
+and you could consider all kinds of mean field ansatzs and you can go back to
+see that we have an $SU(2)$ gauge field fluctuations which are much larger,
+and you can put those in the theory which requires you to havea few more
+paramteres,
+so you can analyse all sorts of mean field theories.
+
+But now I want ot switch gears and not talk about hte Hamiltonian and the mean
+field gauge theory,
+but instead I want to talk about the wave functions.
+
+This leads to a whole class of trial wave functions,
+or variational wave functions,
+which are basically projected wave functions.
+
+This is a spatial component and this is a time component.
+
+Whence have this mean field ansatz,
+we have to look at the ground state
+\begin{align}
+    \ket{\Psi_{\mathrm{mean}}\left( \chi_{ij} \right)}
+\end{align}
+which is the mean field state of partons.
+this mean field by itself is not a physical state because it doesn't live in the
+spin Hilbert space.
+Because it's a ground state of the zeroth order mean field theory,
+it contains unphysical states where there are 0 or 2 fermions per site.
+To get back into the original Hilbert space,
+we can take this mean field ground state and project it into the physical
+Hilbert space.
+\begin{align}
+    \ket{\Psi_{\mathrm{phys}}
+    &=
+    P\ket{\Psi_{\mathrm{mean}}(\chi_{ij})}
+\end{align}
+where $P$ is the projection onto 1 particle-per-site states.
+This is called the Gutewillen projection.
+
+Start with the Fock vacuum $\ket{0}$ and add fermions,
+and take that inner product with the state.
+\begin{align}
+    \Psi_{\mathrm{spin}}^{\left( \chi_{ij} \right)}
+    \left( \left\{ \alpha_i \right\} \right)
+    &=
+    \bra{0}
+    \prod_{i} f_{\alpha i}
+    \Ket{\Psi_{\mathrm{mean}^{(\chi_{ij})}}
+\end{align}
+Consider a different ansatz
+\begin{align}
+    \tilde{\chi}_{Ij}
+    &=
+    \chi_{ij} e^{i\left( \theta_i - \theta_j \right)}
+\end{align}
+which is the same as taking $f_i \to e^{i\theta_i} f_i$,
+so then
+\begin{align}
+    \Psi_{\mathrm{spin}}^{\left( \tilde{\chi} \right)}
+    &=
+    e^{i\sum_i \theta_i} \Psi_{\mathrm{spin}}^{\left( \chi \right)}
+\end{align}
+and the only difference is the overall phase which is the same physical state.
+It's incredible that this class of wave functions is so incredibly rich.
+Fractional quantum hall states,
+quantum spin liquids,
+any exotic state you can write down parton construction,
+and then do mean field and then do a projection.
+
+We can not just get ground states,
+but also variational states for excited states.
+I can put some winding or fluctuation of $\chi$,
+then do some projection and get some candidate excited wave function.
+
+To do it more explicitly,
+I can do a spinon wave function.
+
+The spinon wave functions
+\begin{align}
+    \Psi_{\mathrm{spin}}^{\mathrm{spinon}}
+    \left( i_1, \lambda_1; i_2, \lambda_2 \right)
+    &=
+    \bra{0}
+    \left( 
+    \prod_{i} f_{i,\alpha_i}
+    \right)
+    f_{i_1\lambda_1}^{\dagger}
+    f_{i_2 \lambda_2}
+    \ket{\Psi_{\mathrm{mean}}^{\chi}}
+\end{align}
+There's been a lot of work trying to write down new fancy wave functions using
+neural networks and tensor networks and machine learning,
+and PEPS and so on,
+but these are the ones that actually work,
+and describe everything.
+All the popular ones people talk about but are not nearly as powerful as this
+class of wave functions.
+Those other classes of wave functions are fun to think about they have not been
+as powerful so far as these wave functions.
+
+You set up this mean field theory,
+and you set up spins with spinons,
+that gets yo to $U(1)$ gauge field,
+and then you get wave functions by projection to the physical Hilbert space.
+Now you consider all sorts of mean field theories.
+$\chi$ and $a_0$ are the variational parameter.
+
+\begin{question}
+    Have there improvmentes by including gague flucationas?
+\end{question}
+You can improve the wave functions by including gague fluctuations.
+It is an interesting reearch direction but I have seen very littel work.
+One thing cold be to get better wave functions by doing exactly that.
+
+At this point the name of hte game is to consider all sorts of mean field
+ansatzs and describe all sorts of phases.
+
+\section{$\ZZ_2$ spin liquid}
+There's another we of arriving at very similar states in terms of projected wave
+functions and mean field theory approach.
+One way is to assume the spinons form an $s$-wave superconductor.
+Assume when spinons form $s$-wave superconductor
+\begin{align}
+    \langle f_{i\uparrow} f_{i\downarrow}\rangle
+    &\ne 0
+\end{align}
+The mean field wave function si going to be a mean field wave function for an
+$s$-wave superconductor,
+and then sou do a projection onto one particle per site.
+This gives a physical wave function in the Hilbert space,
+which si a $\ZZ_2$ spin liquid wave function.
+When this parton model acquires a non-zero expectation,
+there is an Anderson-Higgs gauge symmetry
+and what's left behind is this $\ZZ_2$ gauge theory.
+\begin{align}
+    \ket{\Psi_{\ZZ_2 \mathrm{QSL}}}
+    &=
+    P
+    \ket{\Psi_{\Psi_{mf,s\text{-wave s.c.}}}}
+\end{align}
+
+In parton mean field theory,
+$U(1)$ gauge field plus $f_{i,\alpha}$.
+And $U(1)$ breaks by Higgs to $\ZZ_2$.
+The $\ZZ_2$ gauge field coupled $f_{i,\alpha}$.
+
+Then we have topological excitations.
+The first kind of quasiparticle $f$ is BdG quasi-particles of $s$-wave conductor
+created by breaking ``cooper pairs`` of the neutral spin-half spinons.
+Each one is fermionic spin-$\frac{1}{2}$ excitations.
+
+The second kind.
+Instead of writing the mean field state you insert a vortex nito this
+$s$-wave superconductor.
+The $\pi$-flux vortex of an $s$-wave superconductor after projection becomes a
+vison,
+which we talked about in the context of the quantum dimer model,
+and in the context of the $\ZZ_2$ toric code vortex where this was the $m$
+particle.
+
+This $f$ is a fermion and this $m$ particle is a boson.
+Every other topological class of excitations we could get from here.
+We could consider composite $f$ and $m$ particles,
+which gives what we would normally call the $e$ particle in the toric code
+state.
+
+The third kind of $f\times m = e$
+When $f$ goes around $m$,
+that picks up a minus sign,
+I would pick up the spin of the $f$ which is minus $-1/2$,
+and I would pick up a spin of the $m$ which is $+1/2$ and then the composite is
+a boson.
+
+The fourth kind is local excitations.
+Even numbers of spinons.
+You need more work to show that two visons coming together is local,
+but I'll leave that for you to think about.
+The whole point is that this is another way of arriving at this $\ZZ_2$ spin
+liquid,
+but there is something which didn't come up previously.
+
+We see the fermion $f$ is a spinon that carries spin-$\frac{1}{2}$,
+whereas the vison does not carry spin-$\frac{1}{2}$.
+All particles in the toric code were spin-less,
+so this differs from the quantum dimer model discussion and $\ZZ_2$ toric code
+discussion due to the quantum numbers these excitations have under the $SO(3)$
+rotations.
+This didn't exist in the previous discussions.
+
+It could have existed if we demanded the dimness had spin-$\frac{1}{2}$.
+It's distinct from the toric code in that the spinons carry
+spin-$\frac{1}{2}$,
+so this whole state carries symmetry fractionalization.
+All these particles carry fractional spin.
+
+You can think of a spin-liquid as a superconducting state of spinons.
+That's one way of thinking about a quantum $\ZZ_2$ spin liquid.
+
+There is another important class of states is fractional quantum Hall states,
+also known as fractional Chern insulators.
+We can do it in terms of spins but we don't have to.
+In terms of spins,
+you can think of the boson $b$.
+We don't necessarily there is full SO(3) full spin rotation symmetry.
+We can write
+\begin{align}
+    b &=
+    f_1 f_2
+\end{align}
+which si basically the same thing as writing the spins as
+$S^\dagger &= f_1^\dagger f_2 = \tilde{f}_1 \tilde{f}_2$.
+
+In this description $U(1)$ gauge theory goes
+\begin{align}
+    f_1 &\to e^{i\theta} f_1\\
+    f_2 &\to e^{-i\theta} f_2
+\end{align}
+Each of these form some kind of insulating phase with Chern number 1.
+Consider mean field state where $f_1,f_2$
+are each in Chern insulator with $C_1=C_2=1$.
+I want ot track the background external gauge field under which $b$ carries
+charge 1.
+So let $A$ be a background $U(1)$ gauge field,
+not to be confused with the internal emergent gauge field that emerges from the
+$U(1)$ gauge transformation.
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{ccc}
+        & $q_a$ & $q_A$\\
+        $f_1$ & + 1 &  1\\
+        $f_2$ & -1 & 0
+    \end{tabular}
+    \caption{z2spin}
+    \label{tab:z2spin}
+\end{table}
+Imagine we have some effective Lagrangian
+\begin{align}
+    \mathcal{L}_b
+    &=
+    \mathcal{L}\left( f_1, a + A \right)
+    +
+    \mathcal{L}\left( f_2, a \right)
+\end{align}
+$f_2$ is a sate which si a Chern insulator with Chern number 1.
+And it's coupled to this $a$ gague field.
+What's an effective Lagrangian for such a csitaution.
+You may not remember,
+but we covered this before,
+to introduce a $U(1)$ level Chern-Simons theory.
+We can write the effective theory as
+\begin{align}
+    \mathcal{L}\left( f_2, a \right)
+    &=
+    -\frac{1}{4\pi}
+    \alpha_{\mu} \partial_{\nu} \alpha_{\lambda}
+    \epsilon^{\mu\nu\lambda}
+    -
+    \frac{1}{2\pi}
+    \epsilon^{\mu\nu\lambda}
+    a_{\mu} \partial_{\nu} a_{\lambda}
+\end{align}
+so then the current is
+\begin{align}
+    j_{\mu}^{\left( f_2 \right)}
+    &=
+    \frac{1}{2\pi}
+    \epsilon^{\mu\nu\lambda}
+    \partial_\nu
+    \alpha_{\lambda}
+\end{align}
+So this is also a Chern-insulator 1 state.
+\begin{align}
+    \mathcal{L}\left( f_1, a + A \right)
+    &=
+    -\frac{1}{4\pi}
+    \beta \, d\beta
+    +
+    \frac{1}{2\pi}
+    \left( a + A \right)
+    d\beta
+\end{align}
+If we only keep leading order terms in these gauge fields,
+\begin{align}
+    \mathcal{L}_b
+    &=
+    -\frac{1}{4\pi}
+    \alpha\, d\alpha
+    -
+    \frac{1}{4\pi}
+    \beta\, d\beta
+    +
+    \frac{1}{2\pi}
+    a\, d\left( \beta - \alpha \right)
+    +
+    \frac{1}{2\pi} A\, d\beta
+\end{align}
+The whole point of hte parton mean field ansatz is that you can treat all the
+gauge fluctuations perturbabitvely.
+If you summarised in one sentence the parton constution.
+Decomose the physcial operaotrs in temrso f p
+Then aassume some mean field state,
+then assume fluctuiatons are weak.
+
+We assume the gague fluctuiaotns are greated perturbabilty,
+and all subleadng terms are irrelevant.
+And then we can just integrate out the $a$.
+And because thsi si a free theory,
+we can just solve the equation of motion for $a$.
+Either way you're going to get the same thing.
+\begin{align}
+    \epsilon^{\mu\nu\lambda}
+    \partial_\nu \beta_{\lambda}
+    =
+    \epsilon^{\mu\nu\lambda}
+    \partial_\nu a_\lambda
+\end{align}
+which assuming it's not topologically weird space,
+\begin{align}
+    \beta_{\mu} &=
+    a_\mu + \partial_\mu \phi
+\end{align}
+and we can just ignore the second term,
+and we arrive at
+\begin{align}
+    \mathcal{L}_b
+    &=
+    -\frac{2}{4\pi}
+    \alpha\, d\alpha + \frac{1}{2\pi}A\, d\alpha
+\end{align}
+and we saw this before.
+This is $U(1)$ level 2 CS theory or $U(1)_2$.
+And you will find the Hall conducatnce is
+\begin{align}
+    \sigma_H
+    &=
+    \frac{1}{2} \frac{1}{2\pi}
+\end{align}
+and so this ansatz describes a fractional quantum Hall state.
+
+\begin{question}
+    Why is that $1$ and $0$ is a choice in the charge table?
+\end{question}
+In ternral you could have $a_{A1}$ and $q_{A2}$,
+but all you need is $q_{A1}+q_{A2}=1$.
+In that case your Lagrangian will be
+\begin{align}
+    \mathcal{L}_b
+    &=
+    -\frac{2}{4\pi}
+    \alpha\, d\alpha + \frac{1}{2\pi}A\, d\alpha
+    +
+    \frac{1}{2\pi}
+    A\, \alpha
+    \left( 
+    q_{A1} \beta +
+    q_{A2} \alpha
+    \right)
+\end{align}
+But in consdensed matter physics,
+people are find not worrying about global issues,
+and you could just wirte $\frac{1}{2}$ and $\frac{1}{2}$,
+but field theorists yell at me to write $1$ and $0$.
+But the correct thing to do is do the field throeeists integer charge $1$ and
+$0$.
+You'll get the same answer for the Hall conducatnce eithere way.
+They mess aorund with the global compactness of the gauge field.
+If you don't worry about non-trivial topologies you won't worry about this
+issue.
+
+Now you can also write down the wave funciton.
+Each mena field state is in some Chern number 1.
+
+Now the projection.
+We have two flavours of fermions.
+\begin{align}
+    \Psi\left( \left\{ r_i \right\} \right)
+    &=
+    P_{n_1=n_2}
+    \Phi_{C=1}\left( \left\{ r_i^2 \right\} \right)
+    \Phi_{C=1}\left( \left\{ r_i^1 \right\} \right)\\
+    &=
+    \left( \Phi_{c=1}\left( \left\{ r_i \right\} \right) \right)^2
+\end{align}
+If you're familiar with this,
+this is the $\frac{1}{2}$-Laughlin FQH wave function.
+
+\begin{question}
+    ???
+\end{question}
+It's again the same thing,
+you identify
+$\ket{0}_b=\ket{00}$ and $\ket{1}_b=\ket{11}$ sa the physical states
+and $\ket{10}$ and $\ket{01}$ as non-phsyical.
+
+This parton construction is much better than the other approaches,
+because it unifies quantum spin liquids and quanutm Hall states.
+
+\begin{question}
+    How did you get to the fact I need to consider 2 Chern nisulators?
+\end{question}
+In principle,
+there's an infinite numbero f mean field ansatz options,
+but why did I decide on the ansatz $b=f_1f_2$?
+The parton construciton is a way of describing any phase with an emergent gauge
+theory,
+even if gapless.
+When you do MF,
+you can consider many ansatzs.
+You can just pick one,
+see what its energetics looks like,
+and the one with least energy is the most likely.
+You can consdier all sorts of mean field ansatz whcih gives you many variational
+wave functions,a
+nd that gives you many.
+
+How did Laughlin know it's a square or cube of the free fermion wave function?
+It was just his guess based on his experience.
+
+\begin{question}
+    How general is this?
+    If you write $b=$ 3 fermions?
+\end{question}
+You could do in general $b=f_1f_2\cdots f_k$.
+the gauge symmetry is different,
+but you can still do it.
+You end up with $U(1)_k$ CS theory,
+if you assume all are in $C=1$ Chern-insulator states.
+
+\begin{question}
+    Math procedure for free fermion model and mean field ansatz to output some
+    topolgocial orderd satte.
+\end{question}
+There probably is one,
+but it hasn't been elucidated.
+Perhaps there's something more formal that can be developed.
+
+\section{Summary}
+I want to give you an overview of what we covered.
+A brief review of what we've done and why it all fits together.
+There's a lot more things to cover for another course.
+There are important things we didn't cover,
+like the algebraic theory of anyons,
+this modular tensor category.
+I can give another lecture about modular tensor categories,
+but since the lectures for the course are over we don't technically have to do
+that.
+Are you interested in a bonus lecture on Wednesday?
+
+Let me try to take 10 minutes to give you a summary or overview.
+
+We start off by talking about general htings,
+like locality in quantu mssytesm,
+how gapped implies correlation length.
+We didn't directly do naything wiht these,
+but we talked about Hilbert spaces decompsoing into local tensor products.
+We did use finite correlation lneght in some places.
+
+Then we described TQFTs with path integrals $Z\left( M^{d+1} \right)$,
+but the important point is that topologicla phases of matter are believed to be
+in 1-1 correspondtance to deformaiton clases of TQFTs.
+An important distinction was the notion of invertible vs non-invertible.
+Invertible in this contextz means that $|Z|=1$ 
+and non-invertible menas $|Z|\ne 1$.
+Invertible means unique ground state,
+but non-invertible means degenerate ground states.
+
+We did some examples of TQFTs.
+They came in two flavours.
+We talked about this,
+but there was $U(1)_k$ CS theory,
+which came in two flavours.
+We could think of this as a response theory,
+meaning that we have a background gauge field
+$Z\left( M^3, A \right) = Z\left( M^3, 0 \right) e^{i k S_{CS}[A]}$.
+This can describe Chern insulator integer quantum Hall states,
+in other words invertible topological phase.
+
+Then the way of thinking about it is that we have a dynamical gauge theory.
+Here,
+we're actually integrating over all gauge field configurations.
+\begin{align}
+    Z\left( M^3 \right) &=
+    \int \mathcal{D} a\,
+    e^{ikS_{CS}(a)}
+\end{align}
+and this describes non-invertible topological phases,
+like fractional quantum Hall states,
+quantum spin liquids.
+One of the problems is thinking about the toric code in terms of CS theories
+with 2 by 2 matrices.
+
+It depends on whether you treat the gauge field as background or dynamical.
+
+Another example is SPT path integrals, or Digraph-Witten theory,
+where you pick a cohomology class inside a cohomology group
+\begin{align}
+    \left[ \nu_{d + 1} \right]
+    \in
+    H^{d + 1}
+    \left( G, U(1) \right)
+\end{align}
+You can think of it as an invertible TQFT
+\begin{align}
+    Z\left( M^{d+1}, A \right)
+    &=
+    e^{i\int_M A^* \nu_{d+1}}
+\end{align}
+We triangulated our manifold,
+and defined group elements on links,
+and the path integral value was always a phase.
+This describes SPTs.
+One utility of this construction was that it gave exact wave functions,
+and it gives parent Hamiltonians,
+a full solvable model to describe a huge class of SPTs.
+And remember SPTs are a subset of invertible phases.
+An invertible phase is a subset that is invertible on all manifolds.
+In a ground states of an invertible topological state,
+it has an inverse state that if you stack them can adiabatically go to a trivial
+state.
+If you don't care about the symmetry,
+you can always adiabatically connect it to a trivial state,
+but not if you want to respect the symmetry.
+
+Then here what we can do is consider non-invertible TQFTs,
+\begin{align}
+    Z(M) \propto
+    \sum_{[a]} e^{i \int a^* \nu}
+\end{align}
+where the sum of over all flat gauge fields.
+If you take $G=\ZZ_2$ and $[\nu] = [0]$,
+then this describes the $\ZZ_2$ spin liquid,
+which is the toric code.
+
+There's one other example that we did,
+which was the TQFT for the $(1+1$-D Majorana.
+We had a path integral over a 2D manifold with a 2-dimensional spin structure.
+\begin{align}
+    Z\left( M^2, S \right) &=
+    \left( -1 \right)^{\Arf(S)}
+\end{align}
+
+And then we talked about concrete examples of topological phases.
+
+We had the $(1+1)$D Majorana.
+Then we talked about the $(2+1)D$ Chern insulator,
+TRI TI and $p+ip$ superconductor.
+
+The invertible free fermion model.
+Time-reversal invariant topological insulator.
+
+We talked about the $(3+1)$D TRI TI.
+
+Then we tlked about boson SPTs,
+including the AKLT construction,
+and group cohomology models.
+
+Then we talked about non-invertible topological phases,
+which includes quantum spin liquids,
+including quantum dimer models,
+parton construction,
+lattice gauge thoery and toric code.
+
+FQH state $U(1)_k$ CS theory by parton construction.
+
+Thep oint of the anyon pahses was topological excitations wiht fractional
+statistics.
+We had topological ground state degeneracies that depended on the topology of
+the manifold and so on.
+In practice,
+this class is a survey of the huge classes of topological phaes.
+It's a deep and rich subject.
+In the next bonus lecture,
+I'll tell you about non-Abelian topological phaes and the algebraic theory.
