@@ -1,0 +1,839 @@
+\section{Unitary Modular Tensor Categories}
+This is sometimes called the algebraic theory of anyons.
+
+Suppose you ave a UMTC $\mathcal{C}$.
+We have a quantity called the chiral central charge $C_-$.
+For a Chern insulator the central large is 1,
+
+$\mathcal{C}$ determines $C_- \mod 8$.
+Depending on people,
+it could be mod 24,
+but that's because they have a slightly different definition of $\mathcal{C}$.
+
+It's conjectured, or believed to be the case,
+basically everyone I know believes this,
+that if you ignore symmetries:
+\begin{conjecture}
+$(2+1)d$ topological phases are classified by this pair $(\mathcal{C},C_-)$.
+This is a condensed matter conjecture.
+\end{conjecture}
+
+
+There is also another conjecture.
+$\mathcal{C}$ always comes from some quantum Chern-Simons theory.
+
+For any UMTC,
+there is some appropriate CS theory with some appropriate choice of gauge group
+that defines it.
+
+The important conjecture is the classification of $(2+1)D$ topological phases.
+
+So far in this class we saw 3 examples.
+
+\subsection{$U(1)_k$ CS theory}
+When we were studying $U(1)_k$ CS theory,
+we found there are $k$ distinct anyons.
+You can label them by
+$[0], [1], \ldots, [k - 1]$.
+Remember these were described by some Wilson loop operators
+\begin{align}
+    W_{[l]}(C)
+    &=
+    e^{i l \oint_C a}
+\end{align}
+And we described how these anyons have exchange statistics
+\begin{align}
+    \theta_l
+    &=
+    e^{2\pi i l^2/k}
+\end{align}
+We talked about how in CS theory if you want to define the exchange statistics,
+you need to think of the worldline as a ribbon,
+which is also sometimes called giving a framing to a worldline.
+If you twist the framing by $2\pi$,
+then that's related to the untwisted version by a phase $\theta_l$.
+
+Another way of thinking about this is that if you have two particles both of
+type $l$,
+then you get a phase of $\theta_l$.
+This is the exchange statistics and this is thinking about it as a topological
+spin,
+like spinning around by $2\pi$ gives a phase of $\theta_l$.
+
+Then we also had metal statistics $M_{l,l'}$.
+This means that if you have a $l$ and $l'$ particle,
+and you braided around,
+you would get a phase
+\begin{align}
+    M_{l,l'}
+    &=
+    e^{2\pi i l l'/k}
+\end{align}
+Furthermore,
+you could also fuse these particles together
+\begin{align}
+    [l] \times [l'] = [l + l']
+\end{align}
+That you could see from the Wilson loop perspective
+\begin{align}
+    W_{l} W_{l'} = W_{l + l'}
+\end{align}
+So that's a summary of $U(1)_k$ CS theory.
+
+
+\subsection{$\ZZ_2$ toric code}
+There are four kinds of particles
+$1,e,m\epsilon=\e\times m$.
+And they have properties
+\begin{align}
+    e\times e = 1 = m\times m = \epsilon\times \epsilon
+\end{align}
+And the exchange statistics are
+\begin{align}
+    \hteta_e = \theta_m = 1
+\end{align}
+And mutual statistics
+
+\subsection{Non-abelian fusion rules}
+MZMs in vortex comes in $p + ip$ superconductors.
+$\sigma$ is a $\pi$ flux vertex.
+If you had a pair of $\sigma$ MZMs,
+they could have even or odd fermion parity.
+
+When I have two,
+they can fuse to either even or odd fermion parity.
+\begin{align}
+    \sigma\times \sigma = 1 + \psi
+\end{align}
+And fusing two $\sigma$ is trivial.
+\begin{align}
+    \psi\times\psi &= 1
+\end{align}
+The interesting thing is that when I fuse two $\sigma$ together,
+I don't get a unique outcome,
+but a distinct outcome.
+
+\begin{question}
+    Should it be $\frac{1+\psi}{\sqrt{2}}$ instead?
+\end{question}
+No. When I write $1+\psi$,
+I means either two $\sigma$ fuse to odd or even fermion parity,
+so the notion of a square root doesn't make sense.
+
+The idea of UMTC is to generalise these phenomenon that provides a mathematical
+framework to describe what's going on in the most general way.
+
+UMTC gives a mathematical framework to generalize these examples.
+
+Once we define a UMTC,
+what we can do from that data I specify
+is that it can be used to define a TQFT,
+but it defines more than just a TQFT int the sense of a path integral associated
+with closed manifolds,
+remember how before you could also have defect TQFTs where you have defects and
+worldlines of defects.
+
+So UMTC is a way to define TQFT with worldlines of anyons,
+which you can think of as zero-dimensional defects.
+Its world line is one-dimensional that can form knots and links,
+so we can define path integrals in the presence of these world lines.
+
+TQFT defines the Hilbert space describes the topological sectors of topological
+phases of matter.
+An important direction a subject of current research is connecting the UMTC that
+I'm going to define for you to microscopic properties of a many-body system.
+This is an ongoing research topic.
+It's slow-going because not many people are working on it,
+so it's not fully developed.
+There is a nice paper by Kawagoe and Levin where they do nice work of
+connecting the abstract UMTC to a physical many-body system that they're using
+to describe.
+
+\begin{question}
+    Is it Hamiltonian level or state level?
+\end{question}
+State level.
+
+
+\subsection{Topological charges (anyons)}
+If you're a mathematician you might call these objects of a category,
+but mathematicians would think of it as isomorphism classes of simple objects.
+If you look up category theory in Wikipedia,
+it will tell you category theory is objects and morphisms.
+In these categories,
+there s a special class of objects called simple objects and isomorphisms of
+those and we call those anyons.
+
+We have a finite set of these topological charges, or anyons.
+Let's label them
+$\left\{ 0,a,b,\ldots \right\}$.
+The 0 is the same thing I used to call 1,
+but I'll explain.
+
+These are the topologically inequivalent class of anyons,
+but the important thing is that there are a finite number.
+
+The first thing that comes up is the notion of a \emph{fusion space}
+or \emph{splitting space}.
+
+Define a vector space $V_c^{ab}$ as a ``splitting space'' graphically.
+
+We have a Y shape, $c$ going into a vertex $\mu$ that branches out into $b$ and
+$c$.
+In going from the graphical notation to the bra-ket notation,
+there is a normalization convention 
+\begin{align}
+    \left( \frac{d_a d_b}{d_c} \right)^{1/4}
+    \ket{a,b;c,\mu}
+    \in V_c^{ab}
+\end{align}
+In addition,
+there is the dual vector space $V^{c}_{ab}$
+called the \emph{fusion space}.
+Graphically,
+we have an upside down $Y$ with two entering edges $a$ and $b$
+into vertex $\mu$ and leaving edge $c$.
+\begin{align}
+    \left( 
+    \frac{d_a d_b}{d_c}
+    \right)^{1/4}
+    \bra{a,b;c,\mu}
+\end{align}
+Then I define fusion coefficients
+\begin{align}
+    N_{ab}^{c}
+    &=
+    \dim V_{ab}^{c}
+    =
+    \dim V_{c}^{ab}
+\end{align}
+And so formally,
+we can define the fusion rules as
+\begin{align}
+    a\times b
+    &=
+    \sum_{c}
+    N_{ab}^{c} c
+\end{align}
+
+So,
+for each $a,b,c$,
+we have a vector space $V^{ab}_{c}$
+We can think of these diagrams as operators,
+or equivalently,
+as a spacetime process.
+So in other words,
+we have splitting operators as fusing operators.
+When I draw this $Y$ diagram,
+you can literally think of an operator that takes an anyon $c$
+and splits out anyons $a$ and $b$.
+You can think $c$ moves in time in fixed location and splits into $a$ and $b$.
+There is an index $\mu$ because there are in principle different orthogonal
+states that have $a,b$ at different locations,
+because the process that causes splitting could be distinct.
+So the index $\mu=0,\ldots,N_{ab}^{c} - 1$
+labels distinct to split
+
+\begin{question}
+    Can $N_{ab}^c$ be greater than 1?
+\end{question}
+It turns out yes there are examples,
+but they are not simple.
+The simplest example is $SU(3)$ level 3 CS theory,
+which you quantize and gives $N_{ab}^{c}>1$.
+In general $N_{ab}^{c}>1$ is considered exotic.
+
+OK, if $N_{ab}^c=0$,
+it means there's no way to split or fuse $a,b$ into $c$.
+Usually,
+$N_{ab}^{c}=0$ or $1$.
+Examples where $N_{ab}^{c}>1$ are kind of exotic.
+Using these spaces,
+I can build up vector spaces with more and more anyons.
+
+For example,
+one can define a vector space
+\begin{align}
+    V_{c}^{a_1 \cdots a_n}
+\end{align}
+which you would depict as this tree that starts from $c$,
+and branches out at $\m_2$ to $a_n$
+and $b_n$,
+which splits out into $a_{n-1}$ and $b_{n-1}$, etc.
+So you can see
+\begin{align}
+    V_{c}^{a_1 \cdots a_n}
+    &=
+    \bigotimes_{b_1,\ldots,b_{n-2}}
+    V_{b_1}^{a_1 a_2}
+    \otimes
+    V_{b_2}^{b_1 a_3}
+    \otimes \cdots \otimes
+    V_{c}^{b_{n-2} a_n}
+\end{align}
+When I have a state with anyons far apart from each other,
+in general there could be  some residual topological degeneracy.
+If I tell you where some MZMs are,
+you may not know the fermion parity between pairs of anyons.
+In general,
+in order to specify a state,
+what you do is pick a sequence of larger and larger regions,
+then pick a basis where $a_1,a_2$ will fuse to some particle $b_1$,
+then in you can fuse $b_2$ and $a_3$ to give $b_2$, etc,
+and finally they all fuse to $c$.
+Just knowing where all the anyons are is not enough to specify which topological
+sector we're in,
+so you can decompose the state into a fusion tree that provides a basis which
+allows one to write the state.
+\begin{align}
+    \ket{\Psi_{a_1\cdots a_n}}
+    &=
+    \sum \Psi_{\cdots}
+    \ket{a-1,a_2;b_1,\mu_1}
+    \otimes
+    \ket{a_3,b_1,b_2,\mu_2}
+    \otimes
+    \cdots
+\end{align}
+
+\begin{question}
+    Can I think of these as spin-$\frac{1}{2}$?
+\end{question}
+Yes that's a perfect example,
+but wiht spin-$\frac{1}{2}$,
+you could in general have arbitrarily large,
+so you could just truncate up to $k$.
+That just gives $SU(2)_k$ CS theory,
+or something similar.
+
+At this stage,
+we can already make a distinction 2 kinds of theories.
+Abeliean thoeries where
+\begin{align}
+    a\times b
+\end{align}
+has a unique outcome
+That is,
+\begin{align}
+    N_{ab}^c &=
+    \begin{cases}
+        1 &\text{for unique }c\\
+        0 &\text{otherwise}
+    \end{cases}
+\end{align}
+This means that $\dim V_c^{a_1\cdots a_n}=1$ or $0$,
+depending on $c$.
+It's $1$ for a unique $c$ and zero otherwise.
+
+On the other hand,
+in a non-Abelian theory,
+$a\times b$ would generally have more than one fusino outcome.
+And so that implies
+\begin{align}
+    V_{c}^{a_1\cdots a_n}
+\end{align}
+can be multi-dimensional,
+and because thise $V$ is just telling us about our topological sectors of our
+topologicla phase of matter,
+it turns out no local operators can distinh what tstates I'm in,
+so the number of states I have is tooplogically protected degeneracy.
+An example of that is MZMs.
+
+
+Just a few consequences of the graphical calculus.
+If I want to take an inner product between two states,
+the inner projject is obtained just by stacking the diagrams.
+That just menas taking the inner product
+\begin{align}
+    \braket{a,b;c,\mu}{a',b';c',\mu'}
+    &=
+    \delta_{cc'}
+    \delta{\mu\ma'}
+    \sqrt{\frac{d_a d_b}{d_c}}
+    I
+\end{align}
+where the identity $I$ is jst an edge from $c$ to $c$.
+
+We can also hvae the $\mathbf{1}_{ab}$
+that is the trivial operator 
+\begin{align}
+    \mathbf{1}_{ab}
+    &=
+    [\text{two parallel edges}|
+    =
+    \sum_{c,\m} \sqrt{\frac{d_c}{d_a d_b}} [Y\text{ shape}]
+\end{align}
+There exists soeme unique vacuum charge 0,
+somtiems denoted $1$.
+
+There is a dual of $a=\bar{a}$ defined by
+\begin{align}
+    N_{a\bar{a}}^{0} &= 1\\
+    N_{ab}^{0} &= \delta_{a\bar{b}}
+\end{align}
+Assume each $a$ has a unique $\bar{a}$.
+\begin{align}
+    0 &= \bar{0}\\
+    \bar{\bar{a}} &= \bar{a}
+\end{align}
+You can also reverse the arrows $a$ becomes $\bar{a}$.
+
+The quantum dimension $a_ \ge 1$ is defined as a loop of $a$.
+The total quantum dimension is
+\begin{align}
+    \mathcalD{D}
+    &=
+    \sqrt{\sum_a d_a^2}
+\end{align}
+
+You can think of vacuum $0$ branching into $a$ and $\bar{a}$ which fuse to
+become $0$ again.
+
+I chose a particular wya to define the vector space.
+There should be a basis transformations that take from one decompositon to
+another.
+These basis transfomrations in the most baiscaly fom take up
+
+\subsection{$F$-symbols}
+Imagine a process that splits $d$ into $a,b,c$.
+The $F$ symbol tells you how you should relate one set of splitting processes
+to another set of splitting processes.
+\begin{align}
+    V_d^{abc}
+    \simeq
+    \bigoplus_e
+    V_e^{ab}
+    \otimes
+    V_d^{ec}
+    \simeq
+    \bigoplus_f V_d^{af}\otimes V_f^{bc}
+\end{align}
+
+These $F$ are basis transformations we want to be unitary operators.
+\begin{align}
+    F_{d}^{abc}:
+    \bigoplus_e V_e^{ab}
+    \otimes
+    V_d^{ec}
+    \to
+    \bigoplus_{f}
+    V_d^{af}
+    \otimes V_f^{bc}
+\end{align}
+is a unitary operator,
+but if you're a mathematician,
+you won't require that $V$ has a positive semi-definite inner product and $F$ be
+unitary,
+but we do.
+
+\subsection{Pentagon equation}
+If you have a vector space of may anyons,
+you could choose some way of decomposing $V$ into some basis,
+and you want all the ways to consistent with one another.
+This consistency equation is called the \emph{pentagon equation}.
+
+The pentagon equation which says that when I go from here via 2 moves,
+it's the same as going the other way by 3 rules.
+\begin{align}
+    FF &= \sum FFF
+\end{align}
+summing over a bunch of indices.
+[picture of 5 branch diagrams connected by arrows]
+
+If you look at this equation,
+it should remind you of the 2-3 Pachner moves on the triangulation of the SPT
+phase.
+It requires us to consider the 2-3 Pachner move which gave us an equation that
+looked very similar to this.
+Note this is formally similar to the 2-3 Pachner move which gave us 3-cocycle
+equations
+$\omega \omega = \omega \omega \omega$
+for $H^3\left( G, U(1) \right)$ in group cohomology.
+
+\subsection{Maclane's coherence theorem}
+The question is whether there are other kinds of consistency equations for the
+$F$-moves to be fully consistent.
+The answer is no.
+\begin{theorem}
+    Pentagon equation is sufficient for $F$-moves to be fully consistent.
+\end{theorem}
+Here are some interesting facts for you prove as an exercise.
+\begin{enumerate}
+    \item
+    \begin{align}
+        d_a d_b = N_{ab}^c d_c
+    \end{align}
+    \item Define fusion matrices $N_a$
+    \begin{align}
+        \left[ N_a \right]_{bc} &= N_{ab}^{c}
+    \end{align}
+    Then $d_a$ is the largest eigenvalue of $N_a$.
+    \item Only the largest eigenvalue contributes.
+        \begin{align}
+            \sum_{c} \dim V_c^{\overbrace{a\cdots a}^{n}}
+            &=
+            \sum_{c} \left[ N_a^n \right]_{oc}
+            \sim d_a^n
+        \end{align}
+\end{enumerate}
+So the quantum number $d_a$ is the average number of quantum degrees of freedom,
+because the dimension of the state space grows as the quantum dimension to the
+$n$-th power.
+If $d_a=1$,
+then the dimension is just one of these anyons,
+and that's an abelian anyon.
+If $d_a>1$,
+then you have a non-trivial degeneracy that grows exponentially with the number
+of anyons and $a$ is a non-abelian anyon.
+
+It turns out that the $F$-symbols determine $d_a$.
+You can think of $d_a$ as a parameter.
+You have some fusion rules,
+$F$-symbols,
+and so on.
+Then there are some relationships between them,
+because the Pentagon equation is a consistency equations that forces only some
+choices of $F$, $d_a$ and $N_a$ being consistent.
+
+The $F$-symbols themselves are basis-dependent,
+so if I change the basis the $F$-symbols themselves are going to change.
+They are not gauge invariant.
+
+\subsection{Gauge transformations}
+There is a basis transformation you can do of these $V_{c}^{ab}$
+\begin{align}
+    \Gamma_{c}^{ab}:
+    V_{c}^{ab}
+    \to
+    V_{c}^{ab}
+\end{align}
+And you can relate
+\begin{align}
+    \ket{a,b; c,\mu}
+    &=
+    \sum_{\nu}
+    \left[ \Gamma_c^{ab} \right]_{\mu\nu}
+    \ket{a,b;c,\nu}
+\end{align}
+And then
+\begin{align}
+    \tilde{F}_d^{abc}
+    &=
+    \Gamma_e^{ab}
+    \Gamma_d^{ec}
+    F_d^{abc}
+    \left( \Gamma_f^{bc} \right)^\dagger
+    \left( \Gamma_d^{af} \right)^\dagger
+\end{align}
+If you have an inequivalent consistent choice of this data
+$\left\{ N_{ab}^{c}, F_{d}^{abc} \right\}$,
+then you have defined a unitary fusion category.
+
+There are two Hilbert spaces.
+There's the Hilbert space of the TQFT,
+then there's the Hilbert space of the topological phase of matter,
+which consists of microscopic constituents interacting.
+This is the Hilbert space of the TQFT,
+which models the topological sectors the ground states of the topological phase
+of matter than are pinned to these locations.
+
+So you can either think of them as the topological sectors of the real phase of
+matter,
+or just the Hilbert space of the TQFT.
+
+\begin{question}
+    Is this enough to define the ground state of a torus?
+\end{question}
+Suppose you want a vector space on a torus $V\left( T^2 \right)$.
+I can start with a sphere here
+with two punctures $a$, $\bar{a}$.
+And another sphere with punctures $\bar{a}, a$,
+which I glue together to give a torus.
+And then
+\begin{align}
+    \bigoplus_{a} V_{0}^{a\bar{a}}
+    \otimes
+    V_0^{a\bar{a}}
+    &=
+    V\left( T^2 \right)
+\end{align}
+So then
+\begin{align}
+    \dim V\left( T^2 \right) &=
+    \sum_a 1
+    = \text{\# of anyons}
+\end{align}
+\begin{question}
+    Can you extract all the data from the path integral of the TQFT?
+\end{question}
+I haven't described how to find a TQFT from this structure yet.
+It's almost another lecture.
+
+Let me give you a nice example to have in mind of a fusion category which
+connects to this group cohomology.
+
+Our unitary fusion category will be denoted by
+\begin{align}
+    C &=
+    \Vec_{G}^{[\omega_3]}
+\end{align}
+where $[\omega_3]\in H^3\left( G, U(1) \right)$.
+The anyons are
+$\left\{ g \mid g \in G \right\}$
+with
+$g\times h = gh$
+and $N_{g,h}^{k} = \delta_k,gh$.
+Then
+\begin{align}
+    F_{g,h,k}^{g,h,k}
+    &=
+    \omega_3\left( g,h,k \right)
+\end{align}
+So the pentagon equation gives a 3-cocycle equation for $\omega_3$.
+The gauge transformation corresponds to 3-coboundaries.
+
+Any UTF $\mathcal{C}$ can be used to define a $(2+1)D$ TQFT in terms of a state
+sum,
+which generalized the Digraph-Witten theory.
+
+The amplitude for the tetrahedra is the $F$-symbols.
+The pentagon equation you can view as retriangulation invariance of the path
+integral.
+
+These TQFTs define ground state wave functions on their boundaries.
+These are Tuaev-Viro-Barrett-Westbury TQFTs,
+which leads to Levin-Wen string-net models.
+
+\subsection{Braiding}
+I want to take anyons around each other and exchange them and so on.
+I take a particle $c$ up to vertex $\mu$ that then branches and braids into $b$,
+$a$.
+You should really compare this to a diagram where there is no braiding,
+and that is via $R$-symbols.
+\begin{align}
+    \left[ \text{diagram} \right]
+    &=
+    \sum_c \left[ R_c^{ab} \right]_{\mu\nu}
+    \left[ \text{diagram} \right]
+\end{align}
+If I had a state
+\begin{align}
+    \ket{\Psi_{a_1\cdots a_n}}
+    &=
+    \sum
+    \Psi_{\cdots}
+    \ket{a_1,a_2;b_1,\mu_1}
+    \ket{a_3b_1; b_2, \mu_2}\cdots
+\end{align}
+The braid operator can act like full braiding
+\begin{align}
+    B_{12}
+    \ket{\Psi_{a_1,\cdots a_n}}
+    &=
+    \sum
+    \Psi_{\cdots}
+    \left[ 
+    R^{a_2 a_1} R^{a_1 a_2}
+    \right]_{\mu-1,\mu_1'}
+    \ket{a_1,a_2; b_1, \mu_1'}
+    \cdots
+\end{align}
+I can also define the $R^{ab}$ operator,
+which is a diagram of $a$ and $b$ crossing.
+\begin{align}
+    R^{ab}
+    &=
+    [\text{diagram of $a$ and $b$ crossing}]\\
+    &=
+    \sum_{c,\mu}
+    \sqrt{\frac{d_c}{d_a d_b}}
+    [\text{diagram}]\\
+    &=
+    \sum_{c,\mu}
+    \sqrt{\frac{d_c}{d_a d_b}}
+    \left[ R_c^{ab} \right]_{\mu\nu}
+    [\text{diagram}]
+\end{align}
+Unitary here means that
+\begin{align}
+    \left[ R^{ab} \right]^{-1}
+    &=
+    \left[ R^{ab} \right]^\dagger
+\end{align}
+so $R^{ab}$ is unitary.
+Braiding commutes with fusion.
+
+[diagrams]
+
+Using these diagrams,
+you can prove this famous relationship called the Yang-Baxter relation.
+
+[diagram]
+
+Just like we had the pentagon equation,
+we need a consistency equation,
+which leads us to a set of equations called the
+\emph{hexagon equations},
+which is compatibility between braiding and fusion.
+
+Let me draw one of the diagrams.
+
+[6 diagrams with arrows]
+
+There is also another equation where the braid goes under instead of over.
+
+If you actually include all the Greek indices, you will have
+\begin{align}
+    \sum_{\text{greeks}} RFR
+    &=
+    \sum_{\text{greeks}} \sum FRF\\
+    \sum_{\text{greeks}} R^{-1}FR^{-1}
+    &=
+    \sum_{\text{greeks}} \sum FR^{-1}F
+\end{align}
+
+\begin{question}
+    Do people do this day-to-day?
+\end{question}
+It is a research topic in maths to find solutions to these equations
+systematically,
+although it's very difficult because they're extremely complicated equations,
+but yes,
+there are all sorts of tricks to solve them.
+
+Once we have these $R$-matrices,
+we can define some other things.
+\begin{align}
+    \theta_a
+    &=
+    \theta_{\bar{a}}
+    =
+    \sum_{c,\mu}
+    \frac{d_c}{d_a}
+    \left[ R_c^{aa} \right]_{\mu\mu}\\
+    &=
+    \frac{1}{d_a}
+    \left[ \text{diagram of figure 8}\right]
+\end{align}
+
+\subsection{Topological $S$-matrix}
+The other important diagram to define is the topological $S$-matrix.
+This is a matrix we diagrammatically define like this
+\begin{align}
+    S_{ab} &=
+    \frac{1}{\mathcal{D}}
+    \left[ \text{diagram of two rings $a$ and $b$ interlocking }\right]
+\end{align}
+Using the $S$-matrix there are some important identities one can prove.
+Consider a strand $b$ and you take an $a$ loop around it,
+then that's equivalent to $S_{ab}/S_{0b}$ times $b$.
+
+You can verify this diagram by closing it up,
+or taking the trace of the operator.
+Understanding this relationship is useful for describing this very important
+identity.
+
+Consider a line of $x$ with two loops $a$ and $b$ going around it.
+They can go around individually like
+$\frac{S_{ax}}{S_{0x}} \frac{S_{bx}}{S_{0x}}$
+times $x$,
+or I can fuse the $a$ and $b$ together to get
+\begin{align}
+    \sum_{c} N_{ab}^c [\text{diagram}]
+    &=
+    \sum_c N_{ab}^c \frac{S_{cx}}{S_{0x}}
+\end{align}
+so
+\begin{align}
+    \frac{S_{ax}}{S_{0x}}
+    \frac{S_{bx}}{S_{0x}}
+    &=
+    \sum_{c}
+    N_{ab}^{c}
+    \frac{S_{cx}}{S_{0x}}
+\end{align}
+which basically means these obey the fusion rules.
+
+\subsection{Summary}
+So under gauge transformation
+\begin{align}
+    R_{c}^{ab}
+    \to
+    \tilde{R}_{c}^{ab}
+    =
+    \Gamma_{c}^{ba}
+    R_{c}^{ab}\left( \Gamma_{c}^{ab} \right)^\dagger
+\end{align}
+If you give me an inequivalent consistent choice of $\left\{ N,F,R \right\}$,
+it can define a unitary braided fusion category (UBFC).
+So if you give me some very crazy links and knots,
+I can give you a number using these rules.
+
+There's one more: modularity.
+Modularity basically just meas $S$ is unitary,
+which means I can invert that relation on the right hand side to write
+\begin{align}
+    N_{ab}^{c}
+    &=
+    \sum_{x}
+    \frac{S_{ax} S_{bx} S_{cx}^*}{S_{0x}}
+\end{align}
+which is the famous Verlinde formula.
+There's a nice relationship the $S$ matrix and the twists satisfy.
+There is also the charge-conjugation matrix
+\begin{align}
+    C_{ab} &=
+    \delta_{a\bar{b}}
+\end{align}
+And let me define the twist
+\begin{align}
+    T_{ab}
+    &=
+    \theta_a \delta_{ab}
+\end{align}
+And it turns out there is a really beautiful relationship
+\begin{align}
+    \left( ST \right)^3 &=
+    e^{2\pi i C_{-}/S} C\\
+    S^2 &= C\\
+    C^2 &= \mathbf{1}
+\end{align}
+Here $C_-$ is the chiral central charge.
+And it turns out there is 
+\begin{align}
+    e^{2\pi i C_{-}/8}
+    &=
+    \frac{1}{\mathcal{D}}
+    \sum_{a}
+    d_a^2
+    \theta_a
+\end{align}
+The modular tensor category defines the central charge mod 8 because of this
+formula.
+You may recognize this is a projective representation of $SL(2,\ZZ)$.
+
+One more important fact.
+Modularity is actually equivalent to braiding non-degeneracy,
+which just means that
+for all $a\ne 0$,
+there exists a $b$ such that
+\begin{align}
+    R^{ab}R^{ba} \ne \mathbf{1}
+\end{align}
+That means every anyon is detectable by braiding.
+For any anyon $a$,
+there is some $b$ such that if I braid it all around,
+I don't get something trivial,
+so there exist no invisible particles by braiding.
+This is equivalent to modularity.
+
+So a braided fusion category with a unitary $S$ matrix is a modular fusion
+category.
+Once you have this,
+you have a topological order,
+if you don't care about symmetry.
+If you do care about symmetry,
+then you need to soup up this theory with a symmetry group $G$.
+That's another lecture.
+
+It's also another lecture for how to get from a UMFC to  $(2+1)D$ TQFT.
